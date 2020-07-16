@@ -1,6 +1,5 @@
 # CSJava
 This is an eBook curriculum for How to Programing in Java.
-This book is available at https://runestone.academy/runestone/books/published/csjava/index.html.
 
 # Authors
 Linda Seiter and Daniel Palmer of John Carroll University
