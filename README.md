@@ -1,10 +1,9 @@
-# CSAwesome
-This is an eBook curriculum for the AP Computer Science A Exam on Runestone at https://runestone.academy/runestone/books/published/csawesome/index.html.
+# CSJava
+This is an eBook curriculum for and Introduction to Software Development in Java.
+This book is available at https://runestone.academy/runestone/books/published/csjava/index.html.
 
 # Authors
-This book is based on the Java Review ebook  written by Barbara Ericson of University of Michigan - @ericsonga
+Linda Seiter and Daniel Palmer of John Carroll University
 
-This book was revised by Beryl Hoffman of Elms College and the Mobile CSP project in 2019 for the 2019 AP CS A exam.
-
-Many others have contributed. For the most up to date listing of who has contributed to the ebook see the preface in Unit 1.
+This material is adapted from Runestone's CSAwesome eBook by Beryl Hoffman of Elms College - @bhoffman0, which itself is an adaptation of the Java Review ebook written by Barbara Ericson of University of Michigan - @ericsonga
 

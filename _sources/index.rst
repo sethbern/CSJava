@@ -1,24 +1,31 @@
-.. image:: ../_static/CSAwesomeLogo.png
-    :width: 350
-    :align: center
-    
+   
 ==========================================
-AP CS A Java Course 
+Introduction to Programming in Java
 ==========================================
 
-Welcome to CS Awesome! It's time to start your journey to learn how to program with Java. A shortcut way to get to this course is to type in the url: **course.csawesome.org**
-
-This course is adapted from the Runestone Java Review course to follow the 2019 College Board unit ordering and learning objectives.  If you are a teacher using this curriculum, please join the |teaching CSAwesome group| which will give you access to teacher resources at |csawesome|.
-
-To make sure the site saves your answers on questions, please click on the person icon at the top to register or login to your course. As you complete lessons, click the "Mark as completed" button at the bottom. Enjoy the course!
-
+Welcome! This eBook provides an interactive introduction to programming in Java.
+To make sure the site saves your answers on questions, 
+please click on the person icon at the top to register or login to your course. 
+As you complete lessons, click the "Mark as completed" button at the bottom. Enjoy the course!
 
 .. raw:: html
 
-    <ul><li><a class="reference internal" href="Unit1-Getting-Started/toctree.html">Unit 1 Getting Started and Primitive Types</a></li><li><a class="reference internal" href="Unit2-Using-Objects/toctree.html">Unit 2 Using Objects</a></li><li><a class="reference internal" href="Unit3-If-Statements/toctree.html">Unit 3 If Statements</a></li><li><a class="reference internal" href="Unit4-Iteration/toctree.html">Unit 4 Iteration/Loops</a></li><li><a class="reference internal" href="Unit5-Writing-Classes/toctree.html">Unit 5 Writing Classes</a></li><li><a class="reference internal" href="Unit6-Arrays/toctree.html">Unit 6 Arrays</a></li><li><a class="reference internal" href="Unit7-ArrayList/toctree.html">Unit 7 ArrayLists</a></li><li><a class="reference internal" href="Unit8-2DArray/toctree.html">Unit 8 2D Arrays</a></li><li><a class="reference internal" href="Unit9-Inheritance/toctree.html">Unit 9 Inheritance</a></li><li><a class="reference internal" href="Unit10-Recursion/toctree.html">Unit 10 Recursion</a></li><li>Practice units: <a class="reference internal" href="Unit11-posttest/toctree.html">11</a>, <a class="reference internal" href="Tests/toctree.html">12</a>, <a class="reference internal" href="TimedTests/toctree.html">13</a>, <a class="reference internal" href="MixedFreeResponse/toctree.html">14</a>, <a class="reference internal" href="FreeResponse/toctree.html">15</a></li></ul>
-    
-   
-   
+    <ul><li><a class="reference internal" href="Unit1-Getting-Started/toctree.html">Unit 1 Getting Started and Primitive Types</a></li>
+    <li><a class="reference internal" href="Unit2-Using-Objects/toctree.html">Unit 2 Using Objects</a></li>
+    <li><a class="reference internal" href="Unit3-If-Statements/toctree.html">Unit 3 If Statements</a></li>
+    <li><a class="reference internal" href="Unit4-Iteration/toctree.html">Unit 4 Iteration/Loops</a></li>
+    <li><a class="reference internal" href="Unit5-Writing-Classes/toctree.html">Unit 5 Writing Classes</a></li>
+    <li><a class="reference internal" href="Unit6-Arrays/toctree.html">Unit 6 Arrays</a></li>
+    <li><a class="reference internal" href="Unit7-ArrayList/toctree.html">Unit 7 ArrayLists</a></li>
+    <li><a class="reference internal" href="Unit8-2DArray/toctree.html">Unit 8 2D Arrays</a></li>
+    <li><a class="reference internal" href="Unit9-Inheritance/toctree.html">Unit 9 Inheritance</a></li>
+    <li><a class="reference internal" href="Unit10-Recursion/toctree.html">Unit 10 Recursion</a></li>
+    <li>Practice units: <a class="reference internal" href="Unit11-posttest/toctree.html">11</a>,
+     <a class="reference internal" href="Tests/toctree.html">12</a>, 
+     <a class="reference internal" href="TimedTests/toctree.html">13</a>, 
+     <a class="reference internal" href="MixedFreeResponse/toctree.html">14</a>, 
+     <a class="reference internal" href="FreeResponse/toctree.html">15</a></li>
+   </ul>
 
 .. Here is where you specify the content and order of your new book.
 
@@ -64,7 +71,7 @@ Table of Contents
    FreeResponse/toctree.rst
    
 .. Old TOC
-    JavaBasics/toctree.rst
+   JavaBasics/toctree.rst
    VariableBasics/toctree.rst
    Strings/toctree.rst
    Conditionals/toctree.rst

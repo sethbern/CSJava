@@ -32,14 +32,22 @@
    :start: 1
    
    
-Pretest for the AP CS A Exam
-------------------------------
+Please try the following pretest. We don't expect you to know the answers to these questions at all yet! 
+So don't worry about it if you don't know the answers. 
+If you have no idea on the answer, it is okay to skip questions or to make your best guess.
 
-Please try the following pretest. We don't expect you to know the answers to these questions at all yet! So don't worry about it if you don't know the answers. If you have no idea on the answer, it is okay to skip questions or to make your best guess.
+You will take the same test at the end of the class, and the goal is to see how much you improve. 
+We hope that everyone will see a big improvement!  
 
-You will take the same test at the end of the class, and the goal is to see how much you improve. We hope that everyone will see a big improvement!  
-
-Please make sure you are logged into Runestone before beginning. Click the |start| button when you are ready to begin the exam. You can only take the exam once. There are no time limits, but it will keep track of how much time you take.  Click on the |next| button to go to the next question.  Click on the |prev| button to go to the previous question.  Use the number buttons to jump to a particular question.  Click the |pause| button to pause the exam (you will not be able to see the questions when the exam is paused).  Click on the |finish| button after you have answered all the questions.  The number correct, number wrong, and number skipped will be displayed.
+Please make sure you are logged into Runestone before beginning. 
+Click the |start| button when you are ready to begin the exam. You can only take the exam once. 
+There are no time limits, but it will keep track of how much time you take.  
+Click on the |next| button to go to the next question.  
+Click on the |prev| button to go to the previous question.  
+Use the number buttons to jump to a particular question.  
+Click the |pause| button to pause the exam (you will not be able to see the questions when the exam is paused).  
+Click on the |finish| button after you have answered all the questions.  
+The number correct, number wrong, and number skipped will be displayed.
 
 .. timed:: pretest1
     :nofeedback:
