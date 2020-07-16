@@ -1,5 +1,5 @@
 # CSJava
-This is an eBook curriculum for and Introduction to Software Development in Java.
+This is an eBook curriculum for How to Programing in Java.
 This book is available at https://runestone.academy/runestone/books/published/csjava/index.html.
 
 # Authors
