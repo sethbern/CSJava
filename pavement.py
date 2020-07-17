@@ -6,7 +6,7 @@ from socket import gethostname
 import os, sys
 from os import environ
 
-from sphinxcontrib import paverutils
+from sphinxcontrib import paverutils  
 
 # new 7/2019 changes
 import pkg_resources
