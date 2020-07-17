@@ -1,6 +1,6 @@
    
 ==========================================
-Introduction to Programming in Java
+How to Program in Java
 ==========================================
 
 Welcome! This eBook provides an interactive introduction to programming in Java.
@@ -20,11 +20,13 @@ As you complete lessons, click the "Mark as completed" button at the bottom. Enj
     <li><a class="reference internal" href="Unit8-2DArray/toctree.html">Unit 8 2D Arrays</a></li>
     <li><a class="reference internal" href="Unit9-Inheritance/toctree.html">Unit 9 Inheritance</a></li>
     <li><a class="reference internal" href="Unit10-Recursion/toctree.html">Unit 10 Recursion</a></li>
+    <!--
     <li>Practice units: <a class="reference internal" href="Unit11-posttest/toctree.html">11</a>,
      <a class="reference internal" href="Tests/toctree.html">12</a>, 
      <a class="reference internal" href="TimedTests/toctree.html">13</a>, 
      <a class="reference internal" href="MixedFreeResponse/toctree.html">14</a>, 
      <a class="reference internal" href="FreeResponse/toctree.html">15</a></li>
+     -->
    </ul>
 
 .. Here is where you specify the content and order of your new book.
@@ -52,7 +54,7 @@ Table of Contents
 
 .. toctree::
    :numbered:
-   :maxdepth: 3
+   :maxdepth: 2
 
    Unit1-Getting-Started/toctree.rst
    Unit2-Using-Objects/toctree.rst
@@ -64,6 +66,8 @@ Table of Contents
    Unit8-2DArray/toctree.rst
    Unit9-Inheritance/toctree.rst
    Unit10-Recursion/toctree.rst
+
+.. AP exam material
    Unit11-posttest/toctree.rst
    Tests/toctree.rst
    TimedTests/toctree.rst
@@ -125,7 +129,8 @@ If you see errors or bugs, please report them with this |errata form|. If you ar
 
 (last revised 7/10/2020)
 
-© Copyright 2015 Barb Ericson, Univ. Michigan, 2019 revised by Beryl Hoffman (Elms College, `Mobile CSP Project <http://mobilecsp.org>`_). Created using `Runestone  <http://runestone.academy>`_.
+© Copyright 2015 Barb Ericson, Univ. Michigan, 2019 revised by Beryl Hoffman (Elms College, `Mobile CSP Project <http://mobilecsp.org>`_), 2020 revised by Linda Seiter and Daniel Palmer (John Carroll University). 
+Created using `Runestone  <http://runestone.academy>`_.
 
 
 .. raw:: html
