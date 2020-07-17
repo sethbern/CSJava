@@ -14,8 +14,7 @@ before beginning this course and then complete the brief demographic survey. The
 
    preface.rst
    growthMindset.rst
-   javaIDEs.rts
-   ptest1.rst
+   javaIDEs.rst
    
 .. raw:: html
     

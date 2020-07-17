@@ -33,24 +33,14 @@ Why Programming? Why Java?
     
 
 
-What do Android phones, Minecraft, and Netflix have in common? They're all programmed in Java! Many of the apps you use in an Android phone or tablet are written in Java. If you've used App Inventor before, those apps are translated to Java before they are run on a phone or tablet. Netflix uses Java for some of its software too. Java is a **programming language** that is used worldwide to create software that we all use.
-
-The following `video <https://www.youtube.com/watch?v=Fc-BQzPbJmU>`_ introduces this first lesson in CSAwesome.
-
-.. youtube:: Fc-BQzPbJmU
-    :width: 800
-    :align: center
-
-
-.. |runbutton| image:: Figures/run-button.png
-    :height: 20px
-    :align: top
-    :alt: run button
-    
+What do Android phones, Minecraft, and Netflix have in common? 
+They're all programmed in Java! Many of the apps you use in an Android phone or tablet are written in Java. 
+If you've used App Inventor before, those apps are translated to Java before they are run on a phone or tablet. 
+Netflix uses Java for some of its software too. Java is a **programming language** that is used worldwide to 
+create software that we all use.
     
 First Java Program
 -------------------
-
 
 ..	index::
 	single: class
@@ -74,7 +64,8 @@ Every program in Java is written as a **class**. Java is an **object-oriented la
    
 .. note::
 
-   In Java every open curly brace ``{`` must have a matched close curly brace ``}``.  These are used to start and end class definitions and method definitions.       
+   In Java every open curly brace ``{`` must have a matched close curly brace ``}``.  
+   These are used to start and end class definitions and method definitions.       
 
 |CodingEx| **Coding Exercise**: Click on the |runbutton| button below to have the computer execute the ``main`` method in the following class. Then, change the code  to print your name.  Be sure to keep the starting ``"`` and ending ``"``.  Click on the |runbutton| button to run the modified code. If you revisit this page later and login, click on Load History and move the bar above it to see your previous code changes.
  
