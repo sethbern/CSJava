@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>6.9. Practice Exam for Arrays &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. ArrayList" href="../Unit7-ArrayList/toctree.html" />
+    <link rel="prev" title="6.8. Multiple-Choice Exercises" href="Exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csawesome&page=arrayExam'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.8. </span>Multiple-Choice Exercises" data-toggle="tooltip">
+    <a href="Exercises.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">7. </span>ArrayList' data-toggle="tooltip" >              
+    <a href="../Unit7-ArrayList/toctree.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="practice-exam-for-arrays">
+<h1><span class="section-number">6.9. </span>Practice Exam for Arrays<a class="headerlink" href="#practice-exam-for-arrays" title="Permalink to this headline">¶</a></h1>
+<p>The following problems are <em>harder</em> than what you will probably see on the AP CS A exam.  They come from research in computer science education and test your ability to trace and understand complex code with loops, arrays, and conditionals.  They are used with permission from Raymond Lister of the University of Technology, Sydney, Australia.</p>
+<p>Please answer each to the best of your ability.</p>
+<p>Click the “Start” button when you are ready to begin the exam, but only then as you can only take the exam once.  Click the “Pause” button to pause the exam (you will not be able to see the questions when the exam is paused).  Click on the “Finish Exam” button at the end only when you are done.  It will display the number correct, number wrong, and number skipped after the “Finish Exam” button.</p>
+
+    <ul data-component="timedAssessment"  id="arrayExam1"    >
+    
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx1" >
+            <p>6-9-1: What is the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> after the following code has executed?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">((</span><span class="n">sum</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="na">length</span><span class="p">))</span>
+<span class="p">{</span>
+   <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+   <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="arrayEx1_opt_a">0</li><li data-component="feedback">While i is set to 0 initially it does change.</li>
+            
+            <li data-component="answer"  id="arrayEx1_opt_b">1</li><li data-component="feedback">This would be true if i was incremented after the sum was changed instead of before.</li>
+            
+            <li data-component="answer" data-correct id="arrayEx1_opt_c">2</li><li data-component="feedback">This will loop twice and increment i each time so at the end i is 2.</li>
+            
+            <li data-component="answer"  id="arrayEx1_opt_d">3</li><li data-component="feedback">This would be true if it was asking for the value of limit.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx2" >
+            <p>6-9-2: What is the value of <code class="docutils literal notranslate"><span class="pre">count</span></code> after the following code has executed?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">x1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">x2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="n">x1</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="n">x2</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">((</span><span class="n">i1</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">i2</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">))</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">x1</span><span class="o">[</span><span class="n">i1</span><span class="o">]</span> <span class="o">==</span> <span class="n">x2</span><span class="o">[</span><span class="n">i2</span><span class="o">]</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+      <span class="n">i1</span><span class="o">--</span><span class="p">;</span>
+      <span class="n">i2</span><span class="o">--</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x1</span><span class="o">[</span><span class="n">i1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">x2</span><span class="o">[</span><span class="n">i2</span><span class="o">]</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">i2</span><span class="o">--</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">else</span>
+   <span class="p">{</span> <span class="c1">// x1[i1] &gt; x2[i2]</span>
+      <span class="n">i1</span><span class="o">--</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="arrayEx2_opt_a">3</li><li data-component="feedback">This would be true if the while loop continued as long as i1 and i2 where greater than or equal to 0.</li>
+            
+            <li data-component="answer" data-correct id="arrayEx2_opt_b">2</li><li data-component="feedback">This loops and only increments count when the same value is in x1 and x2, but it doesn't compare the values at index 0 since it stops when either index is 0.</li>
+            
+            <li data-component="answer"  id="arrayEx2_opt_c">1</li><li data-component="feedback">It may appear that the indices get out of synchronization, but check out the else if and else code.</li>
+            
+            <li data-component="answer"  id="arrayEx2_opt_d">0</li><li data-component="feedback">The very first time through the loop the values at the two indicies are equal and count is incremented.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx3" >
+            <p>6-9-3: What is the value of <code class="docutils literal notranslate"><span class="pre">count</span></code> after the following code has executed?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="kt">boolean</span> <span class="n">b</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">x</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="n">b</span><span class="o">[</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="kc">true</span><span class="p">)</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="arrayEx3_opt_a">1</li><li data-component="feedback">This would be true if the second loop only executed one time, but it executes for all values in x.</li>
+            
+            <li data-component="answer"  id="arrayEx3_opt_b">2</li><li data-component="feedback">This would be true if there were only 2 distinct values in x.</li>
+            
+            <li data-component="answer" data-correct id="arrayEx3_opt_c">3</li><li data-component="feedback">This changes b[x[i]] to true and then counts the number of true in b.  Since x only has 3 distinct values in it the answer will be 3.</li>
+            
+            <li data-component="answer"  id="arrayEx3_opt_d">4</li><li data-component="feedback">This would be true if there were 4 distinct values in x.</li>
+            
+            <li data-component="answer"  id="arrayEx3_opt_e">5</li><li data-component="feedback">This would be true if it was ``b[i] = true`` instead of ``b[x[i]] = true``.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx4" >
+            <p>6-9-4: What is the value of <code class="docutils literal notranslate"><span class="pre">count</span></code> after the following code has executed?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[</span> <span class="o">]</span> <span class="n">x1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">[</span> <span class="o">]</span> <span class="n">x2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span> <span class="p">(</span><span class="n">i1</span> <span class="o">&lt;</span> <span class="n">x1</span><span class="p">.</span><span class="na">length</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+        <span class="p">(</span><span class="n">i2</span> <span class="o">&lt;</span> <span class="n">x2</span><span class="p">.</span><span class="na">length</span><span class="p">))</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">x1</span><span class="o">[</span><span class="n">i1</span><span class="o">]</span> <span class="o">==</span> <span class="n">x2</span><span class="o">[</span><span class="n">i2</span><span class="o">]</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+      <span class="n">i2</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x1</span><span class="o">[</span><span class="n">i1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">x2</span><span class="o">[</span><span class="n">i2</span><span class="o">]</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">i1</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">else</span>
+   <span class="p">{</span> <span class="c1">// x1[i1] &gt; x2[i2]</span>
+      <span class="n">i2</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="arrayEx4_opt_a">0</li><li data-component="feedback">While count starts at 0 it is incremented when a match is found, which will happen when i1 is 1 and i2 is 0.</li>
+            
+            <li data-component="answer"  id="arrayEx4_opt_b">1</li><li data-component="feedback">This would be true if the loop stopped after the first match was found, but it does not.</li>
+            
+            <li data-component="answer"  id="arrayEx4_opt_c">2</li><li data-component="feedback">This would be true if the code only looked for a match at the same indicies.</li>
+            
+            <li data-component="answer"  id="arrayEx4_opt_d">3</li><li data-component="feedback">This would be true if both i2 and i1 were incremented when a match was found.</li>
+            
+            <li data-component="answer" data-correct id="arrayEx4_opt_e">4</li><li data-component="feedback">This code only increments i2 when a match is found, which means that the 2 at position 2 in x1 matches both 2's in x2.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx5" >
+            <p>6-9-5: After the following code is executed which of the following are the values in <code class="docutils literal notranslate"><span class="pre">x</span></code>?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[</span> <span class="o">]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+   <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+   <span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">temp</span><span class="p">;</span>
+   <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+   <span class="n">j</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="arrayEx5_opt_a">{3,2,2,0}</li><li data-component="feedback">This loops 2 times.  During the first loop it copies x[3] to x[0] and sets x[3] to 2 times the original value of x[0].  In the second loop it copies x[2] to x[1] and sets x[2] to 2 times the original value in x[1].</li>
+            
+            <li data-component="answer"  id="arrayEx5_opt_b">{0,1,2,3}</li><li data-component="feedback">These are the initial values for x, but they are changed since i starts out at 0 and j starts out as 3 and i is less than j.</li>
+            
+            <li data-component="answer"  id="arrayEx5_opt_c">{3,2,1,0}</li><li data-component="feedback">This would be true if the code simply reversed the values in the array, but what happens when x[j] = 2 * temp?</li>
+            
+            <li data-component="answer"  id="arrayEx5_opt_d">{0,2,4,6}</li><li data-component="feedback">This would be true if the code just multiplied all the original values by 2.  Is that what it does?  Why would you need to use temp for that?</li>
+            
+            <li data-component="answer"  id="arrayEx5_opt_e">{6,4,2,0}</li><li data-component="feedback">This would be true if the code multiplied the original values by 2 and reversed the values.  Is that what it does?  The loop only continues while i is less than j, so it doesn't loop through all the values in x.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx6" >
+            <p>6-9-6: Which of the following is the missing code from the method <code class="docutils literal notranslate"><span class="pre">isSorted</span></code> so that it correctly checks that all elements in <code class="docutils literal notranslate"><span class="pre">x</span></code> are sorted in ascending order?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isSorted</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">x</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="c1">//missing code goes here</span>
+ <span class="p">}</span>
+
+
+<span class="n">A</span><span class="p">.</span>
+<span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="p">)</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+   <span class="k">else</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="n">B</span><span class="p">.</span>
+<span class="nf">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="p">)</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="n">C</span><span class="p">.</span>
+<span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">x</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="p">)</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="n">D</span><span class="p">.</span>
+<span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">x</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="p">)</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="n">E</span><span class="p">.</span>
+<span class="nf">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">x</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="p">)</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="arrayEx6_opt_a">A</li><li data-component="feedback">This won't work since each time through the loop b is reset based on the last comparison.</li>
+            
+            <li data-component="answer" data-correct id="arrayEx6_opt_b">B</li><li data-component="feedback">This will return false if it finds a value at i that is larger than the value at i+1 and otherwise it returns true.</li>
+            
+            <li data-component="answer"  id="arrayEx6_opt_c">C</li><li data-component="feedback">There is no way for b to become true.</li>
+            
+            <li data-component="answer"  id="arrayEx6_opt_d">D</li><li data-component="feedback">This sets b to true when it finds elements that are out of order.</li>
+            
+            <li data-component="answer"  id="arrayEx6_opt_e">E</li><li data-component="feedback">This returns as soon as it finds a value that is out of order, but returns true instead of false.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx7" >
+            <p>6-9-7: What is the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> after the following code executes?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">((</span><span class="n">sum</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">x</span><span class="p">.</span><span class="na">length</span><span class="p">))</span>
+<span class="p">{</span>
+   <span class="n">sum</span> <span class="o">+=</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+   <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="arrayEx7_opt_a">0</li><li data-component="feedback">Each time the loop executes i is incremented and it executes at least once.</li>
+            
+            <li data-component="answer"  id="arrayEx7_opt_b">1</li><li data-component="feedback">Does this code only execute 1 time?</li>
+            
+            <li data-component="answer"  id="arrayEx7_opt_c">2</li><li data-component="feedback">This code will loop till sum is not less than limit.  It adds the value at i of x each time to sum so sum isn't 7 until the 3rd time through the loop.</li>
+            
+            <li data-component="answer" data-correct id="arrayEx7_opt_d">3</li><li data-component="feedback">This will loop three times till sum is 7 and so i will be 3.</li>
+            
+            <li data-component="answer"  id="arrayEx7_opt_e">4</li><li data-component="feedback">This would be true if it was <code>sum <= limit</code>.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx8" >
+            <p>6-9-8: If any two numbers in an array of integers, not necessarily consecutive numbers in the array, are out of order (i.e. the number that occurs first in the array is larger than the number that occurs second), then that is called an inversion. For example, consider an array “x” that has the values {1, 4, 3, 2}.  Then there are three inversions since 4 is greater than both 3 and 2 and 3 is greater than 2.  Which of the following can be used to replace the missing code so that the code correctly counts the number of inversions?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">inversionCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="c1">// missing code goes here</span>
+   <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">)</span>
+         <span class="n">inversionCount</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="arrayEx8_opt_a"><code>for (int j=0 ; j < x.length; j++)</code></li><li data-component="feedback">The inner loop should start at the outer loop current position plus one to not double count inversions.</li>
+            
+            <li data-component="answer"  id="arrayEx8_opt_b"><code>for (int j=0 ; j < x.length - 1; j++)</code></li><li data-component="feedback">The inner loop should start at the outer loop current position plus one to not double count inversions.</li>
+            
+            <li data-component="answer" data-correct id="arrayEx8_opt_c"><code>for (int j=i+1; j < x.length; j++)</code></li><li data-component="feedback">This correctly starts at the outer loop current index plus one and loops through the rest of the array.</li>
+            
+            <li data-component="answer"  id="arrayEx8_opt_d"><code>for (int j=i+1; j < x.length - 1; j++)</code></li><li data-component="feedback">This misses checking the last value in the array since it is <code>j < x.length-1</code>.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx9" >
+            <p>6-9-9: Which of the following correctly copies all the even numbers from <code class="docutils literal notranslate"><span class="pre">array1</span></code> to <code class="docutils literal notranslate"><span class="pre">array2</span></code> in the same order as they are in <code class="docutils literal notranslate"><span class="pre">array1</span></code> without any errors?  Assume that <code class="docutils literal notranslate"><span class="pre">array2</span></code> is large enough for all the copied values.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">.</span>
+<span class="kt">int</span> <span class="n">a2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">a1</span> <span class="o">&lt;</span> <span class="n">array1</span><span class="p">.</span><span class="na">length</span> <span class="p">;</span> <span class="n">a1</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="c1">// if array1[a1] is even</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// array1[a1] is even,</span>
+      <span class="c1">// so copy it</span>
+      <span class="n">a2</span><span class="o">++</span><span class="p">;</span>
+      <span class="n">array2</span><span class="o">[</span><span class="n">a2</span><span class="o">]</span> <span class="o">=</span> <span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">B</span><span class="p">.</span>
+<span class="kt">int</span> <span class="n">a2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">a1</span> <span class="o">&lt;</span> <span class="n">array1</span><span class="p">.</span><span class="na">length</span> <span class="p">;</span> <span class="n">a1</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="c1">// if array1[a1] is even</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// array1[a1] is even,</span>
+      <span class="c1">// so copy it</span>
+      <span class="n">array2</span><span class="o">[</span><span class="n">a2</span><span class="o">]</span> <span class="o">=</span> <span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span><span class="p">;</span>
+      <span class="n">a2</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">C</span><span class="p">.</span>
+<span class="kt">int</span> <span class="n">a2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">a1</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">a1</span> <span class="o">&lt;=</span> <span class="n">array1</span><span class="p">.</span><span class="na">length</span> <span class="p">;</span> <span class="n">a1</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="c1">// if array1[a1] is even</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// array1[a1] is even,</span>
+      <span class="c1">// so copy it</span>
+      <span class="n">array2</span><span class="o">[</span><span class="n">a2</span><span class="o">]</span> <span class="o">=</span> <span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span><span class="p">;</span>
+      <span class="n">a2</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">D</span><span class="p">.</span>
+<span class="kt">int</span> <span class="n">a2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">a1</span> <span class="o">&lt;=</span> <span class="n">array1</span><span class="p">.</span><span class="na">length</span> <span class="p">;</span> <span class="n">a1</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="c1">// if array1[a1] is even</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// array1[a1] is even,</span>
+      <span class="c1">// so copy it</span>
+      <span class="n">a2</span><span class="o">++</span><span class="p">;</span>
+      <span class="n">array2</span><span class="o">[</span><span class="n">a2</span><span class="o">]</span> <span class="o">=</span> <span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="arrayEx9_opt_a">A</li><li data-component="feedback">This increments a2 before copying the value into array2 and so puts it in the wrong place.</li>
+            
+            <li data-component="answer" data-correct id="arrayEx9_opt_b">B</li><li data-component="feedback">This will copy all the even values in array1 to array2 and put them in the same position as they were in array1.</li>
+            
+            <li data-component="answer"  id="arrayEx9_opt_c">C</li><li data-component="feedback">This will cause an out of bounds error.</li>
+            
+            <li data-component="answer"  id="arrayEx9_opt_d">D</li><li data-component="feedback">This increments a2 before copying the value into array2 and so puts it in the wrong place.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="arrayEx10" >
+            <p>6-9-10: After the following code executes what are the values in <code class="docutils literal notranslate"><span class="pre">array2</span></code>?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">array1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">array2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">a2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a1</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">a1</span> <span class="o">&lt;</span> <span class="n">array1</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">a1</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">array2</span><span class="o">[</span><span class="n">a2</span><span class="o">]</span> <span class="o">=</span> <span class="n">array1</span><span class="o">[</span><span class="n">a1</span><span class="o">]</span><span class="p">;</span>
+      <span class="n">a2</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="arrayEx10_opt_a">{4, 3, 0, 0}</li><li data-component="feedback">This copies the value from array1[a1] to array2[a2] but only if the value at array1[a1] is greater than or equal to 2.  So it copies the 4 and 3.  Notice that a2 starts at 0 and a1 starts at 1.</li>
+            
+            <li data-component="answer"  id="arrayEx10_opt_b">{4, 1, 3, 0}</li><li data-component="feedback">This would be true except that a2 is only incremented if the copy occurs.</li>
+            
+            <li data-component="answer"  id="arrayEx10_opt_c">{2, 4, 3, 0}</li><li data-component="feedback">Walk through the very first iteration of the loop and notice that after the first iteration the first value in array2 is 4.</li>
+            
+            <li data-component="answer"  id="arrayEx10_opt_d">{2, 4, 1, 3}</li><li data-component="feedback">This would be true if we were asking for the values in array1.</li>
+            
+
+            </ul>
+            </div>
+            </ul>
+    </div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.8. Multiple-Choice Exercises' data-toggle="tooltip">
+    <a href="Exercises.html" aria-label="6.8. Multiple-Choice Exercises">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 7. ArrayList' data-toggle="tooltip" >
+    <a href="../Unit7-ArrayList/toctree.html" aria-label="7. ArrayList">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>5.7. Static Variables and Methods &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.8. Scope and Access" href="topic-5-8-scope-access.html" />
+    <link rel="prev" title="5.6. Writing Methods" href="topic-5-6-writing-methods.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-5-7-static-vars-methods'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.6. </span>Writing Methods" data-toggle="tooltip">
+    <a href="topic-5-6-writing-methods.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">5.8. </span>Scope and Access' data-toggle="tooltip" >              
+    <a href="topic-5-8-scope-access.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="static-variables-and-methods">
+<h1><span class="section-number">5.7. </span>Static Variables and Methods<a class="headerlink" href="#static-variables-and-methods" title="Permalink to this headline">¶</a></h1>
+<p>In Unit 2, we explored the Math class and its many static methods like Math.random(), and we’ve always used a main method which is static. In this lesson, you will learn to write your own static variables and methods.</p>
+<ul class="simple">
+<li><p><strong>Static</strong> variables and methods belong to a class and are called with the Class Name rather than using object variables, like ClassName.methodName();</p></li>
+<li><p>There is only one copy of a static variable or method for the whole class. For example, the main method is static because there should only be 1 main method.</p></li>
+<li><p>Static methods can be public or private.</p></li>
+<li><p>The static keyword is placed right after the public/private modifier and right before the type of variables and methods in their declarations.</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">ClassName</span> <span class="p">{</span>
+  <span class="c1">// static variable</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">type</span> <span class="n">variableName</span><span class="p">;</span>
+
+  <span class="c1">// static method</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">returnType</span> <span class="nf">methodName</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// implementation not shown</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// To call a static method or variable, use the Class Name</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ClassName</span><span class="p">.</span><span class="na">staticVariable</span><span class="p">);</span>
+<span class="n">ClassName</span><span class="p">.</span><span class="na">staticMethod</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Static methods only have access to other static variables and static methods. Static methods cannot access or change the values of instance variables or the this reference (since there is no calling object for them), and static methods cannot call non-static methods. However, non-static methods have access to all variables (instance or static) and methods (static or non-static) in the class.</p>
+<p>Since there is only 1 copy of a static variable or method, static variables are often used to count how many objects are generated. In the following class Person, there is a static variable called personCounter that is incremented each time the Person constructor is called to initialize a new Person object. The static method printCounter() prints out its value.  You can also watch how it works in the <a href="http://www.pythontutor.com/visualize.html#code=%20public%20class%20Person%20%0A%20%20%7B%0A%20%20%20%20%20//%20instance%20variables%20%0A%20%20%20%20%20private%20String%20name%3B%0A%20%20%20%20%20private%20String%20email%3B%0A%20%20%20%20%20private%20String%20phoneNumber%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Static%20counter%20variable%0A%20%20%20%20%20public%20static%20int%20personCounter%20%3D%200%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20static%20method%20to%20print%20out%20counter%0A%20%20%20%20%20public%20static%20void%20printPersonCounter%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20System.out.println%28%22Person%20counter%3A%20%22%20%2B%20personCounter%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20construct%20a%20Person%20copying%20in%20the%20data%20into%20the%20instance%20variables%0A%20%20%20%20%20public%20Person%28String%20initName,%20String%20initEmail,%20String%20initPhone%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20name%20%3D%20initName%3B%0A%20%20%20%20%20%20%20%20email%20%3D%20initEmail%3B%0A%20%20%20%20%20%20%20%20phoneNumber%20%3D%20initPhone%3B%0A%20%20%20%20%20%20%20%20personCounter%2B%2B%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20toString%28%29%20method%0A%20%20%20%20%20public%20String%20toString%28%29%20%0A%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20return%20%20name%20%2B%20%22%3A%20%22%20%2B%20email%20%2B%20%22%20%22%20%2B%20phoneNumber%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20//%20call%20the%20constructor%20to%20create%20a%20new%20person%0A%20%20%20%20%20%20%20%20Person%20p1%20%3D%20new%20Person%28%22Sana%22,%20%22sana%40gmail.com%22,%20%22123-456-7890%22%29%3B%0A%20%20%20%20%20%20%20%20Person%20p2%20%3D%20new%20Person%28%22Jean%22,%20%22jean%40gmail.com%22,%20%22404%20899-9955%22%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20Person.printPersonCounter%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D%0A%20%20&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a> by clicking the CodeLens button below.</p>
+
+<div data-childcomponent="PersonClassStaticCounter" class="runestone explainer ac_section alert alert-warning">
+<p>What will the following code print out? Try adding another Person object and see what happens. Try the CodeLens button to run the code step by step.</p>
+
+<textarea data-component="activecode" id=PersonClassStaticCounter data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Person
+{
+   // instance variables
+   private String name;
+   private String email;
+   private String phoneNumber;
+
+   // Static counter variable
+   public static int personCounter = 0;
+
+   // static method to print out counter
+   public static void printPersonCounter() {
+        System.out.println("Person counter: " + personCounter);
+   }
+
+   // constructor: construct a Person copying in the data into the instance variables
+   public Person(String initName, String initEmail, String initPhone)
+   {
+      name = initName;
+      email = initEmail;
+      phoneNumber = initPhone;
+      personCounter++;
+   }
+
+   // toString() method
+   public String toString()
+   {
+     return  name + ": " + email + " " + phoneNumber;
+   }
+
+   // main method for testing
+   public static void main(String[] args)
+   {
+      // call the constructor to create a new person
+      Person p1 = new Person("Sana", "sana@gmail.com", "123-456-7890");
+      Person p2 = new Person("Jean", "jean@gmail.com", "404 899-9955");
+
+      Person.printPersonCounter();
+   }
+}
+====
+import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+    @Test
+      public void testMain() throws IOException
+      {
+          String output = getMethodOutput("main");
+          String expect = "Person counter: 2";
+          boolean passed = getResults(expect, output, "Expected output from main", true);
+          assertTrue(passed);
+      }
+  }
+</textarea>
+</div>
+<p>Another common use for static variables is the keep track of a minimum or maximum value or an average of the values in a collection of objects.</p>
+<p><a class="reference internal" href="../_images/exercise5.png"><img alt="exercise" class="align-middle" src="../_images/exercise5.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="staticTrace" >
+            <p>5-7-1: Consider the class Temperature below which has a static variable. What is the output of the main method below?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Temperature</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">temperature</span><span class="p">;</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="n">maxTemp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">Temperature</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
+   <span class="p">{</span>
+        <span class="n">temperature</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">&gt;</span> <span class="n">maxTemp</span><span class="p">)</span>
+            <span class="n">maxTemp</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+        <span class="n">Temperature</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">75</span><span class="p">);</span>
+        <span class="n">Temperature</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+        <span class="n">Temperature</span> <span class="n">t3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">65</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Max Temp: &quot;</span> <span class="o">+</span> <span class="n">Temperature</span><span class="p">.</span><span class="na">maxTemp</span><span class="p">);</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<li data-component="answer"  id="staticTrace_opt_a"><p>Max Temp: 0</p>
+</li><li data-component="feedback" id="staticTrace_opt_a">
+<p>maxTemp is changed in each call to the Temperature() constructor.</p></li><li data-component="answer"  id="staticTrace_opt_b"><p>There is a compiler error because the static variable maxTemp cannot be used inside a non-static constructor.</p>
+</li><li data-component="feedback" id="staticTrace_opt_b">
+<p>Non-static methods and constructors can use any instance or static variables in the class.</p></li><li data-component="answer" data-correct id="staticTrace_opt_c"><p>Max Temp: 100</p>
+</li><li data-component="feedback" id="staticTrace_opt_c">
+<p>Yes, maxTemp is initialized to 0 and then changed to 75 and then 100 by the constructor calls.</p></li><li data-component="answer"  id="staticTrace_opt_d"><p>Max Temp: 75</p>
+</li><li data-component="feedback" id="staticTrace_opt_d">
+<p>maxTemp will be changed to 100 by the second constructor call since 100 &gt; 75.</p></li><li data-component="answer"  id="staticTrace_opt_e"><p>Max Temp: 65</p>
+</li><li data-component="feedback" id="staticTrace_opt_e">
+<p>maxTemp will not be changed to 65 by the third constructor call because 67 is not &gt; 100.</p></li>
+
+            </ul>
+            </div>
+            <p>You can see this code in action in the <a href="http://www.pythontutor.com/visualize.html#code=public%20class%20Temperature%20%0A%7B%0A%20%20%20private%20double%20temperature%3B%0A%20%20%20public%20static%20double%20maxTemp%20%3D%200%3B%0A%20%20%20%0A%20%20%20public%20Temperature%28double%20t%29%0A%20%20%20%7B%0A%20%20%20%20%20%20%20temperature%20%3D%20t%3B%0A%20%20%20%20%20%20%20if%20%28t%20%3E%20maxTemp%29%0A%20%20%20%20%20%20%20%20%20%20%20maxTemp%20%3D%20t%3B%0A%20%20%20%7D%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%7B%0A%20%20%20%20%20%20%20Temperature%20t1%20%3D%20new%20Temperature%2875%29%3B%0A%20%20%20%20%20%20%20Temperature%20t2%20%3D%20new%20Temperature%28100%29%3B%0A%20%20%20%20%20%20%20Temperature%20t3%20%3D%20new%20Temperature%2865%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22Max%20Temp%3A%20%22%20%2B%20Temperature.maxTemp%29%3B%0A%20%20%20%7D%0A%7D&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a>.</p>
+<p><a class="reference internal" href="../_images/codingExercise5.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise5.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="TemperatureBugs" class="runestone explainer ac_section alert alert-warning">
+<p>Fix the bugs in the following code.</p>
+
+<textarea data-component="activecode" id=TemperatureBugs data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Temperature
+{
+  private double temperature;
+  public static double maxTemp = 0;
+
+  public Temperature(double t)
+  {
+      temperature = t;
+      if (t > maxTemp)
+         maxTemp = t;
+  }
+
+  public static printMax()
+  {
+     System.out.println(temperature);
+  }
+
+  public static void main(String[] args)
+  {
+     Temperature t1 = new Temperature(75);
+     Temperature t2 = new Temperature(100);
+     Temperature.printMax();
+  }
+ }
+ ====
+ import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+      @Test
+      public void testCodeContains1()
+      {
+
+          boolean passed = checkCodeContains("return type of printMax()", "public static void printMax()");
+          assertTrue(passed);
+      }
+
+       @Test
+      public void testCodeContains2()
+      {
+
+          boolean passed = checkCodeContains("static variable maxTemp in static function", "System.out.println(maxTemp);");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testMain() throws IOException
+      {
+          String output = getMethodOutput("main");
+          String expect = "100.0";
+          boolean passed = getResults(expect, output, "Expected output from main", true);
+          assertTrue(passed);
+      }
+  }
+</textarea>
+</div>
+<div class="section" id="groupwork-programming-challenge-static-song-and-counter">
+<h2><span class="section-number">5.7.1. </span><a class="reference internal" href="../_images/groupwork5.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork5.png" style="width: 35px;" /></a> Programming Challenge : Static Song and counter<a class="headerlink" href="#groupwork-programming-challenge-static-song-and-counter" title="Permalink to this headline">¶</a></h2>
+<p>In the last lesson, we wrote a class with methods to print out the song <a href="https://www.lingokids.com/english-for-kids/songs/the-ants-go-marching-song" target="_blank">The Ants Go Marching</a>. Notice that this is a class where there are no instance variables and we don’t really need to generate multiple objects. With students or pets, it makes sense to have multiple objects. With the Song, we can just make the methods static and have just 1 copy of them.</p>
+<ol class="arabic simple">
+<li><p>Copy in your class from the last lesson into this active code window. Change the method(s) that print out the verses of the Song to be static. In the main method, change how you call the static methods by using just the classname instead of creating an object.</p></li>
+<li><p>Add a static variable to the class that keeps track of the number of verses. Increment this variable each time the method to print a verse is called and print it out.</p></li>
+</ol>
+
+<div data-childcomponent="challenge-5-7-static-song" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=challenge-5-7-static-song data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Song
+{
+  // Add a static verse counter variable
+
+
+  // Change the method(s) to be static
+
+
+
+  public static void main(String args[])
+  {
+    // Call the static method(s) to print out the Song
+
+  }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">5.7.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Static methods and variables include the keyword static  before their name in the header or declaration. They can be public or private.</p></li>
+<li><p>Static variables belong to the class, with all objects of a class sharing a single static variable.</p></li>
+<li><p>Static methods are associated with the class, not objects of the class.</p></li>
+<li><p>Static variables are used with the class name and the dot operator, since they are associated with a class, not objects of a class.</p></li>
+<li><p>Static methods cannot access or change the values of instance variables, but they can access or change the values of static variables.</p></li>
+<li><p>Static methods cannot call non-static methods.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.6. Writing Methods' data-toggle="tooltip">
+    <a href="topic-5-6-writing-methods.html" aria-label="5.6. Writing Methods">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.8. Scope and Access' data-toggle="tooltip" >
+    <a href="topic-5-8-scope-access.html" aria-label="5.8. Scope and Access">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

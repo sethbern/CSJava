@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>6.3. Enhanced For-Loop (For-Each) for Arrays &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.4. Array Algorithms (FRQs)" href="topic-6-4-array-algorithms.html" />
+    <link rel="prev" title="6.2. Traversing Arrays with For Loops" href="topic-6-2-traversing-arrays.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csawesome&page=topic-6-3-arrays-with-foreach'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.2. </span>Traversing Arrays with For Loops" data-toggle="tooltip">
+    <a href="topic-6-2-traversing-arrays.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.4. </span>Array Algorithms (FRQs)' data-toggle="tooltip" >              
+    <a href="topic-6-4-array-algorithms.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="enhanced-for-loop-for-each-for-arrays">
+<h1><span class="section-number">6.3. </span>Enhanced For-Loop (For-Each) for Arrays<a class="headerlink" href="#enhanced-for-loop-for-each-for-arrays" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">There is a special kind of loop that can be used with arrays that is called an <strong>enhanced for loop</strong> or a <strong>for each loop</strong>. This loop is much easier to write because it does not involve an index variable or the use of the []. It just sets up a variable that is set to each value in the array successively.</p>
+<p>To set up a for-each loop, use <strong>for (type variable : arrayname)</strong> where the type is the type for elements in the array, and read it as “for each variable value in arrayname”. You may have used a similar loop in AP CSP Pseudocode or App Inventor with lists like below.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/appinvForEachComparison.png"><img alt="../_images/appinvForEachComparison.png" src="../_images/appinvForEachComparison.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Comparing App Inventor, AP CSP, and Java for each</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>See the examples below in Java that loop through an int and a String array. Notice the type of the loop variable is the type of the array.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">highScores</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+<span class="n">String</span><span class="o">[]</span> <span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Jamal&quot;</span><span class="p">,</span> <span class="s">&quot;Emily&quot;</span><span class="p">,</span> <span class="s">&quot;Destiny&quot;</span><span class="p">,</span> <span class="s">&quot;Mateo&quot;</span><span class="p">};</span>
+<span class="c1">// for each loop: for each value in highScores</span>
+<span class="c1">// for (type variable : arrayname)</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">value</span> <span class="p">:</span> <span class="n">highScores</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Notice no index or [ ], just the variable value!</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">value</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// for each loop with a String array to print each name</span>
+<span class="c1">// the type for variable name is String!</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">name</span> <span class="p">:</span> <span class="n">names</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Use the enhanced for each loop with arrays whenever you can, because it cuts down on errors. You can use it whenever you need to loop through all the elements of an array and don’t need to know their index and don’t need to change their values.  It starts with the first item in the array (the one at index 0) and continues through in order to the last item in the array. This type of loop can only be used with arrays and some other collections of items like ArrayLists which we will see in the next unit.</p>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="foreach1" class="runestone explainer ac_section alert alert-warning">
+<p>Try the following code. Notice the for each loop with an int array and a String array. Add another high score and another name to the arrays and run again.</p>
+
+<textarea data-component="activecode" id=foreach1 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class ForEachDemo
+{
+   public static void main(String[] args)
+   {
+     int[] highScores = { 10, 9, 8, 8};
+     String[] names = {"Jamal", "Emily", "Destiny", "Mateo"};
+     // for each loop with an int array
+     for (int value : highScores)
+     {
+         System.out.println( value );
+     }
+     // for each loop with a String array
+     for (String value : names)
+     {
+         System.out.println(value); // this time it's a name!
+     }
+   }
+ }
+ ====
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("ForEachDemo");
+     }
+
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect1 = "10\n9\n8\n8";
+         String expect2 = "Jamal\nEmily\nDestiny\nMateo";
+
+         boolean passed = output.contains(expect1) && output.contains(expect2);
+
+         passed = getResults(expect1 + " " + expect2, output, "Original main()", passed);
+         assertTrue(passed);
+     }
+
+     @Test
+     public void test2()
+     {
+         String output = getMethodOutput("main");
+         String expect = "10 9 8 8 Jamal Emily Destiny Mateo".replaceAll(" ", "\n");
+
+         boolean passed = !output.equals(expect) && output.length() > expect.length();
+
+         passed = getResults(expect, output, "Added another high score and name", passed);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="evenLoop" class="runestone explainer ac_section alert alert-warning">
+<p>Rewrite the following for loop which prints out the even numbers in the array as an enhanced for-each loop. Make sure it works!</p>
+
+<textarea data-component="activecode" id=evenLoop data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class EvenLoop
+{
+   public static void main(String[] args)
+   {
+     int[ ] values = {6, 2, 1, 7, 12, 5};
+     // Rewrite this loop as a for each loop and run
+     for (int i=0; i < values.length; i++)
+     {
+       if (values[i] % 2 == 0)
+           System.out.println(values[i] + " is even!");
+     }
+   }
+}
+====
+// Test for Lesson 6.3.2 - EvenLoop
+
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("EvenLoop");
+     }
+
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect = "6 is even!\n2 is even!\n12 is even!";
+
+         boolean passed = getResults(expect, output, "main()");
+         assertTrue(passed);
+     }
+
+     @Test
+     public void test2()
+     {
+         boolean passed = checkCodeContains("for each loop", "for(int * : values)");
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<div class="section" id="foreach-loop-limitations">
+<h2><span class="section-number">6.3.1. </span>Foreach Loop Limitations<a class="headerlink" href="#foreach-loop-limitations" title="Permalink to this headline">¶</a></h2>
+<p>What if we had a loop that incremented all the elements in the array. Would that work with an enhanced for-each loop? Unfortunately not! Because only the variable in the loop changes, not the real array values. We would need an indexed loop to modify array elements. Try it in the Active Code below or in the <a href="http://www.pythontutor.com/visualize.html#code=%20%20%20public%20class%20IncrementLoop%0A%20%20%20%7B%20%20%20%20%20%20%0A%20%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20int%5B%20%5D%20values%20%3D%20%7B6,%202,%201,%207,%2012,%205%7D%3B%0A%20%20%20%20%20%20%20%20//%20Can%20this%20loop%20increment%20the%20values%3F%0A%20%20%20%20%20%20%20%20for%20%28int%20val%20%3A%20values%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20val%2B%2B%3B%0A%20%20%20%20%20%20%20%20%20%20System.out.println%28%22New%20val%3A%20%22%20%2B%20val%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20//%20Print%20out%20array%20to%20see%20if%20they%20really%20changed%0A%20%20%20%20%20%20%20%20for%20%28int%20v%20%3A%20values%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20System.out.print%28v%20%2B%20%22%20%22%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%20&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> by clicking the CodeLens button and step through the code to see why it doesn’t work.</p>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="incrementLoop" class="runestone explainer ac_section alert alert-warning">
+<p>The for-each loop below cannot change the values in the array because only the loop variable value will change. Run it with the CodeLens button to see why this is. Then, change the loop to an indexed for loop to make it change the array values.</p>
+
+<textarea data-component="activecode" id=incrementLoop data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class IncrementLoop
+{
+   public static void main(String[] args)
+   {
+     int[ ] values = {6, 2, 1, 7, 12, 5};
+     // Can this loop increment the values?
+     for (int val : values)
+     {
+       val++;
+       System.out.println("New val: " + val);
+     }
+     // Print out array to see if they really changed
+     System.out.println("Array after the loop: ");
+     for (int v : values)
+     {
+       System.out.print(v + " ");
+     }
+   }
+}
+====
+// Test for Lesson 6.3.3 - IncrementLoop
+
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("IncrementLoop");
+     }
+
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect = "New val: 7\nNew val: 3\nNew val: 2\nNew val: 8\nNew val: 13\nNew val: 6\nArray after the loop:\n7 3 2 8 13 6";
+
+         boolean passed = getResults(expect, output, "main()");
+         assertTrue(passed);
+     }
+
+     @Test
+     public void test2()
+     {
+         String target = "for (int * = #; * ? *.length; *~)";
+         boolean passed = checkCodeContains("for loop", target);
+         assertTrue(passed);
+
+     }
+ }
+</textarea>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enhanced for each loops cannot be used in all situations. Only use for-each loops when you want to loop through <strong>all</strong> the values in an array without changing their values.</p>
+<ul class="simple">
+<li><p>Do not use for each loops if you need the index.</p></li>
+<li><p>Do not use for each loops if  you need to change the values in the array.</p></li>
+<li><p>Do not use for each loops if you want to loop through only part of an array or in a different order.</p></li>
+</ul>
+</div>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qab_6A" >
+            <p>6-3-1: What are some of the reasons you would use an enhanced for-each loop instead of a for loop?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nl">I:</span> <span class="n">If</span> <span class="n">you</span> <span class="n">wish</span> <span class="n">to</span> <span class="n">access</span> <span class="n">every</span> <span class="n">element</span> <span class="n">of</span> <span class="n">an</span> <span class="n">array</span><span class="p">.</span>
+<span class="nl">II:</span> <span class="n">If</span> <span class="n">you</span> <span class="n">wish</span> <span class="n">to</span> <span class="n">modify</span> <span class="n">elements</span> <span class="n">of</span> <span class="n">the</span> <span class="n">array</span><span class="p">.</span>
+<span class="nl">III:</span> <span class="n">If</span> <span class="n">you</span> <span class="n">wish</span> <span class="n">to</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">elements</span> <span class="n">through</span> <span class="n">a</span> <span class="n">variable</span> <span class="n">name</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">an</span> <span class="n">array</span> <span class="n">index</span><span class="p">.</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="qab_6A_opt_a">Only I.</li><li data-component="feedback">This style of loop does access every element of the array, but using a for-each loop also means the user can access elements through the variable name.</li>
+            
+            <li data-component="answer" data-correct id="qab_6A_opt_b">I and III only.</li><li data-component="feedback">Correct! For-each loops access all elements and enable users to use a variable name to refer to array elements, but do not allow users to modify elements directly.</li>
+            
+            <li data-component="answer"  id="qab_6A_opt_c">II and III only.</li><li data-component="feedback">For-each loops, as well as allowing users to refer to array elements, run through every element. For-each loops also do not allow users to modify elements directly.</li>
+            
+            <li data-component="answer"  id="qab_6A_opt_d">All of the Above.</li><li data-component="feedback">For-each loops access all of an array's elements and allow users to refer to elements through a variable, but do not allow users to modify elements directly.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qfor-each" >
+            <p>6-3-2: What is the output of the following code segment?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[</span> <span class="o">]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">44</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">11</span><span class="p">};</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">num</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<li data-component="answer" data-correct id="qfor-each_opt_a"><p>44 33 22 11</p>
+</li><li data-component="feedback" id="qfor-each_opt_a">
+<p>The array is unchanged because the foreach loop cannot modify the array elements.</p></li><li data-component="answer"  id="qfor-each_opt_b"><p>46 35 24 13</p>
+</li><li data-component="feedback" id="qfor-each_opt_b">
+<p>Remember that the foreach loop cannot modify the array elements, but it also uses multiplication, not addition.</p></li><li data-component="answer"  id="qfor-each_opt_c"><p>88 66 44 22</p>
+</li><li data-component="feedback" id="qfor-each_opt_c">
+<p>Remember that the foreach loop cannot modify the array elements. Only the variable num will be doubled, not the original array values.</p></li><li data-component="answer"  id="qfor-each_opt_d"><p>The code will not compile.</p>
+</li><li data-component="feedback" id="qfor-each_opt_d">
+<p>This code will compile.</p></li>
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="foreach-loop-algorithms">
+<h2><span class="section-number">6.3.2. </span>Foreach Loop Algorithms<a class="headerlink" href="#foreach-loop-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>Here is an object-oriented example that has the array as a private instance variable in the class and provides a public method average that uses a for-each loop.  You can use the <a href="http://www.pythontutor.com/java.html#code=public+class+ArrayWorker%0A%7B%0A+++private+int%5B+%5D+values%3B%0A%0A+++public+ArrayWorker(int%5B%5D+theValues)%0A+++%7B%0A++++++values+%3D+theValues%3B%0A+++%7D%0A%0A+++public+double+getAverage()%0A+++%7B%0A+++++double+total+%3D+0%3B%0A+++++for+(int+val+%3A+values)%0A+++++%7B%0A+++++++total++%3D+total+%2B+val%3B%0A+++++%7D%0A+++++return+total+/+values.length%3B%0A+++%7D%0A%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A+++++int%5B%5D+numArray+%3D++%7B2,+6,+7,+12,+5%7D%3B%0A+++++ArrayWorker+aWorker+%3D+new+ArrayWorker(numArray)%3B%0A+++++System.out.println(aWorker.getAverage())%3B%0A+++%7D%0A%7D%0A%0A&mode=display&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> or the Code Lens button to step through this code.</p>
+
+<div data-childcomponent="lcaf2" class="runestone explainer ac_section alert alert-warning">
+<p>Try the code below.</p>
+
+<textarea data-component="activecode" id=lcaf2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class ArrayWorker
+{
+   private int[ ] values;
+
+   public ArrayWorker(int[] theValues)
+   {
+      values = theValues;
+   }
+
+   public double getAverage()
+   {
+     double total = 0;
+     for (int val : values)
+     {
+       total  = total + val;
+     }
+     return total / values.length;
+   }
+
+   public static void main(String[] args)
+   {
+     int[] numArray =  {2, 6, 7, 12, 5};
+     ArrayWorker aWorker = new ArrayWorker(numArray);
+     System.out.println(aWorker.getAverage());
+   }
+}
+====
+// Test for Lesson 6.3.3 - IncrementLoop
+
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("ArrayWorker");
+     }
+
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect = "6.4";
+
+         boolean passed = getResults(expect, output, "main()", true);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="pab_2"  data-adaptive="true"      data-numbered="left" >
+        <span data-question>6-3-3: The following method has the correct code to return the largest value in an integer array called <i>vals</i> (an instance variable of the current object), but the code is mixed up.  Drag the blocks from the left into the correct order on the right and indent them correctly as well. You will be told if any of the blocks are in the wrong order or not indented correctly.</p></span>public int getLargest()
+{
+---
+  int largest = vals[0];
+---
+  for (int item : vals)
+  {
+---
+    if (item > largest)
+    {
+---
+      largest = item;
+---
+    }  // end if
+---
+  } // end for
+  return largest;
+---
+} // end method
+        </pre>
+        </div>
+    <p>If you want to step through the correct code to see what it does in the Java Visualizer click on the following <a href="http://www.pythontutor.com/java.html#code=public+class+ArrayWorker%0A%7B%0A+++private+int%5B+%5D+values%3B%0A%0A+++public+ArrayWorker(int%5B%5D+theValues)%0A+++%7B%0A++++++values+%3D+theValues%3B%0A+++%7D%0A%0A+++public+double+getAverage()%0A+++%7B%0A+++++double+total+%3D+0%3B%0A+++++for+(int+val+%3A+values)%0A+++++%7B%0A+++++++total++%3D+total+%2B+val%3B%0A+++++%7D%0A+++++return+total+/+values.length%3B%0A+++%7D%0A+++%0A+++public+int+getLargest()%0A+++%7B%0A++%0A+++++int+largest+%3D+values%5B0%5D%3B%0A%0A+++++for+(int+item+%3A+values)%0A+++++%7B%0A%0A+++++++if+(item+%3E+largest)%0A+++++++%7B%0A%0A+++++++++largest+%3D+item%3B%0A%0A+++++++%7D++//+end+if+%0A%0A+++++%7D+//+end+for%0A+++++return+largest%3B%0A%0A+++%7D+//+end+method%0A%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A+++++int%5B%5D+numArray+%3D++%7B2,+6,+7,+12,+5%7D%3B%0A+++++ArrayWorker+aWorker+%3D+new+ArrayWorker(numArray)%3B%0A+++++System.out.println(aWorker.getLargest())%3B%0A+++%7D%0A%7D%0A%0A&mode=display&curInstr=0" target="_blank">Java visualizer link</a>.</p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qab_3" >
+            <p>6-3-4: Given that <code class="docutils literal notranslate"><span class="pre">array</span></code> is an array of integers and <code class="docutils literal notranslate"><span class="pre">target</span></code> is an integer value, which of the following best describes the conditions under which the following code segment will return true?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">temp</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">val</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span> <span class="n">target</span> <span class="o">==</span> <span class="n">val</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="qab_3_opt_a">Whenever the first element in <i>array</i> is equal to <i>target</i>.</li><li data-component="feedback">This would be true if the loop started at the end of the array and moved toward the beginning.  But, it will loop from the first element to the last.</li>
+            
+            <li data-component="answer"  id="qab_3_opt_b">Whenever <i>array</i> contains any element which equals <i>target</i>.</li><li data-component="feedback">This would be true if temp was only set to the result of checking if the current element in the array is equal to <i>target</i> when it is <i>false</i>.  But, it is reset each time through the loop.</li>
+            
+            <li data-component="answer" data-correct id="qab_3_opt_c">Whenever the last element in <i>array</i> is equal to <i>target</i>.</li><li data-component="feedback">The variable <i>temp</i> is assigned to the result of checking if the current element in the array is equal to <i>target</i>.  The last time through the loop it will check if the last element is equal to <i>val</i>.</li>
+            
+            <li data-component="answer"  id="qab_3_opt_d">Whenever only 1 element in <i>array</i> is equal to <i>target</i>.</li><li data-component="feedback">There is no count of the number of times the array element is equal to <i>target</i>.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="groupwork-programming-challenge-spellchecker-2">
+<h2><span class="section-number">6.3.3. </span><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Programming Challenge : SpellChecker 2<a class="headerlink" href="#groupwork-programming-challenge-spellchecker-2" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/spellcheck.png"><img alt="Spell Checker" class="align-left" src="../_images/spellcheck.png" style="width: 100px;" /></a>
+<p>Copy the spellcheck method that you used in the Spell Checker Challenge in the last lesson. Re-write the method  to use an enhanced for-each loop instead of an indexed for-loop. If you did the optional printStartsWith(firstLetters) method, re-write that one too. You may use the code in <a href= "https://repl.it/@BerylHoffman/SpellChecker1" target="_blank">repl.it</a> instead to have the full dictionary.</p>
+
+<div data-childcomponent="challenge-6-3-spellchecker2" class="runestone explainer ac_section alert alert-warning">
+<p>Write a spellcheck() method using an enhanced for-each loop that takes a word as a parameter and returns true if it is in the dictionary array. Return false if it is not found.</p>
+
+<textarea data-component="activecode" id=challenge-6-3-spellchecker2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class SpellChecker
+{
+  private String[] dictionary = {"the","of","and","a","to","in","is","you","that","it","he","was","for","on","are","as","with","his","they","I","at","be","this","have","from","or","one","had","by","word","but","not","what","all","were","we","when","your","can","said","there","use","an","each","which","she","do","how","their","if","will","up","other","about","out","many","then","them","these","so","some","her","would","make","like","him","into","time","has","look","two","more","write","go","see","number","no","way","could","people","my","than","first","water","been","call","who","oil","its","now","find","long","down","day","did","get","come","made","may","cat","dog","cats","dogs"};
+
+   // Re-write the spellcheck(word) (and optionally the printStartsWith(firstLetters)) methods to use enhanced for-each loops.
+
+   /* Write a spellcheck() method using an enhanced for-each loop
+    * that takes a word as a parameter and returns true if it is
+    * in the dictionary array. Return false if it is not found.
+    */
+
+
+
+   public static void main(String[] args)
+   {
+     SpellChecker checker = new SpellChecker();
+     /* Uncomment to test your method
+     String word = "catz";
+     if (checker.spellcheck(word) == true)
+         System.out.println(word + " is spelled correctly!");
+     else
+         System.out.println(word + " is misspelled!");
+     */
+
+    // Optional (not autograded)
+    // checker.printStartsWith("a");
+   }
+}
+====
+// Test for Lesson 6.2.5 - challenge-6-2-spell-checker
+
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("SpellChecker");
+     }
+
+     @Test
+     public void testMain()
+     {
+         String output = getMethodOutput("main");
+         String expect = "catz is misspelled!";
+
+         boolean passed = output.contains(expect);
+
+         passed = getResults(expect, output, "Did you uncomment the main method?", passed);
+         assertTrue(passed);
+     }
+
+
+
+     @Test
+     public void test3()
+     {
+         Object[] args = {"dogz"};
+         String output = getMethodOutput("spellcheck", args);
+         String expect = "false";
+
+         boolean passed = getResults(expect, output, "spellcheck(\"dogz\")");
+         assertTrue(passed);
+     }
+
+     @Test
+     public void test4()
+     {
+         Object[] args = {"dog"};
+         String output = getMethodOutput("spellcheck", args);
+         String expect = "true";
+
+         boolean passed = getResults(expect, output, "spellcheck(\"dog\")");
+         assertTrue(passed);
+     }
+
+     @Test
+     public void testFor() throws IOException
+     {
+         String target = "for (int * = #; * ? #; *~)";
+         boolean passed = checkCodeNotContains("for loop", target);
+         assertTrue(passed);
+     }
+
+     @Test
+     public void testForEach()
+     {
+         boolean passed = checkCodeContains("for each loop", "for(String * : dictionary)");
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">6.3.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>An <strong>enhanced for loop</strong>, also called a <strong>for each loop</strong>, can be used to loop through an array without using an index variable.</p></li>
+<li><p>An enhanced for loop header includes a variable, referred to as the enhanced for loop variable, that holds each value in the array.</p></li>
+<li><p>For each iteration of the enhanced for loop, the enhanced for loop variable is assigned a copy of an element without using its index.</p></li>
+<li><p>Assigning a new value to the enhanced for loop variable does not change the value stored in the array.</p></li>
+<li><p>Program code written using an enhanced for loop to traverse and access elements in an array can be rewritten using an indexed for loop or a while loop.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.2. Traversing Arrays with For Loops' data-toggle="tooltip">
+    <a href="topic-6-2-traversing-arrays.html" aria-label="6.2. Traversing Arrays with For Loops">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.4. Array Algorithms (FRQs)' data-toggle="tooltip" >
+    <a href="topic-6-4-array-algorithms.html" aria-label="6.4. Array Algorithms (FRQs)">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

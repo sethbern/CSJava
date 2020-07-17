@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>7.6. Sorting Algorithms &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.7. Ethics of Data Collection and Data Privacy" href="topic-7-7-data-ethics.html" />
+    <link rel="prev" title="7.5. Searching Algorithms" href="topic-7-5-searching.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-7-6-sorting'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">7.5. </span>Searching Algorithms" data-toggle="tooltip">
+    <a href="topic-7-5-searching.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">7.7. </span>Ethics of Data Collection and Data Privacy' data-toggle="tooltip" >              
+    <a href="topic-7-7-data-ethics.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="sorting-algorithms">
+<h1><span class="section-number">7.6. </span>Sorting Algorithms<a class="headerlink" href="#sorting-algorithms" title="Permalink to this headline">¶</a></h1>
+<p>There are many sorting algorithms to put an array or ArrayList elements in alphabetic or numerical order. We will show these algorithms below for arrays. The three sorting algorithms that you need to know for the AP CS A exam are:</p>
+<ul class="simple" id="index-0">
+<li><p>Selection Sort - Select the smallest item from the current location on to the end of the array and swap it with the value at the current position.  Do this from index 0 to the array length - 2.  You don’t have to process the last element in the array, it will already be sorted when you compare the prior element to the last element.</p></li>
+<li><p>Insertion Sort - Insert the next unsorted element in the already sorted part of the array by moving larger values to the right.  Start at index 1 and loop through the entire array.</p></li>
+<li><p>Merge sort - Break the elements into two parts and recursively sort each part.  An array of one item is sorted (base case).  Then merge the two sorted arrays into one. MergeSort will be covered in Unit 10.</p></li>
+</ul>
+<div class="section" id="selection-sort">
+<h2><span class="section-number">7.6.1. </span>Selection Sort<a class="headerlink" href="#selection-sort" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">The selection sort that you need to know for the exam starts at index 0 and looks through the entire array keeping track of the the index of the smallest value in the array and then swaps the value at the smallest index with the value at index 0.  Then it does the same thing for index 1, then 2, and so on until it reaches the length of the array minus one.  At this point the array is sorted in ascending order.</p>
+<p>Here is a folk dance video that shows the selection sort process.</p>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="Ns4TPTC8whw" class="align-center youtube-video" data-video-height="281" data-video-width="500" data-video-videoid="Ns4TPTC8whw" data-video-divid="Ns4TPTC8whw" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (Ns4TPTC8whw)</span> </p>
+    </div>
+    <p>And a short video that describes how selection sort works.</p>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="g-PGLbMth_g" class="align-center youtube-video" data-video-height="281" data-video-width="500" data-video-videoid="g-PGLbMth_g" data-video-divid="g-PGLbMth_g" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (g-PGLbMth_g)</span> </p>
+    </div>
+    <p>To identify a selection sort look for the following:</p>
+<ul class="simple">
+<li><p>a nested for loop with the outer loop starting at 0 and ending when the index reaches length - 1 (see line 7 below)</p></li>
+<li><p>the index of the smallest value should start at the outer loop index (see line 9 below)</p></li>
+<li><p>the inner loop should start at the outer loop index + 1 and loop through the whole array (see line 10 below)</p></li>
+<li><p>if the value in the array at the index of the inner loop is less than the value at the smallest index then set the smallest index to the index of the inner loop (see lines 12 - 15)</p></li>
+<li><p>swap the value at the outer loop index and the smallest value (the one at the smallest value index) (see lines 17-19)</p></li>
+</ul>
+<p>The code for <code class="docutils literal notranslate"><span class="pre">selectionSort</span></code> below is from the AP CS A course description.</p>
+
+<div data-childcomponent="selSort" class="runestone explainer ac_section alert alert-warning">
+<p>Demonstration of selection sort.</p>
+
+<textarea data-component="activecode" id=selSort data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.Arrays;
+
+public class SortTest
+{
+   public static void selectionSort(int[] elements)
+   {
+      for (int j = 0; j < elements.length - 1; j++)
+      {
+         int minIndex = j;
+         for (int k = j + 1; k < elements.length; k++)
+         {
+            if (elements[k] < elements[minIndex])
+            {
+               minIndex = k;
+            }
+         }
+         int temp = elements[j];
+         elements[j] = elements[minIndex];
+         elements[minIndex] = temp;
+       }
+   }
+
+   public static void main(String[] args)
+   {
+      int[] arr1 = {3, 86, -20, 14, 40};
+      System.out.println(Arrays.toString(arr1));
+      selectionSort(arr1);
+      System.out.println(Arrays.toString(arr1));
+   }
+}
+</textarea>
+</div>
+<p>To see this executing using the Java Visualizer click on the following <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=+import+java.util.Arrays%3B%0A+%0A+public+class+SortTest%0A++%7B%0A+++++public+static+void+selectionSort(int%5B%5D+elements)+%0A+++++%7B%0A++++++++for+(int+j+%3D+0%3B+j+%3C+elements.length+-+1%3B+j%2B%2B)+%0A++++++++%7B%0A+++++++++++int+minIndex+%3D+j%3B%0A+++++++++++for+(int+k+%3D+j+%2B+1%3B+k+%3C+elements.length%3B+k%2B%2B)+%0A+++++++++++%7B%0A++++++++++++++if+(elements%5Bk%5D+%3C+elements%5BminIndex%5D)+%0A++++++++++++++%7B%0A+++++++++++++++++minIndex+%3D+k%3B+%0A++++++++++++++%7D%0A+++++++++++%7D%0A+++++++++++int+temp+%3D+elements%5Bj%5D%3B+%0A+++++++++++elements%5Bj%5D+%3D+elements%5BminIndex%5D%3B+%0A+++++++++++elements%5BminIndex%5D+%3D+temp%3B%0A+++++++++%7D%0A+++++%7D%0A++++++%0A+++++public+static+void+main(String%5B%5D+args)%0A+++++%7B%0A++++++++int%5B%5D+arr1+%3D+%7B3,+86,+-20,+14,+40%7D%3B%0A++++++++System.out.println(Arrays.toString(arr1))%3B%0A++++++++selectionSort(arr1)%3B%0A++++++++System.out.println(Arrays.toString(arr1))%3B%0A+++++%7D%0A++%7D&amp;mode=display&amp;curInstr=0">SelectionSort</a></p>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qsel_1" >
+            <p>7-6-1: Under what condition will a selection sort execute faster?</p>
+
+            <li data-component="answer"  id="qsel_1_opt_a">If the data is already sorted in ascending order</li><li data-component="feedback">How would this be faster?  Look at the code.</li>
+            
+            <li data-component="answer"  id="qsel_1_opt_b">If the data is already sorted in descending order</li><li data-component="feedback">How would this be faster?  Look at the code.</li>
+            
+            <li data-component="answer" data-correct id="qsel_1_opt_c">It will always take the same amount of time to execute</li><li data-component="feedback">A selection sort always does the same number of comparisons and always takes the same time to execute regardless of the order of the data.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qsel_2" >
+            <p>7-6-2: This method should sort the numbers in the passed array into ascending order. But, it does not work. Which of the following lines is wrong?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>public static void selectionSort(int[] elements)
+{
+  for (int j = 0; j &lt; elements.length − 1; j++)      // line 1
+  {
+     int minIndex = j;                               // line 2
+     for (int k = 0; k &lt; elements.length; k++)       // line 3
+     {
+        if (elements[k] &lt; elements[minIndex])        // line 4
+        {
+           minIndex = k;                             // line 5
+        }
+     }
+     int temp = elements[j];
+     elements[j] = elements[minIndex];
+     elements[minIndex] = temp;
+   }
+}
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="qsel_2_opt_a">line 1</li><li data-component="feedback">The outer loop starts at 0 and ends when it reaches the length - 1.</li>
+            
+            <li data-component="answer"  id="qsel_2_opt_b">line 2</li><li data-component="feedback">The min index should be set to the outer loop index before the start of the inner loop.</li>
+            
+            <li data-component="answer" data-correct id="qsel_2_opt_c">line 3</li><li data-component="feedback">The inner loop should start at the outer loop index + 1.</li>
+            
+            <li data-component="answer"  id="qsel_2_opt_d">line 4</li><li data-component="feedback">You should compare the element at the inner loop index to the element at the min index to see if it is smaller.</li>
+            
+            <li data-component="answer"  id="qsel_2_opt_e">line 5</li><li data-component="feedback">You should save the new min index as the inner loop index.</li>
+            
+
+            </ul>
+            </div>
+            <p>You can step through the code above by clicking on the following <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.Arrays%3B%0A%0Apublic+class+SortTest2%0A%7B%0A+++%0A+++public+static+void+selectionSort(int%5B%5D+elements)%0A+++%7B%0A++++++for+(int+j+%3D+0%3B+j+%3C+elements.length+-+1%3B+j%2B%2B)++++++//+line+1%0A++++++%7B%0A+++++++++int+minIndex+%3D+j%3B+++++++++++++++++++++++++++++++//+line+2%0A+++++++++for+(int+k+%3D+0%3B+k+%3C+elements.length%3B+k%2B%2B)+++++++//+line+3%0A+++++++++%7B%0A++++++++++++if+(elements%5Bk%5D+%3C+elements%5BminIndex%5D)++++++++//+line+4%0A++++++++++++%7B%0A+++++++++++++++minIndex+%3D+k%3B+++++++++++++++++++++++++++++//+line+5%0A++++++++++++%7D%0A+++++++++%7D%0A+++++++++int+temp+%3D+elements%5Bj%5D%3B%0A+++++++++elements%5Bj%5D+%3D+elements%5BminIndex%5D%3B%0A+++++++++elements%5BminIndex%5D+%3D+temp%3B%0A++++++%7D%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++int%5B%5D+arr1+%3D+%7B3,+86,+-20,+14,+40%7D%3B%0A++++++System.out.println(Arrays.toString(arr1))%3B%0A++++++selectionSort(arr1)%3B%0A++++++System.out.println(Arrays.toString(arr1))%3B%0A+++%7D%0A++++++%0A%7D&amp;mode=display&amp;curInstr=0">Ex-12-4-2</a>.</p>
+</div>
+<div class="section" id="insertion-sort">
+<h2><span class="section-number">7.6.2. </span>Insertion Sort<a class="headerlink" href="#insertion-sort" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">The insertion sort that you need to know for the exam starts at index 1 and inserts the value at index 1 into its correct place in the already sorted part (the part to the left of the current index). It moves any value larger than the value stored in temp to the right until it either finds the appropriate place to put temp or gets to the front of the array.</p>
+<p>Here is a folk dance video that shows the insertion sort process.</p>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="ROalU379l3U" class="align-center youtube-video" data-video-height="281" data-video-width="500" data-video-videoid="ROalU379l3U" data-video-divid="ROalU379l3U" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (ROalU379l3U)</span> </p>
+    </div>
+    <p>And a short video that describes how insertion sort works.</p>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="JU767SDMDvA" class="align-center youtube-video" data-video-height="281" data-video-width="500" data-video-videoid="JU767SDMDvA" data-video-divid="JU767SDMDvA" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (JU767SDMDvA)</span> </p>
+    </div>
+    <p>To identify an insertion sort look for the following:</p>
+<ul class="simple">
+<li><p>an outer for loop that starts at 1 and loops through the entire array (see line 7)</p></li>
+<li><p>storing the element value at the outer loop index in temp (see line 9)</p></li>
+<li><p>setting the possible index to the outer loop index (see line 10)</p></li>
+<li><p>an inner while loop that loops while the possible index is greater than 0 and the value in temp is less than the value at the possible index minus one (see line 11)</p></li>
+<li><p>set the value at the possible index to the one to the left of it (the one at possible index minus one) (see line 13)</p></li>
+<li><p>decrement the possible index (subtract one from it) (see line 14)</p></li>
+<li><p>when the while loop ends set the value at the possible index to temp (see line 16)</p></li>
+</ul>
+<p>The code for <code class="docutils literal notranslate"><span class="pre">insertionSort</span></code> below is from the AP CS A course description.</p>
+
+<div data-childcomponent="insertionSort" class="runestone explainer ac_section alert alert-warning">
+<p>Demonstration of insertion sort.</p>
+
+<textarea data-component="activecode" id=insertionSort data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.Arrays;
+
+public class SortTest
+{
+   public static void insertionSort(int[] elements)
+   {
+      for (int j = 1; j < elements.length; j++)
+      {
+         int temp = elements[j];
+         int possibleIndex = j;
+         while (possibleIndex > 0 && temp < elements[possibleIndex - 1])
+         {
+            elements[possibleIndex] = elements[possibleIndex - 1];
+            possibleIndex--;
+         }
+         elements[possibleIndex] = temp;
+      }
+  }
+
+   public static void main(String[] args)
+   {
+      int[] arr1 = {3, 86, -20, 14, 40};
+      System.out.println(Arrays.toString(arr1));
+      insertionSort(arr1);
+      System.out.println(Arrays.toString(arr1));
+   }
+}
+</textarea>
+</div>
+<p>To see this executing using the Java Visualizer click on the following <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=++import+java.util.Arrays%3B%0A++%0A++public+class+SortTest%0A++%7B%0A+++++public+static+void+insertionSort(int%5B%5D+elements)+%0A+++++%7B%0A++++++++for+(int+j+%3D+1%3B+j+%3C+elements.length%3B+j%2B%2B)+%0A++++++++%7B%0A+++++++++++int+temp+%3D+elements%5Bj%5D%3B%0A+++++++++++int+possibleIndex+%3D+j%3B%0A+++++++++++while+(possibleIndex+%3E+0+%26%26+temp+%3C+elements%5BpossibleIndex+-+1%5D)+%0A+++++++++++%7B%0A++++++++++++++elements%5BpossibleIndex%5D+%3D+elements%5BpossibleIndex+-+1%5D%3B%0A++++++++++++++possibleIndex--%3B+%0A+++++++++++%7D%0A+++++++++++elements%5BpossibleIndex%5D+%3D+temp%3B%0A++++++++%7D%0A++++%7D%0A++++++%0A+++++public+static+void+main(String%5B%5D+args)%0A+++++%7B%0A++++++++int%5B%5D+arr1+%3D+%7B3,+86,+-20,+14,+40%7D%3B%0A++++++++System.out.println(Arrays.toString(arr1))%3B%0A++++++++insertionSort(arr1)%3B%0A++++++++System.out.println(Arrays.toString(arr1))%3B%0A+++++%7D%0A++%7D&amp;mode=display&amp;curInstr=0">Insertion-Sort</a></p>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qins_1" >
+            <p>7-6-3: Under what condition will an insertion sort execute faster?</p>
+
+            <li data-component="answer" data-correct id="qins_1_opt_a">If the data is already sorted in ascending order</li><li data-component="feedback">If the data is already sorted in the correct order you don't need to move any values.</li>
+            
+            <li data-component="answer"  id="qins_1_opt_b">If the data is already sorted in descending order</li><li data-component="feedback">This would actually result in the longest execution.</li>
+            
+            <li data-component="answer"  id="qins_1_opt_c">It will always take the same amount of time to execute</li><li data-component="feedback">This would be true if it was a selection sort.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qins_2" >
+            <p>7-6-4: This method should sort the numbers in the passed array into ascending order. But, it does not work. Which of the following lines is wrong?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">elements</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>                       <span class="c1">// line 1</span>
+  <span class="p">{</span>
+     <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">elements</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>                                          <span class="c1">// line 2</span>
+     <span class="kt">int</span> <span class="n">possibleIndex</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>                                           <span class="c1">// line 3</span>
+     <span class="k">while</span> <span class="p">(</span><span class="n">possibleIndex</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="o">[</span><span class="n">possibleIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span>  <span class="c1">// line 4</span>
+     <span class="p">{</span>
+        <span class="n">elements</span><span class="o">[</span><span class="n">possibleIndex</span><span class="o">]</span> <span class="o">=</span> <span class="n">elements</span><span class="o">[</span><span class="n">possibleIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>        <span class="c1">// line 5</span>
+        <span class="n">possibleIndex</span><span class="o">--</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="n">elements</span><span class="o">[</span><span class="n">possibleIndex</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="qins_2_opt_a">line 1</li><li data-component="feedback">It should loop through the entire array.</li>
+            
+            <li data-component="answer"  id="qins_2_opt_b">line 2</li><li data-component="feedback">The value at the outer loop index should be stored in temp.</li>
+            
+            <li data-component="answer"  id="qins_2_opt_c">line 3</li><li data-component="feedback">The possible index should be set to the outer loop index before the inner loop executes.</li>
+            
+            <li data-component="answer"  id="qins_2_opt_d">line 4</li><li data-component="feedback">Loop while the possible index is greater than 0 and the temp value is less than the value at the possible index minus one.</li>
+            
+            <li data-component="answer"  id="qins_2_opt_e">line 5</li><li data-component="feedback">Move the value at possible index minus one to the possible index (move to the right).</li>
+            
+
+            </ul>
+            </div>
+            <p>You can step through the code above by clicking on the following <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.Arrays%3B%0A++%0A++public+class+SortTest%0A++%7B%0A+++++public+static+void+insertionSort(int%5B%5D+elements)+%0A+++++%7B%0A++++++++for+(int+j+%3D+1%3B+j+%3C+elements.length+-+1%3B+j%2B%2B)+++++++++++++++++++++++//+line+1%0A++++++++%7B%0A+++++++++++int+temp+%3D+elements%5Bj%5D%3B++++++++++++++++++++++++++++++++++++++++++//+line+2%0A+++++++++++int+possibleIndex+%3D+j%3B+++++++++++++++++++++++++++++++++++++++++++//+line+3%0A+++++++++++while+(possibleIndex+%3E+0+%26%26+temp+%3C+elements%5BpossibleIndex+-+1%5D)++//+line+4%0A+++++++++++%7B%0A++++++++++++++elements%5BpossibleIndex%5D+%3D+elements%5BpossibleIndex+-+1%5D%3B++++++++//+line+5%0A++++++++++++++possibleIndex--%3B+%0A+++++++++++%7D%0A+++++++++++elements%5BpossibleIndex%5D+%3D+temp%3B%0A++++++++%7D%0A+++++%7D%0A++++++%0A+++++public+static+void+main(String%5B%5D+args)%0A+++++%7B%0A++++++++int%5B%5D+arr1+%3D+%7B3,+86,+-20,+14,+40%7D%3B%0A++++++++System.out.println(Arrays.toString(arr1))%3B%0A++++++++insertionSort(arr1)%3B%0A++++++++System.out.println(Arrays.toString(arr1))%3B%0A+++++%7D%0A++%7D&amp;mode=display&amp;curInstr=0">Visualization</a>.</p>
+</div>
+<div class="section" id="groupwork-programming-challenge-sort-runtimes">
+<h2><span class="section-number">7.6.3. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : Sort Runtimes<a class="headerlink" href="#groupwork-programming-challenge-sort-runtimes" title="Permalink to this headline">¶</a></h2>
+<p>Selection sort and Insertion sort have similar runtimes. They both have nested loops that run through the data of size n approximately n squared times. However, they perform differently on some data.</p>
+<p>In the Active code windows for Selection sort and Insertion sort above, add in a counter and increment it inside the inner loop to count the number of iterations. Add in print statements that will print the counter value after the loops. Run the code on the following data and record the runtimes in this <a href= "https://docs.google.com/document/d/1uGhFyrcGqokcOWQC-f8Cz-kow7I_xs6s5G-p-qXZ7wA/edit?usp=sharing" style="text-decoration:underline" target="_blank" >Google document</a> (do File/Make a Copy) also seen below.</p>
+<iframe height="300px" width="100%" src="https://docs.google.com/document/d/1uGhFyrcGqokcOWQC-f8Cz-kow7I_xs6s5G-p-qXZ7wA/edit?usp=sharing&rm=minimal" style="max-width:90%; margin-left:5%" ></iframe>
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=challenge7-6-sorting  >
+<p>7-6-5: Compare the runtimes of selection and insertion sort on the same data. There should be some data where one performed better than the other. Can you explain why this is? Trace through the code to figure out why. Discuss in pairs or groups.  Using the space provided below, summarize the key discussion points and include a link to your Google document with the table of runtimes.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">7.6.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Selection sort and insertion sort are iterative sorting algorithms that can be used to sort elements in an array or ArrayList.</p></li>
+<li><p>Informal run-time comparisons of program code segments can be made using statement execution counts.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 7.5. Searching Algorithms' data-toggle="tooltip">
+    <a href="topic-7-5-searching.html" aria-label="7.5. Searching Algorithms">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 7.7. Ethics of Data Collection and Data Privacy' data-toggle="tooltip" >
+    <a href="topic-7-7-data-ethics.html" aria-label="7.7. Ethics of Data Collection and Data Privacy">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

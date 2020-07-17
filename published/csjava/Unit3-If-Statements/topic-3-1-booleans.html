@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>3.1. Boolean Expressions &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2. if Statements and Control Flow" href="topic-3-2-ifs.html" />
+    <link rel="prev" title="3. Boolean Expressions and If Statements" href="toctree.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-3-1-booleans'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3. </span>Boolean Expressions and If Statements" data-toggle="tooltip">
+    <a href="toctree.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">3.2. </span>if Statements and Control Flow' data-toggle="tooltip" >              
+    <a href="topic-3-2-ifs.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="boolean-expressions">
+<span id="index-0"></span><h1><span class="section-number">3.1. </span>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this headline">¶</a></h1>
+<p><strong>Boolean</strong> variables or expressions can only have <strong>true</strong> or <strong>false</strong> values.</p>
+<div class="section" id="testing-equality">
+<h2><span class="section-number">3.1.1. </span>Testing Equality (==)<a class="headerlink" href="#testing-equality" title="Permalink to this headline">¶</a></h2>
+<p>Primitive values like ints and reference values like Strings can be compared using the operators == and != (not equal) to return boolean values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One = sign changes the value of a variable. Two == equal signs are used to test if a variable holds a certain value, without changing its value!</p>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="bool1" class="runestone explainer ac_section alert alert-warning">
+<p>What will the code below print out? Try to guess before you run it! Note that 1 equal sign (=) is used for assigning a value and 2 equal signs (==) for testing values.</p>
+
+<textarea data-component="activecode" id=bool1 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class BoolTest1
+{
+   public static void main(String[] args)
+   {
+     int age = 15;
+     int year = 14;
+     // Will this print true or false?
+     System.out.println( age == year );
+     year = 15;
+     // Will this print true or false?
+     System.out.println( age == year );
+     // Will this print true or false?
+     System.out.println( age != year );
+   }
+}
+====
+// should pass if/when they run code
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "false\ntrue\nfalse\n";
+         boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p>We can also use == or != to test if two reference values, like Turtle and String objects,  refer to the same object. In the figure below, we are creating two separate Turtle objects called juan and mia. They do not refer to same object or turtle. Then, we create a reference variable called friend that is set to mia. The turtle mia will have two ways (<strong>references</strong> or <strong>aliases</strong>) to name her – she’s both mia and friend, and these variables refer to the same object (same Turtle) in memory. If two reference  variables refer to the same object like the turtle on the right in the image below, the test with == will return true which you can see in the code below.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/turtleEquality.png"><img alt="../_images/turtleEquality.png" src="../_images/turtleEquality.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Turtle Reference Equality</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="boolRef" class="runestone explainer ac_section alert alert-warning">
+<p>What will the code below print out? Try to guess before you run it!</p>
+
+<textarea data-component="activecode" id=boolRef data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''  data-datafile='turtleClasses.jar'    
+           data-wasm=/_static>
+import java.util.*;
+import java.awt.*;
+
+public class BoolTestRef
+{
+   public static void main(String[] args)
+   {
+       World world = new World(300,300);
+       Turtle juan = new Turtle(world);
+       Turtle mia = new Turtle(world);
+
+       // Will these print true or false?
+       System.out.println(juan == mia);
+       Turtle friend = mia; // set friend to be an alias for mia
+       System.out.println(friend == mia);
+   }
+ }
+ ====
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("BoolTestRef");
+     }
+
+     @Test
+     public void test1()
+     {
+        boolean passed = getResults("true", "true", "main()");
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+</div>
+<div class="section" id="relational-operators">
+<h2><span class="section-number">3.1.2. </span>Relational Operators (&lt;, &gt;)<a class="headerlink" href="#relational-operators" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Relational Operators</strong> below in Java are used to compare numeric values or arithmetic expressions. Although some programming languages allow using relational operators like &lt; to compare strings, Java only uses these operators for numbers, and uses the string methods compareTo() and equals() for comparing String values.</p>
+<ul class="simple">
+<li><p>&lt; Less Than</p></li>
+<li><p>&gt; Greater Than</p></li>
+<li><p>&lt;= Less than or equal to</p></li>
+<li><p>&gt;= Greater than or equal to</p></li>
+<li><p>== Equals</p></li>
+<li><p>!= Does not equal</p></li>
+</ul>
+<p>If you have trouble telling &lt; and &gt; apart, think of a number line and think of &lt; and &gt; as arrows; &lt; (less than) points towards 0 and smaller numbers on the number line and &gt; (greater than) points towards the larger numbers on the number line. With &lt;= and &gt;=, remember to write the two symbols in the order that you would say them “less than” followed by “or equal to”.</p>
+<p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="bool2" class="runestone explainer ac_section alert alert-warning">
+<p>Try to guess what the code below will print out before you run it.</p>
+
+<textarea data-component="activecode" id=bool2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class BoolTest2
+{
+   public static void main(String[] args)
+   {
+     int age = 15;
+     int year = 14;
+     // Will these print true or false?
+     System.out.println( age < year );
+     System.out.println( age > year );
+     System.out.println( age <= year+1 );
+     System.out.println( age-1 >= year );
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "false\ntrue\ntrue\ntrue\n";
+         boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/exercise3.png"><img alt="exercise" class="align-middle" src="../_images/exercise3.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+<div class="runestone">
+<ul data-component="dragndrop" id="BooleanExps" >
+    <span data-component="question">3-1-1: Drag the boolean expression from the left and drop it on what it is testing on the right.  Click the "Check Me" button to see if you are correct.</span>
+	<span data-component=feedback>Review the relational operators above.</span>
+
+    <li data-component="draggable" id="BooleanExps_drag1">x > 0</li>
+    <li data-component="dropzone" for="BooleanExps_drag1">x is positive</li>
+
+    <li data-component="draggable" id="BooleanExps_drag2">x == y</li>
+    <li data-component="dropzone" for="BooleanExps_drag2">x equals y</li>
+
+    <li data-component="draggable" id="BooleanExps_drag3">x < 0</li>
+    <li data-component="dropzone" for="BooleanExps_drag3">x is negative</li>
+
+    <li data-component="draggable" id="BooleanExps_drag4">x != y</li>
+    <li data-component="dropzone" for="BooleanExps_drag4">x does not equal y</li>
+
+    <li data-component="draggable" id="BooleanExps_drag5">x < y </li>
+    <li data-component="dropzone" for="BooleanExps_drag5">x is less than y</li>
+
+    <li data-component="draggable" id="BooleanExps_drag6">x > y </li>
+    <li data-component="dropzone" for="BooleanExps_drag6">x is greater than y</li>
+
+    <li data-component="draggable" id="BooleanExps_drag7">x >= y </li>
+    <li data-component="dropzone" for="BooleanExps_drag7">x is greater than or equal to y</li>
+</ul></div></div>
+<div class="section" id="testing-with-mod">
+<h2><span class="section-number">3.1.3. </span>Testing with mod (%)<a class="headerlink" href="#testing-with-mod" title="Permalink to this headline">¶</a></h2>
+<p>Here are some boolean expressions that are very useful in coding:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Test if a number is positive</span>
+<span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">//Test if a number is negative</span>
+<span class="p">(</span><span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">//Test if a number is even by seeing if the remainder is 0 when divided by 2</span>
+<span class="p">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">//Test if a number is odd by seeing if there is a remainder when divided by 2</span>
+<span class="p">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">//Test if a number is a multiple of x (or divisible by x with no remainder)</span>
+<span class="p">(</span><span class="n">number</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<div data-childcomponent="boolMod" class="runestone explainer ac_section alert alert-warning">
+<p>Try the expressions containing the % operator below to see how they can be used to check for even or odd numbers. All even numbers are divisible (with no remainder) by 2.</p>
+
+<textarea data-component="activecode" id=boolMod data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class BoolMod
+{
+   public static void main(String[] args)
+   {
+     int age1 = 15;
+     int age2 = 16;
+     int divisor = 2;
+     System.out.println("Remainder of " + age1 + "/" + divisor + " is " + (age1 % divisor) );
+     System.out.println("Remainder of " + age2 + "/" + divisor + " is " + (age2 % divisor) );
+     System.out.println("Is " + age1 + " even? " + (age1 % 2 == 0) );
+     System.out.println("Is " + age2 + " even? " + (age2 % 2 == 0) );
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Remainder of 15/2 is 1\nRemainder of 16/2 is 0\nIs 15 even? false \nIs 16 even? true\n";
+         boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p>The <strong>modulo</strong> operator has been used quite a bit on the AP CS A exam, so you should be familiar with it.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Use it to check for odd or even numbers <code class="docutils literal notranslate"><span class="pre">(num</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">1)</span> <span class="pre">is</span> <span class="pre">odd</span></code> and <code class="docutils literal notranslate"><span class="pre">(num</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0)</span> <span class="pre">is</span> <span class="pre">even</span></code>.  Actually, you can use it to check if any number is evenly divisible by another (<code class="docutils literal notranslate"><span class="pre">num1</span> <span class="pre">%</span> <span class="pre">num2</span> <span class="pre">==</span> <span class="pre">0</span></code>)</p></li>
+<li><p>Use it to get the last digit from an integer number (<code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">=</span> <span class="pre">last</span> <span class="pre">digit</span> <span class="pre">on</span> <span class="pre">right</span></code>).</p></li>
+<li><p>Use it to get the number of minutes left when you convert to hours (<code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">%</span> <span class="pre">60</span></code>).</p></li>
+<li><p>Use it whenever you have limited storage and you need to wrap around to the front if the value goes over the limit (<code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">%</span> <span class="pre">limit</span></code>).</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="groupwork-programming-challenge-prime-numbers-pogil">
+<h2><span class="section-number">3.1.4. </span><a class="reference internal" href="../_images/groupwork3.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork3.png" style="width: 35px;" /></a> Programming Challenge : Prime Numbers POGIL<a class="headerlink" href="#groupwork-programming-challenge-prime-numbers-pogil" title="Permalink to this headline">¶</a></h2>
+<p>We encourage you to do this activity as a <a href="https://pogil.org/about-pogil/what-is-pogil" target="_blank">POGIL</a> (Process Oriented Guided Inquiry Learning) group activity or using Think-Pair-Share collaboration. POGIL groups are self-managed teams of 4 students where everyone has a <a href="https://docs.google.com/document/d/1_NfNLWJxaG4qZ2Jd2x8UctDS05twn1h6p-o3XaAcRv0/edit?usp=sharing" target="_blank">POGIL role</a> and works together to solve the problems, making sure that everyone in the team participates and learns.</p>
+<p>In this activity, you will use boolean expressions to explore prime numbers. A prime number is an integer number that is only divisible by 1 and itself. For example, 3 is a prime number because it’s only divisible by 1 and 3 and no other numbers, but 4 is not a prime number because it’s divisible by 2 as well as 1 and 4.</p>
+<p>Prime numbers are very useful in encryption algorithms because they can be used as keys for encoding and decoding. If you have the key, you can use it to divide a large number that represents something encrypted to decode it, but if you don’t have the key, it’s very hard to guess the factors of a large number to decode it. If you’re curious about this, watch this <a href="https://www.youtube.com/watch?v=M7kEpw1tn50" target="_blank">Numberphile video</a>.</p>
+<p>The following program checks if 5 is a prime number by seeing if it is divisible by the numbers 1 - 5. Run the code, and then answer the following questions.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Is 5 a prime number?</p></li>
+<li><p>What boolean tests determine that a number is prime?</p></li>
+<li><p>Change the number to 6 and add more boolean expressions to determine if 6 is prime. Is 6 prime?</p></li>
+<li><p>Change the number to 7 and add more boolean expressions to determine if 7 is prime. Is 7 prime?</p></li>
+<li><p>If you changed the boolean expressions to use &lt;= instead of ==, would the code still help you to find prime numbers? Why or why not? Experiment and find out.</p></li>
+<li><p>If you changed the boolean expressions to use &gt;= instead of ==, would the code still help you to find prime numbers? Why or why not? Experiment and find out.</p></li>
+<li><p>Are all odd numbers prime? Can you find one that is not by using boolean expressions in the code below?</p></li>
+<li><p>Are all even numbers not prime? Can you find an even prime number?</p></li>
+</ol>
+</div></blockquote>
+
+<div data-childcomponent="challenge3-1-primeNumbers" class="runestone explainer ac_section alert alert-warning">
+<p>Experiment with the code below changing the value of number and adding more print statements with boolean expressions to determine if the numbers 5, 6, and 7 are prime. Are all odd numbers prime? Are all even numbers not prime?</p>
+
+<textarea data-component="activecode" id=challenge3-1-primeNumbers data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class PrimeNumbers
+{
+   public static void main(String[] args)
+   {
+     int number = 5;
+     System.out.println("A prime number is only divisible by 1 and itself.");
+     System.out.println("Is " + number + " divisible by 1 up to " + number + "?");
+     System.out.println("Divisible by 1? " + (number % 1 == 0));
+     System.out.println("Divisible by 2? " + (number % 2 == 0));
+     System.out.println("Divisible by 3? " + (number % 3 == 0));
+     System.out.println("Divisible by 4? " + (number % 4 == 0));
+     System.out.println("Divisible by 5? " + (number % 5 == 0));
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+    @Test
+     public void testChangedCode() {
+         String origCode = "public class PrimeNumbers{public static void main(String[] args){int number = 5; System.out.println(\"A prime number is only divisible by 1 and itself.\"); System.out.println(\"Is \" + number + \" divisible by 1 up to \" + number + \"?\"); System.out.println(\"Divisible by 1? \" + (number % 1 == 0)); System.out.println(\"Divisible by 2? \" + (number % 2 == 0)); System.out.println(\"Divisible by 3? \" + (number % 3 == 0)); System.out.println(\"Divisible by 4? \" + (number % 4 == 0)); System.out.println(\"Divisible by 5? \" + (number % 5 == 0));}}";
+
+         boolean changed = codeChanged(origCode);
+         assertTrue(changed);
+     }
+
+      @Test
+    public void testBool6() throws IOException
+    {
+        String target = "number % 6 == 0";
+        boolean passed = checkCodeContains("boolean check for divisibility by 6", target);
+        assertTrue(passed);
+    }
+
+    @Test
+    public void testBool7() throws IOException
+    {
+        String target = "number % 7 == 0";
+        boolean passed = checkCodeContains("boolean check for divisibility by 7", target);
+        assertTrue(passed);
+    }
+ }
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">3.1.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Primitive values and reference values can be compared using relational operators (i.e., == and !=) in Java.</p></li>
+<li><p>Arithmetic expression values can be compared using relational operators (i.e., &lt;, &gt;, &lt;=, &gt;=) in Java.</p></li>
+<li><p>An expression involving relational operators evaluates to a Boolean value of true or false.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3. Boolean Expressions and If Statements' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="3. Boolean Expressions and If Statements">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.2. if Statements and Control Flow' data-toggle="tooltip" >
+    <a href="topic-3-2-ifs.html" aria-label="3.2. if Statements and Control Flow">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

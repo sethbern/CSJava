@@ -53,7 +53,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'AP CS A Java 2019'
+project = 'csjava'
 copyright = '2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -61,7 +61,7 @@ copyright = '2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 r
 # built documents.
 #
 # The short X.Y version.
-version = '2019'
+version = '2020'
 # The full version, including alpha/beta/rc tags.
 release = 'beta'
 

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>1.2. Why Programming? Why Java? &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.3. Variables and Data Types" href="topic-1-3-variables.html" />
+    <link rel="prev" title="1.1.3. Java Development Environments" href="javaIDEs.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-1-2-java-intro'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">1.1.3. </span>Java Development Environments" data-toggle="tooltip">
+    <a href="javaIDEs.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">1.3. </span>Variables and Data Types' data-toggle="tooltip" >              
+    <a href="topic-1-3-variables.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="why-programming-why-java">
+<h1><span class="section-number">1.2. </span>Why Programming? Why Java?<a class="headerlink" href="#why-programming-why-java" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">What do Android phones, Minecraft, and Netflix have in common?
+They’re all programmed in Java! Many of the apps you use in an Android phone or tablet are written in Java.
+If you’ve used App Inventor before, those apps are translated to Java before they are run on a phone or tablet.
+Netflix uses Java for some of its software too. Java is a <strong>programming language</strong> that is used worldwide to
+create software that we all use.</p>
+<div class="section" id="first-java-program">
+<h2><span class="section-number">1.2.1. </span>First Java Program<a class="headerlink" href="#first-java-program" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">Every program in Java is written as a <strong>class</strong>. Java is an <strong>object-oriented language</strong> and we’ll learn more about classes and objects in Unit 2. Inside the class, there can be a <strong>main method</strong> that starts the program. When you ask the Java run-time to <em>run</em> a class, it will always start execution in the main method. Here is the template for a simple Java program with a main method:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// Put your code here!</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Java every open curly brace <code class="docutils literal notranslate"><span class="pre">{</span></code> must have a matched close curly brace <code class="docutils literal notranslate"><span class="pre">}</span></code>.
+These are used to start and end class definitions and method definitions.</p>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong>: Click on the <a href="#id2"><span class="problematic" id="id3">|runbutton|</span></a> button below to have the computer execute the <code class="docutils literal notranslate"><span class="pre">main</span></code> method in the following class. Then, change the code  to print your name.  Be sure to keep the starting <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and ending <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.  Click on the <a href="#id4"><span class="problematic" id="id5">|runbutton|</span></a> button to run the modified code. If you revisit this page later and login, click on Load History and move the bar above it to see your previous code changes.</p>
+
+<div data-childcomponent="lcfc1" class="runestone explainer ac_section alert alert-warning">
+<p>Run this code to see the output below it. Then change the code to print your name, for example “Hi Pat!”, and run again.</p>
+
+<textarea data-component="activecode" id=lcfc1 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class MyClass
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Hi there!");
+   }
+}
+
+====
+// should pass if/when they run code
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Hi there!";
+         boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+}
+</textarea>
+</div>
+<p>You can copy the Java source code shown in this book into a file and save it if you want to run it locally in an integrated development environment (IDE) on your local computer (see section 1.1. for different IDEs).  You must name the file the same name as the class name with “.java” as the extension.  All code (programs) in Java must be defined inside a class in a source file, and the name of the class must match the file name.</p>
+</div>
+<div class="section" id="print-commands">
+<h2><span class="section-number">1.2.2. </span>Print Commands<a class="headerlink" href="#print-commands" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">Java has two different print commands to print output to the screen:</p>
+<ul class="simple">
+<li><p><strong>System.out.println(value)</strong> : prints the value followed by a new line (ln)</p></li>
+<li><p><strong>System.out.print(value)</strong> : prints the value without advancing to the next line</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">System.out.println(&quot;Hi</span> <span class="pre">there!&quot;);</span></code> prints out the characters between the first <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and the second <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> followed by a new line.  The <code class="docutils literal notranslate"><span class="pre">&quot;Hi</span> <span class="pre">there!&quot;</span></code> is called a <strong>string literal</strong>, and it can have zero to many characters enclosed in starting and ending double quotes.</p>
+
+<div data-childcomponent="printCommands" class="runestone explainer ac_section alert alert-warning">
+<p>Run this code to see the output below it. How would you change it to print the ! on the same line as Hi there keeping all 3 print statements?</p>
+
+<textarea data-component="activecode" id=printCommands data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class MyClass
+{
+   public static void main(String[] args)
+   {
+      System.out.print("Hi ");
+      System.out.println("there");
+      System.out.print("!");
+   }
+}
+
+====
+// should pass if/when they run code
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Hi there!";
+         boolean passed = getResults(expect, output, "Expected output from main");
+         assertTrue(passed);
+     }
+     @Test
+     public void testLineCount() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "1 output line";
+         String actual = "  output line";
+
+         if (output.length() > 0) {
+            actual = output.split("\n").length + actual;
+         } else {
+            actual = output.length() + actual;
+        }
+        boolean passed = getResults(expect, actual, "Checking lines of output");
+        assertTrue(passed);
+     }
+}
+</textarea>
+</div>
+<p>Most command keywords in Java must be in lowercase, but class names such as System and String are capitalized. Commands in Java must end with a semicolon (;). Think of the semicolon (;) in Java like a period (.) in English. You use a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) to show the end of a Java <strong>statement</strong>, just the way you use a period (.) to show the end of an English sentence.  You will not be penalized on the exam if you forget the semicolon.  However, your programs won’t run without it.</p>
+</div>
+<div class="section" id="syntax-errors">
+<h2><span class="section-number">1.2.3. </span>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h2>
+<p>Computers don’t actually speak Java so we have to <strong>compile</strong> (translate) Java source files that we write into class files which is code that a computer can understand and run. In this e-book, the Java code is actually being sent to a Java server to compile and run, and the output is sent back to show on the same page.</p>
+<p><strong>Syntax errors</strong> are reported to you by the compiler if your Java code is not correctly written. Examples of syntax errors are a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> missing or if the code has a open curly brace <code class="docutils literal notranslate"><span class="pre">{</span></code> or open quote <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, but no close curly brace <code class="docutils literal notranslate"><span class="pre">}</span></code> or close quote <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>. Informally, a syntax error is called a <strong>bug</strong>, and the process of removing errors is called <strong>debugging</strong>. An early computer science pioneer <a href="https://en.wikipedia.org/wiki/Grace_Hopper" target="_blank">Grace Hopper</a> documented a real bug, a moth that flew into a computer in 1947!</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: Grace Hopper’s log showing a real bug, 1947.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The compiler tries to make sense of your code, but if your code has <strong>syntax errors</strong>, you will see error messages displayed below the code. Compiler error messages will tell the line number that the compiler found the error and the type of error.  The error messages are not always easy to understand and sometimes the actual error is before the line that the compiler says is the problem. Debugging can be frustrating but you will get better at it with practice! Sometimes another pair of eyes really helps, so ask a friend if you get stuck or try explaining your code line by line to someone or even a rubber duck. <a href="https://rubberduckdebugging.com/" target="_blank">Rubber duck debugging</a> is a lot of fun!</p>
+<p>Let’s practice debugging some code!</p>
+<p><a class="reference internal" href="../_images/exercise.png"><img alt="exercise" class="align-middle" src="../_images/exercise.png" style="width: 35px;" /></a> <strong>Check Your Understanding: Mixed up programs</strong></p>
+
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="thirdClass"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-2-1: The following has all the correct code to print out "Hi my friend!" when the code is run, but the code is mixed up.  Drag the blocks from left to right and put them in the correct order.  Click on the "Check Me" button to check your solution. You will be told if any of the blocks are in the wrong order or if you need to remove one or more blocks. After three incorrect attempts you will be able to use the Help Me button to make the problem easier.</span>public class ThirdClass
+{
+---
+   public static void main(String[] args)
+   {
+   ---
+      System.out.println("Hi my friend!");
+      ---
+   }
+   ---
+}
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="fourthClass"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-2-2: The following has all the correct code to print out "Hi there!" when the code is run, but the code is mixed up and contains some extra blocks with errors.  Drag the needed blocks from left to right and put them in the correct order.  Click on the "Check Me" button to check your solution.</span>public class FourthClass
+{
+---
+public Class FourthClass
+{                         #paired
+---
+   public static void main(String[] args)
+   {
+   ---
+   public static void main()
+   {                         #paired
+   ---
+      System.out.println("Hi there!");
+      ---
+      System.out.println("Hi there!") #paired
+      ---
+   }
+   ---
+}
+        </pre>
+        </div>
+    <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise: Compile Time Error 1</strong></p>
+<p>Click on the <a href="#id6"><span class="problematic" id="id7">|runbutton|</span></a> button below to try and run the following code.  Look for an error message after the code.  This is called a <strong>compile time error</strong> because it is an error detected by the compiler.</p>
+<p>What is wrong?  Can you fix it?  The error message will tell you the line number that it thinks is causing the error (<code class="docutils literal notranslate"><span class="pre">FirstClass.java:5:</span> <span class="pre">error:</span> <span class="pre">unclosed</span> <span class="pre">string</span> <span class="pre">literal</span></code>).  Check line 5 to make sure that everything looks correct.  One good thing to check is that all <code class="docutils literal notranslate"><span class="pre">{</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">}</span></code> and all <code class="docutils literal notranslate"><span class="pre">(</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">)</span></code> and all starting <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> have a ending <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> as well. Try putting in the missing symbol and run again. This is called <strong>debugging</strong>.</p>
+
+<div data-childcomponent="sc2error1" class="runestone explainer ac_section alert alert-warning">
+<p>Fix the code below.</p>
+
+<textarea data-component="activecode" id=sc2error1 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class FirstClass
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Hi there!);
+   }
+}
+
+====
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Hi there!";
+         boolean passed = getResults(expect, output, "Expected output from main");
+         assertTrue(passed);
+     }
+}
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise: Compile Time Error 2</strong></p>
+<p>Click on the <a href="#id8"><span class="problematic" id="id9">|runbutton|</span></a> button below to try and run the following code.  Look for an error message after the code. What is wrong this time?  Can you fix it?  One good thing to check is that all <code class="docutils literal notranslate"><span class="pre">{</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">}</span></code> and all <code class="docutils literal notranslate"><span class="pre">(</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">)</span></code> and all starting <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> have a ending <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> as well.</p>
+
+<div data-childcomponent="sc2error2" class="runestone explainer ac_section alert alert-warning">
+<p>Fix the code below.</p>
+
+<textarea data-component="activecode" id=sc2error2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class SecondClass
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Hi there!";
+   }
+}
+
+====
+// should pass if/when they run code
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Hi there!";
+         boolean passed = getResults(expect, output, "Expected output from main");
+         assertTrue(passed);
+     }
+}
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise: Compile Time Error 3</strong></p>
+<p>Click on the <a href="#id10"><span class="problematic" id="id11">|runbutton|</span></a> button below to try and run the following code.  What is wrong this time?  Can you fix it?  After you fix the first error, you may encounter a 2nd error! Fix that one too! Hints: How do you end a command in Java? Also, check for capitalization.</p>
+
+<div data-childcomponent="sc2error3" class="runestone explainer ac_section alert alert-warning">
+<p>Fix the code below.</p>
+
+<textarea data-component="activecode" id=sc2error3 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class ThirdClass
+{
+   public static void main(String[] args)
+   {
+      system.out.println("Hi there!")
+   }
+}
+
+====
+// should pass if/when they run code
+// This doesn't really work because it filters out the \n
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Hi there!";
+         boolean passed = getResults(expect, output, "Expected output from main");
+         assertTrue(passed);
+     }
+}
+</textarea>
+</div>
+<p>Did you remember that System is capitalized in System.out.println? Did you find the missing semicolon?</p>
+</div>
+<div class="section" id="comments">
+<h2><span class="section-number">1.2.4. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>In Java and many text-based coding languages, // is used to mark the beginning of a comment. For multi-line comments, use <code class="docutils literal notranslate"><span class="pre">/*</span></code> to start the comment and <code class="docutils literal notranslate"><span class="pre">*/</span></code> to end the comment. The compiler will skip over comments. However, it is a good idea to use comments to make notes to yourself and other programmers working with you. Here are some examples of good commenting:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* MyClass.java</span>
+<span class="cm">   Programmer: My Name</span>
+<span class="cm">   Date:</span>
+<span class="cm">*/</span>
+
+<span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// this keeps track of the max score</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="groupwork-debugging-challenge">
+<h2><span class="section-number">1.2.5. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Debugging Challenge<a class="headerlink" href="#groupwork-debugging-challenge" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/rubberduck.jpg"><img alt="Rubber Duck" class="align-left" src="../_images/rubberduck.jpg" style="width: 150px;" /></a>
+<p>In this course, you are encouraged to work together in pairs to complete the programming challenges. Pair programming is a successful software development technique where two programmers work together at one computer. One, the driver, types in code while the other, the navigator, gives ideas and feedback. The two coders switch roles frequently. If you’re working alone, you may want to explain the code to a rubber duck or another toy using <a href="https://rubberduckdebugging.com/" target="_blank">Rubber duck debugging</a>.</p>
+<p>Working in pairs, debug the following code. Can you find the all the bugs and get the code to run?</p>
+
+<div data-childcomponent="challenge1-2" class="runestone explainer ac_section alert alert-warning">
+<p>Fix the code below.</p>
+
+<textarea data-component="activecode" id=challenge1-2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Challenge1_2
+{
+   public static void main(String[] args)
+   {
+      System.out.print("Good morning! ")
+      system.out.print("Good afternoon!);
+      System.Print " And good evening!";
+
+}
+
+====
+// should pass if/when they run code
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Good morning! Good afternoon! And good evening";
+         boolean passed = getResults(expect, output, "Expected output from main");
+         assertTrue(passed);
+     }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">1.2.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A basic Java program looks like the following:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi there!&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>A Java program starts with <strong>public class NameOfClass { }</strong>. If you are using your own files for your code, each class should be in a separate file that matches the class name inside it, for example NameOfClass.java.</p></li>
+<li><p>Most Java classes have a main method that will be run automatically. It looks like this: <strong>public static void main(String[] args) { }</strong>.</p></li>
+<li><p>The <strong>System.out.print()</strong> and <strong>System.out.println()</strong> methods display information given inside the parentheses on the computer monitor.</p></li>
+<li><p>System.out.println moves the cursor to a new line after the information has been displayed, while System.out.print does not.</p></li>
+<li><p>A <strong>string literal</strong> is enclosed in double quotes (‘’ ‘’).</p></li>
+<li><p>Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code> are used for comments.</p></li>
+<li><p>A <strong>compiler</strong> translates Java code into a class file that can be run on your computer. <strong>Compiler or syntax errors</strong> are reported to you by the compiler if the Java code is not correctly written. Some things to check for are ; at end of command lines, matching { }, (), and “”.</p></li>
+</ul>
+</div>
+<div class="section" id="ap-practice">
+<h2><span class="section-number">1.2.7. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP1-2-1" >
+            <p>1-2-3: Consider the following code segment.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Java is &quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;fun &quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;and cool!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>What is printed as a result of executing the code segment?</p>
+<li data-component="answer"  id="AP1-2-1_opt_a"><pre>Java is fun and cool!</pre></li><li data-component="feedback" id="AP1-2-1_opt_a">
+<p>Notice the println in line 2.</p></li><li data-component="answer"  id="AP1-2-1_opt_b"><pre>
+Java isfun
+and cool!
+</pre></li><li data-component="feedback" id="AP1-2-1_opt_b">
+<p>Notice the space after is in the first line.</p></li><li data-component="answer"  id="AP1-2-1_opt_c"><pre>Java is
+fun
+and cool!  </pre></li><li data-component="feedback" id="AP1-2-1_opt_c">
+<p>Notice that the first line is a print, not println.</p></li><li data-component="answer" data-correct id="AP1-2-1_opt_d"><pre>Java is fun
+and cool!  </pre></li><li data-component="feedback" id="AP1-2-1_opt_d">
+<p>Correct! Pay attention to which lines are print or println.</p></li>
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP1-2-2" >
+            <p>1-2-4: Consider the following code segment.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Roses are red, &quot;</span><span class="p">)</span>      <span class="c1">// Line 1;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Violets are blue, &quot;</span><span class="p">)</span>  <span class="c1">// Line 2;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Unexpected &#39;}&#39; &quot;</span><span class="p">)</span>        <span class="c1">// Line 3;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;on line 32. &quot;</span><span class="p">)</span>           <span class="c1">// Line 4;</span>
+</pre></div>
+</div>
+<p>The code segment is intended to produce the following output but may not work as intended.</p>
+<pre>Roses are red,
+Violets are blue,
+Unexpected '}' on line 32.</pre><p>Which change, if any, can be made so that the code segment produces the intended output?</p>
+<li data-component="answer"  id="AP1-2-2_opt_a"><p>Replacing print with println on lines 3 and 4.</p>
+</li><li data-component="feedback" id="AP1-2-2_opt_a">
+<p>These should print on the same line without a newline in between.</p></li><li data-component="answer"  id="AP1-2-2_opt_b"><p>Replacing println with print on lines 1 and 2.</p>
+</li><li data-component="feedback" id="AP1-2-2_opt_b">
+<p>These should print out with a newline in between.</p></li><li data-component="answer"  id="AP1-2-2_opt_c"><p>Removing the single quotes in line 3.</p>
+</li><li data-component="feedback" id="AP1-2-2_opt_c">
+<p>The single quotes are fine in this line.</p></li><li data-component="answer" data-correct id="AP1-2-2_opt_d"><p>Putting the semicolon after the ) on each line.</p>
+</li><li data-component="feedback" id="AP1-2-2_opt_d">
+<p>Correct! The semicolon should go after each command but not in the comment.</p></li>
+
+            </ul>
+            </div>
+            <script src="../_static/custom-csawesome.js"></script></div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 1.1.3. Java Development Environments' data-toggle="tooltip">
+    <a href="javaIDEs.html" aria-label="1.1.3. Java Development Environments">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 1.3. Variables and Data Types' data-toggle="tooltip" >
+    <a href="topic-1-3-variables.html" aria-label="1.3. Variables and Data Types">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

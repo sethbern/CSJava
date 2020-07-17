@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>7.1. Intro to ArrayLists &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.2. ArrayList Methods" href="topic-7-2-arraylist-methods.html" />
+    <link rel="prev" title="7. ArrayList" href="toctree.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-7-1-arraylist-basics'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">7. </span>ArrayList" data-toggle="tooltip">
+    <a href="toctree.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">7.2. </span>ArrayList Methods' data-toggle="tooltip" >              
+    <a href="topic-7-2-arraylist-methods.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="intro-to-arraylists">
+<h1><span class="section-number">7.1. </span>Intro to ArrayLists<a class="headerlink" href="#intro-to-arraylists" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure align-left" id="id1">
+<span id="index-0"></span><a class="reference internal image-reference" href="../_images/lists.jpg"><img alt="../_images/lists.jpg" src="../_images/lists.jpg" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: A couple of lists</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the last unit, we learned about arrays to hold collections of related data. But arrays have limitations. The size of an array is established at the time of creation and cannot be changed. What if you don’t know how big the collection of data will be? What if you want to add and remove items from the collection and change the size of the collection while the program is running? For example, if you wanted to represent a shopping list, you might add to the list throughout the week and remove things from the list while you are shopping. You probably would not know how many items will be on the list at the beginning of the week.</p>
+<p>Luckily, Java has a class  called <strong>ArrayList</strong> which is a re-sizable array. An ArrayList has an underlying array that grows or shrinks as needed. You can use ArrayList instead of arrays whenever you don’t know the size of the array you need or you know that you will add and remove items and may need to change the array’s size dynamically during run time. An ArrayList is <strong>mutable</strong>, meaning it can change during runtime by adding and removing objects from it.</p>
+<p>An ArrayList is often called just a <strong>list</strong> on the CS A exam. In past AP CS A exams, the interface <strong>List</strong> is often used to declare an ArrayList. Interfaces are no longer on the exam, but if you see List being used, just assume it’s an ArrayList.</p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qloopList" >
+            <p>7-1-1: Which of the following is a reason to use an ArrayList instead of an array?</p>
+
+            <li data-component="answer"  id="qloopList_opt_a">A list will always use less memory than an array.</li><li data-component="feedback">No, an ArrayList grows as needed so it will typically be bigger than the data you put it in. If you try to add more data and the array is full, it usually doubles in size.</li>
+            
+            <li data-component="answer"  id="qloopList_opt_b">A list can store objects, but arrays can only store primitive types.</li><li data-component="feedback">No, you can have an array of objects.</li>
+            
+            <li data-component="answer"  id="qloopList_opt_c">A list has faster access to the last element than an array.</li><li data-component="feedback">No, an ArrayList is implemented using an array so it has the same access time to any index as an array does.</li>
+            
+            <li data-component="answer" data-correct id="qloopList_opt_d">A list resizes itself as necessary as items are added, but an array does not.</li><li data-component="feedback">An ArrayList is really a dynamic array (one that can grow or shrink as needed).</li>
+            
+
+            </ul>
+            </div>
+            <div class="section" id="import-package">
+<h2><span class="section-number">7.1.1. </span>Import Package<a class="headerlink" href="#import-package" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">The <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> class is in the <code class="docutils literal notranslate"><span class="pre">java.util</span></code> package.  A <strong>package</strong> is a set or library of related classes. The java.lang package is the main Java language classes that you get automatically without importing it. The java.util package has a lot of utility classes that you can use if you import the package.    If you want to use any class other than those in <code class="docutils literal notranslate"><span class="pre">java.lang</span></code> you will need to either use the full name (packageName.ClassName) like (<code class="docutils literal notranslate"><span class="pre">java.util.ArrayList</span></code>) or use one or more import statements to import in that package.</p>
+<p>Import statements have to be the first code in a Java source file.  An import statement tells Java which class you mean when you use a short name (like <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>).  It tells Java where to find the definition of that class.</p>
+<p>You can import just the classes you need from a package as shown below.  Just provide an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement for each class that you want to use.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span> <span class="c1">// import just the ArrayList class</span>
+</pre></div>
+</div>
+<p id="index-2">Another option is to import everything at the same level in a package using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">packageName.*</span></code>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span> <span class="c1">// import everything in package including ArrayList</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t worry about adding import statements on the AP CS A exam.  Any that you need will be provided for you.</p>
+</div>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qlib_1" >
+            <p>7-1-2: Which of the following is true about import statements?</p>
+
+            <li data-component="answer"  id="qlib_1_opt_a">You can only have one import statement in a source file.</li><li data-component="feedback">You can have an many import statements as you need.</li>
+            
+            <li data-component="answer"  id="qlib_1_opt_b">You must specify the class to import.</li><li data-component="feedback">You can use * to import all classes at the specified level.</li>
+            
+            <li data-component="answer" data-correct id="qlib_1_opt_c">Import statements must be before other code in a Java source file.</li><li data-component="feedback">Import statements have to be the first Java statements in a source file.</li>
+            
+            <li data-component="answer"  id="qlib_1_opt_d">You must import java.lang.String to use the short name of String.</li><li data-component="feedback">You do not have to import any classes that are in the java.lang package.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="declaring-and-creating-arraylists">
+<h2><span class="section-number">7.1.2. </span>Declaring and Creating ArrayLists<a class="headerlink" href="#declaring-and-creating-arraylists" title="Permalink to this headline">¶</a></h2>
+<p>To declare a ArrayList use <code class="docutils literal notranslate"><span class="pre">ArrayList&lt;Type&gt;</span> <span class="pre">name</span></code>  Change the <em>Type</em> to be whatever type of objects you want to store in the ArrayList, for example <code class="docutils literal notranslate"><span class="pre">String</span></code> as shown in the code below.  You don’t have to specify the <strong>generic type</strong> <code class="docutils literal notranslate"><span class="pre">&lt;Type&gt;</span></code>, since it will default to <code class="docutils literal notranslate"><span class="pre">Object</span></code>, but it is good practice to specify it to restrict what to allow in your ArrayList.  Using a type ArrayList&lt;Type&gt; is preferred over just using ArrayList because it allows the compiler to find errors that would otherwise be missed until run-time.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// ArrayList&lt;Type&gt; name = new ArrayList&lt;Type&gt;();</span>
+<span class="c1">// An ArrayList of Strings:</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">shoppingList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ArrayLists can only hold objects like String and the wrapper classes Integer and Double. They cannot hold primitive types like int, double, etc.</p>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="ArrayListDeclare" class="runestone explainer ac_section alert alert-warning">
+<p>In the code below we are declaring a variable called <code class="docutils literal notranslate"><span class="pre">nameList</span></code> that can refer to a ArrayList of strings, but currently doesn’t refer to any ArrayList yet (it’s set to <code class="docutils literal notranslate"><span class="pre">null</span></code>).</p>
+
+<textarea data-component="activecode" id=ArrayListDeclare data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.*; // import for ArrayList
+
+public class ArrayListDeclare
+{
+    public static void main(String[] args)
+    {
+       ArrayList<String> nameList = null;
+       System.out.println(nameList);
+    }
+ }
+ ====
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("ArrayListDeclare");
+     }
+
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect = "null";
+
+         boolean passed = getResults(expect, output, "main()", true);
+         assertTrue(passed);
+     }
+
+ }
+</textarea>
+</div>
+<p>Declaring a ArrayList doesn’t actually create a ArrayList. It only creates a variable that can refer to a ArrayList.  To actually create a ArrayList use <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;Type&gt;()</span></code>. If you leave off the <code class="docutils literal notranslate"><span class="pre">&lt;Type&gt;</span></code> it will default to <code class="docutils literal notranslate"><span class="pre">Object</span></code>.</p>
+<p>You can get the number of items in a ArrayList using the <code class="docutils literal notranslate"><span class="pre">size()</span></code> method.  Notice that an empty ArrayList has a size of 0 because the ArrayList constructor constructs an empty list.  Also notice that you can’t get the size of a ArrayList that is currently set to <code class="docutils literal notranslate"><span class="pre">null</span></code> on line 9.  You will get a <code class="docutils literal notranslate"><span class="pre">NullPointerException</span></code> instead, which means that you tried to do something with an object reference that was <code class="docutils literal notranslate"><span class="pre">null</span></code> (doesn’t exist).</p>
+
+<div data-childcomponent="ArrayListCreateStr" class="runestone explainer ac_section alert alert-warning">
+<p>The following code demonstrates a NullPointerException. Change list2 so that it creates a new Arraylist to remove the NullPointerException.</p>
+
+<textarea data-component="activecode" id=ArrayListCreateStr data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.*; // import everything at this level
+public class ArrayListCreateStr
+{
+    public static void main(String[] args)
+    {
+       ArrayList<String> nameList = new ArrayList<String>();
+       System.out.println("The size of nameList is: " + nameList.size());
+       ArrayList<String> list2 = null;
+       System.out.println("The size of list2 is: " + list2.size());
+    }
+}
+</textarea>
+</div>
+<p>You can also create ArrayLists of integer values.  However, you have to use <code class="docutils literal notranslate"><span class="pre">Integer</span></code> as the type because ArrayLists can only hold objects, not primitive values.  All primitive types must be <strong>wrapped</strong> in objects before they are added to an ArrayList.  For example, <code class="docutils literal notranslate"><span class="pre">int</span></code> values can be wrapped in <code class="docutils literal notranslate"><span class="pre">Integer</span></code> objects, <code class="docutils literal notranslate"><span class="pre">double</span></code> values can be wrapped in <code class="docutils literal notranslate"><span class="pre">Double</span></code> objects. You can actually put in any kind of Objects in an ArrayList, even for a class that you wrote in Unit 5 like Student or Person or Pet.</p>
+<p>Here’s an example of a Integer ArrayList:</p>
+
+<div data-childcomponent="ArrayListCreateInt" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ArrayListCreateInt data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.*; // import everything at this level
+public class ArrayListCreateInt
+{
+    public static void main(String[] args)
+    {
+       ArrayList<Integer> numList = new ArrayList<Integer>();
+       System.out.println(numList.size());
+    }
+}
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qArrayListInteger" >
+            <p>7-1-3: Which of the following is the correct way to create an ArrayList of integers?</p>
+
+            <li data-component="answer"  id="qArrayListInteger_opt_a">ArrayList[int] numbers = new ArrayList();</li><li data-component="feedback">The square brackets [] are only used with arrays, not ArrayLists.</li>
+            
+            <li data-component="answer"  id="qArrayListInteger_opt_b">ArrayList&lt;String&gt; numbers = new ArrayList();</li><li data-component="feedback">String is not the correct type since this is for an array of integers, and the type should be next to ArrayList on both sides.</li>
+            
+            <li data-component="answer"  id="qArrayListInteger_opt_c">ArrayList&lt;int&gt; numbers = new ArrayList&lt;int&gt;();</li><li data-component="feedback">ArrayLists cannot hold primitive types like int. You must use the wrapper class Integer.</li>
+            
+            <li data-component="answer" data-correct id="qArrayListInteger_opt_d">ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();</li><li data-component="feedback">The wrapper class Integer is used to hold integers in an ArrayList.</li>
+            
+
+            </ul>
+            </div>
+            <p>Although it is not on the AP exam, you can convert arrays to ArrayLists using its constructor with an argument Arrays.asList(arrayname) like the following. Note that ArrayLists have a toString() method that is automatically called to print the list in a nice format.</p>
+
+<div data-childcomponent="ArrayListFromArray" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=ArrayListFromArray data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.*;
+public class ArrayListFromArray
+{
+    public static void main(String[] args)
+    {
+       String[] names = {"Dakota", "Madison", "Brooklyn"};
+       ArrayList<String> namesList = new ArrayList<String>(Arrays.asList(names));
+       System.out.println(namesList);
+    }
+}
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p>You can add values to an ArrayList by using its <strong>add</strong> method, described in detail in the next lesson. Try the code below. Note that the type of the ArrayList, String or Integer, also determines the type of parameters and return types for all of its methods, so add and print work for any type of ArrayList.</p>
+
+<div data-childcomponent="listAdd" class="runestone explainer ac_section alert alert-warning">
+<p>Can you add another item to the shopping list?</p>
+
+<textarea data-component="activecode" id=listAdd data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.*;
+public class Shopping
+{
+   public static void main(String[] args)
+   {
+      ArrayList<String> shoppingList = new ArrayList<String>();
+      System.out.println("Size: " + shoppingList.size());
+      shoppingList.add("carrots");
+      System.out.println(shoppingList);
+      shoppingList.add("bread");
+      System.out.println(shoppingList);
+      shoppingList.add("chocolate");
+      System.out.println(shoppingList);
+      System.out.println("Size: " + shoppingList.size());
+      ArrayList<Integer> quantities = new ArrayList<Integer>();
+      quantities.add(2);
+      quantities.add(4);
+      System.out.println(quantities);
+  }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("Shopping");
+     }
+
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect = "Size: 0\n[carrots]\n[carrots, bread]\n[carrots, bread, chocolate]\nSize: 3\n[2, 4]";
+
+         boolean passed = !output.equals(expect);
+
+         passed = getResults(expect, output, "Changes to main()", passed);
+         assertTrue(passed);
+     }
+
+ }
+</textarea>
+</div>
+</div>
+<div class="section" id="groupwork-programming-challenge-frq-digits">
+<h2><span class="section-number">7.1.3. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : FRQ Digits<a class="headerlink" href="#groupwork-programming-challenge-frq-digits" title="Permalink to this headline">¶</a></h2>
+<p>This programming challenge is based on the <a href="https://apcentral.collegeboard.org/pdf/ap-computer-science-a-frq-2017.pdf?course=ap-computer-science-a" target="_blank">2017 Free Response Question</a> part 1a on the 2017 AP CS A exam. In this question, you are asked to write a constructor for a class called Digits. This constructor takes an integer number as its argument and divides it up into its digits and puts the digits into an ArrayList. For example, new Digits(154) creates an ArrayList with the digits [1, 5, 4].</p>
+<p>First, let’s discuss how to break up a number into its digits. Try the code below. What happens if you divide an integer by 10? Remember that in integer division the result truncates (cuts off) everything to the right of the decimal point. Which digit can you get by using mod 10 which returns the remainder after dividing by 10? Try a different number and guess what it will print and then run to check.</p>
+
+<div data-childcomponent="divideby10" class="runestone explainer ac_section alert alert-warning">
+<p>Set number to a different number and guess what number / and % will return. Which operator gives you a digit in number?</p>
+
+<textarea data-component="activecode" id=divideby10 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class DivideBy10
+{
+   public static void main(String[] args)
+   {
+      int number = 154;
+      System.out.println(number / 10);
+      System.out.println(number % 10);
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("DivideBy10");
+     }
+
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect = "15\n4";
+
+         boolean passed = !output.equals(expect);
+
+         passed = getResults(expect, output, "Try another number", passed);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p>We can us a while loop to print out each digit in reverse order starting from the right (4, 5, 1 for the number 154) while dividing it by 10. You can try it in the active code above. Here is the pseudocode:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>while number is greater than 0</p>
+<ul>
+<li><p>print out the last digit using %</p></li>
+<li><p>change the number to cut off the last digit using /</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>Now, let’s write a constructor for the Digits class that uses this loop and adds each found digit to the ArrayList instead of printing it out. You can use a special method called <strong>Collections.reverse(digitsList);</strong> to reverse the order of the digits in the ArrayList after the loop to get them in the right order. In the next lesson, we will also learn how to use a different add method that adds in elements at any index instead of the end.</p>
+
+<div data-childcomponent="challenge-7-1-digits" class="runestone explainer ac_section alert alert-warning">
+<p>Complete the challenge below to put the digits of a number in an ArrayList.</p>
+
+<textarea data-component="activecode" id=challenge-7-1-digits data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.*;
+
+public class Digits
+{
+   /** A list of digits */
+   private ArrayList<Integer> digitList;
+
+   /** Constructs a list of digits from the given number */
+   public Digits(int number)
+   {
+      // initialize digitList to an empty ArrayList of Integers
+
+      // Use a while loop to add each digit in number to digitList
+
+      //Use Collections.reverse(digitList); to reverse the digits
+
+   }
+
+   /** returns the string representation of the digits list */
+   public String toString()
+   {
+      return digitList.toString();
+   }
+
+   public static void main(String[] args)
+   {
+      Digits d1 = new Digits(154);
+      System.out.println(d1);
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     public RunestoneTests() {
+         super("Digits");
+     }
+
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect = "[1, 5, 4]";
+
+         boolean passed = getResults(expect, output, "Digits(154)");
+         assertTrue(passed);
+     }
+
+     @Test
+     public void test2()
+     {
+         Digits test = new Digits(123456);
+         String output = test.toString();
+         String expect = "[1, 2, 3, 4, 5, 6]";
+
+         boolean passed = getResults(expect, output, "Digits(123456)");
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">7.1.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>ArrayList are re-sizable arrays that allow adding and removing items to change their size during run time.</p></li>
+<li><p>The ArrayList class is in the java.util package. You must import java.util.* to use it.</p></li>
+<li><p>An ArrayList object contains object references and is mutable, meaning it can change (by adding and removing items from it).</p></li>
+<li><p>The ArrayList constructor ArrayList() constructs an empty list of size 0.</p></li>
+<li><p>Java allows the generic type ArrayList&lt;E&gt;, where the generic type E specifies the type of the elements, like String or Integer. Without it, the type will be Object.</p></li>
+<li><p>ArrayList&lt;E&gt; is preferred over ArrayList because it allows the compiler to find errors that would otherwise be found at run-time.</p></li>
+<li><p>When ArrayList&lt;E&gt; is specified, the types of the reference parameters and return type when using its methods are type E.</p></li>
+<li><p>ArrayLists cannot hold primitive types like int or double, so you must use the wrapper classes Integer or Double to put numerical values into an ArrayList.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 7. ArrayList' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="7. ArrayList">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 7.2. ArrayList Methods' data-toggle="tooltip" >
+    <a href="topic-7-2-arraylist-methods.html" aria-label="7.2. ArrayList Methods">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

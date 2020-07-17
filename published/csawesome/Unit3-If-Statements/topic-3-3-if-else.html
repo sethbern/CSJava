@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>3.3. Two-way Selection: if-else Statements &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.4. Multi-Selection: else-if Statements" href="topic-3-4-else-ifs.html" />
+    <link rel="prev" title="3.2. if Statements and Control Flow" href="topic-3-2-ifs.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csawesome&page=topic-3-3-if-else'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.2. </span>if Statements and Control Flow" data-toggle="tooltip">
+    <a href="topic-3-2-ifs.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">3.4. </span>Multi-Selection: else-if Statements' data-toggle="tooltip" >              
+    <a href="topic-3-4-else-ifs.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="two-way-selection-if-else-statements">
+<h1><span class="section-number">3.3. </span>Two-way Selection: if-else Statements<a class="headerlink" href="#two-way-selection-if-else-statements" title="Permalink to this headline">¶</a></h1>
+<p>What if you want to pick between two possibilities?  If you are trying to decide between a couple of things to do, you might flip a coin and do one thing if it lands as heads and another if it is tails.  In programming, you can use the <strong>if</strong> keyword followed by a statement or block of statements and then the <strong>else</strong> keyword also followed by a statement or block of statements.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// A block if/else statement</span>
+<span class="k">if</span> <span class="p">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">statement1</span><span class="p">;</span>
+   <span class="n">statement2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+   <span class="k">do</span> <span class="n">other</span> <span class="n">statement</span><span class="p">;</span>
+   <span class="n">and</span> <span class="n">another</span> <span class="n">one</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// A single if/else statement</span>
+<span class="k">if</span> <span class="p">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="p">)</span>
+    <span class="n">Do</span> <span class="n">statement</span><span class="p">;</span>
+<span class="k">else</span>
+    <span class="n">Do</span> <span class="n">other</span> <span class="n">statement</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The following flowchart demonstrates that if the condition (the boolean expression) is true, one block of statements is executed, but if the condition is false, a different block of statements inside the else clause is executed.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/Condition-two.png"><img alt="../_images/Condition-two.png" src="../_images/Condition-two.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: The order that statements execute in a conditional with 2 options: if and else</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The else will only execute if the condition is false.</p>
+</div>
+
+<div data-childcomponent="lccb2" class="runestone explainer ac_section alert alert-warning">
+<p>Try the following code. If <code class="docutils literal notranslate"><span class="pre">isHeads</span></code> is true it will print <code class="docutils literal notranslate"><span class="pre">Let's</span> <span class="pre">go</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">game</span></code> and then <code class="docutils literal notranslate"><span class="pre">after</span> <span class="pre">conditional</span></code>.</p>
+
+<textarea data-component="activecode" id=lccb2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Test2
+{
+   public static void main(String[] args)
+   {
+     boolean isHeads = true;
+     if (isHeads)
+     {
+         System.out.println("Let's go to the game");
+     }
+     else
+     {
+         System.out.println("Let's watch a movie");
+     }
+     System.out.println("after conditional");
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+    public void testMain() throws IOException
+    {
+        String output = getMethodOutput("main");
+        String expect = "Let's go to the game\nafter conditional";
+
+        boolean passed = getResults(expect, output, "Expected output from main", true);
+        assertTrue(passed);
+    }
+
+ }
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/exercise3.png"><img alt="exercise" class="align-middle" src="../_images/exercise3.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+        <div class="runestone">
+        <div data-component="fillintheblank" id="3_3_1_falseElse" >
+            <p>3-3-1: Try changing the code above to <code class="docutils literal notranslate"><span class="pre">boolean</span> <span class="pre">isHeads</span> <span class="pre">=</span> <span class="pre">false;</span></code>.  What line will be printed before the <code class="docutils literal notranslate"><span class="pre">after</span> <span class="pre">conditional</span></code>?</p>
+<input type="text">
+        <script type="application/json">
+            [[{"regex": "^\\s*^Let's\\s+watch\\s+a\\s+movie$\\s*$", "regexFlags": "", "feedback": "<p>Correct.  If the boolean value is false, the statement following the else will execute</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Try it and see</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            <p>If/else statements can also be used with relational operators and numbers like below. If your code has an if/else statement, you need to test it with 2 test-cases to make sure that both parts of the code work.</p>
+<p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="licenseifelse" class="runestone explainer ac_section alert alert-warning">
+<p>Run the following code to see what it prints out when the variable age is set to the value 16. Change the variable age’s value to 15 and then run it again to see the result of the print statement in the else part.
+Can you change the if-statement to indicate that you can get a license at age 15 instead of 16? Use 2 test cases for the value of age to test your code to see the results of both print statements.</p>
+
+<textarea data-component="activecode" id=licenseifelse data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class DriversLicenseTest
+{
+   public static void main(String[] args)
+   {
+     int age = 16;
+     if (age >= 16)
+     {
+         System.out.println("You can get a driver's license in most states!");
+     }
+     else
+     {
+         System.out.println("Sorry, you need to be older to get a driver's license.");
+     }
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+      @Test
+    public void testCodeContains() throws IOException
+    {
+        String target = "age >= 15";
+        boolean passed = checkCodeContains("check age >= 15", target);
+        assertTrue(passed);
+    }
+ }
+</textarea>
+</div>
+
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ifelseevenOdd"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>3-3-2: The following program should print out "x is even" if the remainder of x divided by 2 is 0 and "x is odd" otherwise, but the code is mixed up.   Drag the blocks from the left and place them in the correct order on the right.  Click on <i>Check Me</i> to see if you are right.</span>public class EvenOrOdd
+{
+---
+   public static void main(String[] args)
+   {
+   ---
+     int x = 92;
+     ---
+     if (x % 2 == 0)
+     ---
+     {
+         System.out.println("x is even");
+     }
+         ---
+     else
+     ---
+     {
+         System.out.println("x is odd");
+     }
+         ---
+    }
+    ---
+ }
+        </pre>
+        </div>
+    <p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="scoreifelse" class="runestone explainer ac_section alert alert-warning">
+<p>Try the following code. Add an else statement to the if statement that prints out “Good job!” if the score is greater than 9. Change the value of score to test it. Can you change the boolean test to only print out “Good job” if the score is greater than 20?</p>
+
+<textarea data-component="activecode" id=scoreifelse data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class ScoreTest
+{
+   public static void main(String[] args)
+   {
+     int score = 8;
+     if (score <= 9)
+     {
+         System.out.println("Try for a higher score!");
+     }
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testChangedCode() {
+         String origCode = "public class ScoreTest   {      public static void main(String[] args)      {        int score = 8;        if (score <= 9)         {            System.out.println(\"Try for a higher score!\");        }      }} ";
+
+         boolean changed = codeChanged(origCode);
+         assertTrue(changed);
+     }
+     @Test
+     public void testCodeContainsElse(){
+       boolean ifCheck2 = checkCodeContains("else", "else");
+       assertTrue(ifCheck2);
+     }
+     @Test
+     public void testCodeContains(){
+         boolean ifCheck1 = checkCodeContains("if testing with 20", "if (score <= 20)");
+         assertTrue(ifCheck1);
+     }
+ }
+</textarea>
+</div>
+<div class="section" id="nested-ifs-and-dangling-else">
+<h2><span class="section-number">3.3.1. </span>Nested Ifs and Dangling Else<a class="headerlink" href="#nested-ifs-and-dangling-else" title="Permalink to this headline">¶</a></h2>
+<p>If statements can be nested inside other if statements. Sometimes with nested ifs we find a <strong>dangling else</strong> that could potentially belong to either if statement. The rule is that the else clause will always be a part of the closest if statement in the same block of code, regardless of indentation.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Nested if with dangling else</span>
+<span class="k">if</span> <span class="p">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="p">)</span>
+   <span class="k">if</span> <span class="p">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="p">)</span>
+      <span class="n">Do</span> <span class="n">statement</span><span class="p">;</span>
+   <span class="k">else</span>  <span class="c1">// belongs to closest if</span>
+      <span class="n">Do</span> <span class="n">other</span> <span class="n">statement</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="danglingelse" class="runestone explainer ac_section alert alert-warning">
+<p>Try the following code with a dangling else. Notice that the indentation does not matter. How could you get the else to belong to the first if statement?</p>
+
+<textarea data-component="activecode" id=danglingelse data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class DanglingElseTest
+{
+   public static void main(String[] args)
+   {
+      boolean sunny = true;
+      boolean hot = false;
+      if (sunny)
+         if (hot)
+             System.out.println("Head for the beach!");
+       else // Which if is else attached to??
+        System.out.println("Bring your umbrella!");
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "";
+         boolean passed = getResults(expect, output, "Expected no output from main");
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p>You can use curly brackets { } to enclose a nested if and have the else clause belong to the the top level if clause like below:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Nested if with dangling else</span>
+<span class="k">if</span> <span class="p">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="p">)</span>
+      <span class="k">do</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>  <span class="c1">// belongs to first if</span>
+  <span class="k">do</span> <span class="n">that</span> <span class="n">statement</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="groupwork-programming-challenge-20-questions">
+<h2><span class="section-number">3.3.2. </span><a class="reference internal" href="../_images/groupwork3.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork3.png" style="width: 35px;" /></a> Programming Challenge : 20 Questions<a class="headerlink" href="#groupwork-programming-challenge-20-questions" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/questionmark.jpg"><img alt="../_images/questionmark.jpg" class="align-left" src="../_images/questionmark.jpg" style="width: 100px;" /></a>
+<p>We encourage you to work in pairs for this challenge which is on repl.it (you will need an account there if you want to save your version).</p>
+<p>Have you ever played 20 Questions? 20 Questions is a game where one person thinks of an object and the other players ask up to 20 questions to guess what it is.</p>
+<p>There is great online version called <a href="https://en.akinator.com/" style="text-decoration:underline" target="_blank">Akinator</a> that guesses whether you are thinking of a real or fictional character by asking you questions. Akinator is a simple Artificial Intelligence algorithm that uses a decision tree of yes or no questions to pinpoint the answer.
+Although Akinator needs a very large decision tree, we can create a  guessing game for animals using a much smaller number of if-statements.</p>
+<p>The <a href="https://repl.it/@BerylHoffman/GuessAnimal" target="_blank" style="text-decoration:underline">Animal Guessing program</a> below uses the following decision tree:</p>
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="../_images/decision-tree.png"><img alt="../_images/decision-tree.png" src="../_images/decision-tree.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: Animal Guessing Game Decision Tree</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p>Try the <a href="https://repl.it/@BerylHoffman/GuessAnimal" target="_blank" style="text-decoration:underline">Animal Guessing program</a> below and run it a couple times thinking of an animal and answering the questions with y or n for yes or no. Did it guess your animal? Probably not! It’s not very good. It can only guess 3 animals. Let’s try to expand it!</p></li>
+<li><p>In the very last else clause, the program knows that it is not a mammal and it guesses a bird. Let’s add to that part. (You may want to click on Open in Repl.it on the top right of the window and then click on Sign up or Log in to save your work). Instead of saying “I guess a bird! Click on run to play again.”, change it to ask a question that distinguishes between birds and reptiles (for example does it fly?). Then, get their response and use an if statement to guess “bird” or “turtle” (or another reptile). For example, here’s how we decided to choose between a dog or an elephant. We asked the question “Is it a pet?”, got the response, and then with an if statement on the y/n answer we determined dog or elephant. You would use similar code to distinguish between a bird and a turtle. Run your code and test both possibilities!</p></li>
+</ol>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Is it a pet (y/n)?&quot;</span><span class="p">);</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">scan</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">answer</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">))</span> <span class="p">{</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I guess a dog! Click on run to play again.&quot;</span><span class="p">);</span>
+ <span class="p">}</span>
+ <span class="k">else</span> <span class="p">{</span>
+     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I guess an elephant! Click on run to play again.&quot;</span><span class="p">);</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="3">
+<li><p>Did you notice that when it asked “Is it a pet?” and you said “y”, it immediately guessed “dog”? What if you were thinking of a cat? Try to come up with a question that distinguishes dogs from cats and put in code in the correct place (in place of I guess a dog) to ask the question, get the answer, and use an if/else to guess cat or dog. Run your code and test both possibilities!</p></li>
+<li><p>How many animals can your game now guess? How many test-cases are needed to test all branches of your code?</p></li>
+<li><p>If your class has time, your teacher may ask you to expand this game or to create a similar game to guess something else like singers or athletes. Spend some time planning your questions on paper and drawing out the decision tree before coding it.</p></li>
+</ol>
+<iframe height="650px" width="100%" style="max-width:90%; margin-left:5%" src="https://repl.it/@BerylHoffman/GuessAnimal?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>After you complete your code on repl.it, paste in your code below to run it through the auto-grader. Also include a link to your code on repl.it in comments.</p>
+
+<div data-childcomponent="challenge3-3-IfElse-20Questions-autograde" class="runestone explainer ac_section alert alert-warning">
+<p>Copy and paste your code from your repl.it and run to see if it passes the autograder tests. Include the link to your repl.it code in comments. Note that this code will only run with the autograder’s input and will not ask the user for input.</p>
+
+<textarea data-component="activecode" id=challenge3-3-IfElse-20Questions-autograde data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+// Copy in your link to your code on repl.it here:
+// Copy in all of your code from repl.it below (include import and public class Main)
+
+
+====
+import static org.junit.Assert.*;
+  import org.junit.*;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+      public RunestoneTests() {
+          super("Main", input1.replaceAll(" ", "\n")); // Use in book
+      }
+
+      private static int goal = 5;
+
+      private static String input1 = "y y y y y y y y y y y y y y y y y y y y y y y y y y";
+      private static String input2 = "n n n n n n n n n n n n n n n n n n n n n n n n n n";
+      private String output1, output2;
+
+      @Test
+      public void test1()
+      {
+          String input = input1.replaceAll(" ", "\n");
+          String output = getMethodOutputWithInput("main", input);
+          output1 = output;
+
+          String[] lines = output.split("\n");
+
+          boolean passed = lines.length >= goal;
+
+          passed = getResults(goal +"+ lines", "" + lines.length + " lines", "Outputs at least " + goal +" lines", passed);
+          assertTrue(passed);
+      }
+
+      @Test
+      public void test2()
+      {
+          String input = input2.replaceAll(" ", "\n");
+          String output = getMethodOutputWithInput("main", input);
+          output2 = output;
+
+          if (output1 == null) {
+              input = input1.replaceAll(" ", "\n");
+              output1 = getMethodOutputWithInput("main", input);
+          }
+
+          boolean passed = !output1.equals(output2);
+
+          passed = getResults("true", "" + passed, "Outputs different results for different inputs", passed);
+          assertTrue(passed);
+      }
+
+      @Test
+      public void test3()
+      {
+          String code = getCode();
+          int num = countOccurences(code, "if");
+          boolean passed = num >= 4;
+
+          getResults("4+", "" + num, "Number of if statements", passed);
+          assertTrue(passed);
+      }
+
+      @Test
+      public void test4()
+      {
+          String code = getCode();
+          int numIfs = countOccurences(code, "if");
+          int numElse = countOccurences(code, "else");
+          boolean passed = numIfs == numElse;
+
+          getResults(numIfs + " & " + numIfs, numIfs + " & " + numElse, "Ifs & Elses Match", passed);
+          assertTrue(passed);
+      }
+
+      @Test
+      public void test5()
+      {
+          String code = getCode();
+          int num = countOccurences(code, "scan.nextLine()");
+          boolean passed = num >= 4;
+
+          getResults("4+", "" + num, "Number of scan.nextLine()", passed);
+          assertTrue(passed);
+      }
+  }
+</textarea>
+</div>
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=challenge3-3-IfElse-20Questions  >
+<p>3-3-3: (Old short answer - obsolete) After you complete your code on repl, paste in a link to it (click on share) here.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">3.3.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If statements can be followed by an associated <strong>else</strong> part to form a 2-way branch:</p></li>
+</ul>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="kt">boolean</span> <span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Do</span> <span class="n">statement</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="n">Do</span> <span class="n">other</span> <span class="n">statement</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>A two way selection (if/else) is written when there are two sets of statements: one to be executed when the Boolean condition is true, and another set for when the Boolean condition is false.</p></li>
+<li><p>The body of the “if” statement is executed when the Boolean condition is true, and the body of the “else” is executed when the Boolean condition is false.</p></li>
+<li><p>Use 2 test-cases to find errors or validate results to try both branches of an if/else statement.</p></li>
+<li><p>The else statement attaches to the closest if statement.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.2. if Statements and Control Flow' data-toggle="tooltip">
+    <a href="topic-3-2-ifs.html" aria-label="3.2. if Statements and Control Flow">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.4. Multi-Selection: else-if Statements' data-toggle="tooltip" >
+    <a href="topic-3-4-else-ifs.html" aria-label="3.4. Multi-Selection: else-if Statements">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

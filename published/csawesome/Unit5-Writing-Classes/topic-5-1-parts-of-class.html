@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>5.1. Anatomy of a Java Class &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.2. Writing Constructors" href="topic-5-2-writing-constructors.html" />
+    <link rel="prev" title="5. Writing Classes" href="toctree.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csawesome&page=topic-5-1-parts-of-class'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5. </span>Writing Classes" data-toggle="tooltip">
+    <a href="toctree.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">5.2. </span>Writing Constructors' data-toggle="tooltip" >              
+    <a href="topic-5-2-writing-constructors.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="anatomy-of-a-java-class">
+<h1><span class="section-number">5.1. </span>Anatomy of a Java Class<a class="headerlink" href="#anatomy-of-a-java-class" title="Permalink to this headline">¶</a></h1>
+<p>In Unit 2, we learned to use <strong>classes</strong> and <strong>objects</strong> that are built-in to Java or written by other programmers. In this unit, you will learn to write your own classes and objects!</p>
+<div class="section" id="creating-a-class">
+<h2><span class="section-number">5.1.1. </span>Creating a Class<a class="headerlink" href="#creating-a-class" title="Permalink to this headline">¶</a></h2>
+<p>Remember that a <strong>class</strong> in programming defines a new <strong>abstract data type</strong>. When you create <strong>objects</strong>, you create new variables or <strong>instances</strong> of that class data type. For example in Unit 2, we created yertle and myrtle, 2 turtle objects created from the class Turtle, and we used the Java String class to create different String variables, also called <strong>object references</strong>.</p>
+<p>Here is a fun <a href="https://www.youtube.com/watch?v=1JJL0YszYik" target="_blank">video</a> demonstrating the difference between the class House which is a blueprint of a house and the objects which are individual houses built from that blueprint. You can’t live on a blueprint although it describes a house! But you can use it to build houses and live in those. You can think of a class as like a blueprint or a cookie cutter or a factory that produces objects.</p>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="1JJL0YszYik" class="align-left youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="1JJL0YszYik" data-video-divid="1JJL0YszYik" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (1JJL0YszYik)</span> </p>
+    </div>
+    <p>To write your own class, you typically start a class declaration with <code class="docutils literal notranslate"><span class="pre">public</span></code> then <code class="docutils literal notranslate"><span class="pre">class</span></code> then the name of the class.  The body of the class is defined inside a <code class="docutils literal notranslate"><span class="pre">{</span></code> and a <code class="docutils literal notranslate"><span class="pre">}</span></code>. For example, the class House below. Then, you can create objects of that new House type by using <code class="docutils literal notranslate"><span class="pre">Classname</span> <span class="pre">objectname</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Classname();</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">House</span>
+<span class="p">{</span>
+   <span class="c1">// define class here - a blueprint</span>
+
+<span class="p">}</span>
+
+<span class="n">House</span> <span class="n">myHouse</span> <span class="o">=</span> <span class="k">new</span> <span class="n">House</span><span class="p">();</span>
+<span class="n">House</span> <span class="n">neighborsHouse</span> <span class="o">=</span> <span class="k">new</span> <span class="n">House</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Remember that objects have attributes and behaviors. These correspond to <strong>instance variables</strong> and <strong>methods</strong> in the class definition.   Instance variables hold the data for objects where as the methods code the behaviors or the actions the object can do.   A class also has <strong>constructors</strong> which initialize the instance variables when the object is created, for example new House() above.  And a class can also have a <strong>main method</strong> which can be used to test the class.</p>
+<p>Let’s create a class called Person. What would we want to know about a person?  What we want to know depends on what problem we are trying to solve.  In one situation, perhaps when creating an address book, we might want to know the person’s name and phone number and email. Here’s a possible Person class with instance variables, constructor, and methods.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/personClassDefn.png"><img alt="Person" src="../_images/personClassDefn.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Person class</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Run the code below to see how it constructs 2 Person objects and fills in their data. We will explain all parts of this class in the next sections, but notice that execution always starts in the main method. When a method like the print() method is called, we run the code in the print method for that object. After a method is done, the control returns back to the next line of code in the main method. You can also see this in the <a href="http://www.pythontutor.com/visualize.html#code=public%20class%20Person%20%0A%7B%0A%20%20%20%20%20//%20instance%20variables%20%0A%20%20%20%20%20private%20String%20name%3B%0A%20%20%20%20%20private%20String%20email%3B%0A%20%20%20%20%20private%20String%20phoneNumber%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20construct%20a%20Person%20copying%20in%20the%20data%20into%20the%20instance%20variables%0A%20%20%20%20%20public%20Person%28String%20initName,%20String%20initEmail,%20String%20initPhone%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20name%20%3D%20initName%3B%0A%20%20%20%20%20%20%20%20email%20%3D%20initEmail%3B%0A%20%20%20%20%20%20%20%20phoneNumber%20%3D%20initPhone%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Print%20all%20the%20data%20for%20a%20person%0A%20%20%20%20%20public%20void%20print%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20System.out.println%28%22Name%3A%20%22%20%2B%20name%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22Email%3A%20%22%20%2B%20email%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22Phone%20Number%3A%20%22%20%2B%20phoneNumber%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20//%20call%20the%20constructor%20to%20create%20a%20new%20person%0A%20%20%20%20%20%20%20%20Person%20p1%20%3D%20new%20Person%28%22Sana%22,%20%22sana%40gmail.com%22,%20%22123-456-7890%22%29%3B%0A%20%20%20%20%20%20%20%20//%20call%20p1%27s%20print%20method%0A%20%20%20%20%20%20%20%20p1.print%28%29%3B%0A%20%20%20%20%20%20%20%20Person%20p2%20%3D%20new%20Person%28%22Jean%22,%20%22jean%40gmail.com%22,%20%22404%20899-9955%22%29%3B%0A%20%20%20%20%20%20%20%20p2.print%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D&cumulative=false&curInstr=34&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> (click on the link and then Forward at the bottom to run the code step by step).</p>
+
+<div data-childcomponent="PersonClass" class="runestone explainer ac_section alert alert-warning">
+<p>Run the following class. Try changing the Person p2 object in main to your name.</p>
+
+<textarea data-component="activecode" id=PersonClass data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Person
+{
+   // instance variables
+   private String name;
+   private String email;
+   private String phoneNumber;
+
+   // constructor: construct a Person copying in the data into the instance variables
+   public Person(String initName, String initEmail, String initPhone)
+   {
+      name = initName;
+      email = initEmail;
+      phoneNumber = initPhone;
+   }
+
+   // Print all the data for a person
+   public void print()
+   {
+     System.out.println("Name: " + name);
+     System.out.println("Email: " + email);
+     System.out.println("Phone Number: " + phoneNumber);
+   }
+
+   // main method for testing
+   public static void main(String[] args)
+   {
+      // call the constructor to create a new person
+      Person p1 = new Person("Sana", "sana@gmail.com", "123-456-7890");
+      // call p1's print method
+      p1.print();
+      Person p2 = new Person("Jean", "jean@gmail.com", "404 899-9955");
+      p2.print();
+   }
+}
+
+====
+// Test for Lesson 5.1.0 - Person class - should pass if/when they run code
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+      @Test
+      public void testMain() throws IOException
+      {
+         String output = getMethodOutput("main");
+          String expect = "Name: Sana\nEmail: sana@gmail.com\nPhone Number: 123-456-7890\nName: Jean\nEmail: jean@gmail.com\nPhone Number: 404 899-9955";
+
+          boolean passed = getResults(expect, output, "Expected output from main", true);
+          assertTrue(passed);
+      }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="instance-variables">
+<h2><span class="section-number">5.1.2. </span>Instance Variables<a class="headerlink" href="#instance-variables" title="Permalink to this headline">¶</a></h2>
+<p id="index-0"><strong>Instance Variables</strong> hold the data for an object.  They record what an object needs to know to do work in the program.  Instance variables are also called <strong>attributes</strong>, <strong>fields</strong>, or <strong>properties</strong>.</p>
+<p>Instance variables in general and on the AP CS A exam should be declared <strong>private</strong>.  Think of <code class="docutils literal notranslate"><span class="pre">private</span></code> as like your diary.  Only you should have direct access to it.  In this case <code class="docutils literal notranslate"><span class="pre">private</span></code> means that only the code in this class can directly access the instance  variable values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instance variables are declared right after the class declaration.  They usually start with <code class="docutils literal notranslate"><span class="pre">private</span></code> then the <em>type</em> of the variable and then a <em>name</em> for the variable. Private means only the code in this class has access to it.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Person</span></code> class declares 3 private instance variables: name, email, and phoneNumber. These are things that you might want to know about a person.  They are declared at the top of the class and they exist inside the { } of the class. The methods of the class share the instance variables. They can access and use them.</p>
+<p>Once we have created a class like Person, we can have many objects declared of the class.  The class is like a blueprint or cookie cutter that defines the variables and methods for that class. Each object will have their own copies of the same instance variables but with possibly different values in them (as seen in the cookie decorations below).</p>
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="../_images/PersonClassWithCookies.png"><img alt="Person data encapsulation" src="../_images/PersonClassWithCookies.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: Person Class and Objects</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Object-oriented Programming</strong> stresses <strong>data encapsulation</strong> where  the data (instance variables) and the code acting on the data (methods) are wrapped together into a single unit and the implementation details are hidden. The data is protected from harm by being kept private. Anything outside the class can only interact with the public methods and cannot interact directly with the private instance variables (encapsulated in the pink box above).</p>
+<p>When designing a class, programmers make decisions about what data to make accessible and/or modifiable from an external class. The private access modifier is used to encapsulate and protect the data from external access. Private instance variables can only be accessed by methods within the class in which they are defined.</p>
+<p><a class="reference internal" href="../_images/exercise5.png"><img alt="exercise" class="align-middle" src="../_images/exercise5.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="name_instance_variables"    >
+<span data-question>5-1-1: Click on all the instance  variable declarations in the following class</span><span data-feedback>Remember, instance  variables are private and are declared after the class declaration.</span><pre><span data-incorrect>public class Name {</span>
+
+    <span data-correct>private String first;</span>
+    <span data-correct>private String last;</span>
+
+    <span data-incorrect>public Name(String theFirst, String theLast) {</span>
+        <span data-incorrect>first = theFirst;</span>
+        <span data-incorrect>last = theLast;</span>
+     <span data-incorrect>}</span>
+
+     <span data-incorrect>public void setFirst(String theFirst) {</span>
+        <span data-incorrect>first = theFirst;</span>
+     <span data-incorrect>}</span>
+
+     <span data-incorrect>public void setLast(String theLast) {</span>
+        <span data-incorrect>first = theLast;</span>
+     <span data-incorrect>}</span>
+
+<span data-incorrect>}</span></pre>
+
+</div>
+</div>
+</div>
+<div class="section" id="methods">
+<h2><span class="section-number">5.1.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<p id="index-1"><strong>Methods</strong> define what an object can do or the behavior of the object.   Most methods are <code class="docutils literal notranslate"><span class="pre">public</span></code> which means they can be accessed from outside the class. Some methods can be marked as``private`` if they are helper methods that are just used internally by other methods inside the same class. They will not be accessible outside of the class. The private and public keywords determine the external access and visibility of classes, data, constructors, and methods.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Methods define what the object can do.  They typically start with <code class="docutils literal notranslate"><span class="pre">public</span></code> then a type, then the name of the method followed by parentheses for optional parameters. Methods defined for an object can access and use its instance variables!</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Person</span></code> class above has a constructor called Person() which we will discuss in the next lesson,  a print() method for output, and a main method which runs the whole program. We will also discuss <strong>accessor</strong> (also called getters) and <strong>mutator</strong> (also called setters or modifier) methods in the next lessons which allow get and set access to the instance variables.</p>
+<p>Here is an example of the print() method that prints out all the data stored for a person object. Notice that it starts with public and then the return type.
+The <strong>void</strong> return type is used to indicate that the method does not return anything. Then it has the method name followed by parentheses for possible parameters. The body of the method is in curly brackets. Notice that the method can access and use the instance variables in the class: name, email, and phoneNumber. The instance variables are shared by all the methods of the class.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Name: &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">);</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Email: &quot;</span> <span class="o">+</span> <span class="n">email</span><span class="p">);</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Phone Number: &quot;</span> <span class="o">+</span> <span class="n">phoneNumber</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To call a method to do its job, we create an object of the class and then use the dot (.) operator to call its public methods, for example p1.print() means call p1’s print method.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// call the constructor to create a new person</span>
+<span class="n">Person</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Sana&quot;</span><span class="p">,</span> <span class="s">&quot;sana@gmail.com&quot;</span><span class="p">,</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">);</span>
+<span class="c1">// call p1&#39;s print method</span>
+<span class="n">p1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../_images/exercise5.png"><img alt="exercise" class="align-middle" src="../_images/exercise5.png" style="width: 35px;" /></a> Check Your Understanding</p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="name_methods"    >
+<span data-question>5-1-2: Click on all the lines of code that are part of a method in the following class.</span><span data-feedback>Methods follow the constructor.  They include a return type in case they returns something from the method.</span><pre><span data-incorrect>public class Name {</span>
+
+    <span data-incorrect>private String first;</span>
+    <span data-incorrect>private String last;</span>
+
+    <span data-incorrect>public Name(String theFirst, String theLast) {</span>
+        <span data-incorrect>first = theFirst;</span>
+        <span data-incorrect>last = theLast;</span>
+     <span data-incorrect>}</span>
+
+     <span data-correct>public void setFirst(String theFirst) {</span>
+        <span data-correct>first = theFirst;</span>
+     <span data-correct>}</span>
+
+     <span data-correct>public void setLast(String theLast) {</span>
+        <span data-correct>first = theLast;</span>
+     <span data-correct>}</span>
+
+<span data-incorrect>}</span></pre>
+
+</div>
+</div>
+</div>
+<div class="section" id="object-oriented-design">
+<h2><span class="section-number">5.1.4. </span>Object-Oriented Design<a class="headerlink" href="#object-oriented-design" title="Permalink to this headline">¶</a></h2>
+<p>In <strong>Object-Oriented Design</strong> (OOD), programmers first spend time to decide which classes are needed and then figure out the data and methods in each class. For example, here is the class diagram for the Turtle class that we have seen before. The - in front of the attributes indicate that they are private, and the + in front of the methods indicate that they are public. Here is a <a href="https://medium.com/@smagid_allThings/uml-class-diagrams-tutorial-step-by-step-520fd83b300b" target="_blank">tutorial on class diagrams</a> that explains it in more detail if you are curious (Class diagrams are not on the AP CS A exam). If you want to draw your own, <a href="https://creately.com" target="_blank">Creately.com</a> is a good free online drawing tool for class diagrams.</p>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="../_images/turtleUMLClassDiagram1.png"><img alt="Turtle class diagram" src="../_images/turtleUMLClassDiagram1.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-text">Figure 3: Turtle Class Diagram</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>When you are given a problem specification, look for the <strong>nouns</strong> to identify what classes you need to create. For an example, try the problem below.</p>
+<p><a class="reference internal" href="../_images/exercise5.png"><img alt="exercise" class="align-middle" src="../_images/exercise5.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=OOD1  >
+<p>5-1-3: You’ve been hired by your school to create a program that keeps track of “students at your school and the courses they are taking”. Name 2 classes that you would create in your program. Name 2 attributes (data kept in instance variables) for each class.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+<p>The two nouns in the problem description above, <strong>Student</strong> and <strong>Course</strong> would make good class names! Then, you can think about what data you need to keep track of for students and courses and what methods you need. Note that the instance variables in the Person class could also work for a Student class!</p>
+<p><a class="reference internal" href="../_images/exercise5.png"><img alt="exercise" class="align-middle" src="../_images/exercise5.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=OOD2  >
+<p>5-1-4: Say you wanted to make a computer game from a board game that you are playing. Think about what objects are in the game. For example, here is the description for Monopoly (trademark Hasbro games): “Buy, sell, dream and scheme your way to riches. Players buy, sell and trade to win. Build houses and hotels on your properties and bankrupt your opponents to win it all. Chance and Community Chest cards can change everything.” What classes would you need to create a computer version of this game? (Remember to look for the nouns). Take one of the classes you listed, and try to come up with 2 pieces of data in that class that will be the instance variables.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+</div>
+<div class="section" id="groupwork-programming-challenge-riddle-class">
+<h2><span class="section-number">5.1.5. </span><a class="reference internal" href="../_images/groupwork5.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork5.png" style="width: 35px;" /></a> Programming Challenge : Riddle Class<a class="headerlink" href="#groupwork-programming-challenge-riddle-class" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/chicken.png"><img alt="Chicken" class="align-left" src="../_images/chicken.png" style="width: 130px;" /></a>
+<p>In this project, you will create a class that can tell riddles like the following:</p>
+<ul class="simple">
+<li><p>Riddle Question: Why did the chicken cross the playground?</p></li>
+<li><p>Riddle Answer: To get to the other slide!</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>First, brainstorm in pairs to do the <strong>Object-Oriented Design</strong> for a riddle asking program. What should we call this class? What data does it need to keep track of in instance variables? What is the data type for the instance variables? What methods do we need? (You could draw a Class Diagram for this class using <a href="https://creately.com" target="_blank">Creately.com</a>, although it is not required).</p></li>
+<li><p>Using the Person class above as a guide, write a Riddle class in the Active Code template below that has 2 instance variables for the riddle’s question and answer, a constructor that initializes the riddle, and 2 methods to ask the riddle and answer the riddle. Hint:  Don’t name your instance variables initQuestion and initAnswer – we’ll explain why shortly. If you came up with other instance variables and methods for this class, you can add those too! Don’t forget to specify the private or public access modifiers. Use the outline in the Active Code below. You will learn how to write constructors and other methods in detail in the next lessons.</p></li>
+<li><p>Complete the main method to construct at least 2 Riddle objects and call their printQuestion() and printAnswer() methods to ask and answer the riddle. You can look up some good riddles online.</p></li>
+</ol>
+
+<div data-childcomponent="challenge-5-1-Riddle-Class" class="runestone explainer ac_section alert alert-warning">
+<p>Complete the Riddle class below and complete the main method to construct 2 Riddle objects and call their printQuestion() and printAnswer() methods.</p>
+
+<textarea data-component="activecode" id=challenge-5-1-Riddle-Class data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Riddle
+{
+   // write 2 instance variables for Riddle's question and answer: private type variableName;
+
+
+   // constructor
+   public Riddle(String initQuestion, String initAnswer)
+   {
+      // set the instance variables to the init parameter variables
+
+   }
+
+   // Print riddle question
+   public void printQuestion()
+   {
+     // print out the riddle question with System.out.println
+
+   }
+
+   // Print riddle answer
+   public void printAnswer()
+   {
+     // print out the riddle answer with System.out.println
+
+   }
+
+   // main method for testing
+   public static void main(String[] args)
+   {
+      // call the constructor to create 2 new Riddle objects
+
+      // call their printQuestion() and printAnswer methods
+
+   }
+}
+
+====
+// Test Code for Lesson 5.1.5 - Riddle
+// @author Kate McDonnell
+// Test Code for Lesson 5.1.5 - Riddle
+import static org.junit.Assert.*;
+import org.junit.*;
+
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+      public RunestoneTests()
+      {
+          super("Riddle"); // class name / location of main
+
+          Object[] values = new Object[]{"Question", "Answer"};
+          setDefaultValues(values);
+      }
+
+      @Test
+      public void testPrintQuestion()
+      {
+          String output = getMethodOutput("printQuestion");
+          String expect = "Question";
+
+          boolean passed = getResults(expect, output, "Checking method printQuestion()");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testPrintAnswer()
+      {
+          String output = getMethodOutput("printAnswer");
+          String expect = "Answer";
+
+          boolean passed = getResults(expect, output, "Checking method printAnswer()");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testDefaultConstructor()
+      {
+          String[] args = {"Question 1", "Answer 1"};
+          String output = checkDefaultConstructor();
+          String expect = "fail";
+
+          boolean passed = getResults(expect, output, "Checking default constructor");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testConstructor()
+      {
+          String[] args = {"Question 1", "Answer 1"};
+          String output = checkConstructor(args);
+          String expect = "pass";
+
+          boolean passed = getResults(expect, output, "Checking constructor with parameters");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testVariableTypes()
+      {
+          String varTypes = "String String";
+          String output = testInstanceVariableTypes(varTypes.split(" "));
+
+          boolean passed = getResults(varTypes, output, "Checking Instance Variable Type(s)");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testPrivateVariables()
+      {
+          String expect = "2 Private";
+          String output = testPrivateInstanceVariables();
+
+          boolean passed = getResults(expect, output, "Checking Private Instance Variable(s)");
+          assertTrue(passed);
+      }
+
+
+      @Test
+      public void testMain()
+      {
+          String output = getMethodOutput("main");
+
+          String expect = "2+ line(s) of text";
+          String actual = " line(s) of text";
+
+          int len = output.split("\n").length;
+
+          if (output.length() > 0) {
+              actual = len + actual;
+          } else {
+              actual = output.length() + actual;
+          }
+          boolean passed = len >= 2;
+
+          getResults(expect, actual, "Checking main method", passed);
+          assertTrue(passed);
+      }
+  }
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">5.1.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Programmers use code to represent a physical object or nonphysical concept, real or imagined, by defining a class based on the attributes and/or behaviors of the object or concept.</p></li>
+<li><p><strong>Instance Variables</strong> define the attributes or data needed for objects, and <strong>methods</strong> define the behaviors or functions of the object.</p></li>
+<li><p><strong>Data encapsulation</strong> is a technique in which the implementation details of a class are kept hidden from the user. The data is kept private with access only through the public methods that can act on the data in the class.</p></li>
+<li><p>The keywords <strong>public</strong> and <strong>private</strong> affect the access of classes, data, constructors, and methods.</p></li>
+<li><p>The keyword private restricts access to the declaring class, while the keyword public allows access from classes outside the declaring class.</p></li>
+<li><p>Instance variables are encapsulated by using the <strong>private access modifier</strong>.</p></li>
+<li><p>Methods can be public or private, but they are usually public.</p></li>
+</ul>
+</div>
+<div class="section" id="ap-practice">
+<h2><span class="section-number">5.1.7. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false" data-random id="AP5-1-1" >
+            <p>5-1-5: Consider the Cat class which will contain a String and an int attribute for a cat’s name and age and a constructor.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
+<span class="p">{</span>
+  <span class="cm">/* missing code */</span>
+<span class="p">}</span>
+
+<span class="n">Which</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">replacements</span> <span class="k">for</span> <span class="cm">/* missing code */</span> <span class="n">is</span> <span class="n">the</span> <span class="n">most</span> <span class="n">appropriate</span>
+<span class="n">implementation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">class</span><span class="o">?</span>
+</pre></div>
+</div>
+<li data-component="answer"  id="AP5-1-1_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="kd">private</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-1_opt_a">
+<p>Instance variables should be private.</p></li><li data-component="answer"  id="AP5-1-1_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="kd">private</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-1_opt_b">
+<p>Instance variables should be private.</p></li><li data-component="answer" data-correct id="AP5-1-1_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-1_opt_c">
+<p>Correct! The instance variables are private and the constructor is public.</p></li><li data-component="answer"  id="AP5-1-1_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-1_opt_d">
+<p>Instance variables should be private.</p></li><li data-component="answer"  id="AP5-1-1_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="kd">private</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-1_opt_e">
+<p>Constructor should be public.</p></li>
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-1-2" >
+            <p>5-1-6: Consider the Party class below which will contain three int attributes for numOfPeople, volumeOfMusic, and numOfBoxesOfPizza, a constructor, and a startParty method. The startParty method is intended to be accessed outside the class.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Party</span>
+<span class="p">{</span>
+<span class="cm">/* missing code */</span>
+<span class="p">}</span>
+
+<span class="n">Which</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">replacements</span> <span class="k">for</span> <span class="cm">/* missing code */</span> <span class="n">is</span> <span class="n">the</span> <span class="n">most</span> <span class="n">appropriate</span>
+<span class="n">implementation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">class</span><span class="o">?</span>
+</pre></div>
+</div>
+<li data-component="answer"  id="AP5-1-2_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">volumeOfMusic</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfBoxesOfPizza</span><span class="p">;</span>
+<span class="kd">public</span> <span class="nf">Party</span><span class="p">()</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">startParty</span><span class="p">()</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-2_opt_a">
+<p>Method startParty() should be public.</p></li><li data-component="answer" data-correct id="AP5-1-2_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">volumeOfMusic</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfBoxesOfPizza</span><span class="p">;</span>
+<span class="kd">public</span> <span class="nf">Party</span><span class="p">()</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">startParty</span><span class="p">()</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-2_opt_b">
+<p>Correct, instance variables should be private and the methods should be public.</p></li><li data-component="answer"  id="AP5-1-2_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="n">volumeOfMusic</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="n">numOfBoxesOfPizza</span><span class="p">;</span>
+<span class="kd">public</span> <span class="nf">Party</span><span class="p">()</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">startParty</span><span class="p">()</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-2_opt_c">
+<p>Instance variables should be private.</p></li><li data-component="answer"  id="AP5-1-2_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">volumeOfMusic</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfBoxesOfPizza</span><span class="p">;</span>
+<span class="kd">private</span> <span class="nf">Party</span><span class="p">()</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">startParty</span><span class="p">()</span>
+<span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-1-2_opt_d">
+<p>Methods should be public.</p></li>
+
+            </ul>
+            </div>
+            </div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5. Writing Classes' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="5. Writing Classes">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.2. Writing Constructors' data-toggle="tooltip" >
+    <a href="topic-5-2-writing-constructors.html" aria-label="5.2. Writing Constructors">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

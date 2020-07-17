@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>5.13. Free Response Question (FRQ) for Classes &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.14. Free Response Question - Time" href="timeFRQ.html" />
+    <link rel="prev" title="5.12. Exercises" href="Exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csawesome&page=FRQstepTracker'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.12. </span>Exercises" data-toggle="tooltip">
+    <a href="Exercises.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">5.14. </span>Free Response Question - Time' data-toggle="tooltip" >              
+    <a href="timeFRQ.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="free-response-question-frq-for-classes">
+<h1><span class="section-number">5.13. </span>Free Response Question (FRQ) for Classes<a class="headerlink" href="#free-response-question-frq-for-classes" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">As of 2019, the AP exam’s second free response question (FRQ) is on classes, where students design and implement a described class.  This question involves creating a class with private instance variables and public methods. The College Board will provide a description of the class and the methods. This question does not involve more complex topics such as arrays.</p>
+<p>To succeed on the FRQ Question 2 on Classes, you must know how to:</p>
+<ul class="simple">
+<li><p>Create a class using <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">class</span> <span class="pre">Classname</span> <span class="pre">{</span> <span class="pre">}</span></code></p></li>
+<li><p>Write a constructor with the same name as the class and no return type. This constructor will probably have a parameter that is assigned to an instance variable  and will need to assign default values to the other instance variables.</p></li>
+<li><p>Write public methods in the class that use the instance variables as well as parameters and return values. These methods will probably use if statements but not more complex coding. One of these methods will probably be an <strong>accessor method</strong> that returns an instance variable or a calculated value that is dependent on the instance variables, and one will probably be a <strong>mutator method</strong> that changes the value of an instance variable.</p></li>
+</ul>
+<div class="section" id="steptracker-class-frq">
+<h2><span class="section-number">5.13.1. </span>2019 StepTracker Class FRQ<a class="headerlink" href="#steptracker-class-frq" title="Permalink to this headline">¶</a></h2>
+<p>The 2019 FRQ 2 for the class StepTracker is a good example of what to expect. It is available as question 2 on page 7 of <a class="reference external" href="https://apstudents.collegeboard.org/sites/default/files/2019-05/ap19-frq-computer-science-a.pdf">https://apstudents.collegeboard.org/sites/default/files/2019-05/ap19-frq-computer-science-a.pdf</a> , reproduced below.</p>
+<p>Question 2.</p>
+<p>This question involves the implementation of a fitness tracking system that is represented by the <strong>StepTracker</strong> class. A StepTracker object is created with a parameter that defines the minimum number of steps that must be taken for a day to be considered active. The StepTracker class provides a constructor and the following methods.</p>
+<ul class="simple">
+<li><p><strong>addDailySteps</strong>, which accumulates information about steps, in readings taken once per day</p></li>
+<li><p><strong>activeDays</strong>, which returns the number of active days</p></li>
+<li><p><strong>averageSteps</strong>, which returns the average number of steps per day, calculated by dividing the total number of steps taken by the number of days tracked</p></li>
+</ul>
+<p>The following table contains a sample code execution sequence and the corresponding results.</p>
+<style>    th,td { text-align: left;  padding-left: 4px; }
+table, tr, td, th { border: 1px solid black;} </style>
+<table border width="100%"><tr><th>Statements and Expressions</th><th width="15%">Value Returned (blank if no value)</th><th>Comment</th> </tr>
+<tr><td>StepTracker tr = new StepTracker(10000); </td>
+<td></td><td>Days with at least 10,000 steps are considered active. Assume that the parameter is positive.</td></tr>
+<tr><td>tr.activeDays(); </td>
+<td>0</td><td>No data have been recorded yet.</td></tr>
+<tr><td>tr.averageSteps(); </td>
+<td>0.0</td><td>When no step data have been recorded, the averageSteps method returns 0.0.</td></tr>
+<tr><td>tr.addDailySteps(9000);</td>
+<td></td><td>This is too few steps for the day to be considered active.</td></tr>
+<tr><td>tr.addDailySteps(5000);</td>
+<td></td><td>This is too few steps for the day to be considered active.</td></tr>
+<tr><td>tr.activeDays(); </td>
+<td>0</td><td>No day had at least 10,000 steps.
+</td></tr>
+<tr><td>tr.averageSteps(); </td>
+<td>7000.0</td><td>The average number of steps per day is (14000 / 2).</td></tr>
+<tr><td>tr.addDailySteps(13000); </td>
+<td></td><td>This represents an active day.</td></tr>
+<tr><td>tr.activeDays();  </td>
+<td>1</td><td>Of the three days for which step data were entered, one day had at least 10,000 steps.</td></tr>
+<tr><td>tr.averageSteps(); </td>
+<td>9000.0</td><td>The average number of steps per day is (27000 / 3).</td></tr>
+<tr><td>tr.addDailySteps(23000); </td>
+<td></td><td>This represents an active day.</td></tr>
+<tr><td>tr.addDailySteps(1111); </td>
+<td></td><td>This is too few steps for the day to be considered active.</td></tr>
+<tr><td>tr.activeDays(); </td>
+<td>2</td><td>Of the five days for which step data were entered, two days had at least 10,000 steps.</td></tr>
+<tr><td>tr.averageSteps(); </td>
+<td>10222.2</td><td>The average number of steps per day is (51111 / 5). </td></tr>
+</table><p><p>This question asks you to write the complete StepTracker class, including the constructor and any required instance variables and
+methods. Your implementation must meet all specifications and conform to the example.</p>
+</div>
+<div class="section" id="groupwork-determining-the-instance-variables">
+<h2><span class="section-number">5.13.2. </span><a class="reference internal" href="../_images/groupwork5.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork5.png" style="width: 35px;" /></a> Determining the Instance Variables<a class="headerlink" href="#groupwork-determining-the-instance-variables" title="Permalink to this headline">¶</a></h2>
+<p>Work in pairs or groups to read through the problem statement and determine the instance variables required for this class. During the exam, it helps to circle the words that are important and may describe the instance variables. Different groups may come up with different variables that will still work. Groups should report back and compare answers in class to determine the best variables before writing the class.</p>
+<p>It may help to first identify the variables that are needed for the constructor and the accessor and mutator methods.</p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="steptracker_instance_variables"    >
+<span data-question>5-13-1: Select the phrases below which probably mention an instance variable. Note that some of these may be referring to the same variable or to local variables.</span><span data-feedback>Think about phrases that indicate a value that is being stored or changed or returned.</span><pre>This question involves the implementation of <span data-incorrect>a fitness tracking system that is represented by the **StepTracker** class.</span>
+
+<span data-incorrect>A StepTracker object</span> is created with a parameter that defines <span data-correct>the minimum number of steps that must be taken for a day to be considered active. </span>
+
+<span data-incorrect>The StepTracker class</span> provides a constructor and the following methods.
+
+    - addDailySteps, which accumulates <span data-correct>information about steps</span>, in readings taken once per day.
+
+    - activeDays, which returns <span data-correct>the number of active days.</span>
+
+    - averageSteps, which returns <span data-correct>the average number of steps per day</span>, calculated by dividing <span data-correct>the total number of steps taken</span> by <span data-correct>the number of days tracked.</span></pre>
+
+</div>
+</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="steptracker-constructor" >
+            <p>5-13-2: Given the StepTracker class description above, which of these statements describes an instance variable that the StepTracker constructor should set using a parameter?</p>
+
+            <li data-component="answer" data-correct id="steptracker-constructor_opt_a">the minimum number of steps that must be taken for a day to be considered active</li><li data-component="feedback">Yes, the problem definition describes this as a parameter to create a StepTracker object.</li>
+            
+            <li data-component="answer"  id="steptracker-constructor_opt_b">the number of active days</li><li data-component="feedback">This is not described as a parameter to create an StepTracker object.</li>
+            
+            <li data-component="answer"  id="steptracker-constructor_opt_c">the average number of steps per day</li><li data-component="feedback">This is not described as a parameter to create an StepTracker object.</li>
+            
+            <li data-component="answer"  id="steptracker-constructor_opt_d">the total number of steps taken</li><li data-component="feedback">This is not described as a parameter to create an StepTracker object.</li>
+            
+            <li data-component="answer"  id="steptracker-constructor_opt_e">number of days tracked</li><li data-component="feedback">This is not described as a parameter to create an StepTracker object.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="steptracker-accessor" >
+            <p>5-13-3: Which of the following methods is an accessor method that returns the value of an instance variable?</p>
+
+            <li data-component="answer"  id="steptracker-accessor_opt_a">StepTracker tr = new StepTracker(1000)</li><li data-component="feedback">This is a call to the constructor.</li>
+            
+            <li data-component="answer"  id="steptracker-accessor_opt_b">tr.addDailysteps(1000);</li><li data-component="feedback">No, addDailySteps(1000) probably adds the given steps to an instance variable as a mutator method.</li>
+            
+            <li data-component="answer" data-correct id="steptracker-accessor_opt_c">tr.activeDays();</li><li data-component="feedback">Yes, activeDays() is an accessor method that returns the number of active days (a great instance variable!).</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="steptracker-mutator" >
+            <p>5-13-4: Which of the following methods is a mutator method that changes the value of an instance variable?</p>
+
+            <li data-component="answer"  id="steptracker-mutator_opt_a">StepTracker tr = new StepTracker(1000)</li><li data-component="feedback">No, this is a call to the constructor.</li>
+            
+            <li data-component="answer" data-correct id="steptracker-mutator_opt_b">tr.addDailysteps(1000);</li><li data-component="feedback">Yes, addDailySteps(1000) is a mutator method that adds the steps given as a parameter to an instance variable that keeps track of the steps taken so far.</li>
+            
+            <li data-component="answer"  id="steptracker-mutator_opt_c">tr.activeDays();</li><li data-component="feedback">No, activeDays() is an accessor method that returns the number of active days.</li>
+            
+            <li data-component="answer"  id="steptracker-mutator_opt_d">tr.averageSteps();</li><li data-component="feedback">No, averageSteps() is a complex accessor method that calculates and returns the average number of steps from the instance variable.</li>
+            
+
+            </ul>
+            </div>
+            
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=steptracker-variables  >
+<p>5-13-5: What are the instance variables (at least 4!) that you need for the StepTracker class? What are the data types for each instance variable?</p>
+
+</div>
+</div> <!-- end of runestone div -->
+</div>
+<div class="section" id="writing-the-class-header-and-constructor">
+<h2><span class="section-number">5.13.3. </span>Writing the Class Header and Constructor<a class="headerlink" href="#writing-the-class-header-and-constructor" title="Permalink to this headline">¶</a></h2>
+<p>You will receive at least 1 point if you write the class header and a constructor that has the same name as the class and no return type. You will receive another point for creating <strong>private</strong> instance variables inside the class. Complete the class definition below with the class name, the instance variables you determined above, and the constructor. Remember that for this problem, a StepTracker object is created (with a constructor) with a parameter that defines the minimum number of steps that must be taken for a day to be considered active. The constructor will often have a parameter which it should assign to an instance variable. It should also assign default values to the other instance variables.</p>
+
+<div data-childcomponent="stepTrackerCode1" class="runestone explainer ac_section alert alert-warning">
+<p>Write the first draft of the class StepTracker below with the class name, the instance variables, and the constructor with a parameter for the minimum number of steps threshold for active days. Make sure it compiles.</p>
+
+<textarea data-component="activecode" id=stepTrackerCode1 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+// Write class name here
+
+{
+   // write instance variable declarations here
+
+
+   // write the constructor with a parameter here
+
+
+   public static void main(String[] args)
+   {
+      StepTracker tr = new StepTracker(10000);
+   }
+}
+</textarea>
+</div>
+<p>Here is the rubric for the instance variables and the constructor for this problem. Did you receive all 3 points? In class, your teacher may have you grade each others’ code.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/stepTrackerRubric1.png"><img alt="Rubric for instance variables and constructor" src="../_images/stepTrackerRubric1.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Rubric for instance variables and constructor</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="writing-the-accessor-method-activedays">
+<h2><span class="section-number">5.13.4. </span>Writing the Accessor Method activeDays<a class="headerlink" href="#writing-the-accessor-method-activedays" title="Permalink to this headline">¶</a></h2>
+<p>Each method in the FRQ is worth 1 - 3 points. The method header is usually worth 1 point and the code in the method body is usually worth another point or two depending on how complex it is.</p>
+<p>This problem asks you to write a simple accessor method called <strong>activeDays</strong> which returns the number of active days (which should be an instance variable) for 1 point.</p>
+<p>Remember that accessor methods usually look like the following:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">ExampleClass</span>
+<span class="p">{</span>
+  <span class="c1">//Instance variable declaration</span>
+  <span class="kd">private</span> <span class="n">typeOfVar</span> <span class="n">varName</span><span class="p">;</span>
+
+  <span class="c1">// Accessor method template</span>
+  <span class="kd">public</span> <span class="n">typeOfVar</span> <span class="nf">getVarName</span><span class="p">()</span>
+  <span class="p">{</span>
+     <span class="k">return</span> <span class="n">varName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="steptracker-accessor-header" >
+            <p>5-13-6: Which of the following is a good method header for the accessor method activeDays()?</p>
+
+            <li data-component="answer"  id="steptracker-accessor-header_opt_a">public void activeDays()</li><li data-component="feedback">Accessor methods need a return type since they return the value of an instance variable or a value calculated from instance variables.</li>
+            
+            <li data-component="answer"  id="steptracker-accessor-header_opt_b">private void activeDays()</li><li data-component="feedback">Accessor methods should not be private.</li>
+            
+            <li data-component="answer"  id="steptracker-accessor-header_opt_c">public int activeDays(int numSteps)</li><li data-component="feedback">Accessor methods do not usually take parameters.</li>
+            
+            <li data-component="answer"  id="steptracker-accessor-header_opt_d">public void activeDays(int numSteps)</li><li data-component="feedback">Accessor methods need a return type since they return the value of an instance variable or a value calculated from instance variables, and  they do not usually have a parameter.</li>
+            
+            <li data-component="answer" data-correct id="steptracker-accessor-header_opt_e">public int activeDays()</li><li data-component="feedback">Correct, accessor methods are public, have a return type, and no parameter.</li>
+            
+
+            </ul>
+            </div>
+            
+<div data-childcomponent="stepTrackerCode2" class="runestone explainer ac_section alert alert-warning">
+<p>Copy the code from your first draft of the class StepTracker above  with the instance variables and constructor. Write the accessor methods <strong>activeDays</strong> which returns the number of active days.</p>
+
+<textarea data-component="activecode" id=stepTrackerCode2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class StepTracker
+{
+   // copy the instance variable declarations here
+
+
+   // copy the constructor with a parameter here
+
+   // Write the accessor method activeDays() here
+   // @return activeDays
+
+   public static void main(String[] args)
+   {
+      StepTracker tr = new StepTracker(10000);
+      System.out.println(tr.activeDays()); // returns 0. No data have been recorded yet.
+   }
+}
+</textarea>
+</div>
+<p>Here is the rubric for the accessor method activeDays() for this problem. The second column is small mistakes that will still earn the point but the third column is larger mistakes that will not earn the point. Did you receive the point for this method? In class, your teacher may have you grade each others’ code.</p>
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="../_images/stepTrackerRubric3.png"><img alt="Rubric for acccessor methods" src="../_images/stepTrackerRubric3.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: Rubric for accessor method activeDays()</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="writing-the-mutator-method-adddailysteps">
+<h2><span class="section-number">5.13.5. </span>Writing the Mutator Method addDailySteps<a class="headerlink" href="#writing-the-mutator-method-adddailysteps" title="Permalink to this headline">¶</a></h2>
+<p>This problem asks you to write a more complex mutator method called addDailySteps worth 3 points.</p>
+<p>Remember that mutator methods often look like the following:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Example</span>
+<span class="p">{</span>
+    <span class="c1">//Instance variable declaration</span>
+    <span class="kd">private</span> <span class="n">typeOfVar</span> <span class="n">varName</span><span class="p">;</span>
+
+    <span class="c1">// Mutator method template</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changeVarName</span><span class="p">(</span><span class="n">typeOfVar</span> <span class="n">newValue</span><span class="p">)</span>
+    <span class="p">{</span>
+       <span class="c1">// an instance variable is changed through = or an operator like +=, -=, ++, etc.</span>
+       <span class="n">varName</span> <span class="o">=</span> <span class="n">newValue</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="steptracker-mutator-header" >
+            <p>5-13-7: Which of the following is a good method header for the mutator method addDailySteps?</p>
+
+            <li data-component="answer"  id="steptracker-mutator-header_opt_a">public void addDailySteps()</li><li data-component="feedback">Mutator methods take a parameter to change the value of an instance variable.</li>
+            
+            <li data-component="answer"  id="steptracker-mutator-header_opt_b">private void addDailySteps()</li><li data-component="feedback">Mutator methods should not be private.</li>
+            
+            <li data-component="answer"  id="steptracker-mutator-header_opt_c">public int addDailySteps(int numSteps)</li><li data-component="feedback">Mutator methods do not usually return a value.</li>
+            
+            <li data-component="answer" data-correct id="steptracker-mutator-header_opt_d">public void addDailySteps(int numSteps)</li><li data-component="feedback">Correct, mutator methods are public with a void return type and take a parameter to change the value of an instance variable.</li>
+            
+            <li data-component="answer"  id="steptracker-mutator-header_opt_e">private int addDailySteps()</li><li data-component="feedback">Mutator methods should not be private and should take a parameter to change the value of an instance variable.</li>
+            
+
+            </ul>
+            </div>
+            <p>The code for this mutator method is a little more complex than the template above, because it needs to change more than 1 instance variable. Notice the comments in the sample code execution:</p>
+<style>    td { text-align: left; } </style>
+<table border width="100%"><tr><th>Statements and Expressions</th><th width="15%">Value Returned (blank if no value)</th><th>Comment</th> </tr>
+<tr><td>tr.addDailySteps(5000);</td>
+<td></td><td>This is too few steps for the day to be considered active.</td></tr>
+<tr><td>tr.activeDays(); </td>
+<td>0</td><td>No day had at least 10,000 steps.
+</td></tr>
+<tr><td>tr.addDailySteps(13000); </td>
+<td></td><td>This represents an active day.</td></tr>
+<tr><td>tr.activeDays();  </td>
+<td>1</td><td>Of the three days for which step data were entered, one day had at least 10,000 steps.</td></tr>
+</table><p><p>Consider each of your instance variables and whether this method should change them.</p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="steptracker-mutator-changes" >
+            <p>5-13-8: Which of the following values does the mutator method addDailySteps need to change? (check all that apply)</p>
+
+            <li data-component="answer"  id="steptracker-mutator-changes_opt_a">the minimum number of steps that must be taken for a day to be considered active</li><li data-component="feedback">The minimum is set by the constructor.</li>
+            
+            <li data-component="answer" data-correct id="steptracker-mutator-changes_opt_b">the number of active days</li><li data-component="feedback">Yes, addDailySteps should determine whether the number of steps given in its parameter is an active day and if so, change this variable.</li>
+            
+            <li data-component="answer"  id="steptracker-mutator-changes_opt_c">the average number of steps per day</li><li data-component="feedback">This method does not have to calculate the average.</li>
+            
+            <li data-component="answer" data-correct id="steptracker-mutator-changes_opt_d">the total number of steps taken</li><li data-component="feedback">Yes, addDailySteps should add the number of steps taken that day in its parameter to the total.</li>
+            
+            <li data-component="answer" data-correct id="steptracker-mutator-changes_opt_e">number of days tracked</li><li data-component="feedback">Yes, addDailySteps is called each day and can change the variable for the number of days being tracked.</li>
+            
+
+            </ul>
+            </div>
+            
+<div data-childcomponent="stepTrackerCode3" class="runestone explainer ac_section alert alert-warning">
+<p>Copy the code from your draft of the class StepTracker above  with the class name, the instance variables, constructor, and accessory method. Write the mutator method <strong>addDailySteps</strong> which takes a parameter and adds it to the appropriate instance variable and changes other instance variables appropriately.</p>
+
+<textarea data-component="activecode" id=stepTrackerCode3 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class StepTracker
+{
+   // copy the instance variable declarations here
+
+
+   // copy the constructor with a parameter here
+
+   // copy the accessor method activeDays() here.
+
+   // Write the mutator method addDailySteps here.
+   // @param number of steps taken that day
+
+
+
+   public static void main(String[] args)
+   {
+      StepTracker tr = new StepTracker(10000);
+      System.out.println(tr.activeDays()); // returns 0. No data have been recorded yet.
+      tr.addDailySteps(9000); // This is too few steps for the day to be considered active.
+      tr.addDailySteps(5000); // This is too few steps for the day to be considered active.
+      System.out.println(tr.activeDays()); // returns 0.  No day had at least 10,000 steps.
+      tr.addDailySteps(13000); // This represents an active day.
+      System.out.println(tr.activeDays());  // returns 1. Of the three days for which step data were entered, one day had at least 10,000 steps.
+   }
+}
+</textarea>
+</div>
+<p>Here is the rubric for the mutator method for this problem. The second column is small mistakes that will still earn the point but the third column is larger mistakes that will not earn the point. Did you receive all the points? In class, your teacher may have you grade each others’ code.</p>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="../_images/stepTrackerRubric2.png"><img alt="Rubric for mutator method" src="../_images/stepTrackerRubric2.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">Figure 3: Rubric for mutator method</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="writing-the-accessor-method-averagesteps">
+<h2><span class="section-number">5.13.6. </span>Writing the Accessor Method averageSteps<a class="headerlink" href="#writing-the-accessor-method-averagesteps" title="Permalink to this headline">¶</a></h2>
+<p>This problem asks you to write a more complex accessor method which uses the instance variables to calculate and return the <strong>averageSteps</strong> for 2 points. This method returns the average number of steps per day, calculated by dividing the total number of steps taken by the number of days tracked.</p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="steptracker-accessor-header2" >
+            <p>5-13-9: Which of the following is a good method header for the accessor method averageSteps() which returns the average number of steps per day?</p>
+
+            <li data-component="answer"  id="steptracker-accessor-header2_opt_a">public void averageSteps()</li><li data-component="feedback">Accessor methods need a return type since they return the value of an instance variable or a value calculated from instance variables.</li>
+            
+            <li data-component="answer"  id="steptracker-accessor-header2_opt_b">public int averageSteps()</li><li data-component="feedback">When you compute an average using division, you usually end up with a double value, not int.</li>
+            
+            <li data-component="answer" data-correct id="steptracker-accessor-header2_opt_c">public double averageSteps()</li><li data-component="feedback">Correct, accessor methods are public, have a return type, and no parameter. In this case, returning an average requires a double return type.</li>
+            
+            <li data-component="answer"  id="steptracker-accessor-header2_opt_d">public void averageSteps(int numSteps)</li><li data-component="feedback">Accessor methods need a return type since they return the value of an instance variable or a value calculated from instance variables, and  they do not usually have a parameter.</li>
+            
+            <li data-component="answer"  id="steptracker-accessor-header2_opt_e">public int averageSteps(int numSteps)</li><li data-component="feedback">Accessor methods do not usually take parameters.</li>
+            
+
+            </ul>
+            </div>
+            <p>The complex accessor method <strong>averageSteps()</strong> must calculate the average number of steps from your instance variables. Notice that the first time it is called in the sample code execution, it returns 0.0 since there are no steps recorded. This avoids a divide by 0 error.</p>
+<style>    th,td { text-align: left;  padding-left: 4px; }
+table, tr, td, th { border: 1px solid black;} </style>
+<table border width="100%"><tr><th>Statements and Expressions</th><th width="15%">Value Returned (blank if no value)</th><th>Comment</th> </tr>
+<tr><td>tr.averageSteps(); </td>
+<td>0.0</td><td>When no step data have been recorded, the averageSteps method returns 0.0.</td></tr>
+</table><p>
+<div data-childcomponent="stepTrackerCode4" class="runestone explainer ac_section alert alert-warning">
+<p>Copy the code from your draft of the class StepTracker above  with the instance variables, constructor, accessor and mutator methods. Write the accessor method <strong>averageSteps</strong> which returns the average number of steps per day, calculated by dividing the total number of steps taken by the number of days tracked.</p>
+
+<textarea data-component="activecode" id=stepTrackerCode4 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class StepTracker
+{
+   // copy the instance variable declarations here
+
+
+   // copy the constructor with a parameter here
+
+   // copy the accessor method activeDays() here
+
+
+   // copy the mutator method addDailySteps here.
+   // @param number of steps taken that day
+
+
+   //Write the accessor method averageSteps() here
+   // @return average steps calculated by dividing the total number of steps taken by the number of days tracked (which should be instance variables).
+
+
+
+
+   public static void main(String[] args)
+   {
+      StepTracker tr = new StepTracker(10000);
+      System.out.println(tr.activeDays()); // returns 0. No data have been recorded yet.
+      System.out.println(tr.averageSteps()); // returns 0.0. When no step data have been recorded, the averageSteps method returns 0.0.
+      tr.addDailySteps(9000); // This is too few steps for the day to be considered active.
+      tr.addDailySteps(5000); // This is too few steps for the day to be considered active.
+      System.out.println(tr.activeDays()); // returns 0.  No day had at least 10,000 steps.
+      System.out.println(tr.averageSteps()); // returns 7000.0 The average number of steps per day is (14000 / 2).
+      tr.addDailySteps(13000); // This represents an active day.
+      System.out.println(tr.activeDays());  // returns 1. Of the three days for which step data were entered, one day had at least 10,000 steps.
+      System.out.println(tr.averageSteps()); // returns 9000.0. The average number of steps per day is (27000 / 3).
+      tr.addDailySteps(23000); // This represents an active day.
+      tr.addDailySteps(1111); // This is too few steps for the day to be considered active.
+      System.out.println(tr.activeDays()); // returns 2. Of the five days for which step data were entered, two days had at least 10,000 steps.
+      System.out.println(tr.averageSteps()); // returns 10222.2. The average number of steps per day is (51111 / 5).
+   }
+}
+</textarea>
+</div>
+<p>Here is the rubric for the averageSteps method for this problem.  Did you receive all the points? In class, your teacher may have you grade each others’ code.</p>
+<div class="align-center figure" id="id4">
+<a class="reference internal image-reference" href="../_images/stepTrackerRubric4.png"><img alt="Rubric for acccessor methods" src="../_images/stepTrackerRubric4.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">Figure 4: Rubric for averageSteps method</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.12. Exercises' data-toggle="tooltip">
+    <a href="Exercises.html" aria-label="5.12. Exercises">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.14. Free Response Question - Time' data-toggle="tooltip" >
+    <a href="timeFRQ.html" aria-label="5.14. Free Response Question - Time">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

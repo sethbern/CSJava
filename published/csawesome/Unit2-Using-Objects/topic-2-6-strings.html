@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>2.6. Strings &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.7. String Methods" href="topic-2-7-string-methods.html" />
+    <link rel="prev" title="2.5. Calling Methods that Return Values" href="topic-2-5-methods-return.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csawesome&page=topic-2-6-strings'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">2.5. </span>Calling Methods that Return Values" data-toggle="tooltip">
+    <a href="topic-2-5-methods-return.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">2.7. </span>String Methods' data-toggle="tooltip" >              
+    <a href="topic-2-7-string-methods.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="strings">
+<span id="index-0"></span><h1><span class="section-number">2.6. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
+<p><strong>Strings</strong> in Java are objects of the <code class="docutils literal notranslate"><span class="pre">String</span></code> class that hold sequences of characters (a, b, c, $, etc). Remember that a class (or classification) in Java defines the data that all objects of the class have (the fields) and the behaviors, the things that objects know how to do (the methods).</p>
+<p>You can declare a variable to be of type <code class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Class names in Java, like <code class="docutils literal notranslate"><span class="pre">String</span></code>, begin with a capital letter.  All primitive types: <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, and <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, begin with a lowercase letter.  This is one easy way to tell the difference between primitive types and class types.</p>
+</div>
+
+<div data-childcomponent="lcsb1" class="runestone explainer ac_section alert alert-warning">
+<p>Run the following code.  What does it print?</p>
+
+<textarea data-component="activecode" id=lcsb1 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Test1
+{
+   public static void main(String[] args)
+   {
+     String greeting = null;
+     System.out.println(greeting);
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "null";
+         boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p>The code above declares an object variable named <code class="docutils literal notranslate"><span class="pre">greeting</span></code> and sets the value of greeting to the Java keyword <code class="docutils literal notranslate"><span class="pre">null</span></code> to show that it doesn’t refer to any object yet.  So <code class="docutils literal notranslate"><span class="pre">System.out.println(greeting);</span></code> will print <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<p>Object variables <strong>refer</strong> to objects in memory.  A reference is a way to find the actual object, like adding a contact to your phone lets you reach someone without knowing exactly where they are.  The value of greeting is null since the string object has not been created yet.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/greeting.png"><img alt="../_images/greeting.png" src="../_images/greeting.png" style="width: 50px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Initial value for an object reference</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p id="index-1">In Java there are two ways to create an object of the <code class="docutils literal notranslate"><span class="pre">String</span></code> class.  You can use the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword followed by a space and then the class constructor and then in parentheses you can include values used to initialize the fields of the object.  This is the standard way to create a new object of a class in Java.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p id="index-2">In Java you can also use just a <strong>string literal</strong>, which is a set of characters enclosed in double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>), to create a <code class="docutils literal notranslate"><span class="pre">String</span></code> object.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In both cases an object of the <code class="docutils literal notranslate"><span class="pre">String</span></code> class will be created in memory and the value of the variable greeting will be set to an object reference, a way to find that object.</p>
+<p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
+
+<div data-childcomponent="lcsbnew" class="runestone explainer ac_section alert alert-warning">
+<p>Here is an active code sample that creates two greeting strings: one using a string literal and the other using new and the String constructor. Change the code to add 2 new strings called firstname and lastname, one using a string literal and the other using new, and print them out with the greetings.</p>
+
+<textarea data-component="activecode" id=lcsbnew data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class StringTest
+{
+   public static void main(String[] args)
+   {
+     String greeting1 = "Hello!";
+     String greeting2 = new String("Welcome!");
+     System.out.println(greeting1);
+     System.out.println(greeting2);
+    }
+ }
+ ====
+ import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testChangedCode() {
+         String origCode = "public class StringTest {      public static void main(String[] args)      { String greeting1 = \"Hello!\";        String greeting2 = new String(\"Welcome!\");System.out.println(greeting1); System.out.println(greeting2); }    }";
+         boolean changed = codeChanged(origCode);
+         assertTrue(changed);
+     }
+ }
+</textarea>
+</div>
+
+<div data-childcomponent="lcsb2" class="runestone explainer ac_section alert alert-warning">
+<p>Now that greeting refers to an actual object we can ask the object what class created it. Try the following.  What does it print?</p>
+
+<textarea data-component="activecode" id=lcsb2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Test2
+{
+   public static void main(String[] args)
+   {
+     String greeting = "Hello";
+     Class currClass = greeting.getClass();
+     System.out.println(currClass);
+     Class parentClass = currClass.getSuperclass();
+     System.out.println(parentClass);
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "class java.lang.String\nclass java.lang.Object";
+         boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<p id="index-3">The code above will first print <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">java.lang.String</span></code> since <code class="docutils literal notranslate"><span class="pre">greeting</span></code> was created by the <code class="docutils literal notranslate"><span class="pre">String</span></code> class.  The full name for the <code class="docutils literal notranslate"><span class="pre">String</span></code> class is <code class="docutils literal notranslate"><span class="pre">java.lang.String</span></code>.  The <code class="docutils literal notranslate"><span class="pre">java.lang</span></code> part is the <strong>package</strong> name.  Every class in the Java language is in a package and the standard classes like <code class="docutils literal notranslate"><span class="pre">String</span></code> are in the <code class="docutils literal notranslate"><span class="pre">java.lang</span></code> package.  Every object in Java knows the class that created it.  Also, every class knows its <strong>parent</strong> class.  Yes, a class can have a parent class, just as people have parents.  But, in Java a class can only have one parent.  A class can <code class="docutils literal notranslate"><span class="pre">inherit</span></code> object fields and methods from a parent class, just like you might inherit musical ability from a parent.  The fourth line will print <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">java.lang.Object</span></code> because the parent class (<strong>superclass</strong>) of the String class is the Object class.  All classes in Java inherit from the Object class at some point in their ancestry.</p>
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="../_images/stringObject.png"><img alt="../_images/stringObject.png" src="../_images/stringObject.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: Object variable of type String with a reference to a String object which has a reference to the String class which has a reference to the Object class.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="string-operators-concatenation">
+<h2><span class="section-number">2.6.1. </span>String Operators - Concatenation<a class="headerlink" href="#string-operators-concatenation" title="Permalink to this headline">¶</a></h2>
+<p id="index-4">Strings can be <strong>appended</strong> to each other to create a new string using the <code class="docutils literal notranslate"><span class="pre">+</span></code> or <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator . This is also called <strong>concatenation</strong>.</p>
+
+<div data-childcomponent="lcso1" class="runestone explainer ac_section alert alert-warning">
+<p>Try the following code. Add another variable for a lastname that is “Hernandez”. Use += or + to add the lastname variable after name to the result. Use += or + to add 2 more exclamation points (!) to the end of the happy birthday greeting in result.</p>
+
+<textarea data-component="activecode" id=lcso1 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Test1
+{
+   public static void main(String[] args)
+   {
+     String start = "Happy Birthday";
+     String name = "Jose";
+     String result = start + " " + name;  // add together strings
+     result += "!"; // add on to the same string
+     System.out.println(result);
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Happy Birthday Jose Hernandez!!!";
+         boolean passed = getResults(expect, output, "Expected output from main");
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that spaces are not added between strings automatically.  If you want a space between two strings then add one using + ” ” +. If you forget to add spaces, you will get smushed output like “HiJose” instead of “Hi Jose”.  And remember that variables are never put inside the quotes (“”) since this would print the variable name out letter by letter instead of its value.</p>
+</div>
+<p><a class="reference internal" href="../_images/exercise2.png"><img alt="exercise" class="align-middle" src="../_images/exercise2.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qse_1" >
+            <p>2-6-1: Given the following code segment, what is in the string referenced by s1?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;xy&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">;</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="s">&quot;z&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="qse_1_opt_a">xyz</li><li data-component="feedback">s1 will equal "xy" plus another "xy" then z at the end.</li>
+            
+            <li data-component="answer" data-correct id="qse_1_opt_b">xyxyz</li><li data-component="feedback">s1 contains the original value, plus itself, plus "z"</li>
+            
+            <li data-component="answer"  id="qse_1_opt_c">xy xy z</li><li data-component="feedback">No spaces are added during concatenation.</li>
+            
+            <li data-component="answer"  id="qse_1_opt_d">xy z</li><li data-component="feedback">No spaces are added during concatenation, and an additional "xy" should be included at the beginning.</li>
+            
+            <li data-component="answer"  id="qse_1_opt_e">z</li><li data-component="feedback">s1 was set to "xy" initially, so the final answer will be "xyxyz"</li>
+            
+
+            </ul>
+            </div>
+            <p id="index-5">You can even add other items to a string using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator.  The other item will be converted to a string using the <code class="docutils literal notranslate"><span class="pre">toString</span></code> operator if it is an object and then appended to the current string.  All objects inherit a <code class="docutils literal notranslate"><span class="pre">toString</span></code> method that returns a string representation of the object.</p>
+<p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
+
+<div data-childcomponent="lcso2" class="runestone explainer ac_section alert alert-warning">
+<p>What do you think the following will print? Guess before you hit run. If you want the addition to take place before the numbers are turned into a string what should you do? Try to modify the code  so that it adds 4 + 3 before appending the value to the string. Hint: you used this to do addition before multiplication in arithmetic expressions.</p>
+
+<textarea data-component="activecode" id=lcso2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Test2
+{
+   public static void main(String[] args)
+   {
+     String message = "12" + 4 + 3;
+     System.out.println(message);
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "127";
+         boolean passed = getResults(expect, output, "Expected output from main");
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are appending a number to a string it will be converted to a string first before being appended.</p>
+</div>
+<p>Since the same operators are processed from left to right this will print <code class="docutils literal notranslate"><span class="pre">1243</span></code>.  First 4 will be turned into a string and appended to 12 and then 3 will be turned into a string and appended to 124.  If you want to do addition instead, try using parentheses!</p>
+<p>What if you wanted to print out a double quote ” character? Since the double quote ” is a special character with meaning in Java, we put in a backslash in front of the quote to signal that we want just the character. This is called a <strong>backslash escape sequence</strong>. And if you wanted to print out a backslash, you would have to backslash it too in order to escape its special meaning. Another useful backslashed character is backslash \n which will put in a newline.</p>
+
+<div data-childcomponent="bhescape" class="runestone explainer ac_section alert alert-warning">
+<p>Here are the escape sequences that may be used in the AP course.</p>
+
+<textarea data-component="activecode" id=bhescape data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class TestEscape
+{
+   public static void main(String[] args)
+   {
+     String message = "Here is a backslash quote \" " +
+       " and a backslashed backslash (\\) " +
+       "Backslash n \n prints out a new line.";
+     System.out.println(message);
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = output;
+         boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+</div>
+<div class="section" id="groupwork-programming-challenge-mad-libs">
+<h2><span class="section-number">2.6.2. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge : Mad Libs<a class="headerlink" href="#groupwork-programming-challenge-mad-libs" title="Permalink to this headline">¶</a></h2>
+<p>Have you ever played MAD LIBS? In this game, you first choose a bunch of words without looking at the story and then those words are filled into the story to make it sound very wacky! Fill in the variables below with Strings for each word, and then run to see the wacky story.</p>
+<p>Then, working in pairs, come up with another silly story that uses at least 5 new String variables. When you’re done, try another team’s mad libs code. Your teacher may ask you to create this program in a Java IDE like <a href="https://repl.it" target="_blank">repl.it</a> so that you can use input to read in the words (see input examples using the <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>).</p>
+
+<div data-childcomponent="challenge2-6-MadLibs" class="runestone explainer ac_section alert alert-warning">
+<p>If you used repl.it for this challenge, copy the url of your repl here to turn in.</p>
+
+<textarea data-component="activecode" id=challenge2-6-MadLibs data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class MadLibs1
+{
+   public static void main(String[] args)
+   {
+     // fill these in with silly words/strings (don't read the poem yet)
+     String pluralnoun1 =
+     String color1 =
+     String color2 =
+     String food =
+     String pluralnoun2 =
+
+
+     // Run to see the silly poem!
+     System.out.println("Roses are " + color1);
+     System.out.println(pluralnoun1 + " are " + color2);
+     System.out.println("I like " + food);
+     System.out.println("Do " + pluralnoun2 + " like them too?");
+
+     // Now come up with your own silly poem!
+
+   }
+}
+====
+import static org.junit.Assert.*;
+ import org.junit.*;;
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "Roses are *\n* are *\nI like *\nDo * like them too?";
+
+         boolean passed = getResultsRegEx(expect, output, "Expected output from main");
+         assertTrue(passed);
+     }
+
+     @Test
+     public void testNull() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "null";
+
+         String actual = countOccurences(output, expect) + " null values";
+
+         boolean passed = getResults("0 null values", actual, "No null values");
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">2.6.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Strings</strong> in Java are objects of the <code class="docutils literal notranslate"><span class="pre">String</span></code> class that hold sequences of characters.</p></li>
+<li><p>String objects can be created by using string literals (String s = “hi”;) or by calling the String class constructor (String t = new String(“bye”);).</p></li>
+<li><p><strong>new</strong> is used to create a new object of a class.</p></li>
+<li><p><strong>null</strong> is used to indicate that an object reference doesn’t refer to any object yet.</p></li>
+<li><p>String objects can be concatenated using the + or += operator, resulting in a new String object.</p></li>
+<li><p>Primitive values can be concatenated with a String object. This causes implicit conversion of the values to String objects.</p></li>
+<li><p>Escape sequences start with a backslash \ and have special meaning in Java. Escape sequences used in this course include “, \, and  \n to print out a quote, backslash, and a new line.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 2.5. Calling Methods that Return Values' data-toggle="tooltip">
+    <a href="topic-2-5-methods-return.html" aria-label="2.5. Calling Methods that Return Values">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 2.7. String Methods' data-toggle="tooltip" >
+    <a href="topic-2-7-string-methods.html" aria-label="2.7. String Methods">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

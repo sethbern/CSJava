@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>9.6. Polymorphism &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9.7. Object Superclass" href="topic-9-7-Object.html" />
+    <link rel="prev" title="9.5. Inheritance Hierarchies" href="topic-9-5-hierarchies.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-9-6-polymorphism'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">9.5. </span>Inheritance Hierarchies" data-toggle="tooltip">
+    <a href="topic-9-5-hierarchies.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">9.7. </span>Object Superclass' data-toggle="tooltip" >              
+    <a href="topic-9-7-Object.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="polymorphism">
+<h1><span class="section-number">9.6. </span>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this headline">¶</a></h1>
+<p id="index-0"><strong>Polymorphism</strong> is a big word that you can break down into “poly” which means many and “morphism” which means form.  So, it just means many forms.  In Java it means that the method that gets called at <strong>run-time</strong> (when the code is run) depends on the <em>type</em> of the object at run-time.</p>
+<p>This is simliar to a toddler toy that has pictures of animals and when a handle is pulled an arrow spins.  When the arrow stops the toy plays the sound associated with that animal.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/SeeNSay.jpg"><img alt="../_images/SeeNSay.jpg" src="../_images/SeeNSay.jpg" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: A see n say toy</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>If you were simulating this toy in software you could create an Animal class that had a makeNoise method. Each subclass of Animal would override the makeNoise method to make the correct noise for that type.  This type of polymorphism is called <strong>inheritance-based polymorphism</strong>.  You have a common parent class, but the behavior is specified in the child class.</p>
+<div class="admonition note" id="index-1">
+<p class="admonition-title">Note</p>
+<p>In Java an object variable has both a <strong>declared (compile-time) type</strong> and an <strong>actual (run-time) type</strong>.  The <em>declared (compile-time) type</em>  of a variable is the type that is used in the declaration.  The <em>actual (run-time) type</em> is the class that actually creates the object using new.</p>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">nameList</span></code> declared below has a <strong>declared type</strong> of <code class="docutils literal notranslate"><span class="pre">List</span></code> and an <strong>actual</strong> or <strong>run-time type</strong> of <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>.  The complier will check if the declared type has the methods or inherits the methods being used in the code and give an error if it doesn’t find the method(s).  The List interface does have an <code class="docutils literal notranslate"><span class="pre">add</span></code> method so this code will compile.  At run-time the execution environment will first look for the <code class="docutils literal notranslate"><span class="pre">add</span></code> method in the <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> class since that is the actual or run-time type. If it doesn’t find it there it will look in the parent class and keep looking up the inheritance tree until it finds the method. It may go up all the way to the Object class.  The method will be found, since otherwise the code would not have compiled.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">nameList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">nameList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Hi&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">message</span></code> declared below has a <strong>declared type</strong> of <code class="docutils literal notranslate"><span class="pre">Object</span></code> and an <strong>actual</strong> or <strong>run-time type</strong> of <code class="docutils literal notranslate"><span class="pre">String</span></code>.  Since the declared type of <code class="docutils literal notranslate"><span class="pre">message</span></code> is <code class="docutils literal notranslate"><span class="pre">Object</span></code> the code <code class="docutils literal notranslate"><span class="pre">message.indexOf(&quot;h&quot;);</span></code> will cause a compiler error since the <code class="docutils literal notranslate"><span class="pre">Object</span></code> class does not have an <code class="docutils literal notranslate"><span class="pre">indexOf</span></code> method.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
+<span class="n">message</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="p">);</span> <span class="c1">// ERROR!! Objects don&#39;t have indexOf!</span>
+</pre></div>
+</div>
+<p>At compile time, the compiler uses the declared type to check that the methods you are trying to use are available to an object of that type.  The code won’t compile if the methods don’t exist in that class or some parent class of that class.  At run-time, the actual method that is called depends on the actual type of the object.  Remember that an object keeps a reference to the class that created it (an object of the class called <code class="docutils literal notranslate"><span class="pre">Class</span></code>).  When a method is called at run-time the first place that is checked for that method is the class that created the object.  If the method is found there it will be executed.  If not, the parent of that class will be checked and so on until the method is found.</p>
+<p>In the last lesson on inheritance hierarchies, we were actually seeing polymorphic behavior at run-time in the following ways.</p>
+<ol class="arabic simple">
+<li><p>Polymorphic assignment statements such as <code class="docutils literal notranslate"><span class="pre">Shape</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Rectangle();</span></code></p></li>
+<li><p>Polymorphic parameters such as <code class="docutils literal notranslate"><span class="pre">print(Shape)</span></code> being called with different subclass types.</p></li>
+<li><p>Polymorphic array and ArrayList types such as <code class="docutils literal notranslate"><span class="pre">Shape[]</span> <span class="pre">shapeArray</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">new</span> <span class="pre">Rectangle(),</span> <span class="pre">new</span> <span class="pre">Square()</span> <span class="pre">};</span></code></p></li>
+</ol>
+<p>In all of these cases, there are no errors at compile-time because the compiler checks that the “subclass is-a superclass” relationship is true. But at run-time, the Java interpreter will use the object’s actual subclass type and call the subclass methods for any overriden methods. This is why they are polymorphic – the same code can have different results depending on the object’s actual type at run-time.</p>
+<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_10" >
+            <p>9-6-1: What is the output from running the main method in the Shape class?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">what</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Shape &quot;</span><span class="p">);}</span>
+
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="n">Shape</span><span class="o">[]</span> <span class="n">shapes</span> <span class="o">=</span> <span class="p">{</span><span class="k">new</span> <span class="n">Shape</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Square</span><span class="p">(),</span>
+                        <span class="k">new</span> <span class="n">Circle</span><span class="p">()};</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">Shape</span> <span class="n">s</span> <span class="p">:</span> <span class="n">shapes</span><span class="p">)</span>
+      <span class="p">{</span>
+         <span class="n">s</span><span class="p">.</span><span class="na">what</span><span class="p">();</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">what</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Rectangle &quot;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="n">Rectangle</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Oval</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">what</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Oval &quot;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">Oval</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">what</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Circle &quot;</span><span class="p">);}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="qoo_10_opt_a">Shape Shape Shape Shape</li><li data-component="feedback">The Rectangle subclass of Shape overrides the what method so this can't be right.</li>
+            
+            <li data-component="answer"  id="qoo_10_opt_b">Shape Rectangle Square Circle</li><li data-component="feedback">The Square subclass doesn't not override the what method so it will use the one in Rectangle.</li>
+            
+            <li data-component="answer"  id="qoo_10_opt_c">There will be a compile time error</li><li data-component="feedback">This code will compile.  The declared type can hold objects of that type or any subclass of the type.</li>
+            
+            <li data-component="answer" data-correct id="qoo_10_opt_d">Shape Rectangle Rectangle Circle</li><li data-component="feedback">The Shape object will print Shape.  The Rectangle object will print Rectangle.  The Square object will also print Rectangle since it doesn't overrride the what method.  The Circle object will print Circle.</li>
+            
+            <li data-component="answer"  id="qoo_10_opt_e">Shape Rectangle Rectangle Oval</li><li data-component="feedback">The Circle class does override the what method so this can't be right.</li>
+            
+
+            </ul>
+            </div>
+            <p>You can step through this code using the Java Visualizer by clicking on the following link <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+Shape+%7B%0A+++public+void+what()+%7B+System.out.print(%22Shape+%22)%3B%7D%0A+++++++++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A+++++++++%0A++++++Shape%5B%5D+shapes+%3D+%7Bnew+Shape(),+new+Rectangle(),+new+Square(),+%0A++++++++++++++++++++++++++++++new+Circle()%7D%3B%0A++++++for+(Shape+s+%3A+shapes)%0A++++++%7B%0A+++++++++s.what()%3B%0A+++++++++System.out.print(%22+%22)%3B%0A++++++%7D%0A+++%7D%0A%0A%7D+%0A%0Aclass+Rectangle+extends+Shape+%7B%0A+++public+void+what()+%7B+System.out.print(%22Rectangle+%22)%3B+%7D%0A%7D%0A%0Aclass+Square+extends+Rectangle+%7B%0A%7D%0A++++++%0Aclass+Oval+extends+Shape+%7B%0A+++public+void+what()+%7B+System.out.print(%22Oval+%22)%3B+%7D%0A%7D%0A%0Aclass+Circle+extends+Oval+%7B%0A+++public+void+what()+%7B+System.out.print(%22Circle+%22)%3B%7D%0A%7D%0A%0A&amp;mode=display&amp;curInstr=38">Shape Example</a>.</p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_11" >
+            <p>9-6-2: What is the output from running the main method in the Student class?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="p">{</span>
+
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFood</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s">&quot;Pizza&quot;</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getInfo</span><span class="p">()</span>  <span class="p">{</span>
+     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">getFood</span><span class="p">();</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+     <span class="n">Student</span> <span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GradStudent</span><span class="p">();</span>
+     <span class="n">s1</span><span class="p">.</span><span class="na">getInfo</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">GradStudent</span> <span class="kd">extends</span> <span class="n">Student</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFood</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="s">&quot;Taco&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="qoo_11_opt_a">Pizza</li><li data-component="feedback">This would be true if s1 was actually a Student, but it is a GradStudent.  Remember that the run-time will look for the method first in the class that created the object.</li>
+            
+            <li data-component="answer" data-correct id="qoo_11_opt_b">Taco</li><li data-component="feedback">Even though the getInfo method is in Student when getFood is called the run-time will look for that method first in the class that created this object which in this case is the GradStudent class.</li>
+            
+            <li data-component="answer"  id="qoo_11_opt_c">You will get a compile time error</li><li data-component="feedback">This code will compile.  The student class does have a getInfo method.</li>
+            
+            <li data-component="answer"  id="qoo_11_opt_d">You will get a run-time error</li><li data-component="feedback">There is no problem at run-time.</li>
+            
+
+            </ul>
+            </div>
+            <p>You can step through this code using the Java Visualizer by clicking on the following link <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+Student+%7B%0A+++%0A+++public+String+getFood()+%7B%0A++++++return+%22Pizza%22%3B%0A+++%7D%0A+++%0A+++public+String+getInfo()++%7B+%0A++++++return+this.getFood()%3B+%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++Student+s1+%3D+new+GradStudent()%3B%0A++++++System.out.println(s1.getInfo())%3B%0A+++%7D%0A%7D%0A%0Aclass+GradStudent+extends+Student+%7B%0A+++%0A+++public+String+getFood()+%7B%0A++++++return+%22Taco%22%3B%0A+++%7D%0A++++++++%0A+++%0A%7D%0A&amp;mode=display&amp;curInstr=10">Student Example</a>.</p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_12" >
+            <p>9-6-3: What is the output from running the main method in the RaceCar class?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span>
+<span class="p">{</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">fuel</span><span class="p">;</span>
+
+  <span class="kd">public</span> <span class="nf">Car</span><span class="p">()</span> <span class="p">{</span> <span class="n">fuel</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="nf">Car</span><span class="p">(</span><span class="kt">int</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span> <span class="n">fuel</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addFuel</span><span class="p">()</span> <span class="p">{</span> <span class="n">fuel</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">fuel</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+  <span class="p">{</span>
+     <span class="n">Car</span> <span class="n">car</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">Car</span> <span class="n">fastCar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RaceCar</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">car</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
+     <span class="n">car</span><span class="p">.</span><span class="na">addFuel</span><span class="p">();</span>
+     <span class="n">car</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
+     <span class="n">fastCar</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
+     <span class="n">fastCar</span><span class="p">.</span><span class="na">addFuel</span><span class="p">();</span>
+     <span class="n">fastCar</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">RaceCar</span> <span class="kd">extends</span> <span class="n">Car</span>
+<span class="p">{</span>
+  <span class="kd">public</span> <span class="nf">RaceCar</span><span class="p">(</span><span class="kt">int</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span> <span class="kd">super</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="qoo_12_opt_a">5 6 10 11</li><li data-component="feedback">The code compiles correctly, and because RaceCar extends the Car class, all the public object methods of Car can be used by RaceCar objects.</li>
+            
+            <li data-component="answer"  id="qoo_12_opt_b">5 6 5 6</li><li data-component="feedback">RaceCar, while it inherits object methods from Car via inheritance, has a separate and different constructor that sets the initial fuel amount to 2 * g, thus in this case, fuel for fastCar is set to 10 initially.</li>
+            
+            <li data-component="answer"  id="qoo_12_opt_c">10 11 10 11</li><li data-component="feedback">The variable car is a Car object, so the constructor used is not the same as the fastCar object which is a RaceCar. The car constructor does not change the passed in parameter, so it is set to 5 initially.</li>
+            
+            <li data-component="answer"  id="qoo_12_opt_d">The code won't compile.</li><li data-component="feedback">RaceCar inherits from the Car class so all the public object methods in Car can be accessed by any object of the RaceCar class.</li>
+            
+
+            </ul>
+            </div>
+            <p>You can step through the code using the Java Visualizer by clicking on the following link: <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+Car%0A%7B%0A+++private+int+fuel%3B%0A%0A+++public+Car()+%7B+fuel+%3D+0%3B+%7D+%0A+++public+Car(int+g)+%7B+fuel+%3D+g%3B+%7D%0A%0A+++public+void+addFuel()+%7B+fuel%2B%2B%3B+%7D%0A+++public+void+display()+%7B+System.out.print(fuel+%2B+%22+%22)%3B+%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++Car+car+%3D+new+Car(5)%3B%0A++++++Car+fastCar+%3D+new+RaceCar(5)%3B%0A++++++car.display()%3B%0A++++++car.addFuel()%3B%0A++++++car.display()%3B%0A++++++fastCar.display()%3B%0A++++++fastCar.addFuel()%3B%0A++++++fastCar.display()%3B%0A++++%7D%0A%7D%0A%0Aclass+RaceCar+extends+Car%0A%7B%0A+++public+RaceCar(int+g)+%7B+super(2*g)%3B+%7D%0A%7D+%0A&amp;mode=display&amp;curInstr=0">Car Example</a>.</p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_13" >
+            <p>9-6-4: Given the following class definitions and a declaration of Book b = new Dictionary which of the following will cause a compile-time error?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Book</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getISBN</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="c1">// implementation not shown</span>
+   <span class="p">}</span>
+
+   <span class="c1">// constructors, fields, and other methods not shown</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dictionary</span> <span class="kd">extends</span> <span class="n">Book</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDefinition</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="c1">// implementation not shown</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="qoo_13_opt_a">b.getISBN();</li><li data-component="feedback">The b object is actually a Dictionary object which inherits the getISBN method from Book.</li>
+            
+            <li data-component="answer" data-correct id="qoo_13_opt_b">b.getDefintion();</li><li data-component="feedback">At compile time the declared type is Book and the Book class does not have or inherit a getDefintion method.</li>
+            
+            <li data-component="answer"  id="qoo_13_opt_c">((Dictionary) b).getDefinition();</li><li data-component="feedback">Casting to Dictionary means that the compiler will check the Dictionary class for the getDefinition method.</li>
+            
+
+            </ul>
+            </div>
+            <div class="section" id="groupwork-programming-challenge-shopping-cart-2">
+<h2><span class="section-number">9.6.1. </span><a class="reference internal" href="../_images/groupwork9.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork9.png" style="width: 35px;" /></a> Programming Challenge : Shopping Cart 2<a class="headerlink" href="#groupwork-programming-challenge-shopping-cart-2" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/shoppingcart.png"><img alt="Shopping" class="align-left" src="../_images/shoppingcart.png" style="width: 100px;" /></a>
+<p>In the last lesson, you created a class called DiscountedItem as part of a Shopping Cart application. Please copy your solutions from the last lesson into the Active Code window below (or in repl or another IDE) before completing this challenge.</p>
+<p>The ShoppingCart contains a polymorphic ArrayList called order that you can use to add Items or DiscountedItems to the shopping cart. The Item class keeps track of the name and the price of each Item. The DiscountedItem class you wrote in the last lesson adds on a discount amount.</p>
+<p>In this challenge, you will write a method called <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">countDiscountedItems()</span></code> in the ShoppingCart class.</p>
+<ul class="simple">
+<li><p>This method will use a loop to traverse the ArrayList of Items called order.</p></li>
+<li><p>In the loop, you will test if each Item is a DiscountedItem by using the <code class="docutils literal notranslate"><span class="pre">instanceof</span></code> keyword ((object instanceof Class) returns true or false) similar to its use in the add(Item) method.</p></li>
+<li><p>If it is a DiscountedItem, then you will count it.</p></li>
+<li><p>At the end of the loop, the method will return the count.</p></li>
+<li><p>Make sure you print out the number of discounted items in the main method or in printOrder(), so that you can test your method. Add more items to the order to test it.</p></li>
+</ul>
+
+<div data-childcomponent="challenge-9-6-shopping2" class="runestone explainer ac_section alert alert-warning">
+<p>Copy in your code for DiscountedItem below and then write a method called countDiscountedItems which traverses the polymorphic ArrayLists of Items. Use instanceOf to test items to see see if they are a DiscountedItem.</p>
+
+<textarea data-component="activecode" id=challenge-9-6-shopping2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.*;
+
+  /**
+     The ShoppingCart class has an ArrayList of Items.
+     You will write a new class DiscountedItem that extends Item.
+     This code is adapted https://practiceit.cs.washington.edu/problem/view/bjp4/chapter9/e10-DiscountBill
+  */
+
+  public class Tester
+  {
+    public static void main(String[] args) {
+      ShoppingCart cart = new ShoppingCart();
+      cart.add(new Item("bread", 3.25));
+      cart.add(new Item("milk", 2.50));
+      //cart.add(new DiscountedItem("ice cream", 4.50, 1.50));
+      //cart.add(new DiscountedItem("apples", 1.35, 0.25));
+
+      cart.printOrder();
+    }
+  }
+
+  class DiscountedItem extends Item
+  {
+      // Copy your code from the last lesson's challenge here!
+  }
+
+  // Add a method called countDiscountedItems()
+  class ShoppingCart
+  {
+      private ArrayList<Item> order;
+      private double total;
+      private double internalDiscount;
+
+      public ShoppingCart()
+      {
+          order = new ArrayList<Item>();
+          total = 0.0;
+          internalDiscount = 0.0;
+      }
+
+      public void add(Item i) {
+          order.add(i);
+          total += i.getPrice();
+          if (i instanceof DiscountedItem)
+             internalDiscount += ((DiscountedItem) i).getDiscount();
+      }
+
+     /** printOrder() will call toString() to print */
+      public void printOrder() {
+          System.out.println(this);
+      }
+
+      public String toString() {
+          return discountToString();
+      }
+
+      public String discountToString() {
+          return orderToString() + "\nSub-total: " + valueToString(total) + "\nDiscount: " + valueToString(internalDiscount) + "\nTotal: " + valueToString(total - internalDiscount);
+      }
+
+      private String valueToString(double value) {
+          value = Math.rint(value * 100) / 100.0;
+          String result = "" + Math.abs(value);
+          if(result.indexOf(".") == result.length() - 2) {
+              result += "0";
+          }
+          result = "$" + result;
+          return result;
+      }
+
+      public String orderToString() {
+          String build = "\nOrder Items:\n";
+          for(int i = 0; i < order.size(); i++) {
+              build += "   " + order.get(i);
+              if(i != order.size() - 1) {
+                  build += "\n";
+              }
+          }
+          return build;
+      }
+    }
+
+    class Item {
+      private String name;
+      private double price;
+
+      public Item()
+      {
+        this.name = "";
+        this.price = 0.0;
+      }
+
+      public Item(String name, double price) {
+              this.name = name;
+              this.price = price;
+      }
+
+      public double getPrice() {
+              return price;
+      }
+
+      public String valueToString(double value) {
+              String result = "" + Math.abs(value);
+              if(result.indexOf(".") == result.length() - 2) {
+                  result += "0";
+              }
+              result = "$" + result;
+              return result;
+      }
+
+      public String toString() {
+              return name + " " + valueToString(price);
+      }
+     }
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">9.6.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>At compile time, methods in or inherited by the <strong>declared type</strong> determine the correctness of a non-static method call.</p></li>
+<li><p>At run-time, the method in the <strong>actual object type</strong> is executed for a non-static method call. This is called <strong>polymorphism</strong>.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 9.5. Inheritance Hierarchies' data-toggle="tooltip">
+    <a href="topic-9-5-hierarchies.html" aria-label="9.5. Inheritance Hierarchies">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 9.7. Object Superclass' data-toggle="tooltip" >
+    <a href="topic-9-7-Object.html" aria-label="9.7. Object Superclass">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

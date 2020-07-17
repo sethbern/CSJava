@@ -16,7 +16,7 @@ sys.path.append(os.getcwd())
 
 home_dir = os.getcwd()
 
-project_name = "csawesome"
+project_name = "csjava"
 
 #master_url = None
 #if master_url is None:
@@ -35,7 +35,7 @@ if master_url is None:
     master_url = get_master_url()
 
 master_app = 'runestone'
-serving_dir = "./build/csawesome"
+serving_dir = "./build/csjava"
 
 #new 7/2019 changes
 # Change to False when running localhost
@@ -55,12 +55,12 @@ options(
     sphinx = Bunch(docroot=".",),
 
     build = Bunch(
-        builddir="./build/csawesome",
+        builddir="./build/csjava",
         sourcedir="_sources",
-        outdir="./build/csawesome",
+        outdir="./build/csjava",
         confdir=".",
-        project_name = "csawesome",
-        template_args={'course_id': 'csawesome',
+        project_name = "csjava",
+        template_args={'course_id': 'csjava',
                        'login_required':'false',
                        'appname':master_app,
                        'loglevel': 10,
@@ -68,7 +68,7 @@ options(
                        'use_services': 'true',
                        'python3': 'false',
                        'dburl': 'postgresql://runestone@localhost/runestone',
-                       'basecourse': 'csawesome',
+                       'basecourse': 'csjava',
                        # new 7/2019 changes
                        'dynamic_pages': dynamic_pages,
                        'downloads_enabled': 'false',

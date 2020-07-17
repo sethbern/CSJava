@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>2.5. Calling Methods that Return Values &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.6. Strings" href="topic-2-6-strings.html" />
+    <link rel="prev" title="2.4. Calling Methods With Parameters" href="topic-2-4-methods-with-params.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csawesome&page=topic-2-5-methods-return'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">2.4. </span>Calling Methods With Parameters" data-toggle="tooltip">
+    <a href="topic-2-4-methods-with-params.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">2.6. </span>Strings' data-toggle="tooltip" >              
+    <a href="topic-2-6-strings.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="calling-methods-that-return-values">
+<span id="index-0"></span><h1><span class="section-number">2.5. </span>Calling Methods that Return Values<a class="headerlink" href="#calling-methods-that-return-values" title="Permalink to this headline">¶</a></h1>
+<p>If a method is a <strong>void method</strong> and has <strong>void</strong> as its return type, like most of the methods we have seen so far, that means that it does not return anything. But some methods <strong>return</strong> a value back that the program can use.</p>
+<div class="section" id="get-methods">
+<h2><span class="section-number">2.5.1. </span>Get Methods<a class="headerlink" href="#get-methods" title="Permalink to this headline">¶</a></h2>
+<p>In the previous lesson, we used some set methods with parameters to set the attributes of a turtle to different values, for example yertle.setColor(Color.red); or yertle.setWidth(50); Programmers create get and set methods for each attribute represented as an instance variable in a class to access and modify the value in that variable. The get methods always return back the value of that instance variable, and the set methods modify the value.</p>
+<p>When you use a get method, you need to save what it returns in a variable or use the value in some way for example by printing it out. The data type of the variable must match the data type of the return value of the method. You can find out the return type of a method in its documentation. It will be right before the method name, for example <em>int getWidth()</em> means getWidth will return an int (an integer number).</p>
+<p>Here are some examples of using get methods for the turtle object yertle.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Turtle</span> <span class="n">yertle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">yertle</span><span class="p">.</span><span class="na">getWidth</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">yertle</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Yertle&#39;s width is: &quot;</span> <span class="o">+</span> <span class="n">width</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Yertle&#39;s height is: &quot;</span> <span class="o">+</span> <span class="n">height</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Yertle&#39;s x position is: &quot;</span> <span class="o">+</span> <span class="n">yertle</span><span class="p">.</span><span class="na">getXPos</span><span class="p">()</span> <span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Yertle&#39;s y position is: &quot;</span> <span class="o">+</span> <span class="n">yertle</span><span class="p">.</span><span class="na">getYPos</span><span class="p">()</span> <span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A common error is forgetting to do something with the value returned from a method. When you call a method that returns a value, you should do something with that value like saving it into a variable or printing it out.</p>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
+
+<div data-childcomponent="TurtleTestGetSet" class="runestone explainer ac_section alert alert-warning">
+<p>Try the code below that changes the turtle’s width and height. How big or small can you make yertle?</p>
+<p>(If the code below does not work in your browser, you can also copy in the code below into the Turtle code at this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
+
+<textarea data-component="activecode" id=TurtleTestGetSet data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''  data-datafile='turtleClasses.jar'    
+           data-wasm=/_static>
+import java.util.*;
+import java.awt.*;
+import java.lang.Math;
+
+public class TurtleTestGetSet
+{
+  public static void main(String[] args)
+  {
+      World world = new World(300,300);
+      Turtle yertle = new Turtle(world);
+      System.out.println("Yertle's width is: " + yertle.getWidth());
+      yertle.setWidth(200);
+      yertle.setHeight(200);
+      System.out.println("Yertle's width is: " + yertle.getWidth());
+      yertle.turnRight();
+      world.show(true);
+  }
+}
+====
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+    public RunestoneTests() {
+        super("TurtleTestGetSet");
+    }
+
+    @Test
+    public void test1()
+    {
+        String orig = "import java.util.*;\nimport java.awt.*;\nimport java.lang.Math;\n\npublic class TurtleTestGetSet\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.setWidth(200);\n      yertle.setHeight(200);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.turnRight();\n      world.show(true);\n  }\n}\n";
+        boolean passed = codeChanged(orig);
+        assertTrue(passed);
+    }
+}
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
+
+<div data-childcomponent="TurtleArea" class="runestone explainer ac_section alert alert-warning">
+<p>Fix the errors in the code below so that it prints out the area of the space that the turtle occupies by multiplying its width and height. Remember that you have to do something with the values that the get methods return.</p>
+
+<textarea data-component="activecode" id=TurtleArea data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''  data-datafile='turtleClasses.jar'    
+           data-wasm=/_static>
+import java.util.*;
+import java.awt.*;
+import java.lang.Math;
+
+public class TurtleArea
+{
+  public static void main(String[] args)
+  {
+      World world = new World(300,300);
+      Turtle yertle = new Turtle(world);
+
+      int area;
+      yertle.getWidth() * getHeight;
+      System.out.println("Yertle's area is: ");
+  }
+}
+====
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+    public RunestoneTests() {
+        super("TurtleArea");
+    }
+
+    @Test
+    public void test1()
+    {
+        String actual = getMethodOutput("main");
+        String expected = "Yertle's area is: 270";
+        boolean passed = getResults(expected, actual, "Prints correct answer");
+        assertTrue(passed);
+    }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="tostring-methods">
+<h2><span class="section-number">2.5.2. </span>toString() Methods<a class="headerlink" href="#tostring-methods" title="Permalink to this headline">¶</a></h2>
+<p>Another common method that returns a value is the <strong>toString()</strong> method. This method is called automatically to try to convert an object to a String when it is needed, for example in a print statement. In the Turtle class, the toString() method returns a String description of the turtle.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Turtle</span> <span class="n">yertle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>
+<span class="n">yertle</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&quot;yertle&quot;</span><span class="p">);</span> <span class="c1">// set name before you use toString()</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">yertle</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="c1">// Or you can just use the object here and it will call toString() automatically!</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">yertle</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
+
+<div data-childcomponent="TurtleTestMethodsReturn2" class="runestone explainer ac_section alert alert-warning">
+<p>Try some of the get methods and the toString() method in the program below. Note that you have to print out what the get methods return in order to see what they do!</p>
+
+<textarea data-component="activecode" id=TurtleTestMethodsReturn2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''  data-datafile='turtleClasses.jar'    
+           data-wasm=/_static>
+import java.util.*;
+import java.awt.*;
+import java.lang.Math;
+
+public class TurtleTestMethods2
+{
+  public static void main(String[] args)
+  {
+      World world = new World(300,300);
+      Turtle yertle = new Turtle(world);
+
+      // Try some get methods here!
+
+
+
+      world.show(true);
+  }
+}
+====
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+    public RunestoneTests() {
+        super("TurtleTestMethods2");
+    }
+
+    @Test
+    public void test1()
+    {
+        String code = getCode();
+        int num = countOccurences(code, "getWidth()");
+
+        boolean passed = num > 0;
+        getResults(">=1", "" + num, "Calls to getWidth()");
+        assertTrue(passed);
+    }
+
+    @Test
+    public void test2()
+    {
+        String code = getCode();
+        int num = countOccurences(code, "getHeight()");
+
+        boolean passed = num > 0;
+        getResults(">=1", "" + num, "Calls to getHeight()");
+        assertTrue(passed);
+    }
+
+    @Test
+    public void test3()
+    {
+        String code = getCode();
+        int num = countOccurences(code, "toString()") + countOccurences(code, "System.out.println(yertle)");
+
+        boolean passed = num > 0;
+        getResults(">=1", "" + num, "Calls to toString()");
+        assertTrue(passed);
+    }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="methods-with-arguments-and-return-values">
+<h2><span class="section-number">2.5.3. </span>Methods with Arguments and Return Values<a class="headerlink" href="#methods-with-arguments-and-return-values" title="Permalink to this headline">¶</a></h2>
+<p>Methods that take arguments and return values are like mathematical functions. Given some input, they return a value. For example, a square(x) method would take an argument x and return its square by multiplying it by itself.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/function.png"><img alt="function" src="../_images/function.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Method that takes arguments and returns a value</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>You will not write your own methods until Unit 5, but you should be able to trace through method calls like below. Notice that the <strong>return statement</strong> in a method returns the value that is indicated in the return type back to the calling method. The calling method must save or use or print that value.</p>
+<p><a class="reference internal" href="../_images/exercise2.png"><img alt="exercise" class="align-middle" src="../_images/exercise2.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="traceReturnMethods" >
+            <p>2-5-1: What does the following code print out?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MethodTrace</span>
+<span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">square</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+  <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">MethodTrace</span> <span class="n">traceObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MethodTrace</span><span class="p">();</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">traceObj</span><span class="p">.</span><span class="na">square</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">traceObj</span><span class="p">.</span><span class="na">divide</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">);</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="traceReturnMethods_opt_a">5</li><li data-component="feedback">Make sure you call both methods and compute the square of 2 and then add the results.</li>
+            
+            <li data-component="answer" data-correct id="traceReturnMethods_opt_b">7</li><li data-component="feedback">Yes, square(2) returns 4 which is added to divide(6,2) which returns 3. The total of 4 + 3 is 7.</li>
+            
+            <li data-component="answer"  id="traceReturnMethods_opt_c">4 3</li><li data-component="feedback">Make sure you add the results before printing it out.</li>
+            
+            <li data-component="answer"  id="traceReturnMethods_opt_d">2 3</li><li data-component="feedback">Make sure you square(2) and add the results before printint it out.</li>
+            
+            <li data-component="answer"  id="traceReturnMethods_opt_e">Does not compile.</li><li data-component="feedback">Try the code in an active code window.</li>
+            
+
+            </ul>
+            </div>
+            <p>Try this <a href="http://www.pythontutor.com/visualize.html#code=public%20class%20MethodTrace%20%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20public%20int%20square%28int%20x%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20x*x%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20public%20int%20divide%28int%20x,%20int%20y%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20x/y%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20MethodTrace%20traceObj%20%3D%20new%20MethodTrace%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.println%28%20traceObj.square%282%29%20%2B%20traceObj.divide%286,2%29%20%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%7D&cumulative=false&curInstr=16&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">visualization</a> to see this code in action.</p>
+</div>
+<div class="section" id="groupwork-programming-challenge-turtle-distances">
+<h2><span class="section-number">2.5.4. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge : Turtle Distances<a class="headerlink" href="#groupwork-programming-challenge-turtle-distances" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>The Turtle class has a method called getDistance(x,y) which will return the turtle’s distance from a point (x,y). Can you find yertle’s distance from the point (0,0)?</p></li>
+<li><p>Add another turtle and make both turtles move. Then find the distance between them. You must use the getXPos() and getYPos() methods as well as the getDistance() method.</p></li>
+</ol>
+
+<div data-childcomponent="challenge2-5-TurtleDistance" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=challenge2-5-TurtleDistance data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''  data-datafile='turtleClasses.jar'    
+           data-wasm=/_static>
+import java.util.*;
+import java.awt.*;
+import java.lang.Math;
+
+public class TurtleTestDistance
+{
+  public static void main(String[] args)
+  {
+      World world = new World(300,300);
+      Turtle yertle = new Turtle(world);
+
+      // Can you find yertle's distance from the point (0,0)?
+
+      // Can you find the distance between 2 turtles?
+
+
+
+      world.show(true);
+  }
+}
+====
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+    public RunestoneTests() {
+        super("TurtleTestDistance");
+    }
+
+    @Test
+    public void test2()
+    {
+        String code = getCode();
+        int num = countOccurences(code, ".getXPos()");
+
+        boolean passed = num > 0;
+        getResults(">=1", "" + num, "Calls to getXPos()");
+        assertTrue(passed);
+    }
+
+    @Test
+    public void test3()
+    {
+        String code = getCode();
+        int num = countOccurences(code, ".getYPos()");
+
+        boolean passed = num > 0;
+        getResults(">=1", "" + num, "Calls to getYPos()");
+        assertTrue(passed);
+    }
+
+    @Test
+    public void test4()
+    {
+        String code = getCode();
+        int num = countOccurences(code, ".getDistance(");
+
+        boolean passed = num >= 2;
+        getResults(">=2", "" + num, "Calls to getDistance(...)");
+        assertTrue(passed);
+    }
+
+    @Test
+    public void test1()
+    {
+        String code = getCode();
+        int num = countOccurences(code, ".getDistance(0,0)");
+
+        boolean passed = num >= 1;
+        getResults(">=1", "" + num, "Calls getDistance(0,0)");
+        assertTrue(passed);
+    }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">2.5.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Some methods return values.</p></li>
+<li><p>To use the return value when calling a method, it must be stored in a variable or used as part of an expression. The variable data type must match the return type of the method.</p></li>
+</ul>
+</div>
+<div class="section" id="ap-practice">
+<h2><span class="section-number">2.5.6. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-5-1" >
+            <p>2-5-2: Consider the following method.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculatePizzaBoxes</span><span class="p">(</span><span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">,</span> <span class="kt">double</span> <span class="n">slicesPerBox</span><span class="p">)</span>
+<span class="p">{</span> <span class="cm">/*implementation not shown */</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Which of the following lines of code, if located in a method in the same class as calculatePizzaBoxes, will compile without an error?</p>
+<li data-component="answer"  id="AP2-5-1_opt_a"><p>int result = calculatePizzaBoxes(45, 9.0);</p>
+</li><li data-component="feedback" id="AP2-5-1_opt_a">
+<p>The method calculatePizzaBoxes returns a double value that cannot be saved into an int variable.</p></li><li data-component="answer"  id="AP2-5-1_opt_b"><p>double result = calculatePizzaBoxes(45.0, 9.0);</p>
+</li><li data-component="feedback" id="AP2-5-1_opt_b">
+<p>The method calculatePizzaBoxes has an int parameter that cannot hold a double value 45.0.</p></li><li data-component="answer"  id="AP2-5-1_opt_c"><p>int result = calculatePizzaBoxes(45.0, 9);</p>
+</li><li data-component="feedback" id="AP2-5-1_opt_c">
+<p>The method calculatePizzaBoxes has an int parameter that cannot hold a double value 45.0. Note that the int 9 can be passed into a double parameter.</p></li><li data-component="answer" data-correct id="AP2-5-1_opt_d"><p>double result = calculatePizzaBoxes(45, 9.0);</p>
+</li><li data-component="feedback" id="AP2-5-1_opt_d">
+<p>The method calculatePizzaBoxes has an int and a double parameter and returns a double result.</p></li><li data-component="answer"  id="AP2-5-1_opt_e"><p>result = calculatePizzaBoxes(45, 9);</p>
+</li><li data-component="feedback" id="AP2-5-1_opt_e">
+<p>The variable result has not been declared (with an appropriate data type).</p></li>
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-5-2" >
+            <p>2-5-3: Consider the following class definition.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">boilingPoint</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">freezingPoint</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">currentTemp</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">currentTemp</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">lowerTemp</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">currentTemp</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getTemp</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Assume that the following code segment appears in a class other than Liquid.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Liquid</span> <span class="n">water</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Liquid</span><span class="p">();</span>
+<span class="n">water</span><span class="p">.</span><span class="na">lowerTemp</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">water</span><span class="p">.</span><span class="na">getTemp</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>What is printed as a result of executing the code segment?</p>
+<li data-component="answer"  id="AP2-5-2_opt_a"><p>-10</p>
+</li><li data-component="feedback" id="AP2-5-2_opt_a">
+<p>The Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it.</p></li><li data-component="answer"  id="AP2-5-2_opt_b"><p>50</p>
+</li><li data-component="feedback" id="AP2-5-2_opt_b">
+<p>The Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it.</p></li><li data-component="answer"  id="AP2-5-2_opt_c"><p>water.getTemp()</p>
+</li><li data-component="feedback" id="AP2-5-2_opt_c">
+<p>The System.out.println will print the value returned from water.getTemp().</p></li><li data-component="answer"  id="AP2-5-2_opt_d"><p>The code will not compile.</p>
+</li><li data-component="feedback" id="AP2-5-2_opt_d">
+<p>This code should compile.</p></li><li data-component="answer" data-correct id="AP2-5-2_opt_e"><p>40.0</p>
+</li><li data-component="feedback" id="AP2-5-2_opt_e">
+<p>Correct, the Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it, and getTemp() returns the currentTemp value as a double.</p></li>
+
+            </ul>
+            </div>
+            </div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 2.4. Calling Methods With Parameters' data-toggle="tooltip">
+    <a href="topic-2-4-methods-with-params.html" aria-label="2.4. Calling Methods With Parameters">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 2.6. Strings' data-toggle="tooltip" >
+    <a href="topic-2-6-strings.html" aria-label="2.6. Strings">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>
