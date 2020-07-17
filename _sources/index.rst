@@ -54,7 +54,7 @@ Table of Contents
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
+   :maxdepth: 3
 
    Unit1-Getting-Started/toctree.rst
    Unit2-Using-Objects/toctree.rst
