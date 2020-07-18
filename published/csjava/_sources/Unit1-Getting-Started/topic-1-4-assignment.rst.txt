@@ -173,13 +173,20 @@ Input with Variables
 
 
 
-Variables are a powerful abstraction in programming because the same algorithm can be used with different input values saved in variables.  The code below (|repl JavaIOExample|) will say hello to anyone who types in their name for different name values. Click on run and then type in your name. Then, try run again and type in a friend's name. The code works for any name: behold, the power of variables!
+Variables are a powerful abstraction in programming because the same algorithm can be 
+used with different input values saved in variables.  
+The code below (|repl JavaIOExample|) will say hello to anyone who types in their 
+name for different name values. Click on run and then type in your name. 
+Then, try run again and type in a friend's name. The code works for any name: 
+behold, the power of variables!
 
 .. raw:: html
 
     <iframe height="500px" width="100%" style="max-width:90%; margin-left:5%"  src="https://repl.it/@BerylHoffman/JavaIOExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
     
-Although you will not be tested in the AP CS A exam on using the Java System.in and Scanner classes, learning how to do input in Java is still very useful. More information on using the Scanner class can be found here https://www.w3schools.com/java/java_user_input.asp 
+The majority of examples in this textbook will not use the
+Java System.in and Scanner classes.  However,  learning how to do input in Java is still very useful. 
+More information on using the Scanner class can be found here https://www.w3schools.com/java/java_user_input.asp 
 
 
 
@@ -295,9 +302,7 @@ Operators can be used to create compound expressions with more than one operator
 
    
    
-|Exercise| **AP CSA Sample Question**
-
-The following is a 2019 AP CSA sample question.
+|Exercise| **Check Your Understanding**
 
 .. mchoice:: apcsa_sample1
    :practice: T
@@ -425,7 +430,12 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
     :align: middle
     :alt: dog
     
-|dog| In this programming challenge, you will calculate your age, and your pet's age from your birthdates, and your pet's age in dog years.   In the code below, type in the current year, the year you were born, the year your dog or cat was born (if you don't have one, make one up!) in the variables below. Then write formulas in assignment statements to calculate how old you are, how old your dog or cat is, and how old they are in dog years which is 7 times a human year.  Finally, print it all out. If you are pair programming, switch drivers (who has control of the keyboard in pair programming) after every line of code. 
+|dog| In this programming challenge, you will calculate your age, and your pet's age 
+from your birthdates, and your pet's age in dog years.   In the code below, type 
+in the current year, the year you were born, the year your dog or cat was born 
+(if you don't have one, make one up!) in the variables below. Then write formulas in 
+assignment statements to calculate how old you are, how old your dog or cat is, and 
+how old they are in dog years which is 7 times a human year.  Finally, print it all out. 
 
 .. |repl| raw:: html
 
