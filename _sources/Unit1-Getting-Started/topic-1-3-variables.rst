@@ -34,7 +34,7 @@ What is a Variable?
 A **variable** is a name associated with a memory location in the computer.  Computer memory can store a value and that value can change or vary. The following `video <https://youtu.be/pHgYlVjagmA>`_ explains what a variable is and gives a couple of real word examples of variables.
 
 .. youtube:: pHgYlVjagmA
-    :width: 800
+    :width: 600
     :align: center
 
 
@@ -64,7 +64,11 @@ Data Types
 	pair: variable; Boolean
 	pair: variable; String
 
-There are two types of variables in Java: **primitive variables** that hold primitive types and **object variables** that hold a reference to an object of a class.  A reference is a way to find the object (like a UPS tracking number helps you find your package).  The primitive types on the Advanced Placement Computer Science A exam are: 
+There are two types of variables in Java: **primitive variables** 
+that hold primitive types and **object variables** that hold a reference 
+to an object of a class.  A reference is a way to find the object 
+(like a UPS tracking number helps you find your package).  
+The primitive types presented in this chapter are: 
 
     -  int - which store integers (numbers like 3, -76, 20393) 
 
@@ -72,7 +76,9 @@ There are two types of variables in Java: **primitive variables** that hold prim
     
     -  boolean - which store Boolean values (either true or false). 
 
-**String** is one of the object types on the exam and is the name of a class in Java.  A *string* object has a sequence of characters enclosed in a pair of double quotes - like "Hello".  You will learn more about ``String`` objects in Unit 2. 
+**String** is a common object type and is the name of a class in Java.  
+A *string* object has a sequence of characters enclosed in a pair of double quotes - like "Hello".  
+You will learn more about ``String`` objects in Unit 2. 
 
 
 .. note:: 
@@ -471,8 +477,12 @@ While you can name your variable almost anything, there are some rules.  A varia
 
 You can't use any of the keywords or reserved words as variable names in Java (``for``, ``if``, ``class``, ``static``, ``int``, ``double``, etc).  For a complete list of keywords and reserved words see http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html.  
 
-The name of the variable should describe the data it holds.  A name like ``score`` helps make your code easier to read. A name like ``x`` is not a good variable name in programming, because it gives no clues as to what kind of data it holds.  Do not name
-your variables crazy things like ``thisIsAReallyLongName``, especially on the AP exam. You want to make your code easy to understand, not harder.  
+The name of the variable should describe the data it holds.  
+A name like ``score`` helps make your code easier to read. 
+A name like ``x`` is not a good variable name in programming, 
+because it gives no clues as to what kind of data it holds.  Do not name
+your variables crazy things like ``thisIsAReallyLongName``. 
+You want to make your code easy to understand, not harder.  
 
 .. note::
 
@@ -561,7 +571,7 @@ The convention in Java and many programming languages is to always start a varia
    :autograde: unittest   
    :practice: T
 
-   Working in pairs, debug the following code. Can you find the all the bugs and get the code to run? 
+   Debug the following code. Can you find the all the bugs and get the code to run? 
    ~~~~
    public class Challenge1_3
    {

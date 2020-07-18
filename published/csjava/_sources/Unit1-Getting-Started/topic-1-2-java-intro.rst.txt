@@ -222,8 +222,6 @@ tell the line number that the compiler found the error and the type of error.
 The error messages are not always easy to understand and sometimes the actual 
 error is before the line that the compiler says is the problem. 
 Debugging can be frustrating but you will get better at it with practice! 
-Sometimes another pair of eyes really helps, so ask a friend if you get 
-stuck or try explaining your code line by line to someone.
 
 Let's practice debugging some code! 
 

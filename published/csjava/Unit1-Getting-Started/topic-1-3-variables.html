@@ -356,7 +356,7 @@
 <p id="index-0">A <strong>variable</strong> is a name associated with a memory location in the computer.  Computer memory can store a value and that value can change or vary. The following <a class="reference external" href="https://youtu.be/pHgYlVjagmA">video</a> explains what a variable is and gives a couple of real word examples of variables.</p>
 
     <div class="runestone" style="margin-left: auto; margin-right:auto">
-        <div id="pHgYlVjagmA" class="align-center youtube-video" data-video-height="281" data-video-width="800" data-video-videoid="pHgYlVjagmA" data-video-divid="pHgYlVjagmA" data-video-start="0" data-video-end="-1" ></div>
+        <div id="pHgYlVjagmA" class="align-center youtube-video" data-video-height="281" data-video-width="600" data-video-videoid="pHgYlVjagmA" data-video-divid="pHgYlVjagmA" data-video-start="0" data-video-end="-1" ></div>
         <p class="runestone_caption"><span class="runestone_caption_text">Video: (pHgYlVjagmA)</span> </p>
     </div>
     <p>When you play a game, it will often have a score.  Scores often start at 0 and increase.  A score can be stored in a variable.</p>
@@ -367,7 +367,11 @@
 </div>
 <div class="section" id="data-types">
 <h2><span class="section-number">1.3.2. </span>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">There are two types of variables in Java: <strong>primitive variables</strong> that hold primitive types and <strong>object variables</strong> that hold a reference to an object of a class.  A reference is a way to find the object (like a UPS tracking number helps you find your package).  The primitive types on the Advanced Placement Computer Science A exam are:</p>
+<p id="index-1">There are two types of variables in Java: <strong>primitive variables</strong>
+that hold primitive types and <strong>object variables</strong> that hold a reference
+to an object of a class.  A reference is a way to find the object
+(like a UPS tracking number helps you find your package).
+The primitive types presented in this chapter are:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>int - which store integers (numbers like 3, -76, 20393)</p></li>
@@ -375,7 +379,9 @@
 <li><p>boolean - which store Boolean values (either true or false).</p></li>
 </ul>
 </div></blockquote>
-<p><strong>String</strong> is one of the object types on the exam and is the name of a class in Java.  A <em>string</em> object has a sequence of characters enclosed in a pair of double quotes - like “Hello”.  You will learn more about <code class="docutils literal notranslate"><span class="pre">String</span></code> objects in Unit 2.</p>
+<p><strong>String</strong> is a common object type and is the name of a class in Java.
+A <em>string</em> object has a sequence of characters enclosed in a pair of double quotes - like “Hello”.
+You will learn more about <code class="docutils literal notranslate"><span class="pre">String</span></code> objects in Unit 2.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some languages use 0 to represent false and 1 to represent true, but Java uses the keywords <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> in boolean variables.</p>
@@ -718,8 +724,12 @@ public class RunestoneTests extends CodeTestHelper
 <h2><span class="section-number">1.3.4. </span>Naming Variables<a class="headerlink" href="#naming-variables" title="Permalink to this headline">¶</a></h2>
 <p id="index-3">While you can name your variable almost anything, there are some rules.  A variable name should start with an alphabetic character (like a, b, c, etc.) and can include letters, numbers, and underscores <code class="docutils literal notranslate"><span class="pre">_</span></code>. It must be all one word with no spaces.</p>
 <p>You can’t use any of the keywords or reserved words as variable names in Java (<code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">static</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, etc).  For a complete list of keywords and reserved words see <a class="reference external" href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html">http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html</a>.</p>
-<p>The name of the variable should describe the data it holds.  A name like <code class="docutils literal notranslate"><span class="pre">score</span></code> helps make your code easier to read. A name like <code class="docutils literal notranslate"><span class="pre">x</span></code> is not a good variable name in programming, because it gives no clues as to what kind of data it holds.  Do not name
-your variables crazy things like <code class="docutils literal notranslate"><span class="pre">thisIsAReallyLongName</span></code>, especially on the AP exam. You want to make your code easy to understand, not harder.</p>
+<p>The name of the variable should describe the data it holds.
+A name like <code class="docutils literal notranslate"><span class="pre">score</span></code> helps make your code easier to read.
+A name like <code class="docutils literal notranslate"><span class="pre">x</span></code> is not a good variable name in programming,
+because it gives no clues as to what kind of data it holds.  Do not name
+your variables crazy things like <code class="docutils literal notranslate"><span class="pre">thisIsAReallyLongName</span></code>.
+You want to make your code easy to understand, not harder.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -795,7 +805,7 @@ public class RunestoneTests extends CodeTestHelper
 <h2><span class="section-number">1.3.5. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Debugging Challenge : Weather Report<a class="headerlink" href="#groupwork-debugging-challenge-weather-report" title="Permalink to this headline">¶</a></h2>
 
 <div data-childcomponent="challenge1-3" class="runestone explainer ac_section alert alert-warning">
-<p>Working in pairs, debug the following code. Can you find the all the bugs and get the code to run?</p>
+<p>Debug the following code. Can you find the all the bugs and get the code to run?</p>
 
 <textarea data-component="activecode" id=challenge1-3 data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
