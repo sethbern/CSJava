@@ -208,12 +208,13 @@ close quote ``"``. Informally, a syntax error is called a **bug**, and the proce
 removing errors is called **debugging**. An early computer science pioneer |Grace Hopper| 
 documented a real bug, a moth that flew into a computer in 1947!
 
-.. image:: Figures/firstbug.jpg
+.. figure:: Figures/firstbug.jpg
     :width: 300px
-    :align: center
+    :figclass: align-center
     :alt: First Bug
+    
+    Figure 1: Grace Hopper’s log showing a real bug, 1947.
 
-    Figure 2: Grace Hopper's log showing a real bug, 1947.
 
 The compiler tries to make sense of your code, but if your code has **syntax errors**, 
 you will see error messages displayed below the code. Compiler error messages will 
@@ -221,8 +222,6 @@ tell the line number that the compiler found the error and the type of error.
 The error messages are not always easy to understand and sometimes the actual 
 error is before the line that the compiler says is the problem. 
 Debugging can be frustrating but you will get better at it with practice! 
-Sometimes another pair of eyes really helps, so ask a friend if you get 
-stuck or try explaining your code line by line to someone.
 
 Let's practice debugging some code! 
 
@@ -415,15 +414,14 @@ In Java and many text-based coding languages, // is used to mark the beginning o
 
 |Groupwork| Debugging Challenge
 -----------------------------------
+ 
+Pair programming is a successful software development technique 
+where two programmers work together at one computer. One, the driver, 
+types in code while the other, the navigator, gives ideas and feedback. 
+The two coders switch roles frequently. 
 
-.. image:: Figures/rubberduck.jpg
-    :width: 150
-    :align: left
-    :alt: Rubber Duck
-    
-In this course, you are encouraged to work together in pairs to complete the programming challenges. Pair programming is a successful software development technique where two programmers work together at one computer. One, the driver, types in code while the other, the navigator, gives ideas and feedback. The two coders switch roles frequently. If you're working alone, you may want to explain the code to a rubber duck or another toy using |Rubber duck debugging|.
-
-Working in pairs, debug the following code. Can you find the all the bugs and get the code to run? 
+Working with a partner, debug the following code. 
+Can you find the all the bugs and get the code to run? 
 
 
 .. activecode:: challenge1-2
@@ -479,21 +477,29 @@ Summary
    }
    
    
-- A Java program starts with **public class NameOfClass { }**. If you are using your own files for your code, each class should be in a separate file that matches the class name inside it, for example NameOfClass.java.
+- A Java program starts with **public class NameOfClass { }**. If you are using your own 
+files for your code, each class should be in a separate file that matches the 
+class name inside it, for example NameOfClass.java.
 
-- Most Java classes have a main method that will be run automatically. It looks like this: **public static void main(String[] args) { }**.
+- Most Java classes have a main method that will be run automatically. 
+It looks like this: **public static void main(String[] args) { }**.
 
-- The **System.out.print()** and **System.out.println()** methods display information given inside the parentheses on the computer monitor. 
+- The **System.out.print()** and **System.out.println()** methods display information 
+given inside the parentheses on the computer monitor. 
 
-- System.out.println moves the cursor to a new line after the information has been displayed, while System.out.print does not.
+- System.out.println moves the cursor to a new line after the information has been 
+displayed, while System.out.print does not.
 
 - A **string literal** is enclosed in double quotes ('' '').
 
 - Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and ``/* */`` are used for comments.
 
-- A **compiler** translates Java code into a class file that can be run on your computer. **Compiler or syntax errors** are reported to you by the compiler if the Java code is not correctly written. Some things to check for are ; at end of command lines, matching { }, (), and "". 
+- A **compiler** translates Java code into a class file that can be run on your 
+computer. **Compiler or syntax errors** are reported to you by the compiler if the 
+Java code is not correctly written. Some things to check for are ; at end of command 
+lines, matching { }, (), and "". 
 
-AP Practice
+Practice
 ------------
 
 .. mchoice:: AP1-2-1

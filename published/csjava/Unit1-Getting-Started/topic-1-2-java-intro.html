@@ -372,7 +372,7 @@ create software that we all use.</p>
 <p>In Java every open curly brace <code class="docutils literal notranslate"><span class="pre">{</span></code> must have a matched close curly brace <code class="docutils literal notranslate"><span class="pre">}</span></code>.
 These are used to start and end class definitions and method definitions.</p>
 </div>
-<p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong>: Click on the <a href="#id1"><span class="problematic" id="id2">|runbutton|</span></a> button below to have the computer execute the <code class="docutils literal notranslate"><span class="pre">main</span></code> method in the following class. Then, change the code  to print your name.  Be sure to keep the starting <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and ending <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.  Click on the <a href="#id3"><span class="problematic" id="id4">|runbutton|</span></a> button to run the modified code. If you revisit this page later and login, click on Load History and move the bar above it to see your previous code changes.</p>
+<p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong>: Click on the <a href="#id2"><span class="problematic" id="id3">|runbutton|</span></a> button below to have the computer execute the <code class="docutils literal notranslate"><span class="pre">main</span></code> method in the following class. Then, change the code  to print your name.  Be sure to keep the starting <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and ending <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.  Click on the <a href="#id4"><span class="problematic" id="id5">|runbutton|</span></a> button to run the modified code. If you revisit this page later and login, click on Load History and move the bar above it to see your previous code changes.</p>
 
 <div data-childcomponent="lcfc1" class="runestone explainer ac_section alert alert-warning">
 <p>Run this code to see the output below it. Then change the code to print your name, for example “Hi Pat!”, and run again.</p>
@@ -495,6 +495,10 @@ has a open curly brace <code class="docutils literal notranslate"><span class="p
 close quote <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>. Informally, a syntax error is called a <strong>bug</strong>, and the process of
 removing errors is called <strong>debugging</strong>. An early computer science pioneer <a href="https://en.wikipedia.org/wiki/Grace_Hopper" target="_blank">Grace Hopper</a>
 documented a real bug, a moth that flew into a computer in 1947!</p>
+<div class="align-center figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/firstbug.jpg"><img alt="First Bug" src="../_images/firstbug.jpg" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Grace Hopper’s log showing a real bug, 1947.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <p>The compiler tries to make sense of your code, but if your code has <strong>syntax errors</strong>,
 you will see error messages displayed below the code. Compiler error messages will
 tell the line number that the compiler found the error and the type of error.
@@ -502,8 +506,7 @@ The error messages are not always easy to understand and sometimes the actual
 error is before the line that the compiler says is the problem.
 Debugging can be frustrating but you will get better at it with practice!
 Sometimes another pair of eyes really helps, so ask a friend if you get
-stuck or try explaining your code line by line to someone or even a rubber duck. |
-Rubber duck debugging| is a lot of fun!</p>
+stuck or try explaining your code line by line to someone.</p>
 <p>Let’s practice debugging some code!</p>
 <p><a class="reference internal" href="../_images/exercise.png"><img alt="exercise" class="align-middle" src="../_images/exercise.png" style="width: 35px;" /></a> <strong>Check Your Understanding: Mixed up programs</strong></p>
 
@@ -547,7 +550,7 @@ public Class FourthClass
         </pre>
         </div>
     <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise: Compile Time Error 1</strong></p>
-<p>Click on the <a href="#id5"><span class="problematic" id="id6">|runbutton|</span></a> button below to try and run the following code.  Look for an error message after the code.  This is called a <strong>compile time error</strong> because it is an error detected by the compiler.</p>
+<p>Click on the <a href="#id6"><span class="problematic" id="id7">|runbutton|</span></a> button below to try and run the following code.  Look for an error message after the code.  This is called a <strong>compile time error</strong> because it is an error detected by the compiler.</p>
 <p>What is wrong?  Can you fix it?  The error message will tell you the line number that it thinks is causing the error (<code class="docutils literal notranslate"><span class="pre">FirstClass.java:5:</span> <span class="pre">error:</span> <span class="pre">unclosed</span> <span class="pre">string</span> <span class="pre">literal</span></code>).  Check line 5 to make sure that everything looks correct.  One good thing to check is that all <code class="docutils literal notranslate"><span class="pre">{</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">}</span></code> and all <code class="docutils literal notranslate"><span class="pre">(</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">)</span></code> and all starting <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> have a ending <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> as well. Try putting in the missing symbol and run again. This is called <strong>debugging</strong>.</p>
 
 <div data-childcomponent="sc2error1" class="runestone explainer ac_section alert alert-warning">
@@ -584,7 +587,7 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise: Compile Time Error 2</strong></p>
-<p>Click on the <a href="#id7"><span class="problematic" id="id8">|runbutton|</span></a> button below to try and run the following code.  Look for an error message after the code. What is wrong this time?  Can you fix it?  One good thing to check is that all <code class="docutils literal notranslate"><span class="pre">{</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">}</span></code> and all <code class="docutils literal notranslate"><span class="pre">(</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">)</span></code> and all starting <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> have a ending <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> as well.</p>
+<p>Click on the <a href="#id8"><span class="problematic" id="id9">|runbutton|</span></a> button below to try and run the following code.  Look for an error message after the code. What is wrong this time?  Can you fix it?  One good thing to check is that all <code class="docutils literal notranslate"><span class="pre">{</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">}</span></code> and all <code class="docutils literal notranslate"><span class="pre">(</span></code> have a matching <code class="docutils literal notranslate"><span class="pre">)</span></code> and all starting <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> have a ending <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> as well.</p>
 
 <div data-childcomponent="sc2error2" class="runestone explainer ac_section alert alert-warning">
 <p>Fix the code below.</p>
@@ -621,7 +624,7 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise: Compile Time Error 3</strong></p>
-<p>Click on the <a href="#id9"><span class="problematic" id="id10">|runbutton|</span></a> button below to try and run the following code.  What is wrong this time?  Can you fix it?  After you fix the first error, you may encounter a 2nd error! Fix that one too! Hints: How do you end a command in Java? Also, check for capitalization.</p>
+<p>Click on the <a href="#id10"><span class="problematic" id="id11">|runbutton|</span></a> button below to try and run the following code.  What is wrong this time?  Can you fix it?  After you fix the first error, you may encounter a 2nd error! Fix that one too! Hints: How do you end a command in Java? Also, check for capitalization.</p>
 
 <div data-childcomponent="sc2error3" class="runestone explainer ac_section alert alert-warning">
 <p>Fix the code below.</p>
@@ -674,9 +677,12 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 <div class="section" id="groupwork-debugging-challenge">
 <h2><span class="section-number">1.2.5. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Debugging Challenge<a class="headerlink" href="#groupwork-debugging-challenge" title="Permalink to this headline">¶</a></h2>
-<a class="reference internal image-reference" href="../_images/rubberduck.jpg"><img alt="Rubber Duck" class="align-left" src="../_images/rubberduck.jpg" style="width: 150px;" /></a>
-<p>In this course, you are encouraged to work together in pairs to complete the programming challenges. Pair programming is a successful software development technique where two programmers work together at one computer. One, the driver, types in code while the other, the navigator, gives ideas and feedback. The two coders switch roles frequently. If you’re working alone, you may want to explain the code to a rubber duck or another toy using <a href="https://rubberduckdebugging.com/" target="_blank">Rubber duck debugging</a>.</p>
-<p>Working in pairs, debug the following code. Can you find the all the bugs and get the code to run?</p>
+<p>Pair programming is a successful software development technique
+where two programmers work together at one computer. One, the driver,
+types in code while the other, the navigator, gives ideas and feedback.
+The two coders switch roles frequently.</p>
+<p>Working with a partner, debug the following code.
+Can you find the all the bugs and get the code to run?</p>
 
 <div data-childcomponent="challenge1-2" class="runestone explainer ac_section alert alert-warning">
 <p>Fix the code below.</p>
@@ -730,17 +736,33 @@ public class RunestoneTests extends CodeTestHelper
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>A Java program starts with <strong>public class NameOfClass { }</strong>. If you are using your own files for your code, each class should be in a separate file that matches the class name inside it, for example NameOfClass.java.</p></li>
-<li><p>Most Java classes have a main method that will be run automatically. It looks like this: <strong>public static void main(String[] args) { }</strong>.</p></li>
-<li><p>The <strong>System.out.print()</strong> and <strong>System.out.println()</strong> methods display information given inside the parentheses on the computer monitor.</p></li>
-<li><p>System.out.println moves the cursor to a new line after the information has been displayed, while System.out.print does not.</p></li>
+<li><p>A Java program starts with <strong>public class NameOfClass { }</strong>. If you are using your own</p></li>
+</ul>
+<p>files for your code, each class should be in a separate file that matches the
+class name inside it, for example NameOfClass.java.</p>
+<ul class="simple">
+<li><p>Most Java classes have a main method that will be run automatically.</p></li>
+</ul>
+<p>It looks like this: <strong>public static void main(String[] args) { }</strong>.</p>
+<ul class="simple">
+<li><p>The <strong>System.out.print()</strong> and <strong>System.out.println()</strong> methods display information</p></li>
+</ul>
+<p>given inside the parentheses on the computer monitor.</p>
+<ul class="simple">
+<li><p>System.out.println moves the cursor to a new line after the information has been</p></li>
+</ul>
+<p>displayed, while System.out.print does not.</p>
+<ul class="simple">
 <li><p>A <strong>string literal</strong> is enclosed in double quotes (‘’ ‘’).</p></li>
 <li><p>Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code> are used for comments.</p></li>
-<li><p>A <strong>compiler</strong> translates Java code into a class file that can be run on your computer. <strong>Compiler or syntax errors</strong> are reported to you by the compiler if the Java code is not correctly written. Some things to check for are ; at end of command lines, matching { }, (), and “”.</p></li>
+<li><p>A <strong>compiler</strong> translates Java code into a class file that can be run on your</p></li>
 </ul>
+<p>computer. <strong>Compiler or syntax errors</strong> are reported to you by the compiler if the
+Java code is not correctly written. Some things to check for are ; at end of command
+lines, matching { }, (), and “”.</p>
 </div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">1.2.7. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">1.2.7. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP1-2-1" >
