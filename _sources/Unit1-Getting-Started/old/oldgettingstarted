@@ -1,0 +1,16 @@
+Getting Started
+==================
+
+Follow the links below to learn more about Java development environments. 
+
+.. toctree::
+   :caption: Getting Started
+   :maxdepth: 2
+
+   preface.rst
+   javaIDEs.rst
+   growthMindset.rst
+   
+.. raw:: html
+    
+    <script src="../_static/custom-csawesome.js"></script>

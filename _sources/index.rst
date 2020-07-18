@@ -48,7 +48,7 @@ Table of Contents
 
 .. toctree::
    :numbered:
-   :maxdepth: 3
+   :maxdepth: 2
 
    Unit1-Getting-Started/toctree.rst
    Unit2-Using-Objects/toctree.rst
@@ -71,19 +71,7 @@ Index
 
    <a href="https://forms.gle/4gMBsv4W71vG5mNe8" target="_blank" style="text-decoration:underline">errata form</a>
    
-.. |interest form| raw:: html
-
-   <a href="https://docs.google.com/forms/d/e/1FAIpQLSdN4JKrFnktQakID4sHBHBuBEHCvwv8YsSMBcVm1tB-nYUukA/viewform?usp=sf_link" target="_blank" style="text-decoration:underline">PD interest form</a>
-   
-.. |teaching CSAwesome group| raw:: html
-
-   <a href="https://groups.google.com/forum/#!forum/teaching-csawesome" target="_blank" style="text-decoration:underline">teaching CSAwesome group</a>   
-   
-.. |csawesome| raw:: html
-
-   <a href="http://csawesome.org" target="_blank" style="text-decoration:underline">csawesome.org</a>   
-   
-If you see errors or bugs, please report them with this |errata form|. If you are a teacher who is interested in CS Awesome PDs or community, please fill out this |interest form| and join the |teaching CSAwesome group| which will give you access to lesson plans at |csawesome|.
+If you see errors or bugs, please report them with this |errata form|. 
 
 (last revised 7/10/2020)
 

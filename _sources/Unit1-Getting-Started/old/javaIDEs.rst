@@ -20,7 +20,8 @@ If you are logged in, the Active Code will remember your changes and even show y
 your changes to the code if you click on Load History.  
 
 However, it's a good idea to also try a Java IDE to build code outside of this e-book, 
-especially to try coding with user input which Active Code cannot do. There are many Java IDEs available. 
+especially to try coding with user input which Active Code cannot do. 
+There are many Java IDEs available. 
 Here are some of most popular ones:
 
 repl.it
@@ -33,6 +34,14 @@ Some of the Active Code samples in this e-book course also include a link to a r
 Online IDEs usually cannot use graphical user interfaces and just do input and output as text. 
 However, repl.it has a new beta that does allow the use of the javax.swing graphical user interface library! 
 You need to choose Java Swing instead of just Java to get this environment when you start a new repl project. 
+
+Eclipse
+-------
+
+Eclipse (https://www.eclipse.org/downloads/packages/installer) is what many professional Java programmers use. 
+It may be a little complex for beginners. Here are some installation and configuration instructions for 
+Eclipse: http://skylit.com/javamethods/faqs/Eclipse.pdf.
+
 
 Dr. Java
 --------
@@ -73,14 +82,6 @@ Netbeans
 
 Netbeans (https://netbeans.org/) is one of the original Java IDEs.  
 Here is a tutorial on how to set it up: https://netbeans.org/kb/docs/java/quickstart.html.
-
-
-Eclipse
--------
-
-Eclipse (https://www.eclipse.org/downloads/packages/installer) is what many professional Java programmers use. 
-It may be a little complex for beginners. Here are some installation and configuration instructions for 
-Eclipse: http://skylit.com/javamethods/faqs/Eclipse.pdf.
 
 .. raw:: html
     

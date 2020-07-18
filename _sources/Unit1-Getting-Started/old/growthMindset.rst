@@ -4,7 +4,9 @@ Growth Mindset
 ..	index::
 	single: growth mindset
     
-Learning to code can be hard at times and sometimes frustrating. However, the feeling you get when your code works is incredible! And your brain grows as you problem solve and debug your programs! 
+Learning to code can be hard at times and sometimes frustrating. 
+However, the feeling you get when your code works is incredible! 
+And your brain grows as you problem solve and debug your programs! 
 
 Watch this video about the Growth Mindset:
 
