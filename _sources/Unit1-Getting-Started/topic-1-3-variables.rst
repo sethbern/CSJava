@@ -70,11 +70,11 @@ to an object of a class.  A reference is a way to find the object
 (like a UPS tracking number helps you find your package).  
 The primitive types presented in this chapter are: 
 
-    -  int - which store integers (numbers like 3, -76, 20393) 
+    -  **int** - which store integers (numbers like 3, -76, 20393) 
 
-    -  double - which store floating point numbers (decimal numbers like 6.3 -0.9, and 60293.93032)
+    -  **double** - which store floating point numbers (decimal numbers like 6.3 -0.9, and 60293.93032)
     
-    -  boolean - which store Boolean values (either true or false). 
+    -  **boolean** - which store Boolean values (either true or false). 
 
 **String** is a common object type and is the name of a class in Java.  
 A *string* object has a sequence of characters enclosed in a pair of double quotes - like "Hello".  
@@ -182,7 +182,11 @@ all require different number of bits.  An integer gets 32 bits of space, a doubl
     
     Figure 2: Examples of variables with names and values.  Notice that the different types get a different amount of space.
 
-To **declare** (create) a variable, you  specify the type, leave at least one space, then the name for the variable and end the line with a semicolon (``;``). Java uses the keyword **int** for integer, **double** for a floating point number (a double precision number), and **boolean** for a Boolean value (true or false).  
+To **declare** (create) a variable, you  specify the type, leave at least one space, 
+then the name for the variable and end the line with a semicolon (``;``). 
+Java uses the keyword **int** for integer, **double** for a floating point 
+number (a double precision number), and **boolean** for a Boolean value (true or false). 
+ 
 
 .. .. figure:: Figures/typeName.png
     :width: 100px
@@ -190,26 +194,34 @@ To **declare** (create) a variable, you  specify the type, leave at least one sp
     
     Figure 2: How to Declare a Variable
     
-Here is an example declaration of a variable called score.
+Here is an example **declaration** of a variable called score.
 
 .. code-block:: java
 
   int score;
   
-After declaring a variable, you can give it a value like below using an equals sign ``=`` followed by the value.
+After declaring a variable, you can give it a value like below using an equals sign ``=`` followed 
+by the value.  The first time a variable is assigned a value is referred to as **variable initialization**.
+
 
 .. code-block:: java
 
   int score;
   score = 4;
   
-Or you can set an initial value for the variable in the variable declaration. Here is an example that shows declaring a variable and initializing it all in a single statement.  
+Or you can set an initial value for the variable in the variable declaration. 
+Here is an example that shows **declaring** a variable and **initializing** it all in a single statement.  
 
 .. code-block:: java
 
   int score = 4;  
 
-When you are printing out variables, you can use the **string concatenation** operator + to add them to another string inside System.out.print. Never put variables inside quotes "" because that will print out the variable name letter by letter. You do not want to print out the variable name, but the value of the variable in memory. If you're not sure what this means, try putting quotes around the variable and see what happens. In the print out, if you want spaces between words and variables, you must put the space in the quotes. If you forget to add spaces, you will get smushed output like "HiJose" instead of "Hi Jose".  
+When you are printing out variables, you can use the **string concatenation** operator + to add 
+them to another string inside System.out.print.   So ``"hi " + "there"`` will create a new String object with the
+value ``"hi there"``.  If the variable **name** has a value "Fred", then the code ``"hi " + name`` will create a new
+String object with value ``"hi Fred"``.
+
+Never put variables inside quotes "" because that will print out the variable name letter by letter. You do not want to print out the variable name, but the value of the variable in memory. If you're not sure what this means, try putting quotes around the variable and see what happens. In the print out, if you want spaces between words and variables, you must put the space in the quotes. If you forget to add spaces, you will get smushed output like "HiJose" instead of "Hi Jose".  
 
 |CodingEx| **Coding Exercise:** 
  
@@ -339,7 +351,13 @@ When you are printing out variables, you can use the **string concatenation** op
     :click-incorrect:}:endclick:
 
 
-The equal sign here ``=`` doesn't mean the same as it does in a mathematical equation where it implies that the two sides are equal.  Here it means set the value in the memory location (box) associated with the name on the left to a *copy* of the value on the right. The first line above sets the value in the box called score to 4. Also note that the variable has to be on the left side of the ``=`` and the value on the right.  Switching the two is called **assignment dyslexia**.  
+The equal sign here ``=`` doesn't mean the same as it does in a mathematical equation 
+where it implies that the two sides are equal.  Here it means set the value in the memory 
+location associated with the name on the left to a *copy* of the value on the right. 
+The first line above sets the value in 
+the memory location called score to 4. Also note that the variable has to be on the 
+left side of the ``=`` and the value on the right.  Switching the two is 
+called **assignment dyslexia**.  
    
 |CodingEx| **Coding Exercise:** 
 

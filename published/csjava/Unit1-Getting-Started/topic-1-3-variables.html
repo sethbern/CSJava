@@ -374,9 +374,9 @@ to an object of a class.  A reference is a way to find the object
 The primitive types presented in this chapter are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>int - which store integers (numbers like 3, -76, 20393)</p></li>
-<li><p>double - which store floating point numbers (decimal numbers like 6.3 -0.9, and 60293.93032)</p></li>
-<li><p>boolean - which store Boolean values (either true or false).</p></li>
+<li><p><strong>int</strong> - which store integers (numbers like 3, -76, 20393)</p></li>
+<li><p><strong>double</strong> - which store floating point numbers (decimal numbers like 6.3 -0.9, and 60293.93032)</p></li>
+<li><p><strong>boolean</strong> - which store Boolean values (either true or false).</p></li>
 </ul>
 </div></blockquote>
 <p><strong>String</strong> is a common object type and is the name of a class in Java.
@@ -478,21 +478,30 @@ all require different number of bits.  An integer gets 32 bits of space, a doubl
 <a class="reference internal image-reference" href="../_images/typesAndSpace.png"><img alt="../_images/typesAndSpace.png" src="../_images/typesAndSpace.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Figure 2: Examples of variables with names and values.  Notice that the different types get a different amount of space.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>To <strong>declare</strong> (create) a variable, you  specify the type, leave at least one space, then the name for the variable and end the line with a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>). Java uses the keyword <strong>int</strong> for integer, <strong>double</strong> for a floating point number (a double precision number), and <strong>boolean</strong> for a Boolean value (true or false).</p>
-<p>Here is an example declaration of a variable called score.</p>
+<p>To <strong>declare</strong> (create) a variable, you  specify the type, leave at least one space,
+then the name for the variable and end the line with a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>).
+Java uses the keyword <strong>int</strong> for integer, <strong>double</strong> for a floating point
+number (a double precision number), and <strong>boolean</strong> for a Boolean value (true or false).</p>
+<p>Here is an example <strong>declaration</strong> of a variable called score.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>After declaring a variable, you can give it a value like below using an equals sign <code class="docutils literal notranslate"><span class="pre">=</span></code> followed by the value.</p>
+<p>After declaring a variable, you can give it a value like below using an equals sign <code class="docutils literal notranslate"><span class="pre">=</span></code> followed
+by the value.  The first time a variable is assigned a value is referred to as <strong>variable initialization</strong>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
 <span class="n">score</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Or you can set an initial value for the variable in the variable declaration. Here is an example that shows declaring a variable and initializing it all in a single statement.</p>
+<p>Or you can set an initial value for the variable in the variable declaration.
+Here is an example that shows <strong>declaring</strong> a variable and <strong>initializing</strong> it all in a single statement.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>When you are printing out variables, you can use the <strong>string concatenation</strong> operator + to add them to another string inside System.out.print. Never put variables inside quotes “” because that will print out the variable name letter by letter. You do not want to print out the variable name, but the value of the variable in memory. If you’re not sure what this means, try putting quotes around the variable and see what happens. In the print out, if you want spaces between words and variables, you must put the space in the quotes. If you forget to add spaces, you will get smushed output like “HiJose” instead of “Hi Jose”.</p>
+<p>When you are printing out variables, you can use the <strong>string concatenation</strong> operator + to add
+them to another string inside System.out.print.   So <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">&quot;there&quot;</span></code> will create a new String object with the
+value <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">there&quot;</span></code>.  If the variable <strong>name</strong> has a value “Fred”, then the code <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">name</span></code> will create a new
+String object with value <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">Fred&quot;</span></code>.</p>
+<p>Never put variables inside quotes “” because that will print out the variable name letter by letter. You do not want to print out the variable name, but the value of the variable in memory. If you’re not sure what this means, try putting quotes around the variable and see what happens. In the print out, if you want spaces between words and variables, you must put the space in the quotes. If you forget to add spaces, you will get smushed output like “HiJose” instead of “Hi Jose”.</p>
 <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
 <div data-childcomponent="lcdv2" class="runestone explainer ac_section alert alert-warning">
@@ -588,7 +597,13 @@ public class RunestoneTests extends CodeTestHelper
 
 </div>
 </div>
-<p>The equal sign here <code class="docutils literal notranslate"><span class="pre">=</span></code> doesn’t mean the same as it does in a mathematical equation where it implies that the two sides are equal.  Here it means set the value in the memory location (box) associated with the name on the left to a <em>copy</em> of the value on the right. The first line above sets the value in the box called score to 4. Also note that the variable has to be on the left side of the <code class="docutils literal notranslate"><span class="pre">=</span></code> and the value on the right.  Switching the two is called <strong>assignment dyslexia</strong>.</p>
+<p>The equal sign here <code class="docutils literal notranslate"><span class="pre">=</span></code> doesn’t mean the same as it does in a mathematical equation
+where it implies that the two sides are equal.  Here it means set the value in the memory
+location associated with the name on the left to a <em>copy</em> of the value on the right.
+The first line above sets the value in
+the memory location called score to 4. Also note that the variable has to be on the
+left side of the <code class="docutils literal notranslate"><span class="pre">=</span></code> and the value on the right.  Switching the two is
+called <strong>assignment dyslexia</strong>.</p>
 <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
 <div data-childcomponent="lcdv3" class="runestone explainer ac_section alert alert-warning">
