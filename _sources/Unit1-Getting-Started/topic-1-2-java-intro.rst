@@ -34,9 +34,9 @@ Why Programming? Why Java?
 
 
 What do Android phones, Minecraft, and Netflix have in common? 
-They're all programmed in Java! Many of the apps you use in an Android phone or tablet are written in Java. 
-If you've used App Inventor before, those apps are translated to Java before they are run on a phone or tablet. 
-Netflix uses Java for some of its software too. Java is a **programming language** that is used worldwide to 
+They're all programmed in Java! Many of the apps you use in an Android phone 
+or tablet are written in Java. 
+Java is a **programming language** that is used worldwide to 
 create software that we all use.
     
 First Java Program
@@ -103,7 +103,12 @@ Every program in Java is written as a **class**. Java is an **object-oriented la
 
 
 
-You can copy the Java source code shown in this book into a file and save it if you want to run it locally in an integrated development environment (IDE) on your local computer (see section 1.1. for different IDEs).  You must name the file the same name as the class name with ".java" as the extension.  All code (programs) in Java must be defined inside a class in a source file, and the name of the class must match the file name. 
+You can copy the Java source code shown in this book into a file and save 
+it if you want to run it locally in an integrated development environment (IDE) 
+on your local computer (see section 1.10. for different IDEs).  
+You must name the file the same name as the class name with ".java" as the extension.  
+All code (programs) in Java must be defined inside a class in a source file, 
+and the name of the class must match the file name. 
 
 
    
@@ -171,12 +176,21 @@ Java has two different print commands to print output to the screen:
         }
    }
    
-Most command keywords in Java must be in lowercase, but class names such as System and String are capitalized. Commands in Java must end with a semicolon (;). Think of the semicolon (;) in Java like a period (.) in English. You use a semicolon (``;``) to show the end of a Java **statement**, just the way you use a period (.) to show the end of an English sentence.  You will not be penalized on the exam if you forget the semicolon.  However, your programs won't run without it.
+Most command keywords in Java must be in lowercase, 
+but class names such as System and String are capitalized. 
+Commands in Java must end with a semicolon (;). Think of the semicolon (;) 
+in Java like a period (.) in English. You use a semicolon (``;``) to show the 
+end of a Java **statement**, just the way you use a period (.) to show the end 
+of an English sentence.   Your programs won't run if you forget the semicolon at the end of each statement.
 
 Syntax Errors
 ---------------
 
-Computers don't actually speak Java so we have to **compile** (translate) Java source files that we write into class files which is code that a computer can understand and run. In this e-book, the Java code is actually being sent to a Java server to compile and run, and the output is sent back to show on the same page. 
+Computers don't actually speak Java so we have to **compile** 
+(translate) Java source files that we write into class files which is 
+code that a computer can understand and run. In this e-book, the Java 
+code is actually being sent to a Java server to compile and run, and the 
+output is sent back to show on the same page. 
 
 .. |Grace Hopper| raw:: html
 
@@ -187,21 +201,30 @@ Computers don't actually speak Java so we have to **compile** (translate) Java s
    <a href="https://rubberduckdebugging.com/" target="_blank">Rubber duck debugging</a>
    
    
-**Syntax errors** are reported to you by the compiler if your Java code is not correctly written. Examples of syntax errors are a semicolon ``;`` missing or if the code has a open curly brace ``{`` or open quote ``"``, but no close curly brace ``}`` or close quote ``"``. Informally, a syntax error is called a **bug**, and the process of removing errors is called **debugging**. An early computer science pioneer |Grace Hopper| documented a real bug, a moth that flew into a computer in 1947!
+**Syntax errors** are reported to you by the compiler if your Java code is not correctly 
+written. Examples of syntax errors are a semicolon ``;`` missing or if the code 
+has a open curly brace ``{`` or open quote ``"``, but no close curly brace ``}`` or 
+close quote ``"``. Informally, a syntax error is called a **bug**, and the process of 
+removing errors is called **debugging**. An early computer science pioneer |Grace Hopper| 
+documented a real bug, a moth that flew into a computer in 1947!
 
-.. figure:: https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg
+.. image:: Figures/firstbug.jpg
     :width: 300px
     :align: center
-    :figclass: align-center
+    :alt: First Bug
 
     Figure 2: Grace Hopper's log showing a real bug, 1947.
 
-
-The compiler tries to make sense of your code, but if your code has **syntax errors**, you will see error messages displayed below the code. Compiler error messages will tell the line number that the compiler found the error and the type of error.  The error messages are not always easy to understand and sometimes the actual error is before the line that the compiler says is the problem. Debugging can be frustrating but you will get better at it with practice! Sometimes another pair of eyes really helps, so ask a friend if you get stuck or try explaining your code line by line to someone or even a rubber duck. |Rubber duck debugging| is a lot of fun!
+The compiler tries to make sense of your code, but if your code has **syntax errors**, 
+you will see error messages displayed below the code. Compiler error messages will 
+tell the line number that the compiler found the error and the type of error.  
+The error messages are not always easy to understand and sometimes the actual 
+error is before the line that the compiler says is the problem. 
+Debugging can be frustrating but you will get better at it with practice! 
+Sometimes another pair of eyes really helps, so ask a friend if you get 
+stuck or try explaining your code line by line to someone.
 
 Let's practice debugging some code! 
-
-   
 
 |Exercise| **Check Your Understanding: Mixed up programs**
 

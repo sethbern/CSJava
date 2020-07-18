@@ -4,7 +4,7 @@ if (bhtoc != undefined) {
     bhtoclist = bhtoc.children;
     if (bhtoclist != "undefined" && bhtoclist[0].innerText.startsWith("1"))
     {
-      bhtoclist[0].querySelector("a").innerHTML = "1.1 Getting Started";
+      bhtoclist[0].querySelector("a").innerHTML = "1.1  Preface";
       bhtoclist[1].querySelector("a").innerHTML = "1.2. Why Programming? Why Java?";
       bhtoclist[2].querySelector("a").innerHTML = "1.3. Variables and Data Types";
       bhtoclist[3].querySelector("a").innerHTML = "1.4. Expressions and Assignment Statements";
@@ -13,7 +13,6 @@ if (bhtoc != undefined) {
       bhtoclist[6].querySelector("a").innerHTML = "1.7. Unit 1 Summary";
       bhtoclist[7].querySelector("a").innerHTML = "1.8. Unit 1 Mixed Up Code Practice";
       bhtoclist[8].querySelector("a").innerHTML = "1.9. Unit 1 Coding Practice";
-      bhtoclist[9].querySelector("a").innerHTML = "1.10. Multiple Choice Exercises";
-
+      bhtoclist[9].querySelector("a").innerHTML = "1.10. Unit 1 Java IDEs";
    }
 }

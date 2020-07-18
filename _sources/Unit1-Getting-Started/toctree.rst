@@ -6,7 +6,7 @@ Getting Started and Primitive Types
    :caption: Unit 1 Table of Contents
    :maxdepth: 2
 
-   topic-1-1-getting-started.rst
+   topic-1-1-preface.rst
    topic-1-2-java-intro.rst
    topic-1-3-variables.rst
    topic-1-4-assignment.rst
@@ -15,6 +15,7 @@ Getting Started and Primitive Types
    topic-1-7-summary.rst
    topic-1-8-practice-mixed-code.rst
    topic-1-9-practice-coding.rst
+   topic-1-10-java-IDEs.rst
    Exercises.rst
 
    

@@ -2,21 +2,23 @@
    :prefix: 1-1-
    :start: 1
 
-Getting Started
+Preface
 ===============
 
 ..	index::
 	single: license
 	
-`How to Program in Java` is an adaption of the CS Awesome book created by 
-Dr. Beryl Hoffman, Associate Professor of Computer Science at Elms College, MA.
-CSAwesome is a free AP CS A curriculum that was created in 2019 by adapting the AP CS A Java 
-Review e-book written by Dr. Barbara Ericson, Assistant Professor of Information at University of Michigan. 
+**How to Program in Java** is an interactive textbook designed to introduce fundamental concepts
+in software application development using the Java programming language. This textbook includes an early introduction to graphics and animation 
+using a simple turtle graphics library. The chapter material is flexible enough to support both objects-early and objects-late approaches.
 
-`How to Program in Java` was developed by Dr. Linda Seiter and Dr. Daniel Palmer, Professors of Computer Science at John Carroll
-University.  The textbook shifts emphasis away from the AP exam in order to provide a general 
-introduction to Java programming suitable for college-level curriculum.  
-The chapter material is flexible enough to support both objects-early and objects-late approaches.
+**How to Program in Java** is an adaption of the **CS Awesome** book created by 
+Dr. Beryl Hoffman, Associate Professor of Computer Science at Elms College, MA.
+**CS Awesome** is a free AP CS A curriculum that was created in 2019 by adapting the AP CS A Java 
+Review e-book written by Dr. Barbara Ericson, Assistant Professor of Information at University of Michigan. 
+**How to Program in Java** was subsequently developed by Dr. Linda Seiter and Dr. Daniel Palmer, 
+Professors of Computer Science
+at John Carroll University, to evolve the curriculum to be suitable for a college-level course.
 
 .. |form| raw:: html
 

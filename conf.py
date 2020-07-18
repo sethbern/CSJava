@@ -54,7 +54,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'csjava'
-copyright = '2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised Linda Seiter and Daniel Palmer'
+copyright = '2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised by Linda Seiter and Daniel Palmer'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

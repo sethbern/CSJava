@@ -4,9 +4,12 @@ How to Program in Java
 ==========================================
 
 Welcome! This eBook provides an interactive introduction to programming in Java.
+
 To make sure the site saves your answers on questions, 
 please click on the person icon at the top to register or login to your course. 
-As you complete lessons, click the "Mark as completed" button at the bottom. Enjoy the course!
+As you complete the lesson activities on each page, click the "Mark as completed" button at the bottom. 
+
+Enjoy the course!
 
 .. raw:: html
 
