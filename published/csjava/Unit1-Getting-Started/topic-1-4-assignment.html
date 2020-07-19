@@ -353,13 +353,25 @@
 <p>In this lesson, you will learn about assignment statements and expressions that contain math operators and variables.</p>
 <div class="section" id="assignment-statements">
 <h2><span class="section-number">1.4.1. </span>Assignment Statements<a class="headerlink" href="#assignment-statements" title="Permalink to this headline">¶</a></h2>
-<p>Remember that a variable holds a value and that value can change or vary.  <strong>Assignment statements</strong> initialize or change the value stored in a variable using the assignment operator =.  The value of the expression on the right of the = sign is stored in the variable on the left. These values can be complex <strong>expressions</strong> that contain math operators and other variables like in the example below.</p>
+<p>Remember that a variable holds a value and that value can change or
+vary.  <strong>Assignment statements</strong> initialize or change the value stored
+in a variable using the assignment operator =.  The value of the
+expression on the right of the = sign is stored in the variable on the left.
+These values can be complex <strong>expressions</strong> that contain math operators
+and other variables like in the example below.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Assignment statement:</span>
 <span class="c1">// variable = expression;</span>
 <span class="n">score</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If you use a variable to keep score you would probably increment it (add one to the current value) whenever score should go up.  You can do this by setting the variable to the current value of the variable plus one (score = score + 1) as shown below. The formula looks a little crazy in math class, but it makes sense in coding because the variable on the left is set to the value of the arithmetic expression on the right. So, the score variable is set to the previous value of score + 1.</p>
+<p>If you use a variable to keep score you would probably increment it
+(add one to the current value) whenever score should go up.
+You can do this by setting the variable to the current value of the
+variable plus one (score = score + 1) as shown below. The formula
+looks a little crazy in math class, but it makes sense in coding
+because the variable on the left is set to the value of the arithmetic
+expression on the right. So, the score variable is set to the
+previous value of score + 1.</p>
 
 <div data-childcomponent="lccv1" class="runestone explainer ac_section alert alert-warning">
 <p>Try the code below to see how score is incremented by 1.</p>
@@ -401,7 +413,11 @@ public class Test1
 </textarea>
 </div>
 <p>You can set one variable’s value to a <em>copy</em> of the value of another variable.  This won’t change the value of the variable that you are copying from.</p>
-<p>Click on this cool <a href="http://www.pythontutor.com/visualize.html#code=public+class+Test2%0A%7B%0A+++public+static+void+main(String%5B%5D+args%29%0A+++%7B%0A+++++int+x+%3D+3%3B%0A+++++int+y+%3D+2%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++x+%3D+y%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++y+%3D+5%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++%7D%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> to step through the code. Click on the Forward button at the bottom of the code to see how the values of the variables change. You can run the visualizer on any Active Code in this e-book by just clicking on the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Lens</span></code> button at the top of each Active Code.</p>
+<p>Click on this <a href="http://www.pythontutor.com/visualize.html#code=public+class+Test2%0A%7B%0A+++public+static+void+main(String%5B%5D+args%29%0A+++%7B%0A+++++int+x+%3D+3%3B%0A+++++int+y+%3D+2%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++x+%3D+y%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++y+%3D+5%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++%7D%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> to step through the code.
+Click on the Next button at the bottom of the code to see
+how the values of the variables change. You can run the visualizer
+on any Active Code in this e-book by just clicking on the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Lens</span></code> button
+at the top of each Active Code.</p>
 
 <div class="runestone" style="max-width: none;">
     <div class="alert alert-warning cd_section">
@@ -471,9 +487,13 @@ y = x; #distractor
 used with different input values saved in variables.
 The code below (<a href="https://repl.it/@BerylHoffman/JavaIOExample" target="_blank">repl JavaIOExample</a>) will say hello to anyone who types in their
 name for different name values. Click on run and then type in your name.
-Then, try run again and type in a friend’s name. The code works for any name:
+The code <code class="docutils literal notranslate"><span class="pre">scan.nextLine()</span></code> gets the string value that you type into the console window.
+The code <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">scan.nextLine()</span></code>
+stores the value you typed into the variable.  The program
+uses string concatenation to print a greeting using the name.</p>
+<p>Run the program a few times, typing in a different name. The code works for any name:
 behold, the power of variables!</p>
-<iframe height="500px" width="100%" style="max-width:90%; margin-left:5%"  src="https://repl.it/@BerylHoffman/JavaIOExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>The majority of examples in this textbook will not use the
+<iframe height="500px" width="100%" style="max-width:90%; margin-left:5%"  src="https://repl.it/@BerylHoffman/JavaIOExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>Most of the examples in this textbook will not use the
 Java System.in and Scanner classes.  However,  learning how to do input in Java is still very useful.
 More information on using the Scanner class can be found here <a class="reference external" href="https://www.w3schools.com/java/java_user_input.asp">https://www.w3schools.com/java/java_user_input.asp</a></p>
 </div>

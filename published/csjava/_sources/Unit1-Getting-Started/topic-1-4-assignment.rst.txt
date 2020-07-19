@@ -28,7 +28,12 @@ In this lesson, you will learn about assignment statements and expressions that 
 Assignment Statements
 ---------------------
 
-Remember that a variable holds a value and that value can change or vary.  **Assignment statements** initialize or change the value stored in a variable using the assignment operator =.  The value of the expression on the right of the = sign is stored in the variable on the left. These values can be complex **expressions** that contain math operators and other variables like in the example below. 
+Remember that a variable holds a value and that value can change or 
+vary.  **Assignment statements** initialize or change the value stored 
+in a variable using the assignment operator =.  The value of the 
+expression on the right of the = sign is stored in the variable on the left. 
+These values can be complex **expressions** that contain math operators 
+and other variables like in the example below. 
 
 .. code-block:: java 
 
@@ -36,7 +41,14 @@ Remember that a variable holds a value and that value can change or vary.  **Ass
     // variable = expression;
     score = (10 * points) + 5;
 
-If you use a variable to keep score you would probably increment it (add one to the current value) whenever score should go up.  You can do this by setting the variable to the current value of the variable plus one (score = score + 1) as shown below. The formula looks a little crazy in math class, but it makes sense in coding because the variable on the left is set to the value of the arithmetic expression on the right. So, the score variable is set to the previous value of score + 1.
+If you use a variable to keep score you would probably increment it 
+(add one to the current value) whenever score should go up.  
+You can do this by setting the variable to the current value of the 
+variable plus one (score = score + 1) as shown below. The formula 
+looks a little crazy in math class, but it makes sense in coding 
+because the variable on the left is set to the value of the arithmetic 
+expression on the right. So, the score variable is set to the 
+previous value of score + 1.
 
 .. activecode:: lccv1
    :language: java
@@ -83,7 +95,11 @@ You can set one variable's value to a *copy* of the value of another variable.  
 
    <a href="http://www.pythontutor.com/visualize.html#code=public+class+Test2%0A%7B%0A+++public+static+void+main(String%5B%5D+args%29%0A+++%7B%0A+++++int+x+%3D+3%3B%0A+++++int+y+%3D+2%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++x+%3D+y%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++y+%3D+5%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++%7D%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a>
 
-Click on this cool |Java visualizer| to step through the code. Click on the Forward button at the bottom of the code to see how the values of the variables change. You can run the visualizer on any Active Code in this e-book by just clicking on the ``Code Lens`` button at the top of each Active Code.
+Click on this |Java visualizer| to step through the code. 
+Click on the Next button at the bottom of the code to see 
+how the values of the variables change. You can run the visualizer 
+on any Active Code in this e-book by just clicking on the ``Code Lens`` button 
+at the top of each Active Code.
 
  
 .. codelens:: asgn_viz1
@@ -177,18 +193,22 @@ Variables are a powerful abstraction in programming because the same algorithm c
 used with different input values saved in variables.  
 The code below (|repl JavaIOExample|) will say hello to anyone who types in their 
 name for different name values. Click on run and then type in your name. 
-Then, try run again and type in a friend's name. The code works for any name: 
+The code ``scan.nextLine()`` gets the string value that you type into the console window.  
+The code ``String name = scan.nextLine()`` 
+stores the value you typed into the variable.  The program
+uses string concatenation to print a greeting using the name.
+
+Run the program a few times, typing in a different name. The code works for any name: 
 behold, the power of variables!
 
 .. raw:: html
 
     <iframe height="500px" width="100%" style="max-width:90%; margin-left:5%"  src="https://repl.it/@BerylHoffman/JavaIOExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
     
-The majority of examples in this textbook will not use the
+
+Most of the examples in this textbook will not use the
 Java System.in and Scanner classes.  However,  learning how to do input in Java is still very useful. 
 More information on using the Scanner class can be found here https://www.w3schools.com/java/java_user_input.asp 
-
-
 
 Operators
 ---------

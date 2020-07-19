@@ -229,10 +229,18 @@ Here is an example that shows **declaring** a variable and **initializing** it a
 
 
 The equal sign here ``=`` doesn't mean the same as it does in a mathematical equation 
-where it implies that the two sides are equal.  Here it means set the value in the memory 
-location associated with the name on the left to a *copy* of the value on the right. 
-The first line above sets the value in 
+where it implies that the two sides are equal.  
+Here it means set the value in the memory 
+location associated with the variable name on the left to a *copy* of the 
+value on the right. 
+The line above sets the value in 
 the memory location called score to 4.
+
+.. note::
+    
+    The equal sign ``=`` assigns the lhs variable to the rhs value.
+    
+ 
 
 |CodingEx| **Coding Exercise:** 
  
@@ -241,11 +249,11 @@ the memory location called score to 4.
    :language: java
    :autograde: unittest      
    
-   Click the "Save and Run" button to run the following code to see what is printed. 
+   Click the ``Save and Run`` button to run the following code to see what is printed. 
    Then, change the values and run it again. 
 
-   Click the "Show CodeLens" button and then use the "forward" button to step through the 
-   program one line to see how memory is created and values are assigned for each variable.
+   Click the ``Show CodeLens`` button and then use the Next button to step through the 
+   program one line at a time to see how memory is allocated for each variable.
 
    ~~~~
    public class Test2
