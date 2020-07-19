@@ -379,14 +379,15 @@ The primitive types presented in this chapter are:</p>
 <li><p><strong>boolean</strong> - which store Boolean values (either true or false).</p></li>
 </ul>
 </div></blockquote>
-<p><strong>String</strong> is a common object type and is the name of a class in Java.
-A <em>string</em> object has a sequence of characters enclosed in a pair of double quotes - like “Hello”.
-You will learn more about <code class="docutils literal notranslate"><span class="pre">String</span></code> objects in Unit 2.</p>
+<p><strong>String</strong> is an object type and is the name of a class in Java.
+A string object has a sequence of characters enclosed in a pair of double quotes - like “Hello”.
+You will learn more about <code class="docutils literal notranslate"><span class="pre">String</span></code> and other object types in Unit 2.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some languages use 0 to represent false and 1 to represent true, but Java uses the keywords <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> in boolean variables.</p>
 </div>
-<p>A type is a set of values (a domain) and a set of operations on them. For example, you can do addition with int’s and double’s but not with booleans and Strings.</p>
+<p>A type is a set of values (a domain) and a set of operations on them.
+For example, you can do mathematical addition with ints and doubles but not with booleans and Strings.</p>
 <p><a class="reference internal" href="../_images/exercise.png"><img alt="exercise" class="align-middle" src="../_images/exercise.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
@@ -471,9 +472,18 @@ You will learn more about <code class="docutils literal notranslate"><span class
             </div>
 <div class="section" id="declaring-variables-in-java">
 <h2><span class="section-number">1.3.3. </span>Declaring Variables in Java<a class="headerlink" href="#declaring-variables-in-java" title="Permalink to this headline">¶</a></h2>
-<p id="index-2">To create a variable, you must tell Java its data type and its name.  Creating a variable is also called <strong>declaring a variable</strong>.  The type is a keyword like int, double, or boolean, but you get to make up the name for the variable.  When you create a <strong>primitive variable</strong> Java will set aside enough bits in memory for that primitive type and associate that memory location with the name that you used.</p>
-<p>Computers store all values using <strong>bits</strong> (binary digits).  A <strong>bit</strong> can represent two values and we usually say that the value of a bit is either 0 or 1. When you declare a variable, you have to tell Java the type of the variable because Java needs to know how many bits to use and how to represent the value.  The 3 different primitive types
-all require different number of bits.  An integer gets 32 bits of space, a double gets 64 bits of space and a boolean could be represented by just one bit.</p>
+<p id="index-2">To create a variable, you must tell Java its data type and its name.
+Creating a variable is also called <strong>declaring a variable</strong>.
+The type is a keyword like int, double, or boolean, but you get to make up the
+name for the variable.  When you create a <strong>primitive variable</strong> Java will set aside
+enough bits in memory for that primitive type and associate that memory location
+with the variable name that you used.</p>
+<p>Computers store all values using <strong>bits</strong> (binary digits).  A <strong>bit</strong> can represent two values
+and we usually say that the value of a bit is either 0 or 1. When you declare a variable,
+you have to tell Java the type of the variable because Java needs to know how many
+bits to use and how to represent the value.  The 3 different primitive types
+all require different number of bits.  An integer gets 32 bits of space, a double
+gets 64 bits of space and a boolean could be represented by just one bit.</p>
 <div class="align-center figure align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/typesAndSpace.png"><img alt="../_images/typesAndSpace.png" src="../_images/typesAndSpace.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Figure 2: Examples of variables with names and values.  Notice that the different types get a different amount of space.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -482,7 +492,7 @@ all require different number of bits.  An integer gets 32 bits of space, a doubl
 then the name for the variable and end the line with a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>).
 Java uses the keyword <strong>int</strong> for integer, <strong>double</strong> for a floating point
 number (a double precision number), and <strong>boolean</strong> for a Boolean value (true or false).</p>
-<p>Here is an example <strong>declaration</strong> of a variable called score.</p>
+<p>Here is an example <strong>declaration</strong> of a variable called <em>score</em>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -497,15 +507,18 @@ Here is an example that shows <strong>declaring</strong> a variable and <strong>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>When you are printing out variables, you can use the <strong>string concatenation</strong> operator + to add
-them to another string inside System.out.print.   So <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">&quot;there&quot;</span></code> will create a new String object with the
-value <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">there&quot;</span></code>.  If the variable <strong>name</strong> has a value “Fred”, then the code <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">name</span></code> will create a new
-String object with value <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">Fred&quot;</span></code>.</p>
-<p>Never put variables inside quotes “” because that will print out the variable name letter by letter. You do not want to print out the variable name, but the value of the variable in memory. If you’re not sure what this means, try putting quotes around the variable and see what happens. In the print out, if you want spaces between words and variables, you must put the space in the quotes. If you forget to add spaces, you will get smushed output like “HiJose” instead of “Hi Jose”.</p>
+<p>The equal sign here <code class="docutils literal notranslate"><span class="pre">=</span></code> doesn’t mean the same as it does in a mathematical equation
+where it implies that the two sides are equal.  Here it means set the value in the memory
+location associated with the name on the left to a <em>copy</em> of the value on the right.
+The first line above sets the value in
+the memory location called score to 4.</p>
 <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
 <div data-childcomponent="lcdv2" class="runestone explainer ac_section alert alert-warning">
-<p>Run the following code to see what is printed. Then, change the values and run it again. Try adding quotes to variables and removing spaces in the print out statements to see what happens.</p>
+<p>Click the “Save and Run” button to run the following code to see what is printed.
+Then, change the values and run it again.</p>
+<p>Click the “Show CodeLens” button and then use the “forward” button to step through the
+program one line to see how memory is created and values are assigned for each variable.</p>
 
 <textarea data-component="activecode" id=lcdv2 data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -547,6 +560,58 @@ public class RunestoneTests extends CodeTestHelper
          String output = getMethodOutput("main");
          String expect = "The score is 0\nThe price is 23.25\nfalse\ntrue\nHi Jose";
          boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+}
+</textarea>
+</div>
+<p>When you are printing out variables, you can use the <strong>string concatenation</strong> operator + to add
+them to another string inside System.out.print.  So <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">&quot;there&quot;</span></code> will create a new String object with the
+value <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">there&quot;</span></code>.  If the variable <strong>name</strong> has a value “Jose”,
+then the code <code class="docutils literal notranslate"><span class="pre">&quot;Hi</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">name</span></code> will create a new String object with value <code class="docutils literal notranslate"><span class="pre">&quot;Hi</span> <span class="pre">Jose&quot;</span></code>.</p>
+<p>Never put variables inside quotes “” because that will print out the variable
+name letter by letter. You do not want to print out the variable name,
+but the value of the variable in memory. If you’re not sure what this means, try
+putting quotes around the variable and see what happens.
+In the print out, if you want spaces between words and variables, you must put the
+space in the quotes. If you forget to add spaces, you will get smushed output
+like “HiJose” instead of “Hi Jose”.</p>
+<p>Also note that the variable has to be on the
+left side of the <code class="docutils literal notranslate"><span class="pre">=</span></code> and the value on the right.  Switching the two is
+called <strong>assignment dyslexia</strong>.</p>
+<p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
+
+<div data-childcomponent="lcdv3" class="runestone explainer ac_section alert alert-warning">
+<p>This is an example of <em>assignment dyslexia</em>, when the coder has put the value on the left and the declaration on the right side.  Try to fix the following code to compile and run.</p>
+
+<textarea data-component="activecode" id=lcdv3 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Test3
+{
+   public static void main(String[] args)
+   {
+     int score;
+     4 = score;
+     System.out.println(score);
+   }
+}
+
+====
+// should pass if/when they run code
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+     @Test
+     public void testMain() throws IOException
+     {
+         String output = getMethodOutput("main");
+         String expect = "4";
+         boolean passed = getResults(expect, output, "Expected output from main");
          assertTrue(passed);
      }
 }
@@ -596,51 +661,6 @@ public class RunestoneTests extends CodeTestHelper
 <span data-incorrect>}</span></pre>
 
 </div>
-</div>
-<p>The equal sign here <code class="docutils literal notranslate"><span class="pre">=</span></code> doesn’t mean the same as it does in a mathematical equation
-where it implies that the two sides are equal.  Here it means set the value in the memory
-location associated with the name on the left to a <em>copy</em> of the value on the right.
-The first line above sets the value in
-the memory location called score to 4. Also note that the variable has to be on the
-left side of the <code class="docutils literal notranslate"><span class="pre">=</span></code> and the value on the right.  Switching the two is
-called <strong>assignment dyslexia</strong>.</p>
-<p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
-
-<div data-childcomponent="lcdv3" class="runestone explainer ac_section alert alert-warning">
-<p>This is an example of <em>assignment dyslexia</em>, when the coder has put the value on the left and the declaration on the right side.  Try to fix the following code to compile and run.</p>
-
-<textarea data-component="activecode" id=lcdv3 data-lang="java" 
-      data-timelimit=25000  data-codelens="true"   
-    data-audio=''      
-           data-wasm=/_static>
-public class Test3
-{
-   public static void main(String[] args)
-   {
-     int score;
-     4 = score;
-     System.out.println(score);
-   }
-}
-
-====
-// should pass if/when they run code
-import static org.junit.Assert.*;
-import org.junit.*;;
-import java.io.*;
-
-public class RunestoneTests extends CodeTestHelper
-{
-     @Test
-     public void testMain() throws IOException
-     {
-         String output = getMethodOutput("main");
-         String expect = "4";
-         boolean passed = getResults(expect, output, "Expected output from main");
-         assertTrue(passed);
-     }
-}
-</textarea>
 </div>
 <p><a class="reference internal" href="../_images/exercise.png"><img alt="exercise" class="align-middle" src="../_images/exercise.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
 

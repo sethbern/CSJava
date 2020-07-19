@@ -76,16 +76,17 @@ The primitive types presented in this chapter are:
     
     -  **boolean** - which store Boolean values (either true or false). 
 
-**String** is a common object type and is the name of a class in Java.  
-A *string* object has a sequence of characters enclosed in a pair of double quotes - like "Hello".  
-You will learn more about ``String`` objects in Unit 2. 
+**String** is an object type and is the name of a class in Java.  
+A string object has a sequence of characters enclosed in a pair of double quotes - like "Hello".  
+You will learn more about ``String`` and other object types in Unit 2. 
 
 
 .. note:: 
 
    Some languages use 0 to represent false and 1 to represent true, but Java uses the keywords ``true`` and ``false`` in boolean variables.  
 
-A type is a set of values (a domain) and a set of operations on them. For example, you can do addition with int's and double's but not with booleans and Strings.
+A type is a set of values (a domain) and a set of operations on them. 
+For example, you can do mathematical addition with ints and doubles but not with booleans and Strings.
 
 |Exercise| **Check your understanding**
    
@@ -171,10 +172,19 @@ Declaring Variables in Java
 	pair: variable; declare
   
 
-To create a variable, you must tell Java its data type and its name.  Creating a variable is also called **declaring a variable**.  The type is a keyword like int, double, or boolean, but you get to make up the name for the variable.  When you create a **primitive variable** Java will set aside enough bits in memory for that primitive type and associate that memory location with the name that you used.   
+To create a variable, you must tell Java its data type and its name.  
+Creating a variable is also called **declaring a variable**.  
+The type is a keyword like int, double, or boolean, but you get to make up the 
+name for the variable.  When you create a **primitive variable** Java will set aside 
+enough bits in memory for that primitive type and associate that memory location 
+with the variable name that you used.   
 
-Computers store all values using **bits** (binary digits).  A **bit** can represent two values and we usually say that the value of a bit is either 0 or 1. When you declare a variable, you have to tell Java the type of the variable because Java needs to know how many bits to use and how to represent the value.  The 3 different primitive types
-all require different number of bits.  An integer gets 32 bits of space, a double gets 64 bits of space and a boolean could be represented by just one bit. 
+Computers store all values using **bits** (binary digits).  A **bit** can represent two values 
+and we usually say that the value of a bit is either 0 or 1. When you declare a variable, 
+you have to tell Java the type of the variable because Java needs to know how many 
+bits to use and how to represent the value.  The 3 different primitive types
+all require different number of bits.  An integer gets 32 bits of space, a double 
+gets 64 bits of space and a boolean could be represented by just one bit. 
 
 .. figure:: Figures/typesAndSpace.png
     :width: 500px
@@ -194,7 +204,7 @@ number (a double precision number), and **boolean** for a Boolean value (true or
     
     Figure 2: How to Declare a Variable
     
-Here is an example **declaration** of a variable called score.
+Here is an example **declaration** of a variable called *score*.
 
 .. code-block:: java
 
@@ -216,12 +226,13 @@ Here is an example that shows **declaring** a variable and **initializing** it a
 
   int score = 4;  
 
-When you are printing out variables, you can use the **string concatenation** operator + to add 
-them to another string inside System.out.print.   So ``"hi " + "there"`` will create a new String object with the
-value ``"hi there"``.  If the variable **name** has a value "Fred", then the code ``"hi " + name`` will create a new
-String object with value ``"hi Fred"``.
 
-Never put variables inside quotes "" because that will print out the variable name letter by letter. You do not want to print out the variable name, but the value of the variable in memory. If you're not sure what this means, try putting quotes around the variable and see what happens. In the print out, if you want spaces between words and variables, you must put the space in the quotes. If you forget to add spaces, you will get smushed output like "HiJose" instead of "Hi Jose".  
+
+The equal sign here ``=`` doesn't mean the same as it does in a mathematical equation 
+where it implies that the two sides are equal.  Here it means set the value in the memory 
+location associated with the name on the left to a *copy* of the value on the right. 
+The first line above sets the value in 
+the memory location called score to 4.
 
 |CodingEx| **Coding Exercise:** 
  
@@ -230,7 +241,12 @@ Never put variables inside quotes "" because that will print out the variable na
    :language: java
    :autograde: unittest      
    
-   Run the following code to see what is printed. Then, change the values and run it again. Try adding quotes to variables and removing spaces in the print out statements to see what happens.
+   Click the "Save and Run" button to run the following code to see what is printed. 
+   Then, change the values and run it again. 
+
+   Click the "Show CodeLens" button and then use the "forward" button to step through the 
+   program one line to see how memory is created and values are assigned for each variable.
+
    ~~~~
    public class Test2
    {
@@ -272,6 +288,62 @@ Never put variables inside quotes "" because that will print out the variable na
         }
    }
    
+When you are printing out variables, you can use the **string concatenation** operator + to add 
+them to another string inside System.out.print.  So ``"hi " + "there"`` will create a new String object with the
+value ``"hi there"``.  If the variable **name** has a value "Jose", 
+then the code ``"Hi " + name`` will create a new String object with value ``"Hi Jose"``.
+
+Never put variables inside quotes "" because that will print out the variable 
+name letter by letter. You do not want to print out the variable name, 
+but the value of the variable in memory. If you're not sure what this means, try 
+putting quotes around the variable and see what happens. 
+In the print out, if you want spaces between words and variables, you must put the 
+space in the quotes. If you forget to add spaces, you will get smushed output 
+like "HiJose" instead of "Hi Jose".  
+
+Also note that the variable has to be on the 
+left side of the ``=`` and the value on the right.  Switching the two is 
+called **assignment dyslexia**.  
+   
+|CodingEx| **Coding Exercise:** 
+
+.. activecode:: lcdv3
+   :language: java
+   :autograde: unittest   
+   
+   This is an example of *assignment dyslexia*, when the coder has put the value on the left and the declaration on the right side.  Try to fix the following code to compile and run.
+   ~~~~
+   public class Test3
+   {
+      public static void main(String[] args)
+      {
+        int score;
+        4 = score; 
+        System.out.println(score);
+      }
+   }
+        
+   ====
+   // should pass if/when they run code
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "4";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+   }
+
+
+
+
 .. note::
     
     Variables are never put inside quotes ("") in System.out.print statements. This would print the variable name out letter by letter instead of printing its value.
@@ -351,49 +423,7 @@ Never put variables inside quotes "" because that will print out the variable na
     :click-incorrect:}:endclick:
 
 
-The equal sign here ``=`` doesn't mean the same as it does in a mathematical equation 
-where it implies that the two sides are equal.  Here it means set the value in the memory 
-location associated with the name on the left to a *copy* of the value on the right. 
-The first line above sets the value in 
-the memory location called score to 4. Also note that the variable has to be on the 
-left side of the ``=`` and the value on the right.  Switching the two is 
-called **assignment dyslexia**.  
-   
-|CodingEx| **Coding Exercise:** 
 
-.. activecode:: lcdv3
-   :language: java
-   :autograde: unittest   
-   
-   This is an example of *assignment dyslexia*, when the coder has put the value on the left and the declaration on the right side.  Try to fix the following code to compile and run.
-   ~~~~
-   public class Test3
-   {
-      public static void main(String[] args)
-      {
-        int score;
-        4 = score; 
-        System.out.println(score);
-      }
-   }
-        
-   ====
-   // should pass if/when they run code
-   import static org.junit.Assert.*;
-   import org.junit.*;;
-   import java.io.*;
-
-   public class RunestoneTests extends CodeTestHelper
-   {
-        @Test
-        public void testMain() throws IOException
-        {
-            String output = getMethodOutput("main");
-            String expect = "4";
-            boolean passed = getResults(expect, output, "Expected output from main");
-            assertTrue(passed);
-        }
-   }
    
 |Exercise| **Check Your Understanding**
 
