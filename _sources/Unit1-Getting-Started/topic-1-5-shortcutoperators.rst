@@ -34,6 +34,13 @@
     pair: operators; equality
     pair: operators; inequality
 
+.. |ss| raw:: html
+
+   <strike>
+
+.. |se| raw:: html
+
+   </strike>
 
 Compound Assignment Operators 
 =============================
@@ -56,7 +63,11 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
    :language: java
    :autograde: unittest    
   
-   Run the code below to see what the ++ and shorcut operators do. Click on the Show Code Lens button to trace through the code and the variable values change in the visualizer. Try creating more compound assignment statements with shortcut operators and work with a partner to guess what they would print out before running the code.
+   Run the code below to see what the ++ and shorcut operators do. 
+   Click on the Show Code Lens button to trace through the code and the 
+   variable values change in the visualizer. Try creating more compound assignment 
+   statements with shortcut operators and guess what they would 
+   print out before running the code.
    ~~~~
    public class Test2
    {
@@ -90,11 +101,6 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
             assertTrue(passed);
         }
     }
-   
-.. note::
-
-   On the exam you can use ``x++`` or ``++x`` to add one to the value of ``x``.  These two shortcuts only have different results if you assign the value of ``x`` to another variable as in ``int y = ++x;`` (where the value of x is incremented before y is set to it) or ``int y = x++;`` (where y is set to a copy of x's value before x is incremented).  The AP exam will never use a shortcut in an assignment statement, so you don't need to worry about the difference between ``++x`` or ``x++``.  
-
 
 |Exercise| **Check Your Understanding**
 
@@ -152,56 +158,193 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
 |Groupwork| Code Tracing Challenge and Operators Maze
 -----------------------------------------------------
 
-Use paper and pencil or the question response area below to trace through the following program to determine the values of the variables at the end. 
+**Code Tracing** is a technique used to simulate a dry run through the code or pseudocode 
+line by line by hand as if you are the computer executing the code. Tracing can be used for 
+debugging or proving that your program runs correctly or for figuring out what the code 
+actually does. 
 
-**Code Tracing** is a technique used to simulate a dry run through the code or pseudocode line by line by hand as if you are the computer executing the code. Tracing can be used for debugging or proving that your program runs correctly or for figuring out what the code actually does. 
+Trace tables can be used to track the values of variables as they change throughout a program. 
+To trace through code, write down a variable in each column or row in a table and keep 
+track of its value throughout the program. Some trace tables also keep track of the output 
+and the line number you are currently tracing.
 
-Trace tables can be used to track the values of variables as they change throughout a program. To trace through code, write down a variable in each column or row in a table and keep track of its value throughout the program. Some trace tables also keep track of the output and the line number you are currently tracing.
-
-.. figure:: Figures/traceTable.png
-    :width: 150px
-    :align: center
-    :figclass: align-center
-
-or
-
-.. figure:: Figures/traceInline.png
-    :width: 220px
-    :align: center
-    :figclass: align-center
-
-Trace through the following code:
+For example, given the following code:
 
 .. code-block:: java 
 
-     int x = 0;
-     int y = 5;
-     int z = 1;
-     x++;
-     y -= 3;
-     z = x + z;
-     x = y * z;
-     y %= 2;
-     z--;
+    x = 10;
+    y = 15;
+    z = x * y;
+    z++;
+    x = z * 2;
 
-.. shortanswer:: challenge1-5
+The corresponding trace table looks like this:
 
-   Write your trace table for x, y, and z here showing their results after each line of code.
++-----+-----------+-----+-----+-----+
+|Line |Statement  |  x  |  y  |  z  |
++=====+===========+=====+=====+=====+
+|1    |x = 10;    | 10  |     |     |
++-----+-----------+-----+-----+-----+
+|2    |y = 15;    |     |  15 |     |
++-----+-----------+-----+-----+-----+
+|3    |z = x * y; |     |     | 150 |
++-----+-----------+-----+-----+-----+
+|4    |z++;       |     |     | 151 |
++-----+-----------+-----+-----+-----+
+|5    |x = z * 2; | 302 |     |     |
++-----+-----------+-----+-----+-----+
+
+
+Alternatively, we can show a compressed trace by listing the sequence of values 
+assigned to each variable as the program executes.  You might want to cross off the previous value
+when you change the value for a variable.  The last value listed is the variable's final value.
+
++--------+---------+
+|Variable|Value    |
++========+=========+
+|x       |10, 302  |
++--------+---------+
+|y       |15       |
++--------+---------+
+|z       |150, 151 |
++--------+---------+
+
+
+Use paper and pencil to trace through the following program to determine the 
+values of the variables at the end.   Be careful, ``%`` is the remainder operator, not division.
+
+|Exercise| **Check Your Understanding**
+
+
+
+.. fillintheblank:: variable_trace
+   
+   .. code-block:: java 
+
+        int x = 0;
+        int y = 5;
+        int z = 1;
+        x++;
+        y -= 3;
+        z = x + z;
+        x = y * z;
+        y %= 2;  
+        z--;
+
+   The final value for x is |blank| 
+
+   The final value for y is |blank|
+
+   The final value for z is |blank|
+
+   -    :4: Correct.    
+        :.*: Incorrect, go back and retrace the code.
+   -    :0: Correct.  
+        :.*: Incorrect, go back and retrace the code. 
+   -    :1: Correct.  
+        :.*: Incorrect, go back and retrace the code. 
+   
+
+.. |Java visualizer| raw:: html
+
+    <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java visualizer</a>
+
+If you have problems tracing the code to produce the correct result, use the |Java visualizer|. 
+Copy the code from above into the main method, click "Visualize execution", then step through the code.
 
 .. |Operators Maze game| raw:: html
 
    <a href="https://docs.google.com/document/d/1ZjA8oKeo8FYx2nXX4OOq5lUihopIQQ_HY-eoE5yZkk8/edit?usp=sharing" target="_blank" style="text-decoration:underline">Operators Maze game</a>
    
 
+Prefix versus Postfix Operator
+-------------------
 
-After doing this challenge, play the |Operators Maze game|. See if you and your partner can get the highest score!
+.. activecode:: postfix_assignment
+   :language: java
+   
+   What do you think is printed when the following code is executed?    
+   Try to guess the output before running the code.  You might be surprised at the result.  
+   Click on CodeLens to step through the  execution.  
+   Notice that the second println prints the original value 7 even though the memory  
+   location for variable ``count`` is updated to the value 8.
+   ~~~~  
+    public class Postfix_Example {
+        public static void main(String[] args) {
+            int count = 7;
+            System.out.println(count);
+            System.out.println(count++);
+            System.out.println(count);
+        }
+    }
+====
+
+The code ``System.out.println(count++)`` adds one to the variable *after* the value is printed.  
+Try changing the code to ``++count`` and run it again. This will result in one being added to
+the variable *before* its value is printed.
+When the ``++`` operator is placed before the variable, it is called **prefix** increment. 
+When it is placed after, it is called **postfix** increment.
+
++----------------------------+---------------------------------------------------------+-------+
+|Example                     |Description                                              |Type   |
++============================+=========================================================+=======+
+|System.out.println(count++);|Print the current value of count, then add one to count  |Postfix|
++----------------------------+---------------------------------------------------------+-------+
+|System.out.println(++count);|Add one to count, then print the new value               |Prefix |
++----------------------------+---------------------------------------------------------+-------+
+|x = y++;                    |Copy the value of y into x, then add one to y            |Postfix|
++----------------------------+---------------------------------------------------------+-------+
+|x = ++y;                    |Add one to y, then copy the value of y into x            |Prefix |
++----------------------------+---------------------------------------------------------+-------+
+|x = y- -;                   |Copy the value of y into x, then subtract one to y       |Postfix|
++----------------------------+---------------------------------------------------------+-------+
+|x = - -y;                   |Subtract one to y, then copy the value of y into x       |Prefix |
++----------------------------+---------------------------------------------------------+-------+
+
+
+.. dragndrop:: prepost_matching
+   :feedback: Try again.
+   :match_1: System.out.println(score++);|||Print current value of score 5, then assign score the value 6.
+   :match_2: System.out.println(score--);|||Print current value of score 5, then assign score the value 4.
+   :match_3: System.out.println(++score);|||Assign score the value 6, then print the value 6.
+   :match_4: System.out.println(--score);|||Assign score the value 4, then print the value 4.
+
+   Assume score=5.  Match each line of code to the correct result.
+
+
+
+.. note::
+
+    It is advisable to avoid mixing unary operators ``++`` and ``--`` with assignment or print statements.
+    Try to perform the increment or decrement operation on a separate line of code from assignment or printing.  So it would be better to
+    write this code, which makes it very clear that the increment of *y* happens after the 
+    assignment to *x*, and that the value of *z* is printed before it is decremented.
+
+    .. code-block:: java 
+
+        x=y;
+        y++;
+
+        System.out.println(z);
+        z--;
+
+
+.. dragndrop:: prepost_equivalent
+   :feedback: Try again.
+   :match_1: System.out.println(score++);|||System.out.println(score);   score++;
+   :match_2: System.out.println(score--);|||System.out.println(score);   score--;
+   :match_3: System.out.println(++score);|||score++;     System.out.println(score);   
+   :match_4: System.out.println(--score);|||score--;     System.out.println(score);
+
+   Match each single line of code on the left to the equivalent pair of lines on the right.
+
 
 Summary
 -------------------
 
 - Compound assignment operators (+=, -=, \*=, /=, %=) can be used in place of the assignment operator.
 - The increment operator (++) and decrement operator (--) are used to add 1 or subtract 1 from the stored value of a variable. The new value is assigned to the variable.
-- The use of increment and decrement operators in prefix form (i.e., ++x) and inside other expressions (i.e., arr[x++]) is outside the scope of this course and the AP Exam. 
+
 
 .. raw:: html
     

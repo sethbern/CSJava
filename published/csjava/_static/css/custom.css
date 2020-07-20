@@ -10,3 +10,7 @@ strong {
 a {
   text-decoration: underline !important;
 }
+
+.strike {
+  text-decoration: line-through;
+}

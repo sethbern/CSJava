@@ -391,7 +391,11 @@
 <p>The most common shortcut operator <code class="docutils literal notranslate"><span class="pre">++</span></code>, the plus-plus or <strong>increment</strong> operator, is used to add 1 to the current value; <code class="docutils literal notranslate"><span class="pre">x++</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code> and the same as <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>. It is a shortcut that is used a lot in loops. If you’ve heard of the programming language C++, the ++ in C++ is an inside joke that C has been incremented or improved to create C++. The <code class="docutils literal notranslate"><span class="pre">--</span></code> decrement operator is used to subtract 1 from the current value: <code class="docutils literal notranslate"><span class="pre">y--</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">-</span> <span class="pre">1</span></code>. These are the only two double operators; this shortcut pattern does not exist with other operators. Run the following code to see these shortcut operators in action!</p>
 
 <div data-childcomponent="lcpp" class="runestone explainer ac_section alert alert-warning">
-<p>Run the code below to see what the ++ and shorcut operators do. Click on the Show Code Lens button to trace through the code and the variable values change in the visualizer. Try creating more compound assignment statements with shortcut operators and work with a partner to guess what they would print out before running the code.</p>
+<p>Run the code below to see what the ++ and shorcut operators do.
+Click on the Show Code Lens button to trace through the code and the
+variable values change in the visualizer. Try creating more compound assignment
+statements with shortcut operators and guess what they would
+print out before running the code.</p>
 
 <textarea data-component="activecode" id=lcpp data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -430,10 +434,6 @@ import static org.junit.Assert.*;
      }
  }
 </textarea>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On the exam you can use <code class="docutils literal notranslate"><span class="pre">x++</span></code> or <code class="docutils literal notranslate"><span class="pre">++x</span></code> to add one to the value of <code class="docutils literal notranslate"><span class="pre">x</span></code>.  These two shortcuts only have different results if you assign the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> to another variable as in <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">++x;</span></code> (where the value of x is incremented before y is set to it) or <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">x++;</span></code> (where y is set to a copy of x’s value before x is incremented).  The AP exam will never use a shortcut in an assignment statement, so you don’t need to worry about the difference between <code class="docutils literal notranslate"><span class="pre">++x</span></code> or <code class="docutils literal notranslate"><span class="pre">x++</span></code>.</p>
 </div>
 <p><a class="reference internal" href="../_images/exercise.png"><img alt="exercise" class="align-middle" src="../_images/exercise.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
 
@@ -490,17 +490,104 @@ import static org.junit.Assert.*;
             </div>
             <div class="section" id="groupwork-code-tracing-challenge-and-operators-maze">
 <h2><span class="section-number">1.5.1. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Code Tracing Challenge and Operators Maze<a class="headerlink" href="#groupwork-code-tracing-challenge-and-operators-maze" title="Permalink to this headline">¶</a></h2>
-<p>Use paper and pencil or the question response area below to trace through the following program to determine the values of the variables at the end.</p>
-<p><strong>Code Tracing</strong> is a technique used to simulate a dry run through the code or pseudocode line by line by hand as if you are the computer executing the code. Tracing can be used for debugging or proving that your program runs correctly or for figuring out what the code actually does.</p>
-<p>Trace tables can be used to track the values of variables as they change throughout a program. To trace through code, write down a variable in each column or row in a table and keep track of its value throughout the program. Some trace tables also keep track of the output and the line number you are currently tracing.</p>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="../_images/traceTable.png"><img alt="../_images/traceTable.png" src="../_images/traceTable.png" style="width: 150px;" /></a>
+<p><strong>Code Tracing</strong> is a technique used to simulate a dry run through the code or pseudocode
+line by line by hand as if you are the computer executing the code. Tracing can be used for
+debugging or proving that your program runs correctly or for figuring out what the code
+actually does.</p>
+<p>Trace tables can be used to track the values of variables as they change throughout a program.
+To trace through code, write down a variable in each column or row in a table and keep
+track of its value throughout the program. Some trace tables also keep track of the output
+and the line number you are currently tracing.</p>
+<p>For example, given the following code:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">;</span>
+<span class="n">z</span><span class="o">++</span><span class="p">;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
 </div>
-<p>or</p>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="../_images/traceInline.png"><img alt="../_images/traceInline.png" src="../_images/traceInline.png" style="width: 220px;" /></a>
-</div>
-<p>Trace through the following code:</p>
+<p>The corresponding trace table looks like this:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Line</p></th>
+<th class="head"><p>Statement</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>y</p></th>
+<th class="head"><p>z</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>x = 10;</p></td>
+<td><p>10</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>y = 15;</p></td>
+<td></td>
+<td><p>15</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>z = x * y;</p></td>
+<td></td>
+<td></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>z++;</p></td>
+<td></td>
+<td></td>
+<td><p>151</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>x = z * 2;</p></td>
+<td><p>302</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Alternatively, we can show a compressed trace by listing the sequence of values
+assigned to each variable as the program executes.  You might want to cross off the previous value
+when you change the value for a variable.  The last value listed is the variable’s final value.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>10, 302</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>z</p></td>
+<td><p>150, 151</p></td>
+</tr>
+</tbody>
+</table>
+<p>Use paper and pencil to trace through the following program to determine the
+values of the variables at the end.   Be careful, <code class="docutils literal notranslate"><span class="pre">%</span></code> is the remainder operator, not division.</p>
+<p><a class="reference internal" href="../_images/exercise.png"><img alt="exercise" class="align-middle" src="../_images/exercise.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+        <div class="runestone">
+        <div data-component="fillintheblank" id="variable_trace" >
+            <p>1-5-3:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -512,21 +599,142 @@ import static org.junit.Assert.*;
 <span class="n">z</span><span class="o">--</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>The final value for x is <input type="text"></p>
+<p>The final value for y is <input type="text"></p>
+<p>The final value for z is <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [4, 4], "feedback": "<p>Correct.</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect, go back and retrace the code.</p>\n"}], [{"number": [0, 0], "feedback": "<p>Correct.</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect, go back and retrace the code.</p>\n"}], [{"number": [1, 1], "feedback": "<p>Correct.</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect, go back and retrace the code.</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            <p>If you have problems tracing the code to produce the correct result, use the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java visualizer</a>.
+Copy the code from above into the main method, click “Visualize execution”, then step through the code.</p>
+</div>
+<div class="section" id="prefix-versus-postfix-operator">
+<h2><span class="section-number">1.5.2. </span>Prefix versus Postfix Operator<a class="headerlink" href="#prefix-versus-postfix-operator" title="Permalink to this headline">¶</a></h2>
+
+<div data-childcomponent="postfix_assignment" class="runestone explainer ac_section alert alert-warning">
+<p>What do you think is printed when the following code is executed?
+Try to guess the output before running the code.  You might be surprised at the result.
+Click on CodeLens to step through the  execution.
+Notice that the second println prints the original value 7 even though the memory
+location for variable <code class="docutils literal notranslate"><span class="pre">count</span></code> is updated to the value 8.</p>
+
+<textarea data-component="activecode" id=postfix_assignment data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+ public class Postfix_Example {
+     public static void main(String[] args) {
+         int count = 7;
+         System.out.println(count);
+         System.out.println(count++);
+         System.out.println(count);
+     }
+ }
+</textarea>
+</div>
+<hr class="docutils" />
+<p>The code <code class="docutils literal notranslate"><span class="pre">System.out.println(count++)</span></code> adds one to the variable <em>after</em> the value is printed.
+Try changing the code to <code class="docutils literal notranslate"><span class="pre">++count</span></code> and run it again. This will result in one being added to
+the variable <em>before</em> its value is printed.
+When the <code class="docutils literal notranslate"><span class="pre">++</span></code> operator is placed before the variable, it is called <strong>prefix</strong> increment.
+When it is placed after, it is called <strong>postfix</strong> increment.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 62%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>System.out.println(count++);</p></td>
+<td><p>Print the current value of count, then add one to count</p></td>
+<td><p>Postfix</p></td>
+</tr>
+<tr class="row-odd"><td><p>System.out.println(++count);</p></td>
+<td><p>Add one to count, then print the new value</p></td>
+<td><p>Prefix</p></td>
+</tr>
+<tr class="row-even"><td><p>x = y++;</p></td>
+<td><p>Copy the value of y into x, then add one to y</p></td>
+<td><p>Postfix</p></td>
+</tr>
+<tr class="row-odd"><td><p>x = ++y;</p></td>
+<td><p>Add one to y, then copy the value of y into x</p></td>
+<td><p>Prefix</p></td>
+</tr>
+<tr class="row-even"><td><p>x = y- -;</p></td>
+<td><p>Copy the value of y into x, then subtract one to y</p></td>
+<td><p>Postfix</p></td>
+</tr>
+<tr class="row-odd"><td><p>x = - -y;</p></td>
+<td><p>Subtract one to y, then copy the value of y into x</p></td>
+<td><p>Prefix</p></td>
+</tr>
+</tbody>
+</table>
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=challenge1-5  >
-<p>1-5-3: Write your trace table for x, y, and z here showing their results after each line of code.</p>
+<ul data-component="dragndrop" id="prepost_matching" >
+    <span data-component="question">1-5-4: Assume score=5.  Match each line of code to the correct result.</span>
+	<span data-component=feedback>Try again.</span>
 
+    <li data-component="draggable" id="prepost_matching_drag1">System.out.println(score++);</li>
+    <li data-component="dropzone" for="prepost_matching_drag1">Print current value of score 5, then assign score the value 6.</li>
+
+    <li data-component="draggable" id="prepost_matching_drag2">System.out.println(score--);</li>
+    <li data-component="dropzone" for="prepost_matching_drag2">Print current value of score 5, then assign score the value 4.</li>
+
+    <li data-component="draggable" id="prepost_matching_drag3">System.out.println(++score);</li>
+    <li data-component="dropzone" for="prepost_matching_drag3">Assign score the value 6, then print the value 6.</li>
+
+    <li data-component="draggable" id="prepost_matching_drag4">System.out.println(--score);</li>
+    <li data-component="dropzone" for="prepost_matching_drag4">Assign score the value 4, then print the value 4.</li>
+</ul></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is advisable to avoid mixing unary operators <code class="docutils literal notranslate"><span class="pre">++</span></code> and <code class="docutils literal notranslate"><span class="pre">--</span></code> with assignment or print statements.
+Try to perform the increment or decrement operation on a separate line of code from assignment or printing.  So it would be better to
+write this code, which makes it very clear that the increment of <em>y</em> happens after the
+assignment to <em>x</em>, and that the value of <em>z</em> is printed before it is decremented.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">y</span><span class="p">;</span>
+<span class="n">y</span><span class="o">++</span><span class="p">;</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">z</span><span class="p">);</span>
+<span class="n">z</span><span class="o">--</span><span class="p">;</span>
+</pre></div>
 </div>
-</div> <!-- end of runestone div -->
-<p>After doing this challenge, play the <a href="https://docs.google.com/document/d/1ZjA8oKeo8FYx2nXX4OOq5lUihopIQQ_HY-eoE5yZkk8/edit?usp=sharing" target="_blank" style="text-decoration:underline">Operators Maze game</a>. See if you and your partner can get the highest score!</p>
 </div>
+
+<div class="runestone">
+<ul data-component="dragndrop" id="prepost_equivalent" >
+    <span data-component="question">1-5-5: Match each single line of code on the left to the equivalent pair of lines on the right.</span>
+	<span data-component=feedback>Try again.</span>
+
+    <li data-component="draggable" id="prepost_equivalent_drag1">System.out.println(score++);</li>
+    <li data-component="dropzone" for="prepost_equivalent_drag1">System.out.println(score);   score++;</li>
+
+    <li data-component="draggable" id="prepost_equivalent_drag2">System.out.println(score--);</li>
+    <li data-component="dropzone" for="prepost_equivalent_drag2">System.out.println(score);   score--;</li>
+
+    <li data-component="draggable" id="prepost_equivalent_drag3">System.out.println(++score);</li>
+    <li data-component="dropzone" for="prepost_equivalent_drag3">score++;     System.out.println(score);</li>
+
+    <li data-component="draggable" id="prepost_equivalent_drag4">System.out.println(--score);</li>
+    <li data-component="dropzone" for="prepost_equivalent_drag4">score--;     System.out.println(score);</li>
+</ul></div></div>
 <div class="section" id="summary">
-<h2><span class="section-number">1.5.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Compound assignment operators (+=, -=, *=, /=, %=) can be used in place of the assignment operator.</p></li>
 <li><p>The increment operator (++) and decrement operator (–) are used to add 1 or subtract 1 from the stored value of a variable. The new value is assigned to the variable.</p></li>
-<li><p>The use of increment and decrement operators in prefix form (i.e., ++x) and inside other expressions (i.e., arr[x++]) is outside the scope of this course and the AP Exam.</p></li>
 </ul>
 <script src="../_static/custom-csawesome.js"></script></div>
 </div>
