@@ -23,73 +23,44 @@
 Expressions and Assignment Statements
 =====================================
 
-In this lesson, you will learn about assignment statements and expressions that contain math operators and variables. 
+In this lesson, you will learn about assignment statements and expressions 
+that contain math operators and variables. 
 
 Assignment Statements
 ---------------------
 
-Remember that a variable holds a value and that value can change or 
+Remember that a variable holds a value that can change or 
 vary.  **Assignment statements** initialize or change the value stored 
-in a variable using the assignment operator =.  The value of the 
-expression on the right of the = sign is stored in the variable on the left. 
-These values can be complex **expressions** that contain math operators 
-and other variables like in the example below. 
+in a variable using the assignment operator ``=``.  An assignment statement always has a 
+single variable on the left hand side of the = sign. The value of the 
+expression  on the right hand side of 
+the = sign (which can contain math operators and other variables) is stored 
+in the memory location of the variable on the left hand side.
 
-.. code-block:: java 
+.. figure:: Figures/assignment.png
+    :width: 200px
+    :figclass: align-center
+    :alt: Assignment statement
+    
+    Figure 1: Assignment Statement (variable = expression)
 
-    // Assignment statement: 
-    // variable = expression;
-    score = (10 * points) + 5;
+Instead of saying equals for the ``=`` operator in an assignment statement, 
+say “gets” or “is assigned” to 
+remember that the variable gets or is assigned the value on the right. 
+In the figure above score is assigned the value of 10 times points 
+(which is another variable) plus 5.
 
-If you use a variable to keep score you would probably increment it 
-(add one to the current value) whenever score should go up.  
-You can do this by setting the variable to the current value of the 
-variable plus one (score = score + 1) as shown below. The formula 
-looks a little crazy in math class, but it makes sense in coding 
-because the variable on the left is set to the value of the arithmetic 
-expression on the right. So, the score variable is set to the 
-previous value of score + 1.
+The following video by Dr. Colleen Lewis shows how variables can change values in 
+memory using assignment statements.
 
-.. activecode:: lccv1
-   :language: java
-   :autograde: unittest   
-   
-   Try the code below to see how score is incremented by 1.
-   ~~~~
-   public class Test1
-   {
-      public static void main(String[] args)
-      {
-        int score = 0;
-        System.out.println(score);
-        score = score + 1;
-        System.out.println(score);
-      }
-   }
-   ====
-   // Test Code for Lesson 1.4 Expressions - iccv1
-    import static org.junit.Assert.*;
-    import org.junit.After;
-    import org.junit.Before;
-    import org.junit.Test;
-
-    import java.io.*;
-
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void test1()
-        {
-            String output = getMethodOutput("main");
-            String expect = "0\n1\n";
-            boolean passed = getResults(expect, output, "Expected output from main", true);
-            assertTrue(passed);
-        }
-    }
-   
-You can set one variable's value to a *copy* of the value of another variable.  This won't change the value of the variable that you are copying from.  
+.. youtube:: MZwIgM__5C8
+    :width: 700
+    :align: center
 
 
+As we saw in the video, 
+we can set one variable’s value to a copy of the value of another variable like y = x;. 
+This won’t change the value of the variable that you are copying from.
 
 .. |Java visualizer| raw:: html
 
@@ -165,7 +136,13 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
    :adaptive:
    :noindent:
 
-   The following has the correct code to 'swap' the values in x and y (so that x ends up with y's initial value and y ends up with x's initial value), but the code is mixed up and contains <b>one extra block</b> which is not needed in a correct solution.  Drag the needed blocks from the left into the correct order on the right. Check your solution by clicking on the <i>Check Me</i> button.  You will be told if any of the blocks are in the wrong order or if you need to remove one or more blocks.  After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.  
+   The following has the correct code to 'swap' the values in x and y 
+   (so that x ends up with y's initial value  of 5 and y ends up with x's initial value of 3), 
+   but the code is mixed up and contains <b>one extra block</b> which is not needed 
+   in a correct solution.  Drag the needed blocks from the left into the correct 
+   order on the right. Check your solution by clicking on the <i>Check Me</i> button.  
+   You will be told if any of the blocks are in the wrong order or if you need to remove 
+   one or more blocks.  After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.  
    -----
    int x = 3;
    int y = 5;
@@ -178,6 +155,62 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
    y = temp;
    =====
    y = x; #distractor
+
+
+
+
+Adding one to a variable
+----------------------
+
+
+
+If you use a variable to keep score you would probably increment it 
+(add one to the current value) whenever score should go up.  
+You can do this by setting the variable to the current value of the 
+variable plus one (score = score + 1) as shown below. The formula 
+looks a little crazy in math class, but it makes sense in coding 
+because the variable on the left is set to the value of the arithmetic 
+expression on the right. So, the score variable is set to the 
+previous value of score + 1.
+
+.. activecode:: lccv1
+   :language: java
+   :autograde: unittest   
+   
+   Try the code below to see how score is incremented by 1.
+   ~~~~
+   public class Test1
+   {
+      public static void main(String[] args)
+      {
+        int score = 0;
+        System.out.println(score);
+        score = score + 1;
+        System.out.println(score);
+      }
+   }
+   ====
+   // Test Code for Lesson 1.4 Expressions - iccv1
+    import static org.junit.Assert.*;
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+        @Test
+        public void test1()
+        {
+            String output = getMethodOutput("main");
+            String expect = "0\n1\n";
+            boolean passed = getResults(expect, output, "Expected output from main", true);
+            assertTrue(passed);
+        }
+    }
+
+
    
 Input with Variables
 --------------------
@@ -193,9 +226,9 @@ Variables are a powerful abstraction in programming because the same algorithm c
 used with different input values saved in variables.  
 The code below (|repl JavaIOExample|) will say hello to anyone who types in their 
 name for different name values. Click on run and then type in your name. 
-The code ``scan.nextLine()`` gets the string value that you type into the console window.  
+The code ``scan.nextLine()`` gets the string value that you type into the window.  
 The code ``String name = scan.nextLine()`` 
-stores the value you typed into the variable.  The program
+stores the string value you typed into the *name* variable.  The program
 uses string concatenation to print a greeting using the name.
 
 Run the program a few times, typing in a different name. The code works for any name: 
@@ -362,6 +395,9 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
     
     Figure 1: Long division showing the whole number result and the remainder
     
+.. youtube:: jp-T9lFISlI
+    :width: 700
+    :align: center
 
 |CodingEx| **Coding Exercise:** 
 
@@ -529,7 +565,7 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
             assertTrue(passed);
        }
     }
-   
+
 
 Summary
 -------------------

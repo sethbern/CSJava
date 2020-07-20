@@ -350,69 +350,36 @@
   
   <div class="section" id="expressions-and-assignment-statements">
 <h1><span class="section-number">1.4. </span>Expressions and Assignment Statements<a class="headerlink" href="#expressions-and-assignment-statements" title="Permalink to this headline">¶</a></h1>
-<p>In this lesson, you will learn about assignment statements and expressions that contain math operators and variables.</p>
+<p>In this lesson, you will learn about assignment statements and expressions
+that contain math operators and variables.</p>
 <div class="section" id="assignment-statements">
 <h2><span class="section-number">1.4.1. </span>Assignment Statements<a class="headerlink" href="#assignment-statements" title="Permalink to this headline">¶</a></h2>
-<p>Remember that a variable holds a value and that value can change or
+<p>Remember that a variable holds a value that can change or
 vary.  <strong>Assignment statements</strong> initialize or change the value stored
-in a variable using the assignment operator =.  The value of the
-expression on the right of the = sign is stored in the variable on the left.
-These values can be complex <strong>expressions</strong> that contain math operators
-and other variables like in the example below.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Assignment statement:</span>
-<span class="c1">// variable = expression;</span>
-<span class="n">score</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
-</pre></div>
+in a variable using the assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>.  An assignment statement always has a
+single variable on the left hand side of the = sign. The value of the
+expression  on the right hand side of
+the = sign (which can contain math operators and other variables) is stored
+in the memory location of the variable on the left hand side.</p>
+<div class="align-center figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/assignment.png"><img alt="Assignment statement" src="../_images/assignment.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Assignment Statement (variable = expression)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>If you use a variable to keep score you would probably increment it
-(add one to the current value) whenever score should go up.
-You can do this by setting the variable to the current value of the
-variable plus one (score = score + 1) as shown below. The formula
-looks a little crazy in math class, but it makes sense in coding
-because the variable on the left is set to the value of the arithmetic
-expression on the right. So, the score variable is set to the
-previous value of score + 1.</p>
+<p>Instead of saying equals for the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator in an assignment statement,
+say “gets” or “is assigned” to
+remember that the variable gets or is assigned the value on the right.
+In the figure above score is assigned the value of 10 times points
+(which is another variable) plus 5.</p>
+<p>The following video by Dr. Colleen Lewis shows how variables can change values in
+memory using assignment statements.</p>
 
-<div data-childcomponent="lccv1" class="runestone explainer ac_section alert alert-warning">
-<p>Try the code below to see how score is incremented by 1.</p>
-
-<textarea data-component="activecode" id=lccv1 data-lang="java" 
-      data-timelimit=25000  data-codelens="true"   
-    data-audio=''      
-           data-wasm=/_static>
-public class Test1
-{
-   public static void main(String[] args)
-   {
-     int score = 0;
-     System.out.println(score);
-     score = score + 1;
-     System.out.println(score);
-   }
-}
-====
-// Test Code for Lesson 1.4 Expressions - iccv1
- import static org.junit.Assert.*;
- import org.junit.After;
- import org.junit.Before;
- import org.junit.Test;
-
- import java.io.*;
-
- public class RunestoneTests extends CodeTestHelper
- {
-     @Test
-     public void test1()
-     {
-         String output = getMethodOutput("main");
-         String expect = "0\n1\n";
-         boolean passed = getResults(expect, output, "Expected output from main", true);
-         assertTrue(passed);
-     }
- }
-</textarea>
-</div>
-<p>You can set one variable’s value to a <em>copy</em> of the value of another variable.  This won’t change the value of the variable that you are copying from.</p>
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="MZwIgM__5C8" class="align-center youtube-video" data-video-height="281" data-video-width="700" data-video-videoid="MZwIgM__5C8" data-video-divid="MZwIgM__5C8" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (MZwIgM__5C8)</span> </p>
+    </div>
+    <p>As we saw in the video,
+we can set one variable’s value to a copy of the value of another variable like y = x;.
+This won’t change the value of the variable that you are copying from.</p>
 <p>Click on this <a href="http://www.pythontutor.com/visualize.html#code=public+class+Test2%0A%7B%0A+++public+static+void+main(String%5B%5D+args%29%0A+++%7B%0A+++++int+x+%3D+3%3B%0A+++++int+y+%3D+2%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++x+%3D+y%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++y+%3D+5%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++%7D%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> to step through the code.
 Click on the Next button at the bottom of the code to see
 how the values of the variables change. You can run the visualizer
@@ -467,7 +434,13 @@ allTraceData["asgn_viz1"] = {"code":"public class Test2\n{\n  public static void
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="2_swap"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>1-4-2: The following has the correct code to 'swap' the values in x and y (so that x ends up with y's initial value and y ends up with x's initial value), but the code is mixed up and contains <b>one extra block</b> which is not needed in a correct solution.  Drag the needed blocks from the left into the correct order on the right. Check your solution by clicking on the <i>Check Me</i> button.  You will be told if any of the blocks are in the wrong order or if you need to remove one or more blocks.  After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.</span>int x = 3;
+        <span data-question>1-4-2: The following has the correct code to 'swap' the values in x and y
+(so that x ends up with y's initial value  of 5 and y ends up with x's initial value of 3),
+but the code is mixed up and contains <b>one extra block</b> which is not needed
+in a correct solution.  Drag the needed blocks from the left into the correct
+order on the right. Check your solution by clicking on the <i>Check Me</i> button.
+You will be told if any of the blocks are in the wrong order or if you need to remove
+one or more blocks.  After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.</span>int x = 3;
 int y = 5;
 int temp = 0;
 ---
@@ -481,15 +454,66 @@ y = x; #distractor
         </pre>
         </div>
     </div>
+<div class="section" id="adding-one-to-a-variable">
+<h2><span class="section-number">1.4.2. </span>Adding one to a variable<a class="headerlink" href="#adding-one-to-a-variable" title="Permalink to this headline">¶</a></h2>
+<p>If you use a variable to keep score you would probably increment it
+(add one to the current value) whenever score should go up.
+You can do this by setting the variable to the current value of the
+variable plus one (score = score + 1) as shown below. The formula
+looks a little crazy in math class, but it makes sense in coding
+because the variable on the left is set to the value of the arithmetic
+expression on the right. So, the score variable is set to the
+previous value of score + 1.</p>
+
+<div data-childcomponent="lccv1" class="runestone explainer ac_section alert alert-warning">
+<p>Try the code below to see how score is incremented by 1.</p>
+
+<textarea data-component="activecode" id=lccv1 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Test1
+{
+   public static void main(String[] args)
+   {
+     int score = 0;
+     System.out.println(score);
+     score = score + 1;
+     System.out.println(score);
+   }
+}
+====
+// Test Code for Lesson 1.4 Expressions - iccv1
+ import static org.junit.Assert.*;
+ import org.junit.After;
+ import org.junit.Before;
+ import org.junit.Test;
+
+ import java.io.*;
+
+ public class RunestoneTests extends CodeTestHelper
+ {
+     @Test
+     public void test1()
+     {
+         String output = getMethodOutput("main");
+         String expect = "0\n1\n";
+         boolean passed = getResults(expect, output, "Expected output from main", true);
+         assertTrue(passed);
+     }
+ }
+</textarea>
+</div>
+</div>
 <div class="section" id="input-with-variables">
-<h2><span class="section-number">1.4.2. </span>Input with Variables<a class="headerlink" href="#input-with-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.3. </span>Input with Variables<a class="headerlink" href="#input-with-variables" title="Permalink to this headline">¶</a></h2>
 <p>Variables are a powerful abstraction in programming because the same algorithm can be
 used with different input values saved in variables.
 The code below (<a href="https://repl.it/@BerylHoffman/JavaIOExample" target="_blank">repl JavaIOExample</a>) will say hello to anyone who types in their
 name for different name values. Click on run and then type in your name.
-The code <code class="docutils literal notranslate"><span class="pre">scan.nextLine()</span></code> gets the string value that you type into the console window.
+The code <code class="docutils literal notranslate"><span class="pre">scan.nextLine()</span></code> gets the string value that you type into the window.
 The code <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">scan.nextLine()</span></code>
-stores the value you typed into the variable.  The program
+stores the string value you typed into the <em>name</em> variable.  The program
 uses string concatenation to print a greeting using the name.</p>
 <p>Run the program a few times, typing in a different name. The code works for any name:
 behold, the power of variables!</p>
@@ -498,7 +522,7 @@ Java System.in and Scanner classes.  However,  learning how to do input in Java 
 More information on using the Scanner class can be found here <a class="reference external" href="https://www.w3schools.com/java/java_user_input.asp">https://www.w3schools.com/java/java_user_input.asp</a></p>
 </div>
 <div class="section" id="operators">
-<h2><span class="section-number">1.4.3. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.4. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">Java uses the standard mathematical operators for addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>), subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>), multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>), and division (<code class="docutils literal notranslate"><span class="pre">/</span></code>). Arithmetic expressions can be of type int or double. An arithmetic operation that uses two int values will evaluate to an int value. An arithmetic operation that uses at least one double value will evaluate to a double value.  (You may have noticed that + was also used to put text together in the input program above – more on this when we talk about strings.)</p>
 <p>Java uses the operator <code class="docutils literal notranslate"><span class="pre">==</span></code> to test if the value on the left is equal to the value on the right and <code class="docutils literal notranslate"><span class="pre">!=</span></code> to test if two items are not equal.   Don’t get one equal sign <code class="docutils literal notranslate"><span class="pre">=</span></code> confused with two equal signs <code class="docutils literal notranslate"><span class="pre">==</span></code>! They mean different things in Java. One equal sign is used to assign a value to a variable. Two equal signs are used to test a variable to see if it is a certain value and that returns true or false as you’ll see below.  Use == and != only with int values and not doubles because double values are an approximation and 3.3333 will not equal 3.3334 even though they are very close.</p>
 <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
@@ -616,13 +640,18 @@ public class TestCompound
             </div>
             </div>
 <div class="section" id="the-modulo-operator">
-<h2><span class="section-number">1.4.4. </span>The Modulo Operator<a class="headerlink" href="#the-modulo-operator" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.5. </span>The Modulo Operator<a class="headerlink" href="#the-modulo-operator" title="Permalink to this headline">¶</a></h2>
 <p>The percent sign operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>) is the <strong>mod (modulo)</strong> or <strong>remainder</strong> operator.  The mod operator (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code>) returns the remainder after you divide <code class="docutils literal notranslate"><span class="pre">x</span></code> (first number) by <code class="docutils literal notranslate"><span class="pre">y</span></code> (second number) so <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">%</span> <span class="pre">2</span></code> will return 1 since 2 goes into 5 two times with a remainder of 1.  Remember long division when you had to specify how many times one number went into another evenly and the remainder?  That remainder is what is returned by the modulo operator.</p>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../_images/mod-py.png"><img alt="../_images/mod-py.png" src="../_images/mod-py.png" style="width: 150px;" /></a>
-<p class="caption"><span class="caption-text">Figure 1: Long division showing the whole number result and the remainder</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 1: Long division showing the whole number result and the remainder</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="jp-T9lFISlI" class="align-center youtube-video" data-video-height="281" data-video-width="700" data-video-videoid="jp-T9lFISlI" data-video-divid="jp-T9lFISlI" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (jp-T9lFISlI)</span> </p>
+    </div>
+    <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
 <div data-childcomponent="lcop2" class="runestone explainer ac_section alert alert-warning">
 <p>In the example below, try to guess what it will print out and then run it to see if you are right.</p>
@@ -698,7 +727,7 @@ public class Test1
             </div>
             </div>
 <div class="section" id="groupwork-programming-challenge-dog-years">
-<h2><span class="section-number">1.4.5. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Programming Challenge : Dog Years<a class="headerlink" href="#groupwork-programming-challenge-dog-years" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.6. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Programming Challenge : Dog Years<a class="headerlink" href="#groupwork-programming-challenge-dog-years" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/dog-free.png"><img alt="dog" class="align-middle" src="../_images/dog-free.png" style="width: 50px;" /></a> In this programming challenge, you will calculate your age, and your pet’s age
 from your birthdates, and your pet’s age in dog years.   In the code below, type
 in the current year, the year you were born, the year your dog or cat was born
@@ -773,7 +802,7 @@ import static org.junit.Assert.*;
 </div>
 </div>
 <div class="section" id="summary">
-<h2><span class="section-number">1.4.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Arithmetic expressions include expressions of type int and double.</p></li>
 <li><p>The arithmetic operators consist of +, -, * , /, and % (modulo for the remainder in division).</p></li>
