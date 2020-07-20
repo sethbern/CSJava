@@ -238,14 +238,14 @@ the memory location called score to 4.
 
 .. note::
     
-    The equal sign ``=`` assigns the lhs variable to the rhs value.
+    The equal sign ``=`` operator performs variable assignment.  ``score=4`` results in the value 4 being copied into the memory location for variable score.
     
  
-
+ 
 |CodingEx| **Coding Exercise:** 
  
  
-.. activecode:: lcdv2
+.. activecode:: lcdv2a
    :language: java
    :autograde: unittest      
    
@@ -256,22 +256,79 @@ the memory location called score to 4.
    program one line at a time to see how memory is allocated for each variable.
 
    ~~~~
+   public class Test1
+   {
+      public static void main(String[] args)
+      {
+        int score; 
+        score = 0;
+        System.out.println(score);
+        
+        double price = 23.25;
+        System.out.println(price);
+        
+        boolean won = false;
+        System.out.println(won);
+        won = true;
+        System.out.println(won);
+        
+        String name = "Jose";
+        System.out.println(name);
+      }
+   }
+        
+   ====
+   // should pass if/when they run code
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "0\n23.25\nfalse\ntrue\nJose";
+            boolean passed = getResults(expect, output, "Expected output from main", true);
+            assertTrue(passed);
+        }
+   }
+
+When you are printing, never put variables inside quotes "" because that will print out the variable 
+name letter by letter. You do not want to print out the variable name, 
+but the value of the variable in memory. If you're not sure what this means, try 
+putting quotes around the variables in the print statements above and see what happens.   
+   
+When you are printing out variables, you can use the **string concatenation** operator ``+`` to 
+combine strings.  So ``"hi " + "there"`` will create a new String object with the
+value ``"hi there"``.  If the variable **name** has a value "Jose", 
+then the code ``"Hi " + name`` will create a new String object with value ``"Hi Jose"``.
+
+|CodingEx| **Coding Exercise:** 
+ 
+ 
+.. activecode:: lcdv2
+   :language: java
+   :autograde: unittest      
+   
+   Click the ``Save and Run`` button to run the following code to see what is printed. 
+   ~~~~
    public class Test2
    {
       public static void main(String[] args)
       {
         int score; 
         score = 0;
-        System.out.print("The score is ");
-        System.out.println(score);
+        System.out.println("The score is " + score);
         
         double price = 23.25;
         System.out.println("The price is " + price);
         
         boolean won = false;
-        System.out.println(won);
+        System.out.println("Won? " + won);
         won = true;
-        System.out.println(won);
+        System.out.println("Won? " + won);
         
         String name = "Jose";
         System.out.println("Hi " + name);
@@ -290,22 +347,13 @@ the memory location called score to 4.
         public void testMain() throws IOException
         {
             String output = getMethodOutput("main");
-            String expect = "The score is 0\nThe price is 23.25\nfalse\ntrue\nHi Jose";
+            String expect = "The score is 0\nThe price is 23.25\nWon? false\nWon? true\nHi Jose";
             boolean passed = getResults(expect, output, "Expected output from main", true);
             assertTrue(passed);
         }
    }
    
-When you are printing out variables, you can use the **string concatenation** operator + to add 
-them to another string inside System.out.print.  So ``"hi " + "there"`` will create a new String object with the
-value ``"hi there"``.  If the variable **name** has a value "Jose", 
-then the code ``"Hi " + name`` will create a new String object with value ``"Hi Jose"``.
-
-Never put variables inside quotes "" because that will print out the variable 
-name letter by letter. You do not want to print out the variable name, 
-but the value of the variable in memory. If you're not sure what this means, try 
-putting quotes around the variable and see what happens. 
-In the print out, if you want spaces between words and variables, you must put the 
+If you want spaces between words and variables when printing, you must put the 
 space in the quotes. If you forget to add spaces, you will get smushed output 
 like "HiJose" instead of "Hi Jose".  
 

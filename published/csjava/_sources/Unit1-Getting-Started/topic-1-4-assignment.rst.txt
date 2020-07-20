@@ -446,7 +446,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 ------------------------------------------------
 
 .. |dog| image:: Figures/dog-free.png
-    :width: 100
+    :width: 50
     :align: middle
     :alt: dog
     
@@ -465,10 +465,6 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
 .. |Scanner| raw:: html
 
    <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>
-   
-Your teacher may suggest that you use a Java IDE like |repl| for this challenge so that you can use input to get these values using the |Scanner|.
-
-
 
 .. activecode:: challenge1-4
    :language: java
