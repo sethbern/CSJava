@@ -372,6 +372,7 @@ public class OperatorTest
      System.out.println(1.0 / 3);
      System.out.println(1 / 3.0);
      System.out.println((double) 1 / 3);
+     System.out.println((double) (1 / 3));
    }
 }
 ====
@@ -477,7 +478,7 @@ import static org.junit.Assert.*;
  }
 </textarea>
 </div>
-<p id="index-1">Although it’s not on the AP exam, you can format long decimal numbers to just show 2 digits after the decimal point with the following code:</p>
+<p id="index-1">You can format long decimal numbers to just show 2 digits after the decimal point with the following code:</p>
 
 <div data-childcomponent="double_precision" class="runestone explainer ac_section alert alert-warning">
 <p>Run the code below to see how a decimal number can be formatted to show 2 digits after the decimal point.</p>
@@ -490,7 +491,7 @@ public class TestFormat
 {
    public static void main(String[] args)
    {
-     double number = 10 / 3;
+     double number = 10 / 3.0;
      System.out.println(number);
      System.out.println( String.format("%.02f", number) );
    }
@@ -555,8 +556,12 @@ import static org.junit.Assert.*;
             </div>
             <div class="section" id="groupwork-programming-challenge-average-3-numbers">
 <h2><span class="section-number">1.6.1. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Programming Challenge : Average 3 Numbers<a class="headerlink" href="#groupwork-programming-challenge-average-3-numbers" title="Permalink to this headline">¶</a></h2>
-<p>This would be a good project to work together in pairs, and switch drivers (who has control of the keyboard in pair programming) after every line of code. In the code below, type in three made up int grades and then sum and average them. Use casting to report the result as a double. For example, if the grades are 90, 100, and 94, the sum of the three numbers is 90 + 100 + 94 = 284, and the average is the sum 284 divided by 3 which casted to a double is 94.666667. You should use your variables instead of the numbers in your formulas. Follow the pseudocode below.</p>
-<p>Your teacher may suggest that you use a Java IDE like <a href="https://repl.it" target="_blank">repl.it</a> for this challenge so that you can use input to get these values using the <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>.</p>
+<p>In the code below, type in three made up int grades and then sum and average them.
+Use casting to report the result as a double.
+For example, if the grades are 90, 100, and 94, the sum of the three
+numbers is 90 + 100 + 94 = 284, and the average is the sum 284 divided by 3 which
+casted to a double is 94.666667. You should use your variables instead of the numbers
+in your formulas. Follow the pseudocode below.</p>
 
 <div data-childcomponent="challenge1-6-average" class="runestone explainer ac_section alert alert-warning">
 <p>Type in three made up int grades and then sum and average them. Use type casting to report the result as a double. If you do this challenge on repl.it, please paste your repl link here to turn it in.</p>
@@ -600,44 +605,6 @@ import static org.junit.Assert.*;
         boolean passed = checkCodeContains("formula for average of 3 grades using sum and type casting to double", target);
         assertTrue(passed);
     }
- }
-</textarea>
-</div>
-<p>If you get done early with this challenge, here’s something else fun you can do in Java, although it’s not covered in the AP exam. Java was one of the first programming languages to use <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters" target="_blank">Unicode</a> for its characters. Unicode is an international standard where each letter in any alphabet is represented by a number.  Unicode uses hex code (a base 16 code that uses the digits 0-9 and the letters A-F for 10-15), but you can give Java an equivalent decimal number and type cast it to the type char (for character) to show the unicode character.</p>
-<p>Try the following program which prints out <a href="https://unicodelookup.com/#cjk/1" target="_blank">Chinese characters</a>. Look up other characters at this <a href="https://unicodelookup.com/" target="_blank">Unicode Lookup</a> site and print them out in the Active Code window below by using the decimal number (see Dec column in site) and type casting to char. Can you print out a letter from 3 different languages?</p>
-
-<div data-childcomponent="challenge1-6-unicode" class="runestone explainer ac_section alert alert-warning">
-<p>Can you print out a letter from 3 different languages using this <a href="https://unicodelookup.com/" target="_blank">Unicode Lookup</a> site?</p>
-
-<textarea data-component="activecode" id=challenge1-6-unicode data-lang="java" 
-      data-timelimit=25000  data-codelens="true"   
-    data-audio=''      
-           data-wasm=/_static>
-public class ChallengeUnicode
-{
-   public static void main(String[] args)
-   {
-     System.out.println("A in ASCII and Unicode is the decimal number 65: " + (char)65);
-     System.out.println("You can typecast a decimal number to char for the Chinese character for sun: " + (char)11932);
-     System.out.println("Or you can print out the Chinese character for moon using unicode hex: \u2E9D");
-
-
-   }
-}
-====
-import static org.junit.Assert.*;
- import org.junit.*;
- import java.io.*;
-
- public class RunestoneTests extends CodeTestHelper
- {
-     @Test
-     public void testChangedCode() {
-         String origCode = "public class ChallengeUnicode {   public static void main(String[] args)   {     System.out.println(\"A in ASCII and Unicode is the decimal number 65: \" + (char)65);     System.out.println(\"You can typecast a decimal number to char for the Chinese character for sun: \" + (char)11932);     System.out.println(\"Or you can print out the Chinese character for moon using unicode hex: \\u2E9D\"); }  }";
-
-         boolean changed = codeChanged(origCode);
-         assertTrue(changed);
-     }
  }
 </textarea>
 </div>

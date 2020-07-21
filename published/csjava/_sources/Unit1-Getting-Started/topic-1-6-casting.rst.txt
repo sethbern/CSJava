@@ -47,6 +47,7 @@ The casting operators (int) and (double) are used right next to a number or vari
         System.out.println(1.0 / 3);
         System.out.println(1 / 3.0);
         System.out.println((double) 1 / 3);
+        System.out.println((double) (1 / 3));
       }
    }
    ====
@@ -159,7 +160,7 @@ For example, int values are stored in 4 bytes of memory. There is an Integer.MAX
 ..	index::
 	pair: double; precision format
     
-Although it's not on the AP exam, you can format long decimal numbers to just show 2 digits after the decimal point with the following code:
+You can format long decimal numbers to just show 2 digits after the decimal point with the following code:
 
 .. activecode:: double_precision
    :language: java
@@ -171,7 +172,7 @@ Although it's not on the AP exam, you can format long decimal numbers to just sh
    {
       public static void main(String[] args)
       {
-        double number = 10 / 3;
+        double number = 10 / 3.0;
         System.out.println(number);
         System.out.println( String.format("%.02f", number) );
       }
@@ -234,7 +235,12 @@ Although it's not on the AP exam, you can format long decimal numbers to just sh
 |Groupwork| Programming Challenge : Average 3 Numbers
 ------------------------------------------------------
 
-This would be a good project to work together in pairs, and switch drivers (who has control of the keyboard in pair programming) after every line of code. In the code below, type in three made up int grades and then sum and average them. Use casting to report the result as a double. For example, if the grades are 90, 100, and 94, the sum of the three numbers is 90 + 100 + 94 = 284, and the average is the sum 284 divided by 3 which casted to a double is 94.666667. You should use your variables instead of the numbers in your formulas. Follow the pseudocode below. 
+In the code below, type in three made up int grades and then sum and average them. 
+Use casting to report the result as a double. 
+For example, if the grades are 90, 100, and 94, the sum of the three 
+numbers is 90 + 100 + 94 = 284, and the average is the sum 284 divided by 3 which 
+casted to a double is 94.666667. You should use your variables instead of the numbers 
+in your formulas. Follow the pseudocode below. 
 
  
 .. |repl| raw:: html
@@ -246,8 +252,6 @@ This would be a good project to work together in pairs, and switch drivers (who 
 
    <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>
    
-Your teacher may suggest that you use a Java IDE like |repl| for this challenge so that you can use input to get these values using the |Scanner|.
-
 
 .. activecode:: challenge1-6-average
    :language: java
@@ -306,42 +310,6 @@ Your teacher may suggest that you use a Java IDE like |repl| for this challenge 
 
    <a href="https://unicodelookup.com/" target="_blank">Unicode Lookup</a>
    
-If you get done early with this challenge, here's something else fun you can do in Java, although it's not covered in the AP exam. Java was one of the first programming languages to use |UNICODE| for its characters. Unicode is an international standard where each letter in any alphabet is represented by a number.  Unicode uses hex code (a base 16 code that uses the digits 0-9 and the letters A-F for 10-15), but you can give Java an equivalent decimal number and type cast it to the type char (for character) to show the unicode character. 
-
-Try the following program which prints out |Chinese|. Look up other characters at this |Unicode Lookup| site and print them out in the Active Code window below by using the decimal number (see Dec column in site) and type casting to char. Can you print out a letter from 3 different languages?
-
-.. activecode:: challenge1-6-unicode
-   :language: java
-
-   Can you print out a letter from 3 different languages using this |Unicode Lookup| site?
-   ~~~~
-   public class ChallengeUnicode
-   {
-      public static void main(String[] args)
-      {      
-        System.out.println("A in ASCII and Unicode is the decimal number 65: " + (char)65);
-        System.out.println("You can typecast a decimal number to char for the Chinese character for sun: " + (char)11932);
-        System.out.println("Or you can print out the Chinese character for moon using unicode hex: \u2E9D"); 
-        
-       
-      }
-   }
-   ====
-   import static org.junit.Assert.*;
-    import org.junit.*;
-    import java.io.*;
-
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void testChangedCode() {
-            String origCode = "public class ChallengeUnicode {   public static void main(String[] args)   {     System.out.println(\"A in ASCII and Unicode is the decimal number 65: \" + (char)65);     System.out.println(\"You can typecast a decimal number to char for the Chinese character for sun: \" + (char)11932);     System.out.println(\"Or you can print out the Chinese character for moon using unicode hex: \\u2E9D\"); }  }";
-
-            boolean changed = codeChanged(origCode);
-            assertTrue(changed);
-        }
-    }
-
    
 Summary
 -------------------
