@@ -50,7 +50,11 @@ First Java Program
 	pair: class; method
 	pair: class; main method
 	
-Every program in Java is written as a **class**. Java is an **object-oriented language** and we'll learn more about classes and objects in Unit 2. Inside the class, there can be a **main method** that starts the program. When you ask the Java run-time to *run* a class, it will always start execution in the main method. Here is the template for a simple Java program with a main method:
+Every program in Java is written as a **class**. Java is an **object-oriented language** and 
+we'll learn more about classes and objects in Unit 2. Inside the class, 
+there can be a **main method** that starts the program. When you ask the 
+Java environment to *run* a class, it will always start execution in the main method. 
+Here is the template for a simple Java program with a main method:
 
 .. code-block:: java 
 
@@ -104,12 +108,11 @@ Every program in Java is written as a **class**. Java is an **object-oriented la
 
 
 You can copy the Java source code shown in this book into a file and save 
-it if you want to run it locally in an integrated development environment (IDE) 
+it if you want to run it in an integrated development environment (IDE) 
 on your local computer (see section 1.10. for different IDEs).  
 You must name the file the same name as the class name with ".java" as the extension.  
 All code (programs) in Java must be defined inside a class in a source file, 
 and the name of the class must match the file name. 
-
 
    
 Print Commands
@@ -178,10 +181,11 @@ Java has two different print commands to print output to the screen:
    
 Most command keywords in Java must be in lowercase, 
 but class names such as System and String are capitalized. 
-Commands in Java must end with a semicolon (;). Think of the semicolon (;) 
-in Java like a period (.) in English. You use a semicolon (``;``) to show the 
-end of a Java **statement**, just the way you use a period (.) to show the end 
-of an English sentence.   Your programs won't run if you forget the semicolon at the end of each statement.
+Commands in Java must end with a semicolon ``;``. Think of the semicolon ``;``
+in Java like a period in English. You use a semicolon ``;`` to show the 
+end of a Java **statement**, just the way you use a period to show the end 
+of an English sentence.   Your programs won't run if you forget the semicolon at the 
+end of each statement.
 
 Syntax Errors
 ---------------
@@ -190,7 +194,7 @@ Computers don't actually speak Java so we have to **compile**
 (translate) Java source files that we write into class files which is 
 code that a computer can understand and run. In this e-book, the Java 
 code is actually being sent to a Java server to compile and run, and the 
-output is sent back to show on the same page. 
+output is sent back to your browser show on the same page. 
 
 .. |Grace Hopper| raw:: html
 
@@ -233,7 +237,14 @@ Let's practice debugging some code!
    :adaptive:
    :noindent:
 
-   The following has all the correct code to print out "Hi my friend!" when the code is run, but the code is mixed up.  Drag the blocks from left to right and put them in the correct order.  Click on the "Check Me" button to check your solution. You will be told if any of the blocks are in the wrong order or if you need to remove one or more blocks. After three incorrect attempts you will be able to use the Help Me button to make the problem easier.
+   The following has all the correct code to print out "Hi my friend!" when the code is run, 
+   but the code is mixed up.  Drag the blocks from left to right and put them in the 
+   correct order.  You can scroll up and look at the previous example program if you
+   are having trouble understanding how to order the blocks.
+   Click on the "Check Me" button to check your solution. 
+   You will be told if any of the blocks are in the wrong order or if you need to 
+   remove one or more blocks. After three incorrect attempts you will be able to use 
+   the Help Me button to make the problem easier.
    -----
    public class ThirdClass
    {
@@ -459,46 +470,6 @@ Can you find the all the bugs and get the code to run?
         }
    }
 
-
-
-Summary
--------------------
-
-- A basic Java program looks like the following:
-
-.. code-block:: java 
-
-   public class MyClass
-   {
-      public static void main(String[] args)
-      {
-         System.out.println("Hi there!");
-      }
-   }
-   
-   
-- A Java program starts with **public class NameOfClass { }**. If you are using your own 
-files for your code, each class should be in a separate file that matches the 
-class name inside it, for example NameOfClass.java.
-
-- Most Java classes have a main method that will be run automatically. 
-It looks like this: **public static void main(String[] args) { }**.
-
-- The **System.out.print()** and **System.out.println()** methods display information 
-given inside the parentheses on the computer monitor. 
-
-- System.out.println moves the cursor to a new line after the information has been 
-displayed, while System.out.print does not.
-
-- A **string literal** is enclosed in double quotes ('' '').
-
-- Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and ``/* */`` are used for comments.
-
-- A **compiler** translates Java code into a class file that can be run on your 
-computer. **Compiler or syntax errors** are reported to you by the compiler if the 
-Java code is not correctly written. Some things to check for are ; at end of command 
-lines, matching { }, (), and "". 
-
 Practice
 ------------
 
@@ -583,6 +554,47 @@ Practice
     - Putting the semicolon after the ) on each line.
     
       + Correct! The semicolon should go after each command but not in the comment.
+
+
+
+
+Summary
+-------------------
+
+- A basic Java program looks like the following:
+
+.. code-block:: java 
+
+   public class MyClass
+   {
+      public static void main(String[] args)
+      {
+         System.out.println("Hi there!");
+      }
+   }
+   
+   
+- A Java program starts with **public class NameOfClass { }**. If you are using your own 
+files for your code, each class should be in a separate file that matches the 
+class name inside it, for example NameOfClass.java.
+
+- Most Java classes have a main method that will be run automatically. 
+It looks like this: **public static void main(String[] args) { }**.
+
+- The **System.out.print()** and **System.out.println()** methods display information 
+given inside the parentheses on the computer monitor. 
+
+- System.out.println moves the cursor to a new line after the information has been 
+displayed, while System.out.print does not.
+
+- A **string literal** is enclosed in double quotes ('' '').
+
+- Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and ``/* */`` are used for comments.
+
+- A **compiler** translates Java code into a class file that can be run on your 
+computer. **Compiler or syntax errors** are reported to you by the compiler if the 
+Java code is not correctly written. Some things to check for are ; at end of command 
+lines, matching { }, (), and "". 
 
 
 .. raw:: html

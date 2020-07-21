@@ -357,7 +357,11 @@ Java is a <strong>programming language</strong> that is used worldwide to
 create software that we all use.</p>
 <div class="section" id="first-java-program">
 <h2><span class="section-number">1.2.1. </span>First Java Program<a class="headerlink" href="#first-java-program" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">Every program in Java is written as a <strong>class</strong>. Java is an <strong>object-oriented language</strong> and we’ll learn more about classes and objects in Unit 2. Inside the class, there can be a <strong>main method</strong> that starts the program. When you ask the Java run-time to <em>run</em> a class, it will always start execution in the main method. Here is the template for a simple Java program with a main method:</p>
+<p id="index-1">Every program in Java is written as a <strong>class</strong>. Java is an <strong>object-oriented language</strong> and
+we’ll learn more about classes and objects in Unit 2. Inside the class,
+there can be a <strong>main method</strong> that starts the program. When you ask the
+Java environment to <em>run</em> a class, it will always start execution in the main method.
+Here is the template for a simple Java program with a main method:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span>
 <span class="p">{</span>
    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -409,7 +413,7 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 <p>You can copy the Java source code shown in this book into a file and save
-it if you want to run it locally in an integrated development environment (IDE)
+it if you want to run it in an integrated development environment (IDE)
 on your local computer (see section 1.10. for different IDEs).
 You must name the file the same name as the class name with “.java” as the extension.
 All code (programs) in Java must be defined inside a class in a source file,
@@ -477,10 +481,11 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 <p>Most command keywords in Java must be in lowercase,
 but class names such as System and String are capitalized.
-Commands in Java must end with a semicolon (;). Think of the semicolon (;)
-in Java like a period (.) in English. You use a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) to show the
-end of a Java <strong>statement</strong>, just the way you use a period (.) to show the end
-of an English sentence.   Your programs won’t run if you forget the semicolon at the end of each statement.</p>
+Commands in Java must end with a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code>. Think of the semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code>
+in Java like a period in English. You use a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> to show the
+end of a Java <strong>statement</strong>, just the way you use a period to show the end
+of an English sentence.   Your programs won’t run if you forget the semicolon at the
+end of each statement.</p>
 </div>
 <div class="section" id="syntax-errors">
 <h2><span class="section-number">1.2.3. </span>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h2>
@@ -488,7 +493,7 @@ of an English sentence.   Your programs won’t run if you forget the semicolon 
 (translate) Java source files that we write into class files which is
 code that a computer can understand and run. In this e-book, the Java
 code is actually being sent to a Java server to compile and run, and the
-output is sent back to show on the same page.</p>
+output is sent back to your browser show on the same page.</p>
 <p><strong>Syntax errors</strong> are reported to you by the compiler if your Java code is not correctly
 written. Examples of syntax errors are a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> missing or if the code
 has a open curly brace <code class="docutils literal notranslate"><span class="pre">{</span></code> or open quote <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, but no close curly brace <code class="docutils literal notranslate"><span class="pre">}</span></code> or
@@ -510,7 +515,14 @@ Debugging can be frustrating but you will get better at it with practice!</p>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="thirdClass"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>1-2-1: The following has all the correct code to print out "Hi my friend!" when the code is run, but the code is mixed up.  Drag the blocks from left to right and put them in the correct order.  Click on the "Check Me" button to check your solution. You will be told if any of the blocks are in the wrong order or if you need to remove one or more blocks. After three incorrect attempts you will be able to use the Help Me button to make the problem easier.</span>public class ThirdClass
+        <span data-question>1-2-1: The following has all the correct code to print out "Hi my friend!" when the code is run,
+but the code is mixed up.  Drag the blocks from left to right and put them in the
+correct order.  You can scroll up and look at the previous example program if you
+are having trouble understanding how to order the blocks.
+Click on the "Check Me" button to check your solution.
+You will be told if any of the blocks are in the wrong order or if you need to
+remove one or more blocks. After three incorrect attempts you will be able to use
+the Help Me button to make the problem easier.</span>public class ThirdClass
 {
 ---
    public static void main(String[] args)
@@ -719,48 +731,8 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 </div>
-<div class="section" id="summary">
-<h2><span class="section-number">1.2.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>A basic Java program looks like the following:</p></li>
-</ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span>
-<span class="p">{</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi there!&quot;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>A Java program starts with <strong>public class NameOfClass { }</strong>. If you are using your own</p></li>
-</ul>
-<p>files for your code, each class should be in a separate file that matches the
-class name inside it, for example NameOfClass.java.</p>
-<ul class="simple">
-<li><p>Most Java classes have a main method that will be run automatically.</p></li>
-</ul>
-<p>It looks like this: <strong>public static void main(String[] args) { }</strong>.</p>
-<ul class="simple">
-<li><p>The <strong>System.out.print()</strong> and <strong>System.out.println()</strong> methods display information</p></li>
-</ul>
-<p>given inside the parentheses on the computer monitor.</p>
-<ul class="simple">
-<li><p>System.out.println moves the cursor to a new line after the information has been</p></li>
-</ul>
-<p>displayed, while System.out.print does not.</p>
-<ul class="simple">
-<li><p>A <strong>string literal</strong> is enclosed in double quotes (‘’ ‘’).</p></li>
-<li><p>Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code> are used for comments.</p></li>
-<li><p>A <strong>compiler</strong> translates Java code into a class file that can be run on your</p></li>
-</ul>
-<p>computer. <strong>Compiler or syntax errors</strong> are reported to you by the compiler if the
-Java code is not correctly written. Some things to check for are ; at end of command
-lines, matching { }, (), and “”.</p>
-</div>
 <div class="section" id="practice">
-<h2><span class="section-number">1.2.7. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2.6. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP1-2-1" >
@@ -811,7 +783,47 @@ Unexpected '}' on line 32.</pre><p>Which change, if any, can be made so that the
 
             </ul>
             </div>
-            <script src="../_static/custom-csawesome.js"></script></div>
+            </div>
+<div class="section" id="summary">
+<h2><span class="section-number">1.2.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A basic Java program looks like the following:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi there!&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>A Java program starts with <strong>public class NameOfClass { }</strong>. If you are using your own</p></li>
+</ul>
+<p>files for your code, each class should be in a separate file that matches the
+class name inside it, for example NameOfClass.java.</p>
+<ul class="simple">
+<li><p>Most Java classes have a main method that will be run automatically.</p></li>
+</ul>
+<p>It looks like this: <strong>public static void main(String[] args) { }</strong>.</p>
+<ul class="simple">
+<li><p>The <strong>System.out.print()</strong> and <strong>System.out.println()</strong> methods display information</p></li>
+</ul>
+<p>given inside the parentheses on the computer monitor.</p>
+<ul class="simple">
+<li><p>System.out.println moves the cursor to a new line after the information has been</p></li>
+</ul>
+<p>displayed, while System.out.print does not.</p>
+<ul class="simple">
+<li><p>A <strong>string literal</strong> is enclosed in double quotes (‘’ ‘’).</p></li>
+<li><p>Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code> are used for comments.</p></li>
+<li><p>A <strong>compiler</strong> translates Java code into a class file that can be run on your</p></li>
+</ul>
+<p>computer. <strong>Compiler or syntax errors</strong> are reported to you by the compiler if the
+Java code is not correctly written. Some things to check for are ; at end of command
+lines, matching { }, (), and “”.</p>
+<script src="../_static/custom-csawesome.js"></script></div>
 </div>
 
 

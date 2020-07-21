@@ -32,10 +32,10 @@ Assignment Statements
 Remember that a variable holds a value that can change or 
 vary.  **Assignment statements** initialize or change the value stored 
 in a variable using the assignment operator ``=``.  An assignment statement always has a 
-single variable on the left hand side of the = sign. The value of the 
-expression  on the right hand side of 
-the = sign (which can contain math operators and other variables) is stored 
-in the memory location of the variable on the left hand side.
+single variable on the left hand side of the = sign. The **value of the 
+expression**  on the right hand side of 
+the = sign (which can contain math operators and other variables) is copied 
+into the memory location of the variable on the left hand side.
 
 .. figure:: Figures/assignment.png
     :width: 200px
@@ -47,7 +47,7 @@ in the memory location of the variable on the left hand side.
 Instead of saying equals for the ``=`` operator in an assignment statement, 
 say “gets” or “is assigned” to 
 remember that the variable gets or is assigned the value on the right. 
-In the figure above score is assigned the value of 10 times points 
+In the figure above, score is assigned the value of 10 times points 
 (which is another variable) plus 5.
 
 The following video by Dr. Colleen Lewis shows how variables can change values in 
@@ -66,16 +66,16 @@ This won’t change the value of the variable that you are copying from.
 
    <a href="http://www.pythontutor.com/visualize.html#code=public+class+Test2%0A%7B%0A+++public+static+void+main(String%5B%5D+args%29%0A+++%7B%0A+++++int+x+%3D+3%3B%0A+++++int+y+%3D+2%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++x+%3D+y%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++y+%3D+5%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++%7D%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a>
 
-Click on this |Java visualizer| to step through the code. 
-Click on the Next button at the bottom of the code to see 
-how the values of the variables change. You can run the visualizer 
-on any Active Code in this e-book by just clicking on the ``Code Lens`` button 
-at the top of each Active Code.
 
- 
-.. codelens:: asgn_viz1
-    :language: java 
-    :optional:
+
+.. activecode:: assignment_test2
+   :language: java
+   :autograde: unittest   
+   
+   Step through the code shown below by  clicking on the ``Show CodeLens`` button, then 
+   click on the Next button at the bottom of the code to see 
+   how the values of the variables change. 
+   ~~~~
  
     public class Test2
     {
@@ -93,7 +93,7 @@ at the top of each Active Code.
         System.out.println(y);
       }
     }
-
+    ====
 
    
 |Exercise| **Check your understanding**
@@ -114,7 +114,9 @@ at the top of each Active Code.
    :feedback_c: Remember that the equal sign doesn't mean that the two sides are equal.  It sets the value for the variable on the left to the value from evaluating the right side.
    :feedback_d: Remember that the equal sign doesn't mean that the two sides are equal.  It sets the value for the variable on the left to the value from evaluating the right side.
 
-   What are the values of x, y, and z after the following code executes?  You can step through this code by clicking on this |Java visualizer2| link.
+   What are the values of x, y, and z after the following code executes?  
+   See if you can figure it out yourself, then confirm your answer by stepping 
+   through the code after clicking on this |Java visualizer2| link.
 
    .. code-block:: java 
 

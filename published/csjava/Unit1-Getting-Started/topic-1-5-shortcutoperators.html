@@ -470,7 +470,7 @@ import static org.junit.Assert.*;
 <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="n">z</span><span class="o">++</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -558,29 +558,10 @@ and the line number you are currently tracing.</p>
 </table>
 <p>Alternatively, we can show a compressed trace by listing the sequence of values
 assigned to each variable as the program executes.  You might want to cross off the previous value
-when you change the value for a variable.  The last value listed is the variable’s final value.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 47%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Variable</p></th>
-<th class="head"><p>Value</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>x</p></td>
-<td><p>10, 302</p></td>
-</tr>
-<tr class="row-odd"><td><p>y</p></td>
-<td><p>15</p></td>
-</tr>
-<tr class="row-even"><td><p>z</p></td>
-<td><p>150, 151</p></td>
-</tr>
-</tbody>
-</table>
+when you assign a new value to a variable.  The last value listed is the variable’s final value.</p>
+<div class="align-center figure align-default">
+<a class="reference internal image-reference" href="../_images/compressedtrace.png"><img alt="Compressed Trace" src="../_images/compressedtrace.png" style="width: 400px;" /></a>
+</div>
 <p>Use paper and pencil to trace through the following program to determine the
 values of the variables at the end.   Be careful, <code class="docutils literal notranslate"><span class="pre">%</span></code> is the remainder operator, not division.</p>
 <p><a class="reference internal" href="../_images/exercise.png"><img alt="exercise" class="align-middle" src="../_images/exercise.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
@@ -672,11 +653,11 @@ When it is placed after, it is called <strong>postfix</strong> increment.</p>
 <td><p>Prefix</p></td>
 </tr>
 <tr class="row-even"><td><p>x = y- -;</p></td>
-<td><p>Copy the value of y into x, then subtract one to y</p></td>
+<td><p>Copy the value of y into x, then subtract one from y</p></td>
 <td><p>Postfix</p></td>
 </tr>
 <tr class="row-odd"><td><p>x = - -y;</p></td>
-<td><p>Subtract one to y, then copy the value of y into x</p></td>
+<td><p>Subtract one from y, then copy the value of y into x</p></td>
 <td><p>Prefix</p></td>
 </tr>
 </tbody>
@@ -688,10 +669,10 @@ When it is placed after, it is called <strong>postfix</strong> increment.</p>
 	<span data-component=feedback>Try again.</span>
 
     <li data-component="draggable" id="prepost_matching_drag1">System.out.println(score++);</li>
-    <li data-component="dropzone" for="prepost_matching_drag1">Print current value of score 5, then assign score the value 6.</li>
+    <li data-component="dropzone" for="prepost_matching_drag1">Print the value 5, then assign score the value 6.</li>
 
     <li data-component="draggable" id="prepost_matching_drag2">System.out.println(score--);</li>
-    <li data-component="dropzone" for="prepost_matching_drag2">Print current value of score 5, then assign score the value 4.</li>
+    <li data-component="dropzone" for="prepost_matching_drag2">Print the value 5, then assign score the value 4.</li>
 
     <li data-component="draggable" id="prepost_matching_drag3">System.out.println(++score);</li>
     <li data-component="dropzone" for="prepost_matching_drag3">Assign score the value 6, then print the value 6.</li>
@@ -700,9 +681,11 @@ When it is placed after, it is called <strong>postfix</strong> increment.</p>
     <li data-component="dropzone" for="prepost_matching_drag4">Assign score the value 4, then print the value 4.</li>
 </ul></div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is advisable to avoid mixing unary operators <code class="docutils literal notranslate"><span class="pre">++</span></code> and <code class="docutils literal notranslate"><span class="pre">--</span></code> with assignment or print statements.
-Try to perform the increment or decrement operation on a separate line of code from assignment or printing.  So it would be better to
-write this code, which makes it very clear that the increment of <em>y</em> happens after the
+<p>When you are new to programming, it is advisable to avoid mixing unary operators <code class="docutils literal notranslate"><span class="pre">++</span></code> and <code class="docutils literal notranslate"><span class="pre">--</span></code> with assignment or
+print statements. Try to perform the increment or decrement operation on a separate line of code
+from assignment or printing.</p>
+<p>For example, instead of writing <code class="docutils literal notranslate"><span class="pre">x=y++;</span></code> or <code class="docutils literal notranslate"><span class="pre">System.out.println(z--);</span></code>
+the code below makes it clear that the increment of <em>y</em> happens after the
 assignment to <em>x</em>, and that the value of <em>z</em> is printed before it is decremented.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">y</span><span class="p">;</span>
 <span class="n">y</span><span class="o">++</span><span class="p">;</span>

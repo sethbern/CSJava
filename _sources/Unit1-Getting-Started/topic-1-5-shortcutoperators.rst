@@ -152,7 +152,7 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
      int y = 5;
      int z = 2;
      x = z * 2;
-     y = y / 2;
+     y /= 2;
      z++;
      
 |Groupwork| Code Tracing Challenge and Operators Maze
@@ -197,18 +197,12 @@ The corresponding trace table looks like this:
 
 Alternatively, we can show a compressed trace by listing the sequence of values 
 assigned to each variable as the program executes.  You might want to cross off the previous value
-when you change the value for a variable.  The last value listed is the variable's final value.
+when you assign a new value to a variable.  The last value listed is the variable's final value.
 
-+--------+---------+
-|Variable|Value    |
-+========+=========+
-|x       |10, 302  |
-+--------+---------+
-|y       |15       |
-+--------+---------+
-|z       |150, 151 |
-+--------+---------+
-
+.. figure:: Figures/compressedtrace.png
+    :width: 400px
+    :figclass: align-center
+    :alt: Compressed Trace
 
 Use paper and pencil to trace through the following program to determine the 
 values of the variables at the end.   Be careful, ``%`` is the remainder operator, not division.
@@ -296,16 +290,16 @@ When it is placed after, it is called **postfix** increment.
 +----------------------------+---------------------------------------------------------+-------+
 |x = ++y;                    |Add one to y, then copy the value of y into x            |Prefix |
 +----------------------------+---------------------------------------------------------+-------+
-|x = y- -;                   |Copy the value of y into x, then subtract one to y       |Postfix|
+|x = y- -;                   |Copy the value of y into x, then subtract one from y     |Postfix|
 +----------------------------+---------------------------------------------------------+-------+
-|x = - -y;                   |Subtract one to y, then copy the value of y into x       |Prefix |
+|x = - -y;                   |Subtract one from y, then copy the value of y into x     |Prefix |
 +----------------------------+---------------------------------------------------------+-------+
 
 
 .. dragndrop:: prepost_matching
    :feedback: Try again.
-   :match_1: System.out.println(score++);|||Print current value of score 5, then assign score the value 6.
-   :match_2: System.out.println(score--);|||Print current value of score 5, then assign score the value 4.
+   :match_1: System.out.println(score++);|||Print the value 5, then assign score the value 6.
+   :match_2: System.out.println(score--);|||Print the value 5, then assign score the value 4.
    :match_3: System.out.println(++score);|||Assign score the value 6, then print the value 6.
    :match_4: System.out.println(--score);|||Assign score the value 4, then print the value 4.
 
@@ -315,9 +309,12 @@ When it is placed after, it is called **postfix** increment.
 
 .. note::
 
-    It is advisable to avoid mixing unary operators ``++`` and ``--`` with assignment or print statements.
-    Try to perform the increment or decrement operation on a separate line of code from assignment or printing.  So it would be better to
-    write this code, which makes it very clear that the increment of *y* happens after the 
+    When you are new to programming, it is advisable to avoid mixing unary operators ``++`` and ``--`` with assignment or 
+    print statements. Try to perform the increment or decrement operation on a separate line of code 
+    from assignment or printing.  
+    
+    For example, instead of writing ``x=y++;`` or ``System.out.println(z--);``
+    the code below makes it clear that the increment of *y* happens after the 
     assignment to *x*, and that the value of *z* is printed before it is decremented.
 
     .. code-block:: java 
