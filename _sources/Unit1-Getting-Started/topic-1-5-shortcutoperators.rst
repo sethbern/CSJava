@@ -64,8 +64,8 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
    :autograde: unittest    
   
    Run the code below to see what the ++ and shorcut operators do. 
-   Click on the Show Code Lens button to trace through the code and the 
-   variable values change in the visualizer. Try creating more compound assignment 
+   Use the Codelens to trace through the code and observe how the 
+   variable values change. Try creating more compound assignment 
    statements with shortcut operators and guess what they would 
    print out before running the code.
    ~~~~

@@ -362,12 +362,12 @@ expression</strong>  on the right hand side of
 the = sign (which can contain math operators and other variables) is copied
 into the memory location of the variable on the left hand side.</p>
 <div class="align-center figure align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/assignment.png"><img alt="Assignment statement" src="../_images/assignment.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/assignment.png"><img alt="Assignment statement" src="../_images/assignment.png" style="width: 300px;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Assignment Statement (variable = expression)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Instead of saying equals for the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator in an assignment statement,
 say “gets” or “is assigned” to
-remember that the variable gets or is assigned the value on the right.
+remember that the variable on the left hand side gets or is assigned the value on the right.
 In the figure above, score is assigned the value of 10 times points
 (which is another variable) plus 5.</p>
 <p>The following video by Dr. Colleen Lewis shows how variables can change values in
@@ -378,13 +378,11 @@ memory using assignment statements.</p>
         <p class="runestone_caption"><span class="runestone_caption_text">Video: (MZwIgM__5C8)</span> </p>
     </div>
     <p>As we saw in the video,
-we can set one variable’s value to a copy of the value of another variable like y = x;.
+we can set one variable to a copy of the value of another variable like y = x;.
 This won’t change the value of the variable that you are copying from.</p>
 
 <div data-childcomponent="assignment_test2" class="runestone explainer ac_section alert alert-warning">
-<p>Step through the code shown below by  clicking on the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">CodeLens</span></code> button, then
-click on the Next button at the bottom of the code to see
-how the values of the variables change.</p>
+<p>Click on the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">CodeLens</span></code> button to step through the code and see how the values of the variables change.</p>
 
 <textarea data-component="activecode" id=assignment_test2 data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -414,9 +412,7 @@ how the values of the variables change.</p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="q2_1" >
-            <p>1-4-1: What are the values of x, y, and z after the following code executes?
-See if you can figure it out yourself, then confirm your answer by stepping
-through the code after clicking on this <a href="http://www.pythontutor.com/visualize.html#code=public+class+Test2%0A%7B%0A+++public+static+void+main(String%5B%5D+args%29%0A+++%7B%0A+++++int+x+%3D+0%3B%0A+++++int+y+%3D+1%3B%0A+++++int+z+%3D+2%3B%0A+++++x+%3D+y%3B%0A+++++y+%3D+y+*+2%3B%0A+++++z+%3D+3%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++System.out.println(z%29%3B%0A+++%7D%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> link.</p>
+            <p>1-4-1: What are the values of x, y, and z after the following code executes?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
@@ -446,9 +442,11 @@ through the code after clicking on this <a href="http://www.pythontutor.com/visu
 (so that x ends up with y's initial value  of 5 and y ends up with x's initial value of 3),
 but the code is mixed up and contains <b>one extra block</b> which is not needed
 in a correct solution.  Drag the needed blocks from the left into the correct
-order on the right. Check your solution by clicking on the <i>Check Me</i> button.
+order on the right, then check your solution.
 You will be told if any of the blocks are in the wrong order or if you need to remove
-one or more blocks.  After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.</span>int x = 3;
+one or more blocks.
+
+After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.</span>int x = 3;
 int y = 5;
 int temp = 0;
 ---
@@ -462,8 +460,8 @@ y = x; #distractor
         </pre>
         </div>
     </div>
-<div class="section" id="adding-one-to-a-variable">
-<h2><span class="section-number">1.4.2. </span>Adding one to a variable<a class="headerlink" href="#adding-one-to-a-variable" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="incrementing-the-value-of-a-variable">
+<h2><span class="section-number">1.4.2. </span>Incrementing the value of a variable<a class="headerlink" href="#incrementing-the-value-of-a-variable" title="Permalink to this headline">¶</a></h2>
 <p>If you use a variable to keep score you would probably increment it
 (add one to the current value) whenever score should go up.
 You can do this by setting the variable to the current value of the

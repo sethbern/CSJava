@@ -1,16 +1,9 @@
-.. image:: ../../_static/CSAwesomeLogo.png
-    :width: 350
-    :align: center
-    
-
 Using Objects
 :::::::::::::::::::::
 
 In this unit, you will learn how to create and use objects in Java. 
-
-Class Periods: 13-15
-
-AP CS A Exam Weighting: 5-7.5% 
+The unit introduces a library that supports turtle graphics, which enables you to
+create 2D drawings and animations.  This unit also introduces String and Math methods.
 
 .. toctree::
    :caption: Unit 2 Table of Contents

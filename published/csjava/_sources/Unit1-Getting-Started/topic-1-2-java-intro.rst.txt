@@ -16,7 +16,7 @@
     :width: 35
     :align: middle
     :alt: groupwork
-    
+   
     
 Why Programming? Why Java?
 ============================
@@ -29,9 +29,6 @@ Why Programming? Why Java?
 	pair: programming; language
 	pair: Java; source file
 	pair: Java; class file
-    
-    
-
 
 What do Android phones, Minecraft, and Netflix have in common? 
 They're all programmed in Java! Many of the apps you use in an Android phone 
@@ -71,13 +68,19 @@ Here is the template for a simple Java program with a main method:
    In Java every open curly brace ``{`` must have a matched close curly brace ``}``.  
    These are used to start and end class definitions and method definitions.       
 
-|CodingEx| **Coding Exercise**: Click on the |runbutton| button below to have the computer execute the ``main`` method in the following class. Then, change the code  to print your name.  Be sure to keep the starting ``"`` and ending ``"``.  Click on the |runbutton| button to run the modified code. If you revisit this page later and login, click on Load History and move the bar above it to see your previous code changes.
+|CodingEx| **Coding Exercise**: Click on the ``Save & Run`` button below to have the 
+computer execute the ``main`` method in the following class. Then, 
+change the code  to print your name.  
+Be sure to keep the starting ``"`` and ending ``"``.  
+Run the modified code to test your changes. If you revisit this page later and login, 
+click on ``Load History`` button and move the bar above it to see your previous code changes.
  
 .. activecode:: lcfc1
    :language: java
    :autograde: unittest    
 
-   Run this code to see the output below it. Then change the code to print your name, for example "Hi Pat!", and run again. 
+   Run this code to see the output below it. 
+   Then change the code to print your name, for example "Hi Pat!", and run again. 
    ~~~~    
    public class MyClass
    {
@@ -134,7 +137,9 @@ Java has two different print commands to print output to the screen:
    :language: java
    :autograde: unittest 
 
-   Run this code to see the output below it. How would you change it to print the ! on the same line as Hi there keeping all 3 print statements?
+   Run this code to see the output below it. 
+   How would you change it to print the ! on the same line as Hi there 
+   keeping all 3 print statements?
    ~~~~    
    public class MyClass
    {
@@ -241,10 +246,13 @@ Let's practice debugging some code!
    but the code is mixed up.  Drag the blocks from left to right and put them in the 
    correct order.  You can scroll up and look at the previous example program if you
    are having trouble understanding how to order the blocks.
-   Click on the "Check Me" button to check your solution. 
+   
+   Click on the "Check" button to check your solution. 
    You will be told if any of the blocks are in the wrong order or if you need to 
-   remove one or more blocks. After three incorrect attempts you will be able to use 
-   the Help Me button to make the problem easier.
+   remove one or more blocks. 
+   
+   After three incorrect attempts you will be able to use 
+   the "Help me" button to make the problem easier.
    -----
    public class ThirdClass
    {
@@ -263,7 +271,9 @@ Let's practice debugging some code!
    :adaptive:
    :noindent:
 
-   The following has all the correct code to print out "Hi there!" when the code is run, but the code is mixed up and contains some extra blocks with errors.  Drag the needed blocks from left to right and put them in the correct order.  Click on the "Check Me" button to check your solution.
+   The following has all the correct code to print out "Hi there!" when the code is run, 
+   but the code is mixed up and contains some extra blocks with errors.  
+   Drag the needed blocks from left to right and put them in the correct order, then check your solution.
    -----
    public class FourthClass
    {
@@ -288,7 +298,7 @@ Let's practice debugging some code!
 
 |CodingEx| **Coding Exercise: Compile Time Error 1**
 
-Click on the |runbutton| button below to try and run the following code.  Look for an error message after the code.  This is called a **compile time error** because it is an error detected by the compiler.  
+Run the following code.  Look for an error message after the code.  This is called a **compile time error** because it is an error detected by the compiler.  
 
 What is wrong?  Can you fix it?  The error message will tell you the line number that it thinks is causing the error (``FirstClass.java:5: error: unclosed string literal``).  Check line 5 to make sure that everything looks correct.  One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well. Try putting in the missing symbol and run again. This is called **debugging**.
 
@@ -329,7 +339,9 @@ What is wrong?  Can you fix it?  The error message will tell you the line number
 |CodingEx| **Coding Exercise: Compile Time Error 2**
 
 
-Click on the |runbutton| button below to try and run the following code.  Look for an error message after the code. What is wrong this time?  Can you fix it?  One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well.
+Try and run the following code.  
+Look for an error message after the code. What is wrong this time?  Can you fix it?  
+One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well.
 
 .. activecode:: sc2error2
    :language: java
@@ -368,7 +380,10 @@ Click on the |runbutton| button below to try and run the following code.  Look f
     
 |CodingEx| **Coding Exercise: Compile Time Error 3**
 
-Click on the |runbutton| button below to try and run the following code.  What is wrong this time?  Can you fix it?  After you fix the first error, you may encounter a 2nd error! Fix that one too! Hints: How do you end a command in Java? Also, check for capitalization. 
+Try and run the following code.  
+What is wrong this time?  Can you fix it?  After you fix the first error, you may 
+encounter a 2nd error! Fix that one too! Hints: How do you end a command in Java? 
+Also, check for capitalization. 
 
 .. activecode:: sc2error3
    :language: java
@@ -411,7 +426,12 @@ Did you remember that System is capitalized in System.out.println? Did you find 
 Comments
 --------
 
-In Java and many text-based coding languages, // is used to mark the beginning of a comment. For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the comment. The compiler will skip over comments. However, it is a good idea to use comments to make notes to yourself and other programmers working with you. Here are some examples of good commenting:
+It is helpful to add comments to your code to help explain what the code is doing.
+
+In Java and many text-based coding languages, ``//`` is used to mark the beginning of a comment. 
+Everything on the line that
+follows the ``//`` is ignored by the compiler. 
+For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the comment. The compiler will skip over comments. However, it is a good idea to use comments to make notes to yourself and other programmers working with you. Here are some examples of good commenting:
 
 .. code-block:: java 
 

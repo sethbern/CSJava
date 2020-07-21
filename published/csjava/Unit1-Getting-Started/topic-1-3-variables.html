@@ -521,10 +521,10 @@ the memory location called score to 4.</p>
 <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
 <div data-childcomponent="lcdv2a" class="runestone explainer ac_section alert alert-warning">
-<p>Click the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Run</span></code> button to run the following code to see what is printed.
+<p>Run the following code to see what is printed.
 Then, change the values and run it again.</p>
-<p>Click the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">CodeLens</span></code> button and then use the Next button to step through the
-program one line at a time to see how memory is allocated for each variable.</p>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">CodeLens</span></code> button and then use the <code class="docutils literal notranslate"><span class="pre">Next</span></code> button to step through the
+program one line at a time.  Stepping through a program lets you see how memory is allocated for each variable.</p>
 
 <textarea data-component="activecode" id=lcdv2a data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -570,18 +570,28 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
-<p>When you are printing, never put variables inside quotes “” because that will print out the variable
-name letter by letter. You do not want to print out the variable name,
+<p>When you are printing the value of a variable, never put quotes “” around the variable
+because that will print out the variable
+name letter by letter. For example, <code class="docutils literal notranslate"><span class="pre">System.out.println(&quot;score&quot;);</span></code> will print out the string “score”,
+rather than the value “0” stored in the variable.  Normally you do not want to print out the variable name,
 but the value of the variable in memory. If you’re not sure what this means, try
 putting quotes around the variables in the print statements above and see what happens.</p>
-<p>When you are printing out variables, you can use the <strong>string concatenation</strong> operator <code class="docutils literal notranslate"><span class="pre">+</span></code> to
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Avoid putting a variable inside quotes (“”) in a print statement since that
+would print the variable name instead of its value.</p>
+</div>
+</div>
+<div class="section" id="string-concatenation">
+<h2><span class="section-number">1.3.4. </span>String Concatenation<a class="headerlink" href="#string-concatenation" title="Permalink to this headline">¶</a></h2>
+<p>You often need to print a message that mixes text with a variable value.  You can use the <strong>string concatenation</strong> operator <code class="docutils literal notranslate"><span class="pre">+</span></code> to
 combine strings.  So <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">&quot;there&quot;</span></code> will create a new String object with the
 value <code class="docutils literal notranslate"><span class="pre">&quot;hi</span> <span class="pre">there&quot;</span></code>.  If the variable <strong>name</strong> has a value “Jose”,
 then the code <code class="docutils literal notranslate"><span class="pre">&quot;Hi</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">name</span></code> will create a new String object with value <code class="docutils literal notranslate"><span class="pre">&quot;Hi</span> <span class="pre">Jose&quot;</span></code>.</p>
 <p><a class="reference internal" href="../_images/codingExercise.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
 <div data-childcomponent="lcdv2" class="runestone explainer ac_section alert alert-warning">
-<p>Click the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Run</span></code> button to run the following code to see what is printed.</p>
+<p>Run the following code to see what is printed.</p>
 
 <textarea data-component="activecode" id=lcdv2 data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -628,7 +638,7 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 <p>If you want spaces between words and variables when printing, you must put the
-space in the quotes. If you forget to add spaces, you will get smushed output
+space within the quoted string.  For example, notice the space in the string “Hi ” in the last print statement. If you forget to add spaces, you will get smushed output
 like “HiJose” instead of “Hi Jose”.</p>
 <p>Also note that the variable has to be on the
 left side of the <code class="docutils literal notranslate"><span class="pre">=</span></code> and the value on the right.  Switching the two is
@@ -670,10 +680,6 @@ public class RunestoneTests extends CodeTestHelper
      }
 }
 </textarea>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Variables are never put inside quotes (“”) in System.out.print statements. This would print the variable name out letter by letter instead of printing its value.</p>
 </div>
 <p><a class="reference internal" href="../_images/exercise.png"><img alt="exercise" class="align-middle" src="../_images/exercise.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
 
@@ -754,7 +760,12 @@ public class RunestoneTests extends CodeTestHelper
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="declareVars1"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>1-3-11: The following code declares and initializes variables for storing a number of visits, a person's temperature, and if the person has insurance or not.  It also includes extra blocks that are not needed in a correct solution.  Drag the needed blocks from the left area into the correct order (declaring numVisits, temp, and hasInsurance in that order) in the right area.  Click on the "Check Me" button to check your solution.</span>int numVisits = 5;
+        <span data-question>1-3-11: The following code declares and initializes variables for storing a number of
+visits, a person's temperature, and if the person has insurance or not.
+It also includes extra blocks that are not needed in a correct solution.
+Drag the needed blocks from the left area into the correct order
+(declaring numVisits, temp, and hasInsurance in that order) in the right area.
+Check your solution.</span>int numVisits = 5;
 ---
 Int numVisits = 5; #paired
 ---
@@ -810,7 +821,7 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 </div>
 <div class="section" id="naming-variables">
-<h2><span class="section-number">1.3.4. </span>Naming Variables<a class="headerlink" href="#naming-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3.5. </span>Naming Variables<a class="headerlink" href="#naming-variables" title="Permalink to this headline">¶</a></h2>
 <p id="index-3">While you can name your variable almost anything, there are some rules.  A variable name should start with an alphabetic character (like a, b, c, etc.) and can include letters, numbers, and underscores <code class="docutils literal notranslate"><span class="pre">_</span></code>. It must be all one word with no spaces.</p>
 <p>You can’t use any of the keywords or reserved words as variable names in Java (<code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">static</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, etc).  For a complete list of keywords and reserved words see <a class="reference external" href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html">http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html</a>.</p>
 <p>The name of the variable should describe the data it holds.
@@ -891,7 +902,7 @@ public class RunestoneTests extends CodeTestHelper
         </div>
             </div>
 <div class="section" id="groupwork-debugging-challenge-weather-report">
-<h2><span class="section-number">1.3.5. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Debugging Challenge : Weather Report<a class="headerlink" href="#groupwork-debugging-challenge-weather-report" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3.6. </span><a class="reference internal" href="../_images/groupwork.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork.png" style="width: 35px;" /></a> Debugging Challenge : Weather Report<a class="headerlink" href="#groupwork-debugging-challenge-weather-report" title="Permalink to this headline">¶</a></h2>
 
 <div data-childcomponent="challenge1-3" class="runestone explainer ac_section alert alert-warning">
 <p>Debug the following code. Can you find the all the bugs and get the code to run?</p>
@@ -937,7 +948,7 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 </div>
 <div class="section" id="summary">
-<h2><span class="section-number">1.3.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>A <strong>variable</strong> is a name for a memory location where you can store a value that can change or vary.</p></li>
 <li><p>A variable can be declared and initialized with the following code:</p></li>

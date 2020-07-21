@@ -19,7 +19,7 @@
     :width: 35
     :align: middle
     :alt: groupwork
-    
+   
 Variables and Data Types
 ========================
 
@@ -249,11 +249,11 @@ the memory location called score to 4.
    :language: java
    :autograde: unittest      
    
-   Click the ``Save and Run`` button to run the following code to see what is printed. 
+   Run the following code to see what is printed. 
    Then, change the values and run it again. 
 
-   Click the ``Show CodeLens`` button and then use the Next button to step through the 
-   program one line at a time to see how memory is allocated for each variable.
+   Click the ``Show CodeLens`` button and then use the ``Next`` button to step through the 
+   program one line at a time.  Stepping through a program lets you see how memory is allocated for each variable.
 
    ~~~~
    public class Test1
@@ -295,12 +295,24 @@ the memory location called score to 4.
         }
    }
 
-When you are printing, never put variables inside quotes "" because that will print out the variable 
-name letter by letter. You do not want to print out the variable name, 
+When you are printing the value of a variable, never put quotes "" around the variable 
+because that will print out the variable 
+name letter by letter. For example, ``System.out.println("score");`` will print out the string "score",
+rather than the value "0" stored in the variable.  Normally you do not want to print out the variable name, 
 but the value of the variable in memory. If you're not sure what this means, try 
 putting quotes around the variables in the print statements above and see what happens.   
    
-When you are printing out variables, you can use the **string concatenation** operator ``+`` to 
+.. note::
+    
+    Avoid putting a variable inside quotes ("") in a print statement since that 
+    would print the variable name instead of its value.
+ 
+
+
+String Concatenation
+---------------------------
+
+You often need to print a message that mixes text with a variable value.  You can use the **string concatenation** operator ``+`` to 
 combine strings.  So ``"hi " + "there"`` will create a new String object with the
 value ``"hi there"``.  If the variable **name** has a value "Jose", 
 then the code ``"Hi " + name`` will create a new String object with value ``"Hi Jose"``.
@@ -312,7 +324,7 @@ then the code ``"Hi " + name`` will create a new String object with value ``"Hi 
    :language: java
    :autograde: unittest      
    
-   Click the ``Save and Run`` button to run the following code to see what is printed. 
+   Run the following code to see what is printed. 
    ~~~~
    public class Test2
    {
@@ -354,7 +366,7 @@ then the code ``"Hi " + name`` will create a new String object with value ``"Hi 
    }
    
 If you want spaces between words and variables when printing, you must put the 
-space in the quotes. If you forget to add spaces, you will get smushed output 
+space within the quoted string.  For example, notice the space in the string "Hi " in the last print statement. If you forget to add spaces, you will get smushed output 
 like "HiJose" instead of "Hi Jose".  
 
 Also note that the variable has to be on the 
@@ -396,14 +408,7 @@ called **assignment dyslexia**.
             assertTrue(passed);
         }
    }
-
-
-
-
-.. note::
-    
-    Variables are never put inside quotes ("") in System.out.print statements. This would print the variable name out letter by letter instead of printing its value.
-    
+   
     
 |Exercise| **Check Your Understanding**
    
@@ -514,7 +519,12 @@ called **assignment dyslexia**.
    :adaptive:
    :noindent:
 
-   The following code declares and initializes variables for storing a number of visits, a person's temperature, and if the person has insurance or not.  It also includes extra blocks that are not needed in a correct solution.  Drag the needed blocks from the left area into the correct order (declaring numVisits, temp, and hasInsurance in that order) in the right area.  Click on the "Check Me" button to check your solution.
+   The following code declares and initializes variables for storing a number of 
+   visits, a person's temperature, and if the person has insurance or not.  
+   It also includes extra blocks that are not needed in a correct solution.  
+   Drag the needed blocks from the left area into the correct order 
+   (declaring numVisits, temp, and hasInsurance in that order) in the right area.  
+   Check your solution.
    -----
    int numVisits = 5;
    =====

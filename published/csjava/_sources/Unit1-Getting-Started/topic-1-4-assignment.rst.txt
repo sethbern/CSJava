@@ -19,7 +19,6 @@
     :align: middle
     :alt: groupwork
     
-    
 Expressions and Assignment Statements
 =====================================
 
@@ -38,7 +37,7 @@ the = sign (which can contain math operators and other variables) is copied
 into the memory location of the variable on the left hand side.
 
 .. figure:: Figures/assignment.png
-    :width: 200px
+    :width: 300px
     :figclass: align-center
     :alt: Assignment statement
     
@@ -46,7 +45,7 @@ into the memory location of the variable on the left hand side.
 
 Instead of saying equals for the ``=`` operator in an assignment statement, 
 say “gets” or “is assigned” to 
-remember that the variable gets or is assigned the value on the right. 
+remember that the variable on the left hand side gets or is assigned the value on the right. 
 In the figure above, score is assigned the value of 10 times points 
 (which is another variable) plus 5.
 
@@ -59,22 +58,14 @@ memory using assignment statements.
 
 
 As we saw in the video, 
-we can set one variable’s value to a copy of the value of another variable like y = x;. 
+we can set one variable to a copy of the value of another variable like y = x;. 
 This won’t change the value of the variable that you are copying from.
-
-.. |Java visualizer| raw:: html
-
-   <a href="http://www.pythontutor.com/visualize.html#code=public+class+Test2%0A%7B%0A+++public+static+void+main(String%5B%5D+args%29%0A+++%7B%0A+++++int+x+%3D+3%3B%0A+++++int+y+%3D+2%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++x+%3D+y%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++y+%3D+5%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++%7D%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a>
-
-
 
 .. activecode:: assignment_test2
    :language: java
    :autograde: unittest   
    
-   Step through the code shown below by  clicking on the ``Show CodeLens`` button, then 
-   click on the Next button at the bottom of the code to see 
-   how the values of the variables change. 
+   Click on the ``Show CodeLens`` button to step through the code and see how the values of the variables change. 
    ~~~~
  
     public class Test2
@@ -97,10 +88,6 @@ This won’t change the value of the variable that you are copying from.
 
    
 |Exercise| **Check your understanding**
-
-.. |Java visualizer2| raw:: html
-
-   <a href="http://www.pythontutor.com/visualize.html#code=public+class+Test2%0A%7B%0A+++public+static+void+main(String%5B%5D+args%29%0A+++%7B%0A+++++int+x+%3D+0%3B%0A+++++int+y+%3D+1%3B%0A+++++int+z+%3D+2%3B%0A+++++x+%3D+y%3B%0A+++++y+%3D+y+*+2%3B%0A+++++z+%3D+3%3B%0A+++++System.out.println(x%29%3B%0A+++++System.out.println(y%29%3B%0A+++++System.out.println(z%29%3B%0A+++%7D%0A%7D&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=java&rawInputLstJSON=%5B%5D&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a>
    
 .. mchoice:: q2_1
    :practice: T
@@ -115,8 +102,6 @@ This won’t change the value of the variable that you are copying from.
    :feedback_d: Remember that the equal sign doesn't mean that the two sides are equal.  It sets the value for the variable on the left to the value from evaluating the right side.
 
    What are the values of x, y, and z after the following code executes?  
-   See if you can figure it out yourself, then confirm your answer by stepping 
-   through the code after clicking on this |Java visualizer2| link.
 
    .. code-block:: java 
 
@@ -142,9 +127,11 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
    (so that x ends up with y's initial value  of 5 and y ends up with x's initial value of 3), 
    but the code is mixed up and contains <b>one extra block</b> which is not needed 
    in a correct solution.  Drag the needed blocks from the left into the correct 
-   order on the right. Check your solution by clicking on the <i>Check Me</i> button.  
+   order on the right, then check your solution.  
    You will be told if any of the blocks are in the wrong order or if you need to remove 
-   one or more blocks.  After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.  
+   one or more blocks.  
+   
+   After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.  
    -----
    int x = 3;
    int y = 5;
@@ -161,10 +148,8 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
 
 
 
-Adding one to a variable
-----------------------
-
-
+Incrementing the value of a variable
+----------------------------
 
 If you use a variable to keep score you would probably increment it 
 (add one to the current value) whenever score should go up.  
