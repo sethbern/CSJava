@@ -359,7 +359,14 @@
 <p class="admonition-title">Note</p>
 <p>The first character in a string is at index 0 and the last characters is at <strong>length</strong> - 1.</p>
 </div>
-<p>For the AP CS A exam, you only need to know how to use the following String methods.  All of the String method descriptions are included in the <a href="https://apcentral.collegeboard.org/pdf/ap-computer-science-a-java-quick-reference-0.pdf?course=ap-computer-science-a" target="_blank">AP CS A Java Quick Reference Sheet</a> that you get during the exam so you don’t have to memorize these.</p>
+<p>The String class which is built into the default java.lang library simplifies a
+lot of complex programming tasks for us.
+Classes are grouped together into a <strong>package</strong> like java.lang.
+Many other useful library packages can be imported in. Programmers
+provide <strong>Application Program Interfaces (APIs)</strong> to allow other programmers
+to use their code. Documentation for APIs and libraries are essential to understanding the
+attributes and behaviors of an object of a class.</p>
+<p>The String class has many useful methods that you can view in the <a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html" target="_blank">Java String API</a>.  This unit explores a few of the methods.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><strong>int length()</strong> method returns the number of characters in the string, including spaces and special characters like punctuation.</p></li>
@@ -398,7 +405,6 @@ public class Test1
      System.out.println(message1.indexOf("Hello"));
      System.out.println(message2.indexOf("Hello"));
 
-     // lowercase and uppercase are not on the AP exam, but still useful
      System.out.println(message2.toLowerCase());
      System.out.println(message2.toUpperCase());
    }
@@ -517,7 +523,7 @@ import static org.junit.Assert.*;
 <a class="reference internal image-reference" href="../_images/compareTo.png"><img alt="compareTo" src="../_images/compareTo.png" style="width: 350px;" /></a>
 <p class="caption"><span class="caption-text">Figure 2: compareTo returns a negative or positive value or 0 based on alphabetical order</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>The equals method compares the two strings character by character and returns true or false. Both compareTo and equals are case-sensitive. There are case-insensitive versions of these methods, <code class="docutils literal notranslate"><span class="pre">compareToIgnoreCase</span></code> and <code class="docutils literal notranslate"><span class="pre">equalsIgnoreCase</span></code>, which are not on the AP exam.</p>
+<p>The equals method compares the two strings character by character and returns true or false. Both compareTo and equals are case-sensitive. There are case-insensitive versions of these methods, <code class="docutils literal notranslate"><span class="pre">compareToIgnoreCase</span></code> and <code class="docutils literal notranslate"><span class="pre">equalsIgnoreCase</span></code>.</p>
 <p>Run the example below to see the output from <code class="docutils literal notranslate"><span class="pre">compareTo</span></code> and <code class="docutils literal notranslate"><span class="pre">equals</span></code>. Since “Hello!” would be alphabetically ordered after “And”, compareTo returns a positive number. Since “Hello!” would be alphabetically ordered before “Zoo”, compareTo returns a negative number.  Notice that equals is case-sensitive.</p>
 
 <div data-childcomponent="lcsm2" class="runestone explainer ac_section alert alert-warning">
@@ -560,8 +566,6 @@ import static org.junit.Assert.*;
  }
 </textarea>
 </div>
-<p>There are lots of other methods in the String class.  You can look through the Java documentation for the <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank">String class</a> online.   You don’t have to know all of these for the exam, but you can use them if you want to on the exam.</p>
-<p>The String library which is built into the default java.lang library simplifies a lot of complex programming tasks for us. Classes are grouped together into a <strong>package</strong> like java.lang. Many other useful library packages can be imported in. Programmers provide <strong>Application Program Interfaces (APIs)</strong> to allow other programmers to use their code. Documentation for APIs and libraries are essential to understanding the attributes and behaviors of an object of a class.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Strings are <strong>immutable</strong> which means that they can’t change. Anything that you do to modify a string (like creating a substring or appending strings) returns a new string.</p>
@@ -804,7 +808,7 @@ import static org.junit.Assert.*;
 <li><p><strong>substring</strong> - A new string that contains a copy of part of the original string.</p></li>
 <li><p>A String object has index values from 0 to length – 1. Attempting to access indices outside this range will result in an IndexOutOfBoundsException.</p></li>
 <li><p>String objects are <strong>immutable</strong>, meaning that String methods do not change the String object. Any method that seems to change a string actually creates a new string.</p></li>
-<li><p>The following String methods and constructors, including what they do and when they are used, are part of the <a href="https://apcentral.collegeboard.org/pdf/ap-computer-science-a-java-quick-reference-0.pdf?course=ap-computer-science-a" target="_blank">AP CS A Java Quick Reference Sheet</a> that you can use during the exam:</p>
+<li><p>The following String methods and constructors are used in many programs:</p>
 <ul>
 <li><p><strong>String(String str)</strong> : Constructs a new String object that represents the same sequence of characters as str.</p></li>
 <li><p><strong>int length()</strong> : returns the number of characters in a String object.</p></li>

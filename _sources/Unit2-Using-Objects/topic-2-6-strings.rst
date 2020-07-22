@@ -322,7 +322,7 @@ What if you wanted to print out a double quote " character? Since the double quo
    :language: java
    :autograde: unittest
    
-   Here are the escape sequences that may be used in the AP course.
+
    ~~~~
    public class TestEscape
    {
@@ -366,7 +366,9 @@ Have you ever played MAD LIBS? In this game, you first choose a bunch of words w
    <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>
    
 
-Then, working in pairs, come up with another silly story that uses at least 5 new String variables. When you're done, try another team's mad libs code. Your teacher may ask you to create this program in a Java IDE like |repl| so that you can use input to read in the words (see input examples using the |Scanner|).
+Then, come up with another story that uses at least 5 new String variables. 
+When you're done, try another team's mad libs code. 
+If you create this program in a Java IDE,  you can use input to read in the words (see input examples using the |Scanner|).
 
 .. activecode:: challenge2-6-MadLibs
    :language: java

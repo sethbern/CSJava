@@ -36,7 +36,10 @@
 Java Swing GUIs (optional)
 ==============================
 
-If you used a language like App Inventor before this class, you are probably used to making a **User Interface** (UI) with buttons and other graphical components. Java has a library called **Swing** which is a graphical user interface (GUI) toolkit that includes buttons and other standard graphical components. Java Swing is not covered on the College Board AP exam, but it is fun to use. This lesson is an optional introduction to Java Swing and using its classes.
+Java has a library called **Swing** which is a 
+graphical user interface (GUI) toolkit that includes buttons and other 
+standard graphical components. 
+This lesson is an optional introduction to Java Swing and using its classes.
 
 The graphical components in Java Swing are all classes, and to use them, you must declare objects of those classes. In this lesson, we will show the following Swing classes:
 

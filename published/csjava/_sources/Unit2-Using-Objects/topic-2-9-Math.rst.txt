@@ -187,7 +187,7 @@ Here are some examples that move a random number into a specific range.
 
    Which of the following would be true about 75% of the time?
 
-|Exercise| **AP CSA Sample Problem**
+|Exercise| **Sample Problem**
 
 .. mchoice:: apcsa_sample3
    :practice: T
@@ -218,13 +218,7 @@ Other Math functions that you can use are:
 - double sqrt(double) :  Returns the positive square root of a double value.
 
 - double random() :  Returns a double value greater than or equal to 0.0 and less than 1.0 (not including 1.0!).
-
-
-.. |AP CS A Reference Sheet| raw:: html
-
-   <a href="https://apcentral.collegeboard.org/pdf/ap-computer-science-a-java-quick-reference-0.pdf?course=ap-computer-science-a" target="_blank">AP CS A Java Quick Reference Sheet</a> 
-   
-These are all listed in the |AP CS A Reference Sheet| that you can use during the exam.
+ 
 
 |Groupwork| Programming Challenge : Random Numbers
 --------------------------------------------------

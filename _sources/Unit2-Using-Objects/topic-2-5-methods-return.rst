@@ -25,14 +25,9 @@
     single: argument
     single: return
     
-.. |runbutton| image:: Figures/run-button.png
-    :height: 30px
-    :align: top
-    :alt: run button
-
 .. |repl link| raw:: html
 
-   <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>
+   <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>
 
 .. |github| raw:: html
 
@@ -397,13 +392,8 @@ Try this |visualization| to see this code in action.
     }
 
 
-Summary
--------------------
 
-- Some methods return values.
-- To use the return value when calling a method, it must be stored in a variable or used as part of an expression. The variable data type must match the return type of the method.
-
-AP Practice
+Practice
 -------------
 
 .. mchoice:: AP2-5-1
@@ -496,3 +486,10 @@ AP Practice
     - 40.0
     
       + Correct, the Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it, and getTemp() returns the currentTemp value as a double.
+
+
+Summary
+-------------------
+
+- Some methods return values.
+- To use the return value when calling a method, it must be stored in a variable or used as part of an expression. The variable data type must match the return type of the method.

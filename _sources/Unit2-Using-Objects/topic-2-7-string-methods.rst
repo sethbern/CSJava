@@ -23,6 +23,10 @@
 
    <a href="https://apcentral.collegeboard.org/pdf/ap-computer-science-a-java-quick-reference-0.pdf?course=ap-computer-science-a" target="_blank">AP CS A Java Quick Reference Sheet</a>
     
+.. |String api| raw:: html
+
+    <a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html" target="_blank">Java String API</a>
+
 String Methods 
 =================
 
@@ -48,7 +52,15 @@ A string holds characters in a sequence.  Each character is at a position or **i
 
    The first character in a string is at index 0 and the last characters is at **length** - 1.
 
-For the AP CS A exam, you only need to know how to use the following String methods.  All of the String method descriptions are included in the |AP CS A Reference Sheet| that you get during the exam so you don't have to memorize these.  
+The String class which is built into the default java.lang library simplifies a 
+lot of complex programming tasks for us. 
+Classes are grouped together into a **package** like java.lang. 
+Many other useful library packages can be imported in. Programmers 
+provide **Application Program Interfaces (APIs)** to allow other programmers 
+to use their code. Documentation for APIs and libraries are essential to understanding the 
+attributes and behaviors of an object of a class.
+
+The String class has many useful methods that you can view in the |String api|.  This unit explores a few of the methods.  
 
 
     -  **int length()** method returns the number of characters in the string, including spaces and special characters like punctuation.
@@ -91,7 +103,6 @@ Run the code below to see the output from the String methods ``length``, ``subst
         System.out.println(message1.indexOf("Hello"));
         System.out.println(message2.indexOf("Hello"));
         
-        // lowercase and uppercase are not on the AP exam, but still useful
         System.out.println(message2.toLowerCase());
         System.out.println(message2.toUpperCase());
       }
@@ -231,7 +242,7 @@ The method ``compareTo`` compares two strings character by character. If they ar
 
     Figure 2: compareTo returns a negative or positive value or 0 based on alphabetical order
 
-The equals method compares the two strings character by character and returns true or false. Both compareTo and equals are case-sensitive. There are case-insensitive versions of these methods, ``compareToIgnoreCase`` and ``equalsIgnoreCase``, which are not on the AP exam. 
+The equals method compares the two strings character by character and returns true or false. Both compareTo and equals are case-sensitive. There are case-insensitive versions of these methods, ``compareToIgnoreCase`` and ``equalsIgnoreCase``. 
 
 Run the example below to see the output from ``compareTo`` and ``equals``. Since "Hello!" would be alphabetically ordered after "And", compareTo returns a positive number. Since "Hello!" would be alphabetically ordered before "Zoo", compareTo returns a negative number.  Notice that equals is case-sensitive.
 
@@ -279,10 +290,6 @@ Run the example below to see the output from ``compareTo`` and ``equals``. Since
 
    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank">String class</a>
    
-There are lots of other methods in the String class.  You can look through the Java documentation for the |String class| online.   You don't have to know all of these for the exam, but you can use them if you want to on the exam. 
-
-The String library which is built into the default java.lang library simplifies a lot of complex programming tasks for us. Classes are grouped together into a **package** like java.lang. Many other useful library packages can be imported in. Programmers provide **Application Program Interfaces (APIs)** to allow other programmers to use their code. Documentation for APIs and libraries are essential to understanding the attributes and behaviors of an object of a class.
-
 
 .. note::
 
@@ -535,7 +542,7 @@ Summary
 
 - String objects are **immutable**, meaning that String methods do not change the String object. Any method that seems to change a string actually creates a new string. 
 
-- The following String methods and constructors, including what they do and when they are used, are part of the |AP CS A Reference Sheet| that you can use during the exam:
+- The following String methods and constructors are used in many programs:
 
   - **String(String str)** : Constructs a new String object that represents the same sequence of characters as str.
   

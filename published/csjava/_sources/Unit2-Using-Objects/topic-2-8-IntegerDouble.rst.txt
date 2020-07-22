@@ -26,11 +26,17 @@ Wrapper Classes - Integer and Double
 	pair: integer; minimum
 	pair: integer; maximum 
 
-For every primitive type in Java, there is a built-in object type called a wrapper class. The wrapper class for int is called Integer, and for double it is called Double.   Sometimes you may need to create a wrapped object for a primitive type so that you can give it to a method that is expecting an object. To wrap a value, call the constructor for the wrapper class in earlier versions of Java. In Java 9 on, this is **deprecated** which means it's not the best way to do this anymore, and you should instead just set it equal to a value. The AP CS A Exam covers Java 7 which does allow using the constructor.
+For every primitive type in Java, there is a built-in object type called a wrapper class. 
+The wrapper class for int is called Integer, and for double it is called Double.   
+Sometimes you may need to create a wrapped object for a primitive type so that 
+you can give it to a method that is expecting an object. To wrap a value, 
+call the constructor for the wrapper class in earlier versions of Java. 
+In Java 9 on, this is **deprecated** which means it's not the best way to do this 
+anymore, and you should instead just set it equal to a value. 
 
 .. code-block:: java 
    
-   // in older versions of Java (and on the AP exam)
+   // in older versions of Java 
    Integer i = new Integer(2); // create an object with 2 in it
    Double d = new Double(3.5); // create an object with 3.5 in it 
 
@@ -132,7 +138,6 @@ Here are some more useful methods in the Integer and  Double classes:
         String ageStr = "16";
         // Integer.parseInt and Double.parseDouble are often used to 
         // convert an input string to a number so you can do math on it. 
-        // They are not on the AP exam
         System.out.println("Age " + ageStr + " in 10 years is " + (Integer.parseInt(ageStr) + 10) );
         System.out.println("Note that + with strings does concatenation, not addition: " + (ageStr + 10));      
       }
@@ -210,15 +215,12 @@ Summary
 
 - The Integer class and Double class are **wrapper classes** that create objects from primitive types.
 
-- The following Integer methods and constructors, including what they do and when they are used, are part of the Java Quick Reference.
+- The following Integer methods and constructors are available.
 
   - Integer(value): Constructs a new Integer object that represents the specified int value.
   - Integer.MIN_VALUE : The minimum value represented by an int or Integer.
   - Integer.MAX_VALUE : The maximum value represented by an int or Integer.
   - int intValue() : Returns the value of this Integer as an int.
-
-- The following Double methods and constructors, including what they do and when they are used, are part of the Java Quick Reference Guide given during the exam:
-
   - Double(double value) : Constructs a new Double object that represents the specified double value.
   - double doubleValue() : Returns the value of this Double as a double.
 

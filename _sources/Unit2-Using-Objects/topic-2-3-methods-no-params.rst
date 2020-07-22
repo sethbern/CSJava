@@ -286,6 +286,15 @@ When you call the chorus() method, it skips to the chorus code, executes and pri
     }
     
 
+Methods inside the same class can call each other using just ``methodName()``, but to call methods in another class or from a main method, you must first create an object of that class and then call its methods using ``object.methodName()``. 
+
+.. figure:: Figures/calling-methods.png
+    :width: 450px
+    :align: center
+    :alt: Calling Methods
+    :figclass: align-center
+
+    Figure 2: Calling methods from main() or from other methods inside the same class.
 
 
 
