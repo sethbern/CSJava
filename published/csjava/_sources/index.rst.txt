@@ -80,7 +80,7 @@ If you see errors or bugs, please report them with this |errata form|.
 
 (last revised 7/10/2020)
 
-© Copyright 2015 Barb Ericson, Univ. Michigan, 2019 revised by Beryl Hoffman (Elms College, `Mobile CSP Project <http://mobilecsp.org>`_), 2020 revised by Linda Seiter and Daniel Palmer (John Carroll University). 
+© Copyright 2015 Barb Ericson, Univ. Michigan, 2019 revised by Beryl Hoffman (Elms College, `Mobile CSP Project <http://mobilecsp.org>`_), 2020 revised by Linda Seiter and Dan Palmer (John Carroll University). 
 Created using `Runestone  <http://runestone.academy>`_.
 
 

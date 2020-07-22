@@ -17,7 +17,7 @@ The material is organized into units that are flexible enough to support both ob
 Dr. Beryl Hoffman, Associate Professor of Computer Science at Elms College, MA.
 **CS Awesome** is a free AP CS A curriculum that was created in 2019 by adapting the AP CS A Java 
 Review e-book written by Dr. Barbara Ericson, Assistant Professor of Information at University of Michigan. 
-**Introduction to Programming with Java** was subsequently developed by Dr. Linda Seiter and Dr. Daniel Palmer, 
+**Introduction to Programming with Java** was subsequently developed by Dr. Linda Seiter and Dr. Dan Palmer, 
 Professors of Computer Science
 at John Carroll University, to evolve the curriculum to be suitable for a college-level course.
 
