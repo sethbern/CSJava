@@ -56,35 +56,16 @@ Notice the ``while`` statement looks a lot like an ``if`` statement, but it runs
       statements;
     }
     
-If you took AP CSP with a block programming language like App Inventor, you may have used a loop block like below that looks very similar to Java while loops (or you may have used a for loop which will be covered in the next lesson). Almost every programming language has a while loop.
 
-
-.. figure:: Figures/whileInAppInventor.png
-    :width: 100%
-    :align: center
-    :figclass: align-center
-    
-    Figure 1: Comparing App Inventor and Java for while loops
-
- 
-If you're used to a language like Snap! or Scratch, you may be familiar with the Repeat Until loop. However, you have to be very careful comparing repeat until to while loops. The while test is the opposite of the repeat until test. For example, if you are repeatedly moving until reaching x position 100, you must create a Java while loop that repeatedly moves while it has *not* yet reached x position 100 or is less than 100 as below. 
-
-
-.. figure:: Figures/ScratchRepeatUntilLoop.png
-    :width: 100%
-    :align: center
-    :figclass: align-center
-
-    Figure 2: Comparing Snap! or Scratch Repeat Until Loop to Java while loop 
-
-Here's what the flow of control looks like in a Java while loop. Notice that while the condition is true, the loop body is repeated.
+Here's what the flow of control looks like in a Java while loop. 
+Notice that while the condition is true, the loop body is repeated.
 
 .. figure:: Figures/WhileLoopFlow.png
     :width: 250px
     :align: center
     :figclass: align-center
 
-    Figure 3: Control Flow in a while Loop
+    Figure 1: Control Flow in a while Loop
     
 The loop condition usually involves a **loop control variable** that controls when to stop the loop. The simplest loops are **counter-controlled loops** like below, where the loop variable is a counter that controls how many times to repeat the loop. There are 3 steps to writing a loop using this loop control variable as seen below in a loop that counts from 1 to 10.
 
@@ -93,7 +74,7 @@ The loop condition usually involves a **loop control variable** that controls wh
     :align: center
     :figclass: align-center
 
-    Figure 4: Three Steps of Writing a Loop
+    Figure 2: Three Steps of Writing a Loop
 
 
 .. note:: 
@@ -151,10 +132,6 @@ The loop condition usually involves a **loop control variable** that controls wh
     }
 
 Java doesn't require your code to be correctly indented (code moved to the right a few spaces) to make it clear what statements are part of the body of the loop, but it is standard practice to do so.  
-
-.. note::
-
-    On the free response part of the exam, the reader will use the indention when determining the meaning of your code, even if you forget the open or close curly brace.
 
 |Exercise| **Check your understanding**
 
@@ -365,7 +342,12 @@ There are standard algorithms that use loops to compute the sum or average like 
     :width: 100
     :align: left
     
-We encourage you to work in pairs on this guessing game. In the guessing game, the computer picks a random number from 0-100 and you have to guess it. After each guess, the computer will give you clues like "Too high" or "Too low". Here's the pseudocode for the guessing game. **Pseudocode** is an English description or plan of what your code will do step by step. What's the loop variable for this program? Can you identify the 3 steps of writing this loop with respect to the loop variable?
+In the guessing game, the computer picks a random number from 0-100 and you have to guess it. 
+After each guess, the computer will give you clues like "Too high" or "Too low". 
+Here's the pseudocode for the guessing game. **Pseudocode** is an English 
+description or plan of what your code will do step by step. What's the loop variable 
+for this program? Can you identify the 3 steps of writing this loop with respect to 
+the loop variable?
 
 1. Choose a random number from 0-100
 2. Get the first guess
@@ -499,10 +481,6 @@ For this project, you will need to use the |Scanner class| for input and |repl.i
     }
 
   
-.. shortanswer:: challenge4-1-loop-GuessingGame
-
-    (Old short answer - obsolete) After you complete your code on repl, paste in a link to it (click on share) here.
-   
    
 Summary
 -------------------

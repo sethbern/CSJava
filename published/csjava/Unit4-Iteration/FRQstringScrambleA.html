@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>4.12. Free Response - String Scramble A &#8212; CS Java</title>
+    <title>Free Response - String Scramble A &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.13. Consumer Review Lab" href="ConsumerReviewLab.html" />
-    <link rel="prev" title="4.11. Free Response - Self Divisor A" href="FRQselfDivisorA.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -303,18 +301,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.11. </span>Free Response - Self Divisor A" data-toggle="tooltip">
-    <a href="FRQselfDivisorA.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">4.13. </span>Consumer Review Lab' data-toggle="tooltip" >              
-    <a href="ConsumerReviewLab.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -349,7 +335,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="free-response-string-scramble-a">
-<h1><span class="section-number">4.12. </span>Free Response - String Scramble A<a class="headerlink" href="#free-response-string-scramble-a" title="Permalink to this headline">¶</a></h1>
+<h1>Free Response - String Scramble A<a class="headerlink" href="#free-response-string-scramble-a" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">The following is part a of a free response question from 2014.  It was question 1 on the exam.  You can see all the free response questions from past exams at <a class="reference external" href="https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year">https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year</a>.</p>
 <p><strong>Question 1.</strong>  This question involves reasoning about strings made up of uppercase letters. You will implement two related methods that appear in the same class (not shown). The first method takes a single string parameter and returns a scrambled version of that string. The second method takes a list of strings and modifies the list by scrambling each entry in the list. Any entry that cannot be scrambled is removed from the list.</p>
 <p><strong>Part a.</strong>  Write the method <em>scrambleWord</em>, which takes a given word and returns a string that contains a scrambled version of the word according to the following rules.</p>
@@ -393,7 +379,7 @@
 </pre></div>
 </div>
 <div class="section" id="how-to-solve-this-problem">
-<h2><span class="section-number">4.12.1. </span>How to solve this problem<a class="headerlink" href="#how-to-solve-this-problem" title="Permalink to this headline">¶</a></h2>
+<h2>How to solve this problem<a class="headerlink" href="#how-to-solve-this-problem" title="Permalink to this headline">¶</a></h2>
 <p>The first thing to do is try to solve the examples by hand.</p>
 <p>First try to solve “TAN”.</p>
 <div class="align-center figure" id="id2">
@@ -408,7 +394,7 @@
 <p>Try to figure out the last two examples on your own.</p>
 </div>
 <div class="section" id="figuring-out-the-algorithm">
-<h2><span class="section-number">4.12.2. </span>Figuring out the algorithm<a class="headerlink" href="#figuring-out-the-algorithm" title="Permalink to this headline">¶</a></h2>
+<h2>Figuring out the algorithm<a class="headerlink" href="#figuring-out-the-algorithm" title="Permalink to this headline">¶</a></h2>
 <p>It can help to write out what you need to do to get each of the characters to compare.  The following shows what to do to solve the example with “ABRACADABRA”.</p>
 
 <div data-childcomponent="lcfrssa3" class="runestone explainer ac_section alert alert-warning">
@@ -502,7 +488,7 @@ import static org.junit.Assert.*;
 <p>The code will need to loop through the characters in the string and compare two adjacent characters.  There are two ways to compare two adjacent characters without going beyond the bounds of the loop.  One way is to start the index at 0 and loop while the index is less than one less than the length of the string and then get the characters at the index and at the index plus one. Another way is to start the index at 1 and loop while the index is less than the length of the string and then get the characters at one less than the index and at the index.  If the first character is an “A” and the second is not an “A” then swap them and increment the index to make sure that you don’t check characters that have already been swapped.  Each time through the loop also increment the index.</p>
 </div>
 <div class="section" id="write-the-code">
-<h2><span class="section-number">4.12.3. </span>Write the Code<a class="headerlink" href="#write-the-code" title="Permalink to this headline">¶</a></h2>
+<h2>Write the Code<a class="headerlink" href="#write-the-code" title="Permalink to this headline">¶</a></h2>
 <p>Write the method scrambleWord below.</p>
 
 <div data-childcomponent="lcfrssa5" class="runestone explainer ac_section alert alert-warning">
@@ -585,7 +571,7 @@ import static org.junit.Assert.*;
 </div>
 </div>
 <div class="section" id="video-one-way-to-code-the-solution">
-<h2><span class="section-number">4.12.4. </span>Video - One way to code the solution<a class="headerlink" href="#video-one-way-to-code-the-solution" title="Permalink to this headline">¶</a></h2>
+<h2>Video - One way to code the solution<a class="headerlink" href="#video-one-way-to-code-the-solution" title="Permalink to this headline">¶</a></h2>
 <p>There are many possible solutions to this problem.</p>
 <p>The following video is also on YouTube at <a class="reference external" href="https://youtu.be/HlVdo9Nij44">https://youtu.be/HlVdo9Nij44</a>.  It walks through coding a solution.</p>
 
@@ -602,26 +588,6 @@ import static org.junit.Assert.*;
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 4.11. Free Response - Self Divisor A' data-toggle="tooltip">
-    <a href="FRQselfDivisorA.html" aria-label="4.11. Free Response - Self Divisor A">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-        </div>
-    </a>
-  </li>
-</ul>
-
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 4.13. Consumer Review Lab' data-toggle="tooltip" >
-    <a href="ConsumerReviewLab.html" aria-label="4.13. Consumer Review Lab">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-      </div>
-    </a>
-  </li>
-</ul>
 
 <script type="text/javascript">
 

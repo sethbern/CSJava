@@ -1,13 +1,9 @@
-.. image:: ../../_static/CSAwesomeLogo.png
-    :width: 350
-    :align: center
 
 Iteration (Loops)
 ::::::::::::::::::::
 
-Class Periods: 14-16 (including lab)
-
-AP CS A Exam Weighting: 17.5-22.5%
+In this unit you will learn about **loops**, which are used to repeat a statement or 
+block of statements.
 
 
 .. toctree::
@@ -22,8 +18,8 @@ AP CS A Exam Weighting: 17.5-22.5%
    topic-4-7-practice-mixed-code.rst
    topic-4-8-practice-coding.rst
    Exercises.rst
-   FRQcalendar.rst
-   FRQselfDivisorA.rst
-   FRQstringScrambleA.rst
-   ConsumerReviewLab.rst
+..   FRQcalendar.rst
+..   FRQselfDivisorA.rst
+..   FRQstringScrambleA.rst
+..   ConsumerReviewLab.rst
 
