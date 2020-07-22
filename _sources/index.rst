@@ -1,9 +1,11 @@
    
 ==========================================
-How to Program in Java
+Introduction to Programming with Java
 ==========================================
 
-Welcome! This eBook provides an interactive introduction to programming in Java.
+**Introduction to Programming with Java** is an interactive textbook 
+designed to introduce fundamental concepts
+in software application development using the Java programming language. 
 
 To make sure the site saves your answers on questions, 
 please click on the person icon at the top to register or login to your course. 
