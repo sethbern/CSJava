@@ -24,6 +24,11 @@
     single: parameter
     single: argument
 
+.. |repl link| raw:: html
+
+   <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>
+
+
 
 .. |github| raw:: html
 
@@ -394,7 +399,8 @@ Try this |visualization| to see this code in action.
     :align: left
     :alt: simple house
     
-This creative challenge is fun to do collaboratively in pairs. Design a house and have the turtle draw it with different colors below (or with this |repl link|). Can you add windows and a door? Come up with your own house design as a team.
+Design a house and have the turtle draw it with different colors 
+below (or with this |repl link|). Can you add windows and a door? 
 
 To draw a window, you will need to do penUp() to walk the turtle into position, for example:
 
@@ -404,11 +410,9 @@ To draw a window, you will need to do penUp() to walk the turtle into position, 
    builder.moveTo(120,200);
    builder.penDown();
    
-It may help to act out the code pretending you are the turtle. Remember that the angles you turn depend on which direction you are facing, and the turtle begins facing up.
-
-.. |repl link| raw:: html
-
-   <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank">repl.it link</a>
+It may help to act out the code pretending you are the turtle. 
+Remember that the angles you turn depend on which direction you are facing, 
+and the turtle begins facing up.
 
 
 .. activecode:: challenge2-4-TurtleHouse
@@ -505,19 +509,9 @@ It may help to act out the code pretending you are the turtle. Remember that the
     }
 
 
-Summary
--------------------
-
-- **Methods** define the behaviors or functions for objects. 
-
-- To use an object's method, you must use the object name and the dot (.) operator followed by the method name, for example **object.method();** 
-
-- Some methods take parameters/arguments that are placed inside the parentheses **object.method(arguments)**.
-
-- Values provided in the parameter list need to correspond to the order and type in the method signature.
 
 
-AP Practice
+Practice
 -------------
 
 .. mchoice:: AP2-4-1
@@ -603,3 +597,14 @@ AP Practice
     
       - This would not call the printSlices method.
 
+
+Summary
+-------------------
+
+- **Methods** define the behaviors or functions for objects. 
+
+- To use an object's method, you must use the object name and the dot (.) operator followed by the method name, for example **object.method();** 
+
+- Some methods take parameters/arguments that are placed inside the parentheses **object.method(arguments)**.
+
+- Values provided in the parameter list need to correspond to the order and type in the method signature.

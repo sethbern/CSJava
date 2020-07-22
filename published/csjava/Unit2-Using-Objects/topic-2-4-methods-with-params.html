@@ -393,7 +393,7 @@
 are multiple methods with the same name but a
 different <strong>method signature</strong>, where it requires a different number or type of parameters. For example, we have two different forward methods, forward() with no parameters and forward(100) which has a parameter that tells it how much to move forward. If there is more than one parameter, then the values given to the method need to correspond to the order and types in the method signature.</p>
 <p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
-<p>(If the code below does not work in your browser, you can also use the Turtle code at this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
+<p>(If the code below does not work in your browser, you can also use the Turtle code at this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
 
 <div data-childcomponent="TurtleTestMethods1" class="runestone explainer ac_section alert alert-warning">
 <ol class="arabic simple">
@@ -659,14 +659,17 @@ public class RunestoneTests extends CodeTestHelper
 <div class="section" id="groupwork-programming-challenge-turtle-house">
 <h2><span class="section-number">2.4.2. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge : Turtle House<a class="headerlink" href="#groupwork-programming-challenge-turtle-house" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/houseWithWindows.png"><img alt="simple house" class="align-left" src="../_images/houseWithWindows.png" style="width: 200px;" /></a>
-<p>This creative challenge is fun to do collaboratively in pairs. Design a house and have the turtle draw it with different colors below (or with this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank">repl.it link</a>). Can you add windows and a door? Come up with your own house design as a team.</p>
+<p>Design a house and have the turtle draw it with different colors
+below (or with this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>). Can you add windows and a door?</p>
 <p>To draw a window, you will need to do penUp() to walk the turtle into position, for example:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span><span class="p">.</span><span class="na">penUp</span><span class="p">();</span>
 <span class="n">builder</span><span class="p">.</span><span class="na">moveTo</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
 <span class="n">builder</span><span class="p">.</span><span class="na">penDown</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>It may help to act out the code pretending you are the turtle. Remember that the angles you turn depend on which direction you are facing, and the turtle begins facing up.</p>
+<p>It may help to act out the code pretending you are the turtle.
+Remember that the angles you turn depend on which direction you are facing,
+and the turtle begins facing up.</p>
 
 <div data-childcomponent="challenge2-4-TurtleHouse" class="runestone explainer ac_section alert alert-warning">
 
@@ -764,17 +767,8 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 </div>
-<div class="section" id="summary">
-<h2><span class="section-number">2.4.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Methods</strong> define the behaviors or functions for objects.</p></li>
-<li><p>To use an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
-<li><p>Some methods take parameters/arguments that are placed inside the parentheses <strong>object.method(arguments)</strong>.</p></li>
-<li><p>Values provided in the parameter list need to correspond to the order and type in the method signature.</p></li>
-</ul>
-</div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">2.4.4. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">2.4.3. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-1" >
@@ -838,6 +832,15 @@ public class RunestoneTests extends CodeTestHelper
             </ul>
             </div>
             </div>
+<div class="section" id="summary">
+<h2><span class="section-number">2.4.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Methods</strong> define the behaviors or functions for objects.</p></li>
+<li><p>To use an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
+<li><p>Some methods take parameters/arguments that are placed inside the parentheses <strong>object.method(arguments)</strong>.</p></li>
+<li><p>Values provided in the parameter list need to correspond to the order and type in the method signature.</p></li>
+</ul>
+</div>
 </div>
 
 

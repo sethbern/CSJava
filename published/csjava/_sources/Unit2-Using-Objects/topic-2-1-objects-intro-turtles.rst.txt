@@ -465,15 +465,12 @@ Unit 5 covers how to create your own classes.
 |Groupwork| Programming Challenge : Turtle Drawing
 --------------------------------------------------
 
-We encourage you to work in pairs for this challenge.
-
-Create a ``Turtle`` object below and have it draw a shape.  For example, have it draw a small square and then a large square by calling the forward method multiple times. In the next lessons, we will draw more complicated shapes. Here are some simple turtle methods that you could use:
+Create a ``Turtle`` object below and have it draw a shape.  
+For example, have it draw a small square and then a large square by calling the forward method multiple times. In the next lessons, we will draw more complicated shapes. Here are some simple turtle methods that you could use:
 
 - ``forward();``
-- ``forward(50);`` (or any pixel amount)
 - ``turnLeft();``
 - ``turnRight();``
-- ``turn(45);`` (or any degree)
 - ``backward();``
 - ``penUp();``
 - ``penDown();``

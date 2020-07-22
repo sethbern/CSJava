@@ -358,18 +358,18 @@ Before you call a method from ``main`` or from outside of the current class, you
 
 Write code in the editor window below (or use the |repl link|) to use a turtle to draw a simple block-style letter or number that uses just straight lines (no curves or diagonals). It could be one of your initials or a number from today's date.
 
-It may help to act out the code pretending you are the turtle. Remember that which way you turn depends on which direction you are facing, and the turtle begins facing north (towards the top of the page).
+It may help to act out the code pretending you are the turtle.
+ Remember that which way you turn depends on which direction you are facing, 
+ and the turtle begins facing north (towards the top of the page).
 
 Here are some simple turtle methods that you can use:
 
-- ``forward()``
-- ``forward(50)`` (any pixel amount)
-- ``turnLeft()``
-- ``turnRight()``
-- ``turn(30)`` (any degree)
-- ``backward()``
-- ``penUp()``
-- ``penDown()``
+- ``forward();``
+- ``turnLeft();``
+- ``turnRight();``
+- ``backward();``
+- ``penUp();``
+- ``penDown();``
 
 You may notice that it is challenging to have your turtle draw with these simple methods. In the next lesson, we will use more complex ``Turtle`` methods where you can indicate how many steps to take or what angle to turn that will make drawing a lot easier!
 
