@@ -333,7 +333,7 @@ You can use curly brackets { } to enclose a nested if and have the else clause b
 
    <a href="https://en.akinator.com/" style="text-decoration:underline" target="_blank">Akinator</a>
 
-We encourage you to work in pairs for this challenge which is on repl.it (you will need an account there if you want to save your version).
+This challenge is on repl.it.
 
 Have you ever played 20 Questions? 20 Questions is a game where one person thinks of an object and the other players ask up to 20 questions to guess what it is.
 
@@ -475,10 +475,11 @@ After you complete your code on repl.it, paste in your code below to run it thro
         }
     }
     
+   
     
 .. shortanswer:: challenge3-3-IfElse-20Questions
 
-  (Old short answer - obsolete) After you complete your code on repl, paste in a link to it (click on share) here.
+  After you complete your code on repl, paste in a link to it (click on share) here.
    
 
    

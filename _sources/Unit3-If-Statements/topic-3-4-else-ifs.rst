@@ -100,7 +100,8 @@ Here is a flowchart for a conditional with 3 options like in the code above.
     
 .. note:: 
 
-    Another way to handle 3 or more conditional cases is to use the ``switch`` and ``break`` keywords, but these will not be on the exam.  For a tutorial on using switch see https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html.
+    Another way to handle 3 or more conditional cases is to use the ``switch`` and ``break`` 
+    keywords.  For a tutorial on using switch see https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html.
 
 
 |Exercise| **Check your understanding**
@@ -349,7 +350,7 @@ Here is a flowchart for a conditional with 3 options like in the code above.
    <a href="https://repl.it/@BerylHoffman/Adventure" target="_blank" style="text-decoration:underline">repl link</a>
 
 
-We encourage you to work in pairs for this challenge which is on repl.it (you will need an account there if you want to save your version).
+This challenge is on repl.it.
 
 One of the first games coded for early computers in the 1970s was called |Colossal Cave Adventure|. It was a text-based interactive fiction game where you had to make your way through an elaborate cave. The program only understood one word or phrase commands like north, south, enter, take, etc. You can try |playing adventure| recreated online following some of the commands in this |walkthrough|. Part of the challenge is finding the commands that the code will understand. 
 
@@ -479,7 +480,7 @@ In a game like Adventure, else if statements can be used to respond to commands 
 
 .. shortanswer:: challenge3-4-ElseIf-20Adventure
 
-   (Old short answer - obsolete) After you complete your code on repl, paste in a link to it (click on share) here.
+After you complete your code on repl, paste in a link to it (click on share) here.
    
 Summary
 --------
