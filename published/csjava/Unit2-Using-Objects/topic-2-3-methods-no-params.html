@@ -361,7 +361,11 @@
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="2_3_Draw7"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>2-3-1: The following code uses a turtle to draw the digital number 7, but the lines are mixed up.  Drag the code blocks to the right and put them in the correct order to first draw the line going up (towards the top of the page) and then turn and draw a line to the left to make a 7. Remember that the turtle is facing the top of the page when it is first created. Click on the "Check Me" button to check your solution. </p></span>public class DrawL
+        <span data-question>2-3-1: The following code uses a turtle to draw the digital number 7, but the lines are mixed up.
+Drag the code blocks to the right and put them in the correct order to first
+draw the line going up (towards the top of the page) and then turn and draw a
+line to the left to make a 7. Remember that the turtle is facing the top of the
+page when it is first created.</span>public class DrawL
 {
 ---
     public static void main(String[] args)
@@ -384,8 +388,8 @@
         </pre>
         </div>
     <p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
-<p>After you put the mixed up code in order above, type in the same code below to make the turtle draw a 7.
-(If the code below does not work for you, you can also use the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> code at this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
+<p>After you put the mixed up code in order above,
+type in the same code below (or use the <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>) to make the turtle draw a 7.</p>
 
 <div data-childcomponent="TurtleDraw7" class="runestone explainer ac_section alert alert-warning">
 
@@ -612,13 +616,15 @@ allTraceData["songviz1"] = {"code":"public class Song\n{\n  public void print()\
 </div>
 <div class="section" id="groupwork-programming-challenge-draw-a-letter">
 <h2><span class="section-number">2.3.2. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge : Draw a Letter<a class="headerlink" href="#groupwork-programming-challenge-draw-a-letter" title="Permalink to this headline">¶</a></h2>
-<p>Working in pairs, use the area below (or the <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank">repl.it link</a>) to use a turtle to draw a simple block-style letter or number that uses just straight lines (no curves or diagonals). It could be one of your initials or a number from today’s date.</p>
+<p>Write code in the editor window below (or use the <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>) to use a turtle to draw a simple block-style letter or number that uses just straight lines (no curves or diagonals). It could be one of your initials or a number from today’s date.</p>
 <p>It may help to act out the code pretending you are the turtle. Remember that which way you turn depends on which direction you are facing, and the turtle begins facing north (towards the top of the page).</p>
 <p>Here are some simple turtle methods that you can use:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">forward()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forward(50)</span></code> (any pixel amount)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">turnLeft()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">turnRight()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">turn(30)</span></code> (any degree)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">backward()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">penUp()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">penDown()</span></code></p></li>
@@ -679,21 +685,8 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 </div>
-<div class="section" id="summary">
-<h2><span class="section-number">2.3.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Methods</strong> are a set of instructions that define the behaviors for all objects of the class.</p></li>
-<li><p>Use <strong>dot notation</strong> to execute an object’s method.  This is the object’s name followed by the dot (.) operator followed by the method name and parentheses: <strong>object.method();</strong></p></li>
-<li><p>A <strong>method signature</strong> is the method name followed by the parameter list which gives the type and name for each parameter. Note that methods do not have to take any parameters, but you still need the parentheses after the method name.</p></li>
-<li><p><strong>Procedural abstraction</strong> allows a programmer to use a method by knowing in general what it does without knowing what lines of code execute. This is how we can drive a car without knowing how the brakes work.</p></li>
-<li><p>A <strong>method</strong> or <strong>constructor</strong> call interrupts the sequential execution of statements, causing the program to first execute the statements in the method or constructor before continuing. Once the last statement in the method or constructor has executed or a return statement is executed, the flow of control is returned to the point immediately following the method or constructor call.</p></li>
-<li><p>A <strong>NullPointerException</strong> will happen if you try to call an object method on an object variable whose value is <code class="docutils literal notranslate"><span class="pre">null</span></code>.  This usually means that you forgot to create the object using the <code class="docutils literal notranslate"><span class="pre">new</span></code> operator followed by the class name and parentheses.</p></li>
-<li><p>An <strong>object method</strong> or <strong>non-static method</strong> is one that must be called on an object of a class.  It usually works with the object’s attributes.</p></li>
-<li><p>A <strong>static method</strong> or <strong>class method</strong> method is one that doesn’t need to be called on an object of a class.</p></li>
-</ul>
-</div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">2.3.4. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">2.3.3. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-3-1" >
@@ -793,6 +786,19 @@ public class RunestoneTests extends CodeTestHelper
             </ul>
             </div>
             </div>
+<div class="section" id="summary">
+<h2><span class="section-number">2.3.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Methods</strong> are a set of instructions that define the behaviors for all objects of the class.</p></li>
+<li><p>Use <strong>dot notation</strong> to execute an object’s method.  This is the object’s name followed by the dot (.) operator followed by the method name and parentheses: <strong>object.method();</strong></p></li>
+<li><p>A <strong>method signature</strong> is the method name followed by the parameter list which gives the type and name for each parameter. Note that methods do not have to take any parameters, but you still need the parentheses after the method name.</p></li>
+<li><p><strong>Procedural abstraction</strong> allows a programmer to use a method by knowing in general what it does without knowing what lines of code execute. This is how we can drive a car without knowing how the brakes work.</p></li>
+<li><p>A <strong>method</strong> or <strong>constructor</strong> call interrupts the sequential execution of statements, causing the program to first execute the statements in the method or constructor before continuing. Once the last statement in the method or constructor has executed or a return statement is executed, the flow of control is returned to the point immediately following the method or constructor call.</p></li>
+<li><p>A <strong>NullPointerException</strong> will happen if you try to call an object method on an object variable whose value is <code class="docutils literal notranslate"><span class="pre">null</span></code>.  This usually means that you forgot to create the object using the <code class="docutils literal notranslate"><span class="pre">new</span></code> operator followed by the class name and parentheses.</p></li>
+<li><p>An <strong>object method</strong> or <strong>non-static method</strong> is one that must be called on an object of a class.  It usually works with the object’s attributes.</p></li>
+<li><p>A <strong>static method</strong> or <strong>class method</strong> method is one that doesn’t need to be called on an object of a class.</p></li>
+</ul>
+</div>
 </div>
 
 

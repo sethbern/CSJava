@@ -362,16 +362,15 @@
 <div data-childcomponent="TurtleTest" class="runestone explainer ac_section alert alert-warning">
 <p>Run the code below to see what the following program does.
 If the code below does not work for you, you can also see the code in
-action at this <a href="https://repl.it/@LindaMM/csjavaturtle1" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking if it gets stuck) or
+action at this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking if it gets stuck).
+Repl.it prefers the class to be named “Main”.   You can also
 download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.</p>
-<p>NOTE: The CodeLens Java Visualizer will not work with graphics programs.</p>
+<p>NOTE: The CodeLens Visualizer will not work with graphics programs.</p>
 
 <textarea data-component="activecode" id=TurtleTest data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
 
 public class TurtleTest
 {
@@ -407,21 +406,20 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
-<p>The program above creates a <code class="docutils literal notranslate"><span class="pre">World</span></code> object called <code class="docutils literal notranslate"><span class="pre">world</span></code>, which is a
+<p>The program above creates a <code class="docutils literal notranslate"><span class="pre">World</span></code> object, which is a
 drawing canvas of size 300x300 pixels.  The program then creates a <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object
-called <code class="docutils literal notranslate"><span class="pre">yertle</span></code> and places <code class="docutils literal notranslate"><span class="pre">yertle</span></code> in the center of the world.  The code
+named <code class="docutils literal notranslate"><span class="pre">yertle</span></code> and places <code class="docutils literal notranslate"><span class="pre">yertle</span></code> in the center of the world.  The code
 asks <code class="docutils literal notranslate"><span class="pre">yertle</span></code> to go forward, turn left, and then go forward.
-It didn’t tell the turtle how much to go forward, so it goes forward 100 pixels by default.
-As the turtle moves it draws with its pen.
-There is a hidden library of Java code that defines the <code class="docutils literal notranslate"><span class="pre">World</span></code> and <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> classes.
-Notice that a world was first
-created and then a turtle.  Turtles need to be created in a world, which is the canvas that they can draw on.</p>
-<p>The program above also has 2 lines of code at the beginning that import some classes needed to create
-our 2D drawing.  Import statements need to go before the class declaration.</p>
+It didn’t tell the turtle how much to go forward, so it goes forward 100 pixels by default. A turtle
+has a pen that traces its path as it moves. Notice that a world was first
+created and then a turtle.  Turtles need to be created in a world,
+which is the canvas that they can draw on.
+The <code class="docutils literal notranslate"><span class="pre">World</span></code> and <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> classes are not part of the core Java language.
+The program relies on a separate library of Java code that defines both classes.</p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="2_1_turle_dir" >
-            <p>2-1-1: Which way does a turtle face when it is first created?  Run the program and notice which direction it goes
+            <p>2-1-1: Which way does a turtle face when it is first created?  Run the program and notice the direction it goes
 when it first moves forward.</p>
 
             <li data-component="answer" data-correct id="2_1_turle_dir_opt_a">North</li><li data-component="feedback">Turtles start off facing north which is toward the top of the page.</li>
@@ -597,8 +595,9 @@ two turtle objects are created: <code class="docutils literal notranslate"><span
 <p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
 <div data-childcomponent="TurtleTest3" class="runestone explainer ac_section alert alert-warning">
-<p>Can you add another turtle object to the code below?
-The third turtle should draw a square by repeatedly turning left and moving forward.</p>
+<p>Run the code below.  Notice each turtle has a different color pen for drawing its path.
+Add a third turtle object that draws a square by repeatedly turning left and moving forward.
+Give you new turtle a unique variable name.</p>
 
 <textarea data-component="activecode" id=TurtleTest3 data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -743,13 +742,15 @@ Unit 5 covers how to create your own classes.</p>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object below and have it draw a shape.  For example, have it draw a small square and then a large square by calling the forward method multiple times. In the next lessons, we will draw more complicated shapes. Here are some simple turtle methods that you could use:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">forward();</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forward(50);</span></code> (or any pixel amount)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">turnLeft();</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">turnRight();</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">turn(45);</span></code> (or any degree)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">backward();</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">penUp();</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">penDown();</span></code></p></li>
 </ul>
-<p>After writing your code below, if you’d like your own copy, you can open this <a href="https://repl.it/@LindaMM/csjavaturtle1" target="_blank" style="text-decoration:underline">repl.it link</a>, copy in your code, and save it in your own repl.it account.</p>
+<p>After writing your code below, if you’d like your own copy, you can open this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>, copy in your code, and save it in your own repl.it account.</p>
 
 <div data-childcomponent="challenge2-1-TurtleDraw" class="runestone explainer ac_section alert alert-warning">
 
@@ -862,13 +863,13 @@ public class RunestoneTests extends CodeTestHelper
 <li><p>An <strong>instance variable</strong> is another name for an attribute, which is data an object knows about itself such as its position.</p></li>
 </ul>
 </div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">2.1.5. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">2.1.5. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-1-1" >
             <dl>
-<dt>2-1-12: A student has created a <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. The class contains variables to represent the following.</dt><dd><ul class="simple">
+<dt>2-1-12: A student has created a <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. The class contains instance variables (attributes) to represent the following.</dt><dd><ul class="simple">
 <li><p>A String variable called <code class="docutils literal notranslate"><span class="pre">breed</span></code> to represent the breed of the dog</p></li>
 <li><p>An int variable called <code class="docutils literal notranslate"><span class="pre">age</span></code> to represent the age of the dog</p></li>
 <li><p>A String variable called <code class="docutils literal notranslate"><span class="pre">name</span></code> to represent the name of the dog</p></li>
@@ -895,7 +896,7 @@ Which of the following descriptions is accurate?</p>
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-1-2" >
             <dl>
-<dt>2-1-13:  A student has created a <code class="docutils literal notranslate"><span class="pre">Party</span></code> class. The class contains variables to represent the following.</dt><dd><ul class="simple">
+<dt>2-1-13:  A student has created a <code class="docutils literal notranslate"><span class="pre">Party</span></code> class. The class contains instance variables (attributes) to represent the following.</dt><dd><ul class="simple">
 <li><p>An int variable called <code class="docutils literal notranslate"><span class="pre">numOfPeople</span></code> to represent the number of people at the party.</p></li>
 <li><p>A boolean variable called <code class="docutils literal notranslate"><span class="pre">discoLightsOn</span></code> to represent whether the disco ball is on.</p></li>
 <li><p>A boolean variable called <code class="docutils literal notranslate"><span class="pre">partyStarted</span></code> to represent whether the party has started.</p></li>

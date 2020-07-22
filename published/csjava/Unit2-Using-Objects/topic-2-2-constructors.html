@@ -410,7 +410,11 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The turtle word does not use the cartesian coordinate system.  The top left corner is (0,0), x increases to the right, and y increases towards the bottom of the page.</p>
+<p>The turtle world does not use the cartesian coordinate system.
+The origin (0,0) is in the <strong>top left corner</strong>, x increases to the right, and y increases
+as you go <strong>down</strong> the screen rather than up.
+This weird coordinate system is due to historical reasons. When physical devices were
+first built, they would scan from left to right and then top to bottom.</p>
 </div>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../_images/coords.png"><img alt="../_images/coords.png" src="../_images/coords.png" style="width: 200px;" /></a>
@@ -450,7 +454,7 @@
 
 <div data-childcomponent="TurtleConstructorTest" class="runestone explainer ac_section alert alert-warning">
 <p>Try changing the code below to create a <code class="docutils literal notranslate"><span class="pre">World</span></code> object with 300x400 pixels. Where is the turtle placed by default? What parameters do you need to pass to the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> constructor to put the turtle at the top right corner? Experiment and find out. What happens if you mix up the order of the parameters?</p>
-<p>(If the code below does not work in your browser, you can also use the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> code at this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
+<p>(If the code below does not work in your browser, you can also use the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> code at this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
 
 <textarea data-component="activecode" id=TurtleConstructorTest data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -551,7 +555,10 @@ public class RunestoneTests extends CodeTestHelper
 
             </ul>
             </div>
-            <p>In Unit 5, you will learn to write your own classes. However, if you see a class definition on the AP exam, like the one below for a class called <code class="docutils literal notranslate"><span class="pre">Date</span></code>, you should be able to pick out the attributes (instance variables) and the constructors and know how to use them.</p>
+            <p>In Unit 5, you will learn to write your own classes.
+However, if you see a class definition like the one below for a class
+called <code class="docutils literal notranslate"><span class="pre">Date</span></code>, you should be able to pick out the attributes (instance variables)
+and the constructors and know how to use them.</p>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../_images/DateClass.png"><img alt="A Date class showing attributes and constructors" src="../_images/DateClass.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Figure 4: A Date class showing attributes and constructors</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
@@ -644,7 +651,7 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 <div class="section" id="groupwork-programming-challenge-custom-turtles">
 <h2><span class="section-number">2.2.7. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge: Custom Turtles<a class="headerlink" href="#groupwork-programming-challenge-custom-turtles" title="Permalink to this headline">¶</a></h2>
-<p>Working in pairs, you will now look at a new class called CustomTurtle and design some colorful turtles with its constructors.</p>
+<p>You will now look at a new class called CustomTurtle and design some colorful turtles with its constructors.</p>
 <p>First, as a warm up, do the following debugging exercise.</p>
 
 <div data-childcomponent="challenge2-2-TurtleConstructorDebug" class="runestone explainer ac_section alert alert-warning">
@@ -839,23 +846,8 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 </div>
-<div class="section" id="summary">
-<h2><span class="section-number">2.2.8. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Constructors</strong> initialize the attributes in newly created objects.  They have the same name as the class.</p></li>
-<li><p>A <strong>constructor signature</strong> is the constructor name followed by the parameter list which is a list of the types of the parameters and the variable names used to refer to them in the constructor.</p></li>
-<li><p><strong>Overloading</strong> is when there is more than one constructor.  They must differ in the number, type, or order of parameters.</p></li>
-<li><p><strong>New</strong> is a keyword that is used to create a new object of a class.  The syntax is <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ClassName()</span></code>.  It creates a new object of the specified class and calls a constructor.</p></li>
-<li><p>A <strong>no-argument constructor</strong> is a constructor that doesn’t take any passed in values (arguments).</p></li>
-<li><p><strong>Parameters</strong> allow values to be passed to the constructor to initialize the newly created object’s attributes.</p></li>
-<li><p>The <strong>parameter list</strong>, in the header of a constructor, is a list of the type of the value being passed and a variable name. These variables are called the <strong>formal parameters</strong>.</p></li>
-<li><p><strong>Actual parameters</strong> are the values being passed to a constructor.  The formal parameters are set to a copy of the value of the actual parameters.</p></li>
-<li><p><strong>Formal parameters</strong> are the specification of the parameters in the constructor header.  In Java this is a list of the type and name for each parameter (<code class="docutils literal notranslate"><span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height</span></code>).</p></li>
-<li><p><strong>Call by value</strong> means that when you pass a value to a constructor or method it passes a copy of the value.</p></li>
-</ul>
-</div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">2.2.9. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">2.2.8. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-2-1" >
@@ -948,6 +940,21 @@ public class RunestoneTests extends CodeTestHelper
             </ul>
             </div>
             </div>
+<div class="section" id="summary">
+<h2><span class="section-number">2.2.9. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Constructors</strong> initialize the attributes in newly created objects.  They have the same name as the class.</p></li>
+<li><p>A <strong>constructor signature</strong> is the constructor name followed by the parameter list which is a list of the types of the parameters and the variable names used to refer to them in the constructor.</p></li>
+<li><p><strong>Overloading</strong> is when there is more than one constructor.  They must differ in the number, type, or order of parameters.</p></li>
+<li><p><strong>New</strong> is a keyword that is used to create a new object of a class.  The syntax is <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ClassName()</span></code>.  It creates a new object of the specified class and calls a constructor.</p></li>
+<li><p>A <strong>no-argument constructor</strong> is a constructor that doesn’t take any passed in values (arguments).</p></li>
+<li><p><strong>Parameters</strong> allow values to be passed to the constructor to initialize the newly created object’s attributes.</p></li>
+<li><p>The <strong>parameter list</strong>, in the header of a constructor, is a list of the type of the value being passed and a variable name. These variables are called the <strong>formal parameters</strong>.</p></li>
+<li><p><strong>Actual parameters</strong> are the values being passed to a constructor.  The formal parameters are set to a copy of the value of the actual parameters.</p></li>
+<li><p><strong>Formal parameters</strong> are the specification of the parameters in the constructor header.  In Java this is a list of the type and name for each parameter (<code class="docutils literal notranslate"><span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height</span></code>).</p></li>
+<li><p><strong>Call by value</strong> means that when you pass a value to a constructor or method it passes a copy of the value.</p></li>
+</ul>
+</div>
 </div>
 
 

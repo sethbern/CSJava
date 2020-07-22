@@ -26,7 +26,7 @@
 
 .. |repl link| raw:: html
 
-   <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>
+   <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>
 
 .. |github| raw:: html
 
@@ -106,7 +106,11 @@ The constructor that doesn't take any parameters, ``World()``, creates a graphic
     World world2 = new World(300,400); // creates a 300x400 world
 
 .. note ::
-   The turtle word does not use the cartesian coordinate system.  The top left corner is (0,0), x increases to the right, and y increases towards the bottom of the page.
+   The turtle world does not use the cartesian coordinate system.  
+   The origin (0,0) is in the **top left corner**, x increases to the right, and y increases 
+   as you go **down** the screen rather than up.   
+   This weird coordinate system is due to historical reasons. When physical devices were
+   first built, they would scan from left to right and then top to bottom.
 
 .. figure:: Figures/coords.png
     :width: 200px
@@ -265,7 +269,10 @@ Constructors are **overloaded** when there are multiple constructors, but the co
 
    Which of these is the correct signature for a no-argument constructor?
 
-In Unit 5, you will learn to write your own classes. However, if you see a class definition on the AP exam, like the one below for a class called ``Date``, you should be able to pick out the attributes (instance variables) and the constructors and know how to use them.
+In Unit 5, you will learn to write your own classes. 
+However, if you see a class definition like the one below for a class 
+called ``Date``, you should be able to pick out the attributes (instance variables) 
+and the constructors and know how to use them.
 
 .. figure:: Figures/DateClass.png
     :width: 500px
@@ -373,7 +380,7 @@ This lesson introduces a lot of vocabulary, but don't worry if you don't underst
 
 
     
-Working in pairs, you will now look at a new class called CustomTurtle and design some colorful turtles with its constructors.
+You will now look at a new class called CustomTurtle and design some colorful turtles with its constructors.
 
 First, as a warm up, do the following debugging exercise.
 
@@ -574,31 +581,8 @@ You will use the constructor(s) to create the CustomTurtles below. You can speci
         }
     }
 
-Summary
--------------------
 
-
-- **Constructors** initialize the attributes in newly created objects.  They have the same name as the class.
-
-- A **constructor signature** is the constructor name followed by the parameter list which is a list of the types of the parameters and the variable names used to refer to them in the constructor.
-
-- **Overloading** is when there is more than one constructor.  They must differ in the number, type, or order of parameters.
-
-- **New** is a keyword that is used to create a new object of a class.  The syntax is ``new ClassName()``.  It creates a new object of the specified class and calls a constructor.
-
-- A **no-argument constructor** is a constructor that doesn't take any passed in values (arguments).
-
-- **Parameters** allow values to be passed to the constructor to initialize the newly created object's attributes.
-
-- The **parameter list**, in the header of a constructor, is a list of the type of the value being passed and a variable name. These variables are called the **formal parameters**.
-
-- **Actual parameters** are the values being passed to a constructor.  The formal parameters are set to a copy of the value of the actual parameters.
-
-- **Formal parameters** are the specification of the parameters in the constructor header.  In Java this is a list of the type and name for each parameter (``World(int width, int height``).
-
-- **Call by value** means that when you pass a value to a constructor or method it passes a copy of the value.
-
-AP Practice
+Practice
 ------------
 
 .. mchoice:: AP2-2-1
@@ -688,3 +672,27 @@ AP Practice
             }
         }
 
+
+Summary
+-------------------
+
+
+- **Constructors** initialize the attributes in newly created objects.  They have the same name as the class.
+
+- A **constructor signature** is the constructor name followed by the parameter list which is a list of the types of the parameters and the variable names used to refer to them in the constructor.
+
+- **Overloading** is when there is more than one constructor.  They must differ in the number, type, or order of parameters.
+
+- **New** is a keyword that is used to create a new object of a class.  The syntax is ``new ClassName()``.  It creates a new object of the specified class and calls a constructor.
+
+- A **no-argument constructor** is a constructor that doesn't take any passed in values (arguments).
+
+- **Parameters** allow values to be passed to the constructor to initialize the newly created object's attributes.
+
+- The **parameter list**, in the header of a constructor, is a list of the type of the value being passed and a variable name. These variables are called the **formal parameters**.
+
+- **Actual parameters** are the values being passed to a constructor.  The formal parameters are set to a copy of the value of the actual parameters.
+
+- **Formal parameters** are the specification of the parameters in the constructor header.  In Java this is a list of the type and name for each parameter (``World(int width, int height``).
+
+- **Call by value** means that when you pass a value to a constructor or method it passes a copy of the value.

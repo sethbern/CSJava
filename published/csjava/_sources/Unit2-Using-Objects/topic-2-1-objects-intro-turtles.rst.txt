@@ -27,7 +27,7 @@
 
 .. |repl link| raw:: html
 
-   <a href="https://repl.it/@LindaMM/csjavaturtle1" target="_blank" style="text-decoration:underline">repl.it link</a>
+   <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>
 
 .. |github| raw:: html
 
@@ -70,14 +70,13 @@ Today, we can play with virtual turtles in a graphical world. Below is a sample 
 
     Run the code below to see what the following program does.  
     If the code below does not work for you, you can also see the code in 
-    action at this |repl link| (refresh page after forking if it gets stuck) or 
-    download the files |github| to use in your own IDE.
+    action at this |repl link| (refresh page after forking if it gets stuck).  
+    Repl.it prefers the class to be named "Main".   You can also  
+    download the files |github| to use in your own IDE.  
 
-    NOTE: The CodeLens Java Visualizer will not work with graphics programs.
+    NOTE: The CodeLens Visualizer will not work with graphics programs.
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-
+    
     public class TurtleTest
     {
       public static void main(String[] args)
@@ -112,18 +111,17 @@ Today, we can play with virtual turtles in a graphical world. Below is a sample 
     }
 
 
-The program above creates a ``World`` object called ``world``, which is a 
+The program above creates a ``World`` object, which is a 
 drawing canvas of size 300x300 pixels.  The program then creates a ``Turtle`` object 
-called ``yertle`` and places ``yertle`` in the center of the world.  The code
+named ``yertle`` and places ``yertle`` in the center of the world.  The code
 asks ``yertle`` to go forward, turn left, and then go forward.  
-It didn't tell the turtle how much to go forward, so it goes forward 100 pixels by default. 
-As the turtle moves it draws with its pen.
-There is a hidden library of Java code that defines the ``World`` and ``Turtle`` classes.  
-Notice that a world was first
-created and then a turtle.  Turtles need to be created in a world, which is the canvas that they can draw on.
+It didn't tell the turtle how much to go forward, so it goes forward 100 pixels by default. A turtle
+has a pen that traces its path as it moves. Notice that a world was first
+created and then a turtle.  Turtles need to be created in a world, 
+which is the canvas that they can draw on.
+The ``World`` and ``Turtle`` classes are not part of the core Java language.  
+The program relies on a separate library of Java code that defines both classes.  
 
-The program above also has 2 lines of code at the beginning that import some classes needed to create
-our 2D drawing.  Import statements need to go before the class declaration.
 
 .. mchoice:: 2_1_turle_dir
    :practice: T
@@ -137,7 +135,7 @@ our 2D drawing.  Import statements need to go before the class declaration.
    :feedback_c: Which way does yertle first move in the example above?
    :feedback_d: Which way does yertle first move in the example above?
 
-   Which way does a turtle face when it is first created?  Run the program and notice which direction it goes
+   Which way does a turtle face when it is first created?  Run the program and notice the direction it goes
    when it first moves forward.
 
 
@@ -323,8 +321,9 @@ two turtle objects are created: ``yertle`` and ``myrtle``.  You can name your tu
     :autograde: unittest
     :datafile: turtleClasses.jar
 
-    Can you add another turtle object to the code below?  
-    The third turtle should draw a square by repeatedly turning left and moving forward. 
+    Run the code below.  Notice each turtle has a different color pen for drawing its path. 
+    Add a third turtle object that draws a square by repeatedly turning left and moving forward.
+    Give you new turtle a unique variable name.
     ~~~~
     import java.util.*;
     import java.awt.*;
@@ -471,8 +470,10 @@ We encourage you to work in pairs for this challenge.
 Create a ``Turtle`` object below and have it draw a shape.  For example, have it draw a small square and then a large square by calling the forward method multiple times. In the next lessons, we will draw more complicated shapes. Here are some simple turtle methods that you could use:
 
 - ``forward();``
+- ``forward(50);`` (or any pixel amount)
 - ``turnLeft();``
 - ``turnRight();``
+- ``turn(45);`` (or any degree)
 - ``backward();``
 - ``penUp();``
 - ``penDown();``
@@ -593,7 +594,7 @@ Summary
 - An **instance variable** is another name for an attribute, which is data an object knows about itself such as its position.
 
 
-AP Practice
+Practice
 ------------
 
 
@@ -611,7 +612,7 @@ AP Practice
    :feedback_d: An attribute of the Dog class is name.
    :feedback_e: An instance of the Dog class is pet.
 
-   A student has created a ``Dog`` class. The class contains variables to represent the following.
+   A student has created a ``Dog`` class. The class contains instance variables (attributes) to represent the following.
     - A String variable called ``breed`` to represent the breed of the dog
     - An int variable called ``age`` to represent the age of the dog
     - A String variable called ``name`` to represent the name of the dog
@@ -634,7 +635,7 @@ AP Practice
    :feedback_d: An attribute of the Party class is numOfPeople.
    :feedback_e: An attribute of the Party class is numOfPeople.
 
-    A student has created a ``Party`` class. The class contains variables to represent the following.
+    A student has created a ``Party`` class. The class contains instance variables (attributes) to represent the following.
     - An int variable called ``numOfPeople`` to represent the number of people at the party.
     - A boolean variable called ``discoLightsOn`` to represent whether the disco ball is on.
     - A boolean variable called ``partyStarted`` to represent whether the party has started.

@@ -25,15 +25,13 @@
     single: argument
 
 
-.. |runbutton| image:: Figures/run-button.png
-    :height: 30px
-    :align: top
-    :alt: run button
-
-
 .. |github| raw:: html
 
    <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a>
+
+.. |repl link| raw:: html
+
+   <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>
 
 
 Calling Methods Without Parameters
@@ -59,7 +57,11 @@ Every method call is followed by parentheses. The parentheses ``()`` after metho
    :adaptive:
    :noindent:
 
-   The following code uses a turtle to draw the digital number 7, but the lines are mixed up.  Drag the code blocks to the right and put them in the correct order to first draw the line going up (towards the top of the page) and then turn and draw a line to the left to make a 7. Remember that the turtle is facing the top of the page when it is first created. Click on the "Check Me" button to check your solution. </p>
+   The following code uses a turtle to draw the digital number 7, but the lines are mixed up.  
+   Drag the code blocks to the right and put them in the correct order to first 
+   draw the line going up (towards the top of the page) and then turn and draw a 
+   line to the left to make a 7. Remember that the turtle is facing the top of the 
+   page when it is first created. 
    -----
    public class DrawL
    {
@@ -85,8 +87,8 @@ Every method call is followed by parentheses. The parentheses ``()`` after metho
 |CodingEx| **Coding Exercise:**
 
 
-After you put the mixed up code in order above, type in the same code below to make the turtle draw a 7.
-(If the code below does not work for you, you can also use the ``Turtle`` code at this |repl link| (refresh page after forking and if it gets stuck) or download the files |github| to use in your own IDE.)
+After you put the mixed up code in order above, 
+type in the same code below (or use the |repl link|) to make the turtle draw a 7.
 
 .. activecode:: TurtleDraw7
     :language: java
@@ -354,22 +356,20 @@ Before you call a method from ``main`` or from outside of the current class, you
 |Groupwork| Programming Challenge : Draw a Letter
 -------------------------------------------------
 
-Working in pairs, use the area below (or the |repl link|) to use a turtle to draw a simple block-style letter or number that uses just straight lines (no curves or diagonals). It could be one of your initials or a number from today's date.
+Write code in the editor window below (or use the |repl link|) to use a turtle to draw a simple block-style letter or number that uses just straight lines (no curves or diagonals). It could be one of your initials or a number from today's date.
 
 It may help to act out the code pretending you are the turtle. Remember that which way you turn depends on which direction you are facing, and the turtle begins facing north (towards the top of the page).
 
 Here are some simple turtle methods that you can use:
 
 - ``forward()``
+- ``forward(50)`` (any pixel amount)
 - ``turnLeft()``
 - ``turnRight()``
+- ``turn(30)`` (any degree)
 - ``backward()``
 - ``penUp()``
 - ``penDown()``
-
-.. |repl link| raw:: html
-
-   <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank">repl.it link</a>
 
 You may notice that it is challenging to have your turtle draw with these simple methods. In the next lesson, we will use more complex ``Turtle`` methods where you can indicate how many steps to take or what angle to turn that will make drawing a lot easier!
 
@@ -426,26 +426,8 @@ You may notice that it is challenging to have your turtle draw with these simple
     }
 
 
-Summary
--------------------
 
-- **Methods** are a set of instructions that define the behaviors for all objects of the class.
-
-- Use **dot notation** to execute an object's method.  This is the object's name followed by the dot (.) operator followed by the method name and parentheses: **object.method();**
-
-- A **method signature** is the method name followed by the parameter list which gives the type and name for each parameter. Note that methods do not have to take any parameters, but you still need the parentheses after the method name.
-
-- **Procedural abstraction** allows a programmer to use a method by knowing in general what it does without knowing what lines of code execute. This is how we can drive a car without knowing how the brakes work.
-
-- A **method** or **constructor** call interrupts the sequential execution of statements, causing the program to first execute the statements in the method or constructor before continuing. Once the last statement in the method or constructor has executed or a return statement is executed, the flow of control is returned to the point immediately following the method or constructor call.
-
-- A **NullPointerException** will happen if you try to call an object method on an object variable whose value is ``null``.  This usually means that you forgot to create the object using the ``new`` operator followed by the class name and parentheses.
-
-- An **object method** or **non-static method** is one that must be called on an object of a class.  It usually works with the object's attributes.
-
-- A **static method** or **class method** method is one that doesn't need to be called on an object of a class.
-
-AP Practice
+Practice
 ------------
 
 .. mchoice:: AP2-3-1
@@ -566,3 +548,21 @@ AP Practice
       - This would just print "Meow ".
 
   
+Summary
+-------------------
+
+- **Methods** are a set of instructions that define the behaviors for all objects of the class.
+
+- Use **dot notation** to execute an object's method.  This is the object's name followed by the dot (.) operator followed by the method name and parentheses: **object.method();**
+
+- A **method signature** is the method name followed by the parameter list which gives the type and name for each parameter. Note that methods do not have to take any parameters, but you still need the parentheses after the method name.
+
+- **Procedural abstraction** allows a programmer to use a method by knowing in general what it does without knowing what lines of code execute. This is how we can drive a car without knowing how the brakes work.
+
+- A **method** or **constructor** call interrupts the sequential execution of statements, causing the program to first execute the statements in the method or constructor before continuing. Once the last statement in the method or constructor has executed or a return statement is executed, the flow of control is returned to the point immediately following the method or constructor call.
+
+- A **NullPointerException** will happen if you try to call an object method on an object variable whose value is ``null``.  This usually means that you forgot to create the object using the ``new`` operator followed by the class name and parentheses.
+
+- An **object method** or **non-static method** is one that must be called on an object of a class.  It usually works with the object's attributes.
+
+- A **static method** or **class method** method is one that doesn't need to be called on an object of a class.
