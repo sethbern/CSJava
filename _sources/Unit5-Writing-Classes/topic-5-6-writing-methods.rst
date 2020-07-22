@@ -493,29 +493,8 @@ Here's another song, |The Ants Go Marching|, that is very similar to the This Ol
     
 
 
-Summary
--------
 
-- **Procedural Abstraction** (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.  
-
-- A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.
-
-- To write methods, write a **method definition** with a **method signature** like "public void chorus()" and a **method body** in {} and method calls using an object.the method name and arguments whenever you need it to do its job.
-
-- To call an object's method, you must use the object name and the dot (.) operator followed by the method name, for example **object.method();** 
-
-
-- When you call a method, you can give or pass in **arguments** or **actual parameters** to it inside the parentheses **object.method(arguments)**. The arguments are saved in local **formal parameter** variables that are declared in the method header, for example: public void method(type param1, type param2) { ... }.
-
-- Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.
-
-- When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.
-
-- When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.
-
--  When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.
-
-AP Practice
+Practice
 -----------
 
 .. mchoice:: AP5-6-1
@@ -647,3 +626,24 @@ AP Practice
     
       - II does not check against the boilingPoint and does not return only boolean values.
 
+Summary
+-------
+
+- **Procedural Abstraction** (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.  
+
+- A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.
+
+- To write methods, write a **method definition** with a **method signature** like "public void chorus()" and a **method body** in {} and method calls using an object.the method name and arguments whenever you need it to do its job.
+
+- To call an object's method, you must use the object name and the dot (.) operator followed by the method name, for example **object.method();** 
+
+
+- When you call a method, you can give or pass in **arguments** or **actual parameters** to it inside the parentheses **object.method(arguments)**. The arguments are saved in local **formal parameter** variables that are declared in the method header, for example: public void method(type param1, type param2) { ... }.
+
+- Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.
+
+- When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.
+
+- When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.
+
+-  When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.

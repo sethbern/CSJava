@@ -586,7 +586,7 @@ public class Car
 </textarea>
 </div>
 <p>Constructors are used to set the initial state of an object by initializing its instance variables. The examples above have instance variables that are primitive types, but you can have other objects, reference types, as instance variables. For example, a Person class could have an Address object as an instance variable, and the Address class could have String instance variables for the street, city, and state.</p>
-<p>(Advanced AP Topic Warning) When you pass object references as parameters to constructors or methods, they become aliases for the original object and can change it. If a constructor has an object instance variable, it can copy   the referenced object in the parameter using new and the constructor of the referenced object like below so that it does not change the state of the original object. You will see more examples like this in later lessons.</p>
+<p>When you pass object references as parameters to constructors or methods, they become aliases for the original object and can change it. If a constructor has an object instance variable, it can copy   the referenced object in the parameter using new and the constructor of the referenced object like below so that it does not change the state of the original object. You will see more examples like this in later lessons.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
   <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
@@ -604,7 +604,7 @@ public class Car
 </div>
 <div class="section" id="groupwork-programming-challenge-student-class">
 <h2><span class="section-number">5.2.1. </span><a class="reference internal" href="../_images/groupwork5.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork5.png" style="width: 35px;" /></a> Programming Challenge : Student Class<a class="headerlink" href="#groupwork-programming-challenge-student-class" title="Permalink to this headline">¶</a></h2>
-<p>We encourage you to work in pairs for this challenge to create a Student class with constructors.</p>
+<p>This challenge requires you to create a Student class with constructors.</p>
 <ol class="arabic simple">
 <li><p>First, brainstorm in pairs to do the <strong>Object-Oriented Design</strong> for a Student class. What data should we store about Students? Come up with at least 4 different instance variables. What are the data types for the instance variables?</p></li>
 <li><p>Write a Student class below that has your 4 instance variables and write at least 3 different constructors: one that has no parameters and initializes the instance variables to default values, one that has 4 parameters to set the instance variables, and one that has 1 parameter for the most important instance variable and uses defaults for the others.</p></li>
@@ -749,16 +749,8 @@ public class Car
 </textarea>
 </div>
 </div>
-<div class="section" id="summary">
-<h2><span class="section-number">5.2.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Constructors</strong> are used to set the initial state of an object, which includes initial values for all instance variables.</p></li>
-<li><p>When no constructor is written, Java provides a no-argument <strong>default constructor</strong>, and the instance variables are set to their default values (0 for int and double, null for objects like String).</p></li>
-<li><p>Constructor parameters are local variables to the constructor and provide data to initialize instance variables.</p></li>
-</ul>
-</div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">5.2.3. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">5.2.2. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-2-1" >
@@ -904,6 +896,14 @@ public class Car
             </ul>
             </div>
             </div>
+<div class="section" id="summary">
+<h2><span class="section-number">5.2.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Constructors</strong> are used to set the initial state of an object, which includes initial values for all instance variables.</p></li>
+<li><p>When no constructor is written, Java provides a no-argument <strong>default constructor</strong>, and the instance variables are set to their default values (0 for int and double, null for objects like String).</p></li>
+<li><p>Constructor parameters are local variables to the constructor and provide data to initialize instance variables.</p></li>
+</ul>
+</div>
 </div>
 
 

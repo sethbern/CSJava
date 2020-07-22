@@ -275,7 +275,7 @@ If there are no constructors written for a class, Java provides a no-argument **
 
 Constructors are used to set the initial state of an object by initializing its instance variables. The examples above have instance variables that are primitive types, but you can have other objects, reference types, as instance variables. For example, a Person class could have an Address object as an instance variable, and the Address class could have String instance variables for the street, city, and state. 
 
-(Advanced AP Topic Warning) When you pass object references as parameters to constructors or methods, they become aliases for the original object and can change it. If a constructor has an object instance variable, it can copy   the referenced object in the parameter using new and the constructor of the referenced object like below so that it does not change the state of the original object. You will see more examples like this in later lessons.
+When you pass object references as parameters to constructors or methods, they become aliases for the original object and can change it. If a constructor has an object instance variable, it can copy   the referenced object in the parameter using new and the constructor of the referenced object like below so that it does not change the state of the original object. You will see more examples like this in later lessons.
 
 .. code-block:: java 
 
@@ -297,7 +297,7 @@ Constructors are used to set the initial state of an object by initializing its 
 |Groupwork| Programming Challenge : Student Class
 --------------------------------------------------
 
-We encourage you to work in pairs for this challenge to create a Student class with constructors.
+This challenge requires you to create a Student class with constructors.
 
 1. First, brainstorm in pairs to do the **Object-Oriented Design** for a Student class. What data should we store about Students? Come up with at least 4 different instance variables. What are the data types for the instance variables? 
 
@@ -442,19 +442,10 @@ We encourage you to work in pairs for this challenge to create a Student class w
     }
     
   
-Summary
---------
-
-
-- **Constructors** are used to set the initial state of an object, which includes initial values for all instance variables.
-
-- When no constructor is written, Java provides a no-argument **default constructor**, and the instance variables are set to their default values (0 for int and double, null for objects like String).
-
-- Constructor parameters are local variables to the constructor and provide data to initialize instance variables.
 
 
 
-AP Practice
+Practice
 ------------
 
 
@@ -624,3 +615,12 @@ AP Practice
 
       + Correct!
 
+Summary
+--------
+
+
+- **Constructors** are used to set the initial state of an object, which includes initial values for all instance variables.
+
+- When no constructor is written, Java provides a no-argument **default constructor**, and the instance variables are set to their default values (0 for int and double, null for objects like String).
+
+- Constructor parameters are local variables to the constructor and provide data to initialize instance variables.

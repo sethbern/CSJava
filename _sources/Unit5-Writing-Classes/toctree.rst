@@ -1,15 +1,8 @@
-.. image:: ../../_static/CSAwesomeLogo.png
-    :width: 350
-    :align: center
-    
+  
 Writing Classes
 :::::::::::::::
 
- 
-Class Periods: 12-14
-
-AP CS A Exam Weighting: 5-7.5%
-
+ In this unit, you will learn to write your own classes and objects.  
 
 .. toctree::
    :maxdepth: 3
@@ -26,10 +19,10 @@ AP CS A Exam Weighting: 5-7.5%
    topic-5-10-social-impacts.rst
    topic-5-11-summary.rst
    Exercises.rst
-   FRQstepTracker.rst
-   timeFRQ.rst
-   APLine.rst
-   CBLabs.rst
+..   FRQstepTracker.rst
+..   timeFRQ.rst
+..   APLine.rst
+..   CBLabs.rst
    
    
 .. Incorporate things from:  firstOOClass.rst

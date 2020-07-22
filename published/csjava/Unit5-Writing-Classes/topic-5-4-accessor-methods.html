@@ -351,11 +351,6 @@
   <div class="section" id="accessor-methods">
 <h1><span class="section-number">5.4. </span>Accessor Methods<a class="headerlink" href="#accessor-methods" title="Permalink to this headline">¶</a></h1>
 <p>Since the instance variables in a class are usually marked as private to the class, programmers provide public methods that allow safe access to the instance variable values in a class. <strong>Accessor methods</strong>, also called <strong>get methods</strong> or <strong>getters</strong>, allow a way to get the value of each instance variable from outside of the class. In the next lesson, we will see <strong>mutator methods</strong>, also called <strong>set methods</strong> or <strong>setters</strong>, that allow a way to change the values of the instance variables. In Unit 2, we also used set/get methods with the Turtle class to get the Turtle object’s width, height, xPosition, etc. or to change them.</p>
-<p>If you used a language like App Inventor in an AP CSP class, you may have used setter and getter blocks. In App Inventor, you cannot make your own classes, but you can declare UI objects like Button1, Button2 from the Button class and use their get/set methods for any property like below.</p>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="../_images/AppInvSetGet.png"><img alt="../_images/AppInvSetGet.png" src="../_images/AppInvSetGet.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-text">Figure 1: App Inventor Set and Get blocks for object Button1</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
 <p>Java programmers write get methods for each instance variable that look like the following. Notice that the get method returns the instance variable’s value and it has a return type that is the same type as the variable that it is returning.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kd">class</span> <span class="nc">ExampleTemplate</span> <span class="p">{</span>
 
@@ -598,20 +593,8 @@ public class TesterClass
 </textarea>
 </div>
 </div>
-<div class="section" id="summary">
-<h2><span class="section-number">5.4.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>An accessor method allows other objects to obtain the value of instance variables or static variables.</p></li>
-<li><p>A non-void method returns a single value. Its header includes the return type in place of the keyword void.</p></li>
-<li><p>Accessor methods that return primitive types use “return by value” where a copy of the value is returned.</p></li>
-<li><p>When the return expression is a reference to an object, a copy of that reference is returned, not a copy of the object.</p></li>
-<li><p>The return keyword is used to return the flow of control to the point immediately following where the method or constructor was called.</p></li>
-<li><p>The toString method is an overridden method that is included in classes to provide a description of a specific object. It generally includes what values are stored in the instance data of the object.</p></li>
-<li><p>If System.out.print or System.out.println is passed an object, that object’s toString method is called, and the returned string is printed.</p></li>
-</ul>
-</div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">5.4.4. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">5.4.3. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-4-1" >
@@ -679,6 +662,18 @@ public class TesterClass
             </ul>
             </div>
             </div>
+<div class="section" id="summary">
+<h2><span class="section-number">5.4.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>An accessor method allows other objects to obtain the value of instance variables or static variables.</p></li>
+<li><p>A non-void method returns a single value. Its header includes the return type in place of the keyword void.</p></li>
+<li><p>Accessor methods that return primitive types use “return by value” where a copy of the value is returned.</p></li>
+<li><p>When the return expression is a reference to an object, a copy of that reference is returned, not a copy of the object.</p></li>
+<li><p>The return keyword is used to return the flow of control to the point immediately following where the method or constructor was called.</p></li>
+<li><p>The toString method is an overridden method that is included in classes to provide a description of a specific object. It generally includes what values are stored in the instance data of the object.</p></li>
+<li><p>If System.out.print or System.out.println is passed an object, that object’s toString method is called, and the returned string is printed.</p></li>
+</ul>
+</div>
 </div>
 
 

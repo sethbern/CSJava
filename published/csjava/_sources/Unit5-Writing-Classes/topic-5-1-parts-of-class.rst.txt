@@ -24,27 +24,14 @@
 Anatomy of a Java Class
 =======================
 
-In Unit 2, we learned to use **classes** and **objects** that are built-in to Java or written by other programmers. In this unit, you will learn to write your own classes and objects!
+In Unit 2, we learned to use **classes** and **objects** that are built-in to Java or 
+written by other programmers. 
+In this unit, you will learn to write your own classes and objects!
 
 Creating a Class
 ------------------
 
 Remember that a **class** in programming defines a new **abstract data type**. When you create **objects**, you create new variables or **instances** of that class data type. For example in Unit 2, we created yertle and myrtle, 2 turtle objects created from the class Turtle, and we used the Java String class to create different String variables, also called **object references**.
-
-.. |video| raw:: html
-
-   <a href="https://www.youtube.com/watch?v=1JJL0YszYik" target="_blank">video</a>
-
-
-Here is a fun |video| demonstrating the difference between the class House which is a blueprint of a house and the objects which are individual houses built from that blueprint. You can't live on a blueprint although it describes a house! But you can use it to build houses and live in those. You can think of a class as like a blueprint or a cookie cutter or a factory that produces objects. 
-
-
-.. youtube:: 1JJL0YszYik
-    :height: 315
-    :width: 560
-    :align: left
-
-
 
 To write your own class, you typically start a class declaration with ``public`` then ``class`` then the name of the class.  The body of the class is defined inside a ``{`` and a ``}``. For example, the class House below. Then, you can create objects of that new House type by using ``Classname objectname = new Classname();``
 
@@ -153,7 +140,8 @@ Instance Variables
 
 **Instance Variables** hold the data for an object.  They record what an object needs to know to do work in the program.  Instance variables are also called **attributes**, **fields**, or **properties**. 
 
-Instance variables in general and on the AP CS A exam should be declared **private**.  Think of ``private`` as like your diary.  Only you should have direct access to it.  In this case ``private`` means that only the code in this class can directly access the instance  variable values.
+Instance variables in general should be declared **private**.    
+In this case ``private`` means that only the methods in this class can directly access the instance  variable values.
 
 .. note::
  
@@ -282,7 +270,7 @@ Object-Oriented Design
    <a href="https://creately.com" target="_blank">Creately.com</a> 
 
 
-In **Object-Oriented Design** (OOD), programmers first spend time to decide which classes are needed and then figure out the data and methods in each class. For example, here is the class diagram for the Turtle class that we have seen before. The - in front of the attributes indicate that they are private, and the + in front of the methods indicate that they are public. Here is a |tutorial on class diagrams| that explains it in more detail if you are curious (Class diagrams are not on the AP CS A exam). If you want to draw your own, |Creately.com| is a good free online drawing tool for class diagrams.
+In **Object-Oriented Design** (OOD), programmers first spend time to decide which classes are needed and then figure out the data and methods in each class. For example, here is the class diagram for the Turtle class that we have seen before. The - in front of the attributes indicate that they are private, and the + in front of the methods indicate that they are public. Here is a |tutorial on class diagrams| that explains it in more detail if you are curious. If you want to draw your own, |Creately.com| is a good free online drawing tool for class diagrams.
 
 
 .. figure:: Figures/turtleUMLClassDiagram.png
@@ -483,24 +471,8 @@ In this project, you will create a class that can tell riddles like the followin
     }
 
 
-Summary
-----------
 
-- Programmers use code to represent a physical object or nonphysical concept, real or imagined, by defining a class based on the attributes and/or behaviors of the object or concept.
-
-- **Instance Variables** define the attributes or data needed for objects, and **methods** define the behaviors or functions of the object.
-
-- **Data encapsulation** is a technique in which the implementation details of a class are kept hidden from the user. The data is kept private with access only through the public methods that can act on the data in the class.
-
-- The keywords **public** and **private** affect the access of classes, data, constructors, and methods.
-
-- The keyword private restricts access to the declaring class, while the keyword public allows access from classes outside the declaring class.
-
-- Instance variables are encapsulated by using the **private access modifier**.
-
-- Methods can be public or private, but they are usually public.
-
-AP Practice
+Practice
 ------------
 
 
@@ -629,3 +601,19 @@ AP Practice
       - Methods should be public.
 
 
+Summary
+----------
+
+- Programmers use code to represent a physical object or nonphysical concept, real or imagined, by defining a class based on the attributes and/or behaviors of the object or concept.
+
+- **Instance Variables** define the attributes or data needed for objects, and **methods** define the behaviors or functions of the object.
+
+- **Data encapsulation** is a technique in which the implementation details of a class are kept hidden from the user. The data is kept private with access only through the public methods that can act on the data in the class.
+
+- The keywords **public** and **private** affect the access of classes, data, constructors, and methods.
+
+- The keyword private restricts access to the declaring class, while the keyword public allows access from classes outside the declaring class.
+
+- Instance variables are encapsulated by using the **private access modifier**.
+
+- Methods can be public or private, but they are usually public.

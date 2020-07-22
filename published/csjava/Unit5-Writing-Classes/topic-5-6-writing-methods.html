@@ -765,22 +765,8 @@ import static org.junit.Assert.*;
 </textarea>
 </div>
 </div>
-<div class="section" id="summary">
-<h2><span class="section-number">5.6.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
-<li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
-<li><p>To write methods, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> in {} and method calls using an object.the method name and arguments whenever you need it to do its job.</p></li>
-<li><p>To call an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
-<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
-<li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
-<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.</p></li>
-<li><p>When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.</p></li>
-<li><p>When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.</p></li>
-</ul>
-</div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">5.6.4. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">5.6.3. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1" >
@@ -890,6 +876,20 @@ import static org.junit.Assert.*;
             </ul>
             </div>
             </div>
+<div class="section" id="summary">
+<h2><span class="section-number">5.6.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
+<li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
+<li><p>To write methods, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> in {} and method calls using an object.the method name and arguments whenever you need it to do its job.</p></li>
+<li><p>To call an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
+<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
+<li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
+<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.</p></li>
+<li><p>When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.</p></li>
+<li><p>When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.</p></li>
+</ul>
+</div>
 </div>
 
 

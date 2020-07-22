@@ -214,20 +214,9 @@ If there is a local variable with the same name as an instance variable, the var
      }
   }
 
-Summary
--------
-
-- **Scope** is defined as where a variable is accessible or can be used.
-
-- Local variables can be declared in the body of constructors and methods. These variables may only be used within the constructor or method and cannot be declared to be public or private.
-
-- When there is a local variable with the same name as an instance variable, the variable name will refer to the local variable instead of the instance variable.
-
-- Formal parameters and variables declared in a method or constructor can only be used within that method or constructor.
 
 
-
-AP Practice
+Practice
 ------------
 
 .. mchoice:: AP5-8-1
@@ -323,4 +312,15 @@ AP Practice
 	
       - Accessor methods are usually public.
 
+
+Summary
+-------
+
+- **Scope** is defined as where a variable is accessible or can be used.
+
+- Local variables can be declared in the body of constructors and methods. These variables may only be used within the constructor or method and cannot be declared to be public or private.
+
+- When there is a local variable with the same name as an instance variable, the variable name will refer to the local variable instead of the instance variable.
+
+- Formal parameters and variables declared in a method or constructor can only be used within that method or constructor.
 

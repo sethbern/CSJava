@@ -195,7 +195,8 @@ Try the Student class below which this time has set methods added. You will need
     
     Drag the definition from the left and drop it on the correct word on the right.  Click the "Check Me" button to see if you are correct.
 
-Mutator methods do not have to have a name with "set" in it, although most do. They can be any methods that change the value of an instance variable or a static variable in the class, as can be seen in the AP Practice questions below.     
+Mutator methods do not have to have a name with "set" in it, although most do. They can be any methods that change the value of an instance 
+variable or a static variable in the class.     
     
 
 |Groupwork| Programming Challenge : Class Pet Setters
@@ -238,14 +239,8 @@ Mutator methods do not have to have a name with "set" in it, although most do. T
      }   
    }  
 
-Summary
---------
 
-- A void method does not return a value. Its header contains the keyword void before the method name.
-
-- A **mutator method** is often a void method that changes the values of instance variables or static variables.
-
-AP Practice
+Practice
 ------------
 
 .. mchoice:: AP5-5-1
@@ -327,3 +322,11 @@ AP Practice
         }
 
     Which of the following changes should be made so that the class definition compiles without error and the method addPeople works as intended?
+
+
+Summary
+--------
+
+- A void method does not return a value. Its header contains the keyword void before the method name.
+
+- A **mutator method** is often a void method that changes the values of instance variables or static variables.

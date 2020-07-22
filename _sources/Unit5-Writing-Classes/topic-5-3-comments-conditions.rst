@@ -48,7 +48,8 @@ There are 3 types of comments in Java:
    
 The special characters ``//`` are used to mark the rest of the line as a comment in many programming languages.  If the comment is going to be multiple lines, we use ``/*`` to start the comment and ``*/`` to end the comment. 
 
-There is also a special version of the multi-line comment, ``/**``  ``*/``, called the documentation comment. Java has a cool tool called |javadoc| that comes with the |Java JDK| that will pull out all of these comments to make documentation of a class as a web page.  This tool generates the official Java documentation too, for example for the |String class|. Although you do not have to use this in the AP exam, it's a good idea to use the documentation comment in front of classes, methods, and instance variables in case you want ot use this tool. 
+There is also a special version of the multi-line comment, ``/**``  ``*/``, called the documentation comment. Java has a cool tool called |javadoc| that comes with the |Java JDK| that will pull out all of these comments to make documentation of a class as a web page.  This tool generates the official Java documentation too, for example for the |String class|. 
+It's a good idea to use the documentation comment in front of classes, methods, and instance variables in case you want ot use this tool. 
 
 |Exercise| **Check your understanding**
 
@@ -262,8 +263,6 @@ Let's consider the substring method in Java. This method has a strong preconditi
 Software Validity and Use-Case Diagrams
 ----------------------------------------
 
-Preconditions and postconditions are covered on the AP CS A exam. Software validity, testing, and use-case diagrams which are discussed in this subsection are not covered on the AP CS A exam, but they are described here because they use preconditions and postconditions and are used by professional programmers.
-
 Determining the preconditions and postconditions help us to test our code and determine the **validity** of our software.  Software validity tests whether the software does what it is supposed to do before it is released. This is sometimes very important. For example, if the code is part of a satellite going to outerspace or is going to be used in an emergency condition, we want to test it thoroughly and make sure it works and is valid before it is put into use. 
 
 Good software testers actually try to break the code! They try all kinds of input to see what the software will do because you never know what users will try or what conditions there will be. So, always think what the preconditions of your code are and see what happens when you break them, and then see if you can protect or warn against that.
@@ -332,7 +331,7 @@ Try the |pogil game| in groups to practice the iterative and incremental agile d
 
    <a href="https://creately.com" target="_blank">Creately.com</a> 
 
-Working in pairs or groups, come up with 4 steps that a user must do to purchase a product, for example a book on Java, in an online store, and list the preconditions and postconditions for each step. You could pretend to buy something online to come up with the steps. (You could use an online drawing tool like |Creately.com| (choose Use-Case Diagrams) to draw a Use-Case diagram for the Online Store System, but it is not required). Don't forget to list  the preconditions and postconditions for each step.  You can type in your answer below.
+Come up with 4 steps that a user must do to purchase a product, for example a book on Java, in an online store, and list the preconditions and postconditions for each step. You could pretend to buy something online to come up with the steps. (You could use an online drawing tool like |Creately.com| (choose Use-Case Diagrams) to draw a Use-Case diagram for the Online Store System, but it is not required). Don't forget to list  the preconditions and postconditions for each step.  You can type in your answer below.
 
 .. shortanswer:: challenge-5-3-use-case-preconditions
 

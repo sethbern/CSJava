@@ -268,19 +268,8 @@ The **this** variable can be used anywhere you would use an object variable.  Yo
    
 
 
-Summary
---------
 
-- Within a non-static method or a constructor, the keyword this is a reference to the current object, the object whose method or constructor is being called.
-
-- this.instanceVariable can be used to distinguish between this object's instance variables and local parameter variables that may have the same variable names.
-
-- Static methods do not have a this reference.
-
-- The this variable can be used anywhere you would use an object variable, even to pass it to another method as an argument. 
-
-
-AP Practice
+Practice
 ------------
 
 .. mchoice:: AP5-9-2
@@ -367,5 +356,16 @@ AP Practice
 
 
 
+
+Summary
+--------
+
+- Within a non-static method or a constructor, the keyword this is a reference to the current object, the object whose method or constructor is being called.
+
+- this.instanceVariable can be used to distinguish between this object's instance variables and local parameter variables that may have the same variable names.
+
+- Static methods do not have a this reference.
+
+- The this variable can be used anywhere you would use an object variable, even to pass it to another method as an argument. 
 
 

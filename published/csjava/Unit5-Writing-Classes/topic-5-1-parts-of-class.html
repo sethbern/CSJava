@@ -350,17 +350,13 @@
   
   <div class="section" id="anatomy-of-a-java-class">
 <h1><span class="section-number">5.1. </span>Anatomy of a Java Class<a class="headerlink" href="#anatomy-of-a-java-class" title="Permalink to this headline">¶</a></h1>
-<p>In Unit 2, we learned to use <strong>classes</strong> and <strong>objects</strong> that are built-in to Java or written by other programmers. In this unit, you will learn to write your own classes and objects!</p>
+<p>In Unit 2, we learned to use <strong>classes</strong> and <strong>objects</strong> that are built-in to Java or
+written by other programmers.
+In this unit, you will learn to write your own classes and objects!</p>
 <div class="section" id="creating-a-class">
 <h2><span class="section-number">5.1.1. </span>Creating a Class<a class="headerlink" href="#creating-a-class" title="Permalink to this headline">¶</a></h2>
 <p>Remember that a <strong>class</strong> in programming defines a new <strong>abstract data type</strong>. When you create <strong>objects</strong>, you create new variables or <strong>instances</strong> of that class data type. For example in Unit 2, we created yertle and myrtle, 2 turtle objects created from the class Turtle, and we used the Java String class to create different String variables, also called <strong>object references</strong>.</p>
-<p>Here is a fun <a href="https://www.youtube.com/watch?v=1JJL0YszYik" target="_blank">video</a> demonstrating the difference between the class House which is a blueprint of a house and the objects which are individual houses built from that blueprint. You can’t live on a blueprint although it describes a house! But you can use it to build houses and live in those. You can think of a class as like a blueprint or a cookie cutter or a factory that produces objects.</p>
-
-    <div class="runestone" style="margin-left: auto; margin-right:auto">
-        <div id="1JJL0YszYik" class="align-left youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="1JJL0YszYik" data-video-divid="1JJL0YszYik" data-video-start="0" data-video-end="-1" ></div>
-        <p class="runestone_caption"><span class="runestone_caption_text">Video: (1JJL0YszYik)</span> </p>
-    </div>
-    <p>To write your own class, you typically start a class declaration with <code class="docutils literal notranslate"><span class="pre">public</span></code> then <code class="docutils literal notranslate"><span class="pre">class</span></code> then the name of the class.  The body of the class is defined inside a <code class="docutils literal notranslate"><span class="pre">{</span></code> and a <code class="docutils literal notranslate"><span class="pre">}</span></code>. For example, the class House below. Then, you can create objects of that new House type by using <code class="docutils literal notranslate"><span class="pre">Classname</span> <span class="pre">objectname</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Classname();</span></code></p>
+<p>To write your own class, you typically start a class declaration with <code class="docutils literal notranslate"><span class="pre">public</span></code> then <code class="docutils literal notranslate"><span class="pre">class</span></code> then the name of the class.  The body of the class is defined inside a <code class="docutils literal notranslate"><span class="pre">{</span></code> and a <code class="docutils literal notranslate"><span class="pre">}</span></code>. For example, the class House below. Then, you can create objects of that new House type by using <code class="docutils literal notranslate"><span class="pre">Classname</span> <span class="pre">objectname</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Classname();</span></code></p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">House</span>
 <span class="p">{</span>
    <span class="c1">// define class here - a blueprint</span>
@@ -445,7 +441,8 @@ public class RunestoneTests extends CodeTestHelper
 <div class="section" id="instance-variables">
 <h2><span class="section-number">5.1.2. </span>Instance Variables<a class="headerlink" href="#instance-variables" title="Permalink to this headline">¶</a></h2>
 <p id="index-0"><strong>Instance Variables</strong> hold the data for an object.  They record what an object needs to know to do work in the program.  Instance variables are also called <strong>attributes</strong>, <strong>fields</strong>, or <strong>properties</strong>.</p>
-<p>Instance variables in general and on the AP CS A exam should be declared <strong>private</strong>.  Think of <code class="docutils literal notranslate"><span class="pre">private</span></code> as like your diary.  Only you should have direct access to it.  In this case <code class="docutils literal notranslate"><span class="pre">private</span></code> means that only the code in this class can directly access the instance  variable values.</p>
+<p>Instance variables in general should be declared <strong>private</strong>.
+In this case <code class="docutils literal notranslate"><span class="pre">private</span></code> means that only the methods in this class can directly access the instance  variable values.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Instance variables are declared right after the class declaration.  They usually start with <code class="docutils literal notranslate"><span class="pre">private</span></code> then the <em>type</em> of the variable and then a <em>name</em> for the variable. Private means only the code in this class has access to it.</p>
@@ -539,7 +536,7 @@ The <strong>void</strong> return type is used to indicate that the method does n
 </div>
 <div class="section" id="object-oriented-design">
 <h2><span class="section-number">5.1.4. </span>Object-Oriented Design<a class="headerlink" href="#object-oriented-design" title="Permalink to this headline">¶</a></h2>
-<p>In <strong>Object-Oriented Design</strong> (OOD), programmers first spend time to decide which classes are needed and then figure out the data and methods in each class. For example, here is the class diagram for the Turtle class that we have seen before. The - in front of the attributes indicate that they are private, and the + in front of the methods indicate that they are public. Here is a <a href="https://medium.com/@smagid_allThings/uml-class-diagrams-tutorial-step-by-step-520fd83b300b" target="_blank">tutorial on class diagrams</a> that explains it in more detail if you are curious (Class diagrams are not on the AP CS A exam). If you want to draw your own, <a href="https://creately.com" target="_blank">Creately.com</a> is a good free online drawing tool for class diagrams.</p>
+<p>In <strong>Object-Oriented Design</strong> (OOD), programmers first spend time to decide which classes are needed and then figure out the data and methods in each class. For example, here is the class diagram for the Turtle class that we have seen before. The - in front of the attributes indicate that they are private, and the + in front of the methods indicate that they are public. Here is a <a href="https://medium.com/@smagid_allThings/uml-class-diagrams-tutorial-step-by-step-520fd83b300b" target="_blank">tutorial on class diagrams</a> that explains it in more detail if you are curious. If you want to draw your own, <a href="https://creately.com" target="_blank">Creately.com</a> is a good free online drawing tool for class diagrams.</p>
 <div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="../_images/turtleUMLClassDiagram1.png"><img alt="Turtle class diagram" src="../_images/turtleUMLClassDiagram1.png" style="width: 350px;" /></a>
 <p class="caption"><span class="caption-text">Figure 3: Turtle Class Diagram</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
@@ -726,20 +723,8 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 </div>
-<div class="section" id="summary">
-<h2><span class="section-number">5.1.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Programmers use code to represent a physical object or nonphysical concept, real or imagined, by defining a class based on the attributes and/or behaviors of the object or concept.</p></li>
-<li><p><strong>Instance Variables</strong> define the attributes or data needed for objects, and <strong>methods</strong> define the behaviors or functions of the object.</p></li>
-<li><p><strong>Data encapsulation</strong> is a technique in which the implementation details of a class are kept hidden from the user. The data is kept private with access only through the public methods that can act on the data in the class.</p></li>
-<li><p>The keywords <strong>public</strong> and <strong>private</strong> affect the access of classes, data, constructors, and methods.</p></li>
-<li><p>The keyword private restricts access to the declaring class, while the keyword public allows access from classes outside the declaring class.</p></li>
-<li><p>Instance variables are encapsulated by using the <strong>private access modifier</strong>.</p></li>
-<li><p>Methods can be public or private, but they are usually public.</p></li>
-</ul>
-</div>
-<div class="section" id="ap-practice">
-<h2><span class="section-number">5.1.7. </span>AP Practice<a class="headerlink" href="#ap-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="practice">
+<h2><span class="section-number">5.1.6. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false" data-random id="AP5-1-1" >
@@ -850,6 +835,18 @@ public class RunestoneTests extends CodeTestHelper
             </ul>
             </div>
             </div>
+<div class="section" id="summary">
+<h2><span class="section-number">5.1.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Programmers use code to represent a physical object or nonphysical concept, real or imagined, by defining a class based on the attributes and/or behaviors of the object or concept.</p></li>
+<li><p><strong>Instance Variables</strong> define the attributes or data needed for objects, and <strong>methods</strong> define the behaviors or functions of the object.</p></li>
+<li><p><strong>Data encapsulation</strong> is a technique in which the implementation details of a class are kept hidden from the user. The data is kept private with access only through the public methods that can act on the data in the class.</p></li>
+<li><p>The keywords <strong>public</strong> and <strong>private</strong> affect the access of classes, data, constructors, and methods.</p></li>
+<li><p>The keyword private restricts access to the declaring class, while the keyword public allows access from classes outside the declaring class.</p></li>
+<li><p>Instance variables are encapsulated by using the <strong>private access modifier</strong>.</p></li>
+<li><p>Methods can be public or private, but they are usually public.</p></li>
+</ul>
+</div>
 </div>
 
 

@@ -24,16 +24,7 @@ Accessor Methods
 =================
 
 Since the instance variables in a class are usually marked as private to the class, programmers provide public methods that allow safe access to the instance variable values in a class. **Accessor methods**, also called **get methods** or **getters**, allow a way to get the value of each instance variable from outside of the class. In the next lesson, we will see **mutator methods**, also called **set methods** or **setters**, that allow a way to change the values of the instance variables. In Unit 2, we also used set/get methods with the Turtle class to get the Turtle object's width, height, xPosition, etc. or to change them.
-
-If you used a language like App Inventor in an AP CSP class, you may have used setter and getter blocks. In App Inventor, you cannot make your own classes, but you can declare UI objects like Button1, Button2 from the Button class and use their get/set methods for any property like below. 
-
-.. figure:: Figures/AppInvSetGet.png
-    :width: 300px
-    :align: center
-    :figclass: align-center
-
-    Figure 1: App Inventor Set and Get blocks for object Button1
-    
+   
 Java programmers write get methods for each instance variable that look like the following. Notice that the get method returns the instance variable's value and it has a return type that is the same type as the variable that it is returning.
 
 .. code-block:: java
@@ -301,24 +292,9 @@ You've been hired to create a software system for the Awesome Animal Clinic! The
   
 
 
-Summary
--------
-- An accessor method allows other objects to obtain the value of instance variables or static variables.
-
-- A non-void method returns a single value. Its header includes the return type in place of the keyword void.
-
-- Accessor methods that return primitive types use "return by value" where a copy of the value is returned. 
-
-- When the return expression is a reference to an object, a copy of that reference is returned, not a copy of the object.
-
-- The return keyword is used to return the flow of control to the point immediately following where the method or constructor was called.
-
-- The toString method is an overridden method that is included in classes to provide a description of a specific object. It generally includes what values are stored in the instance data of the object.
-
-- If System.out.print or System.out.println is passed an object, that object’s toString method is called, and the returned string is printed.
 
 
-AP Practice
+Practice
 ------------
 
 .. mchoice:: AP5-4-1
@@ -394,3 +370,18 @@ AP Practice
       + Correct! Accessor methods have a return type of the instance variable they are returning.
       
 
+Summary
+-------
+- An accessor method allows other objects to obtain the value of instance variables or static variables.
+
+- A non-void method returns a single value. Its header includes the return type in place of the keyword void.
+
+- Accessor methods that return primitive types use "return by value" where a copy of the value is returned. 
+
+- When the return expression is a reference to an object, a copy of that reference is returned, not a copy of the object.
+
+- The return keyword is used to return the flow of control to the point immediately following where the method or constructor was called.
+
+- The toString method is an overridden method that is included in classes to provide a description of a specific object. It generally includes what values are stored in the instance data of the object.
+
+- If System.out.print or System.out.println is passed an object, that object’s toString method is called, and the returned string is printed.
