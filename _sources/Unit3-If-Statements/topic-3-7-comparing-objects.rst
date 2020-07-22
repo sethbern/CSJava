@@ -193,7 +193,9 @@ Since we used the ``new`` keyword, two different String objects will be created 
 
     Figure 3: Two strings that are equal with equals but not with ==.
    
-Note that you can also create Strings using string literals instead of new. String literals behave a little differently because they are re-used if they already exist instead of creating a new object. But you should not see questions with string literals and == on the exam.
+Note that you can also create Strings using string literals instead of new. 
+String literals behave a little differently because they are re-used if they 
+already exist instead of creating a new object. 
 
   
   

@@ -19,6 +19,7 @@ execute a block of code depending on whether a Boolean expression is true or fal
    topic-3-9-practice-mixed-code.rst
    topic-3-10-practice-coding.rst
    Exercises.rst
-   magpieindex.rst
+ 
+..   magpieindex.rst
   
 

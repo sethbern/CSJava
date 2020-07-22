@@ -77,7 +77,11 @@ You can also simplify negated boolean expressions that have relational operators
   - !(c <= d) is equivalent to (c > d)
   - !(c >= d) is equivalent to (c < d)
 
-Although you do not have to memorize De Morgan's Laws for the CS A Exam, you should be able to show that two boolean expressions are equivalent. One way to do this is by using truth tables. For example, we can show that !(a && b) == !a || !b by constructing the truth table below and seeing that they give identical results for the 2 expressions (the last 2 columns in the table below are identical!).
+You should be able to show that two boolean expressions are equivalent. 
+One way to do this is by using truth tables. 
+For example, we can show that !(a && b) == !a || !b by constructing the truth 
+table below and seeing that they give identical results for the 
+2 expressions (the last 2 columns in the table below are identical!).
 
 +-------+-------+-----------+----------+
 | a     | b     | !(a && b) | !a || !b |
