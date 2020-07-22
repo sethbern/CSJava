@@ -29,14 +29,6 @@ if Statements and Control Flow
 	single: if
 	pair: conditional; if
 
-If you took an AP CSP course or used a block programming language like Scratch, you've probably seen if blocks or statements before. *If statements* are found in all programming languages as a way to make choices. Here's a comparison of ifs in App Inventor blocks, AP CSP block and pseudocode and Java ifs.
-
-.. figure:: Figures/BlocksIfComparison.png
-    :width: 100%
-    :align: center
-    :figclass: align-center
-
-    Figure 1: Comparison of App Inventor if block, AP CSP ifs, and Java if statements
 
 The statements in a Java main method normally run or execute one at a time in the order they are found from top to bottom.   **If statements** (also called **conditionals** or **selection**) change the flow of control through the program so that some code is only run when something is true.  In an if statement, if the condition is true then the next statement or a block of statements will execute.  If the condition is false then the next statement or block of statements is skipped.
 
@@ -354,10 +346,13 @@ Here are some rules to follow with if statements to avoid some common errors:
 .. |lesson 2.9| raw:: html
 
    <a href="https://runestone.academy/runestone/books/published/csawesome/Unit2-Using-Objects/topic-2-9-Math.html" target="_blank">lesson 2.9</a>
- 
+
 Have you ever seen a Magic 8 ball? You ask it a yes-no question and then shake it to get a random response like "Signs point to yes!", "Very doubtful", etc. If you've never seen a Magic 8 ball, check out this |video|.
 
-We encourage you to work in pairs for this challenge. Come up with 8 responses to yes-no questions. Write a program below that chooses a random number from 1 to 8 and then uses if statements to test the number and print out the associated random response from 1-8. If you need help with random numbers, see |lesson 2.9|.
+Come up with 8 responses to yes-no questions. 
+Write a program below that chooses a random number from 1 to 8 and then uses if 
+statements to test the number and print out the associated random response from 1-8. 
+If you need help with random numbers, see lesson 2.9.
 
 .. activecode:: challenge3-2-if-Magic8ball
    :language: java

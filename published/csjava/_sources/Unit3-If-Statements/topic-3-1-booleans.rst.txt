@@ -34,7 +34,11 @@ Boolean Expressions
 Testing Equality (==)
 ----------------------
 
-Primitive values like ints and reference values like Strings can be compared using the operators == and != (not equal) to return boolean values. 
+Primitive values like ints and reference values like Strings can be compared 
+using the operators == and != (not equal) to return boolean values.   The code ``x == 4`` evaluates to
+``true`` if the memory location for variable x currently stores the value 4, otherwise the expression is ``false``.
+Note that ``x == 4`` does not assign a value to variable x, rather it simply compares the value of x to 4.
+
 
 .. note::
 
@@ -153,7 +157,7 @@ The **Relational Operators** below in Java are used to compare numeric values or
 - == Equals
 - != Does not equal
 
-If you have trouble telling < and > apart, think of a number line and think of < and > as arrows; < (less than) points towards 0 and smaller numbers on the number line and > (greater than) points towards the larger numbers on the number line. With <= and >=, remember to write the two symbols in the order that you would say them "less than" followed by "or equal to". 
+With <= and >=, remember to write the two symbols in the order that you would say them "less than" followed by "or equal to". 
 
 |CodingEx| **Coding Exercise**
 

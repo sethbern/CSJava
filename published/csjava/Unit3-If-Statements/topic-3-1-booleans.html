@@ -353,7 +353,10 @@
 <p><strong>Boolean</strong> variables or expressions can only have <strong>true</strong> or <strong>false</strong> values.</p>
 <div class="section" id="testing-equality">
 <h2><span class="section-number">3.1.1. </span>Testing Equality (==)<a class="headerlink" href="#testing-equality" title="Permalink to this headline">¶</a></h2>
-<p>Primitive values like ints and reference values like Strings can be compared using the operators == and != (not equal) to return boolean values.</p>
+<p>Primitive values like ints and reference values like Strings can be compared
+using the operators == and != (not equal) to return boolean values.   The code <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">4</span></code> evaluates to
+<code class="docutils literal notranslate"><span class="pre">true</span></code> if the memory location for variable x currently stores the value 4, otherwise the expression is <code class="docutils literal notranslate"><span class="pre">false</span></code>.
+Note that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">4</span></code> does not assign a value to variable x, rather it simply compares the value of x to 4.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>One = sign changes the value of a variable. Two == equal signs are used to test if a variable holds a certain value, without changing its value!</p>
@@ -464,7 +467,7 @@ public class BoolTestRef
 <li><p>== Equals</p></li>
 <li><p>!= Does not equal</p></li>
 </ul>
-<p>If you have trouble telling &lt; and &gt; apart, think of a number line and think of &lt; and &gt; as arrows; &lt; (less than) points towards 0 and smaller numbers on the number line and &gt; (greater than) points towards the larger numbers on the number line. With &lt;= and &gt;=, remember to write the two symbols in the order that you would say them “less than” followed by “or equal to”.</p>
+<p>With &lt;= and &gt;=, remember to write the two symbols in the order that you would say them “less than” followed by “or equal to”.</p>
 <p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="bool2" class="runestone explainer ac_section alert alert-warning">

@@ -350,15 +350,10 @@
   
   <div class="section" id="if-statements-and-control-flow">
 <h1><span class="section-number">3.2. </span>if Statements and Control Flow<a class="headerlink" href="#if-statements-and-control-flow" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">If you took an AP CSP course or used a block programming language like Scratch, you’ve probably seen if blocks or statements before. <em>If statements</em> are found in all programming languages as a way to make choices. Here’s a comparison of ifs in App Inventor blocks, AP CSP block and pseudocode and Java ifs.</p>
+<p id="index-0">The statements in a Java main method normally run or execute one at a time in the order they are found from top to bottom.   <strong>If statements</strong> (also called <strong>conditionals</strong> or <strong>selection</strong>) change the flow of control through the program so that some code is only run when something is true.  In an if statement, if the condition is true then the next statement or a block of statements will execute.  If the condition is false then the next statement or block of statements is skipped.</p>
 <div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="../_images/BlocksIfComparison.png"><img alt="../_images/BlocksIfComparison.png" src="../_images/BlocksIfComparison.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Figure 1: Comparison of App Inventor if block, AP CSP ifs, and Java if statements</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>The statements in a Java main method normally run or execute one at a time in the order they are found from top to bottom.   <strong>If statements</strong> (also called <strong>conditionals</strong> or <strong>selection</strong>) change the flow of control through the program so that some code is only run when something is true.  In an if statement, if the condition is true then the next statement or a block of statements will execute.  If the condition is false then the next statement or block of statements is skipped.</p>
-<div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../_images/Condition.png"><img alt="../_images/Condition.png" src="../_images/Condition.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-text">Figure 2: The order that statements execute in a conditional</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 2: The order that statements execute in a conditional</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>A conditional uses the keyword <code class="docutils literal notranslate"><span class="pre">if</span></code> followed by Boolean expression inside of  an open parenthesis <code class="docutils literal notranslate"><span class="pre">(</span></code> and a close parenthesis <code class="docutils literal notranslate"><span class="pre">)</span></code> and then followed by a single statement or block of statements.  The single statement or block of statements are only executed if the condition is true.  The open curly brace <code class="docutils literal notranslate"><span class="pre">{</span></code> and a close curly brace <code class="docutils literal notranslate"><span class="pre">}</span></code> are used to group a block of statements together.  It is recommended to always put in the curly braces even if you have just one statement under the if statement. The questions you will see on the AP exam will use curly braces.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// A single if statement</span>
@@ -641,7 +636,10 @@ import static org.junit.Assert.*;
 <h2><span class="section-number">3.2.3. </span><a class="reference internal" href="../_images/groupwork3.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork3.png" style="width: 35px;" /></a> Programming Challenge : Magic 8 Ball<a class="headerlink" href="#groupwork-programming-challenge-magic-8-ball" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/Magic_eight_ball.png"><img alt="Magic 8 Ball" class="align-left" src="../_images/Magic_eight_ball.png" style="width: 100px;" /></a>
 <p>Have you ever seen a Magic 8 ball? You ask it a yes-no question and then shake it to get a random response like “Signs point to yes!”, “Very doubtful”, etc. If you’ve never seen a Magic 8 ball, check out this <a href="https://www.youtube.com/watch?v=WSaS17CSS4c" target="_blank">video</a>.</p>
-<p>We encourage you to work in pairs for this challenge. Come up with 8 responses to yes-no questions. Write a program below that chooses a random number from 1 to 8 and then uses if statements to test the number and print out the associated random response from 1-8. If you need help with random numbers, see <a href="https://runestone.academy/runestone/books/published/csawesome/Unit2-Using-Objects/topic-2-9-Math.html" target="_blank">lesson 2.9</a>.</p>
+<p>Come up with 8 responses to yes-no questions.
+Write a program below that chooses a random number from 1 to 8 and then uses if
+statements to test the number and print out the associated random response from 1-8.
+If you need help with random numbers, see lesson 2.9.</p>
 
 <div data-childcomponent="challenge3-2-if-Magic8ball" class="runestone explainer ac_section alert alert-warning">
 

@@ -1,14 +1,9 @@
-.. image:: ../../_static/CSAwesomeLogo.png
-    :width: 350
-    :align: center
-    
-
 Boolean Expressions and If Statements
 :::::::::::::::::::::::::::::::::::::
 
-Class Periods: 11-13 (including lab)
+This unit introduces If-statements, which allow you to conditionally 
+execute a block of code depending on whether a Boolean expression is true or false.
 
-AP CS A Exam Weighting: 15-17.5%
 
 .. toctree::
    :maxdepth: 3
