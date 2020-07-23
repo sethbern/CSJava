@@ -9,7 +9,6 @@ Multiple Choice Exercises
 Easier Multiple Choice Questions
 ----------------------------------
 
-
 .. mchoice:: qce_1
    :practice: T
    :answer_a: x is negative
@@ -119,6 +118,7 @@ Medium Multiple Choice Questions
 
    Which of the following expressions is equivalent to !(c || d) ?  
    
+
 .. mchoice:: qcm_2
    :practice: T
    :answer_a: x = 0;
@@ -139,6 +139,7 @@ Medium Multiple Choice Questions
         x = x * 2;
      if (x > 4) 
         x = 0;
+
 
 .. mchoice:: qcm_3
    :practice: T
@@ -162,6 +163,7 @@ Medium Multiple Choice Questions
         x = -x;
      if (x < 0) 
         x = 0;
+
 
 .. mchoice:: qcm_4
    :practice: T
@@ -212,8 +214,6 @@ Medium Multiple Choice Questions
 Hard Multiple Choice Questions
 ----------------------------------
 
-
-    
 .. .. mchoice:: qch_2
    :practice: T
    :answer_a: s == (m - 5) && (2 * s + 3) == (m + 3)
@@ -239,6 +239,7 @@ Hard Multiple Choice Questions
         }
      }
 
+
 .. mchoice:: qch_3
    :practice: T
    :answer_a: (x > 15 && x < 18) && (x > 10)
@@ -257,6 +258,7 @@ Hard Multiple Choice Questions
 
      (x > 15 && x < 18) || (x > 10 || y < 20)
      
+
 .. mchoice:: qch_4
    :practice: T
    :answer_a: first
@@ -287,6 +289,7 @@ Hard Multiple Choice Questions
          System.out.print("second ");
       System.out.print("third");
    
+
 .. mchoice:: qch_5
    :practice: T
    :answer_a: first 
@@ -308,6 +311,8 @@ Hard Multiple Choice Questions
       if (y / x > 0) 
          System.out.print("first ");
          System.out.print("second ");
+
+
    
    
    

@@ -31,6 +31,7 @@ Easier Multiple Choice Questions
         System.out.print(i + " ");
      }
 
+
 .. mchoice:: qle_2
    :practice: T
    :answer_a: 9
@@ -52,6 +53,7 @@ Easier Multiple Choice Questions
         System.out.print("*"); 
      }
 
+
 .. mchoice:: qle_3
    :practice: T
    :answer_a: 5 4 3 2 1
@@ -72,7 +74,8 @@ Easier Multiple Choice Questions
         x++; 
         System.out.print(x + " ");
      }
-     
+
+ 
 .. mchoice:: qle_4
    :practice: T
    :answer_a: 7
@@ -93,7 +96,8 @@ Easier Multiple Choice Questions
      {  
         System.out.print("*"); 
      }
-     
+
+    
 .. mchoice:: qle_5
    :practice: T
    :answer_a: 4
@@ -112,7 +116,8 @@ Easier Multiple Choice Questions
      {  
         System.out.print("*"); 
      }
-     
+
+
 .. mchoice:: qle_6
    :practice: T
    :answer_a: 7
@@ -131,7 +136,8 @@ Easier Multiple Choice Questions
      {  
         System.out.print("*"); 
      }
-     
+
+
 .. mchoice:: qle_7
    :practice: T
    :answer_a: 4
@@ -150,7 +156,8 @@ Easier Multiple Choice Questions
      {  
         System.out.print("*"); 
      }
-     
+
+
 .. mchoice:: qle_8
    :practice: T
    :answer_a: 6
@@ -169,6 +176,7 @@ Easier Multiple Choice Questions
      {  
         System.out.print("*"); 
      }
+
 
 .. mchoice:: qle_9
    :practice: T
@@ -192,7 +200,8 @@ Easier Multiple Choice Questions
         System.out.print(x + " ");
         x++;
      }
-     
+
+
 .. mchoice:: qle_10
    :practice: T
    :answer_a: 3 4 5 6 7 8 
@@ -218,13 +227,8 @@ Easier Multiple Choice Questions
      }
 
 
-
-   
-
-
 Medium Multiple Choice Questions
 ----------------------------------
-
 
 .. mchoice:: qlm_1
    :practice: T
@@ -248,6 +252,7 @@ Medium Multiple Choice Questions
         for (int j = 0; j < 5; j++)
            System.out.println("*");
      }
+
 
 .. mchoice:: qlm_2
    :practice: T
@@ -308,6 +313,7 @@ Medium Multiple Choice Questions
              System.out.println();
           }
 
+
 .. mchoice:: qlm_3
    :practice: T
    :answer_a: 0 2 4 6 8 10 12 14 16 18
@@ -330,6 +336,7 @@ Medium Multiple Choice Questions
         if (k % 3 == 1)
            System.out.print(k + " ");
      }
+
 
 .. mchoice:: qlm_4
    :practice: T
@@ -390,6 +397,7 @@ Medium Multiple Choice Questions
              System.out.println();
           }
 
+
 .. mchoice:: qlm_5n
    :practice: T
    :answer_a: var1 = 0, var2 = 2
@@ -415,39 +423,6 @@ Medium Multiple Choice Questions
         var1 = var1 + 1;
         var2 = var2 - 1;
      }
-
-
-
-.. Hard Multiple Choice Questions
-.. ----------------------------------
-
-
-.. This problem is about big O notation.  
-.. .. mchoice:: qlh_1n
-   :practice: T
-   :answer_a: O(log n)
-   :answer_b: O(n log n)
-   :answer_c: O(n)
-   :answer_d: O(n*n)
-   :answer_e: O(n!)
-   :correct: b
-   :feedback_a: This would be correct if there was just the inner loop.
-   :feedback_b: The outer loop is n but the inner loop is log n since k is multiplied by 2 each time through the loop.
-   :feedback_c: This would be correct if there was just the outer loop.
-   :feedback_d: This would be correct if the inner lop was incremented by 1 instead of multiplied by 2.
-   :feedback_e: To get n! as big-oh we would need n nested loops.
-
-   Which best characterizes the running time of the following code segment?
-   
-   .. code-block:: java
-
-     for (int j = 1; j <= n; j++) {
-        for (int k = 1; k <= n; k = k * 2)
-           System.out.println(j + " " + k);
-     }
-
-
-
 
 
 
