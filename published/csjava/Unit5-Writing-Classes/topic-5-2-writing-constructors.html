@@ -443,10 +443,105 @@
 
             </ul>
             </div>
+            <div class="section" id="practice">
+<h2><span class="section-number">5.2.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-2-1" >
+            <p>5-2-3:  Consider the following class. Which of the following successfully creates a new Cat object?</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">color</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">breed</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isHungry</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span><span class="p">;</span>
+        <span class="n">breed</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span><span class="p">;</span>
+        <span class="n">isHungry</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">c</span><span class="p">,</span> <span class="n">String</span> <span class="n">b</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">h</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="n">breed</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">isHungry</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">I</span><span class="p">.</span>   <span class="n">Cat</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+<span class="n">II</span><span class="p">.</span>  <span class="n">Cat</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="s">&quot;Shorthair&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="n">III</span><span class="p">.</span> <span class="n">String</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">;</span>
+     <span class="kt">boolean</span> <span class="n">hungry</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="n">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="s">&quot;Tabby&quot;</span><span class="p">,</span> <span class="n">hungry</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+
+            <li data-component="answer"  id="AP2-2-1_opt_a">I only</li><li data-component="feedback">I is one of the correct constructors but the second constructor can also be used.</li>
+            
+            <li data-component="answer"  id="AP2-2-1_opt_b">I and II</li><li data-component="feedback">II is not correct because there is no Cat constructor that takes 2 parameters.</li>
+            
+            <li data-component="answer" data-correct id="AP2-2-1_opt_c">I and III</li><li data-component="feedback">I and III call the correct constructors.</li>
+            
+            <li data-component="answer"  id="AP2-2-1_opt_d">I, II, and III</li><li data-component="feedback">II is not correct because there is no Cat constructor that takes 2 parameters.</li>
+            
+            <li data-component="answer"  id="AP2-2-1_opt_e">II and III</li><li data-component="feedback">II is not correct because there is no Cat constructor that takes 2 parameters.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-2-2" >
+            <p>5-2-4: Consider the following class.  Which of the following code segments will construct a Movie object m with a title of “Lion King” and rating of 8.0?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Movie</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">director</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">rating</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">inTheaters</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Movie</span><span class="p">(</span><span class="n">String</span> <span class="n">t</span><span class="p">,</span> <span class="n">String</span> <span class="n">d</span><span class="p">,</span> <span class="kt">double</span> <span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+        <span class="n">rating</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+        <span class="n">inTheaters</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Movie</span><span class="p">(</span><span class="n">String</span> <span class="n">t</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span><span class="p">;</span>
+        <span class="n">rating</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">inTheaters</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="AP2-2-2_opt_a">Movie m = new Movie(8.0, "Lion King");</li><li data-component="feedback">There is no Movie constructor with 2 parameters.</li>
+            
+            <li data-component="answer"  id="AP2-2-2_opt_b">Movie m = Movie("Lion King", 8.0);</li><li data-component="feedback">There is no Movie constructor with 2 parameters.</li>
+            
+            <li data-component="answer"  id="AP2-2-2_opt_c">Movie m = new Movie();</li><li data-component="feedback">This creates a Movie object but it does not have the correct title and rating.</li>
+            
+            <li data-component="answer" data-correct id="AP2-2-2_opt_d">Movie m = new Movie("Lion King", "Disney", 8.0);</li><li data-component="feedback">This creates a Movie object with the correct title and rating.</li>
+            
+            <li data-component="answer"  id="AP2-2-2_opt_e">Movie m = new Movie("Lion King");</li><li data-component="feedback">This creates a Movie object but it does not have a rating of 8.0.</li>
+            
+
+            </ul>
+            </div>
             <p><a class="reference internal" href="../_images/codingExercise5.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise5.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="class-Fraction" class="runestone explainer ac_section alert alert-warning">
-<p>The following class defines a Fraction with the instance variables numerator and denominator. It uses 2 constructors. Note that this constructor sets the default instance variable values to 1 rather than 0 – so we don’t end up with divide by zero. Try to guess what it will print before you run it.  Hint!  Remember to start with the main method! You can also view it in the <a href="http://www.pythontutor.com/visualize.html#code=%20%20public%20class%20Fraction%0A%20%20%7B%0A%20%20%20%20%20//%20%20instance%20variables%0A%20%20%20%20%20private%20int%20numerator%3B%0A%20%20%20%20%20private%20int%20denominator%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20set%20instance%20variables%20to%20default%20values%0A%20%20%20%20%20public%20Fraction%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20numerator%20%3D%201%3B%0A%20%20%20%20%20%20%20%20denominator%20%3D%201%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20set%20instance%20variables%20to%20init%20parameters%0A%20%20%20%20%20public%20Fraction%28int%20initNumerator,%20int%20initDenominator%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20numerator%20%3D%20initNumerator%3B%0A%20%20%20%20%20%20%20%20denominator%20%3D%20initDenominator%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Print%20fraction%0A%20%20%20%20%20public%20void%20print%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20System.out.println%28numerator%20%2B%20%22/%22%20%2B%20denominator%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20Fraction%20f1%20%3D%20new%20Fraction%28%29%3B%0A%20%20%20%20%20%20%20%20Fraction%20f2%20%3D%20new%20Fraction%281,2%29%3B%0A%20%20%20%20%20%20%20%20//%20What%20will%20these%20print%20out%3F%0A%20%20%20%20%20%20%20%20f1.print%28%29%3B%0A%20%20%20%20%20%20%20%20f2.print%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D&cumulative=false&curInstr=28&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> by clicking on the Code Lens button below.</p>
+<p>The following class defines a Fraction with the instance variables numerator and denominator.
+It uses 2 constructors. Note that this constructor sets the default instance
+variable values to 1 rather than 0 – so we don’t end up with divide by zero. Try to guess what it will print before you run it.  Hint!  Remember to start with the main method! You can also view it in the <a href="http://www.pythontutor.com/visualize.html#code=%20%20public%20class%20Fraction%0A%20%20%7B%0A%20%20%20%20%20//%20%20instance%20variables%0A%20%20%20%20%20private%20int%20numerator%3B%0A%20%20%20%20%20private%20int%20denominator%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20set%20instance%20variables%20to%20default%20values%0A%20%20%20%20%20public%20Fraction%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20numerator%20%3D%201%3B%0A%20%20%20%20%20%20%20%20denominator%20%3D%201%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20set%20instance%20variables%20to%20init%20parameters%0A%20%20%20%20%20public%20Fraction%28int%20initNumerator,%20int%20initDenominator%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20numerator%20%3D%20initNumerator%3B%0A%20%20%20%20%20%20%20%20denominator%20%3D%20initDenominator%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Print%20fraction%0A%20%20%20%20%20public%20void%20print%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20System.out.println%28numerator%20%2B%20%22/%22%20%2B%20denominator%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20Fraction%20f1%20%3D%20new%20Fraction%28%29%3B%0A%20%20%20%20%20%20%20%20Fraction%20f2%20%3D%20new%20Fraction%281,2%29%3B%0A%20%20%20%20%20%20%20%20//%20What%20will%20these%20print%20out%3F%0A%20%20%20%20%20%20%20%20f1.print%28%29%3B%0A%20%20%20%20%20%20%20%20f2.print%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D&cumulative=false&curInstr=28&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> by clicking on the Code Lens button below.</p>
 
 <textarea data-component="activecode" id=class-Fraction data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -602,8 +697,9 @@ public class Car
  <span class="p">}</span>
 </pre></div>
 </div>
+</div>
 <div class="section" id="groupwork-programming-challenge-student-class">
-<h2><span class="section-number">5.2.1. </span><a class="reference internal" href="../_images/groupwork5.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork5.png" style="width: 35px;" /></a> Programming Challenge : Student Class<a class="headerlink" href="#groupwork-programming-challenge-student-class" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2.2. </span><a class="reference internal" href="../_images/groupwork5.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork5.png" style="width: 35px;" /></a> Programming Challenge : Student Class<a class="headerlink" href="#groupwork-programming-challenge-student-class" title="Permalink to this headline">¶</a></h2>
 <p>This challenge requires you to create a Student class with constructors.</p>
 <ol class="arabic simple">
 <li><p>First, brainstorm in pairs to do the <strong>Object-Oriented Design</strong> for a Student class. What data should we store about Students? Come up with at least 4 different instance variables. What are the data types for the instance variables?</p></li>
@@ -749,12 +845,12 @@ public class Car
 </textarea>
 </div>
 </div>
-<div class="section" id="practice">
-<h2><span class="section-number">5.2.2. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2><span class="section-number">5.2.3. </span>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-2-1" >
-            <p>5-2-3: Consider the definition of the Cat class below. The class uses the instance variable isSenior to indicate whether a cat is old enough to be considered a senior cat or not.</p>
+            <p>5-2-5: Consider the definition of the Cat class below. The class uses the instance variable isSenior to indicate whether a cat is old enough to be considered a senior cat or not.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
 <span class="p">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
@@ -794,7 +890,7 @@ public class Car
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-2-2" >
-            <p>5-2-4: Consider the following class definition. Each object of the class Cat will store the cat’s name as name, the cat’s age as age, and the number of kittens the cat has as kittens. Which of the following code segments, found in a class other than Cat, can be used to create a cat that is 5 years old with no kittens?</p>
+            <p>5-2-6: Consider the following class definition. Each object of the class Cat will store the cat’s name as name, the cat’s age as age, and the number of kittens the cat has as kittens. Which of the following code segments, found in a class other than Cat, can be used to create a cat that is 5 years old with no kittens?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
 <span class="p">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
@@ -838,7 +934,7 @@ public class Car
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-2-3" >
-            <p>5-2-5: Consider the following class definition.</p>
+            <p>5-2-7: Consider the following class definition.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
 <span class="p">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">color</span><span class="p">;</span>
@@ -897,7 +993,7 @@ public class Car
             </div>
             </div>
 <div class="section" id="summary">
-<h2><span class="section-number">5.2.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Constructors</strong> are used to set the initial state of an object, which includes initial values for all instance variables.</p></li>
 <li><p>When no constructor is written, Java provides a no-argument <strong>default constructor</strong>, and the instance variables are set to their default values (0 for int and double, null for objects like String).</p></li>

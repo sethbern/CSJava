@@ -354,7 +354,7 @@
 <div class="section" id="enhanced-for-each-loop">
 <h2><span class="section-number">7.3.1. </span>Enhanced For Each Loop<a class="headerlink" href="#enhanced-for-each-loop" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">You can use a enhanced for-each loop to traverse through all of the items in a list, just like you do with an array as shown in the main method below.</p>
-<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise8.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise8.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="listForEachLoop" class="runestone explainer ac_section alert alert-warning">
 <p>What does the following code do? Guess before you run it. Then, add another enhanced for each loop that computes the product of all the elements in myList by multiplying them and prints it out.</p>
@@ -387,7 +387,7 @@ public class Test
 <h2><span class="section-number">7.3.2. </span>For Loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">¶</a></h2>
 <p>You can also use a      <code class="docutils literal notranslate"><span class="pre">while</span></code> or <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to process list elements using the index. The ArrayList index starts at 0 just like arrays, but instead of using the square brackets [] to access elements, you  use the <code class="docutils literal notranslate"><span class="pre">get(index)</span></code> to get the value at the index and <code class="docutils literal notranslate"><span class="pre">set(index,value)</span></code> to set the element at an index to a new value.
 If you try to use an index that is outside of the range of 0 to the number of elements − 1 in an ArrayList, your code will throw an <strong>ArrayIndexOutOfBoundsException</strong>, just like in arrays.</p>
-<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise8.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise8.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="listForLoop" class="runestone explainer ac_section alert alert-warning">
 <p>The following code will throw an ArrayIndexOutOfBoundsException. Can you fix it?</p>
@@ -419,7 +419,7 @@ public class TestForLoop
 <div class="section" id="while-loop">
 <h2><span class="section-number">7.3.3. </span>While Loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">¶</a></h2>
 <p>The example below demonstrates a while loop and an object-oriented approach where the list is a field of the current object and you use an object method rather than a class (static) method to loop through the list.</p>
-<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise8.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise8.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="listForEachLoopObj" class="runestone explainer ac_section alert alert-warning">
 <p>What does the following code do? Guess what it does before running it. Can you change the code so that it only removes the first name it finds in the list that matches? (Hint: use the found variable).</p>
@@ -472,7 +472,7 @@ public class ListWorker
 </div>
 <p>Be careful when you remove items from a list as you loop through it.  Remember that removing an item from a list will shift the remaining items to the left.   Notice that the method above only increments the current index if an item was not removed from the list.  If you increment the index in all cases you will miss checking some of the elements since the rest of the items shift left when you remove one.</p>
 <p>Do not use the enhanced for each loop if you want to add or remove elements when traversing a list because it will throw a <strong>ConcurrentModificationException</strong> error. Since for each loops do not use an index, you cannot do this special case of incrementing only if it is changed. So if you are going to add or remove items or you need the index, use a regular for loop or a while loop.</p>
-<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise8.png"><img alt="exercise" class="align-middle" src="../_images/exercise8.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qloopList_1" >
@@ -570,7 +570,7 @@ nameList.add(name); #distractor
     </div>
 <div class="section" id="arraylist-of-student-objects">
 <h2><span class="section-number">7.3.4. </span>ArrayList of Student Objects<a class="headerlink" href="#arraylist-of-student-objects" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise8.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise8.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>You can put any kind of Objects into an ArrayList. For example, here is an ArrayList of Students. Although the print statement works here, you may want a nicer printout.</p>
 
 <div data-childcomponent="StudentList" class="runestone explainer ac_section alert alert-warning">
@@ -618,7 +618,7 @@ class Student
 </div>
 </div>
 <div class="section" id="groupwork-programming-challenge-frq-word-pairs">
-<h2><span class="section-number">7.3.5. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : FRQ Word Pairs<a class="headerlink" href="#groupwork-programming-challenge-frq-word-pairs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3.5. </span><a class="reference internal" href="../_images/groupwork8.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork8.png" style="width: 35px;" /></a> Programming Challenge : FRQ Word Pairs<a class="headerlink" href="#groupwork-programming-challenge-frq-word-pairs" title="Permalink to this headline">¶</a></h2>
 <p>This challenge is based on the <a href="https://secure-media.collegeboard.org/ap/pdf/ap18-frq-computer-science-a.pdf#page=7" target="_blank" style="text-decoration:underline">2018 Free Response Question #2 WordPair</a>. We encourage you to work in pairs on this challenge.</p>
 <p>You are given a class called WordPair that can store pairs of words.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">WordPair</span> <span class="p">{</span>

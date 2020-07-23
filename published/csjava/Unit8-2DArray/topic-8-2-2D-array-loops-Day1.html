@@ -363,7 +363,7 @@
 <p class="admonition-title">Note</p>
 <p>Note that length is a field and not a method, so you don’t add parentheses after length.  However, if you use parentheses after length during the exam, you won’t lose any points. Since for the AP CS A exam all two-dimensional arrays are rectangular arrays (arrays that have the same number of columns in each row) you can just use the length of the first inner array as the number of columns as shown by <code class="docutils literal notranslate"><span class="pre">ticketInfo[0].length</span></code>.</p>
 </div>
-<p><a class="reference internal" href="../_images/exercise8.png"><img alt="exercise" class="align-middle" src="../_images/exercise8.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qa2ldb_2" >
@@ -408,7 +408,7 @@
  <span class="p">}</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../_images/codingExercise8.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise8.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="lcgetAverage" class="runestone explainer ac_section alert alert-warning">
 <p>What does the following code do? Add another row of numbers to the matrix. Will the loops traverse this row too? Note that an array can be passed in as an argument to a method. Click on the CodeLens button and then next to step through this code in the visualizer.</p>
@@ -483,7 +483,7 @@ import static org.junit.Assert.*;
 <li><p>The number of columns is <code class="docutils literal notranslate"><span class="pre">a[0].length</span></code></p></li>
 <li><p>The number of times this loop executes is the number of rows times the number of columns.</p></li>
 </ul>
-<p><a class="reference internal" href="../_images/exercise8.png"><img alt="exercise" class="align-middle" src="../_images/exercise8.png" style="width: 35px;" /></a> <strong>Mixed up programs</strong></p>
+<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Mixed up programs</strong></p>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="9_largest"  data-adaptive="true"      data-numbered="left" >
@@ -512,7 +512,7 @@ import static org.junit.Assert.*;
         </div>
     <p>You can step through this code using the Java Visualizer by clicking on the following <a href= "http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+Test+%7B%0A+++%0A+++public+static+int+getLargest(int%5B%5D%5B%5D+arr)++%7B%0A++++int+largest+%3D+arr%5B0%5D%5B0%5D%3B%0A++++for+(int+row+%3D+0%3B+row+%3C+arr.length%3B+row%2B%2B)++%7B%0A++++++for+(int+col+%3D+0%3B+col+%3C+arr%5B0%5D.length%3B+col%2B%2B)++%7B%0A++++++++if+(arr%5Brow%5D%5Bcol%5D+%3E+largest)++%7B%0A++++++++++largest+%3D+arr%5Brow%5D%5Bcol%5D%3B%0A++++++++%7D+//+end+if%0A++++++%7D+//+end+column+loop%0A++++%7D+//+end+row+loop%0A++++return+largest%3B%0A+++%7D+//+end+method%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D%5B%5D+testArray+%3D+%7B%7B-32,+-6,+-3%7D,+%7B-392,+-93,+-2%7D%7D%3B%0A++++++System.out.println(getLargest(testArray))%3B%0A+++%7D%0A%7D&mode=display&curInstr=40" style="text-decoration:underline" target="_blank" >Java Visualizer</a>.</p>
 <p>Most nested loops with 2D Arrays use “row-major order” where the outer loop goes through each row. However, you can write nested loops that traverse in “column-major order” like below.</p>
-<p><a class="reference internal" href="../_images/codingExercise8.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise8.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="ColumnMajorTraversal" class="runestone explainer ac_section alert alert-warning">
 <p>What will the following code print out? Try to guess before you run it. Then, step through it with the CodeLens button.</p>

@@ -584,22 +584,16 @@ public class TurtleTest {
         </pre>
         </div>
     <p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
-<p>When you write a class like the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> class, you can create many objects of that class type. In the code below,
-two turtle objects are created: <code class="docutils literal notranslate"><span class="pre">yertle</span></code> and <code class="docutils literal notranslate"><span class="pre">myrtle</span></code>.  You can name your turtle and add in a line like the following in the main method to make it move:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// To create or declare a new object, write:</span>
-<span class="c1">// ClassName variableName = new ClassName(arguments);</span>
-<span class="n">Turtle</span> <span class="n">yourTurtleName</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>
-<span class="n">yourTurtlename</span><span class="p">.</span><span class="na">forward</span><span class="p">();</span>
-</pre></div>
-</div>
+<p>When you write a class like the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> class, you can create many objects
+of that class type. In the code below,
+two turtle objects are created: <code class="docutils literal notranslate"><span class="pre">yertle</span></code> and <code class="docutils literal notranslate"><span class="pre">myrtle</span></code>.  Notice each call to “forward”, “turnLeft” and
+“turnRight” is prefaced with one of the two turtle names, which allows each turtle to move and turn independently.</p>
 <p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
-<div data-childcomponent="TurtleTest3" class="runestone explainer ac_section alert alert-warning">
-<p>Run the code below.  Notice each turtle has a different color pen for drawing its path.
-Add a third turtle object that draws a square by repeatedly turning left and moving forward.
-Give you new turtle a unique variable name.</p>
+<div data-childcomponent="TurtleTest3a" class="runestone explainer ac_section alert alert-warning">
+<p>Run the code below.  Notice each turtle has a different color pen for drawing its path.</p>
 
-<textarea data-component="activecode" id=TurtleTest3 data-lang="java" 
+<textarea data-component="activecode" id=TurtleTest3a data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
@@ -643,8 +637,8 @@ public class RunestoneTests extends CodeTestHelper
 
         int count = countOccurences(code, expect);
 
-        boolean passed = count >= 3;
-        passed = getResults("3+ Turtles", "" + count  + " Turtles", "Add a new Turtle(s)", passed);
+        boolean passed = count >= 2;
+        passed = getResults("2+ Turtles", "" + count  + " Turtles", "Create two turtles", passed);
         assertTrue(passed);
     }
 }
@@ -728,14 +722,7 @@ Unit 5 covers how to create your own classes.</p>
 
             </ul>
             </div>
-            
-<div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=cats  >
-<p>2-1-11: What are some attributes of cats? What are some behaviors of cats? (Note that attributes are nouns or adjectives describing features of cats, and behaviors are verbs).</p>
-
-</div>
-</div> <!-- end of runestone div -->
-</div>
+            </div>
 <div class="section" id="groupwork-programming-challenge-turtle-drawing">
 <h2><span class="section-number">2.1.3. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge : Turtle Drawing<a class="headerlink" href="#groupwork-programming-challenge-turtle-drawing" title="Permalink to this headline">¶</a></h2>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object below and have it draw a shape.
@@ -867,7 +854,7 @@ public class RunestoneTests extends CodeTestHelper
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-1-1" >
             <dl>
-<dt>2-1-12: A student has created a <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. The class contains instance variables (attributes) to represent the following.</dt><dd><ul class="simple">
+<dt>2-1-11: A student has created a <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class. The class contains instance variables (attributes) to represent the following.</dt><dd><ul class="simple">
 <li><p>A String variable called <code class="docutils literal notranslate"><span class="pre">breed</span></code> to represent the breed of the dog</p></li>
 <li><p>An int variable called <code class="docutils literal notranslate"><span class="pre">age</span></code> to represent the age of the dog</p></li>
 <li><p>A String variable called <code class="docutils literal notranslate"><span class="pre">name</span></code> to represent the name of the dog</p></li>
@@ -894,7 +881,7 @@ Which of the following descriptions is accurate?</p>
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-1-2" >
             <dl>
-<dt>2-1-13:  A student has created a <code class="docutils literal notranslate"><span class="pre">Party</span></code> class. The class contains instance variables (attributes) to represent the following.</dt><dd><ul class="simple">
+<dt>2-1-12:  A student has created a <code class="docutils literal notranslate"><span class="pre">Party</span></code> class. The class contains instance variables (attributes) to represent the following.</dt><dd><ul class="simple">
 <li><p>An int variable called <code class="docutils literal notranslate"><span class="pre">numOfPeople</span></code> to represent the number of people at the party.</p></li>
 <li><p>A boolean variable called <code class="docutils literal notranslate"><span class="pre">discoLightsOn</span></code> to represent whether the disco ball is on.</p></li>
 <li><p>A boolean variable called <code class="docutils literal notranslate"><span class="pre">partyStarted</span></code> to represent whether the party has started.</p></li>

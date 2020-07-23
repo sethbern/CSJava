@@ -379,7 +379,7 @@
 <li><p>Polymorphic array and ArrayList types such as <code class="docutils literal notranslate"><span class="pre">Shape[]</span> <span class="pre">shapeArray</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">new</span> <span class="pre">Rectangle(),</span> <span class="pre">new</span> <span class="pre">Square()</span> <span class="pre">};</span></code></p></li>
 </ol>
 <p>In all of these cases, there are no errors at compile-time because the compiler checks that the “subclass is-a superclass” relationship is true. But at run-time, the Java interpreter will use the object’s actual subclass type and call the subclass methods for any overriden methods. This is why they are polymorphic – the same code can have different results depending on the object’s actual type at run-time.</p>
-<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise10.png"><img alt="exercise" class="align-middle" src="../_images/exercise10.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_10" >
@@ -555,7 +555,7 @@
             </ul>
             </div>
             <div class="section" id="groupwork-programming-challenge-shopping-cart-2">
-<h2><span class="section-number">9.6.1. </span><a class="reference internal" href="../_images/groupwork9.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork9.png" style="width: 35px;" /></a> Programming Challenge : Shopping Cart 2<a class="headerlink" href="#groupwork-programming-challenge-shopping-cart-2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.6.1. </span><a class="reference internal" href="../_images/groupwork10.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork10.png" style="width: 35px;" /></a> Programming Challenge : Shopping Cart 2<a class="headerlink" href="#groupwork-programming-challenge-shopping-cart-2" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/shoppingcart.png"><img alt="Shopping" class="align-left" src="../_images/shoppingcart.png" style="width: 100px;" /></a>
 <p>In the last lesson, you created a class called DiscountedItem as part of a Shopping Cart application. Please copy your solutions from the last lesson into the Active Code window below (or in repl or another IDE) before completing this challenge.</p>
 <p>The ShoppingCart contains a polymorphic ArrayList called order that you can use to add Items or DiscountedItems to the shopping cart. The Item class keeps track of the name and the price of each Item. The DiscountedItem class you wrote in the last lesson adds on a discount amount.</p>

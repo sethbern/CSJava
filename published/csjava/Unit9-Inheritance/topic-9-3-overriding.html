@@ -352,7 +352,7 @@
 <h1><span class="section-number">9.3. </span>Overriding Methods<a class="headerlink" href="#overriding-methods" title="Permalink to this headline">¶</a></h1>
 <p>A subclass inherits all public methods from its superclass, and these methods remain public in the subclass. But, we also usually add more methods or instance variables to the subclass. Sometimes, we want to modify existing inherited methods. This is called <strong>overriding</strong>  methods.</p>
 <p><strong>Overriding</strong> an inherited method means providing a public method in a subclass with the same <strong>method signature</strong> (method name, parameter type list and return type) as a public method in the superclass.  The method in the subclass will be called <em>instead of</em> the method in the superclass. One common method that is overriden is the toString() method. The example below shows a similar method called greet().</p>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>In the following example the <code class="docutils literal notranslate"><span class="pre">MeanGreeter</span></code> inherits the <code class="docutils literal notranslate"><span class="pre">greet()</span></code> method from <code class="docutils literal notranslate"><span class="pre">Greeter</span></code>, but then overrides it. Run the program to see.</p>
 
 <div data-childcomponent="GreeterEx" class="runestone explainer ac_section alert alert-warning">
@@ -408,7 +408,7 @@ class MeanGreeter extends Greeter
 <span class="n">g1</span><span class="p">.</span><span class="na">greet</span><span class="p">(</span><span class="s">&quot;Sam&quot;</span><span class="p">);</span> <span class="c1">// This calls an overloaded greet method</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>In the example below the <code class="docutils literal notranslate"><span class="pre">greet(String</span> <span class="pre">who)</span></code> method overloads the <code class="docutils literal notranslate"><span class="pre">greet()</span></code> method of <code class="docutils literal notranslate"><span class="pre">Greeter</span></code>.  Notice that <code class="docutils literal notranslate"><span class="pre">MeanGreeter</span></code> inherits this method and it isn’t overriden.</p>
 
 <div data-childcomponent="GreeterOverride" class="runestone explainer ac_section alert alert-warning">
@@ -452,7 +452,7 @@ class MeanGreeter extends Greeter
 <p class="admonition-title">Note</p>
 <p>To overload a method the method must have the same name, but the parameter list must be different in some way.  It can have a different number of parameters, different types of parameters, and/or a different order for the parameter types.  The return type can also be different.</p>
 </div>
-<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise10.png"><img alt="exercise" class="align-middle" src="../_images/exercise10.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_5" >
@@ -506,7 +506,7 @@ class MeanGreeter extends Greeter
             </ul>
             </div>
             <p>You can step through an example of this in the Java Visualizer by clicking on the following link <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+Person+%0A%7B%0A+++private+String+name+%3D+null%3B%0A+++++++++%0A+++public+Person(String+theName)%0A+++%7B%0A++++++name+%3D+theName%3B%0A+++%7D%0A+++++++++%0A+++public+String+getFood()+%0A+++%7B%0A++++++return+%22Hamburger%22%3B%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++%0A++++++Person+p+%3D+new+Student(%22Jamal%22)%3B%0A++++++System.out.println(p.getFood())%3B%0A+++%7D%0A%7D%0A++++++++%0Aclass+Student+extends+Person%0A%7B%0A+++private+int+id%3B%0A+++private+static+int+nextId+%3D+0%3B%0A+++++++++%0A+++public+Student(String+theName)%0A+++%7B%0A++++++super(theName)%3B%0A++++++id+%3D+nextId%3B%0A++++++nextId%2B%2B%3B%0A+++%7D%0A+++++++++%0A+++public+int+getId()+%7Breturn+id%3B%7D%0A+++++++++%0A+++public+void+setId+(int+theId)+%0A+++%7B%0A++++++this.id+%3D+theId%3B%0A+++%7D%0A+++%0A+++public+String+getFood()+%0A+++%7B%0A++++++return+%22Pizza%22%3B%0A+++%7D%0A%7D&amp;mode=display&amp;curInstr=19">Override Example</a>.</p>
-<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise10.png"><img alt="exercise" class="align-middle" src="../_images/exercise10.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_6" >
@@ -559,7 +559,7 @@ class MeanGreeter extends Greeter
             </ul>
             </div>
             <p>You can step through an example of this using the Java Visualizer by clicking on the following link <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+Person+%0A%7B%0A+++private+String+name+%3D+null%3B%0A+++++++++%0A+++public+Person(String+theName)%0A+++%7B%0A++++++name+%3D+theName%3B%0A+++%7D%0A+++++++++%0A+++public+String+getFood()+%0A+++%7B%0A++++++return+%22Hamburger%22%3B%0A+++%7D%0A+++%0A+++public+String+getFood(boolean+veggieOnly)%0A+++%7B%0A++++++if+(veggieOnly)%0A++++++%7B%0A+++++++++return+%22Grilled+Cheese%22%3B%0A++++++%7D%0A++++++return+getFood()%3B%0A++++++%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++%0A++++++Person+p+%3D+new+Person(%22Jamal%22)%3B%0A++++++System.out.println(p.getFood(true))%3B%0A+++%7D%0A%7D%0A++++++++%0Aclass+Student+extends+Person%0A%7B%0A+++private+int+id%3B%0A+++private+static+int+nextId+%3D+0%3B%0A+++++++++%0A+++public+Student(String+theName)%0A+++%7B%0A++++++super(theName)%3B%0A++++++id+%3D+nextId%3B%0A++++++nextId%2B%2B%3B%0A+++%7D%0A+++++++++%0A+++public+int+getId()+%7Breturn+id%3B%7D%0A+++++++++%0A+++public+void+setId+(int+theId)+%0A+++%7B%0A++++++this.id+%3D+theId%3B%0A+++%7D%0A+++%0A+++public+String+getFood()+%0A+++%7B%0A++++++return+%22Pizza%22%3B%0A+++%7D%0A%7D&amp;mode=display&amp;curInstr=9">Overload Example</a>.</p>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>What happens if you change the main method in the Java Visualizer to create a new <code class="docutils literal notranslate"><span class="pre">Student</span></code> object instead of a <code class="docutils literal notranslate"><span class="pre">Person</span></code> object?  Does it still print the same thing?</p>
 </div>
 <div class="section" id="inherited-get-set-methods">
@@ -621,7 +621,7 @@ public class Employee extends Person
 }
 </textarea>
 </div>
-<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise10.png"><img alt="exercise" class="align-middle" src="../_images/exercise10.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_7" >
@@ -671,7 +671,7 @@ public class Employee extends Person
             <p>You can step through this code in the Java Visualizer by clicking on the following link <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=class+Item%0A%7B%0A+++private+int+x%3B%0A%0A+++public+void+setX(int+theX)%0A+++%7B%0A++++++x+%3D+theX%3B%0A+++%7D%0A+++//+...+other+methods+not+shown%0A%7D%0A%0Apublic+class+EnhancedItem+extends+Item%0A%7B%0A+++private+int+y%3B%0A%0A+++public+void+setY(int+theY)%0A+++%7B%0A++++++y+%3D+theY%3B%0A+++%7D%0A%0A+++//+...+other+methods+not+shown%0A+++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++EnhancedItem+currItem+%3D+new+EnhancedItem()%3B%0A++++++currItem.setX(3)%3B%0A++++++//+currItem.setY(2)%3B%0A++++++//+currItem.x+%3D+3%3B%0A++++++//+currItem.y+%3D+2%3B%0A+++%7D%0A+%7D&amp;mode=display&amp;curInstr=10">Private Fields Example</a>.</p>
 </div>
 <div class="section" id="groupwork-programming-challenge-pet-sounds">
-<h2><span class="section-number">9.3.3. </span><a class="reference internal" href="../_images/groupwork9.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork9.png" style="width: 35px;" /></a> Programming Challenge : Pet Sounds<a class="headerlink" href="#groupwork-programming-challenge-pet-sounds" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3.3. </span><a class="reference internal" href="../_images/groupwork10.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork10.png" style="width: 35px;" /></a> Programming Challenge : Pet Sounds<a class="headerlink" href="#groupwork-programming-challenge-pet-sounds" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/animalclinic1.png"><img alt="Pets" class="align-left" src="../_images/animalclinic1.png" style="width: 150px;" /></a>
 <p>The following Pet class keeps track of a pet’s name and type and has a constructor, get method, and a method called speak() that prints an animal noise.</p>
 <ol class="arabic simple">

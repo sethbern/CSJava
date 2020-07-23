@@ -375,7 +375,7 @@
 </pre></div>
 </div>
 <p>Use the enhanced for each loop with arrays whenever you can, because it cuts down on errors. You can use it whenever you need to loop through all the elements of an array and don’t need to know their index and don’t need to change their values.  It starts with the first item in the array (the one at index 0) and continues through in order to the last item in the array. This type of loop can only be used with arrays and some other collections of items like ArrayLists which we will see in the next unit.</p>
-<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="foreach1" class="runestone explainer ac_section alert alert-warning">
 <p>Try the following code. Notice the for each loop with an int array and a String array. Add another high score and another name to the arrays and run again.</p>
@@ -440,7 +440,7 @@ public class ForEachDemo
  }
 </textarea>
 </div>
-<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="evenLoop" class="runestone explainer ac_section alert alert-warning">
 <p>Rewrite the following for loop which prints out the even numbers in the array as an enhanced for-each loop. Make sure it works!</p>
@@ -497,7 +497,7 @@ public class EvenLoop
 <div class="section" id="foreach-loop-limitations">
 <h2><span class="section-number">6.3.1. </span>Foreach Loop Limitations<a class="headerlink" href="#foreach-loop-limitations" title="Permalink to this headline">¶</a></h2>
 <p>What if we had a loop that incremented all the elements in the array. Would that work with an enhanced for-each loop? Unfortunately not! Because only the variable in the loop changes, not the real array values. We would need an indexed loop to modify array elements. Try it in the Active Code below or in the <a href="http://www.pythontutor.com/visualize.html#code=%20%20%20public%20class%20IncrementLoop%0A%20%20%20%7B%20%20%20%20%20%20%0A%20%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20int%5B%20%5D%20values%20%3D%20%7B6,%202,%201,%207,%2012,%205%7D%3B%0A%20%20%20%20%20%20%20%20//%20Can%20this%20loop%20increment%20the%20values%3F%0A%20%20%20%20%20%20%20%20for%20%28int%20val%20%3A%20values%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20val%2B%2B%3B%0A%20%20%20%20%20%20%20%20%20%20System.out.println%28%22New%20val%3A%20%22%20%2B%20val%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20//%20Print%20out%20array%20to%20see%20if%20they%20really%20changed%0A%20%20%20%20%20%20%20%20for%20%28int%20v%20%3A%20values%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20System.out.print%28v%20%2B%20%22%20%22%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%20%20%20&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> by clicking the CodeLens button and step through the code to see why it doesn’t work.</p>
-<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="incrementLoop" class="runestone explainer ac_section alert alert-warning">
 <p>The for-each loop below cannot change the values in the array because only the loop variable value will change. Run it with the CodeLens button to see why this is. Then, change the loop to an indexed for loop to make it change the array values.</p>
@@ -568,7 +568,7 @@ public class IncrementLoop
 <li><p>Do not use for each loops if you want to loop through only part of an array or in a different order.</p></li>
 </ul>
 </div>
-<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qab_6A" >
@@ -680,7 +680,7 @@ public class ArrayWorker
  }
 </textarea>
 </div>
-<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="pab_2"  data-adaptive="true"      data-numbered="left" >
@@ -706,7 +706,7 @@ public class ArrayWorker
         </pre>
         </div>
     <p>If you want to step through the correct code to see what it does in the Java Visualizer click on the following <a href="http://www.pythontutor.com/java.html#code=public+class+ArrayWorker%0A%7B%0A+++private+int%5B+%5D+values%3B%0A%0A+++public+ArrayWorker(int%5B%5D+theValues)%0A+++%7B%0A++++++values+%3D+theValues%3B%0A+++%7D%0A%0A+++public+double+getAverage()%0A+++%7B%0A+++++double+total+%3D+0%3B%0A+++++for+(int+val+%3A+values)%0A+++++%7B%0A+++++++total++%3D+total+%2B+val%3B%0A+++++%7D%0A+++++return+total+/+values.length%3B%0A+++%7D%0A+++%0A+++public+int+getLargest()%0A+++%7B%0A++%0A+++++int+largest+%3D+values%5B0%5D%3B%0A%0A+++++for+(int+item+%3A+values)%0A+++++%7B%0A%0A+++++++if+(item+%3E+largest)%0A+++++++%7B%0A%0A+++++++++largest+%3D+item%3B%0A%0A+++++++%7D++//+end+if+%0A%0A+++++%7D+//+end+for%0A+++++return+largest%3B%0A%0A+++%7D+//+end+method%0A%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A+++++int%5B%5D+numArray+%3D++%7B2,+6,+7,+12,+5%7D%3B%0A+++++ArrayWorker+aWorker+%3D+new+ArrayWorker(numArray)%3B%0A+++++System.out.println(aWorker.getLargest())%3B%0A+++%7D%0A%7D%0A%0A&mode=display&curInstr=0" target="_blank">Java visualizer link</a>.</p>
-<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qab_3" >
@@ -733,7 +733,7 @@ public class ArrayWorker
             </div>
             </div>
 <div class="section" id="groupwork-programming-challenge-spellchecker-2">
-<h2><span class="section-number">6.3.3. </span><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Programming Challenge : SpellChecker 2<a class="headerlink" href="#groupwork-programming-challenge-spellchecker-2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3.3. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : SpellChecker 2<a class="headerlink" href="#groupwork-programming-challenge-spellchecker-2" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/spellcheck.png"><img alt="Spell Checker" class="align-left" src="../_images/spellcheck.png" style="width: 100px;" /></a>
 <p>Copy the spellcheck method that you used in the Spell Checker Challenge in the last lesson. Re-write the method  to use an enhanced for-each loop instead of an indexed for-loop. If you did the optional printStartsWith(firstLetters) method, re-write that one too. You may use the code in <a href= "https://repl.it/@BerylHoffman/SpellChecker1" target="_blank">repl.it</a> instead to have the full dictionary.</p>
 

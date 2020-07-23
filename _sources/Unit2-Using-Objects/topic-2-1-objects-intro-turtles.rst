@@ -303,27 +303,20 @@ Classes can **inherit** attributes and methods from another class in Java, just 
 
 |CodingEx| **Coding Exercise**
 
+When you write a class like the ``Turtle`` class, you can create many objects 
+of that class type. In the code below,
+two turtle objects are created: ``yertle`` and ``myrtle``.  Notice each call to "forward", "turnLeft" and
+"turnRight" is prefaced with one of the two turtle names, which allows each turtle to move and turn independently.
 
-When you write a class like the ``Turtle`` class, you can create many objects of that class type. In the code below,
-two turtle objects are created: ``yertle`` and ``myrtle``.  You can name your turtle and add in a line like the following in the main method to make it move:
-
-.. code-block:: java
-
-    // To create or declare a new object, write:
-    // ClassName variableName = new ClassName(arguments);
-    Turtle yourTurtleName = new Turtle(world);
-    yourTurtlename.forward();
 
 |CodingEx| **Coding Exercise:**
 
-.. activecode:: TurtleTest3
+.. activecode:: TurtleTest3a
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
 
     Run the code below.  Notice each turtle has a different color pen for drawing its path. 
-    Add a third turtle object that draws a square by repeatedly turning left and moving forward.
-    Give you new turtle a unique variable name.
     ~~~~
     import java.util.*;
     import java.awt.*;
@@ -365,8 +358,8 @@ two turtle objects are created: ``yertle`` and ``myrtle``.  You can name your tu
 
             int count = countOccurences(code, expect);
 
-            boolean passed = count >= 3;
-            passed = getResults("3+ Turtles", "" + count  + " Turtles", "Add a new Turtle(s)", passed);
+            boolean passed = count >= 2;
+            passed = getResults("2+ Turtles", "" + count  + " Turtles", "Create two turtles", passed);
             assertTrue(passed);
         }
     }
@@ -392,7 +385,6 @@ They are all different, but they share the same attributes and behaviors that ma
     :figclass: align-center
 
     Figure 4: Pictures of cats (cat objects)
-
 
 
 If you go to a restaurant, you will be seated by the greeter, the waiter will take your order, 
@@ -456,10 +448,6 @@ Unit 5 covers how to create your own classes.
 
    What specifies the data or state for an object in Java?
 
-
-.. shortanswer:: cats
-
-    What are some attributes of cats? What are some behaviors of cats? (Note that attributes are nouns or adjectives describing features of cats, and behaviors are verbs).
 
 
 |Groupwork| Programming Challenge : Turtle Drawing

@@ -35,9 +35,17 @@
 Creating and Initializing Objects: Constructors
 ================================================
 
-A Java class defines what objects of the class know (attributes) and what they can do (behaviors).  Each class has **constructors** like ``World()`` and ``Turtle(world)`` which are used initialize the attributes in a newly created object.
+A Java class defines what objects of the class know (attributes) and what they can 
+do (behaviors).  Each class has **constructors** like ``World()`` and ``Turtle(world)`` which 
+are used to initialize the attributes in a newly created object.
 
-A new object is created with the ``new`` keyword followed by the class name (``new Class()``).  When this code executes, it creates a new object of the specified class and calls a constructor, which has the same name as the class.  For example, ``new World()`` creates and initializes a new object of the ``World`` class, and ``new Turtle(world)`` creates and initializes a new ``Turtle`` object in the specified world.
+A new object is created with the ``new`` keyword followed by the class name (``new Class()``).  
+When this code executes, it creates a new object of the specified class and calls a 
+constructor, which has the same name as the class.  For example, ``new World()`` calls the 
+World contructor to create and 
+initialize a new object of the ``World`` class, which is a canvas that turtles can move and draw upon.
+while ``new Turtle(world)`` calls the Turtle constructor to 
+create and initialize a new ``Turtle`` object in the specified world.
 
 
 .. code-block:: java
@@ -202,17 +210,73 @@ There is another ``Turtle`` constructor that places the turtle at a certain (x,y
 Object Variables and References
 ---------------------------------
 
-You can also declare an **object variable** and initialize it to **null** (``Turtle t1 = null;``). An object variable holds a **reference** to an object.  A **reference** is a way to find the object in memory. It is like a tracking number that you can use to track the location of a package. 
+An object is created when you call a constructor. You need to declare an **object variable** to 
+reference the newly created object.  An object variable has a type that is a class, rather than a primitive
+such as int, double or boolean.  ``Turtle t1`` and ``World world`` are both object variable declarations since Turtle and World are classes and not primitive types.
 
-The code ``Turtle t1 = null;`` creates a variable ``t1`` that refers to a ``Turtle`` object, but the ``null`` means that it doesn't refer to an object yet. You could later create the object and set the object variable to refer to that new object (``t1 = new Turtle(world)``).  Or more commonly, you can declare an object variable and initialize it in the same line of code (``Turtle t2 = new Turtle(world);``).
+You assign a variable to an object calling a constructor on the right hand side of an equal sign, for example ``World world = new World();`` or
+``Turtle t1 = new Turtle(world);``.
 
-.. code-block:: java
 
-    World world = new World();
-    Turtle t1 = null;
-    t1 = new Turtle(world);
-    // declare and initialize t2
-    Turtle t2 = new Turtle(world);
+|CodingEx| **Coding Exercise:**
+
+.. activecode:: TurtleTest3b
+    :language: java
+    :autograde: unittest
+    :datafile: turtleClasses.jar
+
+    Run the code below, which creates two instances of the Turtle class.  
+    Add a third turtle object that draws a square by repeatedly turning left and moving forward.
+    Make sure you give your new turtle a unique variable name.
+    ~~~~
+    import java.util.*;
+    import java.awt.*;
+
+    public class TurtleTest3
+    {
+      public static void main(String[] args)
+      {
+          World world = new World(300,300);
+          Turtle yertle = new Turtle(world);
+          Turtle myrtle = new Turtle(world);
+
+          yertle.forward();
+          yertle.turnLeft();
+          yertle.forward();
+
+          myrtle.turnRight();
+          myrtle.forward();
+
+          world.show(true);
+      }
+    }
+    ====
+    import static org.junit.Assert.*;
+    import org.junit.*;;
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+        public RunestoneTests() {
+            super("TurtleTest3");
+        }
+
+        @Test
+        public void test1()
+        {
+            String code = getCode();
+            String expect = "new Turtle(world)";
+
+            int count = countOccurences(code, expect);
+
+            boolean passed = count >= 3;
+            passed = getResults("3+ Turtles", "" + count  + " Turtles", "Add a new Turtle(s)", passed);
+            assertTrue(passed);
+        }
+    }
+
+
+
 
 
 
@@ -269,7 +333,7 @@ Constructors are **overloaded** when there are multiple constructors, but the co
 
    Which of these is the correct signature for a no-argument constructor?
 
-In Unit 5, you will learn to write your own classes. 
+In a later lesson you will learn to write your own classes. 
 However, if you see a class definition like the one below for a class 
 called ``Date``, you should be able to pick out the attributes (instance variables) 
 and the constructors and know how to use them.
@@ -369,308 +433,12 @@ The type of the values being passed in as arguments have to match the type of th
 
    In ``new World(150, 200)`` what are ``150`` and ``200``?
 
-This lesson introduces a lot of vocabulary, but don't worry if you don't understand everything about classes and constructors yet. You will learn more about how this all works in Unit 5 when you write your own classes and constructors. And you will see parameters again with methods in the next lessons.
+This lesson introduces a lot of vocabulary, but don't worry if you don't 
+understand everything about classes and constructors yet. 
+You will learn more about how this all works in Unit 5 when you write your 
+own classes and constructors. And you will see parameters 
+again with methods in the next lessons.
 
-.. image:: Figures/customTurtles.png
-    :width: 200
-    :align: left
-    
-|Groupwork| Programming Challenge: Custom Turtles
----------------------------------------------------
-
-
-    
-You will now look at a new class called CustomTurtle and design some colorful turtles with its constructors.
-
-First, as a warm up, do the following debugging exercise.
-
-.. activecode:: challenge2-2-TurtleConstructorDebug
-    :language: java
-    :autograde: unittest
-    :datafile: turtleClasses.jar
-
-    Debug the following code.
-    ~~~~
-    import java.util.*;
-    import java.awt.*;
-
-    public class TurtleConstructorDebug
-    {
-      public static void main(String[] args)
-      {
-          World w = new World(300,0);
-          turtle t0;
-          Turtle t1 = new Turtle();
-          Turtle t2 = new Turtle(world, 100, 50)
-          t0.forward();
-          t1.turnRight();
-          t2.turnLeft();
-          world.show(true);
-      }
-    }
-    ====
-    import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
-
-    public class RunestoneTests extends CodeTestHelper
-    {
-        public RunestoneTests() {
-            super("TurtleConstructorDebug");
-        }
-
-        @Test
-        public void test1()
-        {
-            String orig = "import java.util.*;\nimport java.awt.*;\n\npublic class TurtleConstructorDebug\n{\n  public static void main(String[] args)\n  {\n      World w = new World(300,0);\n      turtle t0;\n      Turtle t1 = new Turtle();\n      Turtle t2 = new Turtle(world, 100, 50)\n      t0.forward();\n      t1.turnRight();\n      t2.turnLeft();\n      world.show(true);\n  }\n}\n";
-            boolean passed = codeChanged(orig);
-            assertTrue(passed);
-        }
-    }
-
-The CustomTurtle class in the ActiveCode below inherits many of its attributes and methods from the Turtle class (you will learn more about inheritance in Unit 9). However, it has some new constructors with more parameters to customize a turtle with its body color, shell color, width, and height. CustomTurtle has 3 constructors:
-
-.. code-block:: java
-
-  /** Constructs a CustomTurtle in the middle of the world */
-  public CustomTurtle(ModelDisplay world)
- 
-  /** Constructs a CustomTurtle with a specific body color, 
-      shell color, and width and height in the middle of the world */
-  public CustomTurtle(ModelDisplay world, Color body, Color shell, int w, int h) 
-
-  /** Constructs a CustomTurtle with a specific body color, 
-      shell color, and width and height at position (x,y) in the world */
-  public CustomTurtle(int x, int y, ModelDisplay w, Color body, Color shell, int w, int h) 
-
-
-.. |Color| raw:: html
-
-   <a href= "https://docs.oracle.com/javase/7/docs/api/java/awt/Color.html" target="_blank">Color</a>
-   
-You will use the constructor(s) to create the CustomTurtles below. You can specify colors like Color.red by using the |Color| class in Java.
-
-1. Create a large 150x200 (width 150 and height 200) CustomTurtle with a green body (Color.green) and a blue shell (Color.blue) at position (150,300)
-
-2. Create a small 25x50 CustomTurtle with a red body and a yellow shell at position (350,200)
-
-3. Create a CustomTurtle of your own design.
-
-.. activecode:: challenge2-2-CustomTurtles
-    :language: java
-    :autograde: unittest
-    :datafile: turtleClasses.jar
-
-    Use the CustomTurtle constructors to create the following turtles.
-    ~~~~
-    import java.util.*;
-    import java.awt.*;
-
-    public class CustomTurtleRunner 
-    {
-      public static void main(String[] args) 
-      {  
-        World world = new World(400,400);
-
-        // 1. Create a large 150x200 CustomTurtle with a green body (Color.green)
-        // and a blue shell (Color.blue) at position (150,300).
-        // Move it forward to see it.
-        
-    
-
-        // 2. Create a small 25x50 CustomTurtle with a red body 
-        // and a yellow shell at position (350,200)
-        // Move it forward to see it.
-        
-
-        // 3. Create a CustomTurtle of your own design
-        
-        world.show(true);
-      }
-    }
-
-    class CustomTurtle extends Turtle
-    {
-       private int x;
-       private int y;
-       private World w;
-       private Color bodycolor;
-       private Color shellcolor;
-       private int width;
-       private int height;
-
-     /** Constructor that takes the model display
-       * @param modelDisplay the thing that displays the model
-       */
-      public CustomTurtle(ModelDisplay modelDisplay) 
-      {
-        // let the parent constructor handle it
-        super(modelDisplay);
-      }
-
-      /** Constructor that takes the model
-       * display to draw it on and custom colors and size
-       * @param m the world
-       * @param body : the body color
-       * @param shell : the shell color
-       * @param w: width
-       * @param h: height
-       */
-      public CustomTurtle(ModelDisplay m, Color body, Color shell, int w, int h)
-      {
-        // let the parent constructor handle it
-        super(m);
-        bodycolor = body;
-        setBodyColor(body);
-        shellcolor = shell;
-        setShellColor(shell);
-        height = h;
-        width = w;
-        setHeight(h);
-        setWidth(w);    
-      }
-
-    /** Constructor that takes the x and y and a model
-       * display to draw it on and custom colors and size
-       * @param x the starting x position
-       * @param y the starting y position
-       * @param m the world
-       * @param body : the body color
-       * @param shell : the shell color
-       * @param w: width
-       * @param h: height
-       */
-      public CustomTurtle(int x, int y, ModelDisplay m,  Color body, Color shell, int w, int h) 
-      {
-        // let the parent constructor handle it
-        super(x,y,m);
-        bodycolor = body;
-        setBodyColor(body);
-        shellcolor = shell;
-        setShellColor(shell);
-        height = h;
-        width = w;
-        setHeight(h);
-        setWidth(w);    
-      }
-    }
-    ====
-    import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
-
-    public class RunestoneTests extends CodeTestHelper
-    {
-          public RunestoneTests() {
-            super("CustomTurtleRunner");
-          }
-
-        @Test
-        public void test1()
-        {
-            String target = "new CustomTurtle(150,300,world, Color.green, Color.blue, 180, 200)";
-            boolean passed = checkCodeContains("constructor for a large 150x200 CustomTurtle with a green body and a blue shell at position (150,300)",target);
-            assertTrue(passed);
-        }
-        @Test
-        public void test2()
-        {
-            String target = "new CustomTurtle(350,200,world, Color.red, Color.yellow, 25, 50)";
-            boolean passed = checkCodeContains("constructor for a small 25x50 CustomTurtle with a red body and a yellow shell at position (350,200)",target);
-            assertTrue(passed);
-        }
-    }
-
-
-Practice
-------------
-
-.. mchoice:: AP2-2-1
-   :practice: T
-   :answer_a: I only
-   :answer_b: I and II
-   :answer_c: I and III
-   :answer_d: I, II, and III
-   :answer_e: II and III
-   :correct: c
-   :feedback_a: I is one of the correct constructors but the second constructor can also be used.
-   :feedback_b: II is not correct because there is no Cat constructor that takes 2 parameters.
-   :feedback_c: I and III call the correct constructors.
-   :feedback_d: II is not correct because there is no Cat constructor that takes 2 parameters.
-   :feedback_e: II is not correct because there is no Cat constructor that takes 2 parameters.
-
-    Consider the following class. Which of the following successfully creates a new Cat object?
-
-    .. code-block:: java
-
-        public class Cat
-        {
-            private String color;
-            private String breed;
-            private boolean isHungry;
-
-            public Cat()
-            {
-                color = "unknown";
-                breed = "unknown";
-                isHungry = false;
-            }
-
-            public Cat(String c, String b, boolean h)
-            {
-                color = c;
-                breed = b;
-                isHungry = h;
-            }
-        }
-
-        I.   Cat a = new Cat();
-        II.  Cat b = new Cat("Shorthair", true);
-        III. String color = "orange";
-             boolean hungry = false;
-             Cat c = new Cat(color, "Tabby", hungry);
-
-.. mchoice:: AP2-2-2
-   :practice: T
-   :answer_a: Movie m = new Movie(8.0, "Lion King");
-   :answer_b: Movie m = Movie("Lion King", 8.0);
-   :answer_c: Movie m = new Movie();
-   :answer_d: Movie m = new Movie("Lion King", "Disney", 8.0);
-   :answer_e: Movie m = new Movie("Lion King");
-   :correct: d
-   :feedback_a: There is no Movie constructor with 2 parameters.
-   :feedback_b: There is no Movie constructor with 2 parameters.
-   :feedback_c: This creates a Movie object but it does not have the correct title and rating.
-   :feedback_d: This creates a Movie object with the correct title and rating.
-   :feedback_e: This creates a Movie object but it does not have a rating of 8.0.
-
-   Consider the following class.  Which of the following code segments will construct a Movie object m with a title of "Lion King" and rating of 8.0?
-
-   .. code-block:: java
-
-        public class Movie
-        {
-            private String title;
-            private String director;
-            private double rating;
-            private boolean inTheaters;
-
-            public Movie(String t, String d, double r)
-            {
-                title = t;
-                director = d;
-                rating = r;
-                inTheaters = false;
-            }
-
-            public Movie(String t)
-            {
-                title = t;
-                director = "unknown";
-                rating = 0.0;
-                inTheaters = false;
-            }
-        }
 
 
 Summary

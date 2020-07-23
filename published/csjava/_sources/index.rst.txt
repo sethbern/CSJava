@@ -20,6 +20,7 @@ Enjoy the course!
     <li><a class="reference internal" href="Unit2-Using-Objects/toctree.html">Unit 2 Using Objects</a></li>
     <li><a class="reference internal" href="Unit3-If-Statements/toctree.html">Unit 3 If Statements</a></li>
     <li><a class="reference internal" href="Unit4-Iteration/toctree.html">Unit 4 Iteration/Loops</a></li>
+    <li><a class="reference internal" href="Unit5-Writing-Methods/toctree.html">Unit 5 Writing Methods</a></li>
     <li><a class="reference internal" href="Unit5-Writing-Classes/toctree.html">Unit 5 Writing Classes</a></li>
     <li><a class="reference internal" href="Unit6-Arrays/toctree.html">Unit 6 Arrays</a></li>
     <li><a class="reference internal" href="Unit7-ArrayList/toctree.html">Unit 7 ArrayLists</a></li>

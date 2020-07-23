@@ -358,7 +358,7 @@
 <div class="section" id="tostring-method">
 <h2><span class="section-number">9.7.1. </span>toString() method<a class="headerlink" href="#tostring-method" title="Permalink to this headline">¶</a></h2>
 <p>One commonly overriden Object method is toString(), which is often used to print out the attributes of an object. It is a good idea to write your own toString() method in every class. In a subclass, toString() can call the superclass toString() method using super.toString() and then add on its own attributes.</p>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>In the following code, the Person class overrides the Object toString() method and the Student class overrides the Person toString() method. They each add on their attributes.</p>
 
 <div data-childcomponent="toStringDemo" class="runestone explainer ac_section alert alert-warning">
@@ -408,7 +408,7 @@
 <h2><span class="section-number">9.7.2. </span>equals Method<a class="headerlink" href="#equals-method" title="Permalink to this headline">¶</a></h2>
 <p>One of the important things that gets inherited from the Object superclass is the <code class="docutils literal notranslate"><span class="pre">equals(Object</span> <span class="pre">obj)</span></code> method.  This method is used to test if the current object and the passed object called <code class="docutils literal notranslate"><span class="pre">obj</span></code> are equal. But what does that mean?</p>
 <p id="index-0">As seen in the code below, the <code class="docutils literal notranslate"><span class="pre">equals</span></code> method that is inherited from the <code class="docutils literal notranslate"><span class="pre">Object</span></code> class only returns true if the two objects references refer to the same object.</p>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="ObjEquals" class="runestone explainer ac_section alert alert-warning">
 <p>Try to guess what this code will print out before running it.</p>
@@ -450,7 +450,7 @@ public class Person
 <div class="section" id="overriding-the-equals-method">
 <h2><span class="section-number">9.7.3. </span>Overriding the equals Method<a class="headerlink" href="#overriding-the-equals-method" title="Permalink to this headline">¶</a></h2>
 <p>If you want to change how the inherited <code class="docutils literal notranslate"><span class="pre">equals</span></code> method works you can <strong>override</strong> it so that the new method is called instead of the inherited one.  The <code class="docutils literal notranslate"><span class="pre">String</span></code> class <strong>overrides</strong> the inherited equals method to return true when the two objects have the same characters in the same order as shown in the code below.</p>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="StringTest1" class="runestone explainer ac_section alert alert-warning">
 <p>Try to guess what this code will print out before running it.</p>
@@ -474,7 +474,7 @@ public class StringTest
 </textarea>
 </div>
 <p>Any class can override the inherited <code class="docutils literal notranslate"><span class="pre">equals</span></code> method by providing a method with the same method signature (method name and parameter list) and return type.  The provided method will be called instead of the inherited one, which is why we say that the new method <strong>overrides</strong> the inherited method.  The <code class="docutils literal notranslate"><span class="pre">Person</span></code> class below <strong>overrides</strong> the inherited <code class="docutils literal notranslate"><span class="pre">equals</span></code> method.</p>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="OverrideEquals" class="runestone explainer ac_section alert alert-warning">
 <p>Try to guess what this code will print out before running it.</p>
@@ -550,7 +550,7 @@ public class Person
 </div>
 </div>
 <div class="section" id="groupwork-programming-challenge-savings-account">
-<h2><span class="section-number">9.7.4. </span><a class="reference internal" href="../_images/groupwork9.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork9.png" style="width: 35px;" /></a> Programming Challenge : Savings Account<a class="headerlink" href="#groupwork-programming-challenge-savings-account" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.7.4. </span><a class="reference internal" href="../_images/groupwork10.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork10.png" style="width: 35px;" /></a> Programming Challenge : Savings Account<a class="headerlink" href="#groupwork-programming-challenge-savings-account" title="Permalink to this headline">¶</a></h2>
 <p>In the following code, a bank account class contains the account holder’s name and the money balance in the account.</p>
 <p>Work in pairs to write the following code and test each part before moving on to the next step:</p>
 <ol class="arabic simple">

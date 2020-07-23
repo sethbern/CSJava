@@ -357,7 +357,7 @@
 <li><p><strong>super.method();</strong> calls a superclass’ method (not constructors).</p></li>
 </ol>
 <p>The keyword super is very useful in allowing us to first execute the superclass method and then add on to it in the subclass.</p>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>In the example below, the Student class overrides the getFood() method of the Person() class, and it uses super.getFood() to call the Person getFood() method before adding on to it. Here, a Person is associated with the food “Hamburger” and a Student is associated with “Hamburger” and “Taco”.</p>
 
 <div data-childcomponent="SuperEx" class="runestone explainer ac_section alert alert-warning">
@@ -416,7 +416,7 @@ public class Person
 </div>
 <p>How does this work?  Remember that an object always keeps a reference to the class that created it and always looks for a method during execution starting in the class that created it.  If it finds the method in the class that created it, it will execute that method.  If it doesn’t find it in the class that created it, it will look at the parent of that class.  It will keep looking up the ancestor chain until it finds the method, all the way up to the Object class.  The method has to be there, or else the code would not have compiled.</p>
 <p>When the student <code class="docutils literal notranslate"><span class="pre">getFood()</span></code> method is executed it will start executing the <code class="docutils literal notranslate"><span class="pre">getFood</span></code> method in <code class="docutils literal notranslate"><span class="pre">Student</span></code>.  When it gets to <code class="docutils literal notranslate"><span class="pre">super.getFood()</span></code> it will execute the <code class="docutils literal notranslate"><span class="pre">getFood</span></code> method in <code class="docutils literal notranslate"><span class="pre">Person</span></code>.  This method will return the string <code class="docutils literal notranslate"><span class="pre">&quot;Hamburger&quot;</span></code>.  Then execution will continue in the <code class="docutils literal notranslate"><span class="pre">getFood</span></code> method of <code class="docutils literal notranslate"><span class="pre">Student</span></code> and  return the string <code class="docutils literal notranslate"><span class="pre">&quot;Hamburger</span> <span class="pre">and</span> <span class="pre">Taco&quot;</span></code>.</p>
-<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise10.png"><img alt="exercise" class="align-middle" src="../_images/exercise10.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_6s" >
@@ -475,7 +475,7 @@ public class Person
 </pre></div>
 </div>
 <div class="section" id="groupwork-programming-challenge-customer-info">
-<h2><span class="section-number">9.4.1. </span><a class="reference internal" href="../_images/groupwork9.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork9.png" style="width: 35px;" /></a> Programming Challenge : Customer Info<a class="headerlink" href="#groupwork-programming-challenge-customer-info" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.4.1. </span><a class="reference internal" href="../_images/groupwork10.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork10.png" style="width: 35px;" /></a> Programming Challenge : Customer Info<a class="headerlink" href="#groupwork-programming-challenge-customer-info" title="Permalink to this headline">¶</a></h2>
 <p>The Customer class below keeps track of the names and addresses of customers. It has a toString() method that prints out the name and address of the object.</p>
 <ol class="arabic simple">
 <li><p>Create a subclass OnlineCustomer that inherits from the Customer class and adds a new instance variable for the email address of a online customer.</p></li>

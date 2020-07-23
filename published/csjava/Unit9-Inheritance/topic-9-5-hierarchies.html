@@ -387,7 +387,7 @@ instance variables and methods from a superclass are inherited and can be used i
 </pre></div>
 </div>
 <p>Why is using a superclass reference for subclass objects useful? Because now, we can write methods with parameters of type Shape or have arrays of type Shape and use them with any of its subclasses as seen in the next sections.</p>
-<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise10.png"><img alt="exercise" class="align-middle" src="../_images/exercise10.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qinherRef" >
@@ -415,7 +415,7 @@ instance variables and methods from a superclass are inherited and can be used i
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>Notice that in the following code, the print method has a parameter of type Person, but it can be called with Student or Person objects in the main method. Which toString() method is called? It depends on whether a Person or Student is passed in at runtime. What would happen if you commented out the Student toString() method? Which one would be called now?</p>
 
 <div data-childcomponent="superclassMethod" class="runestone explainer ac_section alert alert-warning">
@@ -484,7 +484,7 @@ public class Tester
 </pre></div>
 </div>
 <p>Notice that the add method in ArrayLists actually has a parameter type of Object, add(Object), but we can use it with any subclass object!</p>
-<p><a class="reference internal" href="../_images/codingExercise9.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise9.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise10.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise10.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>The code below has an ArrayList of Pets that can hold Pet or Dog objects. Notice that the loop works with a variable of type Pet because Dogs are Pets too!</p>
 
 <div data-childcomponent="superclassArray" class="runestone explainer ac_section alert alert-warning">
@@ -532,7 +532,7 @@ import java.util.*; // for ArrayList
   }
 </textarea>
 </div>
-<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise10.png"><img alt="exercise" class="align-middle" src="../_images/exercise10.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="qoo_4" >
@@ -562,7 +562,7 @@ import java.util.*; // for ArrayList
             </div>
             </div>
 <div class="section" id="groupwork-programming-challenge-shopping-cart">
-<h2><span class="section-number">9.5.4. </span><a class="reference internal" href="../_images/groupwork9.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork9.png" style="width: 35px;" /></a> Programming Challenge : Shopping Cart<a class="headerlink" href="#groupwork-programming-challenge-shopping-cart" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5.4. </span><a class="reference internal" href="../_images/groupwork10.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork10.png" style="width: 35px;" /></a> Programming Challenge : Shopping Cart<a class="headerlink" href="#groupwork-programming-challenge-shopping-cart" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/shoppingcart.png"><img alt="Shopping" class="align-left" src="../_images/shoppingcart.png" style="width: 100px;" /></a>
 <p>The following code contains a class called ShoppingCart that simulates a grocery store or an online store’s shopping cart. It has an ArrayList called order that you can use to add Items to the shopping cart. The Item class keeps track of the name and the price of each Item. If you run the code below, you will see that it adds 2 items to the cart and then prints out the total order. It may be easier to follow and change the code in this <a href="https://repl.it/@BerylHoffman/Shopping-Cart" target="_blank" style="text-decoration:underline">repl.it link</a>. We encourage you to work in pairs.</p>
 <p>In this challenge, you will add a new class called DiscountedItem that extends the Item class. The ArrayList of Items will still work since it can hold the subclasses of Items too! The ShoppingCart printOrder() method will work with Items and DiscountedItems but note that it has an if statement that treats DiscountedItems differently.</p>
