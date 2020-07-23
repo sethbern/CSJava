@@ -233,7 +233,7 @@ probably figure out what each method does just by looking at the method name and
 
 
 |Groupwork| Programming Challenge : Draw two letters
--------------------------------------------------
+----------------------------------------------------
 
 Write code in the editor window below (or use the |repl link|) to create  2 turtles to draw 
 a pair of simple block-style letters that use just straight lines (no curves or diagonals). 

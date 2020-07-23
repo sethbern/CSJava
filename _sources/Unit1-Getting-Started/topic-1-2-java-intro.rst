@@ -594,27 +594,19 @@ Summary
    }
    
    
-- A Java program starts with **public class NameOfClass { }**. If you are using your own 
-files for your code, each class should be in a separate file that matches the 
-class name inside it, for example NameOfClass.java.
+- A Java program starts with **public class NameOfClass { }**. If you are using your own files for your code, each class should be in a separate file that matches the class name inside it, for example NameOfClass.java.
 
-- Most Java classes have a main method that will be run automatically. 
-It looks like this: **public static void main(String[] args) { }**.
+- Most Java classes have a main method that will be run automatically. It looks like this: **public static void main(String[] args) { }**.
 
-- The **System.out.print()** and **System.out.println()** methods display information 
-given inside the parentheses on the computer monitor. 
+- The **System.out.print()** and **System.out.println()** methods display information given inside the parentheses on the computer monitor. 
 
-- System.out.println moves the cursor to a new line after the information has been 
-displayed, while System.out.print does not.
+- System.out.println moves the cursor to a new line after the information has been displayed, while System.out.print does not.
 
 - A **string literal** is enclosed in double quotes ('' '').
 
 - Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and ``/* */`` are used for comments.
 
-- A **compiler** translates Java code into a class file that can be run on your 
-computer. **Compiler or syntax errors** are reported to you by the compiler if the 
-Java code is not correctly written. Some things to check for are ; at end of command 
-lines, matching { }, (), and "". 
+- A **compiler** translates Java code into a class file that can be run on your computer. **Compiler or syntax errors** are reported to you by the compiler if the Java code is not correctly written. Some things to check for are ; at end of command lines, matching { }, (), and "". 
 
 
 .. raw:: html

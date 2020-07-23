@@ -755,10 +755,181 @@ import static org.junit.Assert.*;
 <li><p>In the active code window below, create a method or methods that takes parameters to print out a verse. The method(s) should be abstract enough to work for all 3 verses.  Use good commenting for your methods that describe the &#64;param. For the autograder, make sure you create a method called verse that takes 2 parameters.</p></li>
 <li><p>In the main method, create an object of the class and call the method(s) you created in the last step to print out 3 verses of the song. Can you add more verses?</p></li>
 </ol>
+
+<div data-childcomponent="challenge-5-6-songb" class="runestone explainer ac_section alert alert-warning">
+<p>Create method(s) with parameters to print out verses of the song The Ants Go Marching. <a class="reference external" href="https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching">https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching</a></p>
+
+<textarea data-component="activecode" id=challenge-5-6-songb data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Song
+{
+  // Create at least 1 method called verse that takes 2 parameters
+  // that can be used to print out the verses of the song The Ants Go Marching
+
+
+  public static void main(String args[])
+  {
+    // Create a Song object and call its method(s) to print out
+    // the verses of The Ants Go Marching
+    // There should be atleast 1 method called verse that takes 2 arguments.
+
+
+  }
+}
+====
+import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+    @Test
+    public void checkCodeContains1(){
+      //check verse 1
+      boolean passed = checkCodeContains("verse method call with 2 arguments for verse 1", "verse(\"one\", \"suck his thumb\"");
+      assertTrue(passed);
+    }
+
+    @Test
+    public void checkCodeContains2(){
+       //check verse 2
+        boolean passed = checkCodeContains("verse method call with 2 arguments for verse 2", "verse(\"two\", \"tie his shoe\"");
+      assertTrue(passed);
+    }
+
+    @Test
+    public void checkCodeContains3(){
+       //check verse 3
+        boolean passed = checkCodeContains("verse method call with 2 arguments for verse 3", "verse(\"three\", \"climb a tree\"");
+      assertTrue(passed);
+    }
+
+        @Test
+      public void testMain() throws IOException
+      {
+          String output = getMethodOutput("main");
+          String expect = "The ants go marching three by three\nThe little one stops to climb a tree";
+          boolean passed = output.contains(expect);
+          getResults(expect, output, "Expected output from main contains 3 verses");
+          assertTrue(passed);
+      }
+  }
+</textarea>
+</div>
 </div>
 <div class="section" id="id1">
 <h1>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1a" >
+            <p>5-2-4: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wallet</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">dollars</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">putMoneyInWallet</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="cm">/* missing code */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+<p>The putMoneyInWallet method is intended to increase the dollars in the wallet by the parameter amount and then return the updated dollars in the wallet. Which of the following code segments should replace  <em>missing code</em> so that the putMoneyInWallet method will work as intended?</p>
+<li data-component="answer"  id="AP5-6-1a_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">+=</span> <span class="n">dollars</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-6-1a_opt_a">
+<p>dollars should be incremented by amount.</p></li><li data-component="answer"  id="AP5-6-1a_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">amount</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-6-1a_opt_b">
+<p>dollars should be incremented by amount.</p></li><li data-component="answer" data-correct id="AP5-6-1a_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-6-1a_opt_c">
+<p>Correct.</p></li><li data-component="answer"  id="AP5-6-1a_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-6-1a_opt_d">
+<p>amount is returned instead of dollars.</p></li><li data-component="answer"  id="AP5-6-1a_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-6-1a_opt_e">
+<p>dollars should be incremented by amount.</p></li>
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-2b" >
+            <p>5-2-5: Consider the Liquid class below.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boilingPoint</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">(</span><span class="kt">int</span> <span class="n">ct</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bp</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">ct</span><span class="p">;</span>
+        <span class="n">boilingPoint</span> <span class="o">=</span> <span class="n">bp</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoiling</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="cm">/* missing code */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The isBoiling method is intended to return true if increasing the currentTemp by the parameter amount is greater than or equal to the boilingPoint, or otherwise return false. Which of the following code segments can replace <em>missing code</em> to ensure that the isBoiling method works as intended?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">.</span>   <span class="nf">if</span> <span class="p">(</span><span class="n">currentTemp</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="n">boilingPoint</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="k">else</span>
+     <span class="p">{</span>
+         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+     <span class="p">}</span>
+<span class="n">II</span><span class="p">.</span>  <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="n">currentTemp</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="k">else</span>
+     <span class="p">{</span>
+         <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
+     <span class="p">}</span>
+<span class="n">III</span><span class="p">.</span> <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="n">currentTemp</span> <span class="o">&gt;=</span> <span class="n">boilingPoint</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="k">else</span>
+     <span class="p">{</span>
+         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="p">}</span>
+</pre></div>
+</div>
+<li data-component="answer"  id="AP5-6-2b_opt_a"><p>I only</p>
+</li><li data-component="feedback" id="AP5-6-2b_opt_a">
+<p>I would work but it is not the only code that would work.</p></li><li data-component="answer"  id="AP5-6-2b_opt_b"><p>II only</p>
+</li><li data-component="feedback" id="AP5-6-2b_opt_b">
+<p>II does not check against the boilingPoint and does not return only boolean values.</p></li><li data-component="answer"  id="AP5-6-2b_opt_c"><p>III only</p>
+</li><li data-component="feedback" id="AP5-6-2b_opt_c">
+<p>III would work but it is not the only code that would work.</p></li><li data-component="answer" data-correct id="AP5-6-2b_opt_d"><p>I and III only.</p>
+</li><li data-component="feedback" id="AP5-6-2b_opt_d">
+<p>Correct!</p></li><li data-component="answer"  id="AP5-6-2b_opt_e"><p>I, II, III</p>
+</li><li data-component="feedback" id="AP5-6-2b_opt_e">
+<p>II does not check against the boilingPoint and does not return only boolean values.</p></li>
+
+            </ul>
+            </div>
+            </div>
 <div class="section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">

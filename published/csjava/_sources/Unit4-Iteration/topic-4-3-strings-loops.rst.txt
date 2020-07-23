@@ -315,8 +315,7 @@ Are you a cat person or a dog person? The code below prints a nice message about
 
 3. (Optional - challenging and not autograded) What if you like both cats and dogs? After you replace "cat" with "dog", add another loop that looks for the word "dogs" and adds " and cats" to it. Do not replace "dog", just replace "dogs". This will just replace the first sentence in the example below but you can add other sentences to test. For this loop, you will need to use a special version of indexOf that searches from a given index, so that you don't end up with an infinite loop that keeps finding the first "dogs". Make sure you add a variable **fromIndex** that is initialized to 0 and that is changed each time through the loop to skip over the last word that was found. 
 
-   - **int indexOf(String target, int fromIndex)** searches left-to-right for the target 
-   substring, but starts the search at the given fromIndex. 
+   - **int indexOf(String target, int fromIndex)** searches left-to-right for the target substring, but starts the search at the given fromIndex. 
 
 .. activecode:: challenge4-3-string-replace
    :language: java

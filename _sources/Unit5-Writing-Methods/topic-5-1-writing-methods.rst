@@ -286,14 +286,10 @@ that called it.
 Summary
 -------
 
-- **Procedural Abstraction** (creating methods) reduces the complexity and repetition of code. 
-We can name a block of code as a method and call it whenever we need it,
- abstracting away the details of how it works.  
+- **Procedural Abstraction** (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.  
 
-- A programmer breaks down a large problem into smaller subproblems by 
-creating methods to solve each individual subproblem.
+- A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.
 
-- To write a method, write a **method definition** with a **method signature** 
-like "public void chorus()" and a **method body** that consists of statements nested within {}.
+- To write a method, write a **method definition** with a **method signature** like "public void chorus()" and a **method body** that consists of statements nested within {}.
 
 - Call the method using its name to execute the statements in the method body.

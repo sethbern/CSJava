@@ -149,7 +149,7 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
 
 
 Incrementing the value of a variable
-----------------------------
+------------------------------------
 
 If you use a variable to keep score you would probably increment it 
 (add one to the current value) whenever score should go up.  

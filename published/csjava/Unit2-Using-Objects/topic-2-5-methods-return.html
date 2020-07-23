@@ -350,25 +350,29 @@
   
   <div class="section" id="calling-methods-that-return-values">
 <span id="index-0"></span><h1><span class="section-number">2.5. </span>Calling Methods that Return Values<a class="headerlink" href="#calling-methods-that-return-values" title="Permalink to this headline">¶</a></h1>
-<p>If a method is a <strong>void method</strong> and has <strong>void</strong> as its return type,
-like most of the methods we have seen so far, that means that it does not return anything.
+<p>If a method is a <strong>void method</strong>,
+like most of the methods we have seen so far, that means that it does not return anything when called.
 But some methods <strong>return</strong> a value when called.</p>
 <p>You can see all the methods that are inherited in Turtle in this <a href="https://www2.cs.uic.edu/~i101/doc/SimpleTurtle.html" target="_blank">javadoc (documentation) file</a>.
-The first column in the method summary indicates the <em>return type</em> of the method.
+The first column in the method summary indicates the <strong>return type</strong> of the method.
 Most of the Turtle methods have a void return type.
 A void method is often used to modify an object’s attributes.
 For example, the <code class="docutils literal notranslate"><span class="pre">forward()</span></code> method changes the
 turtle location, while the <code class="docutils literal notranslate"><span class="pre">turnLeft()</span></code> method changes the direction.</p>
 <p>Now look at the methods in the first column having a return type that is <em>not</em> void.  The non-void
 methods tend to start
-with the word “get” is “is”.  Rather than changing an attribute, these methods return an attribute value.
-For example, the <code class="docutils literal notranslate"><span class="pre">getXPos()</span></code> method will return a turtle’s x position.</p>
+with the word “get” is “is”.
+Rather than changing an object’s attribute, these methods
+return an attribute value.
+For example, the <code class="docutils literal notranslate"><span class="pre">getXPos()</span></code> method will return a turtle’s x position.
+We refer to non-void methods that return an attribute value as <strong>getter</strong> methods.</p>
 <p>When you use a method that returns a value, you need to save what it
 returns in a variable or use the value in some way for example by printing it out.
 The data type of the variable must match the data type of the return value of the method.
 In the example below the <code class="docutils literal notranslate"><span class="pre">getWidth()</span></code> method returns an int, so we need to assign the result
 into an int variable <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">width</span> <span class="pre">=</span> <span class="pre">yertle.getWidth();</span></code>.</p>
-<p>Here are some examples of using get methods for the turtle object yertle.</p>
+<p>Here are some examples of using getter methods for a particular turtle object.  Notice the value returned
+from each getter method is either stored in a variable or used in a print statement.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Turtle</span> <span class="n">yertle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>
 <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">yertle</span><span class="p">.</span><span class="na">getWidth</span><span class="p">();</span>
 <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">yertle</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span>

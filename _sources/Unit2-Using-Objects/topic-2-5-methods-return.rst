@@ -36,8 +36,8 @@
 Calling Methods that Return Values
 ===================================
 
-If a method is a **void method** and has **void** as its return type, 
-like most of the methods we have seen so far, that means that it does not return anything. 
+If a method is a **void method**, 
+like most of the methods we have seen so far, that means that it does not return anything when called. 
 But some methods **return** a value when called. 
 
 .. |javadoc (documentation) file| raw:: html
@@ -45,7 +45,7 @@ But some methods **return** a value when called.
    <a href="https://www2.cs.uic.edu/~i101/doc/SimpleTurtle.html" target="_blank">javadoc (documentation) file</a>   
 
 You can see all the methods that are inherited in Turtle in this |javadoc (documentation) file|. 
-The first column in the method summary indicates the *return type* of the method.
+The first column in the method summary indicates the **return type** of the method.
 Most of the Turtle methods have a void return type.
 A void method is often used to modify an object's attributes.  
 For example, the ``forward()`` method changes the
@@ -53,8 +53,12 @@ turtle location, while the ``turnLeft()`` method changes the direction.
 
 Now look at the methods in the first column having a return type that is *not* void.  The non-void
 methods tend to start
-with the word "get" is "is".  Rather than changing an attribute, these methods return an attribute value.
-For example, the ``getXPos()`` method will return a turtle's x position.
+with the word "get" is "is". 
+Rather than changing an object's attribute, these methods 
+return an attribute value.
+For example, the ``getXPos()`` method will return a turtle's x position. 
+We refer to non-void methods that return an attribute value as **getter** methods. 
+
 
 When you use a method that returns a value, you need to save what it 
 returns in a variable or use the value in some way for example by printing it out. 
@@ -62,7 +66,8 @@ The data type of the variable must match the data type of the return value of th
 In the example below the ``getWidth()`` method returns an int, so we need to assign the result
 into an int variable ``int width = yertle.getWidth();``.
 
-Here are some examples of using get methods for the turtle object yertle. 
+Here are some examples of using getter methods for a particular turtle object.  Notice the value returned
+from each getter method is either stored in a variable or used in a print statement.
 
 .. code-block:: java 
 

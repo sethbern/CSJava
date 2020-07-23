@@ -747,61 +747,8 @@ import static org.junit.Assert.*;
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="groupwork-programming-challenge-pig-latin">
-<h2><span class="section-number">2.7.4. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge : Pig Latin<a class="headerlink" href="#groupwork-programming-challenge-pig-latin" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../_images/pig.png"><img alt="pig latin" class="align-middle" src="../_images/pig.png" style="width: 100px;" /></a> Can you speak Pig Latin? In Pig Latin, you take the first letter and put it at the end of the word and add the letters “ay” to the end. For example, “pig” becomes “igpay”.</p>
-<p>Create a program that takes a word and transforms it to Pig Latin using String methods. You may need the word’s length, a substring that does not include the first letter, and a substring that is just the first letter (you can get the ith letter of a string using substring(i,i+1) so for example the letter at index 3 would be substring(3,4)).</p>
-<p>Your teacher may ask you to create this program in a Java IDE like <a href="https://repl.it" target="_blank">repl.it</a> so that you can use input to read in the word (see input examples using the <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>).</p>
-
-<div data-childcomponent="challenge2-7-PigLatin" class="runestone explainer ac_section alert alert-warning">
-<p>Use the substring method to transform a word into Pig Latin where the first letter is put at the end and “ay” is added. The word pig is igpay in Pig Latin.</p>
-
-<textarea data-component="activecode" id=challenge2-7-PigLatin data-lang="java" 
-      data-timelimit=25000  data-codelens="true"   
-    data-audio=''      
-           data-wasm=/_static>
-public class PigLatin
-{
-   public static void main(String[] args)
-   {
-     String word =
-
-     // Use word.substring to construct word in pig latin
-     String pigLatin =
-
-     System.out.println(word + " in Pig Latin is " + pigLatin);
-   }
-}
-====
-import static org.junit.Assert.*;
- import org.junit.*;;
- import java.io.*;
-
- public class RunestoneTests extends CodeTestHelper
- {
-     @Test
-     public void testMain() throws IOException
-     {
-         String output = getMethodOutput("main");
-         String expect = "* in Pig Latin is *ay";
-         boolean passed = getResultsRegEx(expect, output, "Expected output from main");
-         assertTrue(passed);
-     }
-    @Test
-    public void testContainsSubstring()
-    {
-        String target = "word.substring(";
-        int count = countOccurences(getCode(), target);
-        boolean passed = count >= 2;
-        passed = getResults("2 substring calls", count + " substring call(s)","Code contains calls to substring method", passed);
-        assertTrue(passed);
-    }
- }
-</textarea>
-</div>
-</div>
 <div class="section" id="summary">
-<h2><span class="section-number">2.7.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>index</strong> - A number that represents the position of a character in a string.  The first character in a string is at index 0.</p></li>
 <li><p><strong>length</strong> - The number of characters in a string.</p></li>

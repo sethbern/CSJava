@@ -21,7 +21,6 @@ create 2D drawings and animations.  This unit also introduces String and Math me
    topic-2-10-summary.rst
    topic-2-11-practice-mixed-code.rst
    topic-2-12-practice-coding.rst
-   practice-test-objects.rst
    Exercises.rst
    JavaSwingGUIs.rst
    

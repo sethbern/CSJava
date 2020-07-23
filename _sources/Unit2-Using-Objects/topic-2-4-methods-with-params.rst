@@ -46,7 +46,7 @@
 Calling Methods With Parameters
 ===========================================
 
-In the last lesson, we used simple **methods** like forward() and turnRight() to make the turtle draw lines. You may have noticed that forward() and backward() always move the same number of pixels (100 pixels), and turnRight() and turnLeft() always turn at right angles (90 degrees). This is a little limiting. What if we wanted to draw a triangle or the letter A? These require smaller angles to draw diagonal lines and different length lines. Luckily, there are more complex methods in the Turtle class that let you specify the number of pixels to move forward or the number of degrees to turn. These values that you can give to methods to help them do their job are called **arguments** or **parameters**. 
+In the last lesson, we used methods like forward() and turnRight() to make the turtle draw lines. You may have noticed that forward() and backward() always move the same number of pixels (100 pixels), and turnRight() and turnLeft() always turn at right angles (90 degrees). This is a little limiting. What if we wanted to draw a triangle or the letter A? These require smaller angles to draw diagonal lines and different length lines. Luckily, there are more complex methods in the Turtle class that let you specify the number of pixels to move forward or the number of degrees to turn. These values that you can give to methods to help them do their job are called **arguments** or **parameters**. 
 
 The parentheses () after method names are there in case you need to give the 
 method **actual parameters** or **arguments** (some data) to do its job. 

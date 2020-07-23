@@ -20,7 +20,7 @@
     :alt: groupwork
     
 Method Parameters
------------
+------------------
 
 You may have noticed more repetition in the **This old man** song. What about the lines of each verse? 
 Notice that every word is repeated except the last ones that include a number 
@@ -512,12 +512,11 @@ Here's another song, |The Ants Go Marching|, that is very similar to the This Ol
 
 1. Print out the |The Ants Go Marching| song and circle the repeated parts of the song.
 
-
 2. In the active code window below, create a method or methods that takes parameters to print out a verse. The method(s) should be abstract enough to work for all 3 verses.  Use good commenting for your methods that describe the @param. For the autograder, make sure you create a method called verse that takes 2 parameters. 
 
 3. In the main method, create an object of the class and call the method(s) you created in the last step to print out 3 verses of the song. Can you add more verses?
 
-.. activecode:: challenge-5-6-song
+.. activecode:: challenge-5-6-songb
   :language: java
   :autograde: unittest  
 
@@ -584,7 +583,7 @@ Here's another song, |The Ants Go Marching|, that is very similar to the This Ol
 Practice
 -----------
 
-.. mchoice:: AP5-6-1
+.. mchoice:: AP5-6-1a
     :practice: T
 
     Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.
@@ -640,7 +639,7 @@ Practice
         
 
 
-.. mchoice:: AP5-6-2
+.. mchoice:: AP5-6-2b
     :practice: T
 
     Consider the Liquid class below.

@@ -576,14 +576,13 @@ public class ReverseString
 <div class="section" id="groupwork-programming-challenge-string-replacement-cats-and-dogs">
 <h2><span class="section-number">4.3.3. </span><a class="reference internal" href="../_images/groupwork4.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork4.png" style="width: 35px;" /></a> Programming Challenge : String Replacement Cats and Dogs<a class="headerlink" href="#groupwork-programming-challenge-string-replacement-cats-and-dogs" title="Permalink to this headline">¶</a></h2>
 <p>Are you a cat person or a dog person? The code below prints a nice message about cats, but if you’re a dog person, you might not agree.</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Write some code below that changes every occurrence of “cat” to “dog” in the message. This code will be more like the first program in this lesson where we replaced 1’s with l’s.</p></li>
 <li><p>(Optional - not autograded) add a counter to count the number of replacements and print it out.</p></li>
 <li><p>(Optional - challenging and not autograded) What if you like both cats and dogs? After you replace “cat” with “dog”, add another loop that looks for the word “dogs” and adds ” and cats” to it. Do not replace “dog”, just replace “dogs”. This will just replace the first sentence in the example below but you can add other sentences to test. For this loop, you will need to use a special version of indexOf that searches from a given index, so that you don’t end up with an infinite loop that keeps finding the first “dogs”. Make sure you add a variable <strong>fromIndex</strong> that is initialized to 0 and that is changed each time through the loop to skip over the last word that was found.</p>
 <ul class="simple">
-<li><p><strong>int indexOf(String target, int fromIndex)</strong> searches left-to-right for the target</p></li>
+<li><p><strong>int indexOf(String target, int fromIndex)</strong> searches left-to-right for the target substring, but starts the search at the given fromIndex.</p></li>
 </ul>
-<p>substring, but starts the search at the given fromIndex.</p>
 </li>
 </ol>
 

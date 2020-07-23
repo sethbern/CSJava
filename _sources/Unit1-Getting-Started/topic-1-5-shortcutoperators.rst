@@ -252,7 +252,7 @@ Copy the code from above into the main method, click "Visualize execution", then
    
 
 Prefix versus Postfix Operator
--------------------
+------------------------------
 
 .. activecode:: postfix_assignment
    :language: java
@@ -271,7 +271,7 @@ Prefix versus Postfix Operator
             System.out.println(count);
         }
     }
-====
+   ====
 
 The code ``System.out.println(count++)`` adds one to the variable *after* the value is printed.  
 Try changing the code to ``++count`` and run it again. This will result in one being added to
