@@ -164,3 +164,137 @@ Practice
       - This would just print "Meow ".
 
   
+like below. Notice that the **return statement** in a method returns the value that is indicated in the return type back to the calling method. The calling method must save or use or print that value.
+
+|Exercise| **Check your understanding**
+
+.. mchoice:: traceReturnMethods
+   :practice: T
+   :answer_a: 5
+   :answer_b: 7
+   :answer_c: 4 3
+   :answer_d: 2 3
+   :answer_e: Does not compile.
+   :correct: b
+   :feedback_a: Make sure you call both methods and compute the square of 2 and then add the results.
+   :feedback_b: Yes, square(2) returns 4 which is added to divide(6,2) which returns 3. The total of 4 + 3 is 7.
+   :feedback_c: Make sure you add the results before printing it out.
+   :feedback_d: Make sure you square(2) and add the results before printint it out.
+   :feedback_e: Try the code in an active code window.
+   
+   What does the following code print out?
+   
+   .. code-block:: java
+   
+      public class MethodTrace 
+      {
+        public int square(int x)
+        {
+            return x*x;
+        }
+        public int divide(int x, int y)
+        {
+              return x/y;
+        }
+        public static void main(String[] args) {
+            MethodTrace traceObj = new MethodTrace();
+            System.out.println( traceObj.square(2) + traceObj.divide(6,2) );
+        }
+       }
+
+
+
+
+Practice
+-------------
+
+.. mchoice:: AP2-5-1
+    :practice: T
+    
+    Consider the following method.
+
+    .. code-block:: java
+
+        public double calculatePizzaBoxes(int numOfPeople, double slicesPerBox)
+        { /*implementation not shown */}
+
+    Which of the following lines of code, if located in a method in the same class as calculatePizzaBoxes, will compile without an error?
+    
+    - int result = calculatePizzaBoxes(45, 9.0);
+
+      - The method calculatePizzaBoxes returns a double value that cannot be saved into an int variable.
+      
+    - double result = calculatePizzaBoxes(45.0, 9.0);
+    
+      - The method calculatePizzaBoxes has an int parameter that cannot hold a double value 45.0.
+
+    - int result = calculatePizzaBoxes(45.0, 9);
+    
+      - The method calculatePizzaBoxes has an int parameter that cannot hold a double value 45.0. Note that the int 9 can be passed into a double parameter.
+      
+    - double result = calculatePizzaBoxes(45, 9.0);
+    
+      + The method calculatePizzaBoxes has an int and a double parameter and returns a double result.
+      
+    - result = calculatePizzaBoxes(45, 9);
+    
+      - The variable result has not been declared (with an appropriate data type). 
+      
+.. mchoice:: AP2-5-2
+    :practice: T
+
+    Consider the following class definition.
+
+    .. code-block:: java
+
+        public class Liquid
+        {
+            private double boilingPoint;
+            private double freezingPoint;
+            private double currentTemp;
+
+            public Liquid()
+            {
+                currentTemp = 50;
+            }
+
+            public void lowerTemp()
+            {
+                currentTemp -= 10;
+            }
+
+            public double getTemp()
+            {
+                return currentTemp;
+            }
+        }
+
+    Assume that the following code segment appears in a class other than Liquid.
+    
+    .. code-block:: java
+
+        Liquid water = new Liquid();
+        water.lowerTemp();
+        System.out.println(water.getTemp());
+
+    What is printed as a result of executing the code segment?
+    
+    - \-10
+    
+      - The Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it. 
+    
+    - 50
+    
+      - The Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it. 
+    
+    - water.getTemp()
+    
+      - The System.out.println will print the value returned from water.getTemp().
+        
+    - The code will not compile.
+    
+      - This code should compile.
+
+    - 40.0
+    
+      + Correct, the Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it, and getTemp() returns the currentTemp value as a double.

@@ -350,11 +350,24 @@
   
   <div class="section" id="calling-methods-that-return-values">
 <span id="index-0"></span><h1><span class="section-number">2.5. </span>Calling Methods that Return Values<a class="headerlink" href="#calling-methods-that-return-values" title="Permalink to this headline">¶</a></h1>
-<p>If a method is a <strong>void method</strong> and has <strong>void</strong> as its return type, like most of the methods we have seen so far, that means that it does not return anything. But some methods <strong>return</strong> a value back that the program can use.</p>
-<div class="section" id="get-methods">
-<h2><span class="section-number">2.5.1. </span>Get Methods<a class="headerlink" href="#get-methods" title="Permalink to this headline">¶</a></h2>
-<p>In the previous lesson, we used some set methods with parameters to set the attributes of a turtle to different values, for example yertle.setColor(Color.red); or yertle.setWidth(50); Programmers create get and set methods for each attribute represented as an instance variable in a class to access and modify the value in that variable. The get methods always return back the value of that instance variable, and the set methods modify the value.</p>
-<p>When you use a get method, you need to save what it returns in a variable or use the value in some way for example by printing it out. The data type of the variable must match the data type of the return value of the method. You can find out the return type of a method in its documentation. It will be right before the method name, for example <em>int getWidth()</em> means getWidth will return an int (an integer number).</p>
+<p>If a method is a <strong>void method</strong> and has <strong>void</strong> as its return type,
+like most of the methods we have seen so far, that means that it does not return anything.
+But some methods <strong>return</strong> a value when called.</p>
+<p>You can see all the methods that are inherited in Turtle in this <a href="https://www2.cs.uic.edu/~i101/doc/SimpleTurtle.html" target="_blank">javadoc (documentation) file</a>.
+The first column in the method summary indicates the <em>return type</em> of the method.
+Most of the Turtle methods have a void return type.
+A void method is often used to modify an object’s attributes.
+For example, the <code class="docutils literal notranslate"><span class="pre">forward()</span></code> method changes the
+turtle location, while the <code class="docutils literal notranslate"><span class="pre">turnLeft()</span></code> method changes the direction.</p>
+<p>Now look at the methods in the first column having a return type that is <em>not</em> void.  The non-void
+methods tend to start
+with the word “get” is “is”.  Rather than changing an attribute, these methods return an attribute value.
+For example, the <code class="docutils literal notranslate"><span class="pre">getXPos()</span></code> method will return a turtle’s x position.</p>
+<p>When you use a method that returns a value, you need to save what it
+returns in a variable or use the value in some way for example by printing it out.
+The data type of the variable must match the data type of the return value of the method.
+In the example below the <code class="docutils literal notranslate"><span class="pre">getWidth()</span></code> method returns an int, so we need to assign the result
+into an int variable <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">width</span> <span class="pre">=</span> <span class="pre">yertle.getWidth();</span></code>.</p>
 <p>Here are some examples of using get methods for the turtle object yertle.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Turtle</span> <span class="n">yertle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>
 <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">yertle</span><span class="p">.</span><span class="na">getWidth</span><span class="p">();</span>
@@ -367,7 +380,9 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A common error is forgetting to do something with the value returned from a method. When you call a method that returns a value, you should do something with that value like saving it into a variable or printing it out.</p>
+<p>A common error is forgetting to do something with the value returned from a method.
+When you call a method that returns a value, you should do something with that value
+like saving it into a variable or printing it out.</p>
 </div>
 <p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
@@ -465,9 +480,8 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
-</div>
 <div class="section" id="tostring-methods">
-<h2><span class="section-number">2.5.2. </span>toString() Methods<a class="headerlink" href="#tostring-methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.1. </span>toString() Methods<a class="headerlink" href="#tostring-methods" title="Permalink to this headline">¶</a></h2>
 <p>Another common method that returns a value is the <strong>toString()</strong> method. This method is called automatically to try to convert an object to a String when it is needed, for example in a print statement. In the Turtle class, the toString() method returns a String description of the turtle.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Turtle</span> <span class="n">yertle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>
 <span class="n">yertle</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&quot;yertle&quot;</span><span class="p">);</span> <span class="c1">// set name before you use toString()</span>
@@ -551,53 +565,17 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 </div>
 <div class="section" id="methods-with-arguments-and-return-values">
-<h2><span class="section-number">2.5.3. </span>Methods with Arguments and Return Values<a class="headerlink" href="#methods-with-arguments-and-return-values" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.2. </span>Methods with Arguments and Return Values<a class="headerlink" href="#methods-with-arguments-and-return-values" title="Permalink to this headline">¶</a></h2>
 <p>Methods that take arguments and return values are like mathematical functions. Given some input, they return a value. For example, a square(x) method would take an argument x and return its square by multiplying it by itself.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../_images/function.png"><img alt="function" src="../_images/function.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Method that takes arguments and returns a value</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>You will not write your own methods until Unit 5, but you should be able to trace through method calls like below. Notice that the <strong>return statement</strong> in a method returns the value that is indicated in the return type back to the calling method. The calling method must save or use or print that value.</p>
-<p><a class="reference internal" href="../_images/exercise2.png"><img alt="exercise" class="align-middle" src="../_images/exercise2.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="traceReturnMethods" >
-            <p>2-5-1: What does the following code print out?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MethodTrace</span>
-<span class="p">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">square</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
-  <span class="p">{</span>
-      <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
-  <span class="p">{</span>
-        <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">MethodTrace</span> <span class="n">traceObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MethodTrace</span><span class="p">();</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">traceObj</span><span class="p">.</span><span class="na">square</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">traceObj</span><span class="p">.</span><span class="na">divide</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">);</span>
-  <span class="p">}</span>
- <span class="p">}</span>
-</pre></div>
-</div>
-
-            <li data-component="answer"  id="traceReturnMethods_opt_a">5</li><li data-component="feedback">Make sure you call both methods and compute the square of 2 and then add the results.</li>
-            
-            <li data-component="answer" data-correct id="traceReturnMethods_opt_b">7</li><li data-component="feedback">Yes, square(2) returns 4 which is added to divide(6,2) which returns 3. The total of 4 + 3 is 7.</li>
-            
-            <li data-component="answer"  id="traceReturnMethods_opt_c">4 3</li><li data-component="feedback">Make sure you add the results before printing it out.</li>
-            
-            <li data-component="answer"  id="traceReturnMethods_opt_d">2 3</li><li data-component="feedback">Make sure you square(2) and add the results before printint it out.</li>
-            
-            <li data-component="answer"  id="traceReturnMethods_opt_e">Does not compile.</li><li data-component="feedback">Try the code in an active code window.</li>
-            
-
-            </ul>
-            </div>
-            <p>Try this <a href="http://www.pythontutor.com/visualize.html#code=public%20class%20MethodTrace%20%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20public%20int%20square%28int%20x%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20x*x%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20public%20int%20divide%28int%20x,%20int%20y%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20x/y%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20MethodTrace%20traceObj%20%3D%20new%20MethodTrace%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.println%28%20traceObj.square%282%29%20%2B%20traceObj.divide%286,2%29%20%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%7D&cumulative=false&curInstr=16&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">visualization</a> to see this code in action.</p>
+<p>You will not write your own methods until Unit 5, but you should be able to trace through
+method calls that return a value such as the Turtle accessor/getter methods.</p>
 </div>
 <div class="section" id="groupwork-programming-challenge-turtle-distances">
-<h2><span class="section-number">2.5.4. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge : Turtle Distances<a class="headerlink" href="#groupwork-programming-challenge-turtle-distances" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.3. </span><a class="reference internal" href="../_images/groupwork2.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork2.png" style="width: 35px;" /></a> Programming Challenge : Turtle Distances<a class="headerlink" href="#groupwork-programming-challenge-turtle-distances" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>The Turtle class has a method called getDistance(x,y) which will return the turtle’s distance from a point (x,y). Can you find yertle’s distance from the point (0,0)?</p></li>
 <li><p>Add another turtle and make both turtles move. Then find the distance between them. You must use the getXPos() and getYPos() methods as well as the getDistance() method.</p></li>
@@ -687,82 +665,8 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 </div>
-<div class="section" id="practice">
-<h2><span class="section-number">2.5.5. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-5-1" >
-            <p>2-5-2: Consider the following method.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculatePizzaBoxes</span><span class="p">(</span><span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">,</span> <span class="kt">double</span> <span class="n">slicesPerBox</span><span class="p">)</span>
-<span class="p">{</span> <span class="cm">/*implementation not shown */</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>Which of the following lines of code, if located in a method in the same class as calculatePizzaBoxes, will compile without an error?</p>
-<li data-component="answer"  id="AP2-5-1_opt_a"><p>int result = calculatePizzaBoxes(45, 9.0);</p>
-</li><li data-component="feedback" id="AP2-5-1_opt_a">
-<p>The method calculatePizzaBoxes returns a double value that cannot be saved into an int variable.</p></li><li data-component="answer"  id="AP2-5-1_opt_b"><p>double result = calculatePizzaBoxes(45.0, 9.0);</p>
-</li><li data-component="feedback" id="AP2-5-1_opt_b">
-<p>The method calculatePizzaBoxes has an int parameter that cannot hold a double value 45.0.</p></li><li data-component="answer"  id="AP2-5-1_opt_c"><p>int result = calculatePizzaBoxes(45.0, 9);</p>
-</li><li data-component="feedback" id="AP2-5-1_opt_c">
-<p>The method calculatePizzaBoxes has an int parameter that cannot hold a double value 45.0. Note that the int 9 can be passed into a double parameter.</p></li><li data-component="answer" data-correct id="AP2-5-1_opt_d"><p>double result = calculatePizzaBoxes(45, 9.0);</p>
-</li><li data-component="feedback" id="AP2-5-1_opt_d">
-<p>The method calculatePizzaBoxes has an int and a double parameter and returns a double result.</p></li><li data-component="answer"  id="AP2-5-1_opt_e"><p>result = calculatePizzaBoxes(45, 9);</p>
-</li><li data-component="feedback" id="AP2-5-1_opt_e">
-<p>The variable result has not been declared (with an appropriate data type).</p></li>
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-5-2" >
-            <p>2-5-3: Consider the following class definition.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">boilingPoint</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">freezingPoint</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">currentTemp</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">currentTemp</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">lowerTemp</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">currentTemp</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getTemp</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Assume that the following code segment appears in a class other than Liquid.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Liquid</span> <span class="n">water</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Liquid</span><span class="p">();</span>
-<span class="n">water</span><span class="p">.</span><span class="na">lowerTemp</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">water</span><span class="p">.</span><span class="na">getTemp</span><span class="p">());</span>
-</pre></div>
-</div>
-<p>What is printed as a result of executing the code segment?</p>
-<li data-component="answer"  id="AP2-5-2_opt_a"><p>-10</p>
-</li><li data-component="feedback" id="AP2-5-2_opt_a">
-<p>The Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it.</p></li><li data-component="answer"  id="AP2-5-2_opt_b"><p>50</p>
-</li><li data-component="feedback" id="AP2-5-2_opt_b">
-<p>The Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it.</p></li><li data-component="answer"  id="AP2-5-2_opt_c"><p>water.getTemp()</p>
-</li><li data-component="feedback" id="AP2-5-2_opt_c">
-<p>The System.out.println will print the value returned from water.getTemp().</p></li><li data-component="answer"  id="AP2-5-2_opt_d"><p>The code will not compile.</p>
-</li><li data-component="feedback" id="AP2-5-2_opt_d">
-<p>This code should compile.</p></li><li data-component="answer" data-correct id="AP2-5-2_opt_e"><p>40.0</p>
-</li><li data-component="feedback" id="AP2-5-2_opt_e">
-<p>Correct, the Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it, and getTemp() returns the currentTemp value as a double.</p></li>
-
-            </ul>
-            </div>
-            </div>
 <div class="section" id="summary">
-<h2><span class="section-number">2.5.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Some methods return values.</p></li>
 <li><p>To use the return value when calling a method, it must be stored in a variable or used as part of an expression. The variable data type must match the return type of the method.</p></li>

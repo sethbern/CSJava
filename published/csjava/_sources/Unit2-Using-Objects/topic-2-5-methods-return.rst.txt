@@ -36,14 +36,31 @@
 Calling Methods that Return Values
 ===================================
 
-If a method is a **void method** and has **void** as its return type, like most of the methods we have seen so far, that means that it does not return anything. But some methods **return** a value back that the program can use. 
+If a method is a **void method** and has **void** as its return type, 
+like most of the methods we have seen so far, that means that it does not return anything. 
+But some methods **return** a value when called. 
 
-Get Methods
-------------
+.. |javadoc (documentation) file| raw:: html
 
-In the previous lesson, we used some set methods with parameters to set the attributes of a turtle to different values, for example yertle.setColor(Color.red); or yertle.setWidth(50); Programmers create get and set methods for each attribute represented as an instance variable in a class to access and modify the value in that variable. The get methods always return back the value of that instance variable, and the set methods modify the value. 
+   <a href="https://www2.cs.uic.edu/~i101/doc/SimpleTurtle.html" target="_blank">javadoc (documentation) file</a>   
 
-When you use a get method, you need to save what it returns in a variable or use the value in some way for example by printing it out. The data type of the variable must match the data type of the return value of the method. You can find out the return type of a method in its documentation. It will be right before the method name, for example *int getWidth()* means getWidth will return an int (an integer number). 
+You can see all the methods that are inherited in Turtle in this |javadoc (documentation) file|. 
+The first column in the method summary indicates the *return type* of the method.
+Most of the Turtle methods have a void return type.
+A void method is often used to modify an object's attributes.  
+For example, the ``forward()`` method changes the
+turtle location, while the ``turnLeft()`` method changes the direction.  
+
+Now look at the methods in the first column having a return type that is *not* void.  The non-void
+methods tend to start
+with the word "get" is "is".  Rather than changing an attribute, these methods return an attribute value.
+For example, the ``getXPos()`` method will return a turtle's x position.
+
+When you use a method that returns a value, you need to save what it 
+returns in a variable or use the value in some way for example by printing it out. 
+The data type of the variable must match the data type of the return value of the method. 
+In the example below the ``getWidth()`` method returns an int, so we need to assign the result
+into an int variable ``int width = yertle.getWidth();``.
 
 Here are some examples of using get methods for the turtle object yertle. 
 
@@ -60,7 +77,9 @@ Here are some examples of using get methods for the turtle object yertle.
 
 .. note::
 
-    A common error is forgetting to do something with the value returned from a method. When you call a method that returns a value, you should do something with that value like saving it into a variable or printing it out.  
+    A common error is forgetting to do something with the value returned from a method. 
+    When you call a method that returns a value, you should do something with that value 
+    like saving it into a variable or printing it out.  
 
 |CodingEx| **Coding Exercise:**
 
@@ -258,51 +277,9 @@ Methods that take arguments and return values are like mathematical functions. G
 
     Figure 1: Method that takes arguments and returns a value
 
-You will not write your own methods until Unit 5, but you should be able to trace through method calls like below. Notice that the **return statement** in a method returns the value that is indicated in the return type back to the calling method. The calling method must save or use or print that value.
-
-|Exercise| **Check your understanding**
-
-.. mchoice:: traceReturnMethods
-   :practice: T
-   :answer_a: 5
-   :answer_b: 7
-   :answer_c: 4 3
-   :answer_d: 2 3
-   :answer_e: Does not compile.
-   :correct: b
-   :feedback_a: Make sure you call both methods and compute the square of 2 and then add the results.
-   :feedback_b: Yes, square(2) returns 4 which is added to divide(6,2) which returns 3. The total of 4 + 3 is 7.
-   :feedback_c: Make sure you add the results before printing it out.
-   :feedback_d: Make sure you square(2) and add the results before printint it out.
-   :feedback_e: Try the code in an active code window.
-   
-   What does the following code print out?
-   
-   .. code-block:: java
-   
-      public class MethodTrace 
-      {
-        public int square(int x)
-        {
-            return x*x;
-        }
-        public int divide(int x, int y)
-        {
-              return x/y;
-        }
-        public static void main(String[] args) {
-            MethodTrace traceObj = new MethodTrace();
-            System.out.println( traceObj.square(2) + traceObj.divide(6,2) );
-        }
-       }
-
-
-.. |visualization| raw:: html
-
-   <a href="http://www.pythontutor.com/visualize.html#code=public%20class%20MethodTrace%20%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20public%20int%20square%28int%20x%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20x*x%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20public%20int%20divide%28int%20x,%20int%20y%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20x/y%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20MethodTrace%20traceObj%20%3D%20new%20MethodTrace%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.println%28%20traceObj.square%282%29%20%2B%20traceObj.divide%286,2%29%20%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%7D&cumulative=false&curInstr=16&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">visualization</a>
-
-Try this |visualization| to see this code in action.
-      
+You will not write your own methods until Unit 5, but you should be able to trace through 
+method calls that return a value such as the Turtle accessor/getter methods.
+     
 |Groupwork| Programming Challenge : Turtle Distances
 ----------------------------------------------------
 
@@ -390,102 +367,6 @@ Try this |visualization| to see this code in action.
             assertTrue(passed);
         }
     }
-
-
-
-Practice
--------------
-
-.. mchoice:: AP2-5-1
-    :practice: T
-    
-    Consider the following method.
-
-    .. code-block:: java
-
-        public double calculatePizzaBoxes(int numOfPeople, double slicesPerBox)
-        { /*implementation not shown */}
-
-    Which of the following lines of code, if located in a method in the same class as calculatePizzaBoxes, will compile without an error?
-    
-    - int result = calculatePizzaBoxes(45, 9.0);
-
-      - The method calculatePizzaBoxes returns a double value that cannot be saved into an int variable.
-      
-    - double result = calculatePizzaBoxes(45.0, 9.0);
-    
-      - The method calculatePizzaBoxes has an int parameter that cannot hold a double value 45.0.
-
-    - int result = calculatePizzaBoxes(45.0, 9);
-    
-      - The method calculatePizzaBoxes has an int parameter that cannot hold a double value 45.0. Note that the int 9 can be passed into a double parameter.
-      
-    - double result = calculatePizzaBoxes(45, 9.0);
-    
-      + The method calculatePizzaBoxes has an int and a double parameter and returns a double result.
-      
-    - result = calculatePizzaBoxes(45, 9);
-    
-      - The variable result has not been declared (with an appropriate data type). 
-      
-.. mchoice:: AP2-5-2
-    :practice: T
-
-    Consider the following class definition.
-
-    .. code-block:: java
-
-        public class Liquid
-        {
-            private double boilingPoint;
-            private double freezingPoint;
-            private double currentTemp;
-
-            public Liquid()
-            {
-                currentTemp = 50;
-            }
-
-            public void lowerTemp()
-            {
-                currentTemp -= 10;
-            }
-
-            public double getTemp()
-            {
-                return currentTemp;
-            }
-        }
-
-    Assume that the following code segment appears in a class other than Liquid.
-    
-    .. code-block:: java
-
-        Liquid water = new Liquid();
-        water.lowerTemp();
-        System.out.println(water.getTemp());
-
-    What is printed as a result of executing the code segment?
-    
-    - \-10
-    
-      - The Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it. 
-    
-    - 50
-    
-      - The Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it. 
-    
-    - water.getTemp()
-    
-      - The System.out.println will print the value returned from water.getTemp().
-        
-    - The code will not compile.
-    
-      - This code should compile.
-
-    - 40.0
-    
-      + Correct, the Liquid() constructor sets the currentTemp instance variable to 50 and the lowerTemp() method subtracts 10 from it, and getTemp() returns the currentTemp value as a double.
 
 
 Summary

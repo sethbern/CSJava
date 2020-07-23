@@ -362,9 +362,9 @@ you need to pass in <strong>arguments</strong> or <strong>actual parameters</str
 copied into the formal parameter variables.</p>
 <p>Figure 2 shows how the actual arguments in the method call <code class="docutils literal notranslate"><span class="pre">verse(&quot;one&quot;,&quot;thumb&quot;);</span></code> are copied into the formal parameter variables.
 The method body statements use the parameter variables to customize the print statements each time the method is called.</p>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../_images/argumentpassing.png"><img alt="Arguments to Parameters" src="../_images/argumentpassing.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Figure 2: Matching Actual Arguments to Formal Parameters</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 2: Matching Actual Arguments to Formal Parameters</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
@@ -441,7 +441,197 @@ this more in the following unit.</p>
 <p>Methods can also return values of any type back to the calling method.
 The calling method should do something with this return value,
 like printing it out or saving it in a variable. Try the problems below to practice with a String method that takes a parameter and returns a boolean value.</p>
-<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+</div>
+<div class="section" id="practice">
+<h1>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h1>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-1" >
+            <p>5-2-1: Consider the following methods:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
+    <span class="n">printInCentimeters</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printInCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">,</span> <span class="kt">double</span> <span class="n">centimeters</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">inches</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">centimeters</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Assume that the method call <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters(10)</span></code> appears in a method in the same class. What is printed as a result of the method call?</p>
+<li data-component="answer"  id="AP2-4-1_opt_a"><p>inches –&gt; centimeters</p>
+</li><li data-component="feedback" id="AP2-4-1_opt_a">
+<p>The values of the variables inches and centimeters should be printed out, not the words.</p></li><li data-component="answer"  id="AP2-4-1_opt_b"><p>10 –&gt;  25</p>
+</li><li data-component="feedback" id="AP2-4-1_opt_b">
+<p>Two doubles should be printed, not two ints, and the centimeters should be 25.4</p></li><li data-component="answer"  id="AP2-4-1_opt_c"><p>25.4 –&gt; 10</p>
+</li><li data-component="feedback" id="AP2-4-1_opt_c">
+<p>Inches should be printed before centimeters.</p></li><li data-component="answer"  id="AP2-4-1_opt_d"><p>10 –&gt; 12.54</p>
+</li><li data-component="feedback" id="AP2-4-1_opt_d">
+<p>c = 10 * 2.54 = 25.4, not 12.54.</p></li><li data-component="answer" data-correct id="AP2-4-1_opt_e"><p>10.0 –&gt; 25.4</p>
+</li><li data-component="feedback" id="AP2-4-1_opt_e">
+<p>Correct! centimeters = 10 * 2.54 = 25.4.</p></li>
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-2" >
+            <p>5-2-2: Consider the following methods, which appear in the same class.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">splitPizza</span><span class="p">(</span><span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">slicesPerPerson</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="n">numOfPeople</span><span class="p">;</span>
+    <span class="cm">/* INSERT CODE HERE */</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printSlices</span><span class="p">(</span><span class="kt">int</span> <span class="n">slices</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Each person gets &quot;</span> <span class="o">+</span> <span class="n">slices</span> <span class="o">+</span> <span class="s">&quot; slices each&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Which of the following lines would go into <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">INSERT</span> <span class="pre">CODE</span> <span class="pre">HERE</span> <span class="pre">*/</span></code> in the method splitPizza in order to call the <code class="docutils literal notranslate"><span class="pre">printSlices</span></code> method to print the number of slices per person correctly?</p>
+<li data-component="answer" data-correct id="AP2-4-2_opt_a"><p>printSlices(slicesPerPerson);</p>
+</li><li data-component="feedback" id="AP2-4-2_opt_a">
+<p>Correct! If you had 4 people, slicesPerPerson would be 8/4=2 and printSlices would print out “Each person gets 2 slices each”.</p></li><li data-component="answer"  id="AP2-4-2_opt_b"><p>printSlices(numOfPeople);</p>
+</li><li data-component="feedback" id="AP2-4-2_opt_b">
+<p>If you had 4 people, this would print out that they get 4 slices each of an 8 slice pizza.</p></li><li data-component="answer"  id="AP2-4-2_opt_c"><p>printSlices(8);</p>
+</li><li data-component="feedback" id="AP2-4-2_opt_c">
+<p>This would always print out 8 slices each.</p></li><li data-component="answer"  id="AP2-4-2_opt_d"><p>splitPizza(8);</p>
+</li><li data-component="feedback" id="AP2-4-2_opt_d">
+<p>This would not call the printSlices method.</p></li><li data-component="answer"  id="AP2-4-2_opt_e"><p>splitPizza(slicesPerPerson);</p>
+</li><li data-component="feedback" id="AP2-4-2_opt_e">
+<p>This would not call the printSlices method.</p></li>
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="tracing-methods">
+<h1>Tracing Methods<a class="headerlink" href="#tracing-methods" title="Permalink to this headline">¶</a></h1>
+<p>You will not write your own methods until Unit 5, but you should be able to trace and interpret method calls like below.</p>
+<p>Here is another version of the Old MacDonald Song with a more powerful abstraction. The method verse has 2 parameters for the animal and the noise it makes, so that it can be used for any animal.
+Use the Code Lens button or this <a href="http://www.pythontutor.com/java.html#code=public%20class%20Song%20%0A%7B%0A%20%20%0A%20%20%20%20public%20void%20verse%28String%20animal,%20String%20noise%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20on%20that%20farm%20he%20had%20a%20%22%20%2B%20animal%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22With%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20here,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20there,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20public%20void%20chorus%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22E-I-E-I-O%22%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20Song%20s%20%3D%20new%20Song%28%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22cow%22,%20%22moo%22%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22duck%22,%22quack%22%29%3B%0A%20%20%20%20%7D%0A%7D&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a> to step through the code.</p>
+
+<div data-childcomponent="SongFarm" class="runestone explainer ac_section alert alert-warning">
+<p>Add another verse in main that calls the method verse with a different animal and noise.</p>
+
+<textarea data-component="activecode" id=SongFarm data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Song
+{
+
+    public void verse(String animal, String noise)
+    {
+        System.out.println("Old MacDonald had a farm");
+        chorus();
+        System.out.println("And on that farm he had a " + animal);
+        chorus();
+        System.out.println("With a " + noise + " " + noise + " here,");
+        System.out.println("And a " + noise + " " + noise + " there,");
+        System.out.println("Old MacDonald had a farm");
+        chorus();
+    }
+    public void chorus()
+    {
+        System.out.println("E-I-E-I-O");
+    }
+
+    public static void main(String[] args)
+    {
+       Song s = new Song();
+       s.verse("cow", "moo");
+       s.verse("duck","quack");
+    }
+}
+====
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+    public String expected = "Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a cow\nE-I-E-I-O\nWith a moo moo here,\nAnd a moo moo there,\nOld MacDonald had a farm\nE-I-E-I-O\nOld MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\nWith a quack quack here,\nAnd a quack quack there,\nOld MacDonald had a farm\nE-I-E-I-O";
+
+    public RunestoneTests() {
+        super("Song");
+    }
+
+    @Test
+    public void test1()
+    {
+        String output = getMethodOutput("main");
+
+        boolean passed = output.contains(expected);
+
+        passed = getResults(expected, output, "Still have the old output", passed);
+        assertTrue(passed);
+    }
+
+    @Test
+    public void test2()
+    {
+        String output = getMethodOutput("main");
+
+        boolean passed = output.contains(expected) && !output.equals(expected);
+
+        passed = getResults(expected, output, "Verse added", passed);
+        assertTrue(passed);
+    }
+
+    @Test
+    public void test3()
+    {
+        String code = getCode();
+        int numVerses = countOccurences(code, "verse(");
+        boolean passed = numVerses >= 3;
+        passed = getResults("3 or more", ""+numVerses, "Number of verses", passed);
+        assertTrue(passed);
+    }
+}
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="traceMethods" >
+            <p>5-2-3: What does the following code print out?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MethodTrace</span>
+<span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">square</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">MethodTrace</span> <span class="n">traceObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MethodTrace</span><span class="p">();</span>
+      <span class="n">traceObj</span><span class="p">.</span><span class="na">square</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; and &quot;</span><span class="p">);</span>
+      <span class="n">traceObj</span><span class="p">.</span><span class="na">divide</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="traceMethods_opt_a">25 and 2</li><li data-component="feedback">Correct.</li>
+            
+            <li data-component="answer"  id="traceMethods_opt_b">25 and .5</li><li data-component="feedback">The order of the arguments to the divide(x,y) method will divide x by y and return an int result.</li>
+            
+            <li data-component="answer"  id="traceMethods_opt_c">2 25</li><li data-component="feedback">The square(x) method is called before the divide(x,y) method.</li>
+            
+            <li data-component="answer"  id="traceMethods_opt_d">25 2</li><li data-component="feedback">The main method prints out " and " in between the method calls.</li>
+            
+            <li data-component="answer"  id="traceMethods_opt_e">Nothing, it does not compile.</li><li data-component="feedback">Try the code in the visualizer link below.</li>
+            
+
+            </ul>
+            </div>
+            <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="StringFind_method" class="runestone explainer ac_section alert alert-warning">
 <p>Run the following program which contains a method called findLetter that takes a letter and a text as parameters and uses a loop to see if that letter is in the text and returns true if it is, false otherwise. Give the variables <code class="docutils literal notranslate"><span class="pre">letter</span></code> and <code class="docutils literal notranslate"><span class="pre">text</span></code> new values in the main method and run it again to try finding a different letter. Then, change the code of the findLetter method to return how many times it finds letter in text, using a new variable called <code class="docutils literal notranslate"><span class="pre">count</span></code>. How would the return type change?</p>
@@ -566,8 +756,8 @@ import static org.junit.Assert.*;
 <li><p>In the main method, create an object of the class and call the method(s) you created in the last step to print out 3 verses of the song. Can you add more verses?</p></li>
 </ol>
 </div>
-<div class="section" id="practice">
-<h1>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h1>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>

@@ -150,6 +150,237 @@ Methods can also return values of any type back to the calling method.
 The calling method should do something with this return value, 
 like printing it out or saving it in a variable. Try the problems below to practice with a String method that takes a parameter and returns a boolean value.
 
+
+
+Practice
+-------------
+
+.. mchoice:: AP2-4-1
+    :practice: T
+
+    Consider the following methods:
+    
+    .. code-block:: java
+
+        public void inchesToCentimeters(double i)
+        {
+            double c = i * 2.54;
+            printInCentimeters(i, c);
+        }
+
+        public void printInCentimeters(double inches, double centimeters)
+        {
+            System.out.print(inches + "-->" + centimeters);
+        }
+
+    Assume that the method call ``inchesToCentimeters(10)`` appears in a method in the same class. What is printed as a result of the method call?
+    
+    - inches --> centimeters
+    
+      - The values of the variables inches and centimeters should be printed out, not the words.
+      
+    - 10 -->  25
+      
+      - Two doubles should be printed, not two ints, and the centimeters should be 25.4
+    
+    - 25.4 --> 10
+    
+      - Inches should be printed before centimeters.
+    
+    - 10 --> 12.54
+    
+      - c = 10 * 2.54 = 25.4, not 12.54.
+    
+    - 10.0 --> 25.4
+    
+      + Correct! centimeters = 10 * 2.54 = 25.4. 
+
+
+
+
+.. mchoice:: AP2-4-2
+    :practice: T
+    
+    Consider the following methods, which appear in the same class.
+
+    .. code-block:: java
+    
+        public void splitPizza(int numOfPeople)
+        {
+            int slicesPerPerson = 8/numOfPeople;
+            /* INSERT CODE HERE */
+        }
+
+        public void printSlices(int slices)
+        {
+            System.out.println("Each person gets " + slices + " slices each");
+        }
+
+    Which of the following lines would go into ``/* INSERT CODE HERE */`` in the method splitPizza in order to call the ``printSlices`` method to print the number of slices per person correctly? 
+    
+    - printSlices(slicesPerPerson);
+    
+      + Correct! If you had 4 people, slicesPerPerson would be 8/4=2 and printSlices would print out "Each person gets 2 slices each".
+      
+    - printSlices(numOfPeople);
+    
+      - If you had 4 people, this would print out that they get 4 slices each of an 8 slice pizza.
+      
+    - printSlices(8);
+    
+      - This would always print out 8 slices each.
+      
+    - splitPizza(8);
+    
+      - This would not call the printSlices method.
+      
+    - splitPizza(slicesPerPerson);
+    
+      - This would not call the printSlices method.
+
+
+
+
+
+Tracing Methods
+-----------------
+
+You will not write your own methods until Unit 5, but you should be able to trace and interpret method calls like below. 
+
+Here is another version of the Old MacDonald Song with a more powerful abstraction. The method verse has 2 parameters for the animal and the noise it makes, so that it can be used for any animal.
+Use the Code Lens button or this |Java Visualizer| to step through the code.
+
+.. |Java visualizer| raw:: html
+
+   <a href="http://www.pythontutor.com/java.html#code=public%20class%20Song%20%0A%7B%0A%20%20%0A%20%20%20%20public%20void%20verse%28String%20animal,%20String%20noise%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20on%20that%20farm%20he%20had%20a%20%22%20%2B%20animal%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22With%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20here,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20there,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20public%20void%20chorus%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22E-I-E-I-O%22%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20Song%20s%20%3D%20new%20Song%28%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22cow%22,%20%22moo%22%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22duck%22,%22quack%22%29%3B%0A%20%20%20%20%7D%0A%7D&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a>
+   
+.. activecode:: SongFarm
+    :language: java
+    :autograde: unittest
+    :practice: T
+    
+    Add another verse in main that calls the method verse with a different animal and noise.
+    ~~~~
+    public class Song 
+    { 
+  
+        public void verse(String animal, String noise) 
+        {
+            System.out.println("Old MacDonald had a farm");
+            chorus();
+            System.out.println("And on that farm he had a " + animal);
+            chorus();
+            System.out.println("With a " + noise + " " + noise + " here,");
+            System.out.println("And a " + noise + " " + noise + " there,");
+            System.out.println("Old MacDonald had a farm");
+            chorus();
+        }
+        public void chorus()
+        {
+            System.out.println("E-I-E-I-O");
+        }
+
+        public static void main(String[] args) 
+        {
+           Song s = new Song();
+           s.verse("cow", "moo");
+           s.verse("duck","quack");
+        }
+    }
+    ====
+    import static org.junit.Assert.*;
+    import org.junit.*;;
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+        public String expected = "Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a cow\nE-I-E-I-O\nWith a moo moo here,\nAnd a moo moo there,\nOld MacDonald had a farm\nE-I-E-I-O\nOld MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\nWith a quack quack here,\nAnd a quack quack there,\nOld MacDonald had a farm\nE-I-E-I-O";
+
+        public RunestoneTests() {
+            super("Song");
+        }
+
+        @Test
+        public void test1()
+        {
+            String output = getMethodOutput("main");
+
+            boolean passed = output.contains(expected);
+
+            passed = getResults(expected, output, "Still have the old output", passed);
+            assertTrue(passed);
+        }
+
+        @Test
+        public void test2()
+        {
+            String output = getMethodOutput("main");
+
+            boolean passed = output.contains(expected) && !output.equals(expected);
+
+            passed = getResults(expected, output, "Verse added", passed);
+            assertTrue(passed);
+        }
+
+        @Test
+        public void test3()
+        {
+            String code = getCode();
+            int numVerses = countOccurences(code, "verse(");
+            boolean passed = numVerses >= 3;
+            passed = getResults("3 or more", ""+numVerses, "Number of verses", passed);
+            assertTrue(passed);
+        }
+    }
+
+|Exercise| **Check your understanding**
+
+.. mchoice:: traceMethods
+   :practice: T
+   :answer_a: 25 and 2
+   :answer_b: 25 and .5
+   :answer_c: 2 25
+   :answer_d: 25 2
+   :answer_e: Nothing, it does not compile.
+   :correct: a
+   :feedback_a: Correct.
+   :feedback_b: The order of the arguments to the divide(x,y) method will divide x by y and return an int result.
+   :feedback_c: The square(x) method is called before the divide(x,y) method.
+   :feedback_d: The main method prints out " and " in between the method calls.
+   :feedback_e: Try the code in the visualizer link below.
+   
+   What does the following code print out?
+   
+   .. code-block:: java
+   
+      public class MethodTrace 
+      {
+        public void square(int x)
+        {
+            System.out.print(x*x);
+        }
+        public void divide(int x, int y)
+        {
+            System.out.println(x/y);
+        }
+        public static void main(String[] args) {
+            MethodTrace traceObj = new MethodTrace();
+            traceObj.square(5);
+            System.out.print(" and ");
+            traceObj.divide(4,2);
+        }
+       }
+
+
+
+
+
+
+
+
+
+
+
 |CodingEx| **Coding Exercise**
 
 

@@ -36,16 +36,15 @@ Creating and Initializing Objects: Constructors
 ================================================
 
 A Java class defines what objects of the class know (attributes) and what they can 
-do (behaviors).  Each class has **constructors** like ``World()`` and ``Turtle(world)`` which 
-are used to initialize the attributes in a newly created object.
+do (behaviors). Each class has a special type of method called a 
+**constructor**  that is used to initialize the attributes in a newly created object.
 
-A new object is created with the ``new`` keyword followed by the class name (``new Class()``).  
-When this code executes, it creates a new object of the specified class and calls a 
-constructor, which has the same name as the class.  For example, ``new World()`` calls the 
-World contructor to create and 
-initialize a new object of the ``World`` class, which is a canvas that turtles can move and draw upon.
-while ``new Turtle(world)`` calls the Turtle constructor to 
-create and initialize a new ``Turtle`` object in the specified world.
+A new object is created with the ``new`` keyword followed by the class name.
+For example, ``new World()`` calls the 
+World constructor to create and initialize a new object of the ``World`` class, 
+which is a canvas that turtles can move and draw upon.
+The code ``new Turtle(world)`` calls the Turtle constructor to 
+create and initialize the attributes of a new ``Turtle`` object in the specified world.
 
 
 .. code-block:: java

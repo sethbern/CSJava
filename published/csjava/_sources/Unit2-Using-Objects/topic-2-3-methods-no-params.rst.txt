@@ -37,8 +37,6 @@
 Calling Object Methods Without Parameters
 ===========================================
 
-A **method** is a named set of statements.  
-
 Methods define common behavior for all objects of the class.
 In the ``Turtle`` class, methods 
 like ``forward()`` and ``turnRight()`` give turtle objects the ability to 
@@ -52,8 +50,8 @@ direction the turtle is heading or its position.
 To call an object method, you must use a variable that references an object, along with the dot (.) operator followed 
 by the method name.  For example, ``yertle.forward();`` calls the "forward" method on the turtle referenced
 by the variable "yertle", which results in a change to yertle's location.  
-On the other hand, ``myrtle.turnRight()`` calls the "turnRight" method on a different turtle 
-referenced by the "myrtle" variable, resulting in a change to mertle's heading. 
+On the other hand, ``myrtle.turnRight()`` calls the "turnRight" method on a different turtle object
+referenced by the "myrtle" variable, resulting in a change to myrtle's heading. 
 
 Every method call is followed by parentheses. 
 The parentheses ``()`` after method names are there in case you need to give the 

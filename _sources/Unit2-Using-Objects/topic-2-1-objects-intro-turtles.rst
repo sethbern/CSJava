@@ -152,8 +152,8 @@ For example, ``yertle.forward()`` asks the turtle ``yertle`` to go ``forward``.
 It doesn't tell ``yertle`` how much to go forward, so it goes forward 100 pixels by default. 
 The parentheses ``()`` after a method name are there in case you need to give 
 the method **arguments** (some data) to do its job, for example to go forward 50 pixels 
-instead of 100. You would do this using the code ``yertle.forward(50);``.  The value ``50`` is passed
-as a parameter to the forward method to tell the turtle how many pixels to move.
+instead of 100. You would do this using the code ``yertle.forward(50);``.  
+The value ``50`` is passed to the forward method to tell the turtle how many pixels to move.
 Try changing the code above to go forward 50 pixels and 
 then run it again.  What happens?
 

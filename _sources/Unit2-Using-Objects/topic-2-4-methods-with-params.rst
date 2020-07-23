@@ -46,9 +46,12 @@
 Calling Methods With Parameters
 ===========================================
 
-In the last lessons, we used simple **methods** like forward() and turnRight() to make the turtle draw lines. You may have noticed that forward() and backward() always move the same number of pixels (100 pixels), and turnRight() and turnLeft() always turn at right angles (90 degrees). This is a little limiting. What if we wanted to draw a triangle or the letter A? These require smaller angles to draw diagonal lines and different length lines. Luckily, there are more complex methods in the Turtle class that let you specify the number of pixels to move forward or the number of degrees to turn. These values that you can give to methods to help them do their job are called **arguments** or **parameters**. 
+In the last lesson, we used simple **methods** like forward() and turnRight() to make the turtle draw lines. You may have noticed that forward() and backward() always move the same number of pixels (100 pixels), and turnRight() and turnLeft() always turn at right angles (90 degrees). This is a little limiting. What if we wanted to draw a triangle or the letter A? These require smaller angles to draw diagonal lines and different length lines. Luckily, there are more complex methods in the Turtle class that let you specify the number of pixels to move forward or the number of degrees to turn. These values that you can give to methods to help them do their job are called **arguments** or **parameters**. 
 
-The parentheses () after method names are there in case you need to give the method **actual parameters** or **arguments** (some data) to do its job. For example, we can give the argument 100 in forward(100) to make the turtle go forward 100 pixels or the argument 30 in turn(30) to make the turtle turn 30 degrees instead of 90 degrees. 
+The parentheses () after method names are there in case you need to give the 
+method **actual parameters** or **arguments** (some data) to do its job. 
+For example, we can give the argument 25 in forward(25) to make the turtle go 
+forward 25 pixels or the argument 30 in turn(30) to make the turtle turn 30 degrees. 
 
 
 .. note::
@@ -56,12 +59,20 @@ The parentheses () after method names are there in case you need to give the met
     object.method(arguments); is used to call an object's method and give it some arguments (actual parameters) to do its job. 
 
 
-Although some people use the words parameters and arguments interchangeably, there is a subtle difference. When you create your own method, the variables you define for it are called **formal parameters**. When you call the method to do its job, you give or pass in **arguments** or **actual parameters** to it that are then saved in the parameter variables. So, in the definition of the forward method, it has a parameter variable called pixels, and in the call to forward(100), the argument is the value 100 which will get saved in the parameter variable pixels. You will learn to write your own methods in Unit 5. In this unit, you will learn to call methods that are already written for you.
+Although some people use the words parameters and arguments interchangeably, there is a subtle difference. 
+When you create your own method, the variables you define for it are 
+called **formal parameters**. When you call the method to do its job, you give or 
+pass in **arguments** or **actual parameters** to it that are then saved in the 
+parameter variables. So, in the definition of the forward method, it has a 
+parameter variable called pixels, and in the call to forward(25), the argument is the 
+value 25 which will get saved in the parameter variable pixels. 
+You will learn to write your own methods in Unit 5. 
+In this unit, you will learn to call methods that are already written for you.
 
 .. code-block:: java 
 
     // Method call
-    yertle.forward(100); // argument is 100
+    yertle.forward(25); // argument is 25
     
     // Method definition written for you
     public void forward(int pixels) // parameter pixels
@@ -82,7 +93,7 @@ Although some people use the words parameters and arguments interchangeably, the
 Here is the Turtle class diagram again that shows some of the variables and methods inherited from the SimpleTurtle class in the class Turtle that are written for you. 
 
 .. figure:: Figures/turtleUMLClassDiagram.png
-    :width: 400px
+    :width: 300px
     :align: center
     :alt: Turtle class diagram
     :figclass: align-center
@@ -97,11 +108,15 @@ Here is the Turtle class diagram again that shows some of the variables and meth
 
    <a href="https://www2.cs.uic.edu/~i101/doc/SimpleTurtle.html" target="_blank">javadoc (documentation) file</a>   
 
-Try some of the methods above in the turtle code below. You can see all the methods that are inherited in Turtle in this |javadoc (documentation) file|. 
+Try some of the methods above in the turtle code below. 
+You can see all the methods that are inherited in Turtle in this |javadoc (documentation) file|. 
 
 Methods are said to be **overloaded** when there
 are multiple methods with the same name but a
-different **method signature**, where it requires a different number or type of parameters. For example, we have two different forward methods, forward() with no parameters and forward(100) which has a parameter that tells it how much to move forward. If there is more than one parameter, then the values given to the method need to correspond to the order and types in the method signature. 
+different **method signature**, where it requires a different number or type of parameters. 
+For example, we have two different forward methods, forward() with no parameters 
+and forward(25) which has an int parameter that tells it how much to move forward. 
+If there is more than one parameter, then the values given to the method need to correspond to the order and types in the method signature. 
 
 
 |CodingEx| **Coding Exercise**
@@ -255,134 +270,6 @@ Try the following mixed up code to draw a simple house made of a square and a tr
    }
    
 
-Tracing Methods
------------------
-
-You will not write your own methods until Unit 5, but you should be able to trace and interpret method calls like below. 
-
-Here is another version of the Old MacDonald Song with a more powerful abstraction. The method verse has 2 parameters for the animal and the noise it makes, so that it can be used for any animal.
-Use the Code Lens button or this |Java Visualizer| to step through the code.
-
-.. |Java visualizer| raw:: html
-
-   <a href="http://www.pythontutor.com/java.html#code=public%20class%20Song%20%0A%7B%0A%20%20%0A%20%20%20%20public%20void%20verse%28String%20animal,%20String%20noise%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20on%20that%20farm%20he%20had%20a%20%22%20%2B%20animal%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22With%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20here,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20there,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20public%20void%20chorus%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22E-I-E-I-O%22%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20Song%20s%20%3D%20new%20Song%28%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22cow%22,%20%22moo%22%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22duck%22,%22quack%22%29%3B%0A%20%20%20%20%7D%0A%7D&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a>
-   
-.. activecode:: SongFarm
-    :language: java
-    :autograde: unittest
-    :practice: T
-    
-    Add another verse in main that calls the method verse with a different animal and noise.
-    ~~~~
-    public class Song 
-    { 
-  
-        public void verse(String animal, String noise) 
-        {
-            System.out.println("Old MacDonald had a farm");
-            chorus();
-            System.out.println("And on that farm he had a " + animal);
-            chorus();
-            System.out.println("With a " + noise + " " + noise + " here,");
-            System.out.println("And a " + noise + " " + noise + " there,");
-            System.out.println("Old MacDonald had a farm");
-            chorus();
-        }
-        public void chorus()
-        {
-            System.out.println("E-I-E-I-O");
-        }
-
-        public static void main(String[] args) 
-        {
-           Song s = new Song();
-           s.verse("cow", "moo");
-           s.verse("duck","quack");
-        }
-    }
-    ====
-    import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
-
-    public class RunestoneTests extends CodeTestHelper
-    {
-        public String expected = "Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a cow\nE-I-E-I-O\nWith a moo moo here,\nAnd a moo moo there,\nOld MacDonald had a farm\nE-I-E-I-O\nOld MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\nWith a quack quack here,\nAnd a quack quack there,\nOld MacDonald had a farm\nE-I-E-I-O";
-
-        public RunestoneTests() {
-            super("Song");
-        }
-
-        @Test
-        public void test1()
-        {
-            String output = getMethodOutput("main");
-
-            boolean passed = output.contains(expected);
-
-            passed = getResults(expected, output, "Still have the old output", passed);
-            assertTrue(passed);
-        }
-
-        @Test
-        public void test2()
-        {
-            String output = getMethodOutput("main");
-
-            boolean passed = output.contains(expected) && !output.equals(expected);
-
-            passed = getResults(expected, output, "Verse added", passed);
-            assertTrue(passed);
-        }
-
-        @Test
-        public void test3()
-        {
-            String code = getCode();
-            int numVerses = countOccurences(code, "verse(");
-            boolean passed = numVerses >= 3;
-            passed = getResults("3 or more", ""+numVerses, "Number of verses", passed);
-            assertTrue(passed);
-        }
-    }
-
-|Exercise| **Check your understanding**
-
-.. mchoice:: traceMethods
-   :practice: T
-   :answer_a: 25 and 2
-   :answer_b: 25 and .5
-   :answer_c: 2 25
-   :answer_d: 25 2
-   :answer_e: Nothing, it does not compile.
-   :correct: a
-   :feedback_a: Correct.
-   :feedback_b: The order of the arguments to the divide(x,y) method will divide x by y and return an int result.
-   :feedback_c: The square(x) method is called before the divide(x,y) method.
-   :feedback_d: The main method prints out " and " in between the method calls.
-   :feedback_e: Try the code in the visualizer link below.
-   
-   What does the following code print out?
-   
-   .. code-block:: java
-   
-      public class MethodTrace 
-      {
-        public void square(int x)
-        {
-            System.out.print(x*x);
-        }
-        public void divide(int x, int y)
-        {
-            System.out.println(x/y);
-        }
-        public static void main(String[] args) {
-            MethodTrace traceObj = new MethodTrace();
-            traceObj.square(5);
-            System.out.print(" and ");
-            traceObj.divide(4,2);
-        }
-       }
 
 
 .. |visualization| raw:: html
@@ -507,95 +394,6 @@ and the turtle begins facing up.
             assertTrue(passed);
         }
     }
-
-
-
-
-Practice
--------------
-
-.. mchoice:: AP2-4-1
-    :practice: T
-
-    Consider the following methods:
-    
-    .. code-block:: java
-
-        public void inchesToCentimeters(double i)
-        {
-            double c = i * 2.54;
-            printInCentimeters(i, c);
-        }
-
-        public void printInCentimeters(double inches, double centimeters)
-        {
-            System.out.print(inches + "-->" + centimeters);
-        }
-
-    Assume that the method call ``inchesToCentimeters(10)`` appears in a method in the same class. What is printed as a result of the method call?
-    
-    - inches --> centimeters
-    
-      - The values of the variables inches and centimeters should be printed out, not the words.
-      
-    - 10 -->  25
-      
-      - Two doubles should be printed, not two ints, and the centimeters should be 25.4
-    
-    - 25.4 --> 10
-    
-      - Inches should be printed before centimeters.
-    
-    - 10 --> 12.54
-    
-      - c = 10 * 2.54 = 25.4, not 12.54.
-    
-    - 10.0 --> 25.4
-    
-      + Correct! centimeters = 10 * 2.54 = 25.4. 
-
-
-
-
-.. mchoice:: AP2-4-2
-    :practice: T
-    
-    Consider the following methods, which appear in the same class.
-
-    .. code-block:: java
-    
-        public void splitPizza(int numOfPeople)
-        {
-            int slicesPerPerson = 8/numOfPeople;
-            /* INSERT CODE HERE */
-        }
-
-        public void printSlices(int slices)
-        {
-            System.out.println("Each person gets " + slices + " slices each");
-        }
-
-    Which of the following lines would go into ``/* INSERT CODE HERE */`` in the method splitPizza in order to call the ``printSlices`` method to print the number of slices per person correctly? 
-    
-    - printSlices(slicesPerPerson);
-    
-      + Correct! If you had 4 people, slicesPerPerson would be 8/4=2 and printSlices would print out "Each person gets 2 slices each".
-      
-    - printSlices(numOfPeople);
-    
-      - If you had 4 people, this would print out that they get 4 slices each of an 8 slice pizza.
-      
-    - printSlices(8);
-    
-      - This would always print out 8 slices each.
-      
-    - splitPizza(8);
-    
-      - This would not call the printSlices method.
-      
-    - splitPizza(slicesPerPerson);
-    
-      - This would not call the printSlices method.
 
 
 Summary
