@@ -359,7 +359,7 @@ two turtle objects are created: ``yertle`` and ``myrtle``.  Notice each call to 
             int count = countOccurences(code, expect);
 
             boolean passed = count >= 2;
-            passed = getResults("2+ Turtles", "" + count  + " Turtles", "Create two turtles", passed);
+            passed = getResults("2 Turtles", "" + count  + " Turtles", "Create two turtles", passed);
             assertTrue(passed);
         }
     }

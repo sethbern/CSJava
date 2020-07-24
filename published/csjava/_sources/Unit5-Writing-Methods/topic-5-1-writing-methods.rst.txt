@@ -52,24 +52,25 @@ create methods to reduce the repetition of code.
 |Exercise| Check Your Understanding
 
 .. clickablearea:: repeatedcode_methods
-    :question: Click on all the lines that are completely identical and repeated.
+    :question: Click on all the lines that are repeated.
     :iscode:
     :feedback: Look for lines that are completely identical.  
 
     :click-incorrect:public static void main(String args[]) {:endclick:
-        :click-incorrect:System.out.println("This old man, he played one.");:endclick:
-        :click-incorrect:System.out.println("He played knick knack on my thumb. ");:endclick:
-        :click-correct:System.out.println("With a knick knack paddy whack, give a dog a bone.");:endclick:
-        :click-correct:System.out.println("This old man came rolling home.");:endclick:
-        :click-incorrect:System.out.println("This old man, he played two.");:endclick:
-        :click-incorrect:System.out.println("He played knick knack on my shoe. ");:endclick:
-        :click-correct:System.out.println("With a knick knack paddy whack, give a dog a bone.");:endclick:
-        :click-correct:System.out.println("This old man came rolling home.");:endclick:
+        :click-correct:System.out.println("I'm looking over a four-leaf clover");:endclick:
+        :click-correct:System.out.println("That I overlooked before");:endclick:
+        :click-incorrect:System.out.println("One leaf is sunshine, the second is rain");:endclick:
+        :click-incorrect:System.out.println("Third is the roses that grow in the lane");:endclick:
+        :click-incorrect:System.out.println();:endclick:
+        :click-incorrect:System.out.println("No need explaining, the one remaining");:endclick:
+        :click-incorrect:System.out.println("Is somebody I adore");:endclick:
+        :click-correct:System.out.println("I'm looking over a four-leaf clover");:endclick:
+        :click-correct:System.out.println("That I overlooked before");:endclick:
     :click-incorrect:}:endclick:
             
-Did you find some repeated lines of the This Old Man song? 
+Did you find some repeated lines of the song? 
 You may have noticed that the chorus is 
-repeated "With a knick knack paddy whack, give a dog a bone. This old man came rolling home." 
+repeated "I'm looking over a four-leaf clover That I overlooked before" 
 When you see repeated code, that is a signal for you to make a new method!
 
 A method is a **named** set of statements.  When we want to execute the statements, 
@@ -107,8 +108,8 @@ that we could write to encapsulate the two lines that get repeated in the song.
        // Step 1: define a new method named chorus
        public static void chorus() 
        { 
-          System.out.println("With a knick knack paddy whack, give a dog a bone.");
-          System.out.println("This old man came rolling home.");
+          System.out.println("I'm looking over a four-leaf clover");
+          System.out.println("That I overlooked before");
        }
 
 
@@ -127,13 +128,13 @@ Notice that we can just call the static method, we don't need to create an objec
    
 |CodingEx| **Coding Exercise**
 
-.. activecode:: OldManSong1_methods
+.. activecode:: fourleafcloversong
   :language: java   
   :autograde: unittest    
   :practice: T
 
   Run the following code to see the song print out.  
-  Notice the third line of code in the main method
+  Notice the first line of code in the main method
   is a call to the new method chorus().
   Can you replace the last two lines in the second verse in the main 
   method with another call to the chorus() method? 
@@ -144,21 +145,21 @@ Notice that we can just call the static method, we don't need to create an objec
     // The chorus method
     public static void chorus() 
     {
-       System.out.println("With a knick knack paddy whack, give a dog a bone.");
-       System.out.println("This old man came rolling home.");
+       System.out.println("I'm looking over a four-leaf clover");
+       System.out.println("That I overlooked before");
     }
-    
+
     public static void main(String args[]) 
     {
-      System.out.println("This old man, he played one.");
-      System.out.println("He played knick knack on my thumb. ");
       chorus();
-
-      System.out.println("This old man, he played two.");
-      System.out.println("He played knick knack on my shoe. ");
+      System.out.println("One leaf is sunshine, the second is rain");
+      System.out.println("Third is the roses that grow in the lane");
+      System.out.println();
+      System.out.println("No need explaining, the one remaining");
+      System.out.println("Is somebody I adore");
       // Can you replace these 2 lines with a method call to chorus()?
-      System.out.println("With a knick knack paddy whack, give a dog a bone.");
-      System.out.println("This old man came rolling home.");
+      System.out.println("I'm looking over a four-leaf clover");
+      System.out.println("That I overlooked before");
     }
   }
   ====
@@ -172,7 +173,7 @@ Notice that we can just call the static method, we don't need to create an objec
         public void testMain() throws IOException
         {
             String output = getMethodOutput("main");
-            String expect = "This old man, he played one.\nHe played knick knack on my thumb.  \nWith a knick knack paddy whack, give a dog a bone.\nThis old man came rolling home.\nThis old man, he played two.\nHe played knick knack on my shoe. \nWith a knick knack paddy whack, give a dog a bone.\nThis old man came rolling home.";
+            String expect = "I'm looking over a four-leaf clover\nThat I overlooked before\nOne leaf is sunshine, the second is rain\nThird is the roses that grow in the lane\n\nNo need explaining, the one remaining\nIs somebody I adore\nI'm looking over a four-leaf clover\nThat I overlooked before";
             boolean passed = getResults(expect, output, "Expected output from main");
             assertTrue(passed);
         }
@@ -181,7 +182,7 @@ Notice that we can just call the static method, we don't need to create an objec
         public void testcodeContains(){
           int count = countOccurences(getCode(),"chorus();");
           boolean passed = count > 1;
-          passed = getResults("> 1 chorus call",  count  + " chorus call(s)", "Added a call to chorus?", passed);
+          passed = getResults("> 1 chorus call",  count  + " chorus call(s)", "Added second call to chorus?", passed);
           assertTrue(passed);
         }
 
@@ -322,8 +323,9 @@ Notice that we can just call the static method, we don't need to create an objec
   :autograde: unittest    
   :practice: T
 
-  Add a method named "farmer" to reduce redundancy in the following code.
-  You should update the main method to call the new farmer method.
+  A refrain is similar to a chorus, although usually shorter in length such as a single line that gets repeated.
+  Add a method named "refrain" to reduce redundancy in the following code.
+  You should update the main method to call the new method.
   ~~~~
   public class FarmerSong 
   { 
@@ -346,17 +348,17 @@ Notice that we can just call the static method, we don't need to create an objec
     {
         @Test
         public void testSignature(){
-          int count = countOccurences(getCode(),"public static void farmer()");
+          int count = countOccurences(getCode(),"public static void refrain()");
           boolean passed = count == 1;
-          passed = getResults("1 farmer signature",  count  + " farmer signature", "Is your farmer method signature correct?", passed);
+          passed = getResults("1 refrain signature",  count  + " refrain signature", "Is your refrain method signature correct?", passed);
           assertTrue(passed);
         }
 
         @Test
         public void testcodeContains(){
-          int count = countOccurences(getCode(),"farmer();");
+          int count = countOccurences(getCode(),"refrain();");
           boolean passed = count == 3;
-          passed = getResults("3 farmer calls",  count  + " farmer calls", "Added enough calls to farmer?", passed);
+          passed = getResults("3 refrain calls",  count  + " refrain calls", "Added enough calls to refrain?", passed);
           assertTrue(passed);
         }
 
