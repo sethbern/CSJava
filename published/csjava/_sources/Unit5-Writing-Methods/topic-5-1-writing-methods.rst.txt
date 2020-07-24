@@ -1,7 +1,7 @@
 .. qnum::
    :prefix: 5-1-
    :start: 1
-
+   
 .. |CodingEx| image:: ../../_static/codingExercise.png
     :width: 30px
     :align: middle
@@ -19,7 +19,7 @@
     :align: middle
     :alt: groupwork
 
-..	index::
+..	index::    
 	single: method 
     single: return
     single: parameter

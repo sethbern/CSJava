@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Method Parameters &#8212; CS Java</title>
+    <title>5.2. Method Parameters &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,6 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="topic-5-3-method-return.html" />
+    <link rel="prev" title="5.1. Writing Methods" href="topic-5-1-writing-methods.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -301,6 +303,18 @@
         
         <!-- 
           
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.1. </span>Writing Methods" data-toggle="tooltip">
+    <a href="topic-5-1-writing-methods.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - &lt;no title&gt;' data-toggle="tooltip" >              
+    <a href="topic-5-3-method-return.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -335,7 +349,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="method-parameters">
-<h1>Method Parameters<a class="headerlink" href="#method-parameters" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.2. </span>Method Parameters<a class="headerlink" href="#method-parameters" title="Permalink to this headline">¶</a></h1>
 <p>You may have noticed more repetition in the <strong>This old man</strong> song. What about the lines of each verse?
 Notice that every word is repeated except the last ones that include a number
 and a rhyme such as one/thumb and two/shoe.</p>
@@ -443,7 +457,7 @@ The calling method should do something with this return value,
 like printing it out or saving it in a variable. Try the problems below to practice with a String method that takes a parameter and returns a boolean value.</p>
 </div>
 <div class="section" id="practice">
-<h1>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.3. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h1>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-1" >
@@ -508,7 +522,7 @@ like printing it out or saving it in a variable. Try the problems below to pract
             </div>
             </div>
 <div class="section" id="tracing-methods">
-<h1>Tracing Methods<a class="headerlink" href="#tracing-methods" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.4. </span>Tracing Methods<a class="headerlink" href="#tracing-methods" title="Permalink to this headline">¶</a></h1>
 <p>You will not write your own methods until Unit 5, but you should be able to trace and interpret method calls like below.</p>
 <p>Here is another version of the Old MacDonald Song with a more powerful abstraction. The method verse has 2 parameters for the animal and the noise it makes, so that it can be used for any animal.
 Use the Code Lens button or this <a href="http://www.pythontutor.com/java.html#code=public%20class%20Song%20%0A%7B%0A%20%20%0A%20%20%20%20public%20void%20verse%28String%20animal,%20String%20noise%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20on%20that%20farm%20he%20had%20a%20%22%20%2B%20animal%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22With%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20here,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20there,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20public%20void%20chorus%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22E-I-E-I-O%22%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20Song%20s%20%3D%20new%20Song%28%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22cow%22,%20%22moo%22%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22duck%22,%22quack%22%29%3B%0A%20%20%20%20%7D%0A%7D&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a> to step through the code.</p>
@@ -730,7 +744,7 @@ import static org.junit.Assert.*;
 </div>
 </div>
 <div class="section" id="groupwork-programming-challenge-song-with-parameters">
-<h1><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Programming Challenge : Song with Parameters<a class="headerlink" href="#groupwork-programming-challenge-song-with-parameters" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.5. </span><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Programming Challenge : Song with Parameters<a class="headerlink" href="#groupwork-programming-challenge-song-with-parameters" title="Permalink to this headline">¶</a></h1>
 <p>Here’s another song, <a href="https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching" target="_blank">The Ants Go Marching</a>, that is very similar to the This Old Man song in its repetitive structure.</p>
 <pre>
  The ants go marching one by one, hurrah, hurrah
@@ -820,7 +834,7 @@ import static org.junit.Assert.*;
 </div>
 </div>
 <div class="section" id="id1">
-<h1>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.6. </span>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1a" >
@@ -931,7 +945,7 @@ import static org.junit.Assert.*;
             </div>
             </div>
 <div class="section" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
 <li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
@@ -951,6 +965,26 @@ import static org.junit.Assert.*;
   </div>
   
       
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.1. Writing Methods' data-toggle="tooltip">
+    <a href="topic-5-1-writing-methods.html" aria-label="5.1. Writing Methods">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - &lt;no title&gt;' data-toggle="tooltip" >
+    <a href="topic-5-3-method-return.html" aria-label="&lt;no title&gt;">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
 
 <script type="text/javascript">
 

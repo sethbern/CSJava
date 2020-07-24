@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>9.3. 2D Arrays Summary &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9.4. Mixed Up Code Practice" href="Array2dParsonsPractice.html" />
+    <link rel="prev" title="9.2.4. Enhanced For-Each Loop for 2D Arrays (Day 2)" href="topic-8-2-2D-array-loops-Day2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=a2dSummary'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">9.2.4. </span>Enhanced For-Each Loop for 2D Arrays (Day 2)" data-toggle="tooltip">
+    <a href="topic-8-2-2D-array-loops-Day2.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">9.4. </span>Mixed Up Code Practice' data-toggle="tooltip" >              
+    <a href="Array2dParsonsPractice.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="d-arrays-summary">
+<h1><span class="section-number">9.3. </span>2D Arrays Summary<a class="headerlink" href="#d-arrays-summary" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter you learned about <strong>two dimensional arrays</strong>.  A <strong>two dimensional array</strong> stores objects in a 2d table.  You can think of it as storing objects in rows and columns, but it actually uses an array of arrays to store the objects as shown below.  In this chapter you learned how to declare 2d arrays, create them, and access array elements.  Array elements are accessed using a row and column index.  The first element in a 2d array is at row 0 and column 0.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/ArrayRowsAndCols.png"><img alt="../_images/ArrayRowsAndCols.png" src="../_images/ArrayRowsAndCols.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Java arrays of arrays</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="concept-summary">
+<span id="index-0"></span><h2><span class="section-number">9.3.1. </span>Concept Summary<a class="headerlink" href="#concept-summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>2d Array</strong> - An array that holds items in a two dimensional grid.  You can think of it as storing items in rows and columns (like a bingo card or battleship game).  You can access an item (element) at a given row and column index.</p></li>
+<li><p><strong>2d Array Declaration</strong> - To declare an array, specify the type of elements that will be stored in the array, then (<code class="docutils literal notranslate"><span class="pre">[][]</span></code>) to show that it is a 2d array of that type, then at least one space, and then a name for the array. Examples:  <code class="docutils literal notranslate"><span class="pre">int[][]</span> <span class="pre">seats;</span></code>  <code class="docutils literal notranslate"><span class="pre">String[][]</span> <span class="pre">seatingChart;</span></code></p></li>
+<li><p><strong>2d Array Creation</strong> - To create a 2d array, type the name and an equals sign then use the <em>new</em> keyword, followed by a space, then the type, and then [numRows][numCols]. Example:   <code class="docutils literal notranslate"><span class="pre">seatingChart</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">String[5][4];</span></code>.  This will have 5 rows and 4 columns.</p></li>
+<li><p><strong>2d Array Index</strong> - You can access and set values in a 2d array using the row and column index.  The first element in an array called <code class="docutils literal notranslate"><span class="pre">arr</span></code> is at row 0 and column 0 <code class="docutils literal notranslate"><span class="pre">arr[0][0]</span></code>.</p></li>
+<li><p><strong>2d Array Initialization</strong> - You can also initialize (set) the values in the array when you first create it. In this case you don’t need to specify the size of the array, it will be determined from the number of values that you specify. Example: <code class="docutils literal notranslate"><span class="pre">String[][]</span> <span class="pre">seatingInfo</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">{&quot;Jamal&quot;,</span> <span class="pre">&quot;Maria&quot;},</span> <span class="pre">{&quot;Jake&quot;,</span> <span class="pre">&quot;Suzy&quot;},</span> <span class="pre">{&quot;Emma&quot;,</span> <span class="pre">&quot;Luke&quot;}};</span></code>  This will create a 2d array with 3 rows and 2 columns.</p></li>
+<li><p><strong>2d Array Number of Rows</strong> - The number of rows (or height) is the length of the outer array.  For an array <code class="docutils literal notranslate"><span class="pre">arr</span></code> use <code class="docutils literal notranslate"><span class="pre">arr.length</span></code> to get the number of rows in the array.</p></li>
+<li><p><strong>2d Array Number of Columns</strong> - The number of columns (or width) is the length of the inner array.  For an array <code class="docutils literal notranslate"><span class="pre">arr</span></code> use <code class="docutils literal notranslate"><span class="pre">arr[0].length</span></code> to get the number of columns.</p></li>
+<li><p><strong>nested for loop</strong> - A for loop inside of another for loop.  These are used to loop through all the elements in a 2d array.  One loop can work through the rows and the other the columns.</p></li>
+<li><p><strong>out of bounds error</strong> - This happens when a loop goes beyond the last valid index in an array.  Remember that the last valid row index is <code class="docutils literal notranslate"><span class="pre">arr.length</span> <span class="pre">-</span> <span class="pre">1</span></code>.  The last valid column index is <code class="docutils literal notranslate"><span class="pre">arr[0].length</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="vocabulary-practice">
+<h2><span class="section-number">9.3.2. </span>Vocabulary Practice<a class="headerlink" href="#vocabulary-practice" title="Permalink to this headline">¶</a></h2>
+
+<div class="runestone">
+<ul data-component="dragndrop" id="ch2darr_match_1" >
+    <span data-component="question">8-3-1: Drag the item from the left and drop it on its corresponding answer on the right.  Click the "Check Me" button to see if you are correct.</span>
+	<span data-component=feedback>Review the summaries above.</span>
+
+    <li data-component="draggable" id="ch2darr_match_1_drag1">The index of the last row</li>
+    <li data-component="dropzone" for="ch2darr_match_1_drag1">arr.length - 1</li>
+
+    <li data-component="draggable" id="ch2darr_match_1_drag2">The number of elements in the array</li>
+    <li data-component="dropzone" for="ch2darr_match_1_drag2">arr.length * arr[0].length</li>
+
+    <li data-component="draggable" id="ch2darr_match_1_drag3">The index of the item in the first row and first column</li>
+    <li data-component="dropzone" for="ch2darr_match_1_drag3">arr[0][0]</li>
+
+    <li data-component="draggable" id="ch2darr_match_1_drag4">The index of the item in the first row and second column</li>
+    <li data-component="dropzone" for="ch2darr_match_1_drag4">arr[0][1]</li>
+</ul></div>
+<div class="runestone">
+<ul data-component="dragndrop" id="ch2darr_match_2" >
+    <span data-component="question">8-3-2: Drag the description from the left and drop it on the correct code on the right.  Click the "Check Me" button to see if you are correct.</span>
+	<span data-component=feedback>Review the summaries above.</span>
+
+    <li data-component="draggable" id="ch2darr_match_2_drag1">Declare an 2d integer array named nums</li>
+    <li data-component="dropzone" for="ch2darr_match_2_drag1">int[][] nums;</li>
+
+    <li data-component="draggable" id="ch2darr_match_2_drag2">Declare and create a String 2d array named list1 that has 3 rows and 2 columns</li>
+    <li data-component="dropzone" for="ch2darr_match_2_drag2">String[][] list1 = new String[3][2];</li>
+
+    <li data-component="draggable" id="ch2darr_match_2_drag3">Initialize a 2d array of integers named nums so that it has 1,2,3 in the first row and 4,5,6 in the second row.</li>
+    <li data-component="dropzone" for="ch2darr_match_2_drag3">int[][] nums = { {1,2,3},{4,5,6}};</li>
+
+    <li data-component="draggable" id="ch2darr_match_2_drag4">Initialize a 2d String array named list1 so that it has a,b,c in the first row and d,e,f in the second row.</li>
+    <li data-component="dropzone" for="ch2darr_match_2_drag4">String[][] list1 = { {"a","b","c"},{"d","e","f"}};</li>
+</ul></div><p>For more practice, see this <a href="https://quizlet.com/434082842/cs-awesome-unit-8-vocabulary-flash-cards/" target="_blank" style="text-decoration:underline">Quizlet</a>.</p>
+</div>
+<div class="section" id="common-mistakes">
+<h2><span class="section-number">9.3.3. </span>Common Mistakes<a class="headerlink" href="#common-mistakes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>forgetting to create the array - only declaring it (<code class="docutils literal notranslate"><span class="pre">int[][]</span> <span class="pre">nums;</span></code>).</p></li>
+<li><p>using 1 as the first index not 0 for rows and/or columns.</p></li>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">array.length</span></code> as the last valid row index, not <code class="docutils literal notranslate"><span class="pre">array.length</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></li>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">array[0].length</span></code> as the last valid column index, not <code class="docutils literal notranslate"><span class="pre">array[0].length</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></li>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">array.length()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">array.length</span></code> (not penalized on the free response)</p></li>
+<li><p>going out of bounds when looping through an array  (using <code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">&lt;=</span> <span class="pre">array.length</span></code>).  You will get an <code class="docutils literal notranslate"><span class="pre">ArrayIndexOutOfBoundsException</span></code>.</p></li>
+<li><p>jumping out an loop by using one or more return statements before every value has been processed.</p></li>
+<li><p>using the wrong starting and ending indicies on loops.</p></li>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">array.length</span></code> for both the number of rows and columns.  Use <code class="docutils literal notranslate"><span class="pre">array[0].length</span></code> for the number of columns.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 9.2.4. Enhanced For-Each Loop for 2D Arrays (Day 2)' data-toggle="tooltip">
+    <a href="topic-8-2-2D-array-loops-Day2.html" aria-label="9.2.4. Enhanced For-Each Loop for 2D Arrays (Day 2)">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 9.4. Mixed Up Code Practice' data-toggle="tooltip" >
+    <a href="Array2dParsonsPractice.html" aria-label="9.4. Mixed Up Code Practice">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised by Linda Seiter and Dan Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

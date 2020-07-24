@@ -21,12 +21,12 @@ Enjoy the course!
     <li><a class="reference internal" href="Unit3-If-Statements/toctree.html">Unit 3 If Statements</a></li>
     <li><a class="reference internal" href="Unit4-Iteration/toctree.html">Unit 4 Iteration/Loops</a></li>
     <li><a class="reference internal" href="Unit5-Writing-Methods/toctree.html">Unit 5 Writing Methods</a></li>
-    <li><a class="reference internal" href="Unit5-Writing-Classes/toctree.html">Unit 5 Writing Classes</a></li>
-    <li><a class="reference internal" href="Unit6-Arrays/toctree.html">Unit 6 Arrays</a></li>
-    <li><a class="reference internal" href="Unit7-ArrayList/toctree.html">Unit 7 ArrayLists</a></li>
-    <li><a class="reference internal" href="Unit8-2DArray/toctree.html">Unit 8 2D Arrays</a></li>
-    <li><a class="reference internal" href="Unit9-Inheritance/toctree.html">Unit 9 Inheritance</a></li>
-    <li><a class="reference internal" href="Unit10-Recursion/toctree.html">Unit 10 Recursion</a></li>
+    <li><a class="reference internal" href="Unit6-Writing-Classes/toctree.html">Unit 6 Writing Classes</a></li>
+    <li><a class="reference internal" href="Unit7-Arrays/toctree.html">Unit 7 Arrays</a></li>
+    <li><a class="reference internal" href="Unit8-ArrayList/toctree.html">Unit 8 ArrayLists</a></li>
+    <li><a class="reference internal" href="Unit9-2DArray/toctree.html">Unit 9 2D Arrays</a></li>
+    <li><a class="reference internal" href="Unit10-Inheritance/toctree.html">Unit 10 Inheritance</a></li>
+    <li><a class="reference internal" href="Unit11-Recursion/toctree.html">Unit 11 Recursion</a></li>
    </ul>
 
 .. Here is where you specify the content and order of your new book.
@@ -60,12 +60,13 @@ Table of Contents
    Unit2-Using-Objects/toctree.rst
    Unit3-If-Statements/toctree.rst
    Unit4-Iteration/toctree.rst
-   Unit5-Writing-Classes/toctree.rst
-   Unit6-Arrays/toctree.rst
-   Unit7-ArrayList/toctree.rst
-   Unit8-2DArray/toctree.rst
-   Unit9-Inheritance/toctree.rst
-   Unit10-Recursion/toctree.rst
+   Unit5-Writing-Methods/toctree.rst
+   Unit6-Writing-Classes/toctree.rst
+   Unit7-Arrays/toctree.rst
+   Unit8-ArrayList/toctree.rst
+   Unit9-2DArray/toctree.rst
+   Unit10-Inheritance/toctree.rst
+   Unit11-Recursion/toctree.rst
 
 Index
 ::::::::::::::::::

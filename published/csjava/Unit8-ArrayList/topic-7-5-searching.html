@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>8.5. Searching Algorithms &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8.6. Sorting Algorithms" href="topic-7-6-sorting.html" />
+    <link rel="prev" title="8.4.10. Free Response - Delimiters B" href="2019delimitersQ3b.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-7-5-searching'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">8.4.10. </span>Free Response - Delimiters B" data-toggle="tooltip">
+    <a href="2019delimitersQ3b.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">8.6. </span>Sorting Algorithms' data-toggle="tooltip" >              
+    <a href="topic-7-6-sorting.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <style>    td { text-align: left; } </style><div class="section" id="searching-algorithms">
+<h1><span class="section-number">8.5. </span>Searching Algorithms<a class="headerlink" href="#searching-algorithms" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Computers store vast amounts of data. One of the strengths of computers is their ability to find things quickly.  This ability is called <strong>searching</strong>.  For the AP CS A exam you will need to know both <strong>linear (sequential) search</strong> and <strong>binary search</strong> algorithms.</p>
+<p>The following video is also on YouTube at <a class="reference external" href="https://youtu.be/DHLCXXX1OtE">https://youtu.be/DHLCXXX1OtE</a>.  It introduces the concept of searching including sequential search and binary search.</p>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="DHLCXXX1OtE" class="align-center youtube-video" data-video-height="281" data-video-width="800" data-video-videoid="DHLCXXX1OtE" data-video-divid="DHLCXXX1OtE" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (DHLCXXX1OtE)</span> </p>
+    </div>
+    <ul class="simple">
+<li><p><strong>Sequential or Linear search</strong> typically starts at the first element in an array or ArrayList and looks through all the items one by one until it either finds the desired value and then it returns the index it found the value at or if it searches the entire array or list without finding the value it returns -1.</p></li>
+<li><p><strong>Binary search</strong> can only be used on data that has been <strong>sorted</strong> or stored in order.  It checks the middle of the data to see if that middle value is less than, equal, or greater than the desired value and then based on the results of that it narrows the search. It cuts the search space in half each time.</p></li>
+</ul>
+<p>If binary search requires the values in an array or list to be sorted, how can you do that?  There are many sorting algorithms which are covered in the next lesson.</p>
+<div class="section" id="sequential-search">
+<h2><span class="section-number">8.5.1. </span>Sequential Search<a class="headerlink" href="#sequential-search" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">Sequential or linear search is the only method that can be used to find a value in unsorted data. It usually starts at the first element and walks through the array or list until it finds the value it is looking for and returns the index it found it at, or it loops until the end of the array or list and then it returns a -1 to show that it didn’t find the value in the array or list.</p>
+
+<div data-childcomponent="seqSearch" class="runestone explainer ac_section alert alert-warning">
+<p>The code for <code class="docutils literal notranslate"><span class="pre">sequentialSearch</span></code> for arrays below is from a previous AP CS A course description.</p>
+
+<textarea data-component="activecode" id=seqSearch data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class ArraySearcher
+{
+
+   /** Finds the index of a value in an array of integers.
+     * @param elements an array containing the items to be searched.
+     * @param target the item to be found in elements.
+     * @return an index of target in elements if found; -1 otherwise.
+     */
+   public static int sequentialSearch(int[] elements, int target)
+   {
+     for (int j = 0; j < elements.length; j++)
+     {
+       if (elements[j] == target)
+       {
+         return j;
+       }
+     }
+     return -1;
+   }
+
+   public static void main(String[] args)
+   {
+     int[] numArray = {3, -2, 9, 38, -23};
+     System.out.println("Tests of sequentialSearch");
+     System.out.println(sequentialSearch(numArray,3));
+     System.out.println(sequentialSearch(numArray,9));
+     System.out.println(sequentialSearch(numArray,-23));
+     System.out.println(sequentialSearch(numArray,99));
+   }
+
+}
+</textarea>
+</div>
+<p>To see this executing using the Java Visualizer click on the following link <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+ArraySearcher%0A%7B%0A++%0A++/**+Finds+the+index+of+a+value+in+an+array+of+integers.%0A++++*+%40param+elements+an+array+containing+the+items+to+be+searched.+%0A++++*+%40param+target+the+item+to+be+found+in+elements.+%0A++++*+%40return+an+index+of+target+in+elements+if+found%3B+-1+otherwise.+%0A++++*/%0A++public+static+int+sequentialSearch(int%5B%5D+elements,+int+target)+%0A++%7B+%0A++++for+(int+j+%3D+0%3B+j+%3C+elements.length%3B+j%2B%2B)+%0A++++%7B+%0A++++++if+(elements%5Bj%5D+%3D%3D+target)+%0A++++++%7B+%0A++++++++return+j%3B+%0A++++++%7D+%0A++++%7D+%0A++++return+-1%3B+%0A++%7D%0A++%0A++public+static+void+main(String%5B%5D+args)%0A++%7B%0A++++int%5B%5D+numArray+%3D+%7B3,+-2,+9,+38,+-23%7D%3B%0A++++System.out.println(%22Tests+of+sequentialSearch%22)%3B%0A++++System.out.println(sequentialSearch(numArray,3))%3B%0A++++System.out.println(sequentialSearch(numArray,9))%3B%0A++++System.out.println(sequentialSearch(numArray,-23))%3B%0A++++System.out.println(sequentialSearch(numArray,99))%3B%0A++%7D%0A++%0A%7D&amp;mode=display&amp;curInstr=3">SequentialSearch</a></p>
+<p>Here is the same search with an ArrayList. The same algorithms can be used with arrays or ArrayLists, but notice that size() and get(i) is used with ArrayLists instead of length and [i] which are used in arrays. Many of our examples will use arrays for simplicity since with arrays, we know how many items we have and the size won’t change during runtime. There are methods such as contains that can be used in ArrayLists instead of writing your own algorithms. However, they are not in the AP CSA Java subset.</p>
+
+<div data-childcomponent="seqSearchList" class="runestone explainer ac_section alert alert-warning">
+<p>Here is a linear search using ArrayLists. Notice that size() and get(i) is used with ArrayLists instead of length and [i] which are used in arrays.</p>
+
+<textarea data-component="activecode" id=seqSearchList data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+import java.util.*;
+
+public class ArrayListSearcher
+{
+
+  /** Finds the index of a value in an ArrayList of integers.
+    * @param elements an array containing the items to be searched.
+    * @param target the item to be found in elements.
+    * @return an index of target in elements if found; -1 otherwise.
+    */
+  public static int sequentialSearch(ArrayList<Integer> elements, int target)
+  {
+    for (int j = 0; j < elements.size(); j++)
+    {
+      if (elements.get(j) == target)
+      {
+        return j;
+      }
+    }
+    return -1;
+  }
+
+  public static void main(String[] args)
+  {
+    ArrayList<Integer> numList = new ArrayList<Integer>();
+    numList.add(3);
+    numList.add(-2);
+    numList.add(9);
+    numList.add(38);
+    numList.add(-23);
+    System.out.println("Tests of sequentialSearch");
+    System.out.println(sequentialSearch(numList,3));
+    System.out.println(sequentialSearch(numList,9));
+    System.out.println(sequentialSearch(numList,-23));
+    System.out.println(sequentialSearch(numList,99));
+  }
+
+}
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qss_1" >
+            <p>7-5-1: Which will cause the <em>longest</em> execution of a sequential search looking for a value in an array of integers?</p>
+
+            <li data-component="answer"  id="qss_1_opt_a">The value is the first one in the array</li><li data-component="feedback">This would be true for the shortest execution. This would only take one execution of the loop.</li>
+            
+            <li data-component="answer"  id="qss_1_opt_b">The value is in the middle of the array</li><li data-component="feedback">Why would this be the longest execution?</li>
+            
+            <li data-component="answer"  id="qss_1_opt_c">The value is the last one in the array</li><li data-component="feedback">There is one case that will take longer.</li>
+            
+            <li data-component="answer" data-correct id="qss_1_opt_d">The value isn't in the array</li><li data-component="feedback">A sequential search loops through the elements of an array or list starting with the first and ending with the last and returns from the loop as soon as it finds the passed value. It has to check every value in the array when the value it is looking for is not in the array.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qss_2" >
+            <p>7-5-2: Which will cause the <em>shortest</em> execution of a sequential search looking for a value in an array of integers?</p>
+
+            <li data-component="answer" data-correct id="qss_2_opt_a">The value is the first one in the array</li><li data-component="feedback">This would only take one execution of the loop.</li>
+            
+            <li data-component="answer"  id="qss_2_opt_b">The value is in the middle of the array</li><li data-component="feedback">Are you thinking of binary search?</li>
+            
+            <li data-component="answer"  id="qss_2_opt_c">The value is the last one in the array</li><li data-component="feedback">This would be true if you were starting at the last element, but the algorithm in the course description starts with the first element.</li>
+            
+            <li data-component="answer"  id="qss_2_opt_d">The value isn't in the array</li><li data-component="feedback">This is true for the longest execution time, but we are looking for the shortest.</li>
+            
+
+            </ul>
+            </div>
+            <p>Of course you can also look for a string in an array or list.  But, when you look for a string be sure to use <code class="docutils literal notranslate"><span class="pre">equals</span></code> rather than <code class="docutils literal notranslate"><span class="pre">==</span></code>.  Remember that <code class="docutils literal notranslate"><span class="pre">==</span></code> is only true when the two references refer to the same object, while <code class="docutils literal notranslate"><span class="pre">equals</span></code> returns true if the characters in the two objects are the same.</p>
+
+<div data-childcomponent="seqSearchStr" class="runestone explainer ac_section alert alert-warning">
+<p>Demonstration of a linear search for a String.</p>
+
+<textarea data-component="activecode" id=seqSearchStr data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class SearchTest
+{
+
+   public static int sequentialSearch(String[] elements, String target)
+   {
+      for (int j = 0; j < elements.length; j++)
+      {
+         if (elements[j].equals(target))
+         {
+            return j;
+         }
+     }
+     return -1;
+   }
+
+   public static void main(String[] args)
+   {
+      String[] arr1 = {"blue", "red", "purple", "green"};
+
+      // test when the target is in the array
+      int index = sequentialSearch(arr1,"red");
+      System.out.println(index);
+
+      // test when the target is not in the array
+      index = sequentialSearch(arr1,"pink");
+      System.out.println(index);
+   }
+}
+</textarea>
+</div>
+<p>To see this executing using the Java Visualizer click on this <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=++public+class+SearchTest%0A++%7B%0A%0A+++++public+static+int+sequentialSearch(String%5B%5D+elements,+String+target)%0A+++++%7B%0A++++++++for+(int+j+%3D+0%3B+j+%3C+elements.length%3B+j%2B%2B)%0A++++++++%7B%0A+++++++++++if+(elements%5Bj%5D.equals(target))%0A+++++++++++%7B%0A++++++++++++++return+j%3B%0A+++++++++++%7D+%0A+++++++%7D%0A+++++++return+-1%3B%0A+++++%7D%0A+++++%0A+++++public+static+void+main(String%5B%5D+args)%0A+++++%7B%0A++++++++String%5B%5D+arr1+%3D+%7B%22blue%22,+%22red%22,+%22purple%22,+%22green%22%7D%3B%0A++++++++%0A++++++++//+test+when+the+target+is+in+the+array%0A++++++++int+index+%3D+sequentialSearch(arr1,%22red%22)%3B%0A++++++++System.out.println(index)%3B%0A++++++++%0A++++++++//+test+when+the+target+is+not+in+the+array%0A++++++++index+%3D+sequentialSearch(arr1,%22pink%22)%3B%0A++++++++System.out.println(index)%3B%0A+++++%7D%0A++%7D&amp;mode=display&amp;curInstr=0">String-SeqSearch</a></p>
+</div>
+<div class="section" id="binary-search">
+<h2><span class="section-number">8.5.2. </span>Binary Search<a class="headerlink" href="#binary-search" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">A binary search can only be used if the data is sorted.</p>
+<p>It compares a target value to the value in the middle of a range of indices.  If the value isn’t found it looks again in either the left or right half of the current range. Each time through the loop it eliminates half the values in the search area until either the value is found or there is no more data to look at.  Click on this <a class="reference external" href="http://cs.armstrong.edu/liang/animation/web/BinarySearch.html">Binary Search Animation</a> to see how it works.</p>
+<p>Binary search calculates the middle index as <code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">+</span> <span class="pre">right</span> <span class="pre">/</span> <span class="pre">2</span></code> where left starts out at 0 and right starts out at the array length - 1 (the index of the last element).   Remember that integer division gives an integer result so 2.5 becomes 2.  It compares the value at the middle index with the target value (the value you are searching for).  If the target value is less than the value at the middle it sets right to middle minus one.  If the target value is greater than the value at the middle it sets left to middle plus one. Otherwise the values match and it returns the middle index.    It also stops when left is greater than right which indicates that the value wasn’t found and it returns -1.</p>
+<p>The code for <code class="docutils literal notranslate"><span class="pre">binarySearch</span></code> below is from the AP CS A course description. A recursive version of this algorithm will be covered in Unit 10.</p>
+
+<div data-childcomponent="binSearch" class="runestone explainer ac_section alert alert-warning">
+<p>Demonstration of iterative binary search.</p>
+
+<textarea data-component="activecode" id=binSearch data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class SearchTest
+{
+   public static int binarySearch(int[] elements, int target) {
+      int left = 0;
+      int right = elements.length - 1;
+      while (left <= right)
+      {
+         int middle = (left + right) / 2;
+         if (target < elements[middle])
+         {
+            right = middle - 1;
+         }
+         else if (target > elements[middle])
+         {
+            left = middle + 1;
+         }
+         else {
+            return middle;
+         }
+       }
+       return -1;
+   }
+
+   public static void main(String[] args)
+   {
+      int[] arr1 = {-20, 3, 15, 81, 432};
+
+      // test when the target is in the middle
+      int index = binarySearch(arr1,15);
+      System.out.println(index);
+
+      // test when the target is the first item in the array
+      index = binarySearch(arr1,-20);
+      System.out.println(index);
+
+      // test when the target is in the array - last
+      index = binarySearch(arr1,432);
+      System.out.println(index);
+
+      // test when the target is not in the array
+      index = binarySearch(arr1,53);
+      System.out.println(index);
+   }
+}
+</textarea>
+</div>
+<p>To see this executing using the Java Visualizer click on the following link: <a class="reference external" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=++public+class+SearchTest%0A++%7B%0A+++++%0A+++++/**+%0A++++++*+Find+the+index+of+a+value+in+an+array+of+integers+sorted+in+ascending+order.%0A++++++*+%40param+elements+an+array+containing+the+items+to+be+searched.+Precondition%3A+items+in+elements+are+sorted+in+ascending+order.%0A++++++*+%40param+target+the+item+to+be+found+in+elements.%0A++++++*+%40return+an+index+of+target+in+elements+if+target+found%3B%0A++++++*+-1+other+wise.%0A++++++*/%0A+++++public+static+int+binarySearch(int%5B%5D+elements,+int+target)+%7B%0A++++++++int+left+%3D+0%3B%0A++++++++int+right+%3D+elements.length+-+1%3B%0A++++++++while+(left+%3C%3D+right)+%0A++++++++%7B%0A+++++++++++int+middle+%3D+(left+%2B+right)+/+2%3B+%0A+++++++++++if+(target+%3C+elements%5Bmiddle%5D)%0A+++++++++++%7B%0A++++++++++++++right+%3D+middle+-+1%3B%0A+++++++++++%7D%0A+++++++++++else+if+(target+%3E+elements%5Bmiddle%5D)+%0A+++++++++++%7B%0A++++++++++++++left+%3D+middle+%2B+1%3B+%0A+++++++++++%7D%0A+++++++++++else+%7B%0A++++++++++++++return+middle%3B+%0A+++++++++++%7D%0A+++++++++%7D%0A+++++++++return+-1%3B%0A++++++%7D%0A++++++%0A++++++public+static+void+main(String%5B%5D+args)%0A++++++%7B%0A+++++++++int%5B%5D+arr1+%3D+%7B-20,+3,+15,+81,+432%7D%3B%0A++++++++%0A+++++++++//+test+when+the+target+is+in+the+array%0A+++++++++int+index+%3D+binarySearch(arr1,-20)%3B%0A+++++++++System.out.println(index)%3B%0A++++++++%0A+++++++++//+test+when+the+target+is+not+in+the+array%0A+++++++++index+%3D+binarySearch(arr1,53)%3B%0A+++++++++System.out.println(index)%3B%0A+++++++%7D%0A++%7D%0A&amp;mode=display&amp;curInstr=0">BinarySearch Ex</a></p>
+<p>You can also use binary search with a string array.  But, when you look for a string be sure to use <code class="docutils literal notranslate"><span class="pre">compareTo()</span></code> method rather than <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> which can only be used with primitive types.  Remember how the String method compareTo() works:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>int compareTo(String other)</strong> returns a negative value if the current string is less than the <code class="docutils literal notranslate"><span class="pre">other</span></code> string, 0 if they have the same characters in the same order, and a positive value if the current string is greater than the <code class="docutils literal notranslate"><span class="pre">other</span></code> string.</p></li>
+</ul>
+</div></blockquote>
+
+<div data-childcomponent="binSearchStrings" class="runestone explainer ac_section alert alert-warning">
+<p>Demonstration of binary search with strings using compareTo.</p>
+
+<textarea data-component="activecode" id=binSearchStrings data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class BinSearchStrings
+{
+   public static int binarySearch(String[] elements, String target) {
+      int left = 0;
+      int right = elements.length - 1;
+      while (left <= right)
+      {
+         int middle = (left + right) / 2;
+         if (target.compareTo(elements[middle]) < 0)
+         {
+            right = middle - 1;
+         }
+         else if (target.compareTo(elements[middle]) > 0)
+         {
+            left = middle + 1;
+         }
+         else {
+            return middle;
+         }
+       }
+       return -1;
+   }
+
+   public static void main(String[] args)
+   {
+      String[] arr1 = {"apple","banana","cherry","kiwi","melon"};
+
+      // test when the target is in the middle
+      int index = binarySearch(arr1,"cherry");
+      System.out.println(index);
+
+      // test when the target is the first item in the array
+      index = binarySearch(arr1,"apple");
+      System.out.println(index);
+
+      // test when the target is in the array - last
+      index = binarySearch(arr1,"melon");
+      System.out.println(index);
+
+      // test when the target is not in the array
+      index = binarySearch(arr1,"pear");
+      System.out.println(index);
+   }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="runtimes">
+<h2><span class="section-number">8.5.3. </span>Runtimes<a class="headerlink" href="#runtimes" title="Permalink to this headline">¶</a></h2>
+<p>How do we choose between two algorithms that solve the same problem? They usually have different characteristics and <strong>runtimes</strong> which measures how fast they run. For the searching problem, it depends on your data.</p>
+<p>Binary search is much faster than linear search, especially on large data sets, but it can only be used on sorted data. Often with runtimes, computer scientist think about the <strong>worst case behavior</strong>. With searching, the worst case is usually if you cannot find the item. With linear search, you would have to go through the whole array before realizing that it is not there, but binary search is much faster even in this case because it eliminates half the data set in each step. We can measure an informal runtime by just counting the number of steps.</p>
+<p>Here is a table that compares the worst case runtime of each search algorithm given an array of n elements. The runtime here is measured as the number of times the loop runs in each algorithm or the number of elements we need to check in the worst case when we don’t find the item we are looking for. Notice that with linear search, the worst case runtime is the size of the array n, because it has to look through the whole array. For the binary search runtime, we can calculate the number of times you can divide n in half until you get to 1. So, for example 8 elements can be divided in half to narrow down to 4 elements, which can be further divided in half to narrow down to 2 elements, which can be further divided in half to get down to 1 element, and then if that is wrong, to 0 elements, so that is 4 divisions or guesses to get the answer (8-&gt;4-&gt;2-&gt;1-&gt;0). In the table below, every time we double the size of N, we need at most one more guess or comparison with binary search. It’s much faster than linear search!</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 44%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>N</p></th>
+<th class="head"><p>Linear Search</p></th>
+<th class="head"><p>Binary Search</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>2 comparisons</p></td>
+<td><p>2 comparisons</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>8</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>16</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>7</p></td>
+</tr>
+</tbody>
+</table>
+<p>Runtimes can be described with mathematical functions. For an array of size n, linear search runtime is a linear function, and binary search runtime is a function of log base 2 of n (or log n + 1 comparisons). This is called the big-O runtime function in computer science, for example O(log n) vs. O(n). You can compare the growth of functions like n and log<sub>2</sub>n as n, the data size, grows and see that binary search runs much faster for any n.  You don’t need to know the log n runtime growth function for the AP exam, but you should be able to calculate how many steps binary search takes for a given n by counting how many times you can divide it in half. Or you can start at 1 and keep a count of how many times you can double it with the powers of two (1, 2, 4, 8, 16, 32, 64, 128, 512, 1024, etc.) until you reach a number that is slightly above n.</p>
+<p><a class="reference internal" href="../_images/exercise9.png"><img alt="exercise" class="align-middle" src="../_images/exercise9.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qbs_1" >
+            <p>7-5-3: Which will cause the <em>shortest</em> execution of a binary search looking for a value in an array of integers?</p>
+
+            <li data-component="answer"  id="qbs_1_opt_a">The value is the first one in the array</li><li data-component="feedback">This would be true for sequential search, not binary.</li>
+            
+            <li data-component="answer" data-correct id="qbs_1_opt_b">The value is in the middle of the array</li><li data-component="feedback">If the value is in the middle of the array the binary search will return after one iteration of the loop.</li>
+            
+            <li data-component="answer"  id="qbs_1_opt_c">The value is the last one in the array</li><li data-component="feedback">How would that be the shortest in a binary search?</li>
+            
+            <li data-component="answer"  id="qbs_1_opt_d">The value isn't in the array</li><li data-component="feedback">This is true for the longest execution time, but we are looking for the shortest.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qbs_2" >
+            <p>7-5-4: Which of the following conditions must be true in order to search for a value using binary search?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">.</span> <span class="n">The</span> <span class="n">values</span> <span class="n">in</span> <span class="n">the</span> <span class="n">array</span> <span class="n">must</span> <span class="n">be</span> <span class="n">integers</span><span class="p">.</span>
+<span class="n">II</span><span class="p">.</span> <span class="n">The</span> <span class="n">values</span> <span class="n">in</span> <span class="n">the</span> <span class="n">array</span> <span class="n">must</span> <span class="n">be</span> <span class="n">in</span> <span class="n">sorted</span> <span class="n">order</span><span class="p">.</span>
+<span class="n">III</span><span class="p">.</span> <span class="n">The</span> <span class="n">array</span> <span class="n">must</span> <span class="n">not</span> <span class="n">contain</span> <span class="n">duplicate</span> <span class="n">values</span><span class="p">.</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="qbs_2_opt_a">I only</li><li data-component="feedback">You can use a binary search on any type of data that can be compared, but the data must be in order.</li>
+            
+            <li data-component="answer"  id="qbs_2_opt_b">I and II</li><li data-component="feedback">You can use a binary search on any type of data that can be compared.</li>
+            
+            <li data-component="answer" data-correct id="qbs_2_opt_c">II only</li><li data-component="feedback">The only requirement for using a Binary Search is that the values must be ordered.</li>
+            
+            <li data-component="answer"  id="qbs_2_opt_d">II and III</li><li data-component="feedback">The array can contain duplicate values.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qbs_3" >
+            <p>7-5-5: How many times would the loop in the binary search run for an array  int[] arr = {2, 10, 23, 31, 55, 86} with binarySearch(arr,55)?</p>
+
+            <li data-component="answer" data-correct id="qbs_3_opt_a">2</li><li data-component="feedback">It will first compare with the value at index 2 and then index 4 and then return 4.</li>
+            
+            <li data-component="answer"  id="qbs_3_opt_b">1</li><li data-component="feedback">This would be true if we were looking for 23.</li>
+            
+            <li data-component="answer"  id="qbs_3_opt_c">3</li><li data-component="feedback">This would be true if we were looking for 31.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qbs_4" >
+            <p>7-5-6: If you had an ordered array of size 500, what is the maximum number of iterations required to find an element with binary search?</p>
+
+            <li data-component="answer"  id="qbs_4_opt_a">approximately 15 times</li><li data-component="feedback">How many times can you divide 500 in half?</li>
+            
+            <li data-component="answer" data-correct id="qbs_4_opt_b">approximately 9 times</li><li data-component="feedback">You can divide 500 in half, 9 times, or you can observe that 2^9 = 512 which is slightly bigger than 500.</li>
+            
+            <li data-component="answer"  id="qbs_4_opt_c">500 times</li><li data-component="feedback">How many times can you divide 500 in half?</li>
+            
+            <li data-component="answer"  id="qbs_4_opt_d">2 times</li><li data-component="feedback">How many times can you divide 500 in half?</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="groupwork-programming-challenge-search-runtimes">
+<h2><span class="section-number">8.5.4. </span><a class="reference internal" href="../_images/groupwork9.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork9.png" style="width: 35px;" /></a> Programming Challenge : Search Runtimes<a class="headerlink" href="#groupwork-programming-challenge-search-runtimes" title="Permalink to this headline">¶</a></h2>
+<p>Let’s go back to the spell checker that we programmed in Unit 6. Remember that it used linear search to find a word in the dictionary. The dictionary file was actually in alphabetical order though, so we could have used a much faster binary search.</p>
+<p>Here is a version of the spellchecker on <a href= "https://repl.it/@BerylHoffman/SpellCheckerArrayListSearches" style="text-decoration:underline" target="_blank">repl.it</a> that uses an ArrayList for the dictionary and a linear search method. Notice that get(i) is used instead of [] to get an element in the ArrayList dictionary at index i. The search also prints out the index where it found the word. This is an informal runtime that tells us how many words it had to check.  Run the code in the window below or on <a href= "https://repl.it/@BerylHoffman/SpellCheckerArrayListSearches" style="text-decoration:underline" target="_blank">repl.it</a> with the following test cases and record the runtime for each word in this <a href= "https://docs.google.com/document/d/1VrQf7wFIEIu7qfOg7FYUTeNWrdrRsPw4eJSdehhz4dM/edit?usp=sharing" style="text-decoration:underline" target="_blank" >Google document</a> (do File/Make a Copy) also seen below to record your answers.</p>
+<iframe height="400px" width="100%" src="https://docs.google.com/document/d/1VrQf7wFIEIu7qfOg7FYUTeNWrdrRsPw4eJSdehhz4dM/edit?usp=sharing&rm=minimal" style="max-width:90%; margin-left:5%" ></iframe><iframe height="600px" width="100%" src="https://repl.it/@BerylHoffman/SpellCheckerArrayListSearches?lite=true" scrolling="no" style="max-width:90%; margin-left:5%"  frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>Now, login to repl and start changing the code to save the <a href= "https://repl.it/@BerylHoffman/SpellCheckerArrayListSearches" style="text-decoration:underline" target="_blank">repl.it</a>  as your own project. The SpellChecker.java file also has a binarySpellCheck(word) method defined, but it does not print out the number of words checked. Looking at the linearSpellCheck(word) method as a guide, add in a counter variable, and increment it in the binary search loop after finding the middle of the list, and print it out before returning true or false. Change the Main.java code to call the binarySpellCheck method instead of the linearSpellCheck method, and try all the same test case words again. Record the runtimes for binary search and compare with the linear search times. What do you notice? Which one was faster in general? Were there some cases where each was faster? How fast were they with misspelled words? Record your answers in the window below.</p>
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=challenge7-5-binary-search  >
+<p>7-5-7: After you complete your code on repl, paste in a link (click on share) here. Also, write in your comparison of the linear vs. binary search runtimes based on your test cases. Were there any cases where one was faster than the other? How did each perform in the worst case when a word is misspelled?</p>
+
+</div>
+</div> <!-- end of runestone div -->
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">8.5.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>There are standard algorithms for searching.</p></li>
+<li><p>Sequential/linear search algorithms check each element in order until the desired value is found or all elements in the array or ArrayList have been checked.</p></li>
+<li><p>The binary search algorithm starts at the middle of a sorted array or ArrayList and eliminates half of the array or ArrayList in each iteration until the desired value is found or all elements have been eliminated.</p></li>
+<li><p>Data must be in sorted order to use the binary search algorithm. This algorithm will be covered more in Unit 10.</p></li>
+<li><p>Informal run-time comparisons of program code segments can be made using statement execution counts.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 8.4.10. Free Response - Delimiters B' data-toggle="tooltip">
+    <a href="2019delimitersQ3b.html" aria-label="8.4.10. Free Response - Delimiters B">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 8.6. Sorting Algorithms' data-toggle="tooltip" >
+    <a href="topic-7-6-sorting.html" aria-label="8.6. Sorting Algorithms">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised by Linda Seiter and Dan Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

@@ -1,4 +1,4 @@
-  
+
 Writing Methods
 :::::::::::::::
 
@@ -11,4 +11,6 @@ Writing Methods
    topic-5-2-method-parameters.rst
    topic-5-3-method-return.rst
   
+   
+
    

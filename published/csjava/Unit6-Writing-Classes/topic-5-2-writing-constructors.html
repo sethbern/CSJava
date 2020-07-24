@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>6.2. Writing Constructors &#8212; CS Java</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=5.0.1"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/presenter_mode.js?v=5.0.1"></script>
+    <script src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.3. Comments and Conditions" href="topic-5-3-comments-conditions.html" />
+    <link rel="prev" title="6.1. Anatomy of a Java Class" href="topic-5-1-parts-of-class.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'java' ? 'java' : 'python'
+  eBookConfig.runestone_version = '5.0.1';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-5-2-writing-constructors'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.1. </span>Anatomy of a Java Class" data-toggle="tooltip">
+    <a href="topic-5-1-parts-of-class.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.3. </span>Comments and Conditions' data-toggle="tooltip" >              
+    <a href="topic-5-3-comments-conditions.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="writing-constructors">
+<h1><span class="section-number">6.2. </span>Writing Constructors<a class="headerlink" href="#writing-constructors" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">In Unit 2, we learned how to create objects using constructor. Objects are created in programs by declaring a variable of the class and using the keyword new followed by a call to a constructor. <strong>Constructors</strong>  set the initial values for the object’s instance variables.    For example, here is how we create World, Turtle, and Person objects.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// To create a new object, write:</span>
+<span class="c1">// ClassName variableName = new ConstructorName(arguments);</span>
+<span class="n">World</span> <span class="n">world</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">();</span>
+<span class="n">Turtle</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>
+<span class="n">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Pat&quot;</span><span class="p">,</span><span class="s">&quot;pat@gmail.com&quot;</span><span class="p">,</span><span class="s">&quot;123-456-7890&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In a new class, constructors are usually written after the instance variables and before any methods.    They typically start with <code class="docutils literal notranslate"><span class="pre">public</span></code> and then the <em>name</em> of the class: <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ClassName()</span></code>. Unlike other methods, they do not have a return type, not even void, after the access modifier public.  They can take <strong>parameters</strong> (specified in parentheses) for the data which is used to initialize the instance variables.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClassName</span>
+<span class="p">{</span>
+
+   <span class="cm">/* Instance Variable Declarations -- not shown */</span>
+
+   <span class="cm">/* Constructor - same name as Class, no return type */</span>
+   <span class="kd">public</span> <span class="nf">ClassName</span><span class="p">()</span>
+   <span class="p">{</span>
+     <span class="cm">/* Implementation not shown */</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Constructors must have the same name as the class! Constructors have no return type!</p>
+</div>
+<p>Classes usually have more than one constructor. There are usually at least 2 constructors:</p>
+<ul class="simple">
+<li><p>a constructor that takes no parameters</p></li>
+<li><p>a constructor that takes all the parameters necessary for initializing all the instance variables</p></li>
+</ul>
+<p>The attributes of an object and their values at a given time define that object’s state. The constructors initialize the object’s state by assigning initial values to the instance variables that the object has as its attributes.</p>
+<p>Here are two constructors that could be written for the Person class. Notice that the first one initializes name, email, and phoneNumber to empty string “” as the default values. Most programmers use “” as the default value for String variables and 0 as the default value for int and double variables.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// default constructor: initialize instance vars to default empty strings</span>
+<span class="kd">public</span> <span class="nf">Person</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+   <span class="n">email</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+   <span class="n">phoneNumber</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// constructor: initialize all 3 instance variables to parameters</span>
+<span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">initName</span><span class="p">,</span> <span class="n">String</span> <span class="n">initEmail</span><span class="p">,</span> <span class="n">String</span> <span class="n">initPhone</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">name</span> <span class="o">=</span> <span class="n">initName</span><span class="p">;</span>
+   <span class="n">email</span> <span class="o">=</span> <span class="n">initEmail</span><span class="p">;</span>
+   <span class="n">phoneNumber</span> <span class="o">=</span> <span class="n">initPhone</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If there are no constructors written for a class, Java provides a no-argument <strong>default constructor</strong> where the instance variables are set to their default values. For int and double variables, the default value used is <strong>0</strong>, and for String and other object variables, the default is <strong>null</strong>. However, if you do write at least one constructor, Java will not generate the default constructor for you, so you should write at least a constructor with no parameters and one with many parameters.</p>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="name_constructor"    >
+<span data-question>6-2-1: Click on all the lines of code that are part of constructors in the following class.</span><span data-feedback>Constructors are public and have the same name as the class.</span><pre><span data-incorrect>public class Name {</span>
+
+    <span data-incorrect>private String first;</span>
+    <span data-incorrect>private String last;</span>
+
+    <span data-correct>public Name(String theFirst, String theLast) {</span>
+        <span data-correct>first = theFirst;</span>
+        <span data-correct>last = theLast;</span>
+     <span data-correct>}</span>
+
+     <span data-incorrect>public void setFirst(String theFirst) {</span>
+        <span data-incorrect>first = theFirst;</span>
+     <span data-incorrect>}</span>
+
+     <span data-incorrect>public void setLast(String theLast) {</span>
+        <span data-incorrect>last = theLast;</span>
+     <span data-incorrect>}</span>
+
+<span data-incorrect>}</span></pre>
+
+</div>
+</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qsse_5" >
+            <p>6-2-2: What best describes the purpose of a class’s constructor?</p>
+
+            <li data-component="answer"  id="qsse_5_opt_a">Determines the amount of space needed for an object and creates the object</li><li data-component="feedback">The object is already created before the constructor is called but the constructor initializes the instance variables.</li>
+            
+            <li data-component="answer"  id="qsse_5_opt_b">Names the new object</li><li data-component="feedback">Constructors do not name the object.</li>
+            
+            <li data-component="answer"  id="qsse_5_opt_c">Return to free storage all the memory used by this instance of the class.</li><li data-component="feedback">Constructors do not free any memory. In Java the freeing of memory is done when the object is no longer referenced.</li>
+            
+            <li data-component="answer" data-correct id="qsse_5_opt_d">Initialize the instance variables in the object</li><li data-component="feedback">A constructor  initializes the instance variables to their default values or in the case of a parameterized constructor, to the values passed in to the constructor.</li>
+            
+
+            </ul>
+            </div>
+            <div class="section" id="practice">
+<h2><span class="section-number">6.2.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-2-1" >
+            <p>6-2-3:  Consider the following class. Which of the following successfully creates a new Cat object?</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">color</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">breed</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isHungry</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span><span class="p">;</span>
+        <span class="n">breed</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span><span class="p">;</span>
+        <span class="n">isHungry</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">c</span><span class="p">,</span> <span class="n">String</span> <span class="n">b</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">h</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="n">breed</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">isHungry</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">I</span><span class="p">.</span>   <span class="n">Cat</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+<span class="n">II</span><span class="p">.</span>  <span class="n">Cat</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="s">&quot;Shorthair&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="n">III</span><span class="p">.</span> <span class="n">String</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">;</span>
+     <span class="kt">boolean</span> <span class="n">hungry</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="n">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="s">&quot;Tabby&quot;</span><span class="p">,</span> <span class="n">hungry</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+
+            <li data-component="answer"  id="AP2-2-1_opt_a">I only</li><li data-component="feedback">I is one of the correct constructors but the second constructor can also be used.</li>
+            
+            <li data-component="answer"  id="AP2-2-1_opt_b">I and II</li><li data-component="feedback">II is not correct because there is no Cat constructor that takes 2 parameters.</li>
+            
+            <li data-component="answer" data-correct id="AP2-2-1_opt_c">I and III</li><li data-component="feedback">I and III call the correct constructors.</li>
+            
+            <li data-component="answer"  id="AP2-2-1_opt_d">I, II, and III</li><li data-component="feedback">II is not correct because there is no Cat constructor that takes 2 parameters.</li>
+            
+            <li data-component="answer"  id="AP2-2-1_opt_e">II and III</li><li data-component="feedback">II is not correct because there is no Cat constructor that takes 2 parameters.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-2-2" >
+            <p>6-2-4: Consider the following class.  Which of the following code segments will construct a Movie object m with a title of “Lion King” and rating of 8.0?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Movie</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">director</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">rating</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">inTheaters</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Movie</span><span class="p">(</span><span class="n">String</span> <span class="n">t</span><span class="p">,</span> <span class="n">String</span> <span class="n">d</span><span class="p">,</span> <span class="kt">double</span> <span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+        <span class="n">rating</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+        <span class="n">inTheaters</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Movie</span><span class="p">(</span><span class="n">String</span> <span class="n">t</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span><span class="p">;</span>
+        <span class="n">rating</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">inTheaters</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="AP2-2-2_opt_a">Movie m = new Movie(8.0, "Lion King");</li><li data-component="feedback">There is no Movie constructor with 2 parameters.</li>
+            
+            <li data-component="answer"  id="AP2-2-2_opt_b">Movie m = Movie("Lion King", 8.0);</li><li data-component="feedback">There is no Movie constructor with 2 parameters.</li>
+            
+            <li data-component="answer"  id="AP2-2-2_opt_c">Movie m = new Movie();</li><li data-component="feedback">This creates a Movie object but it does not have the correct title and rating.</li>
+            
+            <li data-component="answer" data-correct id="AP2-2-2_opt_d">Movie m = new Movie("Lion King", "Disney", 8.0);</li><li data-component="feedback">This creates a Movie object with the correct title and rating.</li>
+            
+            <li data-component="answer"  id="AP2-2-2_opt_e">Movie m = new Movie("Lion King");</li><li data-component="feedback">This creates a Movie object but it does not have a rating of 8.0.</li>
+            
+
+            </ul>
+            </div>
+            <p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="class-Fraction" class="runestone explainer ac_section alert alert-warning">
+<p>The following class defines a Fraction with the instance variables numerator and denominator.
+It uses 2 constructors. Note that this constructor sets the default instance
+variable values to 1 rather than 0 – so we don’t end up with divide by zero. Try to guess what it will print before you run it.  Hint!  Remember to start with the main method! You can also view it in the <a href="http://www.pythontutor.com/visualize.html#code=%20%20public%20class%20Fraction%0A%20%20%7B%0A%20%20%20%20%20//%20%20instance%20variables%0A%20%20%20%20%20private%20int%20numerator%3B%0A%20%20%20%20%20private%20int%20denominator%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20set%20instance%20variables%20to%20default%20values%0A%20%20%20%20%20public%20Fraction%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20numerator%20%3D%201%3B%0A%20%20%20%20%20%20%20%20denominator%20%3D%201%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20set%20instance%20variables%20to%20init%20parameters%0A%20%20%20%20%20public%20Fraction%28int%20initNumerator,%20int%20initDenominator%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20numerator%20%3D%20initNumerator%3B%0A%20%20%20%20%20%20%20%20denominator%20%3D%20initDenominator%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Print%20fraction%0A%20%20%20%20%20public%20void%20print%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20System.out.println%28numerator%20%2B%20%22/%22%20%2B%20denominator%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20Fraction%20f1%20%3D%20new%20Fraction%28%29%3B%0A%20%20%20%20%20%20%20%20Fraction%20f2%20%3D%20new%20Fraction%281,2%29%3B%0A%20%20%20%20%20%20%20%20//%20What%20will%20these%20print%20out%3F%0A%20%20%20%20%20%20%20%20f1.print%28%29%3B%0A%20%20%20%20%20%20%20%20f2.print%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D&cumulative=false&curInstr=28&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a> by clicking on the Code Lens button below.</p>
+
+<textarea data-component="activecode" id=class-Fraction data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Fraction
+{
+   //  instance variables
+   private int numerator;
+   private int denominator;
+
+   // constructor: set instance variables to default values
+   public Fraction()
+   {
+      numerator = 1;
+      denominator = 1;
+   }
+
+   // constructor: set instance variables to init parameters
+   public Fraction(int initNumerator, int initDenominator)
+   {
+      numerator = initNumerator;
+      denominator = initDenominator;
+   }
+
+   // Print fraction
+   public void print()
+   {
+     System.out.println(numerator + "/" + denominator);
+   }
+
+   // main method for testing
+   public static void main(String[] args)
+   {
+      Fraction f1 = new Fraction();
+      Fraction f2 = new Fraction(1,2);
+      // What will these print out?
+      f1.print();
+      f2.print();
+   }
+}
+====
+// Test Code for Lesson 5.2.0.1 - Fraction
+  import static org.junit.Assert.*;
+  import org.junit.After;
+  import org.junit.Before;
+  import org.junit.Test;
+
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+      @Test
+      public void test() throws IOException
+      {
+          String output = getMethodOutput("main");
+          String expect = "1/1\n1/2";
+
+          boolean passed = getResults(expect, output, "Running main", true);
+          assertTrue(passed);
+      }
+
+  }
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="class-Car" class="runestone explainer ac_section alert alert-warning">
+<p>The following class defines a Car with the instance variables model and year, for example a Honda 2010 car. However, some of the code is missing. Fill in the code for the 2 constructors that are numbered 1 and 2. And fill in the code to call the constructors in the main method numbered 3. The car1 object should test the first constructor with default values and the car2 object should test the second constructor to create a Honda 2010 car. Run your program and make sure it works and prints out the information for both cars.</p>
+
+<textarea data-component="activecode" id=class-Car data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Car
+{
+   //  instance variables
+   private String model;
+   private int year;
+
+   // constructor: set instance variables to default values
+   public Car()
+   {
+      // 1. set the instance variables to default values "" and 2019
+
+
+   }
+
+   // constructor: set instance variables to init parameters
+   public Car(String initModel, int initYear)
+   {
+      // 2. set the instance variables to the init parameter variables
+
+
+   }
+
+   // Print Car info
+   public void print()
+   {
+     System.out.println("Car model: " + model);
+     System.out.println("Car year: " + year);
+   }
+
+   // main method for testing
+   public static void main(String[] args)
+   {
+      // 3. call the constructor to create 2 new Car objects using the 2 constructors. car1 will be the default values. car2 should be a Honda 2010 car.
+      Car car1 =
+      Car car2 =
+
+      car1.print();
+      car2.print();
+   }
+}
+====
+// Test Code for Lesson 5.2.0 - Car
+  import static org.junit.Assert.*;
+  import org.junit.After;
+  import org.junit.Before;
+  import org.junit.Test;
+
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+      @Test
+      public void testMain() throws IOException
+      {
+          String output = getMethodOutput("main");
+          String expect = "Car model: \nCar year: 2019\nCar model: Honda\nCar year: 2010";
+
+          boolean passed = getResults(expect, output, "Running main");
+          assertTrue(passed);
+      }
+
+  }
+</textarea>
+</div>
+<p>Constructors are used to set the initial state of an object by initializing its instance variables. The examples above have instance variables that are primitive types, but you can have other objects, reference types, as instance variables. For example, a Person class could have an Address object as an instance variable, and the Address class could have String instance variables for the street, city, and state.</p>
+<p>When you pass object references as parameters to constructors or methods, they become aliases for the original object and can change it. If a constructor has an object instance variable, it can copy   the referenced object in the parameter using new and the constructor of the referenced object like below so that it does not change the state of the original object. You will see more examples like this in later lessons.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="n">Address</span> <span class="n">addr</span><span class="p">;</span> <span class="c1">//Assumes an Address class is already defined</span>
+
+  <span class="c1">// constructor: initialize instance variable and call Address constructor to make a copy</span>
+  <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">initName</span><span class="p">,</span> <span class="n">Address</span> <span class="n">initAddr</span><span class="p">)</span>
+  <span class="p">{</span>
+     <span class="n">name</span> <span class="o">=</span> <span class="n">initName</span><span class="p">;</span>
+     <span class="n">addr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Address</span><span class="p">(</span><span class="n">initAddr</span><span class="p">.</span><span class="na">getStreet</span><span class="p">(),</span>
+                <span class="n">initAddr</span><span class="p">.</span><span class="na">getCity</span><span class="p">(),</span> <span class="n">initAddr</span><span class="p">.</span><span class="na">getState</span><span class="p">());</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="groupwork-programming-challenge-student-class">
+<h2><span class="section-number">6.2.2. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : Student Class<a class="headerlink" href="#groupwork-programming-challenge-student-class" title="Permalink to this headline">¶</a></h2>
+<p>This challenge requires you to create a Student class with constructors.</p>
+<ol class="arabic simple">
+<li><p>First, brainstorm in pairs to do the <strong>Object-Oriented Design</strong> for a Student class. What data should we store about Students? Come up with at least 4 different instance variables. What are the data types for the instance variables?</p></li>
+<li><p>Write a Student class below that has your 4 instance variables and write at least 3 different constructors: one that has no parameters and initializes the instance variables to default values, one that has 4 parameters to set the instance variables, and one that has 1 parameter for the most important instance variable and uses defaults for the others.</p></li>
+<li><p>Add a print() method that uses System.out.println to print out all the instance variables.</p></li>
+<li><p>Add a main method that constructs at least 3 Student objects using the 3 different constructors and then calls their print() methods.</p></li>
+</ol>
+
+<div data-childcomponent="challenge-5-2-Student-class" class="runestone explainer ac_section alert alert-warning">
+<p>Create a class Student with 4 instance variables, 3 constructors, and a print method. Write a main method that creates 3 Student objects with the 3 different constructors and calls their print() method.</p>
+
+<textarea data-component="activecode" id=challenge-5-2-Student-class data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+/** class Student
+ * with 4 instance variables,
+ * 3 constructors, a print method,
+ * and a main method to test them.
+ */
+ public class Student
+ {
+    // Write 4 instance variables
+
+
+    // Write 3 constructors to initialize the instance variables
+    //  1. no parameters using default values
+    //  2. 1 parameter and the rest default values
+    //  3. 4 parameters
+
+
+    // Write a print method that prints all the instance variables
+    public void print()
+    {
+
+
+    }
+
+    // main method
+    public static void main(String[] args)
+    {
+       // Construct 3 Student objects using the 3 different constructors
+
+
+       // call their print() methods
+
+    }
+ }
+ ====
+ // Test Code for Lesson 5.2.1 - Challenge - Student
+  import static org.junit.Assert.*;
+  import org.junit.After;
+  import org.junit.Before;
+  import org.junit.Test;
+
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+      public RunestoneTests() {
+          super("Student");
+
+          Object[] values = new Object[]{"Name", 0};
+          setDefaultValues(values);
+      }
+
+      @Test
+      public void testDefaultConstructor()
+      {
+          String output = checkDefaultConstructor();
+          String expect = "pass";
+
+          boolean passed = getResults(expect, output, "Checking default constructor");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testConstructor4()
+      {
+          String output = checkConstructor(4);
+          String expect = "pass";
+
+          boolean passed = getResults(expect, output, "Checking constructor with 4 parameters");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testConstructor1()
+      {
+          String output = checkConstructor(1);
+          String expect = "pass";
+
+          boolean passed = getResults(expect, output, "Checking constructor with 1 parameter");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testPrivateVariables()
+      {
+          String expect = "4 Private";
+          String output = testPrivateInstanceVariables();
+
+          boolean passed = getResults(expect, output, "Checking Private Instance Variable(s)");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testPrint()
+      {
+          String output = getMethodOutput("print");
+          String expect = "More than 15 characters";
+          String actual = " than 15 characters";
+
+          if (output.length() < 15) {
+              actual = "Less" + actual;
+          } else {
+              actual = "More" + actual;
+          }
+          boolean passed = getResults(expect, actual, "Checking print method");
+          assertTrue(passed);
+      }
+
+
+      @Test
+      public void testMain() throws IOException
+      {
+          String output = getMethodOutput("main");//.split("\n");
+          String expect = "3+ line(s) of text";
+          String actual = " line(s) of text";
+          int len = output.split("\n").length;
+
+          if (output.length() > 0) {
+              actual = len + actual;
+          } else {
+              actual = output.length() + actual;
+          }
+          boolean passed = len >= 3;
+
+          getResults(expect, actual, "Checking output", passed);
+          assertTrue(passed);
+      }
+  }
+</textarea>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">6.2.3. </span>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-2-1" >
+            <p>6-2-5: Consider the definition of the Cat class below. The class uses the instance variable isSenior to indicate whether a cat is old enough to be considered a senior cat or not.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isSenior</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">isSenior</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">isSenior</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Which of the following statements will create a Cat object that represents a cat that is considered a senior cat?</p>
+<li data-component="answer"  id="AP5-2-1_opt_a"><p>Cat c = new Cat (“Oliver”, 7);</p>
+</li><li data-component="feedback" id="AP5-2-1_opt_a">
+<p>The age 7 is less than 10, so this cat would not be considered a senior cat.</p></li><li data-component="answer"  id="AP5-2-1_opt_b"><p>Cat c = new Cat (“Max”, “15”);</p>
+</li><li data-component="feedback" id="AP5-2-1_opt_b">
+<p>An integer should be passed in as the second parameter, not a string.</p></li><li data-component="answer"  id="AP5-2-1_opt_c"><p>Cat c = new Cat (“Spots”, true);</p>
+</li><li data-component="feedback" id="AP5-2-1_opt_c">
+<p>An integer should be passed in as the second parameter, not a boolean.</p></li><li data-component="answer" data-correct id="AP5-2-1_opt_d"><p>Cat c = new Cat (“Whiskers”, 10);</p>
+</li><li data-component="feedback" id="AP5-2-1_opt_d">
+<p>Correct!</p></li><li data-component="answer"  id="AP5-2-1_opt_e"><p>Cat c = new Cat (“Bella”, isSenior);</p>
+</li><li data-component="feedback" id="AP5-2-1_opt_e">
+<p>An integer should be passed in as the second parameter and isSenior would be undefined outside of the class.</p></li>
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-2-2" >
+            <p>6-2-6: Consider the following class definition. Each object of the class Cat will store the cat’s name as name, the cat’s age as age, and the number of kittens the cat has as kittens. Which of the following code segments, found in a class other than Cat, can be used to create a cat that is 5 years old with no kittens?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">kittens</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="n">kittens</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="n">kittens</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/* Other methods not shown */</span>
+<span class="p">}</span>
+
+<span class="n">I</span><span class="p">.</span>   <span class="n">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="s">&quot;Sprinkles&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">II</span><span class="p">.</span>  <span class="n">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="s">&quot;Lucy&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="n">III</span><span class="p">.</span> <span class="n">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="s">&quot;Luna&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="AP5-2-2_opt_a">I only</li><li data-component="feedback">Option III can also create a correct Cat instance.</li>
+            
+            <li data-component="answer"  id="AP5-2-2_opt_b">II only</li><li data-component="feedback">Option II will create a cat that is 0 years old with 5 kittens.</li>
+            
+            <li data-component="answer"  id="AP5-2-2_opt_c">III only</li><li data-component="feedback">Option I can also create a correct Cat instance.</li>
+            
+            <li data-component="answer" data-correct id="AP5-2-2_opt_d">I and III only</li><li data-component="feedback">Good job!</li>
+            
+            <li data-component="answer"  id="AP5-2-2_opt_e">I, II and III</li><li data-component="feedback">Option II will create a cat that is 0 years old with 5 kittens.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-2-3" >
+            <p>6-2-7: Consider the following class definition.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">color</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isHungry</span><span class="p">;</span>
+    <span class="cm">/* missing constructor */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following statement appears in a method in a class other than Cat. It is intended to create a new Cat object c with its attributes set to “black” and true. Which of the following can be used to replace  <strong>missing constructor code</strong> in the class definition so that the object c below is correctly created?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Cat</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">(</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<li data-component="answer"  id="AP5-2-3_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">c</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">h</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-2-3_opt_a">
+<p>The constructor should be changing the instance variables, not the local variables.</p></li><li data-component="answer"  id="AP5-2-3_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">c</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">h</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="s">&quot;true&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-2-3_opt_b">
+<p>The constructor should be changing the instance variables, not the local variables.</p></li><li data-component="answer"  id="AP5-2-3_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">c</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">h</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">color</span><span class="p">;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">isHungry</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-2-3_opt_c">
+<p>The constructor should be changing the instance variables, not the local variables.</p></li><li data-component="answer"  id="AP5-2-3_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">c</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">h</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">black</span><span class="p">;</span>
+    <span class="n">isHungry</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-2-3_opt_d">
+<p>The constructor should be using  the local variables to set the instance variables.</p></li><li data-component="answer" data-correct id="AP5-2-3_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Cat</span><span class="p">(</span><span class="n">String</span> <span class="n">c</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">h</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">isHungry</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li><li data-component="feedback" id="AP5-2-3_opt_e">
+<p>Correct!</p></li>
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="summary">
+<h2><span class="section-number">6.2.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Constructors</strong> are used to set the initial state of an object, which includes initial values for all instance variables.</p></li>
+<li><p>When no constructor is written, Java provides a no-argument <strong>default constructor</strong>, and the instance variables are set to their default values (0 for int and double, null for objects like String).</p></li>
+<li><p>Constructor parameters are local variables to the constructor and provide data to initialize instance variables.</p></li>
+</ul>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.1. Anatomy of a Java Class' data-toggle="tooltip">
+    <a href="topic-5-1-parts-of-class.html" aria-label="6.1. Anatomy of a Java Class">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.3. Comments and Conditions' data-toggle="tooltip" >
+    <a href="topic-5-3-comments-conditions.html" aria-label="6.3. Comments and Conditions">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised by Linda Seiter and Dan Palmer.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.1.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>
