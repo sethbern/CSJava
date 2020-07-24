@@ -935,15 +935,15 @@ import java.io.*;
 
 public class RunestoneTests extends CodeTestHelper
 {
- @Test
- public void testMain() throws IOException
- {
+   @Test
+   public void testMain() throws IOException
+   {
      String output = getMethodOutput("main");
      String expect = "Welcome to the weather report on Channel 101 \nThe temperature today is 70.5\nIs it sunny today? true";
      boolean passed = getResults(expect, output, "Expected output from main");
      assertTrue(passed);
- }
- }
+   }
+}
 </textarea>
 </div>
 </div>

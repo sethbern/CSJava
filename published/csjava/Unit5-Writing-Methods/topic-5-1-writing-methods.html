@@ -337,19 +337,19 @@
   <div class="section" id="writing-methods">
 <span id="index-0"></span><h1>Writing Methods<a class="headerlink" href="#writing-methods" title="Permalink to this headline">¶</a></h1>
 <p>Up until this unit, you wrote all  code in the main method,
-but now you will be writing multiple methods. Why have multiple methods instead of just one?
+but now you will be creating new methods that can be called by the main method. Why have multiple methods instead of just one?
 <strong>Procedural Abstraction</strong> allows us to name a block of code as a method and
 call it whenever we need it, abstracting away the details of how it works.
-This serves to organize our code by function and reduce its complexity and reduce
+This serves to organize our code by function and reduce
 the repetition of code. In addition, it helps with debugging and maintenance since
 changes to that block of code only need to happen in one place.
 Here are some of the main reasons to use multiple methods in your programs:</p>
 <ul class="simple">
-<li><p>Organization and Reducing Complexity: organize your program into small sections of code by function to reduce its complexity. Divide a problem into subproblems to solve it a piece at a time.</p></li>
+<li><p>Organization and Reducing Complexity: organize your program into small sections of code to reduce its complexity. Divide a problem into subproblems to solve it a piece at a time.</p></li>
 <li><p>Reusing Code: avoid repetition of code. Reuse code by putting it in a method and calling it whenever needed.</p></li>
 <li><p>Maintainability and Debugging: smaller methods are easier to debug and understand than searching through a large main method.</p></li>
 </ul>
-<p>Let’s look at an example with lots of repetition of code and
+<p>Let’s look at an example with repetition of code and
 create methods to reduce the repetition of code.</p>
 <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> Check Your Understanding</p>
 
@@ -372,62 +372,58 @@ create methods to reduce the repetition of code.</p>
 You may have noticed that the chorus is
 repeated “With a knick knack paddy whack, give a dog a bone. This old man came rolling home.”
 When you see repeated code, that is a signal for you to make a new method!</p>
-<p>A method is a <strong>named</strong> list of statements.  When we want to execute the list of statements,
+<p>A method is a <strong>named</strong> set of statements.  When we want to execute the statements,
 we call the method using its name.
-In the next unit you will create methods that are called using an object,
-referred to as <strong>instance methods</strong>.
+In a subsequent lesson you will create methods that are called using an object,
+referred to as <strong>object methods</strong> or <strong>instance methods</strong>.
 The methods in this unit are called without an object, so they are  <strong>static methods</strong>.
 Static methods are also referred to as class methods.</p>
+<div class="section" id="defining-a-static-method">
+<h2>Defining a Static Method<a class="headerlink" href="#defining-a-static-method" title="Permalink to this headline">¶</a></h2>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../_images/methodsignature.png"><img alt="../_images/methodsignature.png" src="../_images/methodsignature.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Method Header(Signature) and Method Body</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>There are two steps to creating and calling a static method:</p>
-<p>1. <strong>Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong>.  The header is also called
-a method <em>signature</em>.  The parts of the <em>main</em> method header are shown in Figure 1, which include an access modifier,
+<p>1. <strong>Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong>.
+The header is also called
+a method <strong>signature</strong>.  The parts of the <em>main</em> method header are shown in Figure 1,
+which include an access modifier,
 static modifier, return type, name, and formal parameters.   The method body
-consists of a set of statements enclosed in curly braces { }.
-Another example method named <em>methodName</em> that has no formal parameters is shown below.</p>
+consists of a set of statements enclosed in curly braces { }.</p>
+<p>The code below contains a chorus() method definition
+that we could write to encapsulate the two lines that get repeated in the song.</p>
 <blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: Define the method in a class</span>
-<span class="c1">// method header</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">methodName</span><span class="p">()</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: define a new method named chorus</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">chorus</span><span class="p">()</span>
 <span class="p">{</span>
-      <span class="c1">// method body</span>
+   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;With a knick knack paddy whack, give a dog a bone.&quot;</span><span class="p">);</span>
+   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;This old man came rolling home.&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>2. <strong>Method Call</strong>: whenever you want to use the method, call methodName();  The statements in the method body
-will be executed.</p>
+<p>2. <strong>Method Call</strong>: whenever you want to use a method, you can call the method using the method name followed by parenthesis, for example methodName();
+The statements in the method body will be executed each time the method is called.  The code below shows how to call the chorus method:</p>
 <blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the method</span>
-<span class="n">methodName</span><span class="p">();</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the chorus method</span>
+<span class="n">chorus</span><span class="p">();</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>For example, here is a chorus() method definition
-that we could write for the “This Old Man Song” to encapsulate the two lines that get repeated.
-The main method can call <code class="docutils literal notranslate"><span class="pre">chorus();</span></code> anytime we want
-the two print statements in the method body to be executed.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">chorus</span><span class="p">()</span>
-<span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;With a knick knack paddy whack, give a dog a bone.&quot;</span><span class="p">);</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;This old man came rolling home.&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<p>The main method can call <code class="docutils literal notranslate"><span class="pre">chorus();</span></code> anytime we want the two print statements in the method body to be executed.
+Notice that we can just call the static method, we don’t need to create an object to use for calling the method.</p>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
-<div data-childcomponent="Song1_methods" class="runestone explainer ac_section alert alert-warning">
-<p>Run the following code to see the song This Old Man print out.
+<div data-childcomponent="OldManSong1_methods" class="runestone explainer ac_section alert alert-warning">
+<p>Run the following code to see the song print out.
 Notice the third line of code in the main method
 is a call to the new method chorus().
 Can you replace the last two lines in the second verse in the main
 method with another call to the chorus() method?
 Step through using on the Code Lens button to see how the main method calls the chorus method.</p>
 
-<textarea data-component="activecode" id=Song1_methods data-lang="java" 
+<textarea data-component="activecode" id=OldManSong1_methods data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
@@ -470,16 +466,6 @@ import static org.junit.Assert.*;
       }
 
       @Test
-      public void testChangedCode() {
-          String origCode = "public class Song{ // The chorus method public static void chorus() { System.out.println(\"With a knick knack paddy whack, give a dog a bone.\"); System.out.println(\"This old man came rolling home.\"); }  public static void main(String args[])  {  Song mySong = new Song();  System.out.println(\"This old man, he played one.\");  System.out.println(\"He played knick knack on my thumb. \");  chorus();  System.out.println(\"This old man, he played two.\");  System.out.println(\"He played knick knack on my shoe. \");  // Can you replace these 2 lines with a method call to chorus()?  System.out.println(\"With a knick knack paddy whack, give a dog a bone.\");  System.out.println(\"This old man came rolling home.\")  }  }";
-
-          boolean changed = codeChanged(origCode);
-
-          assertTrue(changed);
-
-      }
-
-      @Test
       public void testcodeContains(){
         int count = countOccurences(getCode(),"chorus();");
         boolean passed = count > 1;
@@ -490,37 +476,89 @@ import static org.junit.Assert.*;
   }
 </textarea>
 </div>
-<p>Here is another song with a repeated chorus.
-The Song’s print method calls the chorus() and animal() methods to help it
-print out the whole song.</p>
-<p>When you call the chorus() method, it skips to the chorus code,
-executes and prints out the chorus, and then returns back to the method
-that called it.</p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
 
-<div class="runestone" style="max-width: none;">
-    <div class="alert alert-warning cd_section">
-        <div class="pytutorVisualizer" id="songviz2"
-           data-params='{"embeddedMode": true, "lang": "java", "jumpToEnd": false}'>
-        </div>
-        <p class="runestone_caption"><span class="runestone_caption_text">CodeLens:  (songviz2)</span> </p>
-    </div>
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="greet_method_signature"    >
+<span data-question>5-1-2: A method definition consists of a method header and a method body. Click on all of the method headers (signatures) in the following code.</span><span data-feedback>There is one method header for the greet method and one for the main method.</span><pre><span data-incorrect>public class Test2</span>
+<span data-incorrect>{</span>
+    <span data-correct>public static void greet()</span>
+    <span data-incorrect>{</span>
+        <span data-incorrect>System.out.println("Hello!");</span>
+        <span data-incorrect>System.out.println("How are you?");</span>
+    <span data-incorrect>}</span>
+    <span data-incorrect> </span>
+    <span data-correct>public static void main(String[] args)</span>
+    <span data-incorrect>{</span>
+        <span data-incorrect>System.out.println("Before greeting");</span>
+        <span data-incorrect>greet();</span>
+        <span data-incorrect>System.out.println("After greeting");</span>
+    <span data-incorrect>}</span>
+<span data-incorrect>}</span></pre>
 
-<script type="text/javascript">
-var songviz2_vis;
-
-if (allTraceData === undefined) {
-   var allTraceData = {};
-}
-
-allTraceData["songviz2"] = {"code":"public class OldMacDonald\n{\n\n  public static void chorus()\n  {\n    System.out.println(\"E-I-E-I-O\");\n  }\n\n  public static void animal()\n  {\n    System.out.println(\"duck\");\n  }\n\n  public static void main(String[] args)\n  {\n    System.out.println(\"Old MacDonald had a farm\");\n    chorus();\n    System.out.print(\"And on that farm he had a \");\n    animal();\n    chorus();\n  }\n}","stdin":"","trace":[{"stdout":"","event":"call","line":16,"stack_to_render":[{"func_name":"main:16","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"1","frame_id":1}],"globals":{},"ordered_globals":[],"func_name":"main","heap":{}},{"stdout":"","event":"step_line","line":16,"stack_to_render":[{"func_name":"main:16","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"2","frame_id":2}],"globals":{},"ordered_globals":[],"func_name":"main","heap":{}},{"stdout":"Old MacDonald had a farm\n","event":"step_line","line":17,"stack_to_render":[{"func_name":"main:17","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"5","frame_id":5}],"globals":{},"ordered_globals":[],"func_name":"main","heap":{}},{"stdout":"Old MacDonald had a farm\n","event":"call","line":6,"stack_to_render":[{"func_name":"chorus:6","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"6","frame_id":6},{"func_name":"main:17","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"7","frame_id":7}],"globals":{},"ordered_globals":[],"func_name":"chorus","heap":{}},{"stdout":"Old MacDonald had a farm\n","event":"step_line","line":6,"stack_to_render":[{"func_name":"chorus:6","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"8","frame_id":8},{"func_name":"main:17","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"9","frame_id":9}],"globals":{},"ordered_globals":[],"func_name":"chorus","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\n","event":"step_line","line":7,"stack_to_render":[{"func_name":"chorus:7","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"16","frame_id":16},{"func_name":"main:17","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"17","frame_id":17}],"globals":{},"ordered_globals":[],"func_name":"chorus","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\n","event":"return","line":7,"stack_to_render":[{"func_name":"chorus:7","encoded_locals":{"__return__":["VOID"]},"ordered_varnames":["__return__"],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"18","frame_id":18},{"func_name":"main:17","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"19","frame_id":19}],"globals":{},"ordered_globals":[],"func_name":"chorus","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\n","event":"step_line","line":18,"stack_to_render":[{"func_name":"main:18","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"20","frame_id":20}],"globals":{},"ordered_globals":[],"func_name":"main","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a ","event":"step_line","line":19,"stack_to_render":[{"func_name":"main:19","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"24","frame_id":24}],"globals":{},"ordered_globals":[],"func_name":"main","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a ","event":"call","line":11,"stack_to_render":[{"func_name":"animal:11","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"25","frame_id":25},{"func_name":"main:19","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"26","frame_id":26}],"globals":{},"ordered_globals":[],"func_name":"animal","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a ","event":"step_line","line":11,"stack_to_render":[{"func_name":"animal:11","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"27","frame_id":27},{"func_name":"main:19","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"28","frame_id":28}],"globals":{},"ordered_globals":[],"func_name":"animal","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\n","event":"step_line","line":12,"stack_to_render":[{"func_name":"animal:12","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"35","frame_id":35},{"func_name":"main:19","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"36","frame_id":36}],"globals":{},"ordered_globals":[],"func_name":"animal","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\n","event":"return","line":12,"stack_to_render":[{"func_name":"animal:12","encoded_locals":{"__return__":["VOID"]},"ordered_varnames":["__return__"],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"37","frame_id":37},{"func_name":"main:19","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"38","frame_id":38}],"globals":{},"ordered_globals":[],"func_name":"animal","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\n","event":"step_line","line":20,"stack_to_render":[{"func_name":"main:20","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"39","frame_id":39}],"globals":{},"ordered_globals":[],"func_name":"main","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\n","event":"call","line":6,"stack_to_render":[{"func_name":"chorus:6","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"41","frame_id":41},{"func_name":"main:20","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"42","frame_id":42}],"globals":{},"ordered_globals":[],"func_name":"chorus","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\n","event":"step_line","line":6,"stack_to_render":[{"func_name":"chorus:6","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"43","frame_id":43},{"func_name":"main:20","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"44","frame_id":44}],"globals":{},"ordered_globals":[],"func_name":"chorus","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\n","event":"step_line","line":7,"stack_to_render":[{"func_name":"chorus:7","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"51","frame_id":51},{"func_name":"main:20","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"52","frame_id":52}],"globals":{},"ordered_globals":[],"func_name":"chorus","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\n","event":"return","line":7,"stack_to_render":[{"func_name":"chorus:7","encoded_locals":{"__return__":["VOID"]},"ordered_varnames":["__return__"],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"53","frame_id":53},{"func_name":"main:20","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":false,"is_zombie":false,"is_parent":false,"unique_hash":"54","frame_id":54}],"globals":{},"ordered_globals":[],"func_name":"chorus","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\n","event":"step_line","line":21,"stack_to_render":[{"func_name":"main:21","encoded_locals":{},"ordered_varnames":[],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"55","frame_id":55}],"globals":{},"ordered_globals":[],"func_name":"main","heap":{}},{"stdout":"Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\n","event":"return","line":21,"stack_to_render":[{"func_name":"main:21","encoded_locals":{"__return__":["VOID"]},"ordered_varnames":["__return__"],"parent_frame_id_list":[],"is_highlighted":true,"is_zombie":false,"is_parent":false,"unique_hash":"57","frame_id":57}],"globals":{},"ordered_globals":[],"func_name":"main","heap":{}}],"userlog":"Debugger VM maxMemory: 239M\n"};
-</script>
 </div>
-<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+</div>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="greet_method_body"    >
+<span data-question>5-1-3: Click on all statements contained within the greet method body.</span><span data-feedback>The greet method body consists of the 2 print statements nested between the curly braces that follow the method header</span><pre><span data-incorrect>public class Test2</span>
+<span data-incorrect>{</span>
+    <span data-incorrect>public static void greet()</span>
+    <span data-incorrect>{</span>
+        <span data-correct>System.out.println("Hello!");</span>
+        <span data-correct>System.out.println("How are you?");</span>
+    <span data-incorrect>}</span>
+    <span data-incorrect> </span>
+    <span data-incorrect>public static void main(String[] args)</span>
+    <span data-incorrect>{</span>
+        <span data-incorrect>System.out.println("Before greeting");</span>
+        <span data-incorrect>greet();</span>
+        <span data-incorrect>System.out.println("After greeting");</span>
+    <span data-incorrect>}</span>
+<span data-incorrect>}</span></pre>
+
+</div>
+</div>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="greet_method_call"    >
+<span data-question>5-1-4: Click on the greet method call.</span><span data-feedback>The greet() method call occurs in the main method.</span><pre><span data-incorrect>public class Test2</span>
+<span data-incorrect>{</span>
+    <span data-incorrect>public static void greet()</span>
+    <span data-incorrect>{</span>
+        <span data-incorrect>System.out.println("Hello!");</span>
+        <span data-incorrect>System.out.println("How are you?");</span>
+    <span data-incorrect>}</span>
+    <span data-incorrect> </span>
+    <span data-incorrect>public static void main(String[] args)</span>
+    <span data-incorrect>{</span>
+        <span data-incorrect>System.out.println("Before greeting");</span>
+        <span data-correct>greet();</span>
+        <span data-incorrect>System.out.println("After greeting");</span>
+    <span data-incorrect>}</span>
+<span data-incorrect>}</span></pre>
+
+</div>
+</div>
+
+        <div class="runestone">
+        <div data-component="fillintheblank" id="println_called" >
+            <p>5-1-5: Given the Test2 class listed above, how many times is the <strong>System.out.println</strong> called when the main method runs?</p>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [4, 4], "feedback": "<p>Correct.</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect. The main method calls System.out.println directly 2 times, and the call to greet() results in 2 additional calls to System.out.println.</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="songMethods" >
-            <p>5-1-2: What does the following code print out?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Song</span>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="likeFoodMethods" >
+            <p>5-1-6: What does the following code print out?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">LikeFood</span>
   <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">fruit</span><span class="p">()</span>
@@ -545,20 +583,67 @@ allTraceData["songviz2"] = {"code":"public class OldMacDonald\n{\n\n  public sta
 </pre></div>
 </div>
 
-            <li data-component="answer"  id="songMethods_opt_a">I like to eat eat eat.</li><li data-component="feedback">Try tracing through the print method and see what happens when it calls the other methods.</li>
+            <li data-component="answer"  id="likeFoodMethods_opt_a">I like to eat eat eat.</li><li data-component="feedback">Try tracing through the print method and see what happens when it calls the other methods.</li>
             
-            <li data-component="answer"  id="songMethods_opt_b">I like to eat eat eat fruit.</li><li data-component="feedback">There is a fruit() method but it does not print out the word fruit.</li>
+            <li data-component="answer"  id="likeFoodMethods_opt_b">I like to eat eat eat fruit.</li><li data-component="feedback">There is a fruit() method but it does not print out the word fruit.</li>
             
-            <li data-component="answer"  id="songMethods_opt_c">I like to apples and bananas eat.</li><li data-component="feedback">The order things are printed out depends on the order in which they are called from the print method.</li>
+            <li data-component="answer"  id="likeFoodMethods_opt_c">I like to apples and bananas eat.</li><li data-component="feedback">The order things are printed out depends on the order in which they are called from the print method.</li>
             
-            <li data-component="answer" data-correct id="songMethods_opt_d">I like to eat eat eat apples and bananas!</li><li data-component="feedback">Yes, the print method calls the consume method 3 times and then the fruit method to print this.</li>
-            
-            <li data-component="answer"  id="songMethods_opt_e">Nothing, it does not compile.</li><li data-component="feedback">Try the code in an active code window to see that it does work.</li>
+            <li data-component="answer" data-correct id="likeFoodMethods_opt_d">I like to eat eat eat apples and bananas!</li><li data-component="feedback">Yes, the print method calls the consume method 3 times and then the fruit method to print this.</li>
             
 
             </ul>
             </div>
-            <div class="section" id="summary">
+            <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="FarmerVerse" class="runestone explainer ac_section alert alert-warning">
+<p>Add a method named “farmer” to reduce redundancy in the following code.
+You should update the main method to call the new farmer method.</p>
+
+<textarea data-component="activecode" id=FarmerVerse data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class FarmerSong
+{
+
+  public static void main(String args[])
+  {
+     System.out.println("The farmer in the dell");
+     System.out.println("The farmer in the dell");
+     System.out.println("Heigh ho the derry-o");
+     System.out.println("The farmer in the dell");
+  }
+
+}
+====
+import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+      @Test
+      public void testSignature(){
+        int count = countOccurences(getCode(),"public static void farmer()");
+        boolean passed = count == 1;
+        passed = getResults("1 farmer signature",  count  + " farmer signature", "Is your farmer method signature correct?", passed);
+        assertTrue(passed);
+      }
+
+      @Test
+      public void testcodeContains(){
+        int count = countOccurences(getCode(),"farmer();");
+        boolean passed = count == 3;
+        passed = getResults("3 farmer calls",  count  + " farmer calls", "Added enough calls to farmer?", passed);
+        assertTrue(passed);
+      }
+
+  }
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>

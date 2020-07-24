@@ -1,0 +1,40 @@
+|CodingEx| **Coding Exercise**
+
+.. activecode:: OldMacSong_methods
+  :language: java     
+  :autograde: unittest  
+
+  Here is another song that contains a repeated chorus. 
+  Use the CodeLens to step through the program.
+  ~~~~
+  public class OldMacDonald 
+  { 
+    public static void chorus()
+    {
+      System.out.println("E-I-E-I-O");
+    }
+        
+    public static void main(String[] args) 
+    {
+      System.out.println("Old MacDonald had a farm");
+      chorus();
+      System.out.println("And on that farm he had a duck");
+      chorus();
+    }
+  }
+====
+
+.. fillintheblank:: chorus_defined
+
+   How many times is the **chorus** method defined in the **OldMacDonald** class?
+
+   -    :1: Correct.  
+        :.*: Incorrect. The chorus method is defined 1 time.
+
+.. fillintheblank:: chorus_called
+
+   How many times is the **chorus** method called in the **OldMacDonald** class?
+
+   -    :2: Correct.  
+        :.*: Incorrect. The main method calls the chorus method 2 times. 
+

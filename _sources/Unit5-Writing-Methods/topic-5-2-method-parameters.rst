@@ -77,7 +77,7 @@ The method body statements use the parameter variables to customize the print st
   :autograde: unittest    
   :practice: T
 
-  Run the following code to see the song This Old Man print out using the verse and 
+  Run the following code to see the lines of the song printed using the verse and 
   chorus methods.  Use the CodeLens tool to watch how the actual arguments are passed into the 
   formal parameters each time the verse method is called. Can you add verse three with the rhyme "knee"? 
   Can you add verse four with the rhyme "door"? How many verses do you know?

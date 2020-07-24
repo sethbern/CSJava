@@ -33,19 +33,19 @@ Writing Methods
 =================
 
 Up until this unit, you wrote all  code in the main method, 
-but now you will be writing multiple methods. Why have multiple methods instead of just one? 
+but now you will be creating new methods that can be called by the main method. Why have multiple methods instead of just one? 
 **Procedural Abstraction** allows us to name a block of code as a method and 
 call it whenever we need it, abstracting away the details of how it works.  
-This serves to organize our code by function and reduce its complexity and reduce 
+This serves to organize our code by function and reduce 
 the repetition of code. In addition, it helps with debugging and maintenance since 
 changes to that block of code only need to happen in one place. 
 Here are some of the main reasons to use multiple methods in your programs:
 
-- Organization and Reducing Complexity: organize your program into small sections of code by function to reduce its complexity. Divide a problem into subproblems to solve it a piece at a time.
+- Organization and Reducing Complexity: organize your program into small sections of code to reduce its complexity. Divide a problem into subproblems to solve it a piece at a time.
 - Reusing Code: avoid repetition of code. Reuse code by putting it in a method and calling it whenever needed.
 - Maintainability and Debugging: smaller methods are easier to debug and understand than searching through a large main method.
 
-Let's look at an example with lots of repetition of code and 
+Let's look at an example with repetition of code and 
 create methods to reduce the repetition of code. 
 
 
@@ -72,13 +72,15 @@ You may have noticed that the chorus is
 repeated "With a knick knack paddy whack, give a dog a bone. This old man came rolling home." 
 When you see repeated code, that is a signal for you to make a new method!
 
-A method is a **named** list of statements.  When we want to execute the list of statements, 
+A method is a **named** set of statements.  When we want to execute the statements, 
 we call the method using its name.
-In the next unit you will create methods that are called using an object, 
-referred to as **instance methods**.
+In a subsequent lesson you will create methods that are called using an object, 
+referred to as **object methods** or **instance methods**.
 The methods in this unit are called without an object, so they are  **static methods**.  
 Static methods are also referred to as class methods.
 
+Defining a Static Method
+-------------------------
 
 .. figure:: Figures/methodsignature.png
     :width: 400px
@@ -90,54 +92,47 @@ Static methods are also referred to as class methods.
 
 There are two steps to creating and calling a static method:
 
-1. **Method Definition**:  write the method's **header** and **body**.  The header is also called 
-a method *signature*.  The parts of the *main* method header are shown in Figure 1, which include an access modifier,
+1. **Method Definition**:  write the method's **header** and **body**.  
+The header is also called 
+a method **signature**.  The parts of the *main* method header are shown in Figure 1, 
+which include an access modifier,
 static modifier, return type, name, and formal parameters.   The method body 
 consists of a set of statements enclosed in curly braces { }.  
-Another example method named *methodName* that has no formal parameters is shown below.  
+
+The code below contains a chorus() method definition 
+that we could write to encapsulate the two lines that get repeated in the song.   
 
     .. code-block:: java
 
-        // Step 1: Define the method in a class
-        // method header
-        public static void methodName() 
-        { 
-              // method body 
-        }
+       // Step 1: define a new method named chorus
+       public static void chorus() 
+       { 
+          System.out.println("With a knick knack paddy whack, give a dog a bone.");
+          System.out.println("This old man came rolling home.");
+       }
 
 
-2. **Method Call**: whenever you want to use the method, call methodName();  The statements in the method body
-will be executed.  
+2. **Method Call**: whenever you want to use a method, you can call the method using the method name followed by parenthesis, for example methodName();  
+The statements in the method body will be executed each time the method is called.  The code below shows how to call the chorus method:
 
     .. code-block:: java
 
-       // Step 2: call the method
-       methodName(); 
+       // Step 2: call the chorus method
+       chorus(); 
 
 
-For example, here is a chorus() method definition 
-that we could write for the "This Old Man Song" to encapsulate the two lines that get repeated.   
-The main method can call ``chorus();`` anytime we want
-the two print statements in the method body to be executed.
+The main method can call ``chorus();`` anytime we want the two print statements in the method body to be executed.
+Notice that we can just call the static method, we don't need to create an object to use for calling the method.
 
-.. code-block:: java
-     
-        public static void chorus() 
-        { 
-              System.out.println("With a knick knack paddy whack, give a dog a bone.");
-              System.out.println("This old man came rolling home.");
-        }
-        
    
 |CodingEx| **Coding Exercise**
 
-
-.. activecode:: Song1_methods
+.. activecode:: OldManSong1_methods
   :language: java   
   :autograde: unittest    
   :practice: T
 
-  Run the following code to see the song This Old Man print out.  
+  Run the following code to see the song print out.  
   Notice the third line of code in the main method
   is a call to the new method chorus().
   Can you replace the last two lines in the second verse in the main 
@@ -183,16 +178,6 @@ the two print statements in the method body to be executed.
         }
 
         @Test
-        public void testChangedCode() {
-            String origCode = "public class Song{ // The chorus method public static void chorus() { System.out.println(\"With a knick knack paddy whack, give a dog a bone.\"); System.out.println(\"This old man came rolling home.\"); }  public static void main(String args[])  {  Song mySong = new Song();  System.out.println(\"This old man, he played one.\");  System.out.println(\"He played knick knack on my thumb. \");  chorus();  System.out.println(\"This old man, he played two.\");  System.out.println(\"He played knick knack on my shoe. \");  // Can you replace these 2 lines with a method call to chorus()?  System.out.println(\"With a knick knack paddy whack, give a dog a bone.\");  System.out.println(\"This old man came rolling home.\")  }  }";
-
-            boolean changed = codeChanged(origCode);
-
-            assertTrue(changed);
-
-        }
-
-        @Test
         public void testcodeContains(){
           int count = countOccurences(getCode(),"chorus();");
           boolean passed = count > 1;
@@ -202,64 +187,106 @@ the two print statements in the method body to be executed.
 
     }
   
-
-Here is another song with a repeated chorus. 
-The Song's print method calls the chorus() and animal() methods to help it 
-print out the whole song. 
-
-When you call the chorus() method, it skips to the chorus code, 
-executes and prints out the chorus, and then returns back to the method 
-that called it.  
-
-.. codelens:: songviz2
-    :language: java 
-    :optional:
+|Exercise| **Check Your Understanding**
+   
+.. clickablearea:: greet_method_signature
+    :question: A method definition consists of a method header and a method body. Click on all of the method headers (signatures) in the following code.
+    :iscode:
+    :feedback: There is one method header for the greet method and one for the main method.  
     
-    public class OldMacDonald
-    {
-        
-      public static void chorus()
-      {
-        System.out.println("E-I-E-I-O");
-      }
+    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:{:endclick:
+        :click-correct:public static void greet():endclick:
+        :click-incorrect:{:endclick:
+            :click-incorrect:System.out.println("Hello!");:endclick:
+            :click-incorrect:System.out.println("How are you?");:endclick:
+        :click-incorrect:}:endclick:
+        :click-incorrect: :endclick:
+        :click-correct:public static void main(String[] args):endclick:
+        :click-incorrect:{:endclick:
+            :click-incorrect:System.out.println("Before greeting");:endclick:
+            :click-incorrect:greet();:endclick:
+            :click-incorrect:System.out.println("After greeting");:endclick:
+        :click-incorrect:}:endclick:
+    :click-incorrect:}:endclick:
 
-      public static void animal() 
-      {
-        System.out.println("duck");
-      }
-        
-      public static void main(String[] args) 
-      {
-        System.out.println("Old MacDonald had a farm");
-        chorus();
-        System.out.print("And on that farm he had a ");
-        animal();
-        chorus();
-      }
-    }
+
+|Exercise| **Check Your Understanding**
+   
+.. clickablearea:: greet_method_body
+    :question: Click on all statements contained within the greet method body.
+    :iscode:
+    :feedback: The greet method body consists of the 2 print statements nested between the curly braces that follow the method header  
     
+    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:{:endclick:
+        :click-incorrect:public static void greet():endclick:
+        :click-incorrect:{:endclick:
+            :click-correct:System.out.println("Hello!");:endclick:
+            :click-correct:System.out.println("How are you?");:endclick:
+        :click-incorrect:}:endclick:
+        :click-incorrect: :endclick:
+        :click-incorrect:public static void main(String[] args):endclick:
+        :click-incorrect:{:endclick:
+            :click-incorrect:System.out.println("Before greeting");:endclick:
+            :click-incorrect:greet();:endclick:
+            :click-incorrect:System.out.println("After greeting");:endclick:
+        :click-incorrect:}:endclick:
+    :click-incorrect:}:endclick:
+
+
+|Exercise| **Check Your Understanding**
+   
+.. clickablearea:: greet_method_call
+    :question: Click on the greet method call.
+    :iscode:
+    :feedback: The greet() method call occurs in the main method.  
+    
+    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:{:endclick:
+        :click-incorrect:public static void greet():endclick:
+        :click-incorrect:{:endclick:
+            :click-incorrect:System.out.println("Hello!");:endclick:
+            :click-incorrect:System.out.println("How are you?");:endclick:
+        :click-incorrect:}:endclick:
+        :click-incorrect: :endclick:
+        :click-incorrect:public static void main(String[] args):endclick:
+        :click-incorrect:{:endclick:
+            :click-incorrect:System.out.println("Before greeting");:endclick:
+            :click-correct:greet();:endclick:
+            :click-incorrect:System.out.println("After greeting");:endclick:
+        :click-incorrect:}:endclick:
+    :click-incorrect:}:endclick:
+
+
+.. fillintheblank:: println_called
+
+   Given the Test2 class listed above, how many times is the **System.out.println** called when the main method runs?
+
+   -    :4: Correct.  
+        :.*: Incorrect. The main method calls System.out.println directly 2 times, and the call to greet() results in 2 additional calls to System.out.println.
+
+
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: songMethods
+.. mchoice:: likeFoodMethods
    :practice: T
    :answer_a: I like to eat eat eat.
    :answer_b: I like to eat eat eat fruit.
    :answer_c: I like to apples and bananas eat.
    :answer_d: I like to eat eat eat apples and bananas!
-   :answer_e: Nothing, it does not compile.
    :correct: d
    :feedback_a: Try tracing through the print method and see what happens when it calls the other methods.
    :feedback_b: There is a fruit() method but it does not print out the word fruit.
    :feedback_c: The order things are printed out depends on the order in which they are called from the print method.
    :feedback_d: Yes, the print method calls the consume method 3 times and then the fruit method to print this.
-   :feedback_e: Try the code in an active code window to see that it does work.
-
+  
    What does the following code print out?
 
    .. code-block:: java
 
-      public class Song 
+      public class LikeFood 
       {
         
         public static void fruit()
@@ -280,6 +307,59 @@ that called it.
             consume();
             fruit();
         }
+    }
+
+
+
+
+
+
+  
+|CodingEx| **Coding Exercise**
+
+.. activecode:: FarmerVerse
+  :language: java   
+  :autograde: unittest    
+  :practice: T
+
+  Add a method named "farmer" to reduce redundancy in the following code.
+  You should update the main method to call the new farmer method.
+  ~~~~
+  public class FarmerSong 
+  { 
+
+    public static void main(String args[]) 
+    {
+       System.out.println("The farmer in the dell");
+       System.out.println("The farmer in the dell");
+       System.out.println("Heigh ho the derry-o");
+       System.out.println("The farmer in the dell");
+    }
+    
+  }
+  ====
+  import static org.junit.Assert.*;
+    import org.junit.*;;
+    import java.io.*;
+    
+    public class RunestoneTests extends CodeTestHelper
+    {
+        @Test
+        public void testSignature(){
+          int count = countOccurences(getCode(),"public static void farmer()");
+          boolean passed = count == 1;
+          passed = getResults("1 farmer signature",  count  + " farmer signature", "Is your farmer method signature correct?", passed);
+          assertTrue(passed);
+        }
+
+        @Test
+        public void testcodeContains(){
+          int count = countOccurences(getCode(),"farmer();");
+          boolean passed = count == 3;
+          passed = getResults("3 farmer calls",  count  + " farmer calls", "Added enough calls to farmer?", passed);
+          assertTrue(passed);
+        }
+
     }
 
 
