@@ -350,118 +350,220 @@
   
   <div class="section" id="method-parameters">
 <h1><span class="section-number">5.2. </span>Method Parameters<a class="headerlink" href="#method-parameters" title="Permalink to this headline">¶</a></h1>
-<p>You may have noticed more repetition in the <strong>This old man</strong> song. What about the lines of each verse?
-Notice that every word is repeated except the last ones that include a number
-and a rhyme such as one/thumb and two/shoe.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;This old man, he played one.&quot;</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;He played knick knack on my thumb.&quot;</span><span class="p">);</span>
-<span class="p">...</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;This old man, he played two.&quot;</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;He played knick knack on my shoe.&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>We can make methods even more powerful and more abstract by giving them
-parameters for data that they need to do their job.
-We can make a method called verse take two values: the number and the rhyme to print!
-The verse method header needs to define two <strong>formal parameter</strong> variables to accept the values.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">verse</span><span class="p">(</span><span class="n">String</span> <span class="n">number</span><span class="p">,</span> <span class="n">String</span> <span class="n">rhyme</span><span class="p">)</span>
-<span class="p">{</span>
-   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;This old man, he played &quot;</span> <span class="o">+</span> <span class="n">number</span><span class="p">);</span>
-   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;He played knick knack on my &quot;</span> <span class="o">+</span> <span class="n">rhyme</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>When you call the verse method to do its job,
-you need to pass in <strong>arguments</strong> or <strong>actual parameters</strong> whose values are
+<p>Consider two verses in the “Old MacDonald” song:</p>
+<table class="colwidths-auto docutils align-left">
+<thead>
+<tr class="row-odd"><th class="head"><p>Verse 1</p></th>
+<th class="head"><p>Verse 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Old MacDonald had a farm</p></td>
+<td><p>Old MacDonald had a farm</p></td>
+</tr>
+<tr class="row-odd"><td><p>E-I-E-I-O</p></td>
+<td><p>E-I-E-I-O</p></td>
+</tr>
+<tr class="row-even"><td><p>And on that farm he had a cow</p></td>
+<td><p>And on that farm he had a duck</p></td>
+</tr>
+<tr class="row-odd"><td><p>E-I-E-I-O</p></td>
+<td><p>E-I-E-I-O</p></td>
+</tr>
+<tr class="row-even"><td><p>With a moo-moo here</p></td>
+<td><p>With a quack-quack here</p></td>
+</tr>
+<tr class="row-odd"><td><p>And a moo-moo there</p></td>
+<td><p>And a quack-quack there</p></td>
+</tr>
+<tr class="row-even"><td><p>Here a moo, there a moo</p></td>
+<td><p>Here a quack, there a quack</p></td>
+</tr>
+<tr class="row-odd"><td><p>Everywhere a moo-moo</p></td>
+<td><p>Everywhere a quack-quack</p></td>
+</tr>
+<tr class="row-even"><td><p>Old MacDonald had a farm</p></td>
+<td><p>Old MacDonald had a farm</p></td>
+</tr>
+<tr class="row-odd"><td><p>E-I-E-I-O</p></td>
+<td><p>E-I-E-I-O</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each verse is identical, except for the animal (cow vs duck) and the noise (moo vs quack).
+We can create a method named <strong>verse</strong> to abstract the repetitive lines,
+but the method will need two <strong>formal parameters</strong>, which are placeholders that allow different values to be substituted for the animal and noise each time the method is called.
+The method body will use the formal parameter variables to customize the
+print statements.
+When the method is called,
+you must provide values for the animal and noise, called <strong>actual arguments</strong> or <strong>actual parameters</strong>, that are
 copied into the formal parameter variables.</p>
-<p>Figure 2 shows how the actual arguments in the method call <code class="docutils literal notranslate"><span class="pre">verse(&quot;one&quot;,&quot;thumb&quot;);</span></code> are copied into the formal parameter variables.
-The method body statements use the parameter variables to customize the print statements each time the method is called.</p>
+<p>Figure 1 shows how the actual argument values in the method call <code class="docutils literal notranslate"><span class="pre">verse(&quot;cow&quot;,&quot;moo&quot;);</span></code> are copied
+into the formal parameter variables.</p>
 <div class="align-center figure" id="id2">
-<a class="reference internal image-reference" href="../_images/argumentpassing.png"><img alt="Arguments to Parameters" src="../_images/argumentpassing.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Figure 2: Matching Actual Arguments to Formal Parameters</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../_images/argumentpassingcow.png"><img alt="Actual Argument Values Passed Into Formal Parameters" src="../_images/argumentpassingcow.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Method Call Passes Actual Argument Values Into Formal Parameter Variables</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
-<div data-childcomponent="Song2_methods" class="runestone explainer ac_section alert alert-warning">
-<p>Run the following code to see the lines of the song printed using the verse and
-chorus methods.  Use the CodeLens tool to watch how the actual arguments are passed into the
-formal parameters each time the verse method is called. Can you add verse three with the rhyme “knee”?
-Can you add verse four with the rhyme “door”? How many verses do you know?</p>
+<div data-childcomponent="SongFarm" class="runestone explainer ac_section alert alert-warning">
+<p>Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to watch how the main method
+passes actual argument values into each call to the verse method.
+Update the main method to add a third verse to the song with another animal and noise.
+Rerun the program to confirm the program works.</p>
 
-<textarea data-component="activecode" id=Song2_methods data-lang="java" 
+<textarea data-component="activecode" id=SongFarm data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
 public class Song
 {
 
-  /** Verse - prints out a verse of the song
-   * @param number - a String like "one", "two", etc.
-   * @param rhyme - a String like "thumb", "shoe", etc.
-   */
-   public static void verse(String number, String rhyme)
-   {
-     System.out.println("This old man, he played " + number);
-     System.out.println("He played knick knack on my " + rhyme);
-   }
-
-  // The chorus method
-  public static void chorus()
+  public static void verse(String animal, String noise)
   {
-     System.out.println("With a knick knack paddy whack, give a dog a bone.");
-     System.out.println("This old man came rolling home.");
+    System.out.println( "Old MacDonald had a farm" );
+    System.out.println( "E-I-E-I-O" );
+    System.out.println( "And on that farm he had a " + animal );
+    System.out.println( "E-I-E-I-O" );
+    System.out.println( "With a " + noise + "-" + noise + " here") ;
+    System.out.println( "And a " + noise + "-" + noise + " there" );
+    System.out.println( "Here a " + noise + ", there a " + noise );
+    System.out.println( "Everywhere a " + noise + "-" + noise );
+    System.out.println( "Old MacDonald had a farm" );
+    System.out.println( "E-I-E-I-O" );
   }
 
-  public static void main(String args[])
+  public static void main(String[] args)
   {
-    verse("one", "thumb");
-    chorus();
-    verse("two", "shoe");
-    chorus();
+    verse( "cow" , "moo" );
+    verse( "duck" , "quack" );
   }
 }
 ====
 import static org.junit.Assert.*;
-  import org.junit.*;;
-  import java.io.*;
+import org.junit.*;;
+import java.io.*;
 
-  public class RunestoneTests extends CodeTestHelper
-  {
-      @Test
-      public void testThree()
-      {
-          boolean passed = checkCodeContains("verse three", "verse(\"three\", \"knee\");");
-          assertTrue(passed);
-      }
+public class RunestoneTests extends CodeTestHelper
+{
 
-      @Test
-      public void testFour()
-      {
-          boolean passed = checkCodeContains("verse four", "verse(\"four\", \"door\");");
-          assertTrue(passed);
-      }
+  public RunestoneTests() {
+    super("Song");
   }
+
+  @Test
+  public void test1()
+  {
+    String code = getCode();
+    int numVerses = countOccurences(code, "verse(");
+    boolean passed = numVerses >= 3;
+    passed = getResults("3 verses", numVerses + " verses", "Update the main with a third verse call", passed);
+    assertTrue(passed);
+  }
+}
 </textarea>
 </div>
 <p>When a method is called, the right method definition is found by
 checking the <strong>method signature</strong> or <strong>header</strong> at the top of the method
 definition to match the method name, the number of arguments, the data
 types for the arguments and the return type.</p>
-<p>Java uses <strong>Call by Value</strong> when it passes arguments to methods. This means that a copy of the value in the argument is saved in the parameter variable. If the parameter variable changes its value inside the method, the original value outside the method is not changed.</p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam1" >
+            <p>5-2-1: Based on the method header shown below, which method call is correct?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="mparam1_opt_a">mystery("9");</li><li data-component="feedback">The type of the actual argument "9" is String, but the formal parameter i is an int.</li>
+            
+            <li data-component="answer" data-correct id="mparam1_opt_b">mystery(9);</li><li data-component="feedback">The type of the actual argument 9 and the formal parameter i are both int.</li>
+            
+            <li data-component="answer"  id="mparam1_opt_c">mystery(5, 7);</li><li data-component="feedback">The method expects one int to be passed as an actual argument, not 2.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam2" >
+            <p>5-2-2: Based on the method header shown below, which method call is correct?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="mparam2_opt_a">mystery("abc", 9);</li><li data-component="feedback">The actual argument and formal parameter types match.</li>
+            
+            <li data-component="answer"  id="mparam2_opt_b">mystery("xyz", "9");</li><li data-component="feedback">The second parameter i has type int, while the second argument "9" is a string.</li>
+            
+            <li data-component="answer"  id="mparam2_opt_c">mystery(9, 5);</li><li data-component="feedback">The method expects a string and an int as actual arguments, not two ints.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam3" >
+            <p>5-2-3: Based on the method header shown below, which method call is correct?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="p">,</span> <span class="n">String</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="mparam3_opt_a">mystery("true", "hello");</li><li data-component="feedback">"true" is a String, not a boolean.</li>
+            
+            <li data-component="answer"  id="mparam3_opt_b">mystery("hello", false);</li><li data-component="feedback">The first argument should be a boolean, and the second argument should be a String.</li>
+            
+            <li data-component="answer" data-correct id="mparam3_opt_c">mystery(true, "hello");</li><li data-component="feedback">The actual argument and formal parameter types match.</li>
+            
+
+            </ul>
+            </div>
+            <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<div class="align-center figure" id="id3">
+<img alt="../_images/mysteryoutput.png" src="../_images/mysteryoutput.png" />
+<p class="caption"><span class="caption-text">Figure 2: Method Overloading</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The class listed in Figure 2 above has 3 methods named <strong>mystery</strong>.  While the 3 methods all have the same method name,
+notice that either the type of the formal parameter is different, or the number of formal parameters is different.
+This is called <strong>overloading</strong>, since the name <strong>mystery</strong> is associated with more
+than one method body.    The print output shown in the upper right section of Figure 2 is produced by 3 calls to mystery in the main method, which have been erased.</p>
+
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="methodargsparson"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>5-2-4: The main method needs 3 method calls to produce the output shown in Figure 2.
+Drag the needed blocks from the left area into the correct order  in the right area
+to produce the expected output:</span>mystery( 5 );
+---
+mystery( "5" ); #paired
+---
+mystery( "hello");
+---
+mystery( hello);  #paired
+---
+mystery( 9, "bye");
+---
+mystery( "bye", 9); #paired
+        </pre>
+        </div>
+    <p>Java uses <strong>Call by Value</strong> when it passes arguments to methods.
+This means that a copy of the value in the argument is saved in the parameter variable.
+If the parameter variable changes its value inside the method,
+the original value outside the method is not changed.</p>
 <p>If you pass in an argument that holds a reference to an object,
 like a String or Person or Turtle object, a copy of this reference
 is passed in and saved in the parameter variable. You will explore
 this more in the following unit.</p>
 <p>Methods can also return values of any type back to the calling method.
 The calling method should do something with this return value,
-like printing it out or saving it in a variable. Try the problems below to practice with a String method that takes a parameter and returns a boolean value.</p>
+like printing it out or saving it in a variable.
+Try the problems below to practice with a String method that takes a parameter and returns a boolean value.</p>
 </div>
 <div class="section" id="practice">
 <h1><span class="section-number">5.3. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h1>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-1" >
-            <p>5-2-1: Consider the following methods:</p>
+            <p>5-2-5: Consider the following methods:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">i</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
@@ -492,7 +594,7 @@ like printing it out or saving it in a variable. Try the problems below to pract
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-2" >
-            <p>5-2-2: Consider the following methods, which appear in the same class.</p>
+            <p>5-2-6: Consider the following methods, which appear in the same class.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">splitPizza</span><span class="p">(</span><span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">slicesPerPerson</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="n">numOfPeople</span><span class="p">;</span>
@@ -524,94 +626,11 @@ like printing it out or saving it in a variable. Try the problems below to pract
 <div class="section" id="tracing-methods">
 <h1><span class="section-number">5.4. </span>Tracing Methods<a class="headerlink" href="#tracing-methods" title="Permalink to this headline">¶</a></h1>
 <p>You will not write your own methods until Unit 5, but you should be able to trace and interpret method calls like below.</p>
-<p>Here is another version of the Old MacDonald Song with a more powerful abstraction. The method verse has 2 parameters for the animal and the noise it makes, so that it can be used for any animal.
-Use the Code Lens button or this <a href="http://www.pythontutor.com/java.html#code=public%20class%20Song%20%0A%7B%0A%20%20%0A%20%20%20%20public%20void%20verse%28String%20animal,%20String%20noise%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20on%20that%20farm%20he%20had%20a%20%22%20%2B%20animal%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22With%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20here,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20there,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20public%20void%20chorus%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22E-I-E-I-O%22%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20Song%20s%20%3D%20new%20Song%28%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22cow%22,%20%22moo%22%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22duck%22,%22quack%22%29%3B%0A%20%20%20%20%7D%0A%7D&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a> to step through the code.</p>
-
-<div data-childcomponent="SongFarm" class="runestone explainer ac_section alert alert-warning">
-<p>Add another verse in main that calls the method verse with a different animal and noise.</p>
-
-<textarea data-component="activecode" id=SongFarm data-lang="java" 
-      data-timelimit=25000  data-codelens="true"   
-    data-audio=''      
-           data-wasm=/_static>
-public class Song
-{
-
-    public void verse(String animal, String noise)
-    {
-        System.out.println("Old MacDonald had a farm");
-        chorus();
-        System.out.println("And on that farm he had a " + animal);
-        chorus();
-        System.out.println("With a " + noise + " " + noise + " here,");
-        System.out.println("And a " + noise + " " + noise + " there,");
-        System.out.println("Old MacDonald had a farm");
-        chorus();
-    }
-    public void chorus()
-    {
-        System.out.println("E-I-E-I-O");
-    }
-
-    public static void main(String[] args)
-    {
-       Song s = new Song();
-       s.verse("cow", "moo");
-       s.verse("duck","quack");
-    }
-}
-====
-import static org.junit.Assert.*;
-import org.junit.*;;
-import java.io.*;
-
-public class RunestoneTests extends CodeTestHelper
-{
-    public String expected = "Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a cow\nE-I-E-I-O\nWith a moo moo here,\nAnd a moo moo there,\nOld MacDonald had a farm\nE-I-E-I-O\nOld MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\nWith a quack quack here,\nAnd a quack quack there,\nOld MacDonald had a farm\nE-I-E-I-O";
-
-    public RunestoneTests() {
-        super("Song");
-    }
-
-    @Test
-    public void test1()
-    {
-        String output = getMethodOutput("main");
-
-        boolean passed = output.contains(expected);
-
-        passed = getResults(expected, output, "Still have the old output", passed);
-        assertTrue(passed);
-    }
-
-    @Test
-    public void test2()
-    {
-        String output = getMethodOutput("main");
-
-        boolean passed = output.contains(expected) && !output.equals(expected);
-
-        passed = getResults(expected, output, "Verse added", passed);
-        assertTrue(passed);
-    }
-
-    @Test
-    public void test3()
-    {
-        String code = getCode();
-        int numVerses = countOccurences(code, "verse(");
-        boolean passed = numVerses >= 3;
-        passed = getResults("3 or more", ""+numVerses, "Number of verses", passed);
-        assertTrue(passed);
-    }
-}
-</textarea>
-</div>
 <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="traceMethods" >
-            <p>5-2-3: What does the following code print out?</p>
+            <p>5-2-7: What does the following code print out?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MethodTrace</span>
 <span class="p">{</span>
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">square</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
@@ -838,7 +857,7 @@ import static org.junit.Assert.*;
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1a" >
-            <p>5-2-4: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
+            <p>5-2-8: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wallet</span>
 <span class="p">{</span>
     <span class="kd">private</span> <span class="kt">double</span> <span class="n">dollars</span><span class="p">;</span>
@@ -883,7 +902,7 @@ import static org.junit.Assert.*;
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-2b" >
-            <p>5-2-5: Consider the Liquid class below.</p>
+            <p>5-2-9: Consider the Liquid class below.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
 <span class="p">{</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>

@@ -400,9 +400,10 @@ Static methods are also referred to as class methods.</p>
 <p class="caption"><span class="caption-text">Figure 1: Method Header(Signature) and Method Body</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>There are two steps to creating and calling a static method:</p>
-<p>1. <strong>Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong>.
+<blockquote>
+<div><p><strong>Step 1. Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong>.
 The header is also called
-a method <strong>signature</strong>.  The parts of the <em>main</em> method header are shown in Figure 1,
+a method <strong>signature</strong>.  The parts of the main method header are shown in Figure 1,
 which include an access modifier,
 static modifier, return type, name, and formal parameters.   The method body
 consists of a set of statements enclosed in curly braces { }.</p>
@@ -412,19 +413,23 @@ that we could write to encapsulate the two lines that get repeated in the song.<
 <div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: define a new method named chorus</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">chorus</span><span class="p">()</span>
 <span class="p">{</span>
-   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I&#39;m looking over a four-leaf clover&quot;</span><span class="p">);</span>
-   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;That I overlooked before&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I&#39;m looking over a four-leaf clover&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;That I overlooked before&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>2. <strong>Method Call</strong>: whenever you want to use a method, you can call the method using the method name followed by parenthesis, for example methodName();
-The statements in the method body will be executed each time the method is called.  The code below shows how to call the chorus method:</p>
+<p><strong>Step 2. Method Call</strong>: whenever you want to use a method, you can call the method using the method name followed by parenthesis, for example methodName();
+The statements in the method body will be executed each time the method is called.</p>
+<p>Look at the method header in step 1 above:
+<code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">void</span> <span class="pre">chorus()</span></code>.  The header indicates the return type is void and there are no formal parameters
+between the parenthesis, which means you can call the method as shown:</p>
 <blockquote>
 <div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the chorus method</span>
 <span class="n">chorus</span><span class="p">();</span>
 </pre></div>
 </div>
+</div></blockquote>
 </div></blockquote>
 <p>The main method can call <code class="docutils literal notranslate"><span class="pre">chorus();</span></code> anytime we want the two print statements in the method body to be executed.
 Notice that we can just call the static method, we don’t need to create an object to use for calling the method.</p>

@@ -93,33 +93,37 @@ Defining a Static Method
 
 There are two steps to creating and calling a static method:
 
-1. **Method Definition**:  write the method's **header** and **body**.  
-The header is also called 
-a method **signature**.  The parts of the *main* method header are shown in Figure 1, 
-which include an access modifier,
-static modifier, return type, name, and formal parameters.   The method body 
-consists of a set of statements enclosed in curly braces { }.  
+    **Step 1. Method Definition**:  write the method's **header** and **body**.  
+    The header is also called 
+    a method **signature**.  The parts of the main method header are shown in Figure 1, 
+    which include an access modifier,
+    static modifier, return type, name, and formal parameters.   The method body 
+    consists of a set of statements enclosed in curly braces { }.  
 
-The code below contains a chorus() method definition 
-that we could write to encapsulate the two lines that get repeated in the song.   
+    The code below contains a chorus() method definition 
+    that we could write to encapsulate the two lines that get repeated in the song.  
 
-    .. code-block:: java
+        .. code-block:: java
 
-       // Step 1: define a new method named chorus
-       public static void chorus() 
-       { 
-          System.out.println("I'm looking over a four-leaf clover");
-          System.out.println("That I overlooked before");
-       }
+            // Step 1: define a new method named chorus
+            public static void chorus() 
+            { 
+                System.out.println("I'm looking over a four-leaf clover");
+                System.out.println("That I overlooked before");
+            }
 
 
-2. **Method Call**: whenever you want to use a method, you can call the method using the method name followed by parenthesis, for example methodName();  
-The statements in the method body will be executed each time the method is called.  The code below shows how to call the chorus method:
+    **Step 2. Method Call**: whenever you want to use a method, you can call the method using the method name followed by parenthesis, for example methodName();  
+    The statements in the method body will be executed each time the method is called.  
+    
+    Look at the method header in step 1 above:
+    ``public static void chorus()``.  The header indicates the return type is void and there are no formal parameters
+    between the parenthesis, which means you can call the method as shown:
 
-    .. code-block:: java
+        .. code-block:: java
 
-       // Step 2: call the chorus method
-       chorus(); 
+           // Step 2: call the chorus method
+           chorus(); 
 
 
 The main method can call ``chorus();`` anytime we want the two print statements in the method body to be executed.

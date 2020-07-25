@@ -10,6 +10,7 @@ Writing Methods
    topic-5-1-writing-methods.rst
    topic-5-2-method-parameters.rst
    topic-5-3-method-return.rst
+   topic-5-4-variable-scope.rst
   
    
 

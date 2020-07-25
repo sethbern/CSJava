@@ -18,128 +18,211 @@
     :width: 35
     :align: middle
     :alt: groupwork
+
+
+.. |visualizer| raw:: html
+
+   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>    
+ 
     
 Method Parameters
 ------------------
+
+Consider two verses in the "Old MacDonald" song:
+
+.. table:: 
+  :align: left
+  :widths: auto
+
+  ===================================  ==================================  
+             Verse 1                             Verse 2                
+  ===================================  ==================================
+   Old MacDonald had a farm            Old MacDonald had a farm          
+   E-I-E-I-O                           E-I-E-I-O                        
+   And on that farm he had a cow       And on that farm he had a duck   
+   E-I-E-I-O                           E-I-E-I-O                        
+   With a moo-moo here                 With a quack-quack here          
+   And a moo-moo there                 And a quack-quack there          
+   Here a moo, there a moo             Here a quack, there a quack      
+   Everywhere a moo-moo                Everywhere a quack-quack         
+   Old MacDonald had a farm            Old MacDonald had a farm         
+   E-I-E-I-O                           E-I-E-I-O                        
+  ===================================  ==================================
+
     
-You may have noticed more repetition in the **This old man** song. What about the lines of each verse? 
-Notice that every word is repeated except the last ones that include a number 
-and a rhyme such as one/thumb and two/shoe.
-
-.. code-block:: java
-
-    System.out.println("This old man, he played one.");
-    System.out.println("He played knick knack on my thumb.");
-    ...
-    System.out.println("This old man, he played two.");
-    System.out.println("He played knick knack on my shoe.");
-
-
-We can make methods even more powerful and more abstract by giving them 
-parameters for data that they need to do their job. 
-We can make a method called verse take two values: the number and the rhyme to print!   
-The verse method header needs to define two **formal parameter** variables to accept the values. 
-
-.. code-block:: java
-
-    public static void verse(String number, String rhyme)
-    {
-       System.out.println("This old man, he played " + number);
-       System.out.println("He played knick knack on my " + rhyme);
-    }
-
-
-When you call the verse method to do its job, 
-you need to pass in **arguments** or **actual parameters** whose values are 
+Each verse is identical, except for the animal (cow vs duck) and the noise (moo vs quack).
+We can create a method named **verse** to abstract the repetitive lines, 
+but the method will need two **formal parameters**, which are placeholders that allow different values to be substituted for the animal and noise each time the method is called. 
+The method body will use the formal parameter variables to customize the 
+print statements.
+When the method is called, 
+you must provide values for the animal and noise, called **actual arguments** or **actual parameters**, that are 
 copied into the formal parameter variables. 
 
-Figure 2 shows how the actual arguments in the method call ``verse("one","thumb");`` are copied into the formal parameter variables.
-The method body statements use the parameter variables to customize the print statements each time the method is called.
+Figure 1 shows how the actual argument values in the method call ``verse("cow","moo");`` are copied 
+into the formal parameter variables.
 
-.. figure:: Figures/argumentpassing.png
-    :width: 500px
-    :align: center
-    :alt: Arguments to Parameters
-    :figclass: align-center
-
-    Figure 2: Matching Actual Arguments to Formal Parameters 
-
-    
-.. |visualizer| raw:: html
-
-   <a href="http://www.pythontutor.com/visualize.html#code=public%20class%20Song%20%0A%20%20%7B%20%0A%20%20%20%20%0A%20%20%20%20/**%20Verse%0A%20%20%20%20%20*%20%40param%20number%20-%20a%20String%20like%20%22one%22,%20%22two%22,%20etc.%0A%20%20%20%20%20*%20%40param%20rhyme%20-%20a%20String%20like%20%22thumb%22,%20%22shoe%22,%20etc.%0A%20%20%20%20%20*/%0A%20%20%20%20%20public%20void%20verse%28String%20number,%20String%20rhyme%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20System.out.println%28%22This%20old%20man,%20he%20played%20%22%20%2B%20number%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22He%20played%20knick%20knack%20on%20my%20%22%20%2B%20rhyme%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20//%20The%20chorus%20method%0A%20%20%20%20public%20void%20chorus%28%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20System.out.println%28%22With%20a%20knick%20knack%20paddy%20whack,%20give%20a%20dog%20a%20bone.%22%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22This%20old%20man%20came%20rolling%20home.%22%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28String%20args%5B%5D%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20Song%20mySong%20%3D%20new%20Song%28%29%3B%0A%20%20%20%20%20%20mySong.verse%28%22one%22,%20%22thumb%22%29%3B%0A%20%20%20%20%20%20mySong.chorus%28%29%3B%0A%20%20%20%20%20%20mySong.verse%28%22two%22,%20%22shoe%22%29%3B%0A%20%20%20%20%20%20mySong.chorus%28%29%3B%0A%20%20%20%20%7D%0A%20%20%7D&cumulative=false&curInstr=24&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a>
-   
-|CodingEx| **Coding Exercise**
+.. figure:: Figures/argumentpassingcow.png
+  :width: 500px
+  :align: center
+  :alt: Actual Argument Values Passed Into Formal Parameters
+  :figclass: align-center
+  
+  Figure 1: Method Call Passes Actual Argument Values Into Formal Parameter Variables
 
 
-.. activecode:: Song2_methods
+.. activecode:: SongFarm
   :language: java
-  :autograde: unittest    
+  :autograde: unittest
   :practice: T
-
-  Run the following code to see the lines of the song printed using the verse and 
-  chorus methods.  Use the CodeLens tool to watch how the actual arguments are passed into the 
-  formal parameters each time the verse method is called. Can you add verse three with the rhyme "knee"? 
-  Can you add verse four with the rhyme "door"? How many verses do you know?
+    
+  Use the CodeLens button or copy the code into the |visualizer| to watch how the main method
+  passes actual argument values into each call to the verse method.
+  Update the main method to add a third verse to the song with another animal and noise.
+  Rerun the program to confirm the program works.
   ~~~~
   public class Song 
   { 
-    
-    /** Verse - prints out a verse of the song
-     * @param number - a String like "one", "two", etc.
-     * @param rhyme - a String like "thumb", "shoe", etc.
-     */
-     public static void verse(String number, String rhyme)
-     {
-       System.out.println("This old man, he played " + number);
-       System.out.println("He played knick knack on my " + rhyme);
-     }
-     
-    // The chorus method
-    public static void chorus() 
+  
+    public static void verse(String animal, String noise) 
     {
-       System.out.println("With a knick knack paddy whack, give a dog a bone.");
-       System.out.println("This old man came rolling home.");
+      System.out.println( "Old MacDonald had a farm" );
+      System.out.println( "E-I-E-I-O" );
+      System.out.println( "And on that farm he had a " + animal );
+      System.out.println( "E-I-E-I-O" );
+      System.out.println( "With a " + noise + "-" + noise + " here") ;
+      System.out.println( "And a " + noise + "-" + noise + " there" );
+      System.out.println( "Here a " + noise + ", there a " + noise );
+      System.out.println( "Everywhere a " + noise + "-" + noise );
+      System.out.println( "Old MacDonald had a farm" );
+      System.out.println( "E-I-E-I-O" );
     }
-    
-    public static void main(String args[]) 
+
+    public static void main(String[] args) 
     {
-      verse("one", "thumb");
-      chorus();
-      verse("two", "shoe");
-      chorus();
+      verse( "cow" , "moo" );
+      verse( "duck" , "quack" );
     }
   }
   ====
   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
-   
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void testThree() 
-        {
-            boolean passed = checkCodeContains("verse three", "verse(\"three\", \"knee\");");
-            assertTrue(passed);
-        }
+  import org.junit.*;;
+  import java.io.*;
 
-        @Test
-        public void testFour() 
-        {
-            boolean passed = checkCodeContains("verse four", "verse(\"four\", \"door\");");
-            assertTrue(passed);
-        }
+  public class RunestoneTests extends CodeTestHelper
+  {
+    
+    public RunestoneTests() {
+      super("Song");
     }
-  
+
+    @Test
+    public void test1()
+    {
+      String code = getCode();
+      int numVerses = countOccurences(code, "verse(");
+      boolean passed = numVerses >= 3;
+      passed = getResults("3 verses", numVerses + " verses", "Update the main with a third verse call", passed);
+      assertTrue(passed);
+    }
+  }
 
 When a method is called, the right method definition is found by 
 checking the **method signature** or **header** at the top of the method 
 definition to match the method name, the number of arguments, the data 
 types for the arguments and the return type. 
 
+|Exercise| **Check your understanding**
 
-Java uses **Call by Value** when it passes arguments to methods. This means that a copy of the value in the argument is saved in the parameter variable. If the parameter variable changes its value inside the method, the original value outside the method is not changed.
+.. mchoice:: mparam1
+   :practice: T
+   :answer_a: mystery("9");
+   :answer_b: mystery(9);
+   :answer_c: mystery(5, 7);
+   :correct: b
+   :feedback_a: The type of the actual argument "9" is String, but the formal parameter i is an int.
+   :feedback_b: The type of the actual argument 9 and the formal parameter i are both int.
+   :feedback_c: The method expects one int to be passed as an actual argument, not 2.  
+   
+   Based on the method header shown below, which method call is correct?  
+   
+   .. code-block:: java
+
+     public static void mystery(int i)
+
+
+.. mchoice:: mparam2
+   :practice: T
+   :answer_a: mystery("abc", 9);
+   :answer_b: mystery("xyz", "9");
+   :answer_c: mystery(9, 5);
+   :correct: a
+   :feedback_a: The actual argument and formal parameter types match.
+   :feedback_b: The second parameter i has type int, while the second argument "9" is a string.
+   :feedback_c: The method expects a string and an int as actual arguments, not two ints. 
+   
+   Based on the method header shown below, which method call is correct?  
+   
+   .. code-block:: java
+
+     public static void mystery(String s, int i)
+
+.. mchoice:: mparam3
+   :practice: T
+   :answer_a: mystery("true", "hello");
+   :answer_b: mystery("hello", false);
+   :answer_c: mystery(true, "hello");
+   :correct: c
+   :feedback_a: "true" is a String, not a boolean.
+   :feedback_b: The first argument should be a boolean, and the second argument should be a String.
+   :feedback_c: The actual argument and formal parameter types match. 
+   
+   Based on the method header shown below, which method call is correct?  
+   
+   .. code-block:: java
+
+     public static void mystery(boolean b, String s)
+
+
+|Exercise| **Check your understanding**
+   
+.. figure:: Figures/mysteryoutput.png
+  :align: center
+  :figclass: align-center
+  
+  Figure 2: Method Overloading
+
+The class listed in Figure 2 above has 3 methods named **mystery**.  While the 3 methods all have the same method name,
+notice that either the type of the formal parameter is different, or the number of formal parameters is different.
+This is called **overloading**, since the name **mystery** is associated with more
+than one method body.    The print output shown in the upper right section of Figure 2 is produced by 3 calls to mystery in the main method, which have been erased.
+
+.. parsonsprob:: methodargsparson
+   :numbered: left
+   :adaptive:
+   :noindent:
+
+   The main method needs 3 method calls to produce the output shown in Figure 2.
+   Drag the needed blocks from the left area into the correct order  in the right area
+   to produce the expected output:  
+   -----
+   mystery( 5 );
+   =====
+   mystery( "5" ); #paired
+   =====
+   mystery( "hello");
+   =====
+   mystery( hello);  #paired
+   =====
+   mystery( 9, "bye");
+   =====
+   mystery( "bye", 9); #paired
+
+
+Java uses **Call by Value** when it passes arguments to methods. 
+This means that a copy of the value in the argument is saved in the parameter variable. 
+If the parameter variable changes its value inside the method, 
+the original value outside the method is not changed.
 
 If you pass in an argument that holds a reference to an object, 
 like a String or Person or Turtle object, a copy of this reference 
@@ -148,8 +231,8 @@ this more in the following unit.
     
 Methods can also return values of any type back to the calling method. 
 The calling method should do something with this return value, 
-like printing it out or saving it in a variable. Try the problems below to practice with a String method that takes a parameter and returns a boolean value.
-
+like printing it out or saving it in a variable. 
+Try the problems below to practice with a String method that takes a parameter and returns a boolean value.
 
 
 Practice
@@ -247,91 +330,6 @@ Tracing Methods
 
 You will not write your own methods until Unit 5, but you should be able to trace and interpret method calls like below. 
 
-Here is another version of the Old MacDonald Song with a more powerful abstraction. The method verse has 2 parameters for the animal and the noise it makes, so that it can be used for any animal.
-Use the Code Lens button or this |Java Visualizer| to step through the code.
-
-.. |Java visualizer| raw:: html
-
-   <a href="http://www.pythontutor.com/java.html#code=public%20class%20Song%20%0A%7B%0A%20%20%0A%20%20%20%20public%20void%20verse%28String%20animal,%20String%20noise%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20on%20that%20farm%20he%20had%20a%20%22%20%2B%20animal%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22With%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20here,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22And%20a%20%22%20%2B%20noise%20%2B%20%22%20%22%20%2B%20noise%20%2B%20%22%20there,%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Old%20MacDonald%20had%20a%20farm%22%29%3B%0A%20%20%20%20%20%20%20%20chorus%28%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20public%20void%20chorus%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22E-I-E-I-O%22%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20Song%20s%20%3D%20new%20Song%28%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22cow%22,%20%22moo%22%29%3B%0A%20%20%20%20%20%20%20s.verse%28%22duck%22,%22quack%22%29%3B%0A%20%20%20%20%7D%0A%7D&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a>
-   
-.. activecode:: SongFarm
-    :language: java
-    :autograde: unittest
-    :practice: T
-    
-    Add another verse in main that calls the method verse with a different animal and noise.
-    ~~~~
-    public class Song 
-    { 
-  
-        public void verse(String animal, String noise) 
-        {
-            System.out.println("Old MacDonald had a farm");
-            chorus();
-            System.out.println("And on that farm he had a " + animal);
-            chorus();
-            System.out.println("With a " + noise + " " + noise + " here,");
-            System.out.println("And a " + noise + " " + noise + " there,");
-            System.out.println("Old MacDonald had a farm");
-            chorus();
-        }
-        public void chorus()
-        {
-            System.out.println("E-I-E-I-O");
-        }
-
-        public static void main(String[] args) 
-        {
-           Song s = new Song();
-           s.verse("cow", "moo");
-           s.verse("duck","quack");
-        }
-    }
-    ====
-    import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
-
-    public class RunestoneTests extends CodeTestHelper
-    {
-        public String expected = "Old MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a cow\nE-I-E-I-O\nWith a moo moo here,\nAnd a moo moo there,\nOld MacDonald had a farm\nE-I-E-I-O\nOld MacDonald had a farm\nE-I-E-I-O\nAnd on that farm he had a duck\nE-I-E-I-O\nWith a quack quack here,\nAnd a quack quack there,\nOld MacDonald had a farm\nE-I-E-I-O";
-
-        public RunestoneTests() {
-            super("Song");
-        }
-
-        @Test
-        public void test1()
-        {
-            String output = getMethodOutput("main");
-
-            boolean passed = output.contains(expected);
-
-            passed = getResults(expected, output, "Still have the old output", passed);
-            assertTrue(passed);
-        }
-
-        @Test
-        public void test2()
-        {
-            String output = getMethodOutput("main");
-
-            boolean passed = output.contains(expected) && !output.equals(expected);
-
-            passed = getResults(expected, output, "Verse added", passed);
-            assertTrue(passed);
-        }
-
-        @Test
-        public void test3()
-        {
-            String code = getCode();
-            int numVerses = countOccurences(code, "verse(");
-            boolean passed = numVerses >= 3;
-            passed = getResults("3 or more", ""+numVerses, "Number of verses", passed);
-            assertTrue(passed);
-        }
-    }
 
 |Exercise| **Check your understanding**
 
