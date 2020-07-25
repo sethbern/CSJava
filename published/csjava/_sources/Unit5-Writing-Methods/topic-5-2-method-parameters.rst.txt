@@ -377,8 +377,8 @@ Call by value
 Java uses **Call by Value** when it passes arguments to methods. 
 This means that a copy of the value in the argument is saved in the parameter variable. 
 If the parameter variable changes its value inside the method, 
-the original value outside the method is not changed.  It is generally not a good idea to change the 
-value of a parameter inside a method, however it is possible as the example below shows.
+the original value outside the method is not changed.  **It is generally not a good idea to change the 
+value of a parameter inside a method, however it is possible as the example below shows.**
 
 
 
