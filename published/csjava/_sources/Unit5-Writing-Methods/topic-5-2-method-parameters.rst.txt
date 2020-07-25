@@ -132,6 +132,7 @@ checking the **method signature** or **header** at the top of the method
 definition to match the method name, the number of arguments, the data 
 types for the arguments and the return type. 
 
+
 |Exercise| **Check your understanding**
 
 .. mchoice:: mparam1
@@ -192,19 +193,17 @@ types for the arguments and the return type.
   
   Figure 2: Method Overloading
 
-The class listed in Figure 2 above has 3 methods named **mystery**.  While the 3 methods all have the same method name,
-notice that either the type of the formal parameter is different, or the number of formal parameters is different.
-This is called **overloading**, since the name **mystery** is associated with more
-than one method body.    The print output shown in the upper right section of Figure 2 is produced by 3 calls to mystery in the main method, which have been erased.
 
 .. parsonsprob:: methodargsparson
-   :numbered: left
    :adaptive:
    :noindent:
 
-   The main method needs 3 method calls to produce the output shown in Figure 2.
-   Drag the needed blocks from the left area into the correct order  in the right area
-   to produce the expected output:  
+   Figure 2 above shows a class with 3 methods named mystery. While the 3 methods have the same name,
+   notice that either the type of the formal parameter or the number of formal parameters is different. 
+   The print output shown in the upper right section of 
+   Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
+   Drag the needed blocks from the left area below into the correct order  in the right area
+   to produce the print output shown in Figure 2: 
    -----
    mystery( 5 );
    =====
@@ -219,24 +218,22 @@ than one method body.    The print output shown in the upper right section of Fi
    mystery( "bye", 9); #paired
 
 
-Java uses **Call by Value** when it passes arguments to methods. 
-This means that a copy of the value in the argument is saved in the parameter variable. 
-If the parameter variable changes its value inside the method, 
-the original value outside the method is not changed.
-
-If you pass in an argument that holds a reference to an object, 
-like a String or Person or Turtle object, a copy of this reference 
-is passed in and saved in the parameter variable. You will explore 
-this more in the following unit.
-    
-Methods can also return values of any type back to the calling method. 
-The calling method should do something with this return value, 
-like printing it out or saving it in a variable. 
-Try the problems below to practice with a String method that takes a parameter and returns a boolean value.
 
 
-Practice
--------------
+
+
+
+
+
+Method Tracing
+------------------
+
+The main method is not the only place you can make method calls.  Any method can call another method.
+See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
+the code into the |visualizer|.
+
+
+|Exercise| **Check your understanding**
 
 .. mchoice:: AP2-4-1
     :practice: T
@@ -245,18 +242,23 @@ Practice
     
     .. code-block:: java
 
-        public void inchesToCentimeters(double i)
+        public static void inchesToCentimeters(double i)
         {
             double c = i * 2.54;
             printInCentimeters(i, c);
         }
 
-        public void printInCentimeters(double inches, double centimeters)
+        public static void printInCentimeters(double inches, double centimeters)
         {
             System.out.print(inches + "-->" + centimeters);
         }
 
-    Assume that the method call ``inchesToCentimeters(10)`` appears in a method in the same class. What is printed as a result of the method call?
+        public static void main(String[] args)  
+        {
+            inchesToCentimeters(10);
+        }
+
+    What is printed when the main method is run?
     
     - inches --> centimeters
     
@@ -284,22 +286,30 @@ Practice
 .. mchoice:: AP2-4-2
     :practice: T
     
-    Consider the following methods, which appear in the same class.
+    Consider the following methods.
 
     .. code-block:: java
     
-        public void splitPizza(int numOfPeople)
+        public static void splitPizza(int numOfPeople)
         {
             int slicesPerPerson = 8/numOfPeople;
             /* INSERT CODE HERE */
         }
 
-        public void printSlices(int slices)
+        public static void printSlices(int slices)
         {
             System.out.println("Each person gets " + slices + " slices each");
         }
 
-    Which of the following lines would go into ``/* INSERT CODE HERE */`` in the method splitPizza in order to call the ``printSlices`` method to print the number of slices per person correctly? 
+        public static void main(String[] args)  
+        {
+            //add a call to splitPizza here
+
+        }
+
+
+    Which of the following lines would go into ``/* INSERT CODE HERE */`` in the method splitPizza in 
+    order to call the ``printSlices`` method to print the number of slices per person correctly? 
     
     - printSlices(slicesPerPerson);
     
@@ -322,18 +332,9 @@ Practice
       - This would not call the printSlices method.
 
 
-
-
-
-Tracing Methods
------------------
-
-You will not write your own methods until Unit 5, but you should be able to trace and interpret method calls like below. 
-
-
 |Exercise| **Check your understanding**
 
-.. mchoice:: traceMethods
+.. mchoice:: traceMethods5
    :practice: T
    :answer_a: 25 and 2
    :answer_b: 25 and .5
@@ -345,7 +346,7 @@ You will not write your own methods until Unit 5, but you should be able to trac
    :feedback_b: The order of the arguments to the divide(x,y) method will divide x by y and return an int result.
    :feedback_c: The square(x) method is called before the divide(x,y) method.
    :feedback_d: The main method prints out " and " in between the method calls.
-   :feedback_e: Try the code in the visualizer link below.
+   :feedback_e: Try the code in the visualizer.
    
    What does the following code print out?
    
@@ -353,130 +354,90 @@ You will not write your own methods until Unit 5, but you should be able to trac
    
       public class MethodTrace 
       {
-        public void square(int x)
+        public static void square(int x)
         {
             System.out.print(x*x);
         }
-        public void divide(int x, int y)
+        public static void divide(int x, int y)
         {
             System.out.println(x/y);
         }
         public static void main(String[] args) {
-            MethodTrace traceObj = new MethodTrace();
-            traceObj.square(5);
+            square(5);
             System.out.print(" and ");
-            traceObj.divide(4,2);
+            divide(4,2);
         }
        }
 
 
 
+Call by value
+---------------
+
+Java uses **Call by Value** when it passes arguments to methods. 
+This means that a copy of the value in the argument is saved in the parameter variable. 
+If the parameter variable changes its value inside the method, 
+the original value outside the method is not changed.  It is generally not a good idea to change the 
+value of a parameter inside a method, however it is possible as the example below shows.
 
 
 
-
-
-
-
-
-|CodingEx| **Coding Exercise**
-
-
-
-.. activecode:: StringFind_method
+.. activecode:: changeparamvalue
   :language: java
-  :autograde: unittest    
+  :autograde: unittest
   :practice: T
+    
+  Use the CodeLens button or copy the code into the |visualizer| to watch how the square method
+  alters the value of x, while the value of y in the main method is not affected.
 
-  Run the following program which contains a method called findLetter that takes a letter and a text as parameters and uses a loop to see if that letter is in the text and returns true if it is, false otherwise. Give the variables ``letter`` and ``text`` new values in the main method and run it again to try finding a different letter. Then, change the code of the findLetter method to return how many times it finds letter in text, using a new variable called ``count``. How would the return type change?
+  Try changing the name of the variable in the main method to "x" and rerun the program.  You should see
+  that the variable in the main method remains unaffected by changes made in the square method, even when 
+  the variables have the same name.
   ~~~~
-  public class StringFind 
-  { 
-    /** findLetter looks for a letter in a String
-     * @param String letter to look for
-     * @param String text to look in
-     * @return boolean true if letter is in text
-     * After running the code, change this method to return 
-     * an int count of how many times letter is in the text. 
-     */
-     public boolean findLetter(String letter, String text)
-     {
-        boolean flag = false;
-        for(int i=0; i < text.length(); i++) {
-            if (text.substring(i, i+1).equalsIgnoreCase(letter))
-	        {
-                flag = true;
-	        }
-        }
-        return flag;
-     }
-    public static void main(String args[]) 
+  public class CallByValue 
+  {
+    public static void square(int x)
     {
-      StringFind test = new StringFind();
-      String message = "Apples and Oranges";
-      String letter = "p";
-      System.out.println("Does " + message +  " contain a " + letter + "?");
-      System.out.println( test.findLetter(letter, message) ); 
+      x = x * x;
+      System.out.print(x);
+    }
+
+    public static void main(String[] args) 
+    {
+      int y = 5;
+      square(y);   
     }
   }
+
   ====
   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
+  import org.junit.*;;
+  import java.io.*;
 
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void tryfindLetter() throws IOException
-        { 
-           String message = "Apples and Oranges";
-           String letter = "p";
-           Object[] args = {letter,message};
-           String output = getMethodOutput("findLetter", args);
-           String expect = "2";
-
-           boolean passed = getResults(expect, output, 
-                    "findLetter(\"p\",\"Apples and Oranges\")");
-           assertTrue(passed);
-        }
-
-         @Test
-        public void tryfindLetter2() throws IOException
-        { 
-           String message = "Test strings";
-           String letter = "s";
-           Object[] args = {letter,message};
-           String output = getMethodOutput("findLetter", args);
-           String expect = "3";
-
-           boolean passed = getResults(expect, output, 
-                    "findLetter(\"s\",\"Test strings\")");
-           assertTrue(passed);
-        }
-        @Test
-        public void test2() 
-        {
-            boolean passed = checkCodeContains("changed return type of findLetter", "public int findLetter(String letter, String text)");
-            assertTrue(passed);
-        }
-
-         @Test
-        public void test1() 
-        {
-            boolean passed = checkCodeContains("variable count set to 0", "int count = 0;");
-            assertTrue(passed);
-        }
-
-         @Test
-        public void test3() 
-        {   String code = getCode();
-            boolean passed = code.contains("count++;") || 
-            code.contains("count = count + 1;") || code.contains("count = 1 + count;") || code.contains("count += 1;") || code.contains("++count;");
-            passed = getResults("count incremented",Boolean.toString(passed),"Count incremented?", passed);
-            assertTrue(passed);
-        }
+  public class RunestoneTests extends CodeTestHelper
+  {
+    
+    public RunestoneTests() {
+      super("CallByValue");
     }
-  
+
+    @Test
+    public void test1()
+    {
+      String code = getCode();
+      int num = countOccurences(code, "square(");
+      boolean passed = numVerses = 1;
+      passed = getResults("1 call", 1 + " ca;;", "The main should call the square method", passed);
+      assertTrue(passed);
+    }
+  }
+
+If you pass in an argument that holds a reference to an object, 
+like a String or Person or Turtle object, a copy of this reference 
+is passed in and saved in the parameter variable. You will explore 
+this more in the following unit.
+
+
 |Groupwork| Programming Challenge : Song with Parameters
 ---------------------------------------------------------
 
@@ -484,7 +445,7 @@ You will not write your own methods until Unit 5, but you should be able to trac
 
    <a href="https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching" target="_blank">The Ants Go Marching</a>
 
-Here's another song, |The Ants Go Marching|, that is very similar to the This Old Man song in its repetitive structure. 
+Here's another song, |The Ants Go Marching|, that has repetitive structure. 
 
 .. raw:: html
   
@@ -574,165 +535,14 @@ Here's another song, |The Ants Go Marching|, that is very similar to the This Ol
         }
     }
 
-    
-
-
-
-Practice
------------
-
-.. mchoice:: AP5-6-1a
-    :practice: T
-
-    Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.
-        
-    .. code-block:: java
-
-        public class Wallet
-        {
-            private double dollars;
-
-            public double putMoneyInWallet(int amount)
-            {
-                /* missing code */
-            }
-        }
-
-    The putMoneyInWallet method is intended to increase the dollars in the wallet by the parameter amount and then return the updated dollars in the wallet. Which of the following code segments should replace  *missing code* so that the putMoneyInWallet method will work as intended?
-    
-    - .. code-block:: java
-
-        amount += dollars;
-        return dollars;
-
-      - dollars should be incremented by amount.
-        
-    - .. code-block:: java
-
-        dollars = amount;
-        return amount;
-        
-      - dollars should be incremented by amount.
-        
-    - .. code-block:: java
-
-        dollars += amount;
-        return dollars;
-        
-      + Correct.
-
-    - .. code-block:: java
-
-        dollars = dollars + amount;
-        return amount;
-       
-      - amount is returned instead of dollars.
-        
-    - .. code-block:: java
-
-        amount = dollars + amount;
-        return dollars;
-        
-      - dollars should be incremented by amount.
-        
-
-
-.. mchoice:: AP5-6-2b
-    :practice: T
-
-    Consider the Liquid class below.
-    
-    .. code-block:: java
-
-        public class Liquid
-        {
-            private int currentTemp;
-            private int boilingPoint;
-
-            public Liquid(int ct, int bp)
-            {
-                currentTemp = ct;
-                boilingPoint = bp;
-            }
-
-            public boolean isBoiling(int amount)
-            {
-                /* missing code */
-            }
-        }
-
-    The isBoiling method is intended to return true if increasing the currentTemp by the parameter amount is greater than or equal to the boilingPoint, or otherwise return false. Which of the following code segments can replace *missing code* to ensure that the isBoiling method works as intended? 
-    
-    .. code-block:: java
-
-       I.   if (currentTemp + amount < boilingPoint)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-       II.  if (amount > currentTemp)
-            {
-                return false;
-            }
-            else
-            {
-                return currentTemp;
-            }
-       III. if (amount + currentTemp >= boilingPoint)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-    - I only
-          
-      - I would work but it is not the only code that would work.
-
-    - II only
-    
-      - II does not check against the boilingPoint and does not return only boolean values.
-  
-    - III only
-    
-      - III would work but it is not the only code that would work.
-
-    - I and III only.
-  
-      + Correct! 
-      
-    - I, II, III
-    
-      - II does not check against the boilingPoint and does not return only boolean values.
-
-
-
-
 
 Summary
 -------
-
-- **Procedural Abstraction** (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.  
-
-- A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.
-
-- To write methods, write a **method definition** with a **method signature** like "public void chorus()" and a **method body** in {} and method calls using an object.the method name and arguments whenever you need it to do its job.
-
-- To call an object's method, you must use the object name and the dot (.) operator followed by the method name, for example **object.method();** 
-
 
 - When you call a method, you can give or pass in **arguments** or **actual parameters** to it inside the parentheses **object.method(arguments)**. The arguments are saved in local **formal parameter** variables that are declared in the method header, for example: public void method(type param1, type param2) { ... }.
 
 - Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.
 
-- When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.
+- When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. 
 
-- When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.
-
--  When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.
-   
+- New values assigned to the formal parameter within the method have no effect on the corresponding actual parameter.

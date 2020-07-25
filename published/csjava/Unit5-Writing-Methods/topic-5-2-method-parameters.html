@@ -400,9 +400,9 @@ you must provide values for the animal and noise, called <strong>actual argument
 copied into the formal parameter variables.</p>
 <p>Figure 1 shows how the actual argument values in the method call <code class="docutils literal notranslate"><span class="pre">verse(&quot;cow&quot;,&quot;moo&quot;);</span></code> are copied
 into the formal parameter variables.</p>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../_images/argumentpassingcow.png"><img alt="Actual Argument Values Passed Into Formal Parameters" src="../_images/argumentpassingcow.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Figure 1: Method Call Passes Actual Argument Values Into Formal Parameter Variables</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 1: Method Call Passes Actual Argument Values Into Formal Parameter Variables</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 
 <div data-childcomponent="SongFarm" class="runestone explainer ac_section alert alert-warning">
@@ -519,20 +519,19 @@ types for the arguments and the return type.</p>
             </ul>
             </div>
             <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id2">
 <img alt="../_images/mysteryoutput.png" src="../_images/mysteryoutput.png" />
-<p class="caption"><span class="caption-text">Figure 2: Method Overloading</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 2: Method Overloading</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>The class listed in Figure 2 above has 3 methods named <strong>mystery</strong>.  While the 3 methods all have the same method name,
-notice that either the type of the formal parameter is different, or the number of formal parameters is different.
-This is called <strong>overloading</strong>, since the name <strong>mystery</strong> is associated with more
-than one method body.    The print output shown in the upper right section of Figure 2 is produced by 3 calls to mystery in the main method, which have been erased.</p>
 
         <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="methodargsparson"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>5-2-4: The main method needs 3 method calls to produce the output shown in Figure 2.
-Drag the needed blocks from the left area into the correct order  in the right area
-to produce the expected output:</span>mystery( 5 );
+        <pre data-component="parsons" id="methodargsparson"  data-adaptive="true"    data-noindent="true"   >
+        <span data-question>5-2-4: Figure 2 above shows a class with 3 methods named mystery. While the 3 methods have the same name,
+notice that either the type of the formal parameter or the number of formal parameters is different.
+The print output shown in the upper right section of
+Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
+Drag the needed blocks from the left area below into the correct order  in the right area
+to produce the print output shown in Figure 2:</span>mystery( 5 );
 ---
 mystery( "5" ); #paired
 ---
@@ -545,38 +544,35 @@ mystery( 9, "bye");
 mystery( "bye", 9); #paired
         </pre>
         </div>
-    <p>Java uses <strong>Call by Value</strong> when it passes arguments to methods.
-This means that a copy of the value in the argument is saved in the parameter variable.
-If the parameter variable changes its value inside the method,
-the original value outside the method is not changed.</p>
-<p>If you pass in an argument that holds a reference to an object,
-like a String or Person or Turtle object, a copy of this reference
-is passed in and saved in the parameter variable. You will explore
-this more in the following unit.</p>
-<p>Methods can also return values of any type back to the calling method.
-The calling method should do something with this return value,
-like printing it out or saving it in a variable.
-Try the problems below to practice with a String method that takes a parameter and returns a boolean value.</p>
-</div>
-<div class="section" id="practice">
-<h1><span class="section-number">5.3. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h1>
+    </div>
+<div class="section" id="method-tracing">
+<h1><span class="section-number">5.3. </span>Method Tracing<a class="headerlink" href="#method-tracing" title="Permalink to this headline">¶</a></h1>
+<p>The main method is not the only place you can make method calls.  Any method can call another method.
+See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
+the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>.</p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-1" >
             <p>5-2-5: Consider the following methods:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">i</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">i</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
     <span class="n">printInCentimeters</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printInCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">,</span> <span class="kt">double</span> <span class="n">centimeters</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printInCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">,</span> <span class="kt">double</span> <span class="n">centimeters</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">inches</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">centimeters</span><span class="p">);</span>
 <span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">inchesToCentimeters</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Assume that the method call <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters(10)</span></code> appears in a method in the same class. What is printed as a result of the method call?</p>
+<p>What is printed when the main method is run?</p>
 <li data-component="answer"  id="AP2-4-1_opt_a"><p>inches –&gt; centimeters</p>
 </li><li data-component="feedback" id="AP2-4-1_opt_a">
 <p>The values of the variables inches and centimeters should be printed out, not the words.</p></li><li data-component="answer"  id="AP2-4-1_opt_b"><p>10 –&gt;  25</p>
@@ -594,20 +590,27 @@ Try the problems below to practice with a String method that takes a parameter a
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-2" >
-            <p>5-2-6: Consider the following methods, which appear in the same class.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">splitPizza</span><span class="p">(</span><span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">)</span>
+            <p>5-2-6: Consider the following methods.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">splitPizza</span><span class="p">(</span><span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">slicesPerPerson</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="n">numOfPeople</span><span class="p">;</span>
     <span class="cm">/* INSERT CODE HERE */</span>
 <span class="p">}</span>
 
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printSlices</span><span class="p">(</span><span class="kt">int</span> <span class="n">slices</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printSlices</span><span class="p">(</span><span class="kt">int</span> <span class="n">slices</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Each person gets &quot;</span> <span class="o">+</span> <span class="n">slices</span> <span class="o">+</span> <span class="s">&quot; slices each&quot;</span><span class="p">);</span>
 <span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//add a call to splitPizza here</span>
+
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Which of the following lines would go into <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">INSERT</span> <span class="pre">CODE</span> <span class="pre">HERE</span> <span class="pre">*/</span></code> in the method splitPizza in order to call the <code class="docutils literal notranslate"><span class="pre">printSlices</span></code> method to print the number of slices per person correctly?</p>
+<p>Which of the following lines would go into <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">INSERT</span> <span class="pre">CODE</span> <span class="pre">HERE</span> <span class="pre">*/</span></code> in the method splitPizza in
+order to call the <code class="docutils literal notranslate"><span class="pre">printSlices</span></code> method to print the number of slices per person correctly?</p>
 <li data-component="answer" data-correct id="AP2-4-2_opt_a"><p>printSlices(slicesPerPerson);</p>
 </li><li data-component="feedback" id="AP2-4-2_opt_a">
 <p>Correct! If you had 4 people, slicesPerPerson would be 8/4=2 and printSlices would print out “Each person gets 2 slices each”.</p></li><li data-component="answer"  id="AP2-4-2_opt_b"><p>printSlices(numOfPeople);</p>
@@ -622,149 +625,110 @@ Try the problems below to practice with a String method that takes a parameter a
 
             </ul>
             </div>
-            </div>
-<div class="section" id="tracing-methods">
-<h1><span class="section-number">5.4. </span>Tracing Methods<a class="headerlink" href="#tracing-methods" title="Permalink to this headline">¶</a></h1>
-<p>You will not write your own methods until Unit 5, but you should be able to trace and interpret method calls like below.</p>
-<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+            <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="traceMethods" >
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="traceMethods5" >
             <p>5-2-7: What does the following code print out?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MethodTrace</span>
 <span class="p">{</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">square</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">square</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
   <span class="p">{</span>
       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
   <span class="p">{</span>
       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">MethodTrace</span> <span class="n">traceObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MethodTrace</span><span class="p">();</span>
-      <span class="n">traceObj</span><span class="p">.</span><span class="na">square</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+      <span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; and &quot;</span><span class="p">);</span>
-      <span class="n">traceObj</span><span class="p">.</span><span class="na">divide</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+      <span class="n">divide</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
   <span class="p">}</span>
  <span class="p">}</span>
 </pre></div>
 </div>
 
-            <li data-component="answer" data-correct id="traceMethods_opt_a">25 and 2</li><li data-component="feedback">Correct.</li>
+            <li data-component="answer" data-correct id="traceMethods5_opt_a">25 and 2</li><li data-component="feedback">Correct.</li>
             
-            <li data-component="answer"  id="traceMethods_opt_b">25 and .5</li><li data-component="feedback">The order of the arguments to the divide(x,y) method will divide x by y and return an int result.</li>
+            <li data-component="answer"  id="traceMethods5_opt_b">25 and .5</li><li data-component="feedback">The order of the arguments to the divide(x,y) method will divide x by y and return an int result.</li>
             
-            <li data-component="answer"  id="traceMethods_opt_c">2 25</li><li data-component="feedback">The square(x) method is called before the divide(x,y) method.</li>
+            <li data-component="answer"  id="traceMethods5_opt_c">2 25</li><li data-component="feedback">The square(x) method is called before the divide(x,y) method.</li>
             
-            <li data-component="answer"  id="traceMethods_opt_d">25 2</li><li data-component="feedback">The main method prints out " and " in between the method calls.</li>
+            <li data-component="answer"  id="traceMethods5_opt_d">25 2</li><li data-component="feedback">The main method prints out " and " in between the method calls.</li>
             
-            <li data-component="answer"  id="traceMethods_opt_e">Nothing, it does not compile.</li><li data-component="feedback">Try the code in the visualizer link below.</li>
+            <li data-component="answer"  id="traceMethods5_opt_e">Nothing, it does not compile.</li><li data-component="feedback">Try the code in the visualizer.</li>
             
 
             </ul>
             </div>
-            <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+            </div>
+<div class="section" id="call-by-value">
+<h1><span class="section-number">5.4. </span>Call by value<a class="headerlink" href="#call-by-value" title="Permalink to this headline">¶</a></h1>
+<p>Java uses <strong>Call by Value</strong> when it passes arguments to methods.
+This means that a copy of the value in the argument is saved in the parameter variable.
+If the parameter variable changes its value inside the method,
+the original value outside the method is not changed.  It is generally not a good idea to change the
+value of a parameter inside a method, however it is possible as the example below shows.</p>
 
-<div data-childcomponent="StringFind_method" class="runestone explainer ac_section alert alert-warning">
-<p>Run the following program which contains a method called findLetter that takes a letter and a text as parameters and uses a loop to see if that letter is in the text and returns true if it is, false otherwise. Give the variables <code class="docutils literal notranslate"><span class="pre">letter</span></code> and <code class="docutils literal notranslate"><span class="pre">text</span></code> new values in the main method and run it again to try finding a different letter. Then, change the code of the findLetter method to return how many times it finds letter in text, using a new variable called <code class="docutils literal notranslate"><span class="pre">count</span></code>. How would the return type change?</p>
+<div data-childcomponent="changeparamvalue" class="runestone explainer ac_section alert alert-warning">
+<p>Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to watch how the square method
+alters the value of x, while the value of y in the main method is not affected.</p>
+<p>Try changing the name of the variable in the main method to “x” and rerun the program.  You should see
+that the variable in the main method remains unaffected by changes made in the square method, even when
+the variables have the same name.</p>
 
-<textarea data-component="activecode" id=StringFind_method data-lang="java" 
+<textarea data-component="activecode" id=changeparamvalue data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
-public class StringFind
+public class CallByValue
 {
-  /** findLetter looks for a letter in a String
-   * @param String letter to look for
-   * @param String text to look in
-   * @return boolean true if letter is in text
-   * After running the code, change this method to return
-   * an int count of how many times letter is in the text.
-   */
-   public boolean findLetter(String letter, String text)
-   {
-      boolean flag = false;
-      for(int i=0; i < text.length(); i++) {
-          if (text.substring(i, i+1).equalsIgnoreCase(letter))
-              {
-              flag = true;
-              }
-      }
-      return flag;
-   }
-  public static void main(String args[])
+  public static void square(int x)
   {
-    StringFind test = new StringFind();
-    String message = "Apples and Oranges";
-    String letter = "p";
-    System.out.println("Does " + message +  " contain a " + letter + "?");
-    System.out.println( test.findLetter(letter, message) );
+    x = x * x;
+    System.out.print(x);
+  }
+
+  public static void main(String[] args)
+  {
+    int y = 5;
+    square(y);
   }
 }
+
 ====
 import static org.junit.Assert.*;
-  import org.junit.*;;
-  import java.io.*;
+import org.junit.*;;
+import java.io.*;
 
-  public class RunestoneTests extends CodeTestHelper
-  {
-      @Test
-      public void tryfindLetter() throws IOException
-      {
-         String message = "Apples and Oranges";
-         String letter = "p";
-         Object[] args = {letter,message};
-         String output = getMethodOutput("findLetter", args);
-         String expect = "2";
+public class RunestoneTests extends CodeTestHelper
+{
 
-         boolean passed = getResults(expect, output,
-                  "findLetter(\"p\",\"Apples and Oranges\")");
-         assertTrue(passed);
-      }
-
-       @Test
-      public void tryfindLetter2() throws IOException
-      {
-         String message = "Test strings";
-         String letter = "s";
-         Object[] args = {letter,message};
-         String output = getMethodOutput("findLetter", args);
-         String expect = "3";
-
-         boolean passed = getResults(expect, output,
-                  "findLetter(\"s\",\"Test strings\")");
-         assertTrue(passed);
-      }
-      @Test
-      public void test2()
-      {
-          boolean passed = checkCodeContains("changed return type of findLetter", "public int findLetter(String letter, String text)");
-          assertTrue(passed);
-      }
-
-       @Test
-      public void test1()
-      {
-          boolean passed = checkCodeContains("variable count set to 0", "int count = 0;");
-          assertTrue(passed);
-      }
-
-       @Test
-      public void test3()
-      {   String code = getCode();
-          boolean passed = code.contains("count++;") ||
-          code.contains("count = count + 1;") || code.contains("count = 1 + count;") || code.contains("count += 1;") || code.contains("++count;");
-          passed = getResults("count incremented",Boolean.toString(passed),"Count incremented?", passed);
-          assertTrue(passed);
-      }
+  public RunestoneTests() {
+    super("CallByValue");
   }
+
+  @Test
+  public void test1()
+  {
+    String code = getCode();
+    int num = countOccurences(code, "square(");
+    boolean passed = numVerses = 1;
+    passed = getResults("1 call", 1 + " ca;;", "The main should call the square method", passed);
+    assertTrue(passed);
+  }
+}
 </textarea>
 </div>
+<p>If you pass in an argument that holds a reference to an object,
+like a String or Person or Turtle object, a copy of this reference
+is passed in and saved in the parameter variable. You will explore
+this more in the following unit.</p>
 </div>
 <div class="section" id="groupwork-programming-challenge-song-with-parameters">
 <h1><span class="section-number">5.5. </span><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Programming Challenge : Song with Parameters<a class="headerlink" href="#groupwork-programming-challenge-song-with-parameters" title="Permalink to this headline">¶</a></h1>
-<p>Here’s another song, <a href="https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching" target="_blank">The Ants Go Marching</a>, that is very similar to the This Old Man song in its repetitive structure.</p>
+<p>Here’s another song, <a href="https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching" target="_blank">The Ants Go Marching</a>, that has repetitive structure.</p>
 <pre>
  The ants go marching one by one, hurrah, hurrah
  The ants go marching one by one, hurrah, hurrah
@@ -852,129 +816,13 @@ import static org.junit.Assert.*;
 </textarea>
 </div>
 </div>
-<div class="section" id="id1">
-<h1><span class="section-number">5.6. </span>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1a" >
-            <p>5-2-8: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wallet</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">dollars</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">putMoneyInWallet</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The putMoneyInWallet method is intended to increase the dollars in the wallet by the parameter amount and then return the updated dollars in the wallet. Which of the following code segments should replace  <em>missing code</em> so that the putMoneyInWallet method will work as intended?</p>
-<li data-component="answer"  id="AP5-6-1a_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">+=</span> <span class="n">dollars</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1a_opt_a">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer"  id="AP5-6-1a_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1a_opt_b">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer" data-correct id="AP5-6-1a_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1a_opt_c">
-<p>Correct.</p></li><li data-component="answer"  id="AP5-6-1a_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1a_opt_d">
-<p>amount is returned instead of dollars.</p></li><li data-component="answer"  id="AP5-6-1a_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1a_opt_e">
-<p>dollars should be incremented by amount.</p></li>
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-2b" >
-            <p>5-2-9: Consider the Liquid class below.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boilingPoint</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">(</span><span class="kt">int</span> <span class="n">ct</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bp</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">ct</span><span class="p">;</span>
-        <span class="n">boilingPoint</span> <span class="o">=</span> <span class="n">bp</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoiling</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The isBoiling method is intended to return true if increasing the currentTemp by the parameter amount is greater than or equal to the boilingPoint, or otherwise return false. Which of the following code segments can replace <em>missing code</em> to ensure that the isBoiling method works as intended?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">.</span>   <span class="nf">if</span> <span class="p">(</span><span class="n">currentTemp</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">II</span><span class="p">.</span>  <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="n">currentTemp</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">III</span><span class="p">.</span> <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="n">currentTemp</span> <span class="o">&gt;=</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-</pre></div>
-</div>
-<li data-component="answer"  id="AP5-6-2b_opt_a"><p>I only</p>
-</li><li data-component="feedback" id="AP5-6-2b_opt_a">
-<p>I would work but it is not the only code that would work.</p></li><li data-component="answer"  id="AP5-6-2b_opt_b"><p>II only</p>
-</li><li data-component="feedback" id="AP5-6-2b_opt_b">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li><li data-component="answer"  id="AP5-6-2b_opt_c"><p>III only</p>
-</li><li data-component="feedback" id="AP5-6-2b_opt_c">
-<p>III would work but it is not the only code that would work.</p></li><li data-component="answer" data-correct id="AP5-6-2b_opt_d"><p>I and III only.</p>
-</li><li data-component="feedback" id="AP5-6-2b_opt_d">
-<p>Correct!</p></li><li data-component="answer"  id="AP5-6-2b_opt_e"><p>I, II, III</p>
-</li><li data-component="feedback" id="AP5-6-2b_opt_e">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li>
-
-            </ul>
-            </div>
-            </div>
 <div class="section" id="summary">
-<h1><span class="section-number">5.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
-<li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
-<li><p>To write methods, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> in {} and method calls using an object.the method name and arguments whenever you need it to do its job.</p></li>
-<li><p>To call an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
 <li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
 <li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
-<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.</p></li>
-<li><p>When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.</p></li>
-<li><p>When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.</p></li>
+<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value.</p></li>
+<li><p>New values assigned to the formal parameter within the method have no effect on the corresponding actual parameter.</p></li>
 </ul>
 </div>
 
