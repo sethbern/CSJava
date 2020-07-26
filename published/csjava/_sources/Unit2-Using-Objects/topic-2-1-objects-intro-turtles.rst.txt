@@ -43,8 +43,6 @@ Objects - Instances of Classes
 
 Java is an **object-oriented programming** language.  In object-oriented programming, we group the data attributes and the behaviors/methods that use them together into objects, like the Turtle object on the left. 
 
-
-
 **Objects** are created from a **class** definition in the code, and they are **instances** of a class. 
 In this unit, you will learn to use objects created from classes like Turtle and String that were 
 written by other programmers. You will learn to write code to create your own classes in a later lesson.
@@ -58,14 +56,13 @@ Intro to Objects with Turtles
 
 In the 1960s, an educational programming language called **Logo** was developed. It is best known for teaching programming with turtles! The turtles were graphical or robotic turtles that were controlled with simple commands like go forward or turn right. Here's a photo of a robot turtle from the 1960s.  The turtle had a pen attached to it. The student-programmers would steer the robot around using simple commands to create drawings with their code.
 
-
 ..	index::
 	pair: turtle; screen
 	pair: turtle; library
 
 Today, we can play with virtual turtles in a graphical world. Below is a sample Java program that works with Turtle objects.
 
-.. activecode:: TurtleTest
+.. activecode:: code_2-1-Turtle1
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -79,7 +76,7 @@ Today, we can play with virtual turtles in a graphical world. Below is a sample 
     NOTE: The CodeLens Visualizer will not work with graphics programs.
     ~~~~
     
-    public class TurtleTest
+    public class TurtleTest1
     {
       public static void main(String[] args)
       {
@@ -101,7 +98,7 @@ Today, we can play with virtual turtles in a graphical world. Below is a sample 
     public class RunestoneTests extends CodeTestHelper
     {
         public RunestoneTests() {
-            super("TurtleTest");
+            super("TurtleTest1");
         }
 
         @Test
@@ -125,7 +122,7 @@ which is the canvas that they can draw on.
 The program relies on a separate library of Java code that defines both classes.  
 
 
-.. mchoice:: 2_1_turle_dir
+.. mchoice:: q2_1_1
    :practice: T
    :answer_a: North
    :answer_b: South
@@ -165,7 +162,7 @@ The parentheses ``()`` after a method name are there in case you need to give
 the method some data to do its job, for example to go forward 50 pixels 
 instead of 100. You would do this using the code ``yertle.forward(50);``.
 
-.. activecode:: TurtleTest3a
+.. activecode:: code_2-1-Turtle2
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -180,7 +177,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
     import java.util.*;
     import java.awt.*;
 
-    public class TurtleTest3
+    public class TurtleTest2
     {
       public static void main(String[] args)
       {
@@ -206,24 +203,19 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
     public class RunestoneTests extends CodeTestHelper
     {
         public RunestoneTests() {
-            super("TurtleTest3");
+            super("TurtleTest2");
         }
 
         @Test
         public void test1()
         {
-            String code = getCode();
-            String expect = "new Turtle(world)";
-
-            int count = countOccurences(code, expect);
-
-            boolean passed = count >= 2;
-            passed = getResults("2 Turtles", "" + count  + " Turtles", "Create two turtles", passed);
+            boolean passed = getResults("true", "true", "main()");
             assertTrue(passed);
         }
+
     }
 
-.. mchoice:: q2_2_2
+.. mchoice:: q2_1_2
    :practice: T
    :answer_a: attributes
    :answer_b: methods
@@ -237,7 +229,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
    What specifies the behavior for objects of a class in Java?
 
-.. mchoice:: q2_2_3
+.. mchoice:: q2_1_3
    :practice: T
    :answer_a: attributes
    :answer_b: methods
@@ -251,7 +243,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
    What specifies the data or state for an object in Java?
 
-.. mchoice:: 2_1_type_object
+.. mchoice:: q2_1_4
    :answer_a: object
    :answer_b: class
    :answer_c: attribute
@@ -264,7 +256,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
    What type of thing is referenced by the variable yertle?
 
-.. mchoice:: 2_1_type_turn_right
+.. mchoice:: q2_1_5
    :answer_a: object
    :answer_b: class
    :answer_c: attribute
@@ -277,7 +269,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
    What type of thing is turnLeft?
 
-.. mchoice:: 2_1_type_pos
+.. mchoice:: q2_1_6
    :answer_a: object
    :answer_b: class
    :answer_c: attribute
@@ -290,7 +282,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
    What type of thing is the position of a turtle in a world?
 
-.. mchoice:: 2_1_turle_attribs1
+.. mchoice:: q2_1_7
    :practice: T
    :answer_a: Position
    :answer_b: Heading
@@ -304,7 +296,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
    Which attribute does the turnLeft method alter?
 
-.. mchoice:: 2_1_turle_attribs2
+.. mchoice:: q2_1_8
    :practice: T
    :answer_a: Position
    :answer_b: Heading
@@ -318,7 +310,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
    Which attribute does the forward method alter?
 
-.. mchoice:: q2_2_1
+.. mchoice:: q2_1_9
    :practice: T
    :answer_a: 1
    :answer_b: 10
@@ -333,7 +325,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
    How many objects can you create from a class in Java?
 
 
-.. parsonsprob:: 2_1_Turtle_L
+.. parsonsprob:: p2_1_10
    :practice: T
    :numbered: left
    :adaptive:
@@ -380,7 +372,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
 
 
-.. parsonsprob:: 2_1_Turtle_Turn
+.. parsonsprob:: p2_1_11
        :numbered: left
        :adaptive:
        :noindent:
@@ -432,7 +424,7 @@ For example, have it draw a small square and then a large square by calling the 
 
 After writing your code below, if you'd like your own copy, you can open this |repl link|, copy in your code, and save it in your own repl.it account.
 
-.. activecode:: challenge2-1-TurtleDraw
+.. activecode:: code_2-1-Challenge1
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
