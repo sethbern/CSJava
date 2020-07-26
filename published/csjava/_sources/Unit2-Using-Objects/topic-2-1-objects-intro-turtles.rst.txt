@@ -45,13 +45,15 @@ Java is an **object-oriented programming** language.  In object-oriented program
 
 
 
-**Objects** are created from a **class** definition in the code, and they are **instances** of a class. In this unit, you will learn to use objects created from classes like Turtle and String that were written by other programmers. Later on, in Unit 5, you will learn to write code to create your own classes.
+**Objects** are created from a **class** definition in the code, and they are **instances** of a class. 
+In this unit, you will learn to use objects created from classes like Turtle and String that were 
+written by other programmers. You will learn to write code to create your own classes in a later lesson.
 
 Intro to Objects with Turtles
 -----------------------------
 
 .. image:: Figures/mindstorms_turtle.jpg
-    :width: 250
+    :width: 200
     :align: left
 
 In the 1960s, an educational programming language called **Logo** was developed. It is best known for teaching programming with turtles! The turtles were graphical or robotic turtles that were controlled with simple commands like go forward or turn right. Here's a photo of a robot turtle from the 1960s.  The turtle had a pen attached to it. The student-programmers would steer the robot around using simple commands to create drawings with their code.
@@ -113,13 +115,13 @@ Today, we can play with virtual turtles in a graphical world. Below is a sample 
 
 The program above creates a ``World`` object, which is a 
 drawing canvas of size 300x300 pixels.  The program then creates a ``Turtle`` object 
-named ``yertle`` and places ``yertle`` in the center of the world.  The code
-asks ``yertle`` to go forward, turn left, and then go forward.  
+named ``yertle`` and places the turtle in the center of the world (drawing canvas).  The code
+asks ``yertle`` to go forward, turn left, and then go forward again.  
 It didn't tell the turtle how much to go forward, so it goes forward 100 pixels by default. A turtle
 has a pen that traces its path as it moves. Notice that a world was first
 created and then a turtle.  Turtles need to be created in a world, 
 which is the canvas that they can draw on.
-The ``World`` and ``Turtle`` classes are not part of the core Java language.  
+``World`` and ``Turtle`` are two Java classes are not part of the core Java language.  
 The program relies on a separate library of Java code that defines both classes.  
 
 
@@ -135,188 +137,45 @@ The program relies on a separate library of Java code that defines both classes.
    :feedback_c: Which way does yertle first move in the example above?
    :feedback_d: Which way does yertle first move in the example above?
 
-   Which way does a turtle face when it is first created?  Run the program and notice the direction it goes
+   Each turtle has an attribute to keep track of its heading, which is the direction it is facing.
+   Which way does a turtle face when it is first created?  Run the program and notice the direction
    when it first moves forward.
 
 
-A computer doesn't automatically know what we mean by a robot turtle or world.  We have to write Java classes to define what we
-mean.  The class defines the data that every turtle knows about itself (called **attributes** or **fields**) like where it is in the world and which way it is facing.  The class also defines
-what objects of the class can do (called **methods** or **behaviors**) like ``turnLeft`` and move ``forward``.
+A computer doesn't automatically know what we mean by a turtle or world.  We have to write Java classes to define what we
+mean.  You can think of a **class** as a classification or blueprint. A class defines the data (attributes) and behavior (methods) of a set of objects.
+The following picture has lots of cats.  Each cat is a different object, but they share the same attributes and behaviors that make up a cat.
 
-You can think of a **class** as a classification. A class defines the type of the objects created from it and creates objects of that type.
-Another way to say this is that a **class** in Java defines a new **abstract data type**.  When you create **objects**, you create a new **instance** (object) of that class data type. Here, ``yertle`` is an object of the class ``Turtle``.
-
-Also notice that the **dot operator** (.) is used to run an object's method. 
-You can think of the (.) as asking the object to do something (execute one of its methods).  
-For example, ``yertle.forward()`` asks the turtle ``yertle`` to go ``forward``. 
-It doesn't tell ``yertle`` how much to go forward, so it goes forward 100 pixels by default. 
-The parentheses ``()`` after a method name are there in case you need to give 
-the method **arguments** (some data) to do its job, for example to go forward 50 pixels 
-instead of 100. You would do this using the code ``yertle.forward(50);``.  
-The value ``50`` is passed to the forward method to tell the turtle how many pixels to move.
-Try changing the code above to go forward 50 pixels and 
-then run it again.  What happens?
-
-
-.. mchoice:: 2_1_type_object
-   :answer_a: object
-   :answer_b: class
-   :answer_c: attribute
-   :answer_d: method
-   :correct: a
-   :feedback_a: Yes, yertle is an object of the Turtle class.
-   :feedback_b: A class defines the data and behavior for all objects of that type.
-   :feedback_c: An attribute is something the object knows about itself.
-   :feedback_d: A method is something an object can do like go forward.
-
-   What type of thing is yertle in the program above?
-
-.. mchoice:: 2_1_type_turn_right
-   :answer_a: object
-   :answer_b: class
-   :answer_c: attribute
-   :answer_d: method
-   :correct: d
-   :feedback_a: An object has data and behavior.
-   :feedback_b: A class defines the data and behavior for all objects of that type.
-   :feedback_c: An attribute is something the object knows about itself.
-   :feedback_d: A method is something an object can do like turn right.
-
-   What type of thing is turnLeft in the program above?
-
-.. mchoice:: 2_1_type_pos
-   :answer_a: object
-   :answer_b: class
-   :answer_c: attribute
-   :answer_d: method
-   :correct: c
-   :feedback_a: An object has data and behavior.
-   :feedback_b: A class defines the data and behavior for all objects of that type.
-   :feedback_c: An attribute is something the object knows about itself like its position.
-   :feedback_d: A method is something an object can do like turn left.
-
-   What type of thing is the position of a turtle in a world?
-
-
-
-
-.. parsonsprob:: 2_1_Turtle_L
-   :practice: T
-   :numbered: left
-   :adaptive:
-   :noindent:
-
-   The following program uses a turtle to draw a sort-of sideways capital L as shown to the left, <img src="../_static/turtleForwardLeftForward.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import items, start the class definition, start the main method, and create a world and turtle. Then it should ask the turtle to turn right, go forward, turn left, and then go forward 50 pixels. Next, it should ask the world to show itself.  Finally, it should close the main method and class definition. We have added a compass to the picture to indicate the directions north, south, west, and east. <br /><br /><p>Drag the needed blocks of statements from the left column to the right column and put them in the right order.  There are <b>three extra blocks</b> that are not needed in a correct solution.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are the wrong blocks.  </p>
-   -----
-   import java.util.*;
-   import java.awt.*;
-   =====
-   public class TurtleTest {
-   =====
-       public static void main(String[] args) {
-   =====
-           World world = new World(300,300);
-           Turtle yertle = new Turtle(world);
-   =====
-           yertle.turnRight();
-   =====
-           yertle.right(); #paired
-   =====
-           yertle.forward();
-   =====
-           yertle.forward() #paired
-   =====
-           yertle.turnLeft();
-   =====
-           yertle.forward(50);
-   =====
-           world.show(true);
-   =====
-           world.show(True); #paired
-   =====
-       } // end main
-   } // end class
-
-
-Classes can **inherit** attributes and methods from another class in Java, just like people can inherit money from a relative.  Here is a class diagram that shows some of the attributes and methods that the class ``Turtle`` inherits from the ``SimpleTurtle`` class.
-
-.. creately.com for figure
-
-
-.. figure:: Figures/turtleUMLClassDiagram.png
-    :width: 400px
+.. figure:: Figures/cats2.png
+    :width: 200px
     :align: center
-    :alt: Turtle class diagram
     :figclass: align-center
 
-    Figure 2: Turtle Class Diagram
+In our program we use a Java class called ``Turtle``, which defines the data that every turtle knows about 
+itself called **attributes**,
+such as its position (x,y coordinates), heading, pen color, width, 
+height, shell color, and visibility. The set of attribute values for an object is also referred to as object state.  The ``Turtle`` class also defines
+what turtle objects can do using **methods** like turnLeft and move forward, as well as many other methods that we will
+eventually explore. Methods are often used to change the attribute values.  
 
-.. mchoice:: 2_1_type_turn
-   :practice: T
-   :answer_a: object
-   :answer_b: class
-   :answer_c: attribute
-   :answer_d: method
-   :correct: d
-   :feedback_a: An object has data and behavior.
-   :feedback_b: A class defines the data and behavior for all objects of that type.
-   :feedback_c: An attribute is something the object knows about itself.
-   :feedback_d: A method is something an object can do like turn.
-
-   A turtle object knows how to turn by a specified number of degrees.  What type of thing is turn?
-
-.. parsonsprob:: 2_1_Turtle_Turn
-       :numbered: left
-       :adaptive:
-       :noindent:
-
-       The following program uses a turtle to draw the picture shown to the left, <img src="../_static/turtleTurnForwardRightForward.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import items, start the class definition, start the main method, and create a world and turtle. Then it should ask the turtle to turn 45 degrees, go forward 100 pixels, turn right, and then go forward 50 pixels. Next, it should ask the world to show itself. Finally, it should close the main method and class definition. We have added a compass to the picture to indicate the directions north, south, west, and east. <br /><br /><p>Drag the needed blocks of statements from the left column to the right column and put them in the right order.  There are <b>three extra blocks</b> that are not needed in a correct solution.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are the wrong blocks.  </p>
-       -----
-       import java.util.*;
-       import java.awt.*;
-       =====
-       public class TurtleTest {
-       =====
-           public static void main(String[] args) {
-       =====
-               World world = new World(300,300);
-               Turtle yertle = new Turtle(world);
-       =====
-               yertle.turn(45);
-       =====
-               yertle.turnRight(45); #paired
-       =====
-               yertle.forward(100);
-       =====
-               yertle.turnRight();
-       =====
-               yertle.forward(50);
-       =====
-               yertle.forward(50; #paired
-       =====
-               world.show(true);
-       =====
-               world.show(true) #paired
-       =====
-           } // end main
-       } // end class
-
-|CodingEx| **Coding Exercise**
-
-When you write a class like the ``Turtle`` class, you can create many objects 
-of that class type. In the code below,
-two turtle objects are created: ``yertle`` and ``myrtle``.  Notice each call to "forward", "turnLeft" and
-"turnRight" is prefaced with one of the two turtle names, which allows each turtle to move and turn independently.
-
-
-|CodingEx| **Coding Exercise:**
+The **dot operator** (.) is used to run an object's method.  
+For example, ``yertle.forward()`` tells the turtle referenced by the variable ``yertle`` to go ``forward``. 
+It doesn't say how much to go forward, so it goes 100 pixels by default. 
+The parentheses ``()`` after a method name are there in case you need to give 
+the method some data to do its job, for example to go forward 50 pixels 
+instead of 100. You would do this using the code ``yertle.forward(50);``.
 
 .. activecode:: TurtleTest3a
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
 
-    Run the code below.  Notice each turtle has a different color pen for drawing its path. 
+    You can create many objects of a class. In the code below, two turtle objects are created and 
+    referenced by different variable names: ``yertle`` and ``myrtle``.  Each turtle object
+    is automatically given a different color pen for drawing its path.
+    Notice each method call to forward, turnLeft and
+    turnRight is prefaced with either variable ``yertle`` or variable ``myrtle``, which allows each
+    turtle to move and turn independently.
     ~~~~
     import java.util.*;
     import java.awt.*;
@@ -364,62 +223,6 @@ two turtle objects are created: ``yertle`` and ``myrtle``.  Notice each call to 
         }
     }
 
-
-
-
-What are Classes and Objects?
------------------------------
-
-In Java, a **class** is used to define a new **abstract data type** (classify something).   
-The class defines what objects of the class need to know (attributes or instance variables) and 
-do (behaviors or methods).  A class is the formal implementation, or blueprint, of the 
-attributes and behaviors of an object.
-
-You can think of a class as the type or classification.  
-The following picture has lots of cats (objects of the type cat).  
-They are all different, but they share the same attributes and behaviors that make up a cat.
-
-.. figure:: Figures/cats2.png
-    :width: 300px
-    :align: center
-    :figclass: align-center
-
-    Figure 4: Pictures of cats (cat objects)
-
-
-If you go to a restaurant, you will be seated by the greeter, the waiter will take your order, 
-and the chef will cook your food.  What do we mean by a greeter, waiter, and chef?  
-Those are classifications or types of workers in a restaurant.  Java has this same concept.  
-When we create a new class we are defining a new type (a new classification) to the computer.  
-Each type can have abilities or behaviors (called **methods** in Java) and 
-attributes (called **instance variables** in Java). After you define a type, you can use 
-it to create **objects** of that type.  All objects created from a class will have the 
-properties and abilities/behaviors defined in that class.  For example, 
-all turtle objects will know how to move forward and turn.  All turtle objects have a pen that draws
-as they move.  Each turtle has an attribute that indicates the color of their pen, which is something
-that can be changed by the program.
-
-There are many classes that are part of the Java language, 
-in this textbook we will work with a subset of Java classes (``String``, ``Math``, ``System``, ``ArrayList``).
-The real power of Java is the ability to create your own classes (define your own types). 
-Unit 5 covers how to create your own classes.
-
-|Exercise| **Check your understanding**
-
-.. mchoice:: q2_2_1
-   :practice: T
-   :answer_a: 1
-   :answer_b: 10
-   :answer_c: 1000
-   :answer_d: As many as you need
-   :correct: d
-   :feedback_a: There is one definition of a class, but the class can create as many objects as are needed.
-   :feedback_b: There is no limit on the number of objects you can create from a class.
-   :feedback_c: There is no limit on the number of objects you can create from a class.
-   :feedback_d: You can create as many objects as you need from one class.
-
-   How many objects can you create from a class in Java?
-
 .. mchoice:: q2_2_2
    :practice: T
    :answer_a: attributes
@@ -448,6 +251,170 @@ Unit 5 covers how to create your own classes.
 
    What specifies the data or state for an object in Java?
 
+.. mchoice:: 2_1_type_object
+   :answer_a: object
+   :answer_b: class
+   :answer_c: attribute
+   :answer_d: method
+   :correct: a
+   :feedback_a: Yes, yertle is an object of the Turtle class.
+   :feedback_b: A class defines the data and behavior for all objects of that type.
+   :feedback_c: An attribute is something the object knows about itself.
+   :feedback_d: A method is something an object can do like go forward.
+
+   What type of thing is referenced by the variable yertle?
+
+.. mchoice:: 2_1_type_turn_right
+   :answer_a: object
+   :answer_b: class
+   :answer_c: attribute
+   :answer_d: method
+   :correct: d
+   :feedback_a: An object has data and behavior.
+   :feedback_b: A class defines the data and behavior for all objects of that type.
+   :feedback_c: An attribute is something the object knows about itself.
+   :feedback_d: A method is something an object can do like turn right.
+
+   What type of thing is turnLeft?
+
+.. mchoice:: 2_1_type_pos
+   :answer_a: object
+   :answer_b: class
+   :answer_c: attribute
+   :answer_d: method
+   :correct: c
+   :feedback_a: An object has data and behavior.
+   :feedback_b: A class defines the data and behavior for all objects of that type.
+   :feedback_c: An attribute is something the object knows about itself like its position.
+   :feedback_d: A method is something an object can do like turn left.
+
+   What type of thing is the position of a turtle in a world?
+
+.. mchoice:: 2_1_turle_attribs1
+   :practice: T
+   :answer_a: Position
+   :answer_b: Heading
+   :answer_c: Pen Color
+   :answer_d: Visible
+   :correct: b
+   :feedback_a: Incorrect. Position (x,y coordinate) is not altered when the turtle turns.
+   :feedback_b: Correct. 
+   :feedback_c: Incorrect. Pen color is not altered when the turtle turns.
+   :feedback_d: Incorrect. Visibility is not altered when the turtle turns.
+
+   Which attribute does the turnLeft method alter?
+
+.. mchoice:: 2_1_turle_attribs2
+   :practice: T
+   :answer_a: Position
+   :answer_b: Heading
+   :answer_c: Pen Color
+   :answer_d: Visible
+   :correct: b
+   :feedback_a: Correct. 
+   :feedback_b: Incorrect. Heading (direction) is not altered when the turtle moves forward.
+   :feedback_c: Incorrect. Pen color is not altered when the turtle moves forward.
+   :feedback_d: Incorrect. Visibility is not altered when the turtle moves forward.
+
+   Which attribute does the forward method alter?
+
+.. mchoice:: q2_2_1
+   :practice: T
+   :answer_a: 1
+   :answer_b: 10
+   :answer_c: 1000
+   :answer_d: As many as you need
+   :correct: d
+   :feedback_a: There is one definition of a class, but the class can create as many objects as are needed.
+   :feedback_b: There is no limit on the number of objects you can create from a class.
+   :feedback_c: There is no limit on the number of objects you can create from a class.
+   :feedback_d: You can create as many objects as you need from one class.
+
+   How many objects can you create from a class in Java?
+
+
+.. parsonsprob:: 2_1_Turtle_L
+   :practice: T
+   :numbered: left
+   :adaptive:
+   :noindent:
+
+   The following program uses a turtle to draw a sort-of sideways capital L as shown to the 
+   left, <img src="../_static/turtleForwardLeftForward.png" width="150" align="left" hspace="10" vspace="5" /> 
+   but the lines are mixed up.  The program should do all necessary 
+   set-up: start the class definition, start the main method, and create a world and turtle. 
+   Then it should ask the turtle to turn right, go forward, turn left, and then go forward 50 pixels. 
+   Next, it should ask the world to show itself.  Finally, it should close the main method 
+   and class definition. We have added a compass to the picture to indicate the directions 
+   north, south, west, and east. <br /><br /><p>Drag the needed blocks of statements from the left column to the right column and put them in the right order.  
+   There are <b>three extra blocks</b> that are not needed in a correct solution.  
+   Then click on <i>Check Me</i> to see if you are right. You will be told if 
+   any of the lines are in the wrong order or are the wrong blocks.  </p>
+
+   -----
+   public class TurtleTest {
+   =====
+       public static void main(String[] args) {
+   =====
+           World world = new World(300,300);
+           Turtle yertle = new Turtle(world);
+   =====
+           yertle.turnRight();
+   =====
+           yertle.right(); #paired
+   =====
+           yertle.forward();
+   =====
+           yertle.forward() #paired
+   =====
+           yertle.turnLeft();
+   =====
+           yertle.forward(50);
+   =====
+           world.show(true);
+   =====
+           world.show(True); #paired
+   =====
+       } // end main
+   } // end class
+
+
+
+.. parsonsprob:: 2_1_Turtle_Turn
+       :numbered: left
+       :adaptive:
+       :noindent:
+
+       The following program uses a turtle to draw the picture shown to the left, <img src="../_static/turtleTurnForwardRightForward.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import items, start the class definition, start the main method, and create a world and turtle. Then it should ask the turtle to turn 45 degrees, go forward 100 pixels, turn right, and then go forward 50 pixels. Next, it should ask the world to show itself. Finally, it should close the main method and class definition. We have added a compass to the picture to indicate the directions north, south, west, and east. <br /><br /><p>Drag the needed blocks of statements from the left column to the right column and put them in the right order.  There are <b>three extra blocks</b> that are not needed in a correct solution.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are the wrong blocks.  </p>
+       -----
+       import java.util.*;
+       import java.awt.*;
+       =====
+       public class TurtleTest {
+       =====
+           public static void main(String[] args) {
+       =====
+               World world = new World(300,300);
+               Turtle yertle = new Turtle(world);
+       =====
+               yertle.turn(45);
+       =====
+               yertle.turnRight(45); #paired
+       =====
+               yertle.forward(100);
+       =====
+               yertle.turnRight();
+       =====
+               yertle.forward(50);
+       =====
+               yertle.forward(50; #paired
+       =====
+               world.show(true);
+       =====
+               world.show(true) #paired
+       =====
+           } // end main
+       } // end class
 
 
 |Groupwork| Programming Challenge : Turtle Drawing
@@ -566,6 +533,13 @@ After writing your code below, if you'd like your own copy, you can open this |r
 Summary
 -------------------
 
+There are many classes that are part of the Java language, 
+in this textbook we will work with a subset of Java classes (``String``, ``Math``, ``System``, ``ArrayList``).
+The ``Turtle`` and ``World`` classes belong to a separate library and are not part of the standard Java library classes.
+
+The real power of Java is the ability to create your own classes (define your own types). 
+A subsequent lesson covers how to create your own classes.
+
 - A **class** defines a new data type (a classification). It is the formal implementation, or blueprint, of the *attributes* and *behaviors* of the objects of that class.
 
 - An **object** is a specific instance of a class with defined attributes. Objects are declared as variables of a class type.
@@ -578,54 +552,6 @@ Summary
 
 - An **instance variable** is another name for an attribute, which is data an object knows about itself such as its position.
 
-
-Practice
-------------
-
-
-.. mchoice:: AP2-1-1
-   :practice: T
-   :answer_a: An attribute of the name object is String.
-   :answer_b: An attribute of the pet object is name.
-   :answer_c: An instance of the pet class is Dog.
-   :answer_d: An attribute of the Dog instance is pet.
-   :answer_e: An instance of the Dog object is pet.
-   :correct: b
-   :feedback_a: name is an attribute of the pet object or Dog class.
-   :feedback_b: name is an attribute of the pet object or Dog class.
-   :feedback_c: An instance of the Dog class is pet.
-   :feedback_d: An attribute of the Dog class is name.
-   :feedback_e: An instance of the Dog class is pet.
-
-   A student has created a ``Dog`` class. The class contains instance variables (attributes) to represent the following.
-    - A String variable called ``breed`` to represent the breed of the dog
-    - An int variable called ``age`` to represent the age of the dog
-    - A String variable called ``name`` to represent the name of the dog
-
-    The object ``pet`` is declared as type Dog.
-    Which of the following descriptions is accurate?
-
-
-.. mchoice:: AP2-1-2
-   :practice: T
-   :answer_a: An attribute of the myParty object is boolean.
-   :answer_b: An attribute of the Party class is myParty.
-   :answer_c: An instance of the Party class is myParty.
-   :answer_d: An attribute of the Party instance is myParty.
-   :answer_e: An instance of the Party object is numOfPeople.
-   :correct: c
-   :feedback_a: An attribute of myParty is numOfPeople.
-   :feedback_b: myParty is an instance of the Party class.
-   :feedback_c: myParty is an object that is an instance of the Party class.
-   :feedback_d: An attribute of the Party class is numOfPeople.
-   :feedback_e: An attribute of the Party class is numOfPeople.
-
-    A student has created a ``Party`` class. The class contains instance variables (attributes) to represent the following.
-    - An int variable called ``numOfPeople`` to represent the number of people at the party.
-    - A boolean variable called ``discoLightsOn`` to represent whether the disco ball is on.
-    - A boolean variable called ``partyStarted`` to represent whether the party has started.
-
-    The object ``myParty`` is declared as type Party. Which of the following descriptions is accurate?
 
 
 
