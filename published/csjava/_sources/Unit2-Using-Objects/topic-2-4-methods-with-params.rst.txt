@@ -46,37 +46,39 @@
 Calling Methods With Parameters
 ===========================================
 
-In the last lesson, we used methods like forward() and turnRight() to make the turtle draw lines. You may have noticed that forward() and backward() always move the same number of pixels (100 pixels), and turnRight() and turnLeft() always turn at right angles (90 degrees). This is a little limiting. What if we wanted to draw a triangle or the letter A? These require smaller angles to draw diagonal lines and different length lines. Luckily, there are more complex methods in the Turtle class that let you specify the number of pixels to move forward or the number of degrees to turn. These values that you can give to methods to help them do their job are called **arguments** or **parameters**. 
+In the last lesson, we used methods like forward() and turnRight() to make the turtle draw lines. 
+You may have noticed that forward() and backward() always move the same number of 
+pixels (100 pixels), and turnRight() and turnLeft() always turn at right angles (90 degrees). 
+This is a little limiting. What if we wanted to draw a triangle or the letter A? 
+These require smaller angles to draw diagonal lines and different length lines. 
 
-The parentheses () after method names are there in case you need to give the 
-method **actual parameters** or **arguments** (some data) to do its job. 
-For example, we can give the argument 25 in forward(25) to make the turtle go 
-forward 25 pixels or the argument 30 in turn(30) to make the turtle turn 30 degrees. 
+Luckily, there are more complex methods in the Turtle class that let you specify the number of 
+pixels to move forward or the number of degrees to turn.  For example, we can use ``forward(25)`` to make the turtle go 
+forward 25 pixels or ``turn(30)`` to make the turtle turn 30 degrees. 
+The methods signatures define **formal parameters**, which are placeholders for values that will be passed into the 
+method when it is called.  The values passed in are **arguments** or **actual parameters**.
 
-
-.. note::
-
-    object.method(arguments); is used to call an object's method and give it some arguments (actual parameters) to do its job. 
 
 
 Although some people use the words parameters and arguments interchangeably, there is a subtle difference. 
-When you create your own method, the variables you define for it are 
-called **formal parameters**. When you call the method to do its job, you give or 
-pass in **arguments** or **actual parameters** to it that are then saved in the 
-parameter variables. So, in the definition of the forward method, it has a 
-parameter variable called pixels, and in the call to forward(25), the argument is the 
-value 25 which will get saved in the parameter variable pixels. 
-You will learn to write your own methods in Unit 5. 
-In this unit, you will learn to call methods that are already written for you.
+When a method is defined, the method signature will list the formal parameters.  The method implementation will
+use the formal parameters to customize the object behavior. The code below
+shows the signature for the forward method, which has a 
+parameter variable called pixels (the method implementation is not shown).  The subsequent code block
+shows the method call forward(25).  The actual parameter 
+value 25  will get copied into the formal parameter variable pixels. 
 
 .. code-block:: java 
 
-    // Method call
-    yertle.forward(25); // argument is 25
-    
-    // Method definition written for you
+    // The method signature has one formal parameter of type int.
     public void forward(int pixels) // parameter pixels
-    ...
+
+
+.. code-block:: java 
+    
+    // Method call must pass an argument (also called actual parameter) that is an int value
+    yertle.forward(25); 
+
 
 |Exercise| **Check your understanding**
 
@@ -90,7 +92,13 @@ In this unit, you will learn to call methods that are already written for you.
     Drag the definition from the left and drop it on the correct word on the right.  Click the "Check Me" button to see if you are correct.
 
 	
-Here is the Turtle class diagram again that shows some of the variables and methods inherited from the SimpleTurtle class in the class Turtle that are written for you. 
+The Turtle class inherits many attributes and methods from another class called SimpleTurtle.  You will learn about
+inheritance in a later lesson.  But for now you can look at the  Turtle class diagram listed in the figure below that shows 
+some (not all) of the attributes and methods inherited from the SimpleTurtle class.    The formal parameters
+are shown between the parentheses that follow the method name, and list the type after the parameter name.   
+While the notation might be different that what you are used to for Java code,  
+the class model should give you some ideas about new ways to move your turtle objects. 
+You can see all the methods that are inherited in Turtle in this |javadoc (documentation) file|. 
 
 .. figure:: Figures/turtleUMLClassDiagram.png
     :width: 300px
@@ -108,21 +116,17 @@ Here is the Turtle class diagram again that shows some of the variables and meth
 
    <a href="https://www2.cs.uic.edu/~i101/doc/SimpleTurtle.html" target="_blank">javadoc (documentation) file</a>   
 
-Try some of the methods above in the turtle code below. 
-You can see all the methods that are inherited in Turtle in this |javadoc (documentation) file|. 
-
 Methods are said to be **overloaded** when there
-are multiple methods with the same name but a
-different **method signature**, where it requires a different number or type of parameters. 
-For example, we have two different forward methods, forward() with no parameters 
-and forward(25) which has an int parameter that tells it how much to move forward. 
-If there is more than one parameter, then the values given to the method need to correspond to the order and types in the method signature. 
-
+are multiple methods with the same name but a different number or type of parameters. 
+For example, the Turtle class diagram lists two different forward methods, one with no parameters 
+and one that has a formal parameter of type int that tells the turtle how much to move forward. 
 
 |CodingEx| **Coding Exercise**
 
-(If the code below does not work in your browser, you can also use the Turtle code at this |repl link| (refresh page after forking and if it gets stuck) or download the files |github| to use in your own IDE.)
-
+Experiment with using some turtle methods that take parameters. 
+If the code below does not work in your browser, you can also use the Turtle code 
+at this |repl link| (refresh page after forking and if it gets stuck) or download 
+the files |github| to use in your own IDE.
 
 .. activecode:: TurtleTestMethods1
     :language: java
@@ -269,14 +273,6 @@ Try the following mixed up code to draw a simple house made of a square and a tr
       =====
    }
    
-
-
-
-.. |visualization| raw:: html
-
-   <a href="http://www.pythontutor.com/visualize.html#code=%20%20public%20class%20MethodTrace%20%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20public%20void%20square%28int%20x%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.print%28x*x%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20public%20void%20divide%28int%20x,%20int%20y%29%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.println%28x/y%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20MethodTrace%20traceObj%20%3D%20new%20MethodTrace%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20traceObj.square%285%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.print%28%22%20and%20%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20traceObj.divide%284,2%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%7D&cumulative=false&curInstr=18&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">visualization</a>
-
-Try this |visualization| to see this code in action.
 
 |Groupwork| Programming Challenge : Turtle House
 ------------------------------------------------

@@ -209,29 +209,6 @@ type in the same code below to make the turtle draw a 7.
         }
     }
 
-Procedural Abstraction
------------------------
-
-**Procedural abstraction** allows a programmer to use a method and not worry 
-about the details of how it exactly works. 
-For example, we know that if we hit the brakes, the car will stop, 
-and we can still use the brakes even if we don't really know how they work.
-
-You will learn to write your own methods a later lesson. 
-In this unit, you should be able to use methods already 
-written for you and figure out what they do.  
-For example, look over the methods available in the Turtle class.   You can
-probably figure out what each method does just by looking at the method name and parameters. 
-
-.. figure:: Figures/turtleUMLClassDiagram.png
-    :width: 300px
-    :align: center
-    :alt: Turtle class diagram
-    :figclass: align-center
-
-    Figure 1: Turtle Class Diagram
-
-
 |Groupwork| Programming Challenge : Draw two letters
 ----------------------------------------------------
 

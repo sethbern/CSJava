@@ -350,15 +350,15 @@
   
   <div class="section" id="creating-and-initializing-objects-constructors">
 <span id="index-0"></span><h1><span class="section-number">2.2. </span>Creating and Initializing Objects: Constructors<a class="headerlink" href="#creating-and-initializing-objects-constructors" title="Permalink to this headline">¶</a></h1>
-<p>A Java class defines what objects of the class know (attributes) and what they can
-do (behaviors). Each class has a special type of method called a
+<p>A Java class defines the data (attributes) and behavior (methods) of a set of similar objects.
+Each class has a special type of method called a
 <strong>constructor</strong>  that is used to initialize the attributes in a newly created object.</p>
 <p>A new object is created with the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword followed by the class name.
 For example, <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World()</span></code> calls the
-World constructor to create and initialize a new object of the <code class="docutils literal notranslate"><span class="pre">World</span></code> class,
-which is a canvas that turtles can move and draw upon.
+World constructor to create and initialize a new object of the <code class="docutils literal notranslate"><span class="pre">World</span></code> class.
 The code <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Turtle(world)</span></code> calls the Turtle constructor to
-create and initialize the attributes of a new <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object in the specified world.</p>
+create and initialize the attributes of a new <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object in the specified world, which is a
+canvas the turtle draws upon.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// To create a new object and call a constructor write:</span>
 <span class="c1">// ClassName variableName = new ClassName(parameters);</span>
 <span class="n">World</span> <span class="n">world</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">();</span>    <span class="c1">// create a new World object</span>
@@ -367,9 +367,17 @@ create and initialize the attributes of a new <code class="docutils literal notr
 </div>
 <div class="section" id="overloading-constructors">
 <h2><span class="section-number">2.2.1. </span>Overloading Constructors<a class="headerlink" href="#overloading-constructors" title="Permalink to this headline">¶</a></h2>
-<p>There can be more than one constructor defined in a class. This is called <strong>overloading</strong> the constructor. There is usually a constructor that has no parameters (nothing inside the parentheses following the name of the constructor) like the <code class="docutils literal notranslate"><span class="pre">World()</span></code> constructor above.  This is also called the <strong>no-argument constructor</strong>.  The <strong>no-argument</strong> constructor usually sets the attributes of the object to default values.</p>
-<p>There can also be other constructors that take parameters like the <code class="docutils literal notranslate"><span class="pre">Turtle(world)</span></code> constructor call above. A <strong>parameter</strong> (also called <strong>actual parameter</strong> or <strong>argument</strong>) is a value that is passed into a constructor.  It can be used to initialize the attribute of an object.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">World</span></code> class actually has 2 constructors.  One doesn’t take any parameters and one takes the world’s width and height.</p>
+<p>There can be more than one constructor defined in a class.
+This is called <strong>overloading</strong> the constructor.
+There is usually a constructor that has no parameters (nothing inside the parentheses following the name
+of the constructor) like the <code class="docutils literal notranslate"><span class="pre">World()</span></code> constructor above.  This is also
+called the <strong>no-argument constructor</strong>.  The <strong>no-argument</strong> constructor usually sets the
+attributes to default values.</p>
+<p>There can also be other constructors that define <strong>formal parameters</strong>, which are placeholders that accept
+values that are placed within the parentheses when the constructor is called.
+The constructor uses the values, also called  <strong>actual parameters</strong> or <strong>arguments</strong>, to initialize the object attributes.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">World</span></code> class actually has 2 constructors.
+One has no parameters and one has two parameters to initialize the world’s width and height.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../_images/worldConstructors.png"><img alt="Two overloaded World constructors" src="../_images/worldConstructors.png" style="width: 350px;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Two overloaded World constructors</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -410,7 +418,7 @@ create and initialize the attributes of a new <code class="docutils literal notr
             </div>
 <div class="section" id="the-world-class-constructors">
 <h2><span class="section-number">2.2.2. </span>The World Class Constructors<a class="headerlink" href="#the-world-class-constructors" title="Permalink to this headline">¶</a></h2>
-<p>The constructor that doesn’t take any parameters, <code class="docutils literal notranslate"><span class="pre">World()</span></code>, creates a graphical window with 640x480 pixels. The <code class="docutils literal notranslate"><span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height)</span></code> constructor takes two integer parameters, and initializes the <code class="docutils literal notranslate"><span class="pre">World</span></code> object’s width and height to them, for example <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World(300,400)</span></code> creates a 300x400 pixel world.</p>
+<p>The constructor that doesn’t take any parameters, <code class="docutils literal notranslate"><span class="pre">World()</span></code>, creates a graphical window with a default size of 640x480 pixels. The <code class="docutils literal notranslate"><span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height)</span></code> constructor takes two integer parameters, and initializes the <code class="docutils literal notranslate"><span class="pre">World</span></code> object’s width and height to them, for example <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World(300,400)</span></code> creates a 300x400 pixel world.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">World</span> <span class="n">world1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">();</span> <span class="c1">// creates a 640x480 world</span>
 <span class="n">World</span> <span class="n">world2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">400</span><span class="p">);</span> <span class="c1">// creates a 300x400 world</span>
 </pre></div>
@@ -461,7 +469,9 @@ first built, they would scan from left to right and then top to bottom.</p>
 
 <div data-childcomponent="TurtleConstructorTest" class="runestone explainer ac_section alert alert-warning">
 <p>Try changing the code below to create a <code class="docutils literal notranslate"><span class="pre">World</span></code> object with 300x400 pixels. Where is the turtle placed by default? What parameters do you need to pass to the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> constructor to put the turtle at the top right corner? Experiment and find out. What happens if you mix up the order of the parameters?</p>
-<p>(If the code below does not work in your browser, you can also use the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> code at this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
+<p>(If the code below does not work in your browser, you can also copy the code into
+this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use
+in your own IDE.)</p>
 
 <textarea data-component="activecode" id=TurtleConstructorTest data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -512,16 +522,16 @@ public class RunestoneTests extends CodeTestHelper
 <p>An object is created when you call a constructor. You need to declare an <strong>object variable</strong> to
 reference the newly created object.  An object variable has a type that is a class, rather than a primitive
 such as int, double or boolean.  <code class="docutils literal notranslate"><span class="pre">Turtle</span> <span class="pre">t1</span></code> and <code class="docutils literal notranslate"><span class="pre">World</span> <span class="pre">world</span></code> are both object variable declarations since Turtle and World are classes and not primitive types.</p>
-<p>You assign a variable to an object calling a constructor on the right hand side of an equal sign, for example <code class="docutils literal notranslate"><span class="pre">World</span> <span class="pre">world</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">World();</span></code> or
+<p>You assign an object variable by calling a constructor on the right hand side of an equal sign, for example <code class="docutils literal notranslate"><span class="pre">World</span> <span class="pre">world</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">World();</span></code> or
 <code class="docutils literal notranslate"><span class="pre">Turtle</span> <span class="pre">t1</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Turtle(world);</span></code>.</p>
 <p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
-<div data-childcomponent="TurtleTest3b" class="runestone explainer ac_section alert alert-warning">
+<div data-childcomponent="TurtleTest3Objects" class="runestone explainer ac_section alert alert-warning">
 <p>Run the code below, which creates two instances of the Turtle class.
 Add a third turtle object that draws a square by repeatedly turning left and moving forward.
 Make sure you give your new turtle a unique variable name.</p>
 
-<textarea data-component="activecode" id=TurtleTest3b data-lang="java" 
+<textarea data-component="activecode" id=TurtleTest3Objects data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
@@ -640,7 +650,7 @@ and the constructors and know how to use them.</p>
     <span data-correct>public Date(int year, int month, int day) </span>
         <span data-incorrect>{ /** Implementation not shown */ }</span>
 
-     <span data-incorrect>public void print() </span>
+    <span data-incorrect>public void print() </span>
         <span data-incorrect>{ /** Implementation not shown */ }</span>
 
 <span data-incorrect>}</span></pre>

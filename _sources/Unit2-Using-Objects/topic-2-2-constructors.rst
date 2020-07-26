@@ -35,17 +35,16 @@
 Creating and Initializing Objects: Constructors
 ================================================
 
-A Java class defines what objects of the class know (attributes) and what they can 
-do (behaviors). Each class has a special type of method called a 
+A Java class defines the data (attributes) and behavior (methods) of a set of similar objects. 
+Each class has a special type of method called a 
 **constructor**  that is used to initialize the attributes in a newly created object.
 
 A new object is created with the ``new`` keyword followed by the class name.
 For example, ``new World()`` calls the 
-World constructor to create and initialize a new object of the ``World`` class, 
-which is a canvas that turtles can move and draw upon.
+World constructor to create and initialize a new object of the ``World`` class.
 The code ``new Turtle(world)`` calls the Turtle constructor to 
-create and initialize the attributes of a new ``Turtle`` object in the specified world.
-
+create and initialize the attributes of a new ``Turtle`` object in the specified world, which is a 
+canvas the turtle draws upon.
 
 .. code-block:: java
 
@@ -57,12 +56,19 @@ create and initialize the attributes of a new ``Turtle`` object in the specified
 Overloading Constructors
 ---------------------------
 
-There can be more than one constructor defined in a class. This is called **overloading** the constructor. There is usually a constructor that has no parameters (nothing inside the parentheses following the name of the constructor) like the ``World()`` constructor above.  This is also called the **no-argument constructor**.  The **no-argument** constructor usually sets the attributes of the object to default values. 
+There can be more than one constructor defined in a class. 
+This is called **overloading** the constructor. 
+There is usually a constructor that has no parameters (nothing inside the parentheses following the name 
+of the constructor) like the ``World()`` constructor above.  This is also 
+called the **no-argument constructor**.  The **no-argument** constructor usually sets the 
+attributes to default values. 
 
-There can also be other constructors that take parameters like the ``Turtle(world)`` constructor call above. A **parameter** (also called **actual parameter** or **argument**) is a value that is passed into a constructor.  It can be used to initialize the attribute of an object.
+There can also be other constructors that define **formal parameters**, which are placeholders that accept
+values that are placed within the parentheses when the constructor is called.
+The constructor uses the values, also called  **actual parameters** or **arguments**, to initialize the object attributes.
 
-The ``World`` class actually has 2 constructors.  One doesn't take any parameters and one takes the world's width and height.
-
+The ``World`` class actually has 2 constructors.  
+One has no parameters and one has two parameters to initialize the world's width and height.
 
 .. figure:: Figures/worldConstructors.png
     :width: 350px
@@ -105,7 +111,7 @@ The ``World`` class actually has 2 constructors.  One doesn't take any parameter
 The World Class Constructors
 ----------------------------------------------------------
 
-The constructor that doesn't take any parameters, ``World()``, creates a graphical window with 640x480 pixels. The ``World(int width, int height)`` constructor takes two integer parameters, and initializes the ``World`` object's width and height to them, for example ``new World(300,400)`` creates a 300x400 pixel world.
+The constructor that doesn't take any parameters, ``World()``, creates a graphical window with a default size of 640x480 pixels. The ``World(int width, int height)`` constructor takes two integer parameters, and initializes the ``World`` object's width and height to them, for example ``new World(300,400)`` creates a 300x400 pixel world.
 
 .. code-block:: java
 
@@ -166,7 +172,9 @@ There is another ``Turtle`` constructor that places the turtle at a certain (x,y
 
     Try changing the code below to create a ``World`` object with 300x400 pixels. Where is the turtle placed by default? What parameters do you need to pass to the ``Turtle`` constructor to put the turtle at the top right corner? Experiment and find out. What happens if you mix up the order of the parameters?
 
-    (If the code below does not work in your browser, you can also use the ``Turtle`` code at this |repl link| (refresh page after forking and if it gets stuck) or download the files |github| to use in your own IDE.)
+    (If the code below does not work in your browser, you can also copy the code into  
+    this |repl link| (refresh page after forking if it gets stuck) or download the files |github| to use 
+    in your own IDE.)
     ~~~~
     import java.util.*;
     import java.awt.*;
@@ -213,13 +221,13 @@ An object is created when you call a constructor. You need to declare an **objec
 reference the newly created object.  An object variable has a type that is a class, rather than a primitive
 such as int, double or boolean.  ``Turtle t1`` and ``World world`` are both object variable declarations since Turtle and World are classes and not primitive types.
 
-You assign a variable to an object calling a constructor on the right hand side of an equal sign, for example ``World world = new World();`` or
+You assign an object variable by calling a constructor on the right hand side of an equal sign, for example ``World world = new World();`` or
 ``Turtle t1 = new Turtle(world);``.
 
 
 |CodingEx| **Coding Exercise:**
 
-.. activecode:: TurtleTest3b
+.. activecode:: TurtleTest3Objects
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -273,10 +281,6 @@ You assign a variable to an object calling a constructor on the right hand side 
             assertTrue(passed);
         }
     }
-
-
-
-
 
 
 Constructor Signatures
@@ -365,7 +369,7 @@ and the constructors and know how to use them.
         :click-correct:public Date(int year, int month, int day) :endclick:
             :click-incorrect:{ /** Implementation not shown */ }:endclick:
 
-         :click-incorrect:public void print() :endclick:
+        :click-incorrect:public void print() :endclick:
             :click-incorrect:{ /** Implementation not shown */ }:endclick:
 
     :click-incorrect:}:endclick:
