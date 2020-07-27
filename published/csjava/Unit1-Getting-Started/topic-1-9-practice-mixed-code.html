@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6. Writing Classes &#8212; CS Java</title>
+    <title>1.9. Unit 1 Mixed Up Code Practice &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.1. Anatomy of a Java Class" href="topic-5-1-parts-of-class.html" />
-    <link rel="prev" title="5.10. Variable Scope" href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" />
+    <link rel="next" title="1.10. Unit 1 Coding Practice" href="topic-1-10-practice-coding.html" />
+    <link rel="prev" title="1.8. Unit 1 Summary" href="topic-1-8-summary.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=toctree'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-1-9-practice-mixed-code'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.10. </span>Variable Scope" data-toggle="tooltip">
-    <a href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">1.8. </span>Unit 1 Summary" data-toggle="tooltip">
+    <a href="topic-1-8-summary.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.1. </span>Anatomy of a Java Class' data-toggle="tooltip" >              
-    <a href="topic-5-1-parts-of-class.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">1.10. </span>Unit 1 Coding Practice' data-toggle="tooltip" >              
+    <a href="topic-1-10-practice-coding.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,91 +348,317 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="writing-classes">
-<h1><span class="section-number">6. </span>Writing Classes<a class="headerlink" href="#writing-classes" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>In this unit, you will learn to write your own classes and objects.</p>
-</div></blockquote>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-1-parts-of-class.html">6.1. Anatomy of a Java Class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#creating-a-class">6.1.1. Creating a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#instance-variables">6.1.2. Instance Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#methods">6.1.3. Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#object-oriented-design">6.1.4. Object-Oriented Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#groupwork-programming-challenge-riddle-class">6.1.5.  Programming Challenge : Riddle Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#practice">6.1.6. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#summary">6.1.7. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-2-writing-constructors.html">6.2. Writing Constructors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#practice">6.2.1. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#groupwork-programming-challenge-student-class">6.2.2.  Programming Challenge : Student Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#id1">6.2.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#summary">6.2.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-3-comments-conditions.html">6.3. Comments and Conditions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#comments">6.3.1. Comments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#preconditions-and-postconditions">6.3.2. Preconditions and  Postconditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#software-validity-and-use-case-diagrams">6.3.3. Software Validity and Use-Case Diagrams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#agile-software-development">6.3.4. Agile Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#groupwork-programming-challenge-comments-and-conditions">6.3.5.  Programming Challenge : Comments and Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#summary">6.3.6. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-4-accessor-methods.html">6.4. Accessor Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#tostring">6.4.1. toString()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#groupwork-programming-challenge-class-pet">6.4.2.  Programming Challenge : Class Pet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#practice">6.4.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#summary">6.4.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-5-mutator-methods.html">6.5. Mutator Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#groupwork-programming-challenge-class-pet-setters">6.5.1.  Programming Challenge : Class Pet Setters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#practice">6.5.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#summary">6.5.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-6-writing-methods.html">6.6. Writing Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#parameters">6.6.1. Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#groupwork-programming-challenge-song-with-parameters">6.6.2.  Programming Challenge : Song with Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#practice">6.6.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#summary">6.6.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-7-static-vars-methods.html">6.7. Static Variables and Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-7-static-vars-methods.html#groupwork-programming-challenge-static-song-and-counter">6.7.1.  Programming Challenge : Static Song and counter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-7-static-vars-methods.html#summary">6.7.2. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-8-scope-access.html">6.8. Scope and Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#groupwork-programming-challenge-debugging">6.8.1.  Programming Challenge : Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#practice">6.8.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#summary">6.8.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-9-this.html">6.9. this Keyword</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#groupwork-programming-challenge-bank-account">6.9.1.  Programming Challenge : Bank Account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#practice">6.9.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#summary">6.9.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-10-social-impacts.html">6.10. Social Impacts of CS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-10-social-impacts.html#groupwork-pogil-groupwork-impacts-of-cs">6.10.1.  POGIL Groupwork: Impacts of CS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-10-social-impacts.html#summary">6.10.2. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-11-summary.html">6.11. Unit 5 Summary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#concept-summary">6.11.1. Concept Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#java-keyword-summary">6.11.2. Java Keyword Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#vocabulary-practice">6.11.3. Vocabulary Practice</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Exercises.html">6.12. Exercises</a></li>
-</ul>
-</div>
-</div>
+  <div class="section" id="unit-1-mixed-up-code-practice">
+<h1><span class="section-number">1.9. </span>Unit 1 Mixed Up Code Practice<a class="headerlink" href="#unit-1-mixed-up-code-practice" title="Permalink to this headline">¶</a></h1>
+<p>Try to solve each of the following. Click the <em>Check Me</em> button to check each solution.  You will be told if your solution is too short, has a block in the wrong order, or you are using the wrong block.  Some of the problems may have an extra block that isn’t needed in the correct solution.  Try to solve these on your phone or other mobile device!</p>
+
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch4ex1muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-1: The following program segment should print Maria's first name on one line and her last name on the next line.  But, the blocks have been mixed up and include an extra block that isn't needed in the solution.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>String firstName = "Maria";
+String lastName = "Hernandez";
+---
+System.out.println(firstName);
+---
+System.out.println(lastName);
+---
+System.out.printlln(firstname); #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch4ex2muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-2: The following program segment should print the words to a famous poem. But the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>System.out.println("Roses are red");
+---
+System.out.println("Violets are blue");
+---
+System.out.println("Sugar is sweet");
+---
+System.out.println("And so are you");
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch4ex3muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-3: The main method in the following class should print Marcus's name on one line and his favorite color on the next line. But, the blocks have been mixed up and include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+    {
+---
+        String name = "Marcus";
+        String color = "Blue";
+---
+        System.out.println(name);
+---
+        System.out.println(color);
+---
+    } // end main method
+
+---
+} // end of class
+---
+        System.out.println(Name); #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex1muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-4: The following program segment should figure out the cost for each shirt if they are buy 2 and get the third free and they are originally $45 each.  But, the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>double price = 45;
+---
+double totalCost = price * 2;
+---
+double pricePerShirt = totalCost / 3;
+---
+System.out.println(pricePerShirt);
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex2muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-5: The following program segment should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up and may include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>double bill = 89.23;
+---
+double tip = bill * 0.20;
+---
+double total = bill + tip;
+---
+int numPeople = 3;
+double perPersonCost = total / numPeople;
+---
+System.out.println(perPersonCost);
+---
+System.out.println(perpersoncost); #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex4muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-6: The main method in the following class should print the number of seconds in 5 days. But, the blocks have been mixed up and may include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+    {
+---
+        int sInMin = 60;
+        int mInHour = 60;
+        int hInDay = 24;
+---
+        int sInDay = sInMin * mInHour * hInDay;
+---
+        int total = sInDay * 5;
+---
+        System.out.println(total);
+---
+    } // end main method
+---
+} // end class
+---
+public Class Test1
+{ #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex5muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-7: The main method in the following class should calculate the number of months it would take you to save 500 if you make 50 a week. But, the blocks have been mixed up and may include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+    {
+---
+        double weeklyRate = 50;
+        double goal = 500;
+---
+        double numWeeks = goal / weeklyRate;
+---
+        double numMonths = numWeeks / 4;
+---
+        System.out.println(numMonths);
+---
+    } // end main method
+} // end class
+---
+    public void main(String[] args)
+    { #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch4ex5muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-8: The main method in the following class should print the name on one line followed by the age on the next line. But, the blocks have been mixed up and include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+    {
+---
+        String name = "Layla";
+        String age = "16";
+---
+        System.out.println("Your name is " + name);
+---
+        System.out.println("Your age is " + age);
+---
+    } // end main method
+---
+} // end class
+---
+        System.out.println("Your age is " age); #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch4ex6muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-9: The main method in the following class should print the name on one line and the favorite food on the next line. But, the blocks have been mixed up and include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+---
+    {
+---
+        String name = "Julian";
+        String food = "chicken wings";
+---
+        System.out.println("Your name is " + name);
+---
+        System.out.println("Your favorite food is " + food);
+---
+    }
+---
+}
+---
+        System.println("Your name is " + name); #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex6muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-10: The main method in the following class should calculate the cost of a trip that is 200 miles when the price of gas is 2.20 and the miles per gallon is 42. But, the blocks have been mixed up and may include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+---
+    {
+---
+        int miles = 200;
+        double price = 2.20;
+        int mpg = 42;
+---
+        double numGalls = (double) miles / mpg;
+---
+        double totalCost = numGalls * price;
+---
+        System.out.println(totalCost);
+---
+    }
+---
+}
+---
+        System.println(totalCost); #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex7muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-11: The main method in the following class should calculate how many miles you can go on half a tank of gas if the miles per gallon is 26 and your tank holds 15 gallons. But, the blocks have been mixed up and may include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+---
+    {
+---
+        int mpg = 26;
+        int tankHolds = 15;
+---
+        double numGalls = (double) tankHolds / 2;
+---
+        double miles = numGalls * mpg;
+---
+        System.out.println(miles);
+---
+    }
+---
+}
+---
+    public static main(String[] args) #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex8muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-12: The main method in the following class should calculate how many chicken wings you can buy with $3.50 if the wings are $.60 each. But, the blocks have been mixed up and may include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+---
+    {
+---
+        double cost = 0.6;
+        double money = 3.5;
+---
+        int numWings = (int) (money / cost);
+---
+        System.out.println(numWings);
+---
+    }
+---
+}
+---
+       int cost = 0.6;
+       int money = 3.5; #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex9muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-13: The main method in the following class should calculate how much you will have to pay for an item that is 60% off the original price of $52.99. But, the blocks have been mixed up and may include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+---
+    {
+---
+        double price = 52.99;
+        double discount = 0.6;
+---
+        double savings = price * discount;
+---
+        double finalPrice = price - savings;
+---
+        System.out.println(finalPrice);
+---
+    }
+---
+}
+---
+       int price = 52.99;
+       int discount = 0.6; #distractor
+        </pre>
+        </div>
+    
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="ch3ex10muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
+        <span data-question>1-9-14: The main method in the following class should calculate how much the per item costs is for shorts that are buy 2 and get the third free.  The shorts are $39.99 each. But, the blocks have been mixed up and may include an extra block that isn't needed in the solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public class Test1
+{
+---
+    public static void main(String[] args)
+---
+    {
+---
+        double price = 39.99;
+---
+        double priceForTwo = price * 2;
+---
+        double itemPrice = priceForTwo / 3;
+---
+        System.out.println(itemPrice);
+---
+    }
+---
+}
+---
+       double priceForTwo = price * 2 #distractor
+        </pre>
+        </div>
+    <script src="../_static/custom-csawesome.js"></script></div>
 
 
   <div id=scprogresscontainer>
@@ -441,8 +667,8 @@
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.10. Variable Scope' data-toggle="tooltip">
-    <a href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" aria-label="5.10. Variable Scope">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 1.8. Unit 1 Summary' data-toggle="tooltip">
+    <a href="topic-1-8-summary.html" aria-label="1.8. Unit 1 Summary">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -452,8 +678,8 @@
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.1. Anatomy of a Java Class' data-toggle="tooltip" >
-    <a href="topic-5-1-parts-of-class.html" aria-label="6.1. Anatomy of a Java Class">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 1.10. Unit 1 Coding Practice' data-toggle="tooltip" >
+    <a href="topic-1-10-practice-coding.html" aria-label="1.10. Unit 1 Coding Practice">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6. Writing Classes &#8212; CS Java</title>
+    <title>5.4. Method Comments &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.1. Anatomy of a Java Class" href="topic-5-1-parts-of-class.html" />
-    <link rel="prev" title="5.10. Variable Scope" href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" />
+    <link rel="next" title="5.5. Variable Scope" href="topic-5-5-variable-scope.html" />
+    <link rel="prev" title="5.3. Method Returns" href="topic-5-3-method-return.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=toctree'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-5-4-comments'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.10. </span>Variable Scope" data-toggle="tooltip">
-    <a href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.3. </span>Method Returns" data-toggle="tooltip">
+    <a href="topic-5-3-method-return.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.1. </span>Anatomy of a Java Class' data-toggle="tooltip" >              
-    <a href="topic-5-1-parts-of-class.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">5.5. </span>Variable Scope' data-toggle="tooltip" >              
+    <a href="topic-5-5-variable-scope.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,90 +348,220 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="writing-classes">
-<h1><span class="section-number">6. </span>Writing Classes<a class="headerlink" href="#writing-classes" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>In this unit, you will learn to write your own classes and objects.</p>
-</div></blockquote>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-1-parts-of-class.html">6.1. Anatomy of a Java Class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#creating-a-class">6.1.1. Creating a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#instance-variables">6.1.2. Instance Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#methods">6.1.3. Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#object-oriented-design">6.1.4. Object-Oriented Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#groupwork-programming-challenge-riddle-class">6.1.5.  Programming Challenge : Riddle Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#practice">6.1.6. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#summary">6.1.7. Summary</a></li>
+  <div class="section" id="method-comments">
+<h1><span class="section-number">5.4. </span>Method Comments<a class="headerlink" href="#method-comments" title="Permalink to this headline">¶</a></h1>
+<p>Recall that there are 3 types of comments in Java:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> Single line comment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/*</span></code> Multiline comment <code class="docutils literal notranslate"><span class="pre">*/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/**</span></code> Documentation comment <code class="docutils literal notranslate"><span class="pre">*/</span></code></p></li>
+</ol>
+<p>The special characters <code class="docutils literal notranslate"><span class="pre">//</span></code> are used to mark the rest of the line as a comment in many programming languages.  If the comment is going to be multiple lines, we use <code class="docutils literal notranslate"><span class="pre">/*</span></code> to start the comment and <code class="docutils literal notranslate"><span class="pre">*/</span></code> to end the comment.</p>
+<p>The multi-line comment, <code class="docutils literal notranslate"><span class="pre">/**</span></code>  <code class="docutils literal notranslate"><span class="pre">*/</span></code> is called the documentation comment.
+Java has a cool tool called <a href="https://www.tutorialspoint.com/java/java_documentation.htm" target="_blank">javadoc</a> that comes with the <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java JDK</a> that will pull out all of these
+comments to make documentation of a class as a web page.  This tool generates the official Java
+documentation too, for example for the <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank">String class</a>.
+It’s a good idea to use the documentation comment in front of classes, methods, and
+instance variables in case you want to use this tool.</p>
+<p>The are some special tags that you can use in Java documentation. These are not required but many programmers use them. Here are some common tags:</p>
+<ul class="simple">
+<li><p>&#64;author  Author of the program</p></li>
+<li><p>&#64;since   Date released</p></li>
+<li><p>&#64;version Version of program</p></li>
+<li><p>&#64;param   Parameter of a method</p></li>
+<li><p>&#64;return  Return value for a method</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-2-writing-constructors.html">6.2. Writing Constructors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#practice">6.2.1. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#groupwork-programming-challenge-student-class">6.2.2.  Programming Challenge : Student Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#id1">6.2.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#summary">6.2.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-3-comments-conditions.html">6.3. Comments and Conditions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#comments">6.3.1. Comments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#preconditions-and-postconditions">6.3.2. Preconditions and  Postconditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#software-validity-and-use-case-diagrams">6.3.3. Software Validity and Use-Case Diagrams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#agile-software-development">6.3.4. Agile Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#groupwork-programming-challenge-comments-and-conditions">6.3.5.  Programming Challenge : Comments and Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#summary">6.3.6. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-4-accessor-methods.html">6.4. Accessor Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#tostring">6.4.1. toString()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#groupwork-programming-challenge-class-pet">6.4.2.  Programming Challenge : Class Pet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#practice">6.4.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#summary">6.4.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-5-mutator-methods.html">6.5. Mutator Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#groupwork-programming-challenge-class-pet-setters">6.5.1.  Programming Challenge : Class Pet Setters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#practice">6.5.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#summary">6.5.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-6-writing-methods.html">6.6. Writing Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#parameters">6.6.1. Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#groupwork-programming-challenge-song-with-parameters">6.6.2.  Programming Challenge : Song with Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#practice">6.6.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#summary">6.6.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-7-static-vars-methods.html">6.7. Static Variables and Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-7-static-vars-methods.html#groupwork-programming-challenge-static-song-and-counter">6.7.1.  Programming Challenge : Static Song and counter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-7-static-vars-methods.html#summary">6.7.2. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-8-scope-access.html">6.8. Scope and Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#groupwork-programming-challenge-debugging">6.8.1.  Programming Challenge : Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#practice">6.8.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#summary">6.8.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-9-this.html">6.9. this Keyword</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#groupwork-programming-challenge-bank-account">6.9.1.  Programming Challenge : Bank Account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#practice">6.9.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#summary">6.9.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-10-social-impacts.html">6.10. Social Impacts of CS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-10-social-impacts.html#groupwork-pogil-groupwork-impacts-of-cs">6.10.1.  POGIL Groupwork: Impacts of CS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-10-social-impacts.html#summary">6.10.2. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-11-summary.html">6.11. Unit 5 Summary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#concept-summary">6.11.1. Concept Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#java-keyword-summary">6.11.2. Java Keyword Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#vocabulary-practice">6.11.3. Vocabulary Practice</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Exercises.html">6.12. Exercises</a></li>
-</ul>
+<p>The code below shows example commenting for a trivial class as well as an example method</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* The Add2Number program implements an application that</span>
+<span class="cm">* adds two given integer numbers and prints</span>
+<span class="cm">* the output on the screen.</span>
+<span class="cm">*</span>
+<span class="cm">* @author  Fred Smith</span>
+<span class="cm">* @version 1.0</span>
+<span class="cm">* @since   2019-01-31</span>
+<span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Add2Number</span> <span class="p">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * This method is used to add two integers.</span>
+<span class="cm">    * @param numA The first number to use in the sum</span>
+<span class="cm">    * @param numB  The second number to use in the sum</span>
+<span class="cm">    * @return int This returns sum of numA and numB.</span>
+<span class="cm">    */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">addNum</span><span class="p">(</span><span class="kt">int</span> <span class="n">numA</span><span class="p">,</span> <span class="kt">int</span> <span class="n">numB</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">numA</span> <span class="o">+</span> <span class="n">numB</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * This is the main method which makes use of addNum method.</span>
+<span class="cm">    * @param args Unused.</span>
+<span class="cm">    * @return Nothing.</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span>  <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">addNum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sum of 10 and 20 is :&quot;</span> <span class="o">+</span> <span class="n">sum</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
 </div>
+<div class="section" id="preconditions-and-postconditions">
+<h2><span class="section-number">5.4.1. </span>Preconditions and  Postconditions<a class="headerlink" href="#preconditions-and-postconditions" title="Permalink to this headline">¶</a></h2>
+<p>As you write methods in a class, it is a good idea to keep in mind the <strong>preconditions</strong> and the <strong>postconditions</strong> for the method and write them in the comments. A precondition is a condition that must be true for your method code to work, for example the assumption that the parameters have values and are not null. The methods could check for these preconditions, but they do not have to. The precondition is what the method expects in order to do its job properly.</p>
+<p>A postcondition is a condition that is true after running the method. It is what the method promises to do. Postconditions describe the outcome of running the method, for example what is being returned or the changes to the instance variables. These assumptions are very useful to other programmers who want to use your class and get the correct results.</p>
+<p>Here is an example of preconditions, postconditions, and &#64;param in the Turtle code that we have used in the past for our drawing turtles.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">  * Constructor that takes the x and y position for the</span>
+<span class="cm">  * turtle</span>
+<span class="cm">  * Preconditions: parameters x and y are coordinates from 0 to</span>
+<span class="cm">  *    the width and height of the world.</span>
+<span class="cm">  * Postconditions: the turtle is placed in (x,y) coordinates</span>
+<span class="cm">  * @param x the x position to place the turtle</span>
+<span class="cm">  * @param y the y position to place the turtle</span>
+<span class="cm">  */</span>
+ <span class="kd">public</span> <span class="nf">Turtle</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="n">xPos</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+   <span class="n">yPos</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">|CodingEx|</span></a> <strong>Coding Exercise</strong></p>
+<p>Try to break the preconditions of the Turtle constructor below. Does the Turtle constructor behave properly if you break the preconditions that x and y are between 0 and 300. Try giving the Turtle constructor  x and y values out of these ranges. What happens? Does the method give good results? Does it give any warnings? What about the t.forward() method? Does it have any preconditions that you can break?</p>
+<p>(If the code below does not work for you, you can copy the code into  this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
+
+<div data-childcomponent="turtle-preconditions" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=turtle-preconditions data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''  data-datafile='turtleClasses.jar'    
+           data-wasm=/_static>
+import java.util.*;
+import java.awt.*;
+
+public class TurtlePreconditions
+{
+  public static void main(String[] args)
+  {
+      World world = new World(300,300);
+      // Change 0,0 to other values outside of 0-300 to break the preconditions and see what happens
+      Turtle t = new Turtle(0,0,world);
+      t.turnRight();
+      world.show(true);
+  }
+}
+</textarea>
+</div>
+<p>The Turtle constructor’s precondition is that x and y should be between 0 and the width and height of the world. If it receives values out of this range, it sets x and y to the closest legal values that it can so that the turtle appears just at the edge of the world. Similarly, the forward() method will not allow the turtle to leave the world.</p>
+<p><a href="#id3"><span class="problematic" id="id4">|Exercise|</span></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="AP5-3-1" >
+            <p>5-4-1: Consider the following class definition.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestScore</span>
+   <span class="p">{</span>
+       <span class="kd">private</span> <span class="n">String</span> <span class="n">studentName</span><span class="p">;</span>
+       <span class="kd">private</span> <span class="kt">double</span> <span class="n">score</span><span class="p">;</span>
+       <span class="kd">private</span> <span class="kt">double</span> <span class="n">extraCredit</span><span class="p">;</span>
+
+       <span class="kd">public</span> <span class="nf">TestScore</span> <span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">,</span> <span class="kt">double</span> <span class="n">s</span><span class="p">,</span> <span class="kt">double</span> <span class="n">ec</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="n">studentName</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+           <span class="n">score</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+           <span class="n">extraCredit</span> <span class="o">=</span> <span class="n">ec</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="cm">/* Other methods not shown */</span>
+   <span class="p">}</span>
+
+<span class="n">Which</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">preconditions</span> <span class="n">are</span> <span class="n">reasonable</span> <span class="k">for</span> <span class="n">the</span> <span class="n">TestScore</span> <span class="n">constructor</span><span class="o">?</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="AP5-3-1_opt_a">/* Precondition: s <= 0 */</li><li data-component="feedback">It is not reasonable the s which sets the score should be negative.</li>
+            
+            <li data-component="answer"  id="AP5-3-1_opt_b">/* Precondition: score >= 0 */</li><li data-component="feedback">The precondition should be about the parameters of the constructor. score is not the parameter variable.</li>
+            
+            <li data-component="answer" data-correct id="AP5-3-1_opt_c">/* Precondition: s and ec >= 0 */</li><li data-component="feedback">Correct. It is reasonable that the score and extraCredit should be set to positive values using the parameters s and ec.</li>
+            
+            <li data-component="answer" data-correct id="AP5-3-1_opt_d">/* Precondition: n is not the empty String */</li><li data-component="feedback">Correct. It is reasonable that the parameter n which sets the name should be not empty.</li>
+            
+            <li data-component="answer"  id="AP5-3-1_opt_e">/* Precondition: studentName is not the empty String */</li><li data-component="feedback">The precondition should be about the parameters of the constructor. score is not the parameter variable.</li>
+            
+
+            </ul>
+            </div>
+            <p>Let’s consider the substring method in Java. This method has a strong precondition that its arguments refer to indices within the given string.</p>
+<p><a href="#id5"><span class="problematic" id="id6">|CodingEx|</span></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="substring-preconditions" class="runestone explainer ac_section alert alert-warning">
+<p>The following code breaks the preconditions of the substring method and throws an IndexOutOfBoundsException. Can you fix the code by changing the arguments for the substring method to print out the substring “lo”? What are the preconditions for the substring method?</p>
+
+<textarea data-component="activecode" id=substring-preconditions data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class SubstringPreconditions
+{
+  public static void main(String[] args)
+  {
+      String str = "hello";
+      System.out.println( str.substring(-1,10) );
+  }
+}
+====
+// Test for Lesson 5.3.2 Substring-preconditions
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+    public RunestoneTests() {
+        super("SubstringPreconditions");
+    }
+
+    @Test
+    public void testMain() throws IOException
+    {
+        String output = getMethodOutput("main");
+        String expect = "lo";
+        boolean passed = getResults(expect, output, "Expected output from main");
+        assertTrue(passed);
+    }
+}
+</textarea>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method str.substring(beginIndex, endIndex) has the precondition that 0 &lt;= beginIndex &lt;= endIndex &lt;= str.length.</p>
+</div>
+<p><a href="#id7"><span class="problematic" id="id8">|Exercise|</span></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-3-2" >
+            <p>5-4-2: The following method is intended to return the substring starting at index i until the end of the string. For example, getiToEnd(“012”,1) should return “12”. Which of the following is the most appropriate precondition for the method so that it does not throw an exception?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* missing precondition */</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">getiToEnd</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">str</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="AP5-3-2_opt_a">/* Precondition: i >= 0 */</li><li data-component="feedback">This is true but it could still throw an exception if i is a large value.</li>
+            
+            <li data-component="answer"  id="AP5-3-2_opt_b">/* Precondition: i <= str.length() */</li><li data-component="feedback">This is true but it could still throw an exception if i is a negative value.</li>
+            
+            <li data-component="answer"  id="AP5-3-2_opt_c">/* Precondition: 0 < i < str.length() */</li><li data-component="feedback">This is true but a little too restrictive.</li>
+            
+            <li data-component="answer" data-correct id="AP5-3-2_opt_d">/* Precondition: 0 <= i < str.length() */</li><li data-component="feedback">Correct. i can refer to character 0 up to str.length().</li>
+            
+
+            </ul>
+            </div>
+            </div>
 </div>
 
 
@@ -441,8 +571,8 @@
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.10. Variable Scope' data-toggle="tooltip">
-    <a href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" aria-label="5.10. Variable Scope">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.3. Method Returns' data-toggle="tooltip">
+    <a href="topic-5-3-method-return.html" aria-label="5.3. Method Returns">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -452,8 +582,8 @@
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.1. Anatomy of a Java Class' data-toggle="tooltip" >
-    <a href="topic-5-1-parts-of-class.html" aria-label="6.1. Anatomy of a Java Class">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.5. Variable Scope' data-toggle="tooltip" >
+    <a href="topic-5-5-variable-scope.html" aria-label="5.5. Variable Scope">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

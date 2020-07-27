@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.3. Comments and Conditions &#8212; CS Java</title>
+    <title>5.8. Comments and Conditions &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.4. Accessor Methods" href="topic-5-4-accessor-methods.html" />
-    <link rel="prev" title="6.2. Writing Constructors" href="topic-5-2-writing-constructors.html" />
+    <link rel="next" title="&lt;no title&gt;" href="topic-5-4-method-return.html" />
+    <link rel="prev" title="5.2. Method Parameters" href="topic-5-2-method-parameters.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.2. </span>Writing Constructors" data-toggle="tooltip">
-    <a href="topic-5-2-writing-constructors.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.2. </span>Method Parameters" data-toggle="tooltip">
+    <a href="topic-5-2-method-parameters.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.4. </span>Accessor Methods' data-toggle="tooltip" >              
-    <a href="topic-5-4-accessor-methods.html" >
+  <li id="relations-next" title='Next Chapter - &lt;no title&gt;' data-toggle="tooltip" >              
+    <a href="topic-5-4-method-return.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -349,10 +349,14 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="comments-and-conditions">
-<h1><span class="section-number">6.3. </span>Comments and Conditions<a class="headerlink" href="#comments-and-conditions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.8. </span>Comments and Conditions<a class="headerlink" href="#comments-and-conditions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="comments">
-<h2><span class="section-number">6.3.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
-<p>Adding comments to your code helps to make it more readable and maintainable. In the commercial world, software development is usually a team effort where many programmers will use your code and maintain it for years. Commenting is essential in this kind of environment and a good habit to develop. Comments will also help you to remember what you were doing when you look back to your code a month or a year from now.</p>
+<h2><span class="section-number">5.8.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Adding comments to your code helps to make it more readable and maintainable.
+In the commercial world, software development is usually a team effort where many
+programmers will use your code and maintain it for years. Commenting is essential in this kind of
+environment and a good habit to develop. Comments will also help you to remember what you
+were doing when you look back to your code a month or a year from now.</p>
 <p>There are 3 types of comments in Java:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> Single line comment</p></li>
@@ -362,8 +366,9 @@
 <p>The special characters <code class="docutils literal notranslate"><span class="pre">//</span></code> are used to mark the rest of the line as a comment in many programming languages.  If the comment is going to be multiple lines, we use <code class="docutils literal notranslate"><span class="pre">/*</span></code> to start the comment and <code class="docutils literal notranslate"><span class="pre">*/</span></code> to end the comment.</p>
 <p>There is also a special version of the multi-line comment, <code class="docutils literal notranslate"><span class="pre">/**</span></code>  <code class="docutils literal notranslate"><span class="pre">*/</span></code>, called the documentation comment. Java has a cool tool called <a href="https://www.tutorialspoint.com/java/java_documentation.htm" target="_blank">javadoc</a> that comes with the <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java JDK</a> that will pull out all of these comments to make documentation of a class as a web page.  This tool generates the official Java documentation too, for example for the <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank">String class</a>.
 It’s a good idea to use the documentation comment in front of classes, methods, and instance variables in case you want ot use this tool.</p>
-<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-<p>The compiler will skip over comments, and they don’t affect how your program runs. They are for you, your teacher, and other programmers working with you.  Here are some examples of good commenting:</p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p>The compiler will skip over comments, and they don’t affect how your program runs.
+They are for you  and other programmers working with you.  Here are some examples of good commenting:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm">* MyClass.java</span>
 <span class="cm">* @author My Name</span>
@@ -372,9 +377,9 @@ It’s a good idea to use the documentation comment in front of classes, methods
 <span class="cm">*/</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nf">MyClass</span><span class="p">()</span>
 <span class="p">{</span>
-   <span class="kd">private</span> <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// this keeps track of the max score</span>
-   <span class="cm">/* The print() method prints out the max */</span>
-   <span class="kd">public</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">max</span><span class="p">);</span> <span class="p">}</span>
+
+   <span class="c1">// The shippingCost() method prints  shipping cost based on the weight</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shippingCost</span><span class="p">(</span><span class="kt">int</span> <span class="n">weight</span><span class="p">)</span> <span class="p">{</span>  <span class="p">.....</span> <span class="p">}</span>
 </pre></div>
 </div>
 <p>Note that most IDEs will tend to show comments formatted in italics – to make them easier to spot.</p>
@@ -388,7 +393,7 @@ It’s a good idea to use the documentation comment in front of classes, methods
 </ul>
 </div>
 <div class="section" id="preconditions-and-postconditions">
-<h2><span class="section-number">6.3.2. </span>Preconditions and  Postconditions<a class="headerlink" href="#preconditions-and-postconditions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.2. </span>Preconditions and  Postconditions<a class="headerlink" href="#preconditions-and-postconditions" title="Permalink to this headline">¶</a></h2>
 <p>As you write methods in a class, it is a good idea to keep in mind the <strong>preconditions</strong> and the <strong>postconditions</strong> for the method and write them in the comments. A precondition is a condition that must be true for your method code to work, for example the assumption that the parameters have values and are not null. The methods could check for these preconditions, but they do not have to. The precondition is what the method expects in order to do its job properly.</p>
 <p>A postcondition is a condition that is true after running the method. It is what the method promises to do. Postconditions describe the outcome of running the method, for example what is being returned or the changes to the instance variables. These assumptions are very useful to other programmers who want to use your class and get the correct results.</p>
 <p>Here is an example of preconditions, postconditions, and &#64;param in the Turtle code that we have used in the past for our drawing turtles.</p>
@@ -408,26 +413,110 @@ It’s a good idea to use the documentation comment in front of classes, methods
  <span class="p">}</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>Try to break the preconditions of the Turtle constructor below. Does the Turtle constructor behave properly if you break the preconditions that x and y are between 0 and 300. Try giving the Turtle constructor  x and y values out of these ranges. What happens? Does the method give good results? Does it give any warnings? What about the t.forward() method? Does it have any preconditions that you can break?</p>
 <p>(If the code below does not work for you, you can copy the code into  this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
+
+<div data-childcomponent="turtle-preconditions" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=turtle-preconditions data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''  data-datafile='turtleClasses.jar'    
+           data-wasm=/_static>
+import java.util.*;
+import java.awt.*;
+
+public class TurtlePreconditions
+{
+  public static void main(String[] args)
+  {
+      World world = new World(300,300);
+      // Change 0,0 to other values outside of 0-300 to break the preconditions and see what happens
+      Turtle t = new Turtle(0,0,world);
+      t.turnRight();
+      world.show(true);
+  }
+}
+</textarea>
+</div>
 <p>The Turtle constructor’s precondition is that x and y should be between 0 and the width and height of the world. If it receives values out of this range, it sets x and y to the closest legal values that it can so that the turtle appears just at the edge of the world. Similarly, the forward() method will not allow the turtle to leave the world.</p>
-<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 <p>Let’s consider the substring method in Java. This method has a strong precondition that its arguments refer to indices within the given string.</p>
-<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="substring-preconditions" class="runestone explainer ac_section alert alert-warning">
+<p>The following code breaks the preconditions of the substring method and throws an IndexOutOfBoundsException. Can you fix the code by changing the arguments for the substring method to print out the substring “lo”? What are the preconditions for the substring method?</p>
+
+<textarea data-component="activecode" id=substring-preconditions data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class SubstringPreconditions
+{
+  public static void main(String[] args)
+  {
+      String str = "hello";
+      System.out.println( str.substring(-1,10) );
+  }
+}
+====
+// Test for Lesson 5.3.2 Substring-preconditions
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+    public RunestoneTests() {
+        super("SubstringPreconditions");
+    }
+
+    @Test
+    public void testMain() throws IOException
+    {
+        String output = getMethodOutput("main");
+        String expect = "lo";
+        boolean passed = getResults(expect, output, "Expected output from main");
+        assertTrue(passed);
+    }
+}
+</textarea>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The method str.substring(beginIndex, endIndex) has the precondition that 0 &lt;= beginIndex &lt;= endIndex &lt;= str.length.</p>
 </div>
-<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-3-2" >
+            <p>5-3-2: The following method is intended to return the substring starting at index i until the end of the string. For example, getiToEnd(“012”,1) should return “12”. Which of the following is the most appropriate precondition for the method so that it does not throw an exception?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* missing precondition */</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">getiToEnd</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">str</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+
+            <li data-component="answer"  id="AP5-3-2_opt_a">/* Precondition: i >= 0 */</li><li data-component="feedback">This is true but it could still throw an exception if i is a large value.</li>
+            
+            <li data-component="answer"  id="AP5-3-2_opt_b">/* Precondition: i <= str.length() */</li><li data-component="feedback">This is true but it could still throw an exception if i is a negative value.</li>
+            
+            <li data-component="answer"  id="AP5-3-2_opt_c">/* Precondition: 0 < i < str.length() */</li><li data-component="feedback">This is true but a little too restrictive.</li>
+            
+            <li data-component="answer" data-correct id="AP5-3-2_opt_d">/* Precondition: 0 <= i < str.length() */</li><li data-component="feedback">Correct. i can refer to character 0 up to str.length().</li>
+            
+
+            </ul>
+            </div>
+            </div>
 <div class="section" id="software-validity-and-use-case-diagrams">
-<h2><span class="section-number">6.3.3. </span>Software Validity and Use-Case Diagrams<a class="headerlink" href="#software-validity-and-use-case-diagrams" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.3. </span>Software Validity and Use-Case Diagrams<a class="headerlink" href="#software-validity-and-use-case-diagrams" title="Permalink to this headline">¶</a></h2>
 <p>Determining the preconditions and postconditions help us to test our code and determine the <strong>validity</strong> of our software.  Software validity tests whether the software does what it is supposed to do before it is released. This is sometimes very important. For example, if the code is part of a satellite going to outerspace or is going to be used in an emergency condition, we want to test it thoroughly and make sure it works and is valid before it is put into use.</p>
 <p>Good software testers actually try to break the code! They try all kinds of input to see what the software will do because you never know what users will try or what conditions there will be. So, always think what the preconditions of your code are and see what happens when you break them, and then see if you can protect or warn against that.</p>
 <p>Preconditions and postconditions can also help us to design better software systems. Software designers often first draw a high-level <strong>Use-Case Diagram</strong> of a system that shows the different ways that a user might interact with a system before they build it. Here is a simple Use-Case Diagram of a restaurant system. It shows 2 actors in the system: the customer and the staff at the restaurant, and 3 use-cases in circles. A <strong>Use-case</strong> is a particular user interaction or situation in the system or software, and they often become methods in the program.</p>
 <div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="../_images/use-case-restaurant.png"><img alt="Use Case Diagram" src="../_images/use-case-restaurant.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="Unit5-Writing-Methods\Figures/use-case-restaurant.png"><img alt="Use Case Diagram" src="Unit5-Writing-Methods\Figures/use-case-restaurant.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Use-Case Diagram of a Restaurant System</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>After drawing a Use-Case Diagram, designers write down the preconditions and the postconditions for each Use-Case. Often the successful post-condition for one use-case becomes the preconditions for the next use-case. For example, for the “Order Food” and “Eat Food” Use Cases:</p>
@@ -437,20 +526,20 @@ It’s a good idea to use the documentation comment in front of classes, methods
 <li><p>Preconditions for “Eat Food”: Customer has already ordered food. Staff has delivered food.</p></li>
 <li><p>Postcondition for “Eat Food”: Customer eats the food.</p></li>
 </ul>
-<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
 <div class="runestone">
 <div data-component="shortanswer" class="journal alert alert-warning" id=payconditions  >
-<p>6-3-4: What are the preconditions and postconditions of the use-case “Pay for food”? Remember that these are often related to the other use-case conditions “order food” and “eat food”.</p>
+<p>5-3-3: What are the preconditions and postconditions of the use-case “Pay for food”? Remember that these are often related to the other use-case conditions “order food” and “eat food”.</p>
 
 </div>
 </div> <!-- end of runestone div -->
 </div>
 <div class="section" id="agile-software-development">
-<h2><span class="section-number">6.3.4. </span>Agile Software Development<a class="headerlink" href="#agile-software-development" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.4. </span>Agile Software Development<a class="headerlink" href="#agile-software-development" title="Permalink to this headline">¶</a></h2>
 <p>There are many different models for software development. The <strong>waterfall model</strong>, developed in the 1970s, is a step by step model where each phase is finished before the next phase begins. This model has recently been criticized because it is not very adaptable. The more recent <strong>Agile</strong> development model involves iterative, incremental development where  teams works in short 2-3 week <strong>sprints</strong> to completely develop, test, and release a component of the project to the customer for feedback. It is very adaptable as project requirements change because of early testing, immediate customer feedback and collaboration.</p>
 <div class="align-center figure" id="id2">
-<a class="reference internal image-reference" href="../_images/waterfallVsAgile.png"><img alt="../_images/waterfallVsAgile.png" src="../_images/waterfallVsAgile.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="Unit5-Writing-Methods\Figures/waterfallVsAgile.png"><img alt="Unit5-Writing-Methods\Figures/waterfallVsAgile.png" src="Unit5-Writing-Methods\Figures/waterfallVsAgile.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Figure 2: Waterfall vs Agile Models</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>One very popular type of agile development is called <strong>Scrum</strong>. The following short <a href="https://www.youtube.com/watch?v=TRcReyRYIMg" target="_blank">video</a> describes software development  with Scrum.</p>
@@ -459,16 +548,16 @@ It’s a good idea to use the documentation comment in front of classes, methods
         <div id="TRcReyRYIMg" class="align-left youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="TRcReyRYIMg" data-video-divid="TRcReyRYIMg" data-video-start="0" data-video-end="-1" ></div>
         <p class="runestone_caption"><span class="runestone_caption_text">Video: (TRcReyRYIMg)</span> </p>
     </div>
-    <p><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Group Exercise</p>
+    <p><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Group Exercise</p>
 <p>Try the <a href="https://www.agilesparks.com/blog/wake-up-in-the-morning-game/" target="_blank">Wake Up In the Morning Game</a> in groups to practice the iterative and incremental agile development process.</p>
 </div>
 <div class="section" id="groupwork-programming-challenge-comments-and-conditions">
-<h2><span class="section-number">6.3.5. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : Comments and Conditions<a class="headerlink" href="#groupwork-programming-challenge-comments-and-conditions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.5. </span><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Programming Challenge : Comments and Conditions<a class="headerlink" href="#groupwork-programming-challenge-comments-and-conditions" title="Permalink to this headline">¶</a></h2>
 <p>Come up with 4 steps that a user must do to purchase a product, for example a book on Java, in an online store, and list the preconditions and postconditions for each step. You could pretend to buy something online to come up with the steps. (You could use an online drawing tool like <a href="https://creately.com" target="_blank">Creately.com</a> (choose Use-Case Diagrams) to draw a Use-Case diagram for the Online Store System, but it is not required). Don’t forget to list  the preconditions and postconditions for each step.  You can type in your answer below.</p>
 
 <div class="runestone">
 <div data-component="shortanswer" class="journal alert alert-warning" id=challenge-5-3-use-case-preconditions  >
-<p>6-3-5: Write down 4 steps that a user must do to purchase a product, for example a book on Java, in an online store, and list the preconditions and postconditions for each step.</p>
+<p>5-3-4: Write down 4 steps that a user must do to purchase a product, for example a book on Java, in an online store, and list the preconditions and postconditions for each step.</p>
 
 </div>
 </div> <!-- end of runestone div -->
@@ -648,7 +737,7 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 </div>
 <div class="section" id="summary">
-<h2><span class="section-number">6.3.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Comments are ignored by the compiler and are not executed when the program is run.</p></li>
 <li><p>Three types of comments in Java include <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code>, which generates a block of comments, <code class="docutils literal notranslate"><span class="pre">//</span></code>, which generates a comment on one line, and <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">*/</span></code>, which are Javadoc comments and are used to create API documentation.</p></li>
@@ -666,8 +755,8 @@ public class RunestoneTests extends CodeTestHelper
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.2. Writing Constructors' data-toggle="tooltip">
-    <a href="topic-5-2-writing-constructors.html" aria-label="6.2. Writing Constructors">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.2. Method Parameters' data-toggle="tooltip">
+    <a href="topic-5-2-method-parameters.html" aria-label="5.2. Method Parameters">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -677,8 +766,8 @@ public class RunestoneTests extends CodeTestHelper
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.4. Accessor Methods' data-toggle="tooltip" >
-    <a href="topic-5-4-accessor-methods.html" aria-label="6.4. Accessor Methods">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - &lt;no title&gt;' data-toggle="tooltip" >
+    <a href="topic-5-4-method-return.html" aria-label="&lt;no title&gt;">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

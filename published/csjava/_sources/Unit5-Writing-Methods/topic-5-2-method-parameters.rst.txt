@@ -26,7 +26,7 @@
  
     
 Method Parameters
-------------------
+=================
 
 Consider two verses in the "Old MacDonald" song:
 
@@ -334,9 +334,9 @@ will need to be provided as shown.
 
     public static void main(String[] args) {
       
-        //call calculatePay for employee Fred, hourly rate 12.50 and hours worked 20
+        //call calculatePay for employee Fred, hourly rate 12.50 and hours worked 20.0
 
-        //call calculatePay for employee Amir, hourly rate 15 and hours worked 35
+        //call calculatePay for employee Amir, hourly rate 15.0 and hours worked 35.0
 
     }
   }
@@ -523,10 +523,10 @@ the code into the |visualizer|.
 
 
 
-Call by value
+Pass by value
 ---------------
 
-Java uses **Call by Value** when it passes arguments to methods. 
+Java uses **pass by Value** when it passes arguments to methods. 
 This means that a copy of the value in the argument is saved in the parameter variable. 
 If the parameter variable changes its value inside the method, 
 the original value outside the method is not changed.  **It is generally not a good idea to change the 
@@ -621,11 +621,9 @@ Here's another song, |The Ants Go Marching|, that has repetitive structure.
     And they all go marching down to the ground
     </pre>
 
-1. Print out the |The Ants Go Marching| song and circle the repeated parts of the song.
+1. In the active code window below, create a method or methods that takes parameters to print out a verse. The method(s) should be abstract enough to work for all 3 verses.  For the autograder, make sure you create a method called verse that takes 2 parameters. 
 
-2. In the active code window below, create a method or methods that takes parameters to print out a verse. The method(s) should be abstract enough to work for all 3 verses.  Use good commenting for your methods that describe the @param. For the autograder, make sure you create a method called verse that takes 2 parameters. 
-
-3. In the main method, create an object of the class and call the method(s) you created in the last step to print out 3 verses of the song. Can you add more verses?
+2. In the main method, call the method(s) you created in the last step to print out 3 verses of the song. Can you add more verses?
 
 .. activecode:: challenge-5-6-songb
   :language: java

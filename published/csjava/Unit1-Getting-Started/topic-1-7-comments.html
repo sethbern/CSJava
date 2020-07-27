@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6. Writing Classes &#8212; CS Java</title>
+    <title>1.7. Comments &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.1. Anatomy of a Java Class" href="topic-5-1-parts-of-class.html" />
-    <link rel="prev" title="5.10. Variable Scope" href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" />
+    <link rel="next" title="1.8. Unit 1 Summary" href="topic-1-8-summary.html" />
+    <link rel="prev" title="1.6. Casting and Ranges of Variables" href="topic-1-6-casting.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=toctree'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-1-7-comments'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.10. </span>Variable Scope" data-toggle="tooltip">
-    <a href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">1.6. </span>Casting and Ranges of Variables" data-toggle="tooltip">
+    <a href="topic-1-6-casting.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.1. </span>Anatomy of a Java Class' data-toggle="tooltip" >              
-    <a href="topic-5-1-parts-of-class.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">1.8. </span>Unit 1 Summary' data-toggle="tooltip" >              
+    <a href="topic-1-8-summary.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,90 +348,64 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="writing-classes">
-<h1><span class="section-number">6. </span>Writing Classes<a class="headerlink" href="#writing-classes" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>In this unit, you will learn to write your own classes and objects.</p>
-</div></blockquote>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-1-parts-of-class.html">6.1. Anatomy of a Java Class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#creating-a-class">6.1.1. Creating a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#instance-variables">6.1.2. Instance Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#methods">6.1.3. Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#object-oriented-design">6.1.4. Object-Oriented Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#groupwork-programming-challenge-riddle-class">6.1.5.  Programming Challenge : Riddle Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#practice">6.1.6. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-1-parts-of-class.html#summary">6.1.7. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-2-writing-constructors.html">6.2. Writing Constructors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#practice">6.2.1. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#groupwork-programming-challenge-student-class">6.2.2.  Programming Challenge : Student Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#id1">6.2.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-2-writing-constructors.html#summary">6.2.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-3-comments-conditions.html">6.3. Comments and Conditions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#comments">6.3.1. Comments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#preconditions-and-postconditions">6.3.2. Preconditions and  Postconditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#software-validity-and-use-case-diagrams">6.3.3. Software Validity and Use-Case Diagrams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#agile-software-development">6.3.4. Agile Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#groupwork-programming-challenge-comments-and-conditions">6.3.5.  Programming Challenge : Comments and Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-3-comments-conditions.html#summary">6.3.6. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-4-accessor-methods.html">6.4. Accessor Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#tostring">6.4.1. toString()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#groupwork-programming-challenge-class-pet">6.4.2.  Programming Challenge : Class Pet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#practice">6.4.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-4-accessor-methods.html#summary">6.4.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-5-mutator-methods.html">6.5. Mutator Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#groupwork-programming-challenge-class-pet-setters">6.5.1.  Programming Challenge : Class Pet Setters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#practice">6.5.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-5-mutator-methods.html#summary">6.5.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-6-writing-methods.html">6.6. Writing Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#parameters">6.6.1. Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#groupwork-programming-challenge-song-with-parameters">6.6.2.  Programming Challenge : Song with Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#practice">6.6.3. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-6-writing-methods.html#summary">6.6.4. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-7-static-vars-methods.html">6.7. Static Variables and Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-7-static-vars-methods.html#groupwork-programming-challenge-static-song-and-counter">6.7.1.  Programming Challenge : Static Song and counter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-7-static-vars-methods.html#summary">6.7.2. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-8-scope-access.html">6.8. Scope and Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#groupwork-programming-challenge-debugging">6.8.1.  Programming Challenge : Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#practice">6.8.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-8-scope-access.html#summary">6.8.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-9-this.html">6.9. this Keyword</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#groupwork-programming-challenge-bank-account">6.9.1.  Programming Challenge : Bank Account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#practice">6.9.2. Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-9-this.html#summary">6.9.3. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-10-social-impacts.html">6.10. Social Impacts of CS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-10-social-impacts.html#groupwork-pogil-groupwork-impacts-of-cs">6.10.1.  POGIL Groupwork: Impacts of CS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-10-social-impacts.html#summary">6.10.2. Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="topic-5-11-summary.html">6.11. Unit 5 Summary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#concept-summary">6.11.1. Concept Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#java-keyword-summary">6.11.2. Java Keyword Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic-5-11-summary.html#vocabulary-practice">6.11.3. Vocabulary Practice</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Exercises.html">6.12. Exercises</a></li>
-</ul>
+  <div class="section" id="comments">
+<h1><span class="section-number">1.7. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h1>
+<p>Adding comments to your code helps to make it more readable and maintainable.
+In the commercial world, software development is usually a team effort where many
+programmers will use your code and maintain it for years. Commenting is essential in this kind of
+environment and a good habit to develop. Comments will also help you to remember what you
+were doing when you look back to your code a month or a year from now.</p>
+<p>There are 3 types of comments in Java:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> Single line comment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/*</span></code> Multiline comment <code class="docutils literal notranslate"><span class="pre">*/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/**</span></code> Documentation comment <code class="docutils literal notranslate"><span class="pre">*/</span></code></p></li>
+</ol>
+<p>The special characters <code class="docutils literal notranslate"><span class="pre">//</span></code> are used to mark the rest of the line as a comment in many programming languages.  If the comment is going to be multiple lines, we use <code class="docutils literal notranslate"><span class="pre">/*</span></code> to start the comment and <code class="docutils literal notranslate"><span class="pre">*/</span></code> to end the comment.</p>
+<p>There is also a special version of the multi-line comment, <code class="docutils literal notranslate"><span class="pre">/**</span></code>  <code class="docutils literal notranslate"><span class="pre">*/</span></code>, called the documentation comment. Java has a cool tool called <a href="https://www.tutorialspoint.com/java/java_documentation.htm" target="_blank">javadoc</a> that comes with the <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java JDK</a> that will pull out all of these comments to make documentation of a class as a web page.  This tool generates the official Java documentation too, for example for the <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank">String class</a>.
+It’s a good idea to use the documentation comment in front of classes, methods, and instance variables in case you want ot use this tool.</p>
+<p><a href="#id1"><span class="problematic" id="id2">|Exercise|</span></a> <strong>Check your understanding</strong></p>
+
+<div class="runestone">
+<ul data-component="dragndrop" id="comments" >
+    <span data-component="question">1-7-1: Drag the definition from the left and drop it on the correct symbols on the right.  Click the "Check Me" button to see if you are correct.</span>
+	<span data-component=feedback>Review the section above.</span>
+
+    <li data-component="draggable" id="comments_drag1">single-line comment</li>
+    <li data-component="dropzone" for="comments_drag1">//</li>
+
+    <li data-component="draggable" id="comments_drag2">multi-line comment</li>
+    <li data-component="dropzone" for="comments_drag2">/* */</li>
+
+    <li data-component="draggable" id="comments_drag3">Java documentation comment</li>
+    <li data-component="dropzone" for="comments_drag3">/** */</li>
+</ul></div><p>The compiler will skip over comments, and they don’t affect how your program runs.
+They are for you  and other programmers working with you.  Here are some examples of good commenting:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* MyClass.java</span>
+<span class="cm">* @author My Name</span>
+<span class="cm">* @since Date</span>
+<span class="cm">* This class keeps track of the max score.</span>
+<span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nf">MyClass</span><span class="p">()</span>
+<span class="p">{</span>
+
+   <span class="c1">// The shippingCost() method prints  shipping cost based on the weight</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shippingCost</span><span class="p">(</span><span class="kt">int</span> <span class="n">weight</span><span class="p">)</span> <span class="p">{</span>  <span class="p">.....</span> <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
 </div>
+<p>There are some special tags that you can use in Java documentation.
+These are not required but many programmers use them. Here are some common tags:</p>
+<ul class="simple">
+<li><p>&#64;author  Author of the program</p></li>
+<li><p>&#64;since   Date released</p></li>
+<li><p>&#64;version Version of program</p></li>
+<li><p>&#64;param   Parameter of a method</p></li>
+<li><p>&#64;return  Return value for a method</p></li>
+</ul>
+<p>Note that most IDEs will tend to show comments formatted in italics – to make them easier to spot.</p>
 </div>
 
 
@@ -441,8 +415,8 @@
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.10. Variable Scope' data-toggle="tooltip">
-    <a href="../Unit5-Writing-Methods/topic-5-5-variable-scope.html" aria-label="5.10. Variable Scope">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 1.6. Casting and Ranges of Variables' data-toggle="tooltip">
+    <a href="topic-1-6-casting.html" aria-label="1.6. Casting and Ranges of Variables">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -452,8 +426,8 @@
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.1. Anatomy of a Java Class' data-toggle="tooltip" >
-    <a href="topic-5-1-parts-of-class.html" aria-label="6.1. Anatomy of a Java Class">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 1.8. Unit 1 Summary' data-toggle="tooltip" >
+    <a href="topic-1-8-summary.html" aria-label="1.8. Unit 1 Summary">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>
