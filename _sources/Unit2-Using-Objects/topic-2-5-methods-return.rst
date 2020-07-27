@@ -36,8 +36,9 @@
 Calling Methods that Return Values
 ===================================
 
+Formal parameters allow you to pass a value into a method.  A method can also pass a value out when it is finished.
 If a method is a **void method**, 
-like most of the methods we have seen so far, that means that it does not return anything when called. 
+like most of the methods we have seen so far, it does not return a value when called. 
 But some methods **return** a value when called. 
 
 .. |javadoc (documentation) file| raw:: html
