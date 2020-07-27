@@ -590,40 +590,17 @@ is passed in and saved in the parameter variable. You will explore
 this more in the following unit.
 
 
-|Groupwork| Programming Challenge : Song with Parameters
----------------------------------------------------------
+|Groupwork| Programming Challenge : Calculating Shipping Costs
+---------------------------------------------------------------
 
-.. |The Ants Go Marching| raw:: html
+The ShippingCostCalculator class below contains redundant code for calculating and printing the shipping cost based on the
+weight of an item.  While the if-else statements are not identical due to the different variables names (weight1, weight2, weight3),
+each if-else statement tests the weight and assigns the cost in the same way.
 
-   <a href="https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching" target="_blank">The Ants Go Marching</a>
+1. Add a new method called "calculateShipping" to reduce redundancy in the program. The method should only need one formal parameter for the item weight.  
+The method should declare a local variable for the shipping cost and calculate the cost based on the weight.  The method should print the resulting cost.
 
-Here's another song, |The Ants Go Marching|, that has repetitive structure. 
-
-.. raw:: html
-  
-   <pre>
-    The ants go marching one by one, hurrah, hurrah
-    The ants go marching one by one, hurrah, hurrah
-    The ants go marching one by one
-    The little one stops to suck his thumb
-    And they all go marching down to the ground
-
-    The ants go marching two by two, hurrah, hurrah
-    The ants go marching two by two, hurrah, hurrah
-    The ants go marching two by two
-    The little one stops to tie his shoe
-    And they all go marching down to the ground
-
-    The ants go marching three by three, hurrah, hurrah
-    The ants go marching three by three, hurrah, hurrah
-    The ants go marching three by three
-    The little one stops to climb a tree
-    And they all go marching down to the ground
-    </pre>
-
-1. In the active code window below, create a method or methods that takes parameters to print out a verse. The method(s) should be abstract enough to work for all 3 verses.  For the autograder, make sure you create a method called verse that takes 2 parameters. 
-
-2. In the main method, call the method(s) you created in the last step to print out 3 verses of the song. Can you add more verses?
+2. In the main method, replace the existing code with 3 calls to "calculateShipping", passing the appropriate argument.
 
 .. activecode:: challenge-5-6-songb
   :language: java
@@ -631,19 +608,51 @@ Here's another song, |The Ants Go Marching|, that has repetitive structure.
 
   Create method(s) with parameters to print out verses of the song The Ants Go Marching. https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching
   ~~~~
-  public class Song 
-  { 
-    // Create at least 1 method called verse that takes 2 parameters
-    // that can be used to print out the verses of the song The Ants Go Marching
+  public class ShippingCostCalculator {
+  
+  
+  public static void main(String[] args) {
     
-    
-    public static void main(String args[]) 
-    {
-      // Create a Song object and call its method(s) to print out 
-      // the verses of The Ants Go Marching
-      // There should be atleast 1 method called verse that takes 2 arguments.
-    
-    
+     double weight1, weight2, weight3;
+     double cost1, cost2, cost3;
+
+     weight1 = 22.0;  
+     weight2 = 10.0;
+     weight3 = 12.0;
+     //calculate cost for item#1
+     
+     if (weight1 < 15.0)
+     {
+         cost1 = 9.95;
+     }
+     else 
+     {
+       cost1 = 12.95;
+     }
+     System.out.println(cost1);
+
+     //calculate cost for item#2
+     if (weight2 < 15.0)
+     {
+         cost2 = 9.95;
+     }
+     else 
+     {
+       cost2 = 12.95;
+     }
+     System.out.println(cost2);
+
+     //calculate cost for item#3
+     if (weight3 < 15.0)
+     {
+         cost3 = 9.95;
+     }
+     else 
+     {
+       cost3 = 12.95;
+     }
+     System.out.println(cost3);
+
     }
   }
   ====
@@ -653,36 +662,37 @@ Here's another song, |The Ants Go Marching|, that has repetitive structure.
     
     public class RunestoneTests extends CodeTestHelper
     {
-      @Test
-      public void checkCodeContains1(){
-        //check verse 1
-        boolean passed = checkCodeContains("verse method call with 2 arguments for verse 1", "verse(\"one\", \"suck his thumb\"");
-        assertTrue(passed);
-      }
 
+    public RunestoneTests() {
+      super("ShippingCostCalculator");
+    }
       @Test
-      public void checkCodeContains2(){
-         //check verse 2
-          boolean passed = checkCodeContains("verse method call with 2 arguments for verse 2", "verse(\"two\", \"tie his shoe\"");
+      public void checkCodeContains3(){
+        String code = getCode();
+        int num = countOccurences(code, "public static void calculateShipping(");
+        boolean passed = num = 1;
+        passed = getResults("1 method declaration", num + " method declaration", "Declare the static calculateShipping method", passed);
         assertTrue(passed);
       }
 
       @Test
       public void checkCodeContains3(){
-         //check verse 3
-          boolean passed = checkCodeContains("verse method call with 2 arguments for verse 3", "verse(\"three\", \"climb a tree\"");
-        assertTrue(passed);  
+        String code = getCode();
+        int num = countOccurences(code, "calculateShipping(");
+        boolean passed = num >=3;
+        passed = getResults("3 method calls", num + " method calls", "Call the calculateShipping method 3 times", passed);
+        assertTrue(passed);
       }
 
-          @Test
-        public void testMain() throws IOException
-        {
+      @Test
+      public void testMain() throws IOException
+      {
             String output = getMethodOutput("main");
-            String expect = "The ants go marching three by three\nThe little one stops to climb a tree";
+            String expect = "12.95\n9.95\n9.95";
             boolean passed = output.contains(expect);
-            getResults(expect, output, "Expected output from main contains 3 verses");
+            getResults(expect, output, "Expected output from main");
             assertTrue(passed);
-        }
+      }
     }
 
 
