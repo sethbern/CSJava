@@ -398,7 +398,9 @@ print statements.
 When the method is called,
 you must provide values for the animal and noise, called <strong>actual arguments</strong> or <strong>actual parameters</strong>, that are
 copied into the formal parameter variables.</p>
-<p>Figure 1 shows how the actual argument values in the method call <code class="docutils literal notranslate"><span class="pre">verse(&quot;cow&quot;,&quot;moo&quot;);</span></code> are copied
+<p>Figure 1 shows the new <strong>verse</strong> method with two formal parameters for <strong>animal</strong> and <strong>noise</strong>. The print statements
+in the method body use the parameters to customize the output.  The figure
+depicts how actual argument values in the method call <code class="docutils literal notranslate"><span class="pre">verse(&quot;cow&quot;,&quot;moo&quot;);</span></code> are copied
 into the formal parameter variables.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../_images/argumentpassingcow.png"><img alt="Actual Argument Values Passed Into Formal Parameters" src="../_images/argumentpassingcow.png" style="width: 500px;" /></a>
@@ -462,95 +464,15 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
-<p>When a method is called, the right method definition is found by
-checking the <strong>method signature</strong> or <strong>header</strong> at the top of the method
-definition to match the method name, the number of arguments, the data
-types for the arguments and the return type.</p>
-<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam1" >
-            <p>5-2-1: Based on the method header shown below, which method call is correct?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-
-            <li data-component="answer"  id="mparam1_opt_a">mystery("9");</li><li data-component="feedback">The type of the actual argument "9" is String, but the formal parameter i is an int.</li>
-            
-            <li data-component="answer" data-correct id="mparam1_opt_b">mystery(9);</li><li data-component="feedback">The type of the actual argument 9 and the formal parameter i are both int.</li>
-            
-            <li data-component="answer"  id="mparam1_opt_c">mystery(5, 7);</li><li data-component="feedback">The method expects one int to be passed as an actual argument, not 2.</li>
-            
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam2" >
-            <p>5-2-2: Based on the method header shown below, which method call is correct?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-
-            <li data-component="answer" data-correct id="mparam2_opt_a">mystery("abc", 9);</li><li data-component="feedback">The actual argument and formal parameter types match.</li>
-            
-            <li data-component="answer"  id="mparam2_opt_b">mystery("xyz", "9");</li><li data-component="feedback">The second parameter i has type int, while the second argument "9" is a string.</li>
-            
-            <li data-component="answer"  id="mparam2_opt_c">mystery(9, 5);</li><li data-component="feedback">The method expects a string and an int as actual arguments, not two ints.</li>
-            
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam3" >
-            <p>5-2-3: Based on the method header shown below, which method call is correct?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="p">,</span> <span class="n">String</span> <span class="n">s</span><span class="p">)</span>
-</pre></div>
-</div>
-
-            <li data-component="answer"  id="mparam3_opt_a">mystery("true", "hello");</li><li data-component="feedback">"true" is a String, not a boolean.</li>
-            
-            <li data-component="answer"  id="mparam3_opt_b">mystery("hello", false);</li><li data-component="feedback">The first argument should be a boolean, and the second argument should be a String.</li>
-            
-            <li data-component="answer" data-correct id="mparam3_opt_c">mystery(true, "hello");</li><li data-component="feedback">The actual argument and formal parameter types match.</li>
-            
-
-            </ul>
-            </div>
-            <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-<div class="align-center figure" id="id2">
-<img alt="../_images/mysteryoutput.png" src="../_images/mysteryoutput.png" />
-<p class="caption"><span class="caption-text">Figure 2: Method Overloading</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="methodargsparson"  data-adaptive="true"    data-noindent="true"   >
-        <span data-question>5-2-4: Figure 2 above shows a class with 3 methods named mystery. While the 3 methods have the same name,
-notice that either the type of the formal parameter or the number of formal parameters is different.
-The print output shown in the upper right section of
-Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
-Drag the needed blocks from the left area below into the correct order  in the right area
-to produce the print output shown in Figure 2:</span>mystery( 5 );
----
-mystery( "5" ); #paired
----
-mystery( "hello");
----
-mystery( hello);  #paired
----
-mystery( 9, "bye");
----
-mystery( "bye", 9); #paired
-        </pre>
-        </div>
-    <div class="section" id="procedural-abstraction">
-<h2><span class="section-number">5.2.1. </span>Procedural Abstraction<a class="headerlink" href="#procedural-abstraction" title="Permalink to this headline">¶</a></h2>
-<p><strong>Procedural abstraction</strong> is the process of removing code duplication by introducing a new method.</p>
+<p>A method allows us to write blocks of code that perform a general task,
+which can be generalised by having formal parameter variables.  We define a method to give the block of code a reusable name which can be called.
+The parameters allow the code to adapt to a variety of different situations,
+depending on the values passed into the method.</p>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Check your understanding</strong></p>
 
 <div data-childcomponent="RedundantCalculation" class="runestone explainer ac_section alert alert-warning">
-<p>Run the code below, which calculates and prints the weekly pay for two employees.
-Which lines of code are duplicated?</p>
+<p>The code below calculates and prints the weekly pay for two employees.
+Notice that some lines of code are similar but differ by value, while other lines of code are identical.</p>
 
 <textarea data-component="activecode" id=RedundantCalculation data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -636,13 +558,13 @@ parameters to calculate and print the weekly pay.</p>
 <p>The figure below shows the signature and body for the new method <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code>.  The method signature
 contains  three formal parameters for employee, hourlyRate, and hoursWorked.  When the method is called, actual values
 will need to be provided as shown.</p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../_images/calculatePay.png"><img alt="Parameter passing for the calculatePay method" src="../_images/calculatePay.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Figure 3: Removing redundant code with a new method called calculatePay</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 3: Removing redundant code with a new method called calculatePay</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 
 <div data-childcomponent="CalculatePayMethod" class="runestone explainer ac_section alert alert-warning">
-<p>Update the code below to add the new method called calculatePay.  Update the main method to call the calculatePay
+<p>Update the code below to add the new method calculatePay shown in Figure 3.  Update the main method to call the calculatePay
 method twice, once for each employee.
 Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to confirm that your main method make the two calls to calculatePay, with the correct values passed into the method.</p>
 
@@ -708,7 +630,192 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
+<p>When a method is called, the right method definition is found by
+checking the <strong>method signature</strong> or <strong>header</strong> at the top of the method
+definition to match the method name, the number of arguments, the data
+types for the arguments and the return type.</p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam1" >
+            <p>5-2-1: Based on the method header shown below, which method call is correct?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
 </div>
+
+            <li data-component="answer"  id="mparam1_opt_a">mystery("9");</li><li data-component="feedback">The type of the actual argument "9" is String, but the formal parameter i is an int.</li>
+            
+            <li data-component="answer" data-correct id="mparam1_opt_b">mystery(9);</li><li data-component="feedback">The type of the actual argument 9 and the formal parameter i are both int.</li>
+            
+            <li data-component="answer"  id="mparam1_opt_c">mystery(5, 7);</li><li data-component="feedback">The method expects one int to be passed as an actual argument, not 2.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam2" >
+            <p>5-2-2: Based on the method header shown below, which method call is correct?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="mparam2_opt_a">mystery("abc", 9);</li><li data-component="feedback">The actual argument and formal parameter types match.</li>
+            
+            <li data-component="answer"  id="mparam2_opt_b">mystery("xyz", "9");</li><li data-component="feedback">The second parameter i has type int, while the second argument "9" is a string.</li>
+            
+            <li data-component="answer"  id="mparam2_opt_c">mystery(9, 5);</li><li data-component="feedback">The method expects a string and an int as actual arguments, not two ints.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mparam3" >
+            <p>5-2-3: Based on the method header shown below, which method call is correct?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="p">,</span> <span class="n">String</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="mparam3_opt_a">mystery("true", "hello");</li><li data-component="feedback">"true" is a String, not a boolean.</li>
+            
+            <li data-component="answer"  id="mparam3_opt_b">mystery("hello", false);</li><li data-component="feedback">The first argument should be a boolean, and the second argument should be a String.</li>
+            
+            <li data-component="answer" data-correct id="mparam3_opt_c">mystery(true, "hello");</li><li data-component="feedback">The actual argument and formal parameter types match.</li>
+            
+
+            </ul>
+            </div>
+            <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+<div class="align-center figure" id="id3">
+<img alt="../_images/mysteryoutput.png" src="../_images/mysteryoutput.png" />
+<p class="caption"><span class="caption-text">Figure 2: Method Overloading</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+
+        <div class="runestone" style="max-width: none;">
+        <pre data-component="parsons" id="methodargsparson"  data-adaptive="true"    data-noindent="true"   >
+        <span data-question>5-2-4: Figure 2 above shows a class with 3 methods named mystery. While the 3 methods have the same name,
+notice that either the type of the formal parameter or the number of formal parameters is different.
+The print output shown in the upper right section of
+Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
+Drag the needed blocks from the left area below into the correct order  in the right area
+to produce the print output shown in Figure 2:</span>mystery( 5 );
+---
+mystery( "5" ); #paired
+---
+mystery( "hello");
+---
+mystery( hello);  #paired
+---
+mystery( 9, "bye");
+---
+mystery( "bye", 9); #paired
+        </pre>
+        </div>
+    <div class="section" id="variable-scope">
+<h2><span class="section-number">5.2.1. </span>Variable Scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">¶</a></h2>
+<p>A variable may be available for use in some lines of code, but not others.
+The <strong>scope</strong> of a variable is the region of the program that is it visible, which means it is accessible by name
+and can be used in the code.</p>
+<p>A variable declared inside a method is called a <strong>local variable</strong>.
+The scope of a local variable is the method body
+in which it is declared, which means it is visible and can be used within the method but not outside of the method.
+You can’t use a variable before it is declared, so in fact the scope begins when you declare the variable
+and continues until the last line of code in the method.    The local variable’s memory location is also only available while
+the method is executing.  When the method completes, the memory location is released. If you called
+the method again, the old value would not be available.</p>
+<p>Consider the following methods:</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
+    <span class="n">printInCentimeters</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printInCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">,</span> <span class="kt">double</span> <span class="n">centimeters</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">inches</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">centimeters</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">inchesToCentimeters</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">inchestToCentimeters</span></code> method defines a local
+variable <code class="docutils literal notranslate"><span class="pre">c</span></code>.  The variable is only available for use in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method, the other methods can’t see or use
+the variable.</p>
+<p>A formal parameter is like a local variable in that its scope is the body of the corresponding method.
+The <code class="docutils literal notranslate"><span class="pre">inches</span></code>
+and <code class="docutils literal notranslate"><span class="pre">centimeters</span></code> formal parameter variables are only visible in the <code class="docutils literal notranslate"><span class="pre">printInCentimeters</span></code> method body.
+Similarly,
+the <code class="docutils literal notranslate"><span class="pre">i</span></code> formal parameter variable is only visible in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method body.</p>
+<p>While a local variable has its value initialized within the method body, the formal parameter variable has its value
+initialized by the method call.  You must explicitly assign a local variable a value before you can use it
+in a calculation.  The compiler will warn you if you try to use a local variable before it has been assigned a value.</p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mscope1" >
+            <p>5-2-5: Based on the class shown below, variable age can be used in which method?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Visibility</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print1</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;num is &quot;</span> <span class="o">+</span> <span class="n">num</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+      <span class="n">print1</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="mscope1_opt_a">print1;</li><li data-component="feedback">Method print1 accesses num, which is a formal parameter with method level scope.</li>
+            
+            <li data-component="answer" data-correct id="mscope1_opt_b">main;</li><li data-component="feedback">Method main can accesses the local variable age, since it is declared in the main method.</li>
+            
+            <li data-component="answer"  id="mscope1_opt_c">print1 and main;</li><li data-component="feedback">Variable age is declared in the main method, so it can't be accessed in the print1 method.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mscope2" >
+            <p>5-2-6: Based on the class shown below, which method has a scope error (tries to access a variable that is declared as local or formal parameter)?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Visibility</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print1</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;num is &quot;</span> <span class="o">+</span> <span class="n">num</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print2</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;age is &quot;</span> <span class="o">+</span> <span class="n">age</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+      <span class="n">print1</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+      <span class="n">print2</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="mscope2_opt_a">print1;</li><li data-component="feedback">Method print1 accesses num, which is a formal parameter with method level scope.</li>
+            
+            <li data-component="answer" data-correct id="mscope2_opt_b">print2;</li><li data-component="feedback">Method print2 accesses age, which is not accessible since it is declared in the main method.</li>
+            
+            <li data-component="answer"  id="mscope2_opt_c">main;</li><li data-component="feedback">Method main accesses age, which is a local variable with method level scope..</li>
+            
+
+            </ul>
+            </div>
+            </div>
 <div class="section" id="method-tracing">
 <h2><span class="section-number">5.2.2. </span>Method Tracing<a class="headerlink" href="#method-tracing" title="Permalink to this headline">¶</a></h2>
 <p>Any method can call another method.  See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
@@ -717,7 +824,7 @@ the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-1" >
-            <p>5-2-5: Consider the following methods:</p>
+            <p>5-2-7: Consider the following methods:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">i</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
@@ -753,7 +860,7 @@ the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP2-4-2" >
-            <p>5-2-6: Consider the following methods.</p>
+            <p>5-2-8: Consider the following methods.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">splitPizza</span><span class="p">(</span><span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">slicesPerPerson</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="n">numOfPeople</span><span class="p">;</span>
@@ -786,7 +893,7 @@ order to call the <code class="docutils literal notranslate"><span class="pre">p
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="traceMethods5" >
-            <p>5-2-7: What does the following code print out?</p>
+            <p>5-2-9: What does the following code print out?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MethodTrace</span>
 <span class="p">{</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">square</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
@@ -827,6 +934,7 @@ This means that a copy of the value in the argument is saved in the parameter va
 If the parameter variable changes its value inside the method,
 the original value outside the method is not changed.  <strong>It is generally not a good idea to change the
 value of a parameter inside a method, however it is possible as the example below shows.</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Check your understanding</strong></p>
 
 <div data-childcomponent="changeparamvalue" class="runestone explainer ac_section alert alert-warning">
 <p>Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to watch how the square method
@@ -993,7 +1101,7 @@ import static org.junit.Assert.*;
 <div class="section" id="summary">
 <h2><span class="section-number">5.2.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
+<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
 <li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
 <li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value.</p></li>
 <li><p>New values assigned to the formal parameter within the method have no effect on the corresponding actual parameter.</p></li>

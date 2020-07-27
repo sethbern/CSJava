@@ -59,7 +59,9 @@ When the method is called,
 you must provide values for the animal and noise, called **actual arguments** or **actual parameters**, that are 
 copied into the formal parameter variables. 
 
-Figure 1 shows how the actual argument values in the method call ``verse("cow","moo");`` are copied 
+Figure 1 shows the new **verse** method with two formal parameters for **animal** and **noise**. The print statements
+in the method body use the parameters to customize the output.  The figure
+depicts how actual argument values in the method call ``verse("cow","moo");`` are copied 
 into the formal parameter variables.
 
 .. figure:: Figures/argumentpassingcow.png
@@ -69,7 +71,6 @@ into the formal parameter variables.
   :figclass: align-center
   
   Figure 1: Method Call Passes Actual Argument Values Into Formal Parameter Variables
-
 
 .. activecode:: SongFarm
   :language: java
@@ -127,112 +128,20 @@ into the formal parameter variables.
     }
   }
 
-When a method is called, the right method definition is found by 
-checking the **method signature** or **header** at the top of the method 
-definition to match the method name, the number of arguments, the data 
-types for the arguments and the return type. 
+A method allows us to write blocks of code that perform a general task, 
+which can be generalised by having formal parameter variables.  We define a method to give the block of code a reusable name which can be called.
+The parameters allow the code to adapt to a variety of different situations, 
+depending on the values passed into the method.
 
-
-|Exercise| **Check your understanding**
-
-.. mchoice:: mparam1
-   :practice: T
-   :answer_a: mystery("9");
-   :answer_b: mystery(9);
-   :answer_c: mystery(5, 7);
-   :correct: b
-   :feedback_a: The type of the actual argument "9" is String, but the formal parameter i is an int.
-   :feedback_b: The type of the actual argument 9 and the formal parameter i are both int.
-   :feedback_c: The method expects one int to be passed as an actual argument, not 2.  
-   
-   Based on the method header shown below, which method call is correct?  
-   
-   .. code-block:: java
-
-     public static void mystery(int i)
-
-
-.. mchoice:: mparam2
-   :practice: T
-   :answer_a: mystery("abc", 9);
-   :answer_b: mystery("xyz", "9");
-   :answer_c: mystery(9, 5);
-   :correct: a
-   :feedback_a: The actual argument and formal parameter types match.
-   :feedback_b: The second parameter i has type int, while the second argument "9" is a string.
-   :feedback_c: The method expects a string and an int as actual arguments, not two ints. 
-   
-   Based on the method header shown below, which method call is correct?  
-   
-   .. code-block:: java
-
-     public static void mystery(String s, int i)
-
-.. mchoice:: mparam3
-   :practice: T
-   :answer_a: mystery("true", "hello");
-   :answer_b: mystery("hello", false);
-   :answer_c: mystery(true, "hello");
-   :correct: c
-   :feedback_a: "true" is a String, not a boolean.
-   :feedback_b: The first argument should be a boolean, and the second argument should be a String.
-   :feedback_c: The actual argument and formal parameter types match. 
-   
-   Based on the method header shown below, which method call is correct?  
-   
-   .. code-block:: java
-
-     public static void mystery(boolean b, String s)
-
-
-|Exercise| **Check your understanding**
-   
-.. figure:: Figures/mysteryoutput.png
-  :align: center
-  :figclass: align-center
-  
-  Figure 2: Method Overloading
-
-
-.. parsonsprob:: methodargsparson
-   :adaptive:
-   :noindent:
-
-   Figure 2 above shows a class with 3 methods named mystery. While the 3 methods have the same name,
-   notice that either the type of the formal parameter or the number of formal parameters is different. 
-   The print output shown in the upper right section of 
-   Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
-   Drag the needed blocks from the left area below into the correct order  in the right area
-   to produce the print output shown in Figure 2: 
-   -----
-   mystery( 5 );
-   =====
-   mystery( "5" ); #paired
-   =====
-   mystery( "hello");
-   =====
-   mystery( hello);  #paired
-   =====
-   mystery( 9, "bye");
-   =====
-   mystery( "bye", 9); #paired
-
-
-
-
-
-Procedural Abstraction
-------------------------
-
-**Procedural abstraction** is the process of removing code duplication by introducing a new method.
+|CodingEx| **Check your understanding**
 
 .. activecode:: RedundantCalculation
   :language: java
   :autograde: unittest
   :practice: T
     
-  Run the code below, which calculates and prints the weekly pay for two employees.
-  Which lines of code are duplicated?
+  The code below calculates and prints the weekly pay for two employees.
+  Notice that some lines of code are similar but differ by value, while other lines of code are identical.
   ~~~~
   public class RedundantCalculation
   { 
@@ -320,7 +229,7 @@ will need to be provided as shown.
   :autograde: unittest
   :practice: T
     
-  Update the code below to add the new method called calculatePay.  Update the main method to call the calculatePay
+  Update the code below to add the new method calculatePay shown in Figure 3.  Update the main method to call the calculatePay
   method twice, once for each employee.  
   Use the CodeLens button or copy the code into the |visualizer| to confirm that your main method make the two calls to calculatePay, with the correct values passed into the method.
 
@@ -381,6 +290,211 @@ will need to be provided as shown.
            assertTrue(passed);
         }
   }
+
+
+When a method is called, the right method definition is found by 
+checking the **method signature** or **header** at the top of the method 
+definition to match the method name, the number of arguments, the data 
+types for the arguments and the return type. 
+
+|Exercise| **Check your understanding**
+
+.. mchoice:: mparam1
+   :practice: T
+   :answer_a: mystery("9");
+   :answer_b: mystery(9);
+   :answer_c: mystery(5, 7);
+   :correct: b
+   :feedback_a: The type of the actual argument "9" is String, but the formal parameter i is an int.
+   :feedback_b: The type of the actual argument 9 and the formal parameter i are both int.
+   :feedback_c: The method expects one int to be passed as an actual argument, not 2.  
+   
+   Based on the method header shown below, which method call is correct?  
+   
+   .. code-block:: java
+
+     public static void mystery(int i)
+
+
+.. mchoice:: mparam2
+   :practice: T
+   :answer_a: mystery("abc", 9);
+   :answer_b: mystery("xyz", "9");
+   :answer_c: mystery(9, 5);
+   :correct: a
+   :feedback_a: The actual argument and formal parameter types match.
+   :feedback_b: The second parameter i has type int, while the second argument "9" is a string.
+   :feedback_c: The method expects a string and an int as actual arguments, not two ints. 
+   
+   Based on the method header shown below, which method call is correct?  
+   
+   .. code-block:: java
+
+     public static void mystery(String s, int i)
+
+.. mchoice:: mparam3
+   :practice: T
+   :answer_a: mystery("true", "hello");
+   :answer_b: mystery("hello", false);
+   :answer_c: mystery(true, "hello");
+   :correct: c
+   :feedback_a: "true" is a String, not a boolean.
+   :feedback_b: The first argument should be a boolean, and the second argument should be a String.
+   :feedback_c: The actual argument and formal parameter types match. 
+   
+   Based on the method header shown below, which method call is correct?  
+   
+   .. code-block:: java
+
+     public static void mystery(boolean b, String s)
+
+
+|Exercise| **Check your understanding**
+   
+.. figure:: Figures/mysteryoutput.png
+  :align: center
+  :figclass: align-center
+  
+  Figure 2: Method Overloading
+
+
+.. parsonsprob:: methodargsparson
+   :adaptive:
+   :noindent:
+
+   Figure 2 above shows a class with 3 methods named mystery. While the 3 methods have the same name,
+   notice that either the type of the formal parameter or the number of formal parameters is different. 
+   The print output shown in the upper right section of 
+   Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
+   Drag the needed blocks from the left area below into the correct order  in the right area
+   to produce the print output shown in Figure 2: 
+   -----
+   mystery( 5 );
+   =====
+   mystery( "5" ); #paired
+   =====
+   mystery( "hello");
+   =====
+   mystery( hello);  #paired
+   =====
+   mystery( 9, "bye");
+   =====
+   mystery( "bye", 9); #paired
+
+
+
+Variable Scope
+---------------
+
+A variable may be available for use in some lines of code, but not others. 
+The **scope** of a variable is the region of the program that is it visible, which means it is accessible by name
+and can be used in the code.
+
+A variable declared inside a method is called a **local variable**.  
+The scope of a local variable is the method body
+in which it is declared, which means it is visible and can be used within the method but not outside of the method. 
+You can't use a variable before it is declared, so in fact the scope begins when you declare the variable
+and continues until the last line of code in the method.    The local variable's memory location is also only available while 
+the method is executing.  When the method completes, the memory location is released. If you called 
+the method again, the old value would not be available.  
+
+Consider the following methods:
+    
+    .. code-block:: java
+
+        public static void inchesToCentimeters(double i)
+        {
+            double c = i * 2.54;
+            printInCentimeters(i, c);
+        }
+
+        public static void printInCentimeters(double inches, double centimeters)
+        {
+            System.out.print(inches + "-->" + centimeters);
+        }
+
+        public static void main(String[] args)  
+        {
+            inchesToCentimeters(10);
+        }
+
+
+The ``inchestToCentimeters`` method defines a local 
+variable ``c``.  The variable is only available for use in the ``inchesToCentimeters`` method, the other methods can't see or use 
+the variable.
+
+A formal parameter is like a local variable in that its scope is the body of the corresponding method.   
+The ``inches``
+and ``centimeters`` formal parameter variables are only visible in the ``printInCentimeters`` method body. 
+Similarly, 
+the ``i`` formal parameter variable is only visible in the ``inchesToCentimeters`` method body. 
+
+While a local variable has its value initialized within the method body, the formal parameter variable has its value
+initialized by the method call.  You must explicitly assign a local variable a value before you can use it 
+in a calculation.  The compiler will warn you if you try to use a local variable before it has been assigned a value.
+
+|Exercise| **Check your understanding**
+
+.. mchoice:: mscope1
+   :practice: T
+   :answer_a: print1;
+   :answer_b: main;
+   :answer_c: print1 and main;
+   :correct: b
+   :feedback_a: Method print1 accesses num, which is a formal parameter with method level scope.
+   :feedback_b: Method main can accesses the local variable age, since it is declared in the main method.
+   :feedback_c: Variable age is declared in the main method, so it can't be accessed in the print1 method.
+   
+   Based on the class shown below, variable age can be used in which method?  
+   
+   .. code-block:: java
+
+      public class Visibility {
+
+        public static void print1(int num) {
+          System.out.println("num is " + num);   
+        }
+
+        public static void main(String[] args) {
+            int age = 20;
+            print1(age);
+        }
+      }
+
+
+
+.. mchoice:: mscope2
+   :practice: T
+   :answer_a: print1;
+   :answer_b: print2;
+   :answer_c: main;
+   :correct: b
+   :feedback_a: Method print1 accesses num, which is a formal parameter with method level scope.
+   :feedback_b: Method print2 accesses age, which is not accessible since it is declared in the main method.
+   :feedback_c: Method main accesses age, which is a local variable with method level scope..
+   
+   Based on the class shown below, which method has a scope error (tries to access a variable that is declared as local or formal parameter)?  
+   
+   .. code-block:: java
+
+      public class Visibility {
+
+        public static void print1(int num) {
+          System.out.println("num is " + num);   
+        }
+
+        public static void print2() {
+          System.out.println("age is " + age);   
+        }
+
+        public static void main(String[] args) {
+            int age = 20;
+            print1(age);
+            print2();
+        }
+      }
+
+
 
 
 Method Tracing
@@ -532,7 +646,7 @@ If the parameter variable changes its value inside the method,
 the original value outside the method is not changed.  **It is generally not a good idea to change the 
 value of a parameter inside a method, however it is possible as the example below shows.**
 
-
+|CodingEx| **Check your understanding**
 
 .. activecode:: changeparamvalue
   :language: java
@@ -699,7 +813,7 @@ The method should declare a local variable for the shipping cost and calculate t
 Summary
 -------
 
-- When you call a method, you can give or pass in **arguments** or **actual parameters** to it inside the parentheses **object.method(arguments)**. The arguments are saved in local **formal parameter** variables that are declared in the method header, for example: public void method(type param1, type param2) { ... }.
+- When you call a method, you can give or pass in **arguments** or **actual parameters** inside the parentheses **object.method(arguments)**. The arguments are saved in local **formal parameter** variables that are declared in the method header, for example: public void method(type param1, type param2) { ... }.
 
 - Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.
 
