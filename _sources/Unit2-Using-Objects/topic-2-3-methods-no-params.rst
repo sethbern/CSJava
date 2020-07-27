@@ -43,9 +43,9 @@ like ``forward()`` and ``turnRight()`` give turtle objects the ability to
 move forward 100 pixels and turn 90 degrees right.
 
 The methods written for the Turtle class are called **object methods** or **non-static methods**. 
-An object method *must* be called on an object of the class that the method is defined in.  
+An object method *must* be called on an object of the class.  
 Object methods work with the **attributes** of the object, such as the 
-direction the turtle is heading or its position. 
+direction the turtle is heading or its position.  
 
 To call an object method, you must use a variable that references an object, along with the dot (.) operator followed 
 by the method name.  For example, ``yertle.forward();`` calls the "forward" method on the turtle referenced
@@ -184,9 +184,7 @@ Here are some simple turtle methods that you can use:
 
     
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-
+    
     public class TurtleLetter
     {
       public static void main(String[] args)
@@ -244,13 +242,13 @@ where you can indicate how many pixels the turtle should move or what angle to t
 Summary
 -------------------
 
-- **Methods** are a set of instructions that define the behaviors for all objects of the class.
+- **Methods** are a set of instructions that define the behaviors for objects of the class.
 
 - Use **dot notation** to execute an object's method.  This is the object's name followed by the dot (.) operator followed by the method name and parentheses: **object.method();**
 
 - A **method signature** is the method name followed by the parameter list which gives the type and name for each parameter. 
 
-- Methods do not have to take any parameters, but you still need the parentheses after the name when you call the method.
+- If a method has no parameters, you still need the parentheses after the name when you call the method.
 
 - An **object method** or **non-static method** is one that must be called on an object of a class.  It usually works with the object's attributes.
 

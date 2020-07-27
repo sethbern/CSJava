@@ -97,7 +97,8 @@ than one constructor, which is called **constructor overloading**.
 There is usually a constructor that has no parameters like the ``World()`` constructor above.  This is also 
 called the **no-argument constructor** and it sets the 
 attributes to default values.   There can also be  constructors with formal parameters to 
-initialize the attributes, such as the ``World(int width, int height)``  constructor.
+initialize the attributes, such as the ``World(int width, int height)``  constructor.  The World constructor is overloaded
+since there are two versions available, each with a different parameter list.
 
 
 |Exercise| **Check your understanding**
@@ -171,6 +172,7 @@ methods in the |turtle documentation| for that class.  The documentation will
 list the **signatures** (or headers) of the constructors or methods which will tell you 
 their name and parameter list. The **parameter list**, in the **header** of a constructor, 
 lists the **formal parameters**, declaring the variables that will be passed in as values and their data types. 
+A no-arguments constructor will have an empty parameter list.
 
 .. figure:: Figures/TurtleClassDefn.png
     :width: 600px
@@ -182,7 +184,7 @@ lists the **formal parameters**, declaring the variables that will be passed in 
 
 
 The ``Turtle`` class has multiple constructors, although it always requires a World as an parameter 
-in order to have a place to draw.   You must create a World before you can create a Turtle. The first constructor places the turtle in a default location in the middle of the world.
+in order to have a place to draw.  The first constructor places the turtle in a default location in the middle of the world.
 The second constructor places the turtle at a certain (x,y) location in the world.
 
 
@@ -245,15 +247,13 @@ The second constructor places the turtle at a certain (x,y) location in the worl
     Try changing the code below to create a ``World`` object with 300x400 pixels. 
     Where is the turtle placed by default? What parameters do you need to 
     pass to the ``Turtle`` constructor to put the turtle near the top right corner? Recall that (0,0) is 
-    the top left corner. Experiment with different initial locations for the turtle. What happens if you mix up the order of the parameters?
+    the top left corner and y increases as you go down the window. Experiment with different initial locations for the turtle. What happens if you mix up the order of the parameters?
 
     (If the code below does not work in your browser, you can also copy the code into  
     this |repl link| (refresh page after forking if it gets stuck) or download the files |github| to use 
     in your own IDE.)
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-
+ 
     public class TurtleConstructorTest
     {
       public static void main(String[] args)
@@ -282,7 +282,7 @@ The second constructor places the turtle at a certain (x,y) location in the worl
         @Test
         public void test1()
         {
-            String orig = "import java.util.*;\nimport java.awt.*;\n\npublic class TurtleConstructorTest\n{\n  public static void main(String[] args)\n  {\n      // Change the World constructor to 300x400\n      World world = new World(300,300);\n\n      // Change the Turtle constructor to put the turtle in the top right corner\n      Turtle t1 = new Turtle(world);\n\n      t1.turnLeft();\n      world.show(true);\n  }\n}\n";
+            String orig = "public class TurtleConstructorTest\n{\n  public static void main(String[] args)\n  {\n      // Change the World constructor to 300x400\n      World world = new World(300,300);\n\n      // Change the Turtle constructor to put the turtle in the top right corner\n      Turtle t1 = new Turtle(world);\n\n      t1.turnLeft();\n      world.show(true);\n  }\n}\n";
             boolean passed = codeChanged(orig);
             assertTrue(passed);
         }
@@ -311,9 +311,7 @@ You assign an object variable by calling a constructor on the right hand side of
     Add a third turtle object that draws a square by repeatedly turning left and moving forward.
     Make sure you give your new turtle a unique variable name.
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-
+   
     public class TurtleTest3
     {
       public static void main(String[] args)
@@ -431,7 +429,7 @@ completely different date, for example January 9th (1/9) instead of Sept. 1st (9
    :feedback_c: A formal parameter is in the constructor's signature.
    :feedback_d: A actual parameter (argument) is the value that is passed into the constructor.
 
-   In ``public World(int width, int height)`` what are ``width`` and ``height``?
+   Given the constructor signature ``public World(int width, int height)``, what are ``width`` and ``height``?
 
 .. mchoice:: 2_2_actual_parms
    :practice: T
@@ -445,7 +443,7 @@ completely different date, for example January 9th (1/9) instead of Sept. 1st (9
    :feedback_c: A formal parameter is in the constructor's signature.
    :feedback_d: A actual parameter (argument) is the value that is passed into the constructor.
 
-   In ``new World(150, 200)`` what are ``150`` and ``200``?
+   Given the constructor call ``new World(150, 200)``, what are ``150`` and ``200``?
 
 
 

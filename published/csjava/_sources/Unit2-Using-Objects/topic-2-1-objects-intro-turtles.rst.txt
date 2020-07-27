@@ -41,7 +41,8 @@ Objects - Instances of Classes
     :width: 200
     :align: left
 
-Java is an **object-oriented programming** language.  In object-oriented programming, we group the data attributes and the behaviors/methods that use them together into objects, like the Turtle object on the left. 
+Java is an **object-oriented programming** language.  In object-oriented programming, we group the 
+data attributes and the behaviors/methods that use them together into objects, like the Turtle object on the left. 
 
 **Objects** are created from a **class** definition in the code, and they are **instances** of a class. 
 In this unit, you will learn to use objects created from classes like Turtle and String that were 
@@ -111,13 +112,13 @@ Today, we can play with virtual turtles in a graphical world. Below is a sample 
 
 
 The program above creates a ``World`` object, which is a 
-drawing canvas of size 300x300 pixels.  The program then creates a ``Turtle`` object 
-named ``yertle`` and places the turtle in the center of the world (drawing canvas).  The code
+graphical window of size 300x300 pixels.  The program then creates a ``Turtle`` object 
+named ``yertle`` and places the turtle in the center of the world.  The code
 asks ``yertle`` to go forward, turn left, and then go forward again.  
-It didn't tell the turtle how much to go forward, so it goes forward 100 pixels by default. A turtle
+The code does not indicate how much to go forward, so the turtle goes forward 100 pixels by default. A turtle
 has a pen that traces its path as it moves. Notice that a world was first
 created and then a turtle.  Turtles need to be created in a world, 
-which is the canvas that they can draw on.
+which is the graphical window that they can draw on.
 ``World`` and ``Turtle`` are two Java classes are not part of the core Java language.  
 The program relies on a separate library of Java code that defines both classes.  
 
@@ -148,11 +149,11 @@ The following picture has lots of cats.  Each cat is a different object, but the
     :align: center
     :figclass: align-center
 
-In our program we use a Java class called ``Turtle``, which defines the data that every turtle knows about 
+In our program we use a Java class called ``Turtle``, which defines the data that every drawing-capable turtle knows about 
 itself called **attributes**,
 such as its position (x,y coordinates), heading, pen color, width, 
 height, shell color, and visibility. The set of attribute values for an object is also referred to as object state.  The ``Turtle`` class also defines
-what turtle objects can do using **methods** like turnLeft and move forward, as well as many other methods that we will
+what turtle objects can do using **methods** like ``turnLeft()`` and ``forward()``, as well as many other methods that we will
 eventually explore. Methods are often used to change the attribute values.  
 
 The **dot operator** (.) is used to run an object's method.  
@@ -174,9 +175,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
     turnRight is prefaced with either variable ``yertle`` or variable ``myrtle``, which allows each
     turtle to move and turn independently.
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-
+   
     public class TurtleTest2
     {
       public static void main(String[] args)
@@ -377,11 +376,8 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
        :adaptive:
        :noindent:
 
-       The following program uses a turtle to draw the picture shown to the left, <img src="../_static/turtleTurnForwardRightForward.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import items, start the class definition, start the main method, and create a world and turtle. Then it should ask the turtle to turn 45 degrees, go forward 100 pixels, turn right, and then go forward 50 pixels. Next, it should ask the world to show itself. Finally, it should close the main method and class definition. We have added a compass to the picture to indicate the directions north, south, west, and east. <br /><br /><p>Drag the needed blocks of statements from the left column to the right column and put them in the right order.  There are <b>three extra blocks</b> that are not needed in a correct solution.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are the wrong blocks.  </p>
+       The following program uses a turtle to draw the picture shown to the left, <img src="../_static/turtleTurnForwardRightForward.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: start the class definition, start the main method, and create a world and turtle. Then it should ask the turtle to turn 45 degrees, go forward 100 pixels, turn right, and then go forward 50 pixels. Next, it should ask the world to show itself. Finally, it should close the main method and class definition. We have added a compass to the picture to indicate the directions north, south, west, and east. <br /><br /><p>Drag the needed blocks of statements from the left column to the right column and put them in the right order.  There are <b>three extra blocks</b> that are not needed in a correct solution.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are the wrong blocks.  </p>
        -----
-       import java.util.*;
-       import java.awt.*;
-       =====
        public class TurtleTest {
        =====
            public static void main(String[] args) {
@@ -428,9 +424,6 @@ After writing your code below, if you'd like your own copy, you can open this |r
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
-
-    import java.util.*;
-    import java.awt.*;
 
     public class TurtleTest
     {

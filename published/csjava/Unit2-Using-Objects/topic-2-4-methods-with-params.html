@@ -424,8 +424,6 @@ the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
 
 public class TurtleTestMethods1
 {
@@ -455,7 +453,7 @@ public class RunestoneTests extends CodeTestHelper
     @Test
     public void test1()
     {
-        String orig = "import java.util.*;\nimport java.awt.*;\n\npublic class TurtleTestMethods1\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n\n      yertle.forward(100);\n      yertle.turnLeft();\n      yertle.forward(75);\n\n      world.show(true);\n  }\n}\n";
+        String orig = "public class TurtleTestMethods1\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n\n      yertle.forward(100);\n      yertle.turnLeft();\n      yertle.forward(75);\n\n      world.show(true);\n  }\n}\n";
         boolean passed = codeChanged(orig);
         assertTrue(passed);
     }
@@ -512,7 +510,9 @@ public class RunestoneTests extends CodeTestHelper
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="DrawAHouse"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>2-4-2: The following code uses a turtle to draw a simple house, but the lines are mixed up.  Drag the code blocks to the right and put them in the correct order to first draw a square for the house and then a red triangle for the roof.  Click on the "Check Me" button to check your solution.  You can copy and paste this code in the Active Code window above to see it in action.</span>public class TurtleDrawHouse
+        <span data-question>2-4-2: The following code uses a turtle to draw a simple house, but the lines are mixed up.
+Note that the turtle variable name is "builder"
+rather than "yertle" or "myrtle". Drag the code blocks to the right and put them in the correct order to first draw a square for the house and then a red triangle for the roof.  Click on the "Check Me" button to check your solution.  You can copy and paste this code in the Active Code window above to see it in action.</span>public class TurtleDrawHouse
 {
 ---
    public static void main(String[] args)
@@ -554,7 +554,7 @@ public class RunestoneTests extends CodeTestHelper
 <a class="reference internal image-reference" href="../_images/houseWithWindows.png"><img alt="simple house" class="align-left" src="../_images/houseWithWindows.png" style="width: 200px;" /></a>
 <p>Design a house and have the turtle draw it with different colors
 below (or with this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>). Can you add windows and a door?</p>
-<p>To draw a window, you will need to do penUp() to walk the turtle into position, for example:</p>
+<p>To draw a window, you will need to do penUp() to walk the turtle into position.  For example, given a turtle named “builder”:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span><span class="p">.</span><span class="na">penUp</span><span class="p">();</span>
 <span class="n">builder</span><span class="p">.</span><span class="na">moveTo</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
 <span class="n">builder</span><span class="p">.</span><span class="na">penDown</span><span class="p">();</span>
@@ -570,9 +570,6 @@ and the turtle begins facing up.</p>
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
-
 public class TurtleHouse
 {
   public static void main(String[] args)
@@ -598,7 +595,7 @@ public class RunestoneTests extends CodeTestHelper
     @Test
     public void test1()
     {
-        String orig = "import java.util.*;\nimport java.awt.*;\n\npublic class TurtleHouse\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n\n\n\n      world.show(true);\n  }\n}\n";
+        String orig = "public class TurtleHouse\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n\n\n\n      world.show(true);\n  }\n}\n";
         boolean passed = codeChanged(orig);
         assertTrue(passed);
     }

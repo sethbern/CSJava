@@ -136,8 +136,6 @@ the files |github| to use in your own IDE.
     1. Can you make yertle draw a square and change the pen color for each side of the square? Try something like: yertle.setColor(Color.red); This uses the |Color| class in Java which has some colors predefined like red, yellow, blue, magenta, cyan. You can also use more specific methods like setPenColor, setBodyColor, and setShellColor.
     2. Can you draw a triangle? The turnRight() method always does 90 degree turns, but you'll need 60 degree angles for a equilateral triangle. Use the turn method which has a parameter for the angle of the turn in degrees. For example, turn(90) is the same as turnRight(). Try drawing a triangle with different colors. 
     ~~~~
-    import java.util.*;
-    import java.awt.*;
 
     public class TurtleTestMethods1
     {
@@ -167,7 +165,7 @@ the files |github| to use in your own IDE.
         @Test
         public void test1()
         {
-            String orig = "import java.util.*;\nimport java.awt.*;\n\npublic class TurtleTestMethods1\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n\n      yertle.forward(100);\n      yertle.turnLeft();\n      yertle.forward(75);\n\n      world.show(true);\n  }\n}\n";
+            String orig = "public class TurtleTestMethods1\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n\n      yertle.forward(100);\n      yertle.turnLeft();\n      yertle.forward(75);\n\n      world.show(true);\n  }\n}\n";
             boolean passed = codeChanged(orig);
             assertTrue(passed);
         }
@@ -235,7 +233,9 @@ Try the following mixed up code to draw a simple house made of a square and a tr
    :adaptive:
    :noindent:
    
-   The following code uses a turtle to draw a simple house, but the lines are mixed up.  Drag the code blocks to the right and put them in the correct order to first draw a square for the house and then a red triangle for the roof.  Click on the "Check Me" button to check your solution.  You can copy and paste this code in the Active Code window above to see it in action.
+   The following code uses a turtle to draw a simple house, but the lines are mixed up.  
+   Note that the turtle variable name is "builder" 
+   rather than "yertle" or "myrtle". Drag the code blocks to the right and put them in the correct order to first draw a square for the house and then a red triangle for the roof.  Click on the "Check Me" button to check your solution.  You can copy and paste this code in the Active Code window above to see it in action.
    -----
    public class TurtleDrawHouse
    {
@@ -286,7 +286,7 @@ Try the following mixed up code to draw a simple house made of a square and a tr
 Design a house and have the turtle draw it with different colors 
 below (or with this |repl link|). Can you add windows and a door? 
 
-To draw a window, you will need to do penUp() to walk the turtle into position, for example:
+To draw a window, you will need to do penUp() to walk the turtle into position.  For example, given a turtle named "builder":
 
 .. code-block:: java 
 
@@ -303,9 +303,6 @@ and the turtle begins facing up.
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
-
-    import java.util.*;
-    import java.awt.*;
 
     public class TurtleHouse
     {
@@ -332,7 +329,7 @@ and the turtle begins facing up.
         @Test
         public void test1()
         {
-            String orig = "import java.util.*;\nimport java.awt.*;\n\npublic class TurtleHouse\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n\n\n\n      world.show(true);\n  }\n}\n";
+            String orig = "public class TurtleHouse\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n\n\n\n      world.show(true);\n  }\n}\n";
             boolean passed = codeChanged(orig);
             assertTrue(passed);
         }

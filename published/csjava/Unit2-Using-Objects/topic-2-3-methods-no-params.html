@@ -355,7 +355,7 @@ In the <code class="docutils literal notranslate"><span class="pre">Turtle</span
 like <code class="docutils literal notranslate"><span class="pre">forward()</span></code> and <code class="docutils literal notranslate"><span class="pre">turnRight()</span></code> give turtle objects the ability to
 move forward 100 pixels and turn 90 degrees right.</p>
 <p>The methods written for the Turtle class are called <strong>object methods</strong> or <strong>non-static methods</strong>.
-An object method <em>must</em> be called on an object of the class that the method is defined in.
+An object method <em>must</em> be called on an object of the class.
 Object methods work with the <strong>attributes</strong> of the object, such as the
 direction the turtle is heading or its position.</p>
 <p>To call an object method, you must use a variable that references an object, along with the dot (.) operator followed
@@ -485,8 +485,6 @@ Go back to the previous lesson and look over the various Turtle constructors if 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
 
 public class TurtleLetter
 {
@@ -544,10 +542,10 @@ where you can indicate how many pixels the turtle should move or what angle to t
 <div class="section" id="summary">
 <h2><span class="section-number">2.3.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Methods</strong> are a set of instructions that define the behaviors for all objects of the class.</p></li>
+<li><p><strong>Methods</strong> are a set of instructions that define the behaviors for objects of the class.</p></li>
 <li><p>Use <strong>dot notation</strong> to execute an object’s method.  This is the object’s name followed by the dot (.) operator followed by the method name and parentheses: <strong>object.method();</strong></p></li>
 <li><p>A <strong>method signature</strong> is the method name followed by the parameter list which gives the type and name for each parameter.</p></li>
-<li><p>Methods do not have to take any parameters, but you still need the parentheses after the name when you call the method.</p></li>
+<li><p>If a method has no parameters, you still need the parentheses after the name when you call the method.</p></li>
 <li><p>An <strong>object method</strong> or <strong>non-static method</strong> is one that must be called on an object of a class.  It usually works with the object’s attributes.</p></li>
 <li><p>A <strong>static method</strong> or <strong>class method</strong> method is one that doesn’t need to be called on an object of a class.</p></li>
 </ul>

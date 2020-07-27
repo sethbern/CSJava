@@ -54,7 +54,7 @@ turtle location, while the ``turnLeft()`` method changes the direction.
 
 Now look at the methods in the first column having a return type that is *not* void.  The non-void
 methods tend to start
-with the word "get" is "is". 
+with the word "get" or "is". 
 Rather than changing an object's attribute, these methods 
 return an attribute value.
 For example, the ``getXPos()`` method will return a turtle's x position. 
@@ -100,10 +100,6 @@ from each getter method is either stored in a variable or used in a print statem
 
     (If the code below does not work in your browser, you can also copy in the code below into the Turtle code at this |repl link| (refresh page after forking and if it gets stuck) or download the files |github| to use in your own IDE.)
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-    import java.lang.Math; 
-    
     public class TurtleTestGetSet
     {
       public static void main(String[] args)
@@ -132,7 +128,7 @@ from each getter method is either stored in a variable or used in a print statem
         @Test
         public void test1()
         {
-            String orig = "import java.util.*;\nimport java.awt.*;\nimport java.lang.Math;\n\npublic class TurtleTestGetSet\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.setWidth(200);\n      yertle.setHeight(200);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.turnRight();\n      world.show(true);\n  }\n}\n";
+            String orig = "public class TurtleTestGetSet\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.setWidth(200);\n      yertle.setHeight(200);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.turnRight();\n      world.show(true);\n  }\n}\n";
             boolean passed = codeChanged(orig);
             assertTrue(passed);
         }
@@ -147,10 +143,6 @@ from each getter method is either stored in a variable or used in a print statem
 
     Fix the errors in the code below so that it prints out the area of the space that the turtle occupies by multiplying its width and height. Remember that you have to do something with the values that the get methods return.
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-    import java.lang.Math; 
-    
     public class TurtleArea
     {
       public static void main(String[] args)
@@ -207,10 +199,6 @@ Another common method that returns a value is the **toString()** method. This me
 
     Try some of the get methods and the toString() method in the program below. Note that you have to print out what the get methods return in order to see what they do!
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-    import java.lang.Math; 
-    
     public class TurtleTestMethods2
     {
       public static void main(String[] args)
@@ -297,11 +285,8 @@ method calls that return a value such as the Turtle accessor/getter methods.
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
-
-    import java.util.*;
-    import java.awt.*;
-    import java.lang.Math; 
     
+    ~~~~ 
     public class TurtleTestDistance
     {
       public static void main(String[] args)

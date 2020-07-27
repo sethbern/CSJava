@@ -362,7 +362,7 @@ For example, the <code class="docutils literal notranslate"><span class="pre">fo
 turtle location, while the <code class="docutils literal notranslate"><span class="pre">turnLeft()</span></code> method changes the direction.</p>
 <p>Now look at the methods in the first column having a return type that is <em>not</em> void.  The non-void
 methods tend to start
-with the word “get” is “is”.
+with the word “get” or “is”.
 Rather than changing an object’s attribute, these methods
 return an attribute value.
 For example, the <code class="docutils literal notranslate"><span class="pre">getXPos()</span></code> method will return a turtle’s x position.
@@ -399,10 +399,6 @@ like saving it into a variable or printing it out.</p>
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
-import java.lang.Math;
-
 public class TurtleTestGetSet
 {
   public static void main(String[] args)
@@ -431,7 +427,7 @@ public class RunestoneTests extends CodeTestHelper
     @Test
     public void test1()
     {
-        String orig = "import java.util.*;\nimport java.awt.*;\nimport java.lang.Math;\n\npublic class TurtleTestGetSet\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.setWidth(200);\n      yertle.setHeight(200);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.turnRight();\n      world.show(true);\n  }\n}\n";
+        String orig = "public class TurtleTestGetSet\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.setWidth(200);\n      yertle.setHeight(200);\n      System.out.println(\"Yertle's width is: \" + yertle.getWidth());\n      yertle.turnRight();\n      world.show(true);\n  }\n}\n";
         boolean passed = codeChanged(orig);
         assertTrue(passed);
     }
@@ -447,10 +443,6 @@ public class RunestoneTests extends CodeTestHelper
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
-import java.lang.Math;
-
 public class TurtleArea
 {
   public static void main(String[] args)
@@ -504,10 +496,6 @@ public class RunestoneTests extends CodeTestHelper
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
-import java.lang.Math;
-
 public class TurtleTestMethods2
 {
   public static void main(String[] args)
@@ -592,10 +580,6 @@ method calls that return a value such as the Turtle accessor/getter methods.</p>
       data-timelimit=25000  data-codelens="true"   
     data-audio=''  data-datafile='turtleClasses.jar'    
            data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
-import java.lang.Math;
-
 public class TurtleTestDistance
 {
   public static void main(String[] args)
