@@ -364,7 +364,7 @@ Here are some of the main reasons to use multiple methods in your programs:</p>
 <li><p>Maintainability and Debugging: smaller methods are easier to debug and understand than searching through a large main method.</p></li>
 </ul>
 <p>Let’s look at an example with repetition of code and
-create methods to reduce the repetition of code.</p>
+create methods to reduce the repetition.</p>
 <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> Check Your Understanding</p>
 
 <div class="runestone">
@@ -396,7 +396,7 @@ Static methods are also referred to as class methods.</p>
 <div class="section" id="defining-a-static-method">
 <h2><span class="section-number">5.1.1. </span>Defining a Static Method<a class="headerlink" href="#defining-a-static-method" title="Permalink to this headline">¶</a></h2>
 <div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="../_images/methodsignature.png"><img alt="../_images/methodsignature.png" src="../_images/methodsignature.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/methodheader.png"><img alt="../_images/methodheader.png" src="../_images/methodheader.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Figure 1: Method Header(Signature) and Method Body</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>There are two steps to creating and calling a static method:</p>
@@ -500,7 +500,7 @@ import static org.junit.Assert.*;
 
 <div class="runestone">
 <div data-component="clickablearea" class="runestone alert alert-warning" id="greet_method_signature"    >
-<span data-question>5-1-2: A method definition consists of a method header and a method body. Click on all of the method headers (signatures) in the following code.</span><span data-feedback>There is one method header for the greet method and one for the main method.</span><pre><span data-incorrect>public class Test2</span>
+<span data-question>5-1-2: A method definition consists of a method header and a method body. Click on the method header for the method named "greet" in the following code.</span><span data-feedback>There is one method header for the greet method.</span><pre><span data-incorrect>public class Test2</span>
 <span data-incorrect>{</span>
     <span data-correct>public static void greet()</span>
     <span data-incorrect>{</span>
@@ -508,7 +508,7 @@ import static org.junit.Assert.*;
         <span data-incorrect>System.out.println("How are you?");</span>
     <span data-incorrect>}</span>
     <span data-incorrect> </span>
-    <span data-correct>public static void main(String[] args)</span>
+    <span data-incorrect>public static void main(String[] args)</span>
     <span data-incorrect>{</span>
         <span data-incorrect>System.out.println("Before greeting");</span>
         <span data-incorrect>greet();</span>
@@ -565,7 +565,7 @@ import static org.junit.Assert.*;
 
         <div class="runestone">
         <div data-component="fillintheblank" id="println_called" >
-            <p>5-1-5: Given the Test2 class listed above, how many times is the <strong>System.out.println</strong> called when the main method runs?</p>
+            <p>5-1-5: Given the Test2 class from the previous exercise, how many times is the <strong>System.out.println</strong> called when the main method runs?</p>
 <input type="text">
         <script type="application/json">
             [[{"number": [4, 4], "feedback": "<p>Correct.</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect. The main method calls System.out.println directly 2 times, and the call to greet() results in 2 additional calls to System.out.println.</p>\n"}]]

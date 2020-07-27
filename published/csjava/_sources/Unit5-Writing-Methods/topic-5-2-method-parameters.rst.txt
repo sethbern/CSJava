@@ -79,7 +79,7 @@ into the formal parameter variables.
   Use the CodeLens button or copy the code into the |visualizer| to watch how the main method
   passes actual argument values into each call to the verse method.
   Update the main method to add a third verse to the song with another animal and noise.
-  Rerun the program to confirm the program works.
+  Rerun the program to confirm the third verse correctly prints.
   ~~~~
   public class Song 
   { 
@@ -221,15 +221,172 @@ types for the arguments and the return type.
 
 
 
+Procedural Abstraction
+------------------------
+
+**Procedural abstraction** is the process of removing code duplication by introducing a new method.
+
+.. activecode:: RedundantCalculation
+  :language: java
+  :autograde: unittest
+  :practice: T
+    
+  Run the code below, which calculates and prints the weekly pay for two employees.
+  Which lines of code are duplicated?
+  ~~~~
+  public class RedundantCalculation
+  { 
+  
+    public static void main(String[] args) {
+
+      double hourlyRate, hoursWorked, weeklyPay;
+      String employee;
+
+      //Calculate weekly pay for Fred
+      employee = "Fred";
+      hourlyRate = 12.50;
+      hoursWorked = 20;
+      weeklyPay = hourlyRate * hoursWorked;
+      System.out.println(employee  + ":" + weeklyPay);
+      
+      //Calculate weekly pay for Amir 
+      employee = "Amir";
+      hourlyRate = 15.0;
+      hoursWorked = 35;
+      weeklyPay = hourlyRate * hoursWorked;
+      System.out.println(employee  + ":" + weeklyPay);
+
+    }
+  }
+  ====
+  import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+    
+    public RunestoneTests() {
+      super("RedundantCode");
+    }
+
+    @Test
+        public void test1()
+        {
+            boolean passed = getResults("true", "true", "main()");
+            assertTrue(passed);
+        }
+  }
 
 
+We can reduce redundant code by adding a new method to calculate and print the weekly pay for an employee.
+The table below compares the code for each employee side by side.  Notice the first three lines of code 
+are the same except for
+the value in the right hand side of each assignment, while the last two lines of code
+that calculate and print the weekly pay are identical.  
+This tells us that our new method should have 3 formal parameters to allow
+values to be passed into the method when it is called: employee, hourlyRate, and hoursWorked.  The method will use the formal
+parameters to calculate and print the weekly pay.
+
+.. table:: 
+  :align: left
+  :widths: auto
+
+  ================================================   =================================================
+  Calculate pay for first employee                   Calculate pay for second employee                 
+  ================================================   =================================================
+  employee = "Fred";                                 employee = "Amir";
+  hourlyRate = 12.50;                                hourlyRate = 15.0;
+  hoursWorked = 20;                                  hoursWorked = 35;
+  weeklyPay = hourlyRate * hoursWorked;              weeklyPay = hourlyRate * hoursWorked;
+  System.out.println(employee  + ":" + weeklyPay);   System.out.println(employee  + ":" + weeklyPay);
+  ================================================   =================================================
+ 
+The figure below shows the signature and body for the new method ``calculatePay``.  The method signature
+contains  three formal parameters for employee, hourlyRate, and hoursWorked.  When the method is called, actual values
+will need to be provided as shown.
+
+.. figure:: Figures/calculatePay.png
+  :width: 500px
+  :align: center
+  :alt: Parameter passing for the calculatePay method 
+  :figclass: align-center
+  
+  Figure 3: Removing redundant code with a new method called calculatePay
+
+
+.. activecode:: CalculatePayMethod
+  :language: java
+  :autograde: unittest
+  :practice: T
+    
+  Update the code below to add the new method called calculatePay.  Update the main method to call the calculatePay
+  method twice, once for each employee.  
+  Use the CodeLens button or copy the code into the |visualizer| to confirm that your main method make the two calls to calculatePay, with the correct values passed into the method.
+
+  ~~~~
+  public class CalculateEmployeePay
+  { 
+
+    //add a new static method calculatePay here
+  
+
+
+    public static void main(String[] args) {
+      
+        //call calculatePay for employee Fred, hourly rate 12.50 and hours worked 20
+
+        //call calculatePay for employee Amir, hourly rate 15 and hours worked 35
+
+    }
+  }
+  ====
+  import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+    
+    public RunestoneTests() {
+      super("CalculateEmployeePay");
+    }
+
+    @Test
+        public void test1()
+        {
+            String output = getMethodOutput("main");
+            String expect = "Fred:250.0\nAmir:525.0\n";
+            boolean passed = getResults(expect, output, "Expected output from main", true);
+            assertTrue(passed);
+        }
+
+    @Test
+        public void test2()
+        {
+           String code = getCode();
+           int sig = countOccurences(code, "public static void calculatePay(");
+           boolean passed = sig == 1;
+           passed = getResults("1 method signature", sig + " method signature", "Add a new method calculatePay", passed);
+           assertTrue(passed);
+        }
+
+    @Test
+        public void test3()
+        {
+           String code = getCode();
+           int calls = countOccurences(code, "calculatePay(");
+           boolean passed = calls >=2;
+           passed = getResults("2 calls", calls + " calls", "Update the main with two calls to calculatePay", passed);
+           assertTrue(passed);
+        }
+  }
 
 
 Method Tracing
 ------------------
 
-The main method is not the only place you can make method calls.  Any method can call another method.
-See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
+Any method can call another method.  See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
 the code into the |visualizer|.
 
 
@@ -301,12 +458,6 @@ the code into the |visualizer|.
             System.out.println("Each person gets " + slices + " slices each");
         }
 
-        public static void main(String[] args)  
-        {
-            //add a call to splitPizza here
-
-        }
-
 
     Which of the following lines would go into ``/* INSERT CODE HERE */`` in the method splitPizza in 
     order to call the ``printSlices`` method to print the number of slices per person correctly? 
@@ -368,6 +519,7 @@ the code into the |visualizer|.
             divide(4,2);
         }
        }
+
 
 
 

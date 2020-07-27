@@ -46,8 +46,7 @@ Here are some of the main reasons to use multiple methods in your programs:
 - Maintainability and Debugging: smaller methods are easier to debug and understand than searching through a large main method.
 
 Let's look at an example with repetition of code and 
-create methods to reduce the repetition of code. 
-
+create methods to reduce the repetition. 
 
 |Exercise| Check Your Understanding
 
@@ -83,8 +82,8 @@ Static methods are also referred to as class methods.
 Defining a Static Method
 -------------------------
 
-.. figure:: Figures/methodsignature.png
-    :width: 400px
+.. figure:: Figures/methodheader.png
+    :width: 500px
     :align: center
     :figclass: align-center
 
@@ -195,9 +194,9 @@ Notice that we can just call the static method, we don't need to create an objec
 |Exercise| **Check Your Understanding**
    
 .. clickablearea:: greet_method_signature
-    :question: A method definition consists of a method header and a method body. Click on all of the method headers (signatures) in the following code.
+    :question: A method definition consists of a method header and a method body. Click on the method header for the method named "greet" in the following code.
     :iscode:
-    :feedback: There is one method header for the greet method and one for the main method.  
+    :feedback: There is one method header for the greet method.  
     
     :click-incorrect:public class Test2:endclick:
     :click-incorrect:{:endclick:
@@ -207,7 +206,7 @@ Notice that we can just call the static method, we don't need to create an objec
             :click-incorrect:System.out.println("How are you?");:endclick:
         :click-incorrect:}:endclick:
         :click-incorrect: :endclick:
-        :click-correct:public static void main(String[] args):endclick:
+        :click-incorrect:public static void main(String[] args):endclick:
         :click-incorrect:{:endclick:
             :click-incorrect:System.out.println("Before greeting");:endclick:
             :click-incorrect:greet();:endclick:
@@ -266,7 +265,7 @@ Notice that we can just call the static method, we don't need to create an objec
 
 .. fillintheblank:: println_called
 
-   Given the Test2 class listed above, how many times is the **System.out.println** called when the main method runs?
+   Given the Test2 class from the previous exercise, how many times is the **System.out.println** called when the main method runs?
 
    -    :4: Correct.  
         :.*: Incorrect. The main method calls System.out.println directly 2 times, and the call to greet() results in 2 additional calls to System.out.println.
