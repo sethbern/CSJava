@@ -353,35 +353,50 @@
 <p>A Java class defines the data (attributes) and behavior (methods) of a set of similar objects.
 Each class has a special type of method called a
 <strong>constructor</strong>  that is used to initialize the attributes in a newly created object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A constructor is a special method that has the same name as the class and is used to initialize attributes of a new object.</p>
+</div>
 <p>A new object is created with the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword followed by the class name.
-For example, <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World()</span></code> calls the
-World constructor to create and initialize a new object of the <code class="docutils literal notranslate"><span class="pre">World</span></code> class.
-The code <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Turtle(world)</span></code> calls the Turtle constructor to
-create and initialize the attributes of a new <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object in the specified world, which is a
-canvas the turtle draws upon.</p>
+For example, <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World()</span></code> calls the World constructor to initialize a new object of the <code class="docutils literal notranslate"><span class="pre">World</span></code> class,
+which results in the creation of a graphical window used for drawing.
+The code <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Turtle(world)</span></code> calls the Turtle constructor to initialize the
+attributes of a new <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object that is placed within the drawing window of the specified world.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// To create a new object and call a constructor write:</span>
 <span class="c1">// ClassName variableName = new ClassName(parameters);</span>
 <span class="n">World</span> <span class="n">world</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">();</span>    <span class="c1">// create a new World object</span>
 <span class="n">Turtle</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span> <span class="c1">// create a new Turtle object</span>
 </pre></div>
 </div>
-<div class="section" id="overloading-constructors">
-<h2><span class="section-number">2.2.1. </span>Overloading Constructors<a class="headerlink" href="#overloading-constructors" title="Permalink to this headline">¶</a></h2>
-<p>There can be more than one constructor defined in a class.
-This is called <strong>overloading</strong> the constructor.
-There is usually a constructor that has no parameters (nothing inside the parentheses following the name
-of the constructor) like the <code class="docutils literal notranslate"><span class="pre">World()</span></code> constructor above.  This is also
-called the <strong>no-argument constructor</strong>.  The <strong>no-argument</strong> constructor usually sets the
-attributes to default values.</p>
-<p>There can also be other constructors that define <strong>formal parameters</strong>, which are placeholders that accept
-values that are placed within the parentheses when the constructor is called.
-The constructor uses the values, also called  <strong>actual parameters</strong> or <strong>arguments</strong>, to initialize the object attributes.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">World</span></code> class actually has 2 constructors.
-One has no parameters and one has two parameters to initialize the world’s width and height.</p>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="../_images/worldConstructors.png"><img alt="Two overloaded World constructors" src="../_images/worldConstructors.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-text">Figure 1: Two overloaded World constructors</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="section" id="world-class-constructors">
+<h2><span class="section-number">2.2.1. </span>World Class Constructors<a class="headerlink" href="#world-class-constructors" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">World</span></code> class has 2 constructors, which means there are two different ways to create a World object.
+You can create a World using default values for the size of the graphical window, or you can provide
+a specific width and height.</p>
+<p>In Java, <strong>formal parameters</strong> are variables that act as value placeholders that you
+define for a method.  When you place values between the
+parentheses of a method call, the values get copied into the formal parameter variables.
+The values placed between the parentheses of a method call are called <strong>arguments</strong> or <strong>actual parameters</strong>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">World</span> <span class="n">world1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">();</span>        <span class="c1">// creates a 640x480 world</span>
+<span class="n">World</span> <span class="n">world2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">400</span><span class="p">);</span> <span class="c1">// creates a 300x400 world</span>
+</pre></div>
 </div>
+<p>The first <code class="docutils literal notranslate"><span class="pre">World()</span></code> constructor has no parameters (there is nothing between the parentheses) and
+initializes a graphical window with a default size of 640x480 pixels.</p>
+<p>The second constructor <code class="docutils literal notranslate"><span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height)</span></code>  has two formal parameters to initialize the
+graphical window to a specific width and height.  When you call the second constructor, you must provide actual integer values
+for the width and height.
+For example, <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World(300,400)</span></code> creates a world with a graphical window sized 300x400  pixels.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/worldConstructors.png"><img alt="Two World constructors" src="../_images/worldConstructors.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Two World constructors</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Classes frequently have more
+than one constructor, which is called <strong>constructor overloading</strong>.
+There is usually a constructor that has no parameters like the <code class="docutils literal notranslate"><span class="pre">World()</span></code> constructor above.  This is also
+called the <strong>no-argument constructor</strong> and it sets the
+attributes to default values.   There can also be  constructors with formal parameters to
+initialize the attributes, such as the <code class="docutils literal notranslate"><span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height)</span></code>  constructor.</p>
 <p><a class="reference internal" href="../_images/exercise3.png"><img alt="exercise" class="align-middle" src="../_images/exercise3.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
@@ -415,20 +430,28 @@ One has no parameters and one has two parameters to initialize the world’s wid
 
             </ul>
             </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="const_def_2" >
+            <p>2-2-3: Which of these is valid syntax for creating and initializing a World object with size 300x400?</p>
+
+            <li data-component="answer"  id="const_def_2_opt_a">World w = (300,400);</li><li data-component="feedback">This is missing the keyword new and the constructor method name World.</li>
+            
+            <li data-component="answer" data-correct id="const_def_2_opt_b">World w = new World(300,400);</li><li data-component="feedback">Use the new keyword followed by the classname and parentheses to create a new object and call the constructor.</li>
+            
+            <li data-component="answer"  id="const_def_2_opt_c">World w = World(300,400);</li><li data-component="feedback">This is missing the keyword new.</li>
+            
+            <li data-component="answer"  id="const_def_2_opt_d">World  = new World(300,400);</li><li data-component="feedback">The lefthand size of the assignment is missing the variable name.</li>
+            
+
+            </ul>
             </div>
-<div class="section" id="the-world-class-constructors">
-<h2><span class="section-number">2.2.2. </span>The World Class Constructors<a class="headerlink" href="#the-world-class-constructors" title="Permalink to this headline">¶</a></h2>
-<p>The constructor that doesn’t take any parameters, <code class="docutils literal notranslate"><span class="pre">World()</span></code>, creates a graphical window with a default size of 640x480 pixels. The <code class="docutils literal notranslate"><span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height)</span></code> constructor takes two integer parameters, and initializes the <code class="docutils literal notranslate"><span class="pre">World</span></code> object’s width and height to them, for example <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World(300,400)</span></code> creates a 300x400 pixel world.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">World</span> <span class="n">world1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">();</span> <span class="c1">// creates a 640x480 world</span>
-<span class="n">World</span> <span class="n">world2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">400</span><span class="p">);</span> <span class="c1">// creates a 300x400 world</span>
-</pre></div>
-</div>
-<div class="admonition note">
+            <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The turtle world does not use the cartesian coordinate system.
 The origin (0,0) is in the <strong>top left corner</strong>, x increases to the right, and y increases
 as you go <strong>down</strong> the screen rather than up.
-This weird coordinate system is due to historical reasons. When physical devices were
+This unusual coordinate system is due to historical reasons. When physical devices were
 first built, they would scan from left to right and then top to bottom.</p>
 </div>
 <div class="align-center figure" id="id2">
@@ -437,30 +460,63 @@ first built, they would scan from left to right and then top to bottom.</p>
 </div>
 </div>
 <div class="section" id="the-turtle-class-constructors">
-<h2><span class="section-number">2.2.3. </span>The Turtle Class Constructors<a class="headerlink" href="#the-turtle-class-constructors" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> class also has multiple constructors, although it always requires a world as an parameter in order to have a place to draw the turtle. The default location for the turtle is right in the middle of the world.</p>
-<p>There is another <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> constructor that places the turtle at a certain (x,y) location in the world, for example at the coordinate (50, 100) below.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Turtle</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world1</span><span class="p">);</span>
-<span class="n">Turtle</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">world1</span><span class="p">);</span>
+<h2><span class="section-number">2.2.2. </span>The Turtle Class Constructors<a class="headerlink" href="#the-turtle-class-constructors" title="Permalink to this headline">¶</a></h2>
+<p>When you use a class that someone has already written for you in a <strong>library</strong>  like the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> class, you can look up how to use the constructors and
+methods in the <a href="https://www2.cs.uic.edu/~i101/doc/Turtle.html" target="_blank" style="text-decoration:underline">documentation</a> for that class.  The documentation will
+list the <strong>signatures</strong> (or headers) of the constructors or methods which will tell you
+their name and parameter list. The <strong>parameter list</strong>, in the <strong>header</strong> of a constructor,
+lists the <strong>formal parameters</strong>, declaring the variables that will be passed in as values and their data types.</p>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="../_images/TurtleClassDefn.png"><img alt="Turtle Class Constructor Signatures and Parameters" src="../_images/TurtleClassDefn.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Figure 3: Turtle Class Constructor Signatures and Parameters</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> class has multiple constructors, although it always requires a World as an parameter
+in order to have a place to draw.   You must create a World before you can create a Turtle. The first constructor places the turtle in a default location in the middle of the world.
+The second constructor places the turtle at a certain (x,y) location in the world.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">World</span> <span class="n">world</span> <span class="o">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">();</span>
+<span class="n">Turtle</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>           <span class="c1">//place in center of world</span>
+<span class="n">Turtle</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">world</span><span class="p">);</span>  <span class="c1">//place at 50, 100</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Notice that the order of the parameters matter. The <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> constructor takes <code class="docutils literal notranslate"><span class="pre">(x,y,world)</span></code> as parameters in that order. If you mix up the order of the parameters it will cause an error, because the parameters will not be the data types that it expects. This is one reason why programming languages have data types – to allow for error-checking.</p>
+<p>The order of the argument values matter.
+The <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> constructor takes <code class="docutils literal notranslate"><span class="pre">(x,y,world)</span></code> as parameters in that order.
+If you mix up the order of the parameters it will cause an error, because the parameters will not be the data types that it expects. This is one reason why programming languages have data types – to allow for error-checking.</p>
 </div>
 <p><a class="reference internal" href="../_images/exercise3.png"><img alt="exercise" class="align-middle" src="../_images/exercise3.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="const_turtle" >
-            <p>2-2-3: Which of these is valid syntax for creating and initializing a Turtle object?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="const_turtle1" >
+            <p>2-2-4: Which of these is valid syntax for creating and initializing a Turtle object in the center of the world?</p>
 
-            <li data-component="answer"  id="const_turtle_opt_a">Turtle t = Turtle(world);</li><li data-component="feedback">You must use the new keyword to create a new Turtle.</li>
+            <li data-component="answer"  id="const_turtle1_opt_a">Turtle t = Turtle(world);</li><li data-component="feedback">You must use the new keyword to create a new Turtle.</li>
             
-            <li data-component="answer"  id="const_turtle_opt_b">Turtle t = new Turtle();</li><li data-component="feedback">All turtle constructors take a world as a parameter.</li>
+            <li data-component="answer"  id="const_turtle1_opt_b">Turtle t = new Turtle();</li><li data-component="feedback">All turtle constructors must take a world as a parameter.</li>
             
-            <li data-component="answer"  id="const_turtle_opt_c">Turtle t = new Turtle(world, 100, 100);</li><li data-component="feedback">The order of the parameters matter.</li>
+            <li data-component="answer" data-correct id="const_turtle1_opt_c">Turtle t = new Turtle(world);</li><li data-component="feedback">This creates a Turtle object and places it in the center of the world.</li>
             
-            <li data-component="answer" data-correct id="const_turtle_opt_d">Turtle t = new Turtle(100, 100, world);</li><li data-component="feedback">This creates a new Turtle object in the passed world at location (100,100)</li>
+            <li data-component="answer"  id="const_turtle1_opt_d">World t = new Turtle(world);</li><li data-component="feedback">You can not assign a Turtle object to a variable declared to have type World.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="const_turtle2" >
+            <p>2-2-5: Given the Turtle class and a World object referenced by variable world1,
+which of the following code segments will correctly create an instance of a
+Turtle object at (x,y) coordinates (50,75)?</p>
+
+            <li data-component="answer"  id="const_turtle2_opt_a">Turtle t = new Turtle();</li><li data-component="feedback">There is no Turtle constructor that takes no parameters according to the figure above.</li>
+            
+            <li data-component="answer"  id="const_turtle2_opt_b">Turtle t = new Turtle(50,75);</li><li data-component="feedback">There is no Turtle constructor that takes 2 parameters according to the figure above.</li>
+            
+            <li data-component="answer"  id="const_turtle2_opt_c">Turtle t = new Turtle(world1);</li><li data-component="feedback">This would initialize the Turtle to the middle of the world, not necessarily coordinates (50,150).</li>
+            
+            <li data-component="answer"  id="const_turtle2_opt_d">Turtle t = new Turtle(world1,50,75);</li><li data-component="feedback">Make sure the order of the parameters match the constructor signature above.</li>
+            
+            <li data-component="answer" data-correct id="const_turtle2_opt_e">Turtle t = new Turtle(50,75,world1);</li><li data-component="feedback">This matches the second constructor above with the parameters of x, y, and world.</li>
             
 
             </ul>
@@ -468,7 +524,10 @@ first built, they would scan from left to right and then top to bottom.</p>
             <p><a class="reference internal" href="../_images/codingExercise3.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise3.png" style="width: 30px;" /></a> <strong>Coding Exercise:</strong></p>
 
 <div data-childcomponent="TurtleConstructorTest" class="runestone explainer ac_section alert alert-warning">
-<p>Try changing the code below to create a <code class="docutils literal notranslate"><span class="pre">World</span></code> object with 300x400 pixels. Where is the turtle placed by default? What parameters do you need to pass to the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> constructor to put the turtle at the top right corner? Experiment and find out. What happens if you mix up the order of the parameters?</p>
+<p>Try changing the code below to create a <code class="docutils literal notranslate"><span class="pre">World</span></code> object with 300x400 pixels.
+Where is the turtle placed by default? What parameters do you need to
+pass to the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> constructor to put the turtle near the top right corner? Recall that (0,0) is
+the top left corner. Experiment with different initial locations for the turtle. What happens if you mix up the order of the parameters?</p>
 <p>(If the code below does not work in your browser, you can also copy the code into
 this <a href="https://repl.it/@LindaMM/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use
 in your own IDE.)</p>
@@ -518,7 +577,7 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 </div>
 <div class="section" id="object-variables-and-references">
-<h2><span class="section-number">2.2.4. </span>Object Variables and References<a class="headerlink" href="#object-variables-and-references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.3. </span>Object Variables and References<a class="headerlink" href="#object-variables-and-references" title="Permalink to this headline">¶</a></h2>
 <p>An object is created when you call a constructor. You need to declare an <strong>object variable</strong> to
 reference the newly created object.  An object variable has a type that is a class, rather than a primitive
 such as int, double or boolean.  <code class="docutils literal notranslate"><span class="pre">Turtle</span> <span class="pre">t1</span></code> and <code class="docutils literal notranslate"><span class="pre">World</span> <span class="pre">world</span></code> are both object variable declarations since Turtle and World are classes and not primitive types.</p>
@@ -583,50 +642,9 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 </div>
-<div class="section" id="constructor-signatures">
-<h2><span class="section-number">2.2.5. </span>Constructor Signatures<a class="headerlink" href="#constructor-signatures" title="Permalink to this headline">¶</a></h2>
-<p>When you use a class that someone has already written for you in a <strong>library</strong> that you can import like the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> class above, you can look up how to use the constructors and methods in the <a href="https://www2.cs.uic.edu/~i101/doc/Turtle.html" target="_blank" style="text-decoration:underline">documentation</a> for that class.  The documentation will list the <strong>signatures</strong> (or headers) of the constructors or methods which will tell you their name and parameter list. The <strong>parameter list</strong>, in the <strong>header</strong> of a constructor, lists the <strong>formal parameters</strong>, declaring the variables that will be passed in as values and their data types.</p>
-<p>Constructors are <strong>overloaded</strong> when there are multiple constructors, but the constructors have different signatures. They can differ in the number, type, and/or order of parameters.  For example, here are two constructors for the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> class that take different parameters:</p>
-<div class="align-center figure" id="id3">
-<a class="reference internal image-reference" href="../_images/TurtleClassDefn.png"><img alt="Turtle Class Constructor Signatures and Parameters" src="../_images/TurtleClassDefn.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Figure 3: Turtle Class Constructor Signatures and Parameters</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
-<p><a class="reference internal" href="../_images/exercise3.png"><img alt="exercise" class="align-middle" src="../_images/exercise3.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="TurtleClass1" >
-            <p>2-2-4: Given the Turtle class in the figure above and a World object world1, which of the following code segments will correctly create an instance of a Turtle object at (x,y) coordinates (50,150)?</p>
-
-            <li data-component="answer"  id="TurtleClass1_opt_a">Turtle t = new Turtle();</li><li data-component="feedback">There is no Turtle constructor that takes no parameters according to the figure above.</li>
-            
-            <li data-component="answer"  id="TurtleClass1_opt_b">Turtle t = new Turtle(50,150);</li><li data-component="feedback">There is no Turtle constructor that takes 2 parameters according to the figure above.</li>
-            
-            <li data-component="answer"  id="TurtleClass1_opt_c">Turtle t = new Turtle(world1);</li><li data-component="feedback">This would initialize the Turtle to the middle of the world, not necessarily coordinates (50,150).</li>
-            
-            <li data-component="answer"  id="TurtleClass1_opt_d">Turtle t = new Turtle(world1,50,150);</li><li data-component="feedback">Make sure the order of the parameters match the constructor signature above.</li>
-            
-            <li data-component="answer" data-correct id="TurtleClass1_opt_e">Turtle t = new Turtle(50,150,world1);</li><li data-component="feedback">This matches the second constructor above with the parameters of x, y, and world.</li>
-            
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="no_arg_constructor" >
-            <p>2-2-5: Which of these is the correct signature for a no-argument constructor?</p>
-
-            <li data-component="answer"  id="no_arg_constructor_opt_a">public World(int width, int height)</li><li data-component="feedback">This constructor signature defines two arguments: width and height.</li>
-            
-            <li data-component="answer" data-correct id="no_arg_constructor_opt_b">public World()</li><li data-component="feedback">This constructor signature is correct for a no-argument constructor.</li>
-            
-            <li data-component="answer"  id="no_arg_constructor_opt_c">public World</li><li data-component="feedback">The constructor signature must include parentheses.</li>
-            
-            <li data-component="answer"  id="no_arg_constructor_opt_d">public World(int width)</li><li data-component="feedback">This constructor signature defines one argument: width.</li>
-            
-
-            </ul>
-            </div>
-            <p>In a later lesson you will learn to write your own classes.
+<div class="section" id="formal-parameters-and-pass-by-value">
+<h2><span class="section-number">2.2.4. </span>Formal Parameters and Pass By Value<a class="headerlink" href="#formal-parameters-and-pass-by-value" title="Permalink to this headline">¶</a></h2>
+<p>In a later lesson you will learn to write your own classes.
 However, if you see a class definition like the one below for a class
 called <code class="docutils literal notranslate"><span class="pre">Date</span></code>, you should be able to pick out the attributes (instance variables)
 and the constructors and know how to use them.</p>
@@ -634,33 +652,10 @@ and the constructors and know how to use them.</p>
 <a class="reference internal image-reference" href="../_images/DateClass.png"><img alt="A Date class showing attributes and constructors" src="../_images/DateClass.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Figure 4: A Date class showing attributes and constructors</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p><a class="reference internal" href="../_images/exercise3.png"><img alt="exercise" class="align-middle" src="../_images/exercise3.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-
-<div class="runestone">
-<div data-component="clickablearea" class="runestone alert alert-warning" id="date_constructor"    >
-<span data-question>2-2-6: Click on the constructor headers (signatures)</span><span data-feedback>Constructors are public and have the same name as the class. Click on the constructor headers which are the first line of the constructors showing their name and parameters.</span><pre><span data-incorrect>public class Date {</span>
-
-    <span data-incorrect>private int year;</span>
-    <span data-incorrect>private int month;</span>
-    <span data-incorrect>private int day;</span>
-
-    <span data-correct>public Date() </span>
-        <span data-incorrect>{ /** Implementation not shown */ }</span>
-
-    <span data-correct>public Date(int year, int month, int day) </span>
-        <span data-incorrect>{ /** Implementation not shown */ }</span>
-
-    <span data-incorrect>public void print() </span>
-        <span data-incorrect>{ /** Implementation not shown */ }</span>
-
-<span data-incorrect>}</span></pre>
-
-</div>
-</div>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="DateClass1" >
-            <p>2-2-7: Given the <code class="docutils literal notranslate"><span class="pre">Date</span></code> class in the figure above and assuming that months in the <code class="docutils literal notranslate"><span class="pre">Date</span></code> class are numbered starting at 1, which of the following code segments will create a <code class="docutils literal notranslate"><span class="pre">Date</span></code> object for the date September 20, 2020 using the correct constructor?</p>
+            <p>2-2-6: Given the <code class="docutils literal notranslate"><span class="pre">Date</span></code> class in the figure above and assuming that months in the <code class="docutils literal notranslate"><span class="pre">Date</span></code> class are numbered starting at 1, which of the following code segments will create a <code class="docutils literal notranslate"><span class="pre">Date</span></code> object for the date September 20, 2020 using the correct constructor?</p>
 
             <li data-component="answer"  id="DateClass1_opt_a">Date d = new Date();</li><li data-component="feedback">This would initialize the date attributes to today's date according to the constructor comment above, which might not be Sept. 20, 2020.</li>
             
@@ -675,20 +670,24 @@ and the constructors and know how to use them.</p>
 
             </ul>
             </div>
-            </div>
-<div class="section" id="formal-and-actual-parameters">
-<h2><span class="section-number">2.2.6. </span>Formal and Actual Parameters<a class="headerlink" href="#formal-and-actual-parameters" title="Permalink to this headline">¶</a></h2>
-<p>When a constructor like <code class="docutils literal notranslate"><span class="pre">Date(2005,9,1)</span></code> is called, the <strong>formal parameters</strong>, (year, month, day), are set to copies of the  <strong>actual parameters</strong> (or <strong>arguments</strong>), which are (2005,9,1).  This is <strong>call by value</strong> which means that copies of the actual parameter values are passed to the constructor.  These values are used to initialize the object’s attributes.</p>
+            <p>When a constructor like <code class="docutils literal notranslate"><span class="pre">Date(2005,9,1)</span></code> is called, the formal parameters, (year, month, day), are set
+to copies of the  actual parameters, which are (2005,9,1).  This is <strong>pass by value</strong> which means that
+copies of the actual parameter values are passed to the constructor.
+These values are used to initialize the object’s attributes.</p>
 <div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../_images/parameterMappingDate.png"><img alt="Parameter Mapping" src="../_images/parameterMappingDate.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text">Figure 5: Parameter Mapping</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-<p>The type of the values being passed in as arguments have to match the type of the formal parameter variables. We cannot give a constructor a <code class="docutils literal notranslate"><span class="pre">String</span></code> object when it is expecting an <code class="docutils literal notranslate"><span class="pre">int</span></code>. The order of the arguments also matters. If you mix up the month and the day in the <code class="docutils literal notranslate"><span class="pre">Date</span></code> constructor, you will get a completely different date, for example January 9th (1/9) instead of Sept. 1st (9/1).</p>
+<p>The type of the values being passed in as arguments have to match the type of the formal parameter variables.
+We cannot give a constructor a <code class="docutils literal notranslate"><span class="pre">String</span></code> object when it is expecting an <code class="docutils literal notranslate"><span class="pre">int</span></code>.
+The order of the arguments also matters.
+If you mix up the month and the day in the <code class="docutils literal notranslate"><span class="pre">Date</span></code> constructor, you will get a
+completely different date, for example January 9th (1/9) instead of Sept. 1st (9/1).</p>
 <p><a class="reference internal" href="../_images/exercise3.png"><img alt="exercise" class="align-middle" src="../_images/exercise3.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="2_2_formal_parms" >
-            <p>2-2-8: In <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height)</span></code> what are <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code>?</p>
+            <p>2-2-7: In <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">World(int</span> <span class="pre">width,</span> <span class="pre">int</span> <span class="pre">height)</span></code> what are <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code>?</p>
 
             <li data-component="answer"  id="2_2_formal_parms_opt_a">objects</li><li data-component="feedback">Objects have attributes and behavior.</li>
             
@@ -704,7 +703,7 @@ and the constructors and know how to use them.</p>
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="2_2_actual_parms" >
-            <p>2-2-9: In <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World(150,</span> <span class="pre">200)</span></code> what are <code class="docutils literal notranslate"><span class="pre">150</span></code> and <code class="docutils literal notranslate"><span class="pre">200</span></code>?</p>
+            <p>2-2-8: In <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">World(150,</span> <span class="pre">200)</span></code> what are <code class="docutils literal notranslate"><span class="pre">150</span></code> and <code class="docutils literal notranslate"><span class="pre">200</span></code>?</p>
 
             <li data-component="answer"  id="2_2_actual_parms_opt_a">objects</li><li data-component="feedback">Objects have attributes and behavior.</li>
             
@@ -719,12 +718,11 @@ and the constructors and know how to use them.</p>
             </div>
             <p>This lesson introduces a lot of vocabulary, but don’t worry if you don’t
 understand everything about classes and constructors yet.
-You will learn more about how this all works in Unit 5 when you write your
-own classes and constructors. And you will see parameters
-again with methods in the next lessons.</p>
+You will learn more about how this all works in a later lesson when you write your
+own classes and constructors.</p>
 </div>
 <div class="section" id="summary">
-<h2><span class="section-number">2.2.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Constructors</strong> initialize the attributes in newly created objects.  They have the same name as the class.</p></li>
 <li><p>A <strong>constructor signature</strong> is the constructor name followed by the parameter list which is a list of the types of the parameters and the variable names used to refer to them in the constructor.</p></li>

@@ -39,44 +39,66 @@ A Java class defines the data (attributes) and behavior (methods) of a set of si
 Each class has a special type of method called a 
 **constructor**  that is used to initialize the attributes in a newly created object.
 
+.. note::
+
+  A constructor is a special method that has the same name as the class and is used to initialize attributes of a new object. 
+
+
 A new object is created with the ``new`` keyword followed by the class name.
-For example, ``new World()`` calls the 
-World constructor to create and initialize a new object of the ``World`` class.
-The code ``new Turtle(world)`` calls the Turtle constructor to 
-create and initialize the attributes of a new ``Turtle`` object in the specified world, which is a 
-canvas the turtle draws upon.
+For example, ``new World()`` calls the World constructor to initialize a new object of the ``World`` class, 
+which results in the creation of a graphical window used for drawing.
+The code ``new Turtle(world)`` calls the Turtle constructor to initialize the 
+attributes of a new ``Turtle`` object that is placed within the drawing window of the specified world.
 
 .. code-block:: java
 
     // To create a new object and call a constructor write:
     // ClassName variableName = new ClassName(parameters);
     World world = new World();    // create a new World object
-    Turtle t = new Turtle(world); // create a new Turtle object
+    Turtle t = new Turtle(world); // create a new Turtle object 
 
-Overloading Constructors
+World Class Constructors
 ---------------------------
 
-There can be more than one constructor defined in a class. 
-This is called **overloading** the constructor. 
-There is usually a constructor that has no parameters (nothing inside the parentheses following the name 
-of the constructor) like the ``World()`` constructor above.  This is also 
-called the **no-argument constructor**.  The **no-argument** constructor usually sets the 
-attributes to default values. 
+The ``World`` class has 2 constructors, which means there are two different ways to create a World object.
+You can create a World using default values for the size of the graphical window, or you can provide 
+a specific width and height.  
 
-There can also be other constructors that define **formal parameters**, which are placeholders that accept
-values that are placed within the parentheses when the constructor is called.
-The constructor uses the values, also called  **actual parameters** or **arguments**, to initialize the object attributes.
 
-The ``World`` class actually has 2 constructors.  
-One has no parameters and one has two parameters to initialize the world's width and height.
+In Java, **formal parameters** are variables that act as value placeholders that you 
+define for a method.  When you place values between the
+parentheses of a method call, the values get copied into the formal parameter variables.
+The values placed between the parentheses of a method call are called **arguments** or **actual parameters**.
+
+.. code-block:: java
+
+    World world1 = new World();        // creates a 640x480 world
+    World world2 = new World(300,400); // creates a 300x400 world
+
+The first ``World()`` constructor has no parameters (there is nothing between the parentheses) and 
+initializes a graphical window with a default size of 640x480 pixels.   
+
+The second constructor ``World(int width, int height)``  has two formal parameters to initialize the 
+graphical window to a specific width and height.  When you call the second constructor, you must provide actual integer values
+for the width and height. 
+For example, ``new World(300,400)`` creates a world with a graphical window sized 300x400  pixels.
 
 .. figure:: Figures/worldConstructors.png
     :width: 350px
     :align: center
-    :alt: Two overloaded World constructors
+    :alt: Two World constructors
     :figclass: align-center
 
-    Figure 1: Two overloaded World constructors
+    Figure 1: Two World constructors
+    
+
+Classes frequently have more
+than one constructor, which is called **constructor overloading**. 
+There is usually a constructor that has no parameters like the ``World()`` constructor above.  This is also 
+called the **no-argument constructor** and it sets the 
+attributes to default values.   There can also be  constructors with formal parameters to 
+initialize the attributes, such as the ``World(int width, int height)``  constructor.
+
 
 |Exercise| **Check your understanding**
 
@@ -108,21 +130,26 @@ One has no parameters and one has two parameters to initialize the world's width
 
    Which of these is valid syntax for creating and initializing a World object?
 
-The World Class Constructors
-----------------------------------------------------------
+.. mchoice:: const_def_2
+   :practice: T
+   :answer_a: World w = (300,400);
+   :answer_b: World w = new World(300,400);
+   :answer_c: World w = World(300,400);
+   :answer_d: World  = new World(300,400);
+   :correct: b
+   :feedback_a: This is missing the keyword new and the constructor method name World.
+   :feedback_b: Use the new keyword followed by the classname and parentheses to create a new object and call the constructor.
+   :feedback_c: This is missing the keyword new.
+   :feedback_d: The lefthand size of the assignment is missing the variable name.
 
-The constructor that doesn't take any parameters, ``World()``, creates a graphical window with a default size of 640x480 pixels. The ``World(int width, int height)`` constructor takes two integer parameters, and initializes the ``World`` object's width and height to them, for example ``new World(300,400)`` creates a 300x400 pixel world.
+   Which of these is valid syntax for creating and initializing a World object with size 300x400?
 
-.. code-block:: java
-
-    World world1 = new World(); // creates a 640x480 world
-    World world2 = new World(300,400); // creates a 300x400 world
 
 .. note ::
    The turtle world does not use the cartesian coordinate system.  
    The origin (0,0) is in the **top left corner**, x increases to the right, and y increases 
    as you go **down** the screen rather than up.   
-   This weird coordinate system is due to historical reasons. When physical devices were
+   This unusual coordinate system is due to historical reasons. When physical devices were
    first built, they would scan from left to right and then top to bottom.
 
 .. figure:: Figures/coords.png
@@ -135,33 +162,78 @@ The constructor that doesn't take any parameters, ``World()``, creates a graphic
 The Turtle Class Constructors
 ----------------------------------------------------------
 
-The ``Turtle`` class also has multiple constructors, although it always requires a world as an parameter in order to have a place to draw the turtle. The default location for the turtle is right in the middle of the world.
+.. |turtle documentation| raw:: html
 
-There is another ``Turtle`` constructor that places the turtle at a certain (x,y) location in the world, for example at the coordinate (50, 100) below.
+   <a href="https://www2.cs.uic.edu/~i101/doc/Turtle.html" target="_blank" style="text-decoration:underline">documentation</a>
+
+When you use a class that someone has already written for you in a **library**  like the ``Turtle`` class, you can look up how to use the constructors and 
+methods in the |turtle documentation| for that class.  The documentation will 
+list the **signatures** (or headers) of the constructors or methods which will tell you 
+their name and parameter list. The **parameter list**, in the **header** of a constructor, 
+lists the **formal parameters**, declaring the variables that will be passed in as values and their data types. 
+
+.. figure:: Figures/TurtleClassDefn.png
+    :width: 600px
+    :align: center
+    :alt: Turtle Class Constructor Signatures and Parameters
+    :figclass: align-center
+
+    Figure 3: Turtle Class Constructor Signatures and Parameters
+
+
+The ``Turtle`` class has multiple constructors, although it always requires a World as an parameter 
+in order to have a place to draw.   You must create a World before you can create a Turtle. The first constructor places the turtle in a default location in the middle of the world.
+The second constructor places the turtle at a certain (x,y) location in the world.
+
 
 .. code-block:: java
 
-    Turtle t1 = new Turtle(world1);
-    Turtle t2 = new Turtle(50, 100, world1);
+    World world = new World();
+    Turtle t1 = new Turtle(world);           //place in center of world     
+    Turtle t2 = new Turtle(50, 100, world);  //place at 50, 100
+
 
 .. note::
-   Notice that the order of the parameters matter. The ``Turtle`` constructor takes ``(x,y,world)`` as parameters in that order. If you mix up the order of the parameters it will cause an error, because the parameters will not be the data types that it expects. This is one reason why programming languages have data types -- to allow for error-checking.
+   The order of the argument values matter. 
+   The ``Turtle`` constructor takes ``(x,y,world)`` as parameters in that order. 
+   If you mix up the order of the parameters it will cause an error, because the parameters will not be the data types that it expects. This is one reason why programming languages have data types -- to allow for error-checking.
+
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: const_turtle
+.. mchoice:: const_turtle1
    :practice: T
    :answer_a: Turtle t = Turtle(world);
    :answer_b: Turtle t = new Turtle();
-   :answer_c: Turtle t = new Turtle(world, 100, 100);
-   :answer_d: Turtle t = new Turtle(100, 100, world);
-   :correct: d
+   :answer_c: Turtle t = new Turtle(world);
+   :answer_d: World t = new Turtle(world);
+   :correct: c
    :feedback_a: You must use the new keyword to create a new Turtle.
-   :feedback_b: All turtle constructors take a world as a parameter.
-   :feedback_c: The order of the parameters matter.
-   :feedback_d: This creates a new Turtle object in the passed world at location (100,100)
+   :feedback_b: All turtle constructors must take a world as a parameter.
+   :feedback_c: This creates a Turtle object and places it in the center of the world.
+   :feedback_d: You can not assign a Turtle object to a variable declared to have type World.
 
-   Which of these is valid syntax for creating and initializing a Turtle object?
+   Which of these is valid syntax for creating and initializing a Turtle object in the center of the world?
+
+
+.. mchoice:: const_turtle2
+   :practice: T
+   :answer_a: Turtle t = new Turtle();
+   :answer_b: Turtle t = new Turtle(50,75);
+   :answer_c: Turtle t = new Turtle(world1);
+   :answer_d: Turtle t = new Turtle(world1,50,75);
+   :answer_e: Turtle t = new Turtle(50,75,world1);
+   :correct: e
+   :feedback_a: There is no Turtle constructor that takes no parameters according to the figure above.
+   :feedback_b: There is no Turtle constructor that takes 2 parameters according to the figure above.
+   :feedback_c: This would initialize the Turtle to the middle of the world, not necessarily coordinates (50,150).
+   :feedback_d: Make sure the order of the parameters match the constructor signature above.
+   :feedback_e: This matches the second constructor above with the parameters of x, y, and world.
+
+   Given the Turtle class and a World object referenced by variable world1, 
+   which of the following code segments will correctly create an instance of a 
+   Turtle object at (x,y) coordinates (50,75)?
+
 
 |CodingEx| **Coding Exercise:**
 
@@ -170,7 +242,10 @@ There is another ``Turtle`` constructor that places the turtle at a certain (x,y
     :autograde: unittest
     :datafile: turtleClasses.jar
 
-    Try changing the code below to create a ``World`` object with 300x400 pixels. Where is the turtle placed by default? What parameters do you need to pass to the ``Turtle`` constructor to put the turtle at the top right corner? Experiment and find out. What happens if you mix up the order of the parameters?
+    Try changing the code below to create a ``World`` object with 300x400 pixels. 
+    Where is the turtle placed by default? What parameters do you need to 
+    pass to the ``Turtle`` constructor to put the turtle near the top right corner? Recall that (0,0) is 
+    the top left corner. Experiment with different initial locations for the turtle. What happens if you mix up the order of the parameters?
 
     (If the code below does not work in your browser, you can also copy the code into  
     this |repl link| (refresh page after forking if it gets stuck) or download the files |github| to use 
@@ -283,58 +358,10 @@ You assign an object variable by calling a constructor on the right hand side of
     }
 
 
-Constructor Signatures
------------------------------------
-
-.. |turtle documentation| raw:: html
-
-   <a href="https://www2.cs.uic.edu/~i101/doc/Turtle.html" target="_blank" style="text-decoration:underline">documentation</a>
-
-When you use a class that someone has already written for you in a **library** that you can import like the ``Turtle`` class above, you can look up how to use the constructors and methods in the |turtle documentation| for that class.  The documentation will list the **signatures** (or headers) of the constructors or methods which will tell you their name and parameter list. The **parameter list**, in the **header** of a constructor, lists the **formal parameters**, declaring the variables that will be passed in as values and their data types. 
-
-Constructors are **overloaded** when there are multiple constructors, but the constructors have different signatures. They can differ in the number, type, and/or order of parameters.  For example, here are two constructors for the ``Turtle`` class that take different parameters:
 
 
-.. figure:: Figures/TurtleClassDefn.png
-    :width: 600px
-    :align: center
-    :alt: Turtle Class Constructor Signatures and Parameters
-    :figclass: align-center
-
-    Figure 3: Turtle Class Constructor Signatures and Parameters
-
-
-|Exercise| **Check your understanding**
-
-.. mchoice:: TurtleClass1
-   :practice: T
-   :answer_a: Turtle t = new Turtle();
-   :answer_b: Turtle t = new Turtle(50,150);
-   :answer_c: Turtle t = new Turtle(world1);
-   :answer_d: Turtle t = new Turtle(world1,50,150);
-   :answer_e: Turtle t = new Turtle(50,150,world1);
-   :correct: e
-   :feedback_a: There is no Turtle constructor that takes no parameters according to the figure above.
-   :feedback_b: There is no Turtle constructor that takes 2 parameters according to the figure above.
-   :feedback_c: This would initialize the Turtle to the middle of the world, not necessarily coordinates (50,150).
-   :feedback_d: Make sure the order of the parameters match the constructor signature above.
-   :feedback_e: This matches the second constructor above with the parameters of x, y, and world.
-
-   Given the Turtle class in the figure above and a World object world1, which of the following code segments will correctly create an instance of a Turtle object at (x,y) coordinates (50,150)?
-
-.. mchoice:: no_arg_constructor
-   :practice: T
-   :answer_a: public World(int width, int height)
-   :answer_b: public World()
-   :answer_c: public World
-   :answer_d: public World(int width)
-   :correct: b
-   :feedback_a: This constructor signature defines two arguments: width and height.
-   :feedback_b: This constructor signature is correct for a no-argument constructor.
-   :feedback_c: The constructor signature must include parentheses.
-   :feedback_d: This constructor signature defines one argument: width.
-
-   Which of these is the correct signature for a no-argument constructor?
+Formal Parameters and Pass By Value
+------------------------------------
 
 In a later lesson you will learn to write your own classes. 
 However, if you see a class definition like the one below for a class 
@@ -349,30 +376,7 @@ and the constructors and know how to use them.
 
     Figure 4: A Date class showing attributes and constructors
 
-|Exercise| **Check your understanding**
 
-.. clickablearea:: date_constructor
-    :practice: T
-    :question: Click on the constructor headers (signatures)
-    :iscode:
-    :feedback: Constructors are public and have the same name as the class. Click on the constructor headers which are the first line of the constructors showing their name and parameters.
-
-    :click-incorrect:public class Date {:endclick:
-
-        :click-incorrect:private int year;:endclick:
-        :click-incorrect:private int month;:endclick:
-        :click-incorrect:private int day;:endclick:
-
-        :click-correct:public Date() :endclick:
-            :click-incorrect:{ /** Implementation not shown */ }:endclick:
-
-        :click-correct:public Date(int year, int month, int day) :endclick:
-            :click-incorrect:{ /** Implementation not shown */ }:endclick:
-
-        :click-incorrect:public void print() :endclick:
-            :click-incorrect:{ /** Implementation not shown */ }:endclick:
-
-    :click-incorrect:}:endclick:
 
 .. mchoice:: DateClass1
    :practice: T
@@ -391,10 +395,11 @@ and the constructors and know how to use them.
    Given the ``Date`` class in the figure above and assuming that months in the ``Date`` class are numbered starting at 1, which of the following code segments will create a ``Date`` object for the date September 20, 2020 using the correct constructor?
 
 
-Formal and Actual Parameters
---------------------------------
 
-When a constructor like ``Date(2005,9,1)`` is called, the **formal parameters**, (year, month, day), are set to copies of the  **actual parameters** (or **arguments**), which are (2005,9,1).  This is **call by value** which means that copies of the actual parameter values are passed to the constructor.  These values are used to initialize the object's attributes.
+When a constructor like ``Date(2005,9,1)`` is called, the formal parameters, (year, month, day), are set 
+to copies of the  actual parameters, which are (2005,9,1).  This is **pass by value** which means that 
+copies of the actual parameter values are passed to the constructor.  
+These values are used to initialize the object's attributes.
 
 .. figure:: Figures/parameterMappingDate.png
     :width: 450px
@@ -404,9 +409,15 @@ When a constructor like ``Date(2005,9,1)`` is called, the **formal parameters**,
 
     Figure 5: Parameter Mapping
 
-The type of the values being passed in as arguments have to match the type of the formal parameter variables. We cannot give a constructor a ``String`` object when it is expecting an ``int``. The order of the arguments also matters. If you mix up the month and the day in the ``Date`` constructor, you will get a completely different date, for example January 9th (1/9) instead of Sept. 1st (9/1).
+The type of the values being passed in as arguments have to match the type of the formal parameter variables. 
+We cannot give a constructor a ``String`` object when it is expecting an ``int``. 
+The order of the arguments also matters. 
+If you mix up the month and the day in the ``Date`` constructor, you will get a 
+completely different date, for example January 9th (1/9) instead of Sept. 1st (9/1).
 
 |Exercise| **Check your understanding**
+
+
 
 .. mchoice:: 2_2_formal_parms
    :practice: T
@@ -436,12 +447,12 @@ The type of the values being passed in as arguments have to match the type of th
 
    In ``new World(150, 200)`` what are ``150`` and ``200``?
 
+
+
 This lesson introduces a lot of vocabulary, but don't worry if you don't 
 understand everything about classes and constructors yet. 
-You will learn more about how this all works in Unit 5 when you write your 
-own classes and constructors. And you will see parameters 
-again with methods in the next lessons.
-
+You will learn more about how this all works in a later lesson when you write your 
+own classes and constructors. 
 
 
 Summary

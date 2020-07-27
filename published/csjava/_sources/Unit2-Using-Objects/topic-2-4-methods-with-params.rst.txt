@@ -273,6 +273,7 @@ Try the following mixed up code to draw a simple house made of a square and a tr
       =====
    }
    
+   
 
 |Groupwork| Programming Challenge : Turtle House
 ------------------------------------------------

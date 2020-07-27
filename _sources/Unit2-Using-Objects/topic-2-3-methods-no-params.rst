@@ -55,7 +55,7 @@ referenced by the "myrtle" variable, resulting in a change to myrtle's heading.
 
 Every method call is followed by parentheses. 
 The parentheses ``()`` after method names are there in case you need to give the 
-method parameters (data) to do its job, which we will see in the next lesson. 
+method parameters (data) to do its job. 
 You must always include the parentheses after the method name.
 
 
@@ -96,54 +96,6 @@ You must always include the parentheses after the method name.
 
 |CodingEx| **Coding Exercise:**
 
-
-After you put the mixed up code in order above, 
-type in the same code below to make the turtle draw a 7.
-
-.. activecode:: TurtleDraw7
-    :language: java
-    :autograde: unittest
-    :datafile: turtleClasses.jar
-
-    import java.util.*;
-    import java.awt.*;
-
-    public class TurtleDraw7
-    {
-      public static void main(String[] args)
-      {
-          World world = new World(300,300);
-          Turtle yertle = new Turtle(world);
-          // Make yertle draw a 7 using the code above
-
-
-
-          world.show(true);
-      }
-    }
-    ====
-    import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
-
-    public class RunestoneTests extends CodeTestHelper
-    {
-        public RunestoneTests() {
-            super("TurtleDraw7");
-        }
-
-        @Test
-        public void test1()
-        {
-            String orig = "yertle.forward();\nyertle.turnLeft();\nyertle.forward();";
-            boolean passed = checkCodeContains(orig);
-            assertTrue(passed);
-        }
-    }
-
-|CodingEx| **Coding Exercise:**
-
-
 .. activecode:: TurtleDraw8
     :language: java
     :autograde: unittest
@@ -151,9 +103,7 @@ type in the same code below to make the turtle draw a 7.
 
     Can you make yertle draw the digital number 8, as 2 squares on top of each other?
     ~~~~
-    import java.util.*;
-    import java.awt.*;
-
+   
     public class TurtleDraw8
     {
       public static void main(String[] args)
@@ -181,7 +131,7 @@ type in the same code below to make the turtle draw a 7.
         @Test
         public void test1()
         {
-            String orig = "import java.util.*;\nimport java.awt.*;\n\npublic class TurtleDraw8\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n      // Make yertle draw an 8 with 2 squares\n      yertle.forward();\n\n\n      world.show(true);\n  }\n}\n";
+            String orig = "public class TurtleDraw8\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n      // Make yertle draw an 8 with 2 squares\n      yertle.forward();\n\n\n      world.show(true);\n  }\n}\n";
             boolean passed = codeChanged(orig);
             assertTrue(passed);
         }
@@ -298,11 +248,9 @@ Summary
 
 - Use **dot notation** to execute an object's method.  This is the object's name followed by the dot (.) operator followed by the method name and parentheses: **object.method();**
 
-- A **method signature** is the method name followed by the parameter list which gives the type and name for each parameter. Note that methods do not have to take any parameters, but you still need the parentheses after the method name.
+- A **method signature** is the method name followed by the parameter list which gives the type and name for each parameter. 
 
-- **Procedural abstraction** allows a programmer to use a method by knowing in general what it does without knowing what lines of code execute. This is how we can drive a car without knowing how the brakes work.
-
-- A **method** or **constructor** call interrupts the sequential execution of statements, causing the program to first execute the statements in the method or constructor before continuing. Once the last statement in the method or constructor has executed or a return statement is executed, the flow of control is returned to the point immediately following the method or constructor call.
+- Methods do not have to take any parameters, but you still need the parentheses after the name when you call the method.
 
 - An **object method** or **non-static method** is one that must be called on an object of a class.  It usually works with the object's attributes.
 
