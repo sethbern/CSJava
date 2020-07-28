@@ -127,15 +127,9 @@ into the formal parameter variables.
     }
   }
 
-A method allows us to write blocks of code that perform a task, 
-which can be generalised by having formal parameter variables.  We define a method to give the block of 
-code a reusable name.
-The parameters allow the code to adapt to a variety of different situations, 
+A method performs a task that can be generalised by having formal parameter variables.  
+The method can adapt to a variety of  situations
 depending on the values passed into the method.
-
-
-The code below calculates and prints the weekly pay for two employees.
-Notice that some lines of code are similar but differ by value, while other lines of code are identical.
   
  .. code-block:: java
  
@@ -165,16 +159,16 @@ Notice that some lines of code are similar but differ by value, while other line
 
   }
 
-
-The table below compares the code for each employee side by side.  Notice the first three lines of code 
+The ``PayrollCalculator`` class listed above calculates and prints the weekly pay for two employees.  Do you notice any redundancy?
+The table below displays the code for each employee side by side.  The first three lines of code 
 are the same except for
-the value in the right hand side of each assignment, while the last two lines of code
-that calculate and print the weekly pay are identical.  
-We can eliminate code redundancy by adding a new method named ``calculatePay``. 
-The   method needs 3 formal parameters to allow
+the value in the right hand side of each assignment, while the last two lines of code are identical.  
+We can eliminate redundancy by adding a new method named ``calculatePay``.  The method
+will compute the weekly pay for an employee based on their hourlyRate and hoursWorked.
+We need 3 formal parameters to allow different
 values to be passed into the method: employee, hourlyRate, and hoursWorked.  
-The method body will use the formal
-parameters to compute and print the weekly pay.
+The method body will use the formal parameters to compute and print the weekly pay.  We can then
+call the method once per employee, passing in the appropriate actual parameter values.
 
 .. table:: 
   :align: left
@@ -199,14 +193,14 @@ will need to be provided as shown.
   :alt: Parameter passing for the calculatePay method 
   :figclass: align-center
 
-  Figure 3: The calculatePay method
+  Figure 2: The calculatePay method
 
 .. activecode:: CalculatePayMethod
   :language: java
   :autograde: unittest
   :practice: T
     
-  Update the code below to add the ``calculatePay`` method shown in Figure 3.  Update the ``main`` method to 
+  Update the code below to add the ``calculatePay`` method shown in Figure 2.  Update the ``main`` method to 
   call the ``calculatePay`` method twice to compute the pay for each employee.  
   Use the CodeLens button or copy the code into the |visualizer| to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.
 
@@ -270,9 +264,8 @@ will need to be provided as shown.
 
 
 When a method is called, the right method definition is found by 
-checking the **method signature** or **header** at the top of the method 
-definition to match the method name, the number of arguments, the data 
-types for the arguments and the return type. 
+checking the **method header** at the top of the method 
+definition to match the name, number and type of arguments, and return type. 
 
 |Exercise| **Check your understanding**
 
@@ -328,22 +321,23 @@ types for the arguments and the return type.
 
 |Exercise| **Check your understanding**
    
-.. figure:: Figures/mysteryoutput.png
-  :align: center
-  :figclass: align-center
-  
-  Figure 2: Method Overloading
 
-Figure 2 above shows a class with 3 methods named ``mystery``. While the 3 methods have the same name,
+Figure 3 shows a class with 3 methods named ``mystery``. While the 3 methods have the same name,
 notice that either the type of the formal parameter or the number of formal parameters is different.
 You may recall from the constructor lesson that this is called **overloading**. 
+
+  .. figure:: Figures/mysteryoutput.png
+    :align: center
+    :figclass: align-center
+    
+    Figure 3: Method Overloading
 
 .. parsonsprob:: methodargsparson
    :adaptive:
    :noindent:
-
+   
    The print output shown in the upper right section of 
-   Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
+   Figure 3 was produced by adding 3 method calls in the main method, which have been erased.
    Drag the needed blocks from the left area below into the correct order  in the right area
    to produce the print output shown in Figure 2: 
    -----
@@ -361,6 +355,7 @@ You may recall from the constructor lesson that this is called **overloading**.
 
 
 
+
 Variable Scope
 ---------------
 
@@ -372,30 +367,30 @@ A variable declared inside a method is called a **local variable**.
 The scope of a local variable is the method body
 in which it is declared, which means it is visible and can be used within the method but not outside of the method. 
 You can't use a variable before it is declared, so in fact the scope begins when you declare the variable
-and continues until the last line of code in the method.    The local variable's memory location is also only available while 
+and continues until the last line of code in the method or block.    The local variable's memory location is also only available while 
 the method is executing.  When the method completes, the memory location is released. If you called 
 the method again, the old value would not be available.  
 
 Consider the following methods:
     
-    .. code-block:: java
+.. code-block:: java
 
-        public static void inchesToCentimeters(double inches)
-        {
-            double centimeters = inches * 2.54;
-            System.out.print(inches + "-->" + centimeters);
-        }
+    public static void inchesToCentimeters(double inches)
+    {
+        double centimeters = inches * 2.54;
+        System.out.print(inches + "-->" + centimeters);
+    }
 
-        public static void main(String[] args)  
-        {
-            inchesToCentimeters(10);
-            inchesToCentimeters(15.7);
-        }
+    public static void main(String[] args)  
+    {
+        inchesToCentimeters(10);
+        inchesToCentimeters(15.7);
+    }
 
 
 The ``inchestToCentimeters`` method defines a local 
-variable ``centimeters``.  The variable is only available for use in the ``inchesToCentimeters`` method, 
-the ``main`` method can't see or use the variable.  Each time the method is called, a new memory location is
+variable ``centimeters``, which is only visible inside that method. 
+The main method can't see or use the variable.  Each time the inchestToCentimeters method is called, a new memory location is
 created for the variable.
 
 A formal parameter is like a local variable in that its scope is the body of the corresponding method.   
@@ -417,7 +412,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
    :feedback_b: Method main can accesses the local variable age, since it is declared in the main method.
    :feedback_c: Variable age is declared in the main method, so it can't be accessed in the print1 method.
    
-   Based on the class shown below, variable age can be used in which method?  
+   The variable ``age`` is visible in which method(s)?  
    
    .. code-block:: java
 
@@ -445,7 +440,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
    :feedback_b: Method print2 accesses age, which is not accessible since it is declared in the main method.
    :feedback_c: Method main accesses age, which is a local variable with method level scope..
    
-   Based on the class shown below, which method has a scope error (uses a variable that is not visible in that method)?  
+   Which method has a scope error (i.e. uses a variable that is not visible in that method)?  
    
    .. code-block:: java
 
@@ -472,7 +467,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 Method Tracing
 ------------------
 
-Any method can call another method.  See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
+A method can call other methods to help it do its job.  See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
 the code into the |visualizer|.
 
 
@@ -614,8 +609,8 @@ Pass by value
 
 Java uses **pass by Value** when it passes arguments to methods. 
 This means that a copy of the value in the argument is saved in the parameter variable. 
-If the parameter variable changes its value inside the method, 
-the original value outside the method is not changed.  **It is generally not a good idea to change the 
+The original value outside the method is not changed if the parameter variable is 
+assigned a new value inside the method.  **It is generally not a good idea to change the 
 value of a parameter inside a method, however it is possible as the example below shows.**
 
 |CodingEx| **Check your understanding**
@@ -680,7 +675,7 @@ this more in the following unit.
 ---------------------------------------------------------------
 
 The ShippingCostCalculator class listed below computes and prints the shipping cost for 3 different items based on their weight. 
-If the item weighs less than 15.0 lbs the cost is 9.95, otherwise the cost is 12.95.
+The cost is 9.95 if the item weighs less than 15.0, otherwise the cost is 12.95.
 While the if-else statements are not identical 
 due to the different variables names (weight1 vs weight2 vs weight3, cost1 vs cost2 vs cost3),
 each tests the weight and assigns the cost in the same way.  
@@ -735,8 +730,8 @@ each tests the weight and assigns the cost in the same way.
     }
     
 
-The redundant code can be reduced by adding a new method to 
-compute and print shipping cost based on item weight.  
+The redundant code will be eliminated by adding a new method to 
+compute and print the cost based on item weight.  
 
 .. activecode:: challenge-5-6-costCalculator
   :language: java

@@ -463,13 +463,9 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
-<p>A method allows us to write blocks of code that perform a task,
-which can be generalised by having formal parameter variables.  We define a method to give the block of
-code a reusable name.
-The parameters allow the code to adapt to a variety of different situations,
+<p>A method performs a task that can be generalised by having formal parameter variables.
+The method can adapt to a variety of  situations
 depending on the values passed into the method.</p>
-<p>The code below calculates and prints the weekly pay for two employees.
-Notice that some lines of code are similar but differ by value, while other lines of code are identical.</p>
 <blockquote>
 <div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PayrollCalculator</span>
 <span class="p">{</span>
@@ -499,15 +495,16 @@ Notice that some lines of code are similar but differ by value, while other line
 </pre></div>
 </div>
 </div></blockquote>
-<p>The table below compares the code for each employee side by side.  Notice the first three lines of code
+<p>The <code class="docutils literal notranslate"><span class="pre">PayrollCalculator</span></code> class listed above calculates and prints the weekly pay for two employees.  Do you notice any redundancy?
+The table below displays the code for each employee side by side.  The first three lines of code
 are the same except for
-the value in the right hand side of each assignment, while the last two lines of code
-that calculate and print the weekly pay are identical.
-We can eliminate code redundancy by adding a new method named <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code>.
-The   method needs 3 formal parameters to allow
+the value in the right hand side of each assignment, while the last two lines of code are identical.
+We can eliminate redundancy by adding a new method named <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code>.  The method
+will compute the weekly pay for an employee based on their hourlyRate and hoursWorked.
+We need 3 formal parameters to allow different
 values to be passed into the method: employee, hourlyRate, and hoursWorked.
-The method body will use the formal
-parameters to compute and print the weekly pay.</p>
+The method body will use the formal parameters to compute and print the weekly pay.  We can then
+call the method once per employee, passing in the appropriate actual parameter values.</p>
 <table class="colwidths-auto docutils align-left">
 <thead>
 <tr class="row-odd"><th class="head"><p>Calculate pay for first employee</p></th>
@@ -537,11 +534,11 @@ contains  three formal parameters for employee, hourlyRate, and hoursWorked.  Wh
 will need to be provided as shown.</p>
 <div class="align-center figure" id="id2">
 <img alt="Parameter passing for the calculatePay method" src="../_images/calculatePay.png" />
-<p class="caption"><span class="caption-text">Figure 3: The calculatePay method</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 2: The calculatePay method</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 
 <div data-childcomponent="CalculatePayMethod" class="runestone explainer ac_section alert alert-warning">
-<p>Update the code below to add the <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> method shown in Figure 3.  Update the <code class="docutils literal notranslate"><span class="pre">main</span></code> method to
+<p>Update the code below to add the <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> method shown in Figure 2.  Update the <code class="docutils literal notranslate"><span class="pre">main</span></code> method to
 call the <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> method twice to compute the pay for each employee.
 Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.</p>
 
@@ -608,9 +605,8 @@ public class RunestoneTests extends CodeTestHelper
 </textarea>
 </div>
 <p>When a method is called, the right method definition is found by
-checking the <strong>method signature</strong> or <strong>header</strong> at the top of the method
-definition to match the method name, the number of arguments, the data
-types for the arguments and the return type.</p>
+checking the <strong>method header</strong> at the top of the method
+definition to match the name, number and type of arguments, and return type.</p>
 <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
@@ -664,18 +660,20 @@ types for the arguments and the return type.</p>
             </ul>
             </div>
             <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-<div class="align-center figure" id="id3">
-<img alt="../_images/mysteryoutput.png" src="../_images/mysteryoutput.png" />
-<p class="caption"><span class="caption-text">Figure 2: Method Overloading</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
-<p>Figure 2 above shows a class with 3 methods named <code class="docutils literal notranslate"><span class="pre">mystery</span></code>. While the 3 methods have the same name,
+<p>Figure 3 shows a class with 3 methods named <code class="docutils literal notranslate"><span class="pre">mystery</span></code>. While the 3 methods have the same name,
 notice that either the type of the formal parameter or the number of formal parameters is different.
 You may recall from the constructor lesson that this is called <strong>overloading</strong>.</p>
+<blockquote>
+<div><div class="align-center figure" id="id3">
+<img alt="../_images/mysteryoutput.png" src="../_images/mysteryoutput.png" />
+<p class="caption"><span class="caption-text">Figure 3: Method Overloading</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="methodargsparson"  data-adaptive="true"    data-noindent="true"   >
         <span data-question>5-2-4: The print output shown in the upper right section of
-Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
+Figure 3 was produced by adding 3 method calls in the main method, which have been erased.
 Drag the needed blocks from the left area below into the correct order  in the right area
 to produce the print output shown in Figure 2:</span>mystery( 5 );
 ---
@@ -699,12 +697,11 @@ and can be used in the code.</p>
 The scope of a local variable is the method body
 in which it is declared, which means it is visible and can be used within the method but not outside of the method.
 You can’t use a variable before it is declared, so in fact the scope begins when you declare the variable
-and continues until the last line of code in the method.    The local variable’s memory location is also only available while
+and continues until the last line of code in the method or block.    The local variable’s memory location is also only available while
 the method is executing.  When the method completes, the memory location is released. If you called
 the method again, the old value would not be available.</p>
 <p>Consider the following methods:</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">centimeters</span> <span class="o">=</span> <span class="n">inches</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">inches</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">centimeters</span><span class="p">);</span>
@@ -717,10 +714,9 @@ the method again, the old value would not be available.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p>The <code class="docutils literal notranslate"><span class="pre">inchestToCentimeters</span></code> method defines a local
-variable <code class="docutils literal notranslate"><span class="pre">centimeters</span></code>.  The variable is only available for use in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method,
-the <code class="docutils literal notranslate"><span class="pre">main</span></code> method can’t see or use the variable.  Each time the method is called, a new memory location is
+variable <code class="docutils literal notranslate"><span class="pre">centimeters</span></code>, which is only visible inside that method.
+The main method can’t see or use the variable.  Each time the inchestToCentimeters method is called, a new memory location is
 created for the variable.</p>
 <p>A formal parameter is like a local variable in that its scope is the body of the corresponding method.
 The <code class="docutils literal notranslate"><span class="pre">inches</span></code> formal parameter variable is only visible in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method body.</p>
@@ -731,7 +727,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mscope1" >
-            <p>5-2-5: Based on the class shown below, variable age can be used in which method?</p>
+            <p>5-2-5: The variable <code class="docutils literal notranslate"><span class="pre">age</span></code> is visible in which method(s)?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Visibility</span> <span class="p">{</span>
 
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print1</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
@@ -758,7 +754,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mscope2" >
-            <p>5-2-6: Based on the class shown below, which method has a scope error (uses a variable that is not visible in that method)?</p>
+            <p>5-2-6: Which method has a scope error (i.e. uses a variable that is not visible in that method)?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Visibility</span> <span class="p">{</span>
 
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print1</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
@@ -790,7 +786,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
             </div>
 <div class="section" id="method-tracing">
 <h2><span class="section-number">5.2.2. </span>Method Tracing<a class="headerlink" href="#method-tracing" title="Permalink to this headline">¶</a></h2>
-<p>Any method can call another method.  See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
+<p>A method can call other methods to help it do its job.  See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
 the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>.</p>
 <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
@@ -903,8 +899,8 @@ order to call the <code class="docutils literal notranslate"><span class="pre">p
 <h2><span class="section-number">5.2.3. </span>Pass by value<a class="headerlink" href="#pass-by-value" title="Permalink to this headline">¶</a></h2>
 <p>Java uses <strong>pass by Value</strong> when it passes arguments to methods.
 This means that a copy of the value in the argument is saved in the parameter variable.
-If the parameter variable changes its value inside the method,
-the original value outside the method is not changed.  <strong>It is generally not a good idea to change the
+The original value outside the method is not changed if the parameter variable is
+assigned a new value inside the method.  <strong>It is generally not a good idea to change the
 value of a parameter inside a method, however it is possible as the example below shows.</strong></p>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Check your understanding</strong></p>
 
@@ -966,7 +962,7 @@ this more in the following unit.</p>
 <div class="section" id="groupwork-programming-challenge-calculating-shipping-costs">
 <h2><span class="section-number">5.2.4. </span><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Programming Challenge : Calculating Shipping Costs<a class="headerlink" href="#groupwork-programming-challenge-calculating-shipping-costs" title="Permalink to this headline">¶</a></h2>
 <p>The ShippingCostCalculator class listed below computes and prints the shipping cost for 3 different items based on their weight.
-If the item weighs less than 15.0 lbs the cost is 9.95, otherwise the cost is 12.95.
+The cost is 9.95 if the item weighs less than 15.0, otherwise the cost is 12.95.
 While the if-else statements are not identical
 due to the different variables names (weight1 vs weight2 vs weight3, cost1 vs cost2 vs cost3),
 each tests the weight and assigns the cost in the same way.</p>
@@ -1018,8 +1014,8 @@ each tests the weight and assigns the cost in the same way.</p>
   <span class="p">}</span>
 </pre></div>
 </div>
-<p>The redundant code can be reduced by adding a new method to
-compute and print shipping cost based on item weight.</p>
+<p>The redundant code will be eliminated by adding a new method to
+compute and print the cost based on item weight.</p>
 
 <div data-childcomponent="challenge-5-6-costCalculator" class="runestone explainer ac_section alert alert-warning">
 <ul class="simple">

@@ -37,10 +37,10 @@ If you recall the getter methods were usually on the right hand side of an assig
 When a method returns a value, your code should do something with the value such as store it in a 
 variable or print it out.
 
-You will learn how to  create methods that access object attributes like the Turtle methods in a later lesson. 
+You will learn how to  create methods that access object attributes in a later lesson. 
 This lesson shows 
 you how to create static methods that are functions. 
-A function take one or more values passed as formal parameters and computes a new value to return.
+A function takes one or more values passed as formal parameters and computes a new value to return.
 
 An example method that returns a value (i.e. a function) is shown in the code below.
 
@@ -49,8 +49,8 @@ An example method that returns a value (i.e. a function) is shown in the code be
   :autograde: unittest
   :practice: T
     
-  The method ``volumeCylinder`` takes parameters representing the radius and height of a cylinder 
-  and returns the corresponding volume.  The method return type is ``double``.
+  The method ``volumeCylinder`` takes parameters representing the radius and height of a cylinder, 
+  and returns the corresponding volume.  The method returns a value that has type ``double``.
   Use the CodeLens to step through the code.
   Experiment with passing different values to the method.
 
@@ -94,8 +94,15 @@ An example method that returns a value (i.e. a function) is shown in the code be
 Method Return Type
 ------------------
 
-A method can return at most one value.
-The method signature specifies the **return type**, which can be a primitive (int, double, boolean), 
+.. figure:: Figures/volumeCylinder.png
+  :align: center
+  :alt: Method signature for volumeCylinder
+  :figclass: align-center
+  
+  Figure 1: Method Return Type
+
+
+A method can return at most one value.  The method signature specifies the **return type**, which can be a primitive (int, double, boolean), 
 a class (String, Turtle, etc), or void.
 A **void** return type means the method does not return a value.
 If a method has a **non-void** return type, then it must contain a **return statement** that specifies the value to return.
@@ -110,10 +117,10 @@ The return type must match with the value in the return statement.
   :practice: T
     
   The code below contains a method ``inchesToCentimeters`` that computes and prints the centimeter equivalent of the value passed into the inches parameter.
-  Instead of printing the centimeter value inside the method, you should update the ``inchesToCentimeters`` 
-  method to return the value.  You will have to change 
-  the return type of the method.  Update the ``main`` method to print the value returned by the 
-  ``inchesToCentiments`` method. 
+  Instead of printing the centimeter value inside the inchesToCentimeters method, you should update the  
+  method to return the value and then move the printing to the main method.  You will have to change 
+  the return type of the inchesToCentimeters method to match the type of the value being returned. 
+  Update the ``main`` method to print the value returned by the ``inchesToCentiments`` method. 
 
   ~~~~
   public class InchesToCentimeters 
@@ -272,7 +279,7 @@ The return type must match with the value in the return statement.
      public static int mystery()
 
 
-CodingEx| **Coding Exercise**
+|CodingEx| **Coding Exercise**
 
 .. activecode:: stepcounter
   :language: java
@@ -280,7 +287,7 @@ CodingEx| **Coding Exercise**
   :practice: T
   
   A pedometer estimates that taking 2,000 steps is the same as walking 1 mile. 
-  Write a method ``convertToMiles`` that takes a parameter for the number of steps and returns the miles walked.
+  Write a method ``convertToMiles`` that takes a parameter for the number of steps and returns the equivalent miles walked.
   Update the main method to call ``convertToMiles`` 4 times with values 500, 2000, 3000, 9000. 
   Carefully consider what the return type should be.
   You can assume the number of steps is an integer.
@@ -361,7 +368,8 @@ CodingEx| **Coding Exercise**
   
   Write a function ``randomInteger`` that takes two integer 
   parameters ``min`` and ``max`` and returns a random integer value between min and max (inclusive).
-  Have the main method call the function with different values.
+  Have the main method call the function with different values.  You might want to go back and 
+  review random number generation in Unit 2-9.
 
   ~~~~
   public class RandomNumberInRange 

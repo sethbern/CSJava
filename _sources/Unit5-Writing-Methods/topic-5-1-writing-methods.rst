@@ -213,7 +213,6 @@ The main method can call the chorus method multiple times to repeat the two line
     :click-incorrect:}:endclick:
 
 
-|Exercise| **Check Your Understanding**
    
 .. clickablearea:: greet_method_body
     :question: Click on all statements contained within the greet method body.
@@ -237,7 +236,6 @@ The main method can call the chorus method multiple times to repeat the two line
     :click-incorrect:}:endclick:
 
 
-|Exercise| **Check Your Understanding**
    
 .. clickablearea:: greet_method_call
     :question: Click on the greet method call.
