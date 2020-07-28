@@ -351,7 +351,8 @@
   <div class="section" id="writing-methods">
 <span id="index-0"></span><h1><span class="section-number">5.1. </span>Writing Methods<a class="headerlink" href="#writing-methods" title="Permalink to this headline">¶</a></h1>
 <p>Up until this unit, you wrote all  code in the main method,
-but now you will be creating new methods that can be called by the main method. Why have multiple methods instead of just one?
+but now you will be creating new methods that can be called by the main method.
+Why have multiple methods instead of just one?
 <strong>Procedural Abstraction</strong> allows us to name a block of code as a method and
 call it whenever we need it, abstracting away the details of how it works.
 This serves to organize our code by function and reduce
@@ -359,13 +360,12 @@ the repetition of code. In addition, it helps with debugging and maintenance sin
 changes to that block of code only need to happen in one place.
 Here are some of the main reasons to use multiple methods in your programs:</p>
 <ul class="simple">
-<li><p>Organization and Reducing Complexity: organize your program into small sections of code to reduce its complexity. Divide a problem into subproblems to solve it a piece at a time.</p></li>
-<li><p>Reusing Code: avoid repetition of code. Reuse code by putting it in a method and calling it whenever needed.</p></li>
-<li><p>Maintainability and Debugging: smaller methods are easier to debug and understand than searching through a large main method.</p></li>
+<li><p>Reducing Complexity: Divide a problem into subproblems to solve it a piece at a time.</p></li>
+<li><p>Reusing Code: Avoid repetition of code.</p></li>
+<li><p>Maintainability and Debugging: Smaller methods are easier to debug and understand.</p></li>
 </ul>
-<p>Let’s look at an example with repetition of code and
-create methods to reduce the repetition.</p>
-<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> Check Your Understanding</p>
+<p>Let’s look at an example with repetition of code and then we will
+create a method to reduce the repetition.</p>
 
 <div class="runestone">
 <div data-component="clickablearea" class="runestone alert alert-warning" id="repeatedcode_methods"    >
@@ -383,34 +383,36 @@ create methods to reduce the repetition.</p>
 
 </div>
 </div>
-<p>Did you find some repeated lines of the song?
-You may have noticed that the chorus is
-repeated “I’m looking over a four-leaf clover That I overlooked before”
-When you see repeated code, that is a signal for you to make a new method!</p>
-<p>A method is a <strong>named</strong> set of statements.  When we want to execute the statements,
+<p>Did you find some repeated lines?
+The chorus is
+repeated at the beginning and ending of the song: “I’m looking over a four-leaf clover That I overlooked before”.</p>
+<p>When you see repeated code, that is a signal for you to make a new method!
+A method is a <strong>named</strong> set of statements.  When we want to execute the statements,
 we call the method using its name.
 In a subsequent lesson you will create methods that are called using an object,
 referred to as <strong>object methods</strong> or <strong>instance methods</strong>.
 The methods in this unit are called without an object, so they are  <strong>static methods</strong>.
 Static methods are also referred to as class methods.</p>
-<div class="section" id="defining-a-static-method">
-<h2><span class="section-number">5.1.1. </span>Defining a Static Method<a class="headerlink" href="#defining-a-static-method" title="Permalink to this headline">¶</a></h2>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="../_images/methodheader.png"><img alt="../_images/methodheader.png" src="../_images/methodheader.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Figure 1: Method Header(Signature) and Method Body</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>There are two steps to creating and calling a static method:</p>
-<blockquote>
-<div><p><strong>Step 1. Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong>.
+<div class="section" id="writing-static-methods">
+<h2><span class="section-number">5.1.1. </span>Writing Static Methods<a class="headerlink" href="#writing-static-methods" title="Permalink to this headline">¶</a></h2>
+<p>There are two steps to writing and using a static method:</p>
+<ul class="simple">
+<li><p>Step 1. Method Definition</p></li>
+<li><p>Step 2. Method Call</p></li>
+</ul>
+<p>You define a method by writing the method’s <strong>header</strong> and <strong>body</strong>.
 The header is also called
 a method <strong>signature</strong>.  The parts of the main method header are shown in Figure 1,
 which include an access modifier,
 static modifier, return type, name, and formal parameters.   The method body
 consists of a set of statements enclosed in curly braces { }.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/methodheader.png"><img alt="../_images/methodheader.png" src="../_images/methodheader.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Method Header(Signature) and Method Body</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <p>The code below contains a chorus() method definition
 that we could write to encapsulate the two lines that get repeated in the song.</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: define a new method named chorus</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: define a new method named chorus</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">chorus</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I&#39;m looking over a four-leaf clover&quot;</span><span class="p">);</span>
@@ -418,29 +420,23 @@ that we could write to encapsulate the two lines that get repeated in the song.<
 <span class="p">}</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p><strong>Step 2. Method Call</strong>: whenever you want to use a method, you can call the method using the method name followed by parenthesis, for example methodName();
-The statements in the method body will be executed each time the method is called.</p>
-<p>Look at the method header in step 1 above:
-<code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">void</span> <span class="pre">chorus()</span></code>.  The header indicates the return type is void and there are no formal parameters
-between the parenthesis, which means you can call the method as shown:</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the chorus method</span>
+<p>Whenever you want to use a method, you call it using the method name followed by parentheses.
+The method header <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">void</span> <span class="pre">chorus()</span></code> indicates the return type is void and there are no formal parameters
+between the parentheses, which means you can call the method as shown:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the chorus method</span>
 <span class="n">chorus</span><span class="p">();</span>
 </pre></div>
 </div>
-</div></blockquote>
-</div></blockquote>
-<p>The main method can call <code class="docutils literal notranslate"><span class="pre">chorus();</span></code> anytime we want the two print statements in the method body to be executed.
-Notice that we can just call the static method, we don’t need to create an object to use for calling the method.</p>
+<p>Notice that we can just call the static method, we don’t need to create an object to use for calling the method.
+The main method can call the chorus method multiple times to repeat the two lines of the song.</p>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="fourleafcloversong" class="runestone explainer ac_section alert alert-warning">
 <p>Run the following code to see the song print out.
 Notice the first line of code in the main method
-is a call to the new method chorus().
+is a call to the new method <code class="docutils literal notranslate"><span class="pre">chorus()</span></code>.
 Can you replace the last two lines in the second verse in the main
-method with another call to the chorus() method?
+method with another call to the <code class="docutils literal notranslate"><span class="pre">chorus()</span></code> method?
 Step through using on the Code Lens button to see how the main method calls the chorus method.</p>
 
 <textarea data-component="activecode" id=fourleafcloversong data-lang="java" 
@@ -573,7 +569,18 @@ import static org.junit.Assert.*;
 
         </div>
         </div>
-            <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+            </div>
+<div class="section" id="flow-of-execution">
+<h2><span class="section-number">5.1.2. </span>Flow of Execution<a class="headerlink" href="#flow-of-execution" title="Permalink to this headline">¶</a></h2>
+<p>A class can contain several methods.  It can be tempting to think the methods are executed in the order they
+appear in the class, but this is not the case.
+The flow of execution, which is the order the lines of code are executed, does not depend on the order of
+the methods.</p>
+<p>A program begin at the first statement in the main method.
+Statements in the main are executed in order one at a time until you reach a method call.
+A method call causes the program to jump to the first line of the method. The statements in the method will then be executed in order.
+When the method is done, the program returns back to the main method.</p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="likeFoodMethods" >
@@ -665,7 +672,7 @@ import static org.junit.Assert.*;
 </div>
 </div>
 <div class="section" id="summary">
-<h2><span class="section-number">5.1.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
 <li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>

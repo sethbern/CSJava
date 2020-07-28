@@ -24,8 +24,15 @@
 
    <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>   
   
+Method Comments and Conditions
+===============================
+
+In industry you often produce code that other people will use and you will use code other people produced.  It is important
+to document your code to facilitate understanding and reuse.
+
+
 Method Comments
-=================
+----------------
 
 Recall that there are 3 types of comments in Java:
 
@@ -62,41 +69,42 @@ The are some special tags that you can use in Java documentation. These are not 
 - @param   Parameter of a method
 - @return  Return value for a method
 
-The code below shows example commenting for a trivial class as well as an example method
+The code below shows example commenting for a class and two enclosed methods.
 
 .. code-block:: java
 
     /**
-    * The Add2Number program implements an application that
-    * adds two given integer numbers and prints
-    * the output on the screen.
+    * The Converter program implements an application that
+    * converts inches to centimeters and prints
+    * the equivalent quantities.
     *
     * @author  Fred Smith
     * @version 1.0
-    * @since   2019-01-31
+    * @since   2020-01-31
     */
-    public class Add2Number {
+    public class Converter {
 
         /**
-        * This method is used to add two integers.
-        * @param numA The first number to use in the sum
-        * @param numB  The second number to use in the sum
-        * @return int This returns sum of numA and numB.
+        * This method is used to convert inches to centimeters.
+        * @param inches A double representing a quantity of inches.
+        * @return double The equivalent quantity of centimeters.
         */
-        public static int addNum(int numA, int numB) {
-            return numA + numB;
+        public static double inchesToCentimeters(double inches)
+        {
+            return inches * 2.54;
         }
 
         /**
-        * This is the main method which makes use of addNum method.
+        * The main method demonstrates use of the inchesToCentimeters method.
         * @param args Unused.
         * @return Nothing.
         */
-
-        public static void main(String args[])  {
-            int sum = addNum(10, 20);
-            System.out.println("Sum of 10 and 20 is :" + sum);
+        public static void main(String[] args)  
+        {
+            System.out.println("10 inches = " + inchesToCentimeters(10) + " centimeters");
+            System.out.println("15.7 inches = " + inchesToCentimeters(15.7) + " centimeters");
         }
+
 
     }
 
@@ -106,100 +114,7 @@ Preconditions and  Postconditions
 
 As you write methods in a class, it is a good idea to keep in mind the **preconditions** and the **postconditions** for the method and write them in the comments. A precondition is a condition that must be true for your method code to work, for example the assumption that the parameters have values and are not null. The methods could check for these preconditions, but they do not have to. The precondition is what the method expects in order to do its job properly.
 
-A postcondition is a condition that is true after running the method. It is what the method promises to do. Postconditions describe the outcome of running the method, for example what is being returned or the changes to the instance variables. These assumptions are very useful to other programmers who want to use your class and get the correct results. 
-
-
-Here is an example of preconditions, postconditions, and @param in the Turtle code that we have used in the past for our drawing turtles.
-
-.. code-block:: java 
-
-       /**
-         * Constructor that takes the x and y position for the
-         * turtle
-         * Preconditions: parameters x and y are coordinates from 0 to 
-         *    the width and height of the world.
-         * Postconditions: the turtle is placed in (x,y) coordinates 
-         * @param x the x position to place the turtle
-         * @param y the y position to place the turtle
-         */
-        public Turtle(int x, int y)
-        {
-          xPos = x;
-          yPos = y;
-        }
-        
-|CodingEx| **Coding Exercise**
-
-Try to break the preconditions of the Turtle constructor below. Does the Turtle constructor behave properly if you break the preconditions that x and y are between 0 and 300. Try giving the Turtle constructor  x and y values out of these ranges. What happens? Does the method give good results? Does it give any warnings? What about the t.forward() method? Does it have any preconditions that you can break?
-
-.. |github| raw:: html
-
-   <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a>
-   
-.. |repl link| raw:: html
-
-   <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a>
-   
-(If the code below does not work for you, you can copy the code into  this |repl link| (refresh page after forking and if it gets stuck) or download the files |github| to use in your own IDE.)
-
-.. activecode:: turtle-preconditions
-    :language: java
-    :datafile: turtleClasses.jar
-
-    import java.util.*;
-    import java.awt.*;
-
-    public class TurtlePreconditions
-    {
-      public static void main(String[] args)
-      {
-          World world = new World(300,300);
-          // Change 0,0 to other values outside of 0-300 to break the preconditions and see what happens
-          Turtle t = new Turtle(0,0,world);
-          t.turnRight();
-          world.show(true); 
-      }
-    }
-    
-The Turtle constructor's precondition is that x and y should be between 0 and the width and height of the world. If it receives values out of this range, it sets x and y to the closest legal values that it can so that the turtle appears just at the edge of the world. Similarly, the forward() method will not allow the turtle to leave the world.  
-
-|Exercise| **Check your understanding**
-
-.. mchoice:: AP5-3-1
-    :practice: T
-    :answer_a: /* Precondition: s <= 0 */
-    :answer_b: /* Precondition: score >= 0 */
-    :answer_c: /* Precondition: s and ec >= 0 */
-    :answer_d: /* Precondition: n is not the empty String */
-    :answer_e: /* Precondition: studentName is not the empty String */
-    :correct: c, d
-    :feedback_a: It is not reasonable the s which sets the score should be negative.
-    :feedback_b: The precondition should be about the parameters of the constructor. score is not the parameter variable.
-    :feedback_c: Correct. It is reasonable that the score and extraCredit should be set to positive values using the parameters s and ec.
-    :feedback_d: Correct. It is reasonable that the parameter n which sets the name should be not empty. 
-    :feedback_e: The precondition should be about the parameters of the constructor. score is not the parameter variable.
-   
-    Consider the following class definition.
-
-    .. code-block:: java
-
-        public class TestScore
-        {
-            private String studentName;
-            private double score;
-            private double extraCredit;
-
-            public TestScore (String n, double s, double ec)
-            {
-                studentName = n;
-                score = s;
-                extraCredit = ec;
-            }
-            /* Other methods not shown */
-        }
-
-     Which of the following preconditions are reasonable for the TestScore constructor?
-            
+A postcondition is a condition that is true after running the method. It is what the method promises to do. Postconditions describe the outcome of running the method, for example what is being returned or the changes to the instance variables. These assumptions are very useful to other programmers who want to use your class and get the correct results.   
 
 Let's consider the substring method in Java. This method has a strong precondition that its arguments refer to indices within the given string. 
 

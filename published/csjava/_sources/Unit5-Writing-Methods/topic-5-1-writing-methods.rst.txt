@@ -33,7 +33,8 @@ Writing Methods
 =================
 
 Up until this unit, you wrote all  code in the main method, 
-but now you will be creating new methods that can be called by the main method. Why have multiple methods instead of just one? 
+but now you will be creating new methods that can be called by the main method. 
+Why have multiple methods instead of just one? 
 **Procedural Abstraction** allows us to name a block of code as a method and 
 call it whenever we need it, abstracting away the details of how it works.  
 This serves to organize our code by function and reduce 
@@ -41,14 +42,13 @@ the repetition of code. In addition, it helps with debugging and maintenance sin
 changes to that block of code only need to happen in one place. 
 Here are some of the main reasons to use multiple methods in your programs:
 
-- Organization and Reducing Complexity: organize your program into small sections of code to reduce its complexity. Divide a problem into subproblems to solve it a piece at a time.
-- Reusing Code: avoid repetition of code. Reuse code by putting it in a method and calling it whenever needed.
-- Maintainability and Debugging: smaller methods are easier to debug and understand than searching through a large main method.
+- Reducing Complexity: Divide a problem into subproblems to solve it a piece at a time.
+- Reusing Code: Avoid repetition of code. 
+- Maintainability and Debugging: Smaller methods are easier to debug and understand.
 
-Let's look at an example with repetition of code and 
-create methods to reduce the repetition. 
+Let's look at an example with repetition of code and then we will 
+create a method to reduce the repetition. 
 
-|Exercise| Check Your Understanding
 
 .. clickablearea:: repeatedcode_methods
     :question: Click on all the lines that are repeated.
@@ -67,11 +67,11 @@ create methods to reduce the repetition.
         :click-correct:System.out.println("That I overlooked before");:endclick:
     :click-incorrect:}:endclick:
             
-Did you find some repeated lines of the song? 
-You may have noticed that the chorus is 
-repeated "I'm looking over a four-leaf clover That I overlooked before" 
-When you see repeated code, that is a signal for you to make a new method!
+Did you find some repeated lines? 
+The chorus is 
+repeated at the beginning and ending of the song: "I'm looking over a four-leaf clover That I overlooked before". 
 
+When you see repeated code, that is a signal for you to make a new method!
 A method is a **named** set of statements.  When we want to execute the statements, 
 we call the method using its name.
 In a subsequent lesson you will create methods that are called using an object, 
@@ -79,8 +79,20 @@ referred to as **object methods** or **instance methods**.
 The methods in this unit are called without an object, so they are  **static methods**.  
 Static methods are also referred to as class methods.
 
-Defining a Static Method
--------------------------
+Writing Static Methods
+----------------------
+
+There are two steps to writing and using a static method:
+
+- Step 1. Method Definition
+- Step 2. Method Call
+
+You define a method by writing the method's **header** and **body**.  
+The header is also called 
+a method **signature**.  The parts of the main method header are shown in Figure 1, 
+which include an access modifier,
+static modifier, return type, name, and formal parameters.   The method body 
+consists of a set of statements enclosed in curly braces { }.  
 
 .. figure:: Figures/methodheader.png
     :width: 500px
@@ -90,44 +102,30 @@ Defining a Static Method
     Figure 1: Method Header(Signature) and Method Body
   
 
-There are two steps to creating and calling a static method:
+The code below contains a chorus() method definition 
+that we could write to encapsulate the two lines that get repeated in the song.  
 
-    **Step 1. Method Definition**:  write the method's **header** and **body**.  
-    The header is also called 
-    a method **signature**.  The parts of the main method header are shown in Figure 1, 
-    which include an access modifier,
-    static modifier, return type, name, and formal parameters.   The method body 
-    consists of a set of statements enclosed in curly braces { }.  
+.. code-block:: java
 
-    The code below contains a chorus() method definition 
-    that we could write to encapsulate the two lines that get repeated in the song.  
-
-        .. code-block:: java
-
-            // Step 1: define a new method named chorus
-            public static void chorus() 
-            { 
-                System.out.println("I'm looking over a four-leaf clover");
-                System.out.println("That I overlooked before");
-            }
+    // Step 1: define a new method named chorus
+    public static void chorus() 
+    { 
+        System.out.println("I'm looking over a four-leaf clover");
+        System.out.println("That I overlooked before");
+    }
 
 
-    **Step 2. Method Call**: whenever you want to use a method, you can call the method using the method name followed by parenthesis, for example methodName();  
-    The statements in the method body will be executed each time the method is called.  
-    
-    Look at the method header in step 1 above:
-    ``public static void chorus()``.  The header indicates the return type is void and there are no formal parameters
-    between the parenthesis, which means you can call the method as shown:
+Whenever you want to use a method, you call it using the method name followed by parentheses.
+The method header ``public static void chorus()`` indicates the return type is void and there are no formal parameters
+between the parentheses, which means you can call the method as shown:
 
-        .. code-block:: java
+.. code-block:: java
 
-           // Step 2: call the chorus method
-           chorus(); 
+    // Step 2: call the chorus method
+    chorus(); 
 
-
-The main method can call ``chorus();`` anytime we want the two print statements in the method body to be executed.
 Notice that we can just call the static method, we don't need to create an object to use for calling the method.
-
+The main method can call the chorus method multiple times to repeat the two lines of the song.
    
 |CodingEx| **Coding Exercise**
 
@@ -138,9 +136,9 @@ Notice that we can just call the static method, we don't need to create an objec
 
   Run the following code to see the song print out.  
   Notice the first line of code in the main method
-  is a call to the new method chorus().
+  is a call to the new method ``chorus()``.
   Can you replace the last two lines in the second verse in the main 
-  method with another call to the chorus() method? 
+  method with another call to the ``chorus()`` method? 
   Step through using on the Code Lens button to see how the main method calls the chorus method.
   ~~~~
   public class Song 
@@ -270,7 +268,18 @@ Notice that we can just call the static method, we don't need to create an objec
    -    :4: Correct.  
         :.*: Incorrect. The main method calls System.out.println directly 2 times, and the call to greet() results in 2 additional calls to System.out.println.
 
+Flow of Execution
+-----------------
 
+A class can contain several methods.  It can be tempting to think the methods are executed in the order they
+appear in the class, but this is not the case.
+The flow of execution, which is the order the lines of code are executed, does not depend on the order of
+the methods. 
+
+A program begin at the first statement in the main method. 
+Statements in the main are executed in order one at a time until you reach a method call. 
+A method call causes the program to jump to the first line of the method. The statements in the method will then be executed in order.
+When the method is done, the program returns back to the main method.
 
 |Exercise| **Check your understanding**
 
@@ -312,12 +321,6 @@ Notice that we can just call the static method, we don't need to create an objec
             fruit();
         }
     }
-
-
-
-
-
-
   
 |CodingEx| **Coding Exercise**
 

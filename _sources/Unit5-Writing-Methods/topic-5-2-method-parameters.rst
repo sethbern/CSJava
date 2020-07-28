@@ -133,17 +133,13 @@ code a reusable name.
 The parameters allow the code to adapt to a variety of different situations, 
 depending on the values passed into the method.
 
-|CodingEx| **Check your understanding**
 
-.. activecode:: RedundantCalculation
-  :language: java
-  :autograde: unittest
-  :practice: T
-    
-  The code below calculates and prints the weekly pay for two employees.
-  Notice that some lines of code are similar but differ by value, while other lines of code are identical.
-  ~~~~
-  public class RedundantCalculation
+The code below calculates and prints the weekly pay for two employees.
+Notice that some lines of code are similar but differ by value, while other lines of code are identical.
+  
+ .. code-block:: java
+ 
+  public class PayrollCalculator
   { 
   
     public static void main(String[] args) {
@@ -166,36 +162,18 @@ depending on the values passed into the method.
       System.out.println(employee  + ":" + weeklyPay);
 
     }
-  }
-  ====
-  import static org.junit.Assert.*;
-  import org.junit.*;;
-  import java.io.*;
 
-  public class RunestoneTests extends CodeTestHelper
-  {
-    
-    public RunestoneTests() {
-      super("RedundantCode");
-    }
-
-    @Test
-        public void test1()
-        {
-            boolean passed = getResults("true", "true", "main()");
-            assertTrue(passed);
-        }
   }
 
 
-We can reduce redundant code by adding a new method named ``calculatePay`` to compute and print the weekly pay for an employee.
 The table below compares the code for each employee side by side.  Notice the first three lines of code 
 are the same except for
 the value in the right hand side of each assignment, while the last two lines of code
 that calculate and print the weekly pay are identical.  
-This tells us that the ``calculatePay``  method should have 3 formal parameters to allow
-values to be passed into the method when it is called: employee, hourlyRate, and hoursWorked.  
-The ``calculatePay`` method body will use the formal
+We can eliminate code redundancy by adding a new method named ``calculatePay``. 
+The   method needs 3 formal parameters to allow
+values to be passed into the method: employee, hourlyRate, and hoursWorked.  
+The method body will use the formal
 parameters to compute and print the weekly pay.
 
 .. table:: 
@@ -217,25 +195,23 @@ contains  three formal parameters for employee, hourlyRate, and hoursWorked.  Wh
 will need to be provided as shown.
 
 .. figure:: Figures/calculatePay.png
-  :width: 500px
   :align: center
   :alt: Parameter passing for the calculatePay method 
   :figclass: align-center
-  
-  Figure 3: Removing redundant code with a new method called calculatePay
 
+  Figure 3: The calculatePay method
 
 .. activecode:: CalculatePayMethod
   :language: java
   :autograde: unittest
   :practice: T
     
-  Update the code below to add the new method calculatePay shown in Figure 3.  Update the main method to call the calculatePay
-  method twice, once for each employee.  
+  Update the code below to add the ``calculatePay`` method shown in Figure 3.  Update the ``main`` method to 
+  call the ``calculatePay`` method twice to compute the pay for each employee.  
   Use the CodeLens button or copy the code into the |visualizer| to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.
 
   ~~~~
-  public class CalculateEmployeePay
+  public class PayrollCalculator
   { 
 
     //add a new static method calculatePay here
@@ -259,7 +235,7 @@ will need to be provided as shown.
   {
     
     public RunestoneTests() {
-      super("CalculateEmployeePay");
+      super("PayrollCalculator");
     }
 
     @Test

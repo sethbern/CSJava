@@ -27,52 +27,48 @@
 Method Returns
 =================
 
-Formal parameters allow you to pass values into a method. You can also  pass a value out of a method using a **return statement**.  
-You saw some examples of  methods that return values in unit 2 with the ``Turtle`` methods (getWidth, getXpos, etc).
-If you recall the getter methods were usually on the right hand side of an assignment, or were contained in a print statement.
+A method bundles together lines of code that perform a specific task.
+
+- You can pass values into a method using formal parameters. 
+- You can pass a value out of a method using a **return statement**.  
+
+You saw examples of  methods that return values in Unit 2 with the ``Turtle`` methods (getWidth, getXpos, etc).
+If you recall the getter methods were usually on the right hand side of an assignment or they were contained in a print statement.
 When a method returns a value, your code should do something with the value such as store it in a 
 variable or print it out.
 
-Methods that return a value sometimes access an object's attributes, like the Turtle getter methods.  You will learn how to 
-create getter methods in a later lesson. In this lesson
-you will see how to create static methods that are functions. 
+You will learn how to  create methods that access object attributes like the Turtle methods in a later lesson. 
+This lesson shows 
+you how to create static methods that are functions. 
 A function take one or more values passed as formal parameters and computes a new value to return.
 
-Method Return Type
-------------------
+An example method that returns a value (i.e. a function) is shown in the code below.
 
-A method can return at most one value.
-The method signature specifies the return type, which can be a primitive (int, double, boolean), 
-a class (String, Turtle, etc), or void.
-A return type of void means the method does not return a value.
-If a method has a non-void return type, then it must contain a **return statement** that specifies the value to return.
-The method return type must match the type of the value in the return statement.
-
-.. activecode:: squarereturn
+.. activecode:: volumeCylinder
   :language: java
   :autograde: unittest
   :practice: T
     
-  The method ``square`` takes a value passed into parameter ``x`` and returns the value ``x * x``.  Notice the 
-  return type in the method signature is ``double``.
+  The method ``volumeCylinder`` takes parameters representing the radius and height of a cylinder 
+  and returns the corresponding volume.  The method return type is ``double``.
   Use the CodeLens to step through the code.
   Experiment with passing different values to the method.
 
   ~~~~
-  public class SquaredExample 
+  public class VolumeExample 
   {
-    public static double square(double x)
+    public static double volumeCylinder(double radius, double height) 
     {
-      return x * x;
-    }
+      return Math.PI * radius * radius * height;
+    }   
 
-    public static void main(String[] args) 
+    public static void main(String args[])
     {
-      double result = square(5.0);
-      System.out.println(result);   
+      // Calculate the volume of a cylinder  radius=4 and height=10
+      double vol = volumeCylinder(4, 10);
+      System.out.println(vol);
     }
   }
-
   ====
   import static org.junit.Assert.*;
   import org.junit.*;;
@@ -82,7 +78,7 @@ The method return type must match the type of the value in the return statement.
   {
     
     public RunestoneTests() {
-      super("SquaredExample");
+      super("VolumeExample");
     }
 
     @Test
@@ -92,6 +88,18 @@ The method return type must match the type of the value in the return statement.
         assertTrue(passed);
       }
   }
+
+
+
+Method Return Type
+------------------
+
+A method can return at most one value.
+The method signature specifies the **return type**, which can be a primitive (int, double, boolean), 
+a class (String, Turtle, etc), or void.
+A **void** return type means the method does not return a value.
+If a method has a **non-void** return type, then it must contain a **return statement** that specifies the value to return.
+The return type must match with the value in the return statement.
 
 
 |CodingEx| **Coding Exercise**
@@ -273,7 +281,7 @@ CodingEx| **Coding Exercise**
   
   A pedometer estimates that taking 2,000 steps is the same as walking 1 mile. 
   Write a method ``convertToMiles`` that takes a parameter for the number of steps and returns the miles walked.
-  Update the main method to call ``convertToMiles`` method 4 times with values 500, 2000, 3000, 9000. 
+  Update the main method to call ``convertToMiles`` 4 times with values 500, 2000, 3000, 9000. 
   Carefully consider what the return type should be.
   You can assume the number of steps is an integer.
 
@@ -342,3 +350,85 @@ CodingEx| **Coding Exercise**
     }
   }
 
+
+
+|CodingEx| **Coding Exercise**
+
+.. activecode:: randomNumberInRange
+  :language: java
+  :autograde: unittest
+  :practice: T
+  
+  Write a function ``randomInteger`` that takes two integer 
+  parameters ``min`` and ``max`` and returns a random integer value between min and max (inclusive).
+  Have the main method call the function with different values.
+
+  ~~~~
+  public class RandomNumberInRange 
+  {
+      //add your method here
+
+      public static void main(String args[])  
+      {
+         //test your method by calling it
+
+      }
+  }
+
+  ====
+  import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+    
+    public RunestoneTests() {
+      super("RandomNumberInRange");
+    }
+
+    @Test
+    public void checkCodeContainsSig(){
+      String code = getCode();
+      int num = countOccurences(code, "public static int randomInteger(int min, int max");
+      boolean passed = num ==1;
+      passed = getResults("1", num , "The randomInteger signature is not correct. Check your return type and the parameters", passed);
+      assertTrue(passed);
+    }
+
+    @Test
+    public void checkCodeContainsReturn(){
+      String code = getCode();
+      int num = countOccurences(code, "return");
+      boolean passed = num ==1;
+      passed = getResults("1", num , "The method randomInteger is missing a return statement", passed);
+      assertTrue(passed);
+    }
+
+    @Test
+      public void test1()
+      {
+          String code = getCode();
+          int numRandom = countOccurences(code, "Math.random()");
+
+          boolean passed = numRandom >= 1;
+          passed = getResults("1+", ""+numRandom, "1 call to Math.random()", passed);
+          assertTrue(passed);
+      }
+
+  }
+
+
+
+Summary
+-------
+
+- A method can return at most one value
+
+- The method signature must specify the return type
+
+- A void return type indicates the method does not return a value
+
+- The return statement is used to return a value
+
+- The return statement causes control to immediately transfer out of the method.

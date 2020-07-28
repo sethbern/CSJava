@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>5.4. Method Comments &#8212; CS Java</title>
+    <title>5.4. Method Comments and Conditions &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -348,8 +348,12 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="method-comments">
-<h1><span class="section-number">5.4. </span>Method Comments<a class="headerlink" href="#method-comments" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="method-comments-and-conditions">
+<h1><span class="section-number">5.4. </span>Method Comments and Conditions<a class="headerlink" href="#method-comments-and-conditions" title="Permalink to this headline">¶</a></h1>
+<p>In industry you often produce code that other people will use and you will use code other people produced.  It is important
+to document your code to facilitate understanding and reuse.</p>
+<div class="section" id="method-comments">
+<h2><span class="section-number">5.4.1. </span>Method Comments<a class="headerlink" href="#method-comments" title="Permalink to this headline">¶</a></h2>
 <p>Recall that there are 3 types of comments in Java:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> Single line comment</p></li>
@@ -371,128 +375,49 @@ instance variables in case you want to use this tool.</p>
 <li><p>&#64;param   Parameter of a method</p></li>
 <li><p>&#64;return  Return value for a method</p></li>
 </ul>
-<p>The code below shows example commenting for a trivial class as well as an example method</p>
+<p>The code below shows example commenting for a class and two enclosed methods.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
-<span class="cm">* The Add2Number program implements an application that</span>
-<span class="cm">* adds two given integer numbers and prints</span>
-<span class="cm">* the output on the screen.</span>
+<span class="cm">* The Converter program implements an application that</span>
+<span class="cm">* converts inches to centimeters and prints</span>
+<span class="cm">* the equivalent quantities.</span>
 <span class="cm">*</span>
 <span class="cm">* @author  Fred Smith</span>
 <span class="cm">* @version 1.0</span>
-<span class="cm">* @since   2019-01-31</span>
+<span class="cm">* @since   2020-01-31</span>
 <span class="cm">*/</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Add2Number</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Converter</span> <span class="p">{</span>
 
     <span class="cm">/**</span>
-<span class="cm">    * This method is used to add two integers.</span>
-<span class="cm">    * @param numA The first number to use in the sum</span>
-<span class="cm">    * @param numB  The second number to use in the sum</span>
-<span class="cm">    * @return int This returns sum of numA and numB.</span>
+<span class="cm">    * This method is used to convert inches to centimeters.</span>
+<span class="cm">    * @param inches A double representing a quantity of inches.</span>
+<span class="cm">    * @return double The equivalent quantity of centimeters.</span>
 <span class="cm">    */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">addNum</span><span class="p">(</span><span class="kt">int</span> <span class="n">numA</span><span class="p">,</span> <span class="kt">int</span> <span class="n">numB</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">numA</span> <span class="o">+</span> <span class="n">numB</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">inches</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="cm">/**</span>
-<span class="cm">    * This is the main method which makes use of addNum method.</span>
+<span class="cm">    * The main method demonstrates use of the inchesToCentimeters method.</span>
 <span class="cm">    * @param args Unused.</span>
 <span class="cm">    * @return Nothing.</span>
 <span class="cm">    */</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span>  <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">addNum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sum of 10 and 20 is :&quot;</span> <span class="o">+</span> <span class="n">sum</span><span class="p">);</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;10 inches = &quot;</span> <span class="o">+</span> <span class="n">inchesToCentimeters</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; centimeters&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;15.7 inches = &quot;</span> <span class="o">+</span> <span class="n">inchesToCentimeters</span><span class="p">(</span><span class="mf">15.7</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; centimeters&quot;</span><span class="p">);</span>
     <span class="p">}</span>
+
 
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
 <div class="section" id="preconditions-and-postconditions">
-<h2><span class="section-number">5.4.1. </span>Preconditions and  Postconditions<a class="headerlink" href="#preconditions-and-postconditions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.2. </span>Preconditions and  Postconditions<a class="headerlink" href="#preconditions-and-postconditions" title="Permalink to this headline">¶</a></h2>
 <p>As you write methods in a class, it is a good idea to keep in mind the <strong>preconditions</strong> and the <strong>postconditions</strong> for the method and write them in the comments. A precondition is a condition that must be true for your method code to work, for example the assumption that the parameters have values and are not null. The methods could check for these preconditions, but they do not have to. The precondition is what the method expects in order to do its job properly.</p>
 <p>A postcondition is a condition that is true after running the method. It is what the method promises to do. Postconditions describe the outcome of running the method, for example what is being returned or the changes to the instance variables. These assumptions are very useful to other programmers who want to use your class and get the correct results.</p>
-<p>Here is an example of preconditions, postconditions, and &#64;param in the Turtle code that we have used in the past for our drawing turtles.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
-<span class="cm">  * Constructor that takes the x and y position for the</span>
-<span class="cm">  * turtle</span>
-<span class="cm">  * Preconditions: parameters x and y are coordinates from 0 to</span>
-<span class="cm">  *    the width and height of the world.</span>
-<span class="cm">  * Postconditions: the turtle is placed in (x,y) coordinates</span>
-<span class="cm">  * @param x the x position to place the turtle</span>
-<span class="cm">  * @param y the y position to place the turtle</span>
-<span class="cm">  */</span>
- <span class="kd">public</span> <span class="nf">Turtle</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
- <span class="p">{</span>
-   <span class="n">xPos</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
-   <span class="n">yPos</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
- <span class="p">}</span>
-</pre></div>
-</div>
-<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
-<p>Try to break the preconditions of the Turtle constructor below. Does the Turtle constructor behave properly if you break the preconditions that x and y are between 0 and 300. Try giving the Turtle constructor  x and y values out of these ranges. What happens? Does the method give good results? Does it give any warnings? What about the t.forward() method? Does it have any preconditions that you can break?</p>
-<p>(If the code below does not work for you, you can copy the code into  this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
-
-<div data-childcomponent="turtle-preconditions" class="runestone explainer ac_section alert alert-warning">
-
-<textarea data-component="activecode" id=turtle-preconditions data-lang="java" 
-      data-timelimit=25000  data-codelens="true"   
-    data-audio=''  data-datafile='turtleClasses.jar'    
-           data-wasm=/_static>
-import java.util.*;
-import java.awt.*;
-
-public class TurtlePreconditions
-{
-  public static void main(String[] args)
-  {
-      World world = new World(300,300);
-      // Change 0,0 to other values outside of 0-300 to break the preconditions and see what happens
-      Turtle t = new Turtle(0,0,world);
-      t.turnRight();
-      world.show(true);
-  }
-}
-</textarea>
-</div>
-<p>The Turtle constructor’s precondition is that x and y should be between 0 and the width and height of the world. If it receives values out of this range, it sets x and y to the closest legal values that it can so that the turtle appears just at the edge of the world. Similarly, the forward() method will not allow the turtle to leave the world.</p>
-<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="true"  id="AP5-3-1" >
-            <p>5-4-1: Consider the following class definition.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestScore</span>
-   <span class="p">{</span>
-       <span class="kd">private</span> <span class="n">String</span> <span class="n">studentName</span><span class="p">;</span>
-       <span class="kd">private</span> <span class="kt">double</span> <span class="n">score</span><span class="p">;</span>
-       <span class="kd">private</span> <span class="kt">double</span> <span class="n">extraCredit</span><span class="p">;</span>
-
-       <span class="kd">public</span> <span class="nf">TestScore</span> <span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">,</span> <span class="kt">double</span> <span class="n">s</span><span class="p">,</span> <span class="kt">double</span> <span class="n">ec</span><span class="p">)</span>
-       <span class="p">{</span>
-           <span class="n">studentName</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
-           <span class="n">score</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
-           <span class="n">extraCredit</span> <span class="o">=</span> <span class="n">ec</span><span class="p">;</span>
-       <span class="p">}</span>
-       <span class="cm">/* Other methods not shown */</span>
-   <span class="p">}</span>
-
-<span class="n">Which</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">preconditions</span> <span class="n">are</span> <span class="n">reasonable</span> <span class="k">for</span> <span class="n">the</span> <span class="n">TestScore</span> <span class="n">constructor</span><span class="o">?</span>
-</pre></div>
-</div>
-
-            <li data-component="answer"  id="AP5-3-1_opt_a">/* Precondition: s <= 0 */</li><li data-component="feedback">It is not reasonable the s which sets the score should be negative.</li>
-            
-            <li data-component="answer"  id="AP5-3-1_opt_b">/* Precondition: score >= 0 */</li><li data-component="feedback">The precondition should be about the parameters of the constructor. score is not the parameter variable.</li>
-            
-            <li data-component="answer" data-correct id="AP5-3-1_opt_c">/* Precondition: s and ec >= 0 */</li><li data-component="feedback">Correct. It is reasonable that the score and extraCredit should be set to positive values using the parameters s and ec.</li>
-            
-            <li data-component="answer" data-correct id="AP5-3-1_opt_d">/* Precondition: n is not the empty String */</li><li data-component="feedback">Correct. It is reasonable that the parameter n which sets the name should be not empty.</li>
-            
-            <li data-component="answer"  id="AP5-3-1_opt_e">/* Precondition: studentName is not the empty String */</li><li data-component="feedback">The precondition should be about the parameters of the constructor. score is not the parameter variable.</li>
-            
-
-            </ul>
-            </div>
-            <p>Let’s consider the substring method in Java. This method has a strong precondition that its arguments refer to indices within the given string.</p>
+<p>Let’s consider the substring method in Java. This method has a strong precondition that its arguments refer to indices within the given string.</p>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="substring-preconditions" class="runestone explainer ac_section alert alert-warning">
@@ -541,7 +466,7 @@ public class RunestoneTests extends CodeTestHelper
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-3-2" >
-            <p>5-4-2: The following method is intended to return the substring starting at index i until the end of the string. For example, getiToEnd(“012”,1) should return “12”. Which of the following is the most appropriate precondition for the method so that it does not throw an exception?</p>
+            <p>5-4-1: The following method is intended to return the substring starting at index i until the end of the string. For example, getiToEnd(“012”,1) should return “12”. Which of the following is the most appropriate precondition for the method so that it does not throw an exception?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* missing precondition */</span>
 <span class="kd">public</span> <span class="n">String</span> <span class="nf">getiToEnd</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
 <span class="p">{</span>

@@ -468,69 +468,45 @@ which can be generalised by having formal parameter variables.  We define a meth
 code a reusable name.
 The parameters allow the code to adapt to a variety of different situations,
 depending on the values passed into the method.</p>
-<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Check your understanding</strong></p>
-
-<div data-childcomponent="RedundantCalculation" class="runestone explainer ac_section alert alert-warning">
 <p>The code below calculates and prints the weekly pay for two employees.
 Notice that some lines of code are similar but differ by value, while other lines of code are identical.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PayrollCalculator</span>
+<span class="p">{</span>
 
-<textarea data-component="activecode" id=RedundantCalculation data-lang="java" 
-      data-timelimit=25000  data-codelens="true"   
-    data-audio=''      
-           data-wasm=/_static>
-public class RedundantCalculation
-{
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
 
-  public static void main(String[] args) {
+    <span class="kt">double</span> <span class="n">hourlyRate</span><span class="p">,</span> <span class="n">hoursWorked</span><span class="p">,</span> <span class="n">weeklyPay</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">employee</span><span class="p">;</span>
 
-    double hourlyRate, hoursWorked, weeklyPay;
-    String employee;
+    <span class="c1">//Calculate weekly pay for Fred</span>
+    <span class="n">employee</span> <span class="o">=</span> <span class="s">&quot;Fred&quot;</span><span class="p">;</span>
+    <span class="n">hourlyRate</span> <span class="o">=</span> <span class="mf">12.50</span><span class="p">;</span>
+    <span class="n">hoursWorked</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="n">weeklyPay</span> <span class="o">=</span> <span class="n">hourlyRate</span> <span class="o">*</span> <span class="n">hoursWorked</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">employee</span>  <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">weeklyPay</span><span class="p">);</span>
 
-    //Calculate weekly pay for Fred
-    employee = "Fred";
-    hourlyRate = 12.50;
-    hoursWorked = 20;
-    weeklyPay = hourlyRate * hoursWorked;
-    System.out.println(employee  + ":" + weeklyPay);
+    <span class="c1">//Calculate weekly pay for Amir</span>
+    <span class="n">employee</span> <span class="o">=</span> <span class="s">&quot;Amir&quot;</span><span class="p">;</span>
+    <span class="n">hourlyRate</span> <span class="o">=</span> <span class="mf">15.0</span><span class="p">;</span>
+    <span class="n">hoursWorked</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span>
+    <span class="n">weeklyPay</span> <span class="o">=</span> <span class="n">hourlyRate</span> <span class="o">*</span> <span class="n">hoursWorked</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">employee</span>  <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">weeklyPay</span><span class="p">);</span>
 
-    //Calculate weekly pay for Amir
-    employee = "Amir";
-    hourlyRate = 15.0;
-    hoursWorked = 35;
-    weeklyPay = hourlyRate * hoursWorked;
-    System.out.println(employee  + ":" + weeklyPay);
+  <span class="p">}</span>
 
-  }
-}
-====
-import static org.junit.Assert.*;
-import org.junit.*;;
-import java.io.*;
-
-public class RunestoneTests extends CodeTestHelper
-{
-
-  public RunestoneTests() {
-    super("RedundantCode");
-  }
-
-  @Test
-      public void test1()
-      {
-          boolean passed = getResults("true", "true", "main()");
-          assertTrue(passed);
-      }
-}
-</textarea>
+<span class="p">}</span>
+</pre></div>
 </div>
-<p>We can reduce redundant code by adding a new method named <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> to compute and print the weekly pay for an employee.
-The table below compares the code for each employee side by side.  Notice the first three lines of code
+</div></blockquote>
+<p>The table below compares the code for each employee side by side.  Notice the first three lines of code
 are the same except for
 the value in the right hand side of each assignment, while the last two lines of code
 that calculate and print the weekly pay are identical.
-This tells us that the <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code>  method should have 3 formal parameters to allow
-values to be passed into the method when it is called: employee, hourlyRate, and hoursWorked.
-The <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> method body will use the formal
+We can eliminate code redundancy by adding a new method named <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code>.
+The   method needs 3 formal parameters to allow
+values to be passed into the method: employee, hourlyRate, and hoursWorked.
+The method body will use the formal
 parameters to compute and print the weekly pay.</p>
 <table class="colwidths-auto docutils align-left">
 <thead>
@@ -560,20 +536,20 @@ parameters to compute and print the weekly pay.</p>
 contains  three formal parameters for employee, hourlyRate, and hoursWorked.  When the method is called, actual values
 will need to be provided as shown.</p>
 <div class="align-center figure" id="id2">
-<a class="reference internal image-reference" href="../_images/calculatePay.png"><img alt="Parameter passing for the calculatePay method" src="../_images/calculatePay.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Figure 3: Removing redundant code with a new method called calculatePay</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<img alt="Parameter passing for the calculatePay method" src="../_images/calculatePay.png" />
+<p class="caption"><span class="caption-text">Figure 3: The calculatePay method</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 
 <div data-childcomponent="CalculatePayMethod" class="runestone explainer ac_section alert alert-warning">
-<p>Update the code below to add the new method calculatePay shown in Figure 3.  Update the main method to call the calculatePay
-method twice, once for each employee.
+<p>Update the code below to add the <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> method shown in Figure 3.  Update the <code class="docutils literal notranslate"><span class="pre">main</span></code> method to
+call the <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> method twice to compute the pay for each employee.
 Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.</p>
 
 <textarea data-component="activecode" id=CalculatePayMethod data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
-public class CalculateEmployeePay
+public class PayrollCalculator
 {
 
   //add a new static method calculatePay here
@@ -597,7 +573,7 @@ public class RunestoneTests extends CodeTestHelper
 {
 
   public RunestoneTests() {
-    super("CalculateEmployeePay");
+    super("PayrollCalculator");
   }
 
   @Test

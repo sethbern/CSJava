@@ -56,7 +56,7 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.4. Method Comments" href="topic-5-4-comments.html" />
+    <link rel="next" title="5.4. Method Comments and Conditions" href="topic-5-4-comments.html" />
     <link rel="prev" title="5.2. Method Parameters" href="topic-5-2-method-parameters.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -309,7 +309,7 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">5.4. </span>Method Comments' data-toggle="tooltip" >              
+  <li id="relations-next" title='Next Chapter - <span class="section-number">5.4. </span>Method Comments and Conditions' data-toggle="tooltip" >              
     <a href="topic-5-4-comments.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -350,48 +350,45 @@
   
   <div class="section" id="method-returns">
 <h1><span class="section-number">5.3. </span>Method Returns<a class="headerlink" href="#method-returns" title="Permalink to this headline">¶</a></h1>
-<p>Formal parameters allow you to pass values into a method. You can also  pass a value out of a method using a <strong>return statement</strong>.
-You saw some examples of  methods that return values in unit 2 with the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> methods (getWidth, getXpos, etc).
-If you recall the getter methods were usually on the right hand side of an assignment, or were contained in a print statement.
+<p>A method bundles together lines of code that perform a specific task.</p>
+<ul class="simple">
+<li><p>You can pass values into a method using formal parameters.</p></li>
+<li><p>You can pass a value out of a method using a <strong>return statement</strong>.</p></li>
+</ul>
+<p>You saw examples of  methods that return values in Unit 2 with the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> methods (getWidth, getXpos, etc).
+If you recall the getter methods were usually on the right hand side of an assignment or they were contained in a print statement.
 When a method returns a value, your code should do something with the value such as store it in a
 variable or print it out.</p>
-<p>Methods that return a value sometimes access an object’s attributes, like the Turtle getter methods.  You will learn how to
-create getter methods in a later lesson. In this lesson
-you will see how to create static methods that are functions.
+<p>You will learn how to  create methods that access object attributes like the Turtle methods in a later lesson.
+This lesson shows
+you how to create static methods that are functions.
 A function take one or more values passed as formal parameters and computes a new value to return.</p>
-<div class="section" id="method-return-type">
-<h2><span class="section-number">5.3.1. </span>Method Return Type<a class="headerlink" href="#method-return-type" title="Permalink to this headline">¶</a></h2>
-<p>A method can return at most one value.
-The method signature specifies the return type, which can be a primitive (int, double, boolean),
-a class (String, Turtle, etc), or void.
-A return type of void means the method does not return a value.
-If a method has a non-void return type, then it must contain a <strong>return statement</strong> that specifies the value to return.
-The method return type must match the type of the value in the return statement.</p>
+<p>An example method that returns a value (i.e. a function) is shown in the code below.</p>
 
-<div data-childcomponent="squarereturn" class="runestone explainer ac_section alert alert-warning">
-<p>The method <code class="docutils literal notranslate"><span class="pre">square</span></code> takes a value passed into parameter <code class="docutils literal notranslate"><span class="pre">x</span></code> and returns the value <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">x</span></code>.  Notice the
-return type in the method signature is <code class="docutils literal notranslate"><span class="pre">double</span></code>.
+<div data-childcomponent="volumeCylinder" class="runestone explainer ac_section alert alert-warning">
+<p>The method <code class="docutils literal notranslate"><span class="pre">volumeCylinder</span></code> takes parameters representing the radius and height of a cylinder
+and returns the corresponding volume.  The method return type is <code class="docutils literal notranslate"><span class="pre">double</span></code>.
 Use the CodeLens to step through the code.
 Experiment with passing different values to the method.</p>
 
-<textarea data-component="activecode" id=squarereturn data-lang="java" 
+<textarea data-component="activecode" id=volumeCylinder data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
-public class SquaredExample
+public class VolumeExample
 {
-  public static double square(double x)
+  public static double volumeCylinder(double radius, double height)
   {
-    return x * x;
+    return Math.PI * radius * radius * height;
   }
 
-  public static void main(String[] args)
+  public static void main(String args[])
   {
-    double result = square(5.0);
-    System.out.println(result);
+    // Calculate the volume of a cylinder  radius=4 and height=10
+    double vol = volumeCylinder(4, 10);
+    System.out.println(vol);
   }
 }
-
 ====
 import static org.junit.Assert.*;
 import org.junit.*;;
@@ -401,7 +398,7 @@ public class RunestoneTests extends CodeTestHelper
 {
 
   public RunestoneTests() {
-    super("SquaredExample");
+    super("VolumeExample");
   }
 
   @Test
@@ -413,6 +410,14 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
+<div class="section" id="method-return-type">
+<h2><span class="section-number">5.3.1. </span>Method Return Type<a class="headerlink" href="#method-return-type" title="Permalink to this headline">¶</a></h2>
+<p>A method can return at most one value.
+The method signature specifies the <strong>return type</strong>, which can be a primitive (int, double, boolean),
+a class (String, Turtle, etc), or void.
+A <strong>void</strong> return type means the method does not return a value.
+If a method has a <strong>non-void</strong> return type, then it must contain a <strong>return statement</strong> that specifies the value to return.
+The return type must match with the value in the return statement.</p>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="inchestocentimeters" class="runestone explainer ac_section alert alert-warning">
@@ -564,7 +569,7 @@ public class RunestoneTests extends CodeTestHelper
 <div data-childcomponent="stepcounter" class="runestone explainer ac_section alert alert-warning">
 <p>A pedometer estimates that taking 2,000 steps is the same as walking 1 mile.
 Write a method <code class="docutils literal notranslate"><span class="pre">convertToMiles</span></code> that takes a parameter for the number of steps and returns the miles walked.
-Update the main method to call <code class="docutils literal notranslate"><span class="pre">convertToMiles</span></code> method 4 times with values 500, 2000, 3000, 9000.
+Update the main method to call <code class="docutils literal notranslate"><span class="pre">convertToMiles</span></code> 4 times with values 500, 2000, 3000, 9000.
 Carefully consider what the return type should be.
 You can assume the number of steps is an integer.</p>
 
@@ -637,6 +642,82 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="randomNumberInRange" class="runestone explainer ac_section alert alert-warning">
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">randomInteger</span></code> that takes two integer
+parameters <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> and returns a random integer value between min and max (inclusive).
+Have the main method call the function with different values.</p>
+
+<textarea data-component="activecode" id=randomNumberInRange data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class RandomNumberInRange
+{
+    //add your method here
+
+    public static void main(String args[])
+    {
+       //test your method by calling it
+
+    }
+}
+
+====
+import static org.junit.Assert.*;
+import org.junit.*;;
+import java.io.*;
+
+public class RunestoneTests extends CodeTestHelper
+{
+
+  public RunestoneTests() {
+    super("RandomNumberInRange");
+  }
+
+  @Test
+  public void checkCodeContainsSig(){
+    String code = getCode();
+    int num = countOccurences(code, "public static int randomInteger(int min, int max");
+    boolean passed = num ==1;
+    passed = getResults("1", num , "The randomInteger signature is not correct. Check your return type and the parameters", passed);
+    assertTrue(passed);
+  }
+
+  @Test
+  public void checkCodeContainsReturn(){
+    String code = getCode();
+    int num = countOccurences(code, "return");
+    boolean passed = num ==1;
+    passed = getResults("1", num , "The method randomInteger is missing a return statement", passed);
+    assertTrue(passed);
+  }
+
+  @Test
+    public void test1()
+    {
+        String code = getCode();
+        int numRandom = countOccurences(code, "Math.random()");
+
+        boolean passed = numRandom >= 1;
+        passed = getResults("1+", ""+numRandom, "1 call to Math.random()", passed);
+        assertTrue(passed);
+    }
+
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">5.3.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A method can return at most one value</p></li>
+<li><p>The method signature must specify the return type</p></li>
+<li><p>A void return type indicates the method does not return a value</p></li>
+<li><p>The return statement is used to return a value</p></li>
+<li><p>The return statement causes control to immediately transfer out of the method.</p></li>
+</ul>
 </div>
 </div>
 
@@ -658,8 +739,8 @@ public class RunestoneTests extends CodeTestHelper
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.4. Method Comments' data-toggle="tooltip" >
-    <a href="topic-5-4-comments.html" aria-label="5.4. Method Comments">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.4. Method Comments and Conditions' data-toggle="tooltip" >
+    <a href="topic-5-4-comments.html" aria-label="5.4. Method Comments and Conditions">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>
