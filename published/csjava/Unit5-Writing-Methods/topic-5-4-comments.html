@@ -428,7 +428,7 @@ instance variables in case you want to use this tool.</p>
  <span class="p">}</span>
 </pre></div>
 </div>
-<p><a href="#id1"><span class="problematic" id="id2">|CodingEx|</span></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 <p>Try to break the preconditions of the Turtle constructor below. Does the Turtle constructor behave properly if you break the preconditions that x and y are between 0 and 300. Try giving the Turtle constructor  x and y values out of these ranges. What happens? Does the method give good results? Does it give any warnings? What about the t.forward() method? Does it have any preconditions that you can break?</p>
 <p>(If the code below does not work for you, you can copy the code into  this <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank" style="text-decoration:underline">repl.it link</a> (refresh page after forking and if it gets stuck) or download the files <a href="https://github.com/bhoffman0/APCSA-2019/tree/master/_sources/Unit2-Using-Objects/TurtleJavaSwingCode.zip" target="_blank" style="text-decoration:underline">here</a> to use in your own IDE.)</p>
 
@@ -455,7 +455,7 @@ public class TurtlePreconditions
 </textarea>
 </div>
 <p>The Turtle constructor’s precondition is that x and y should be between 0 and the width and height of the world. If it receives values out of this range, it sets x and y to the closest legal values that it can so that the turtle appears just at the edge of the world. Similarly, the forward() method will not allow the turtle to leave the world.</p>
-<p><a href="#id3"><span class="problematic" id="id4">|Exercise|</span></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="AP5-3-1" >
@@ -493,7 +493,7 @@ public class TurtlePreconditions
             </ul>
             </div>
             <p>Let’s consider the substring method in Java. This method has a strong precondition that its arguments refer to indices within the given string.</p>
-<p><a href="#id5"><span class="problematic" id="id6">|CodingEx|</span></a> <strong>Coding Exercise</strong></p>
+<p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
 <div data-childcomponent="substring-preconditions" class="runestone explainer ac_section alert alert-warning">
 <p>The following code breaks the preconditions of the substring method and throws an IndexOutOfBoundsException. Can you fix the code by changing the arguments for the substring method to print out the substring “lo”? What are the preconditions for the substring method?</p>
@@ -537,7 +537,7 @@ public class RunestoneTests extends CodeTestHelper
 <p class="admonition-title">Note</p>
 <p>The method str.substring(beginIndex, endIndex) has the precondition that 0 &lt;= beginIndex &lt;= endIndex &lt;= str.length.</p>
 </div>
-<p><a href="#id7"><span class="problematic" id="id8">|Exercise|</span></a> <strong>Check your understanding</strong></p>
+<p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-3-2" >

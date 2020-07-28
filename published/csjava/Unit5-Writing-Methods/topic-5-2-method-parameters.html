@@ -392,11 +392,10 @@
 </table>
 <p>Each verse is identical, except for the animal (cow vs duck) and the noise (moo vs quack).
 We can create a method named <strong>verse</strong> to abstract the repetitive lines,
-but the method will need two <strong>formal parameters</strong>, which are placeholders that allow different values to be substituted for the animal and noise each time the method is called.
+but the method will need two <strong>formal parameters</strong>, which are placeholders that allow
+different values to be substituted for the animal and noise when the method is called.
 The method body will use the formal parameter variables to customize the
-print statements.
-When the method is called,
-you must provide values for the animal and noise, called <strong>actual arguments</strong> or <strong>actual parameters</strong>, that are
+print statements. When you call the method, you provide values between the parentheses, called <strong>actual arguments</strong> or <strong>actual parameters</strong>, that are
 copied into the formal parameter variables.</p>
 <p>Figure 1 shows the new <strong>verse</strong> method with two formal parameters for <strong>animal</strong> and <strong>noise</strong>. The print statements
 in the method body use the parameters to customize the output.  The figure
@@ -464,8 +463,9 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
-<p>A method allows us to write blocks of code that perform a general task,
-which can be generalised by having formal parameter variables.  We define a method to give the block of code a reusable name which can be called.
+<p>A method allows us to write blocks of code that perform a task,
+which can be generalised by having formal parameter variables.  We define a method to give the block of
+code a reusable name.
 The parameters allow the code to adapt to a variety of different situations,
 depending on the values passed into the method.</p>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Check your understanding</strong></p>
@@ -523,14 +523,15 @@ public class RunestoneTests extends CodeTestHelper
 }
 </textarea>
 </div>
-<p>We can reduce redundant code by adding a new method to calculate and print the weekly pay for an employee.
+<p>We can reduce redundant code by adding a new method named <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> to compute and print the weekly pay for an employee.
 The table below compares the code for each employee side by side.  Notice the first three lines of code
 are the same except for
 the value in the right hand side of each assignment, while the last two lines of code
 that calculate and print the weekly pay are identical.
-This tells us that our new method should have 3 formal parameters to allow
-values to be passed into the method when it is called: employee, hourlyRate, and hoursWorked.  The method will use the formal
-parameters to calculate and print the weekly pay.</p>
+This tells us that the <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code>  method should have 3 formal parameters to allow
+values to be passed into the method when it is called: employee, hourlyRate, and hoursWorked.
+The <code class="docutils literal notranslate"><span class="pre">calculatePay</span></code> method body will use the formal
+parameters to compute and print the weekly pay.</p>
 <table class="colwidths-auto docutils align-left">
 <thead>
 <tr class="row-odd"><th class="head"><p>Calculate pay for first employee</p></th>
@@ -566,7 +567,7 @@ will need to be provided as shown.</p>
 <div data-childcomponent="CalculatePayMethod" class="runestone explainer ac_section alert alert-warning">
 <p>Update the code below to add the new method calculatePay shown in Figure 3.  Update the main method to call the calculatePay
 method twice, once for each employee.
-Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to confirm that your main method make the two calls to calculatePay, with the correct values passed into the method.</p>
+Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.</p>
 
 <textarea data-component="activecode" id=CalculatePayMethod data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -691,12 +692,13 @@ types for the arguments and the return type.</p>
 <img alt="../_images/mysteryoutput.png" src="../_images/mysteryoutput.png" />
 <p class="caption"><span class="caption-text">Figure 2: Method Overloading</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
+<p>Figure 2 above shows a class with 3 methods named <code class="docutils literal notranslate"><span class="pre">mystery</span></code>. While the 3 methods have the same name,
+notice that either the type of the formal parameter or the number of formal parameters is different.
+You may recall from the constructor lesson that this is called <strong>overloading</strong>.</p>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="methodargsparson"  data-adaptive="true"    data-noindent="true"   >
-        <span data-question>5-2-4: Figure 2 above shows a class with 3 methods named mystery. While the 3 methods have the same name,
-notice that either the type of the formal parameter or the number of formal parameters is different.
-The print output shown in the upper right section of
+        <span data-question>5-2-4: The print output shown in the upper right section of
 Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
 Drag the needed blocks from the left area below into the correct order  in the right area
 to produce the print output shown in Figure 2:</span>mystery( 5 );
@@ -726,35 +728,29 @@ the method is executing.  When the method completes, the memory location is rele
 the method again, the old value would not be available.</p>
 <p>Consider the following methods:</p>
 <blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">i</span><span class="p">)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
-    <span class="n">printInCentimeters</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printInCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">,</span> <span class="kt">double</span> <span class="n">centimeters</span><span class="p">)</span>
-<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">centimeters</span> <span class="o">=</span> <span class="n">inches</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">inches</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">centimeters</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">inchesToCentimeters</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="n">inchesToCentimeters</span><span class="p">(</span><span class="mf">15.7</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>The <code class="docutils literal notranslate"><span class="pre">inchestToCentimeters</span></code> method defines a local
-variable <code class="docutils literal notranslate"><span class="pre">c</span></code>.  The variable is only available for use in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method, the other methods can’t see or use
-the variable.</p>
+variable <code class="docutils literal notranslate"><span class="pre">centimeters</span></code>.  The variable is only available for use in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method,
+the <code class="docutils literal notranslate"><span class="pre">main</span></code> method can’t see or use the variable.  Each time the method is called, a new memory location is
+created for the variable.</p>
 <p>A formal parameter is like a local variable in that its scope is the body of the corresponding method.
-The <code class="docutils literal notranslate"><span class="pre">inches</span></code>
-and <code class="docutils literal notranslate"><span class="pre">centimeters</span></code> formal parameter variables are only visible in the <code class="docutils literal notranslate"><span class="pre">printInCentimeters</span></code> method body.
-Similarly,
-the <code class="docutils literal notranslate"><span class="pre">i</span></code> formal parameter variable is only visible in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method body.</p>
+The <code class="docutils literal notranslate"><span class="pre">inches</span></code> formal parameter variable is only visible in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method body.</p>
 <p>While a local variable has its value initialized within the method body, the formal parameter variable has its value
 initialized by the method call.  You must explicitly assign a local variable a value before you can use it
-in a calculation.  The compiler will warn you if you try to use a local variable before it has been assigned a value.</p>
+in a calculation.  The compiler will warn you if you try to use a local variable in a calculation or print statement before it has been assigned a value.</p>
 <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
@@ -786,7 +782,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mscope2" >
-            <p>5-2-6: Based on the class shown below, which method has a scope error (tries to access a variable that is declared as local or formal parameter)?</p>
+            <p>5-2-6: Based on the class shown below, which method has a scope error (uses a variable that is not visible in that method)?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Visibility</span> <span class="p">{</span>
 
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print1</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
@@ -993,24 +989,74 @@ this more in the following unit.</p>
 </div>
 <div class="section" id="groupwork-programming-challenge-calculating-shipping-costs">
 <h2><span class="section-number">5.2.4. </span><a class="reference internal" href="../_images/groupwork6.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork6.png" style="width: 35px;" /></a> Programming Challenge : Calculating Shipping Costs<a class="headerlink" href="#groupwork-programming-challenge-calculating-shipping-costs" title="Permalink to this headline">¶</a></h2>
-<p>The ShippingCostCalculator class below contains redundant code for calculating and printing the shipping cost based on the
-weight of an item.  While the if-else statements are not identical due to the different variables names (weight1, weight2, weight3),
-each if-else statement tests the weight and assigns the cost in the same way.</p>
-<p>1. Add a new method called “calculateShipping” to reduce redundancy in the program. The method should only need one formal parameter for the item weight.
-The method should declare a local variable for the shipping cost and calculate the cost based on the weight.  The method should print the resulting cost.</p>
-<ol class="arabic simple" start="2">
-<li><p>In the main method, replace the existing code with 3 calls to “calculateShipping”, passing the appropriate argument.</p></li>
-</ol>
+<p>The ShippingCostCalculator class listed below computes and prints the shipping cost for 3 different items based on their weight.
+If the item weighs less than 15.0 lbs the cost is 9.95, otherwise the cost is 12.95.
+While the if-else statements are not identical
+due to the different variables names (weight1 vs weight2 vs weight3, cost1 vs cost2 vs cost3),
+each tests the weight and assigns the cost in the same way.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ShippingCostCalculator</span> <span class="p">{</span>
 
-<div data-childcomponent="challenge-5-6-songb" class="runestone explainer ac_section alert alert-warning">
-<p>Create method(s) with parameters to print out verses of the song The Ants Go Marching. <a class="reference external" href="https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching">https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching</a></p>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
 
-<textarea data-component="activecode" id=challenge-5-6-songb data-lang="java" 
+    <span class="kt">double</span> <span class="n">weight1</span><span class="p">,</span> <span class="n">weight2</span><span class="p">,</span> <span class="n">weight3</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">cost1</span><span class="p">,</span> <span class="n">cost2</span><span class="p">,</span> <span class="n">cost3</span><span class="p">;</span>
+
+    <span class="n">weight1</span> <span class="o">=</span> <span class="mf">22.0</span><span class="p">;</span>
+    <span class="n">weight2</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
+    <span class="n">weight3</span> <span class="o">=</span> <span class="mf">12.0</span><span class="p">;</span>
+
+    <span class="c1">//calculate cost for item#1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">weight1</span> <span class="o">&lt;</span> <span class="mf">15.0</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">cost1</span> <span class="o">=</span> <span class="mf">9.95</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+      <span class="n">cost1</span> <span class="o">=</span> <span class="mf">12.95</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cost1</span><span class="p">);</span>
+
+    <span class="c1">//calculate cost for item#2</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">weight2</span> <span class="o">&lt;</span> <span class="mf">15.0</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">cost2</span> <span class="o">=</span> <span class="mf">9.95</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+      <span class="n">cost2</span> <span class="o">=</span> <span class="mf">12.95</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cost2</span><span class="p">);</span>
+
+    <span class="c1">//calculate cost for item#3</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">weight3</span> <span class="o">&lt;</span> <span class="mf">15.0</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">cost3</span> <span class="o">=</span> <span class="mf">9.95</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+      <span class="n">cost3</span> <span class="o">=</span> <span class="mf">12.95</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cost3</span><span class="p">);</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p>The redundant code can be reduced by adding a new method to
+compute and print shipping cost based on item weight.</p>
+
+<div data-childcomponent="challenge-5-6-costCalculator" class="runestone explainer ac_section alert alert-warning">
+<ul class="simple">
+<li><p>Update the program below to add a new method  <code class="docutils literal notranslate"><span class="pre">calculateShipping</span></code> that has one formal parameter for <code class="docutils literal notranslate"><span class="pre">weight</span></code>.  The method will need a local variable for <code class="docutils literal notranslate"><span class="pre">cost</span></code>.  The method should test the weight and print the corresponding cost.</p></li>
+<li><p>Update the main method to replace the existing code with 3 calls to <code class="docutils literal notranslate"><span class="pre">calculateShipping</span></code>, each passing an actual value for weight.  The main method will no longer need local variables.</p></li>
+<li><p>Confirm that the new version of the program produces the same output as the original version.</p></li>
+</ul>
+
+<textarea data-component="activecode" id=challenge-5-6-costCalculator data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
 public class ShippingCostCalculator {
-
 
 public static void main(String[] args) {
 
@@ -1020,37 +1066,37 @@ public static void main(String[] args) {
    weight1 = 22.0;
    weight2 = 10.0;
    weight3 = 12.0;
-   //calculate cost for item#1
 
+   //calculate cost for item#1
    if (weight1 < 15.0)
    {
-       cost1 = 9.95;
+      cost1 = 9.95;
    }
    else
    {
-     cost1 = 12.95;
+      cost1 = 12.95;
    }
    System.out.println(cost1);
 
    //calculate cost for item#2
    if (weight2 < 15.0)
    {
-       cost2 = 9.95;
+      cost2 = 9.95;
    }
    else
    {
-     cost2 = 12.95;
+      cost2 = 12.95;
    }
    System.out.println(cost2);
 
    //calculate cost for item#3
    if (weight3 < 15.0)
    {
-       cost3 = 9.95;
+      cost3 = 9.95;
    }
    else
    {
-     cost3 = 12.95;
+      cost3 = 12.95;
    }
    System.out.println(cost3);
 

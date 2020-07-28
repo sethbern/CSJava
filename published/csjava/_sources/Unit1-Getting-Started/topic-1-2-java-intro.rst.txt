@@ -68,7 +68,9 @@ Here is the template for a simple Java program with a main method:
    In Java every open curly brace ``{`` must have a matched close curly brace ``}``.  
    These are used to start and end class definitions and method definitions.       
 
-|CodingEx| **Coding Exercise**: Click on the ``Save & Run`` button below to have the 
+|CodingEx| **Coding Exercise**: 
+
+Click on the ``Save & Run`` button below to have the 
 computer execute the ``main`` method in the following class. Then, 
 change the code  to print your name.  
 Be sure to keep the starting ``"`` and ending ``"``.  

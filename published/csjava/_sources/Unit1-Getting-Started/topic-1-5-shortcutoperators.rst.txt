@@ -59,6 +59,8 @@ Compound assignment operators are shortcuts that do a math operation and assignm
 
 The most common shortcut operator ``++``, the plus-plus or **increment** operator, is used to add 1 to the current value; ``x++`` is the same as ``x += 1`` and the same as ``x = x + 1``. It is a shortcut that is used a lot in loops. If you've heard of the programming language C++, the ++ in C++ is an inside joke that C has been incremented or improved to create C++. The ``--`` decrement operator is used to subtract 1 from the current value: ``y--`` is the same as ``y = y - 1``. These are the only two double operators; this shortcut pattern does not exist with other operators. Run the following code to see these shortcut operators in action!
 
+|CodingEx| **Coding Exercise**
+
 .. activecode:: lcpp
    :language: java
    :autograde: unittest    

@@ -52,11 +52,10 @@ Consider two verses in the "Old MacDonald" song:
     
 Each verse is identical, except for the animal (cow vs duck) and the noise (moo vs quack).
 We can create a method named **verse** to abstract the repetitive lines, 
-but the method will need two **formal parameters**, which are placeholders that allow different values to be substituted for the animal and noise each time the method is called. 
+but the method will need two **formal parameters**, which are placeholders that allow 
+different values to be substituted for the animal and noise when the method is called. 
 The method body will use the formal parameter variables to customize the 
-print statements.
-When the method is called, 
-you must provide values for the animal and noise, called **actual arguments** or **actual parameters**, that are 
+print statements. When you call the method, you provide values between the parentheses, called **actual arguments** or **actual parameters**, that are 
 copied into the formal parameter variables. 
 
 Figure 1 shows the new **verse** method with two formal parameters for **animal** and **noise**. The print statements
@@ -128,8 +127,9 @@ into the formal parameter variables.
     }
   }
 
-A method allows us to write blocks of code that perform a general task, 
-which can be generalised by having formal parameter variables.  We define a method to give the block of code a reusable name which can be called.
+A method allows us to write blocks of code that perform a task, 
+which can be generalised by having formal parameter variables.  We define a method to give the block of 
+code a reusable name.
 The parameters allow the code to adapt to a variety of different situations, 
 depending on the values passed into the method.
 
@@ -188,14 +188,15 @@ depending on the values passed into the method.
   }
 
 
-We can reduce redundant code by adding a new method to calculate and print the weekly pay for an employee.
+We can reduce redundant code by adding a new method named ``calculatePay`` to compute and print the weekly pay for an employee.
 The table below compares the code for each employee side by side.  Notice the first three lines of code 
 are the same except for
 the value in the right hand side of each assignment, while the last two lines of code
 that calculate and print the weekly pay are identical.  
-This tells us that our new method should have 3 formal parameters to allow
-values to be passed into the method when it is called: employee, hourlyRate, and hoursWorked.  The method will use the formal
-parameters to calculate and print the weekly pay.
+This tells us that the ``calculatePay``  method should have 3 formal parameters to allow
+values to be passed into the method when it is called: employee, hourlyRate, and hoursWorked.  
+The ``calculatePay`` method body will use the formal
+parameters to compute and print the weekly pay.
 
 .. table:: 
   :align: left
@@ -231,7 +232,7 @@ will need to be provided as shown.
     
   Update the code below to add the new method calculatePay shown in Figure 3.  Update the main method to call the calculatePay
   method twice, once for each employee.  
-  Use the CodeLens button or copy the code into the |visualizer| to confirm that your main method make the two calls to calculatePay, with the correct values passed into the method.
+  Use the CodeLens button or copy the code into the |visualizer| to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.
 
   ~~~~
   public class CalculateEmployeePay
@@ -357,13 +358,14 @@ types for the arguments and the return type.
   
   Figure 2: Method Overloading
 
+Figure 2 above shows a class with 3 methods named ``mystery``. While the 3 methods have the same name,
+notice that either the type of the formal parameter or the number of formal parameters is different.
+You may recall from the constructor lesson that this is called **overloading**. 
 
 .. parsonsprob:: methodargsparson
    :adaptive:
    :noindent:
 
-   Figure 2 above shows a class with 3 methods named mystery. While the 3 methods have the same name,
-   notice that either the type of the formal parameter or the number of formal parameters is different. 
    The print output shown in the upper right section of 
    Figure 2 was produced by adding 3 method calls in the main method, which have been erased.
    Drag the needed blocks from the left area below into the correct order  in the right area
@@ -402,36 +404,30 @@ Consider the following methods:
     
     .. code-block:: java
 
-        public static void inchesToCentimeters(double i)
+        public static void inchesToCentimeters(double inches)
         {
-            double c = i * 2.54;
-            printInCentimeters(i, c);
-        }
-
-        public static void printInCentimeters(double inches, double centimeters)
-        {
+            double centimeters = inches * 2.54;
             System.out.print(inches + "-->" + centimeters);
         }
 
         public static void main(String[] args)  
         {
             inchesToCentimeters(10);
+            inchesToCentimeters(15.7);
         }
 
 
 The ``inchestToCentimeters`` method defines a local 
-variable ``c``.  The variable is only available for use in the ``inchesToCentimeters`` method, the other methods can't see or use 
-the variable.
+variable ``centimeters``.  The variable is only available for use in the ``inchesToCentimeters`` method, 
+the ``main`` method can't see or use the variable.  Each time the method is called, a new memory location is
+created for the variable.
 
 A formal parameter is like a local variable in that its scope is the body of the corresponding method.   
-The ``inches``
-and ``centimeters`` formal parameter variables are only visible in the ``printInCentimeters`` method body. 
-Similarly, 
-the ``i`` formal parameter variable is only visible in the ``inchesToCentimeters`` method body. 
+The ``inches`` formal parameter variable is only visible in the ``inchesToCentimeters`` method body. 
 
 While a local variable has its value initialized within the method body, the formal parameter variable has its value
 initialized by the method call.  You must explicitly assign a local variable a value before you can use it 
-in a calculation.  The compiler will warn you if you try to use a local variable before it has been assigned a value.
+in a calculation.  The compiler will warn you if you try to use a local variable in a calculation or print statement before it has been assigned a value.
 
 |Exercise| **Check your understanding**
 
@@ -473,7 +469,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
    :feedback_b: Method print2 accesses age, which is not accessible since it is declared in the main method.
    :feedback_c: Method main accesses age, which is a local variable with method level scope..
    
-   Based on the class shown below, which method has a scope error (tries to access a variable that is declared as local or formal parameter)?  
+   Based on the class shown below, which method has a scope error (uses a variable that is not visible in that method)?  
    
    .. code-block:: java
 
@@ -707,23 +703,75 @@ this more in the following unit.
 |Groupwork| Programming Challenge : Calculating Shipping Costs
 ---------------------------------------------------------------
 
-The ShippingCostCalculator class below contains redundant code for calculating and printing the shipping cost based on the
-weight of an item.  While the if-else statements are not identical due to the different variables names (weight1, weight2, weight3),
-each if-else statement tests the weight and assigns the cost in the same way.
+The ShippingCostCalculator class listed below computes and prints the shipping cost for 3 different items based on their weight. 
+If the item weighs less than 15.0 lbs the cost is 9.95, otherwise the cost is 12.95.
+While the if-else statements are not identical 
+due to the different variables names (weight1 vs weight2 vs weight3, cost1 vs cost2 vs cost3),
+each tests the weight and assigns the cost in the same way.  
 
-1. Add a new method called "calculateShipping" to reduce redundancy in the program. The method should only need one formal parameter for the item weight.  
-The method should declare a local variable for the shipping cost and calculate the cost based on the weight.  The method should print the resulting cost.
+.. code-block:: java
 
-2. In the main method, replace the existing code with 3 calls to "calculateShipping", passing the appropriate argument.
+  public class ShippingCostCalculator {
+    
+    public static void main(String[] args) {
+      
+      double weight1, weight2, weight3;
+      double cost1, cost2, cost3;
 
-.. activecode:: challenge-5-6-songb
+      weight1 = 22.0;  
+      weight2 = 10.0;
+      weight3 = 12.0;
+
+      //calculate cost for item#1
+      if (weight1 < 15.0)
+      {
+        cost1 = 9.95;
+      }
+      else 
+      {
+        cost1 = 12.95;
+      }
+      System.out.println(cost1);
+
+      //calculate cost for item#2
+      if (weight2 < 15.0)
+      {
+        cost2 = 9.95;
+      }
+      else 
+      {
+        cost2 = 12.95;
+      }
+      System.out.println(cost2);
+
+      //calculate cost for item#3
+      if (weight3 < 15.0)
+      {
+        cost3 = 9.95;
+      }
+      else 
+      {
+        cost3 = 12.95;
+      }
+      System.out.println(cost3);
+
+      }
+    }
+    
+
+The redundant code can be reduced by adding a new method to 
+compute and print shipping cost based on item weight.  
+
+.. activecode:: challenge-5-6-costCalculator
   :language: java
   :autograde: unittest  
 
-  Create method(s) with parameters to print out verses of the song The Ants Go Marching. https://www.lyrics.com/lyric/5526512/The+Ants+Go+Marching
+  - Update the program below to add a new method  ``calculateShipping`` that has one formal parameter for ``weight``.  The method will need a local variable for ``cost``.  The method should test the weight and print the corresponding cost.
+  - Update the main method to replace the existing code with 3 calls to ``calculateShipping``, each passing an actual value for weight.  The main method will no longer need local variables.
+  - Confirm that the new version of the program produces the same output as the original version.
+
   ~~~~
   public class ShippingCostCalculator {
-  
   
   public static void main(String[] args) {
     
@@ -733,37 +781,37 @@ The method should declare a local variable for the shipping cost and calculate t
      weight1 = 22.0;  
      weight2 = 10.0;
      weight3 = 12.0;
+
      //calculate cost for item#1
-     
      if (weight1 < 15.0)
      {
-         cost1 = 9.95;
+        cost1 = 9.95;
      }
      else 
      {
-       cost1 = 12.95;
+        cost1 = 12.95;
      }
      System.out.println(cost1);
 
      //calculate cost for item#2
      if (weight2 < 15.0)
      {
-         cost2 = 9.95;
+        cost2 = 9.95;
      }
      else 
      {
-       cost2 = 12.95;
+        cost2 = 12.95;
      }
      System.out.println(cost2);
 
      //calculate cost for item#3
      if (weight3 < 15.0)
      {
-         cost3 = 9.95;
+        cost3 = 9.95;
      }
      else 
      {
-       cost3 = 12.95;
+        cost3 = 12.95;
      }
      System.out.println(cost3);
 
