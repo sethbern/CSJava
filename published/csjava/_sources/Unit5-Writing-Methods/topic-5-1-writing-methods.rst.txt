@@ -75,7 +75,7 @@ When you see repeated code, that is a signal for you to make a new method!
 A method is a **named** set of statements.  When we want to execute the statements, 
 we call the method using its name.
 In a subsequent lesson you will create methods that are called using an object, 
-referred to as **object methods** or **instance methods**.
+referred to as **instance methods** or **object methods**.
 The methods in this unit are called without an object, so they are  **static methods**.  
 Static methods are also referred to as class methods.
 

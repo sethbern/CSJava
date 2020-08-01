@@ -7,17 +7,17 @@ Writing Classes
 .. toctree::
    :maxdepth: 3
    
-   topic-5-1-parts-of-class.rst
-   topic-5-2-writing-constructors.rst
-   topic-5-3-comments-conditions.rst
-   topic-5-4-accessor-methods.rst
-   topic-5-5-mutator-methods.rst
-   topic-5-6-writing-methods.rst
-   topic-5-7-static-vars-methods.rst
-   topic-5-8-scope-access.rst
-   topic-5-9-this.rst
-   topic-5-10-social-impacts.rst
-   topic-5-11-summary.rst
+   topic-6-1-parts-of-class.rst
+   topic-6-2-writing-constructors.rst
+   topic-6-3-comments-conditions.rst
+   topic-6-4-accessor-methods.rst
+   topic-6-5-mutator-methods.rst
+   topic-6-6-writing-methods.rst
+   topic-6-7-static-vars-methods.rst
+   topic-6-8-scope-access.rst
+   topic-6-9-this.rst
+   topic-6-10-social-impacts.rst
+   topic-6-11-summary.rst
    Exercises.rst
 ..   FRQstepTracker.rst
 ..   timeFRQ.rst

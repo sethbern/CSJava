@@ -23,9 +23,17 @@
 Accessor Methods
 =================
 
-Since the instance variables in a class are usually marked as private to the class, programmers provide public methods that allow safe access to the instance variable values in a class. **Accessor methods**, also called **get methods** or **getters**, allow a way to get the value of each instance variable from outside of the class. In the next lesson, we will see **mutator methods**, also called **set methods** or **setters**, that allow a way to change the values of the instance variables. In Unit 2, we also used set/get methods with the Turtle class to get the Turtle object's width, height, xPosition, etc. or to change them.
+Since the instance variables in a class are usually marked as private to the class, 
+programmers provide public methods that allow safe access to the instance variable values in a class. 
+**Accessor methods**, also called **get methods** or **getters**, allow a way to get the 
+value of each instance variable from outside of the class. 
+In the next lesson, we will see **mutator methods**, also called **set methods** or **setters**, that 
+allow a way to change the values of the instance variables. 
+In Unit 2, we also used set/get methods with the Turtle class to get the Turtle object's width, height, xPosition, etc. or to change them.
    
-Java programmers write get methods for each instance variable that look like the following. Notice that the get method returns the instance variable's value and it has a return type that is the same type as the variable that it is returning.
+Java programmers write get methods for each instance variable that look like the following. 
+Notice that the get method returns the instance variable's value and it has a return type 
+that is the same type as the variable that it is returning.
 
 .. code-block:: java
 
@@ -42,7 +50,13 @@ Java programmers write get methods for each instance variable that look like the
      
   }
 
-Here's an example of an accessor method called getName() for the Student class which also demonstrates how to call getName() using a Student object:
+Here's an example of an accessor method called getName() for the Student class which also 
+demonstrates how to call getName() using a Student object.  
+
+.. note: 
+Notice the signature **does not include the keyword static**.
+A static method does not have access to instance variables since it is not called on an object.  A non-static method
+on the other hand must be called with an object, and therefore can access the instance variables.
 
 .. code-block:: java
 

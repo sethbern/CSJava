@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.6. Writing Instance Methods &#8212; CS Java</title>
+    <title>6.10. Social Impacts of CS &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.7. Static Variables and Methods" href="topic-5-7-static-vars-methods.html" />
-    <link rel="prev" title="6.5. Mutator Methods" href="topic-5-5-mutator-methods.html" />
+    <link rel="next" title="6.11. Unit 5 Summary" href="topic-6-11-summary.html" />
+    <link rel="prev" title="6.9. this Keyword" href="topic-6-9-this.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-5-6-writing-methods'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-6-10-social-impacts'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.5. </span>Mutator Methods" data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.9. </span>this Keyword" data-toggle="tooltip">
+    <a href="topic-6-9-this.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.7. </span>Static Variables and Methods' data-toggle="tooltip" >              
-    <a href="topic-5-7-static-vars-methods.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.11. </span>Unit 5 Summary' data-toggle="tooltip" >              
+    <a href="topic-6-11-summary.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,170 +348,33 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="writing-instance-methods">
-<span id="index-0"></span><h1><span class="section-number">6.6. </span>Writing Instance Methods<a class="headerlink" href="#writing-instance-methods" title="Permalink to this headline">¶</a></h1>
-<p>In Unit 5 you saw how to write <strong>static methods</strong>.  A static method is also referred to as a <strong>class method</strong>, and it is called
-without an object.  Because of this, static methods can’t access y attributes (instance variables) or other non-static methods without first
-creating an object.</p>
-<p>Non-static methods, which we will refer to  as <strong>instance methods</strong> or <strong>object methods</strong>
-are called using an object and therefore have access to an object’s instance variables.
-Note the method header will not include the keyword static.</p>
-<p>There are three steps to creating and calling an instance method:</p>
-<ol class="arabic">
-<li><p><strong>Object of the Class</strong>: Declare an object of your class in the main method or from outside the class.</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: declare an object in main or from outside the class</span>
-<span class="n">Classname</span> <span class="n">objectName</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Classname</span><span class="p">();</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong> code like below:</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 3: Define the method in the class</span>
-<span class="c1">// method header</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodName</span><span class="p">()</span>
-<span class="p">{</span>
-      <span class="c1">// method body for the code</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Call</strong>: whenever you want to use the method, call objectName.methodName();</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the object&#39;s method</span>
-<span class="n">objectName</span><span class="p">.</span><span class="na">methodName</span><span class="p">();</span> <span class="c1">//Step 2</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<p>How is this different than calling a static method?  Notice the object reference and dot notation before the method name.
-Since the method may set and get instance variables, you must call the method on an actual instance of the class.</p>
-<div class="section" id="practice">
-<h2><span class="section-number">6.6.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="social-impacts-of-cs">
+<h1><span class="section-number">6.10. </span>Social Impacts of CS<a class="headerlink" href="#social-impacts-of-cs" title="Permalink to this headline">¶</a></h1>
+<p>We are living in an age of rapid development in technology and automation. Software and hardware developers increasingly have real impacts on people’s lives. In computer science, we follow the following <a href="https://ethics.acm.org/" target="_blank">ACM professional code of ethics</a> which includes guidelines such as “Avoid harm” and “Respect privacy”.</p>
+<p>However, sometimes programs have unintended consequences, and sometimes, it is hard to ensure <strong>system reliability</strong>, where everything will work as intended. Software developers also need to be aware of the legal implications and intellectual property laws.</p>
+<p>The fields of <strong>AI (Artificial Intelligence)</strong> and <strong>Machine Learning</strong> increasingly pose ethical questions in our world. For example, self-driving cars that use machine learning to learn to follow lanes and avoid collisions could make our world much safer. Self-driving cars do not get distracted by text messages and don’t drink and drive. However, what if the car needs to make an ethical decision about avoiding a collision with a pedestrian by causing an accident that may also lead to the loss of life? Who makes these decisions? The software? the programmers? If you were a programmer for a self-driving car, how would you approach such decisions? Here’s a great <a href="https://www.wired.com/2016/06/self-driving-cars-will-power-kill-wont-conscience/" target="_blank">Wired article</a> about self-driving cars and ethical problems.</p>
+<p>Another problem in machine learning is <strong>bias</strong> in algorithms or data. Machine learning software learns from lots of data examples, but the data in our world is often biased, and machines can then learn these biases.</p>
+<p>Watch the following <a href="https://www.youtube.com/watch?v=TWWsW1w-BVo" target="_blank" style="text-decoration:underline">Gender Shades video</a> about gender and race bias in face recognition algorithms by computer scientist <a href="https://www.poetofcode.com/" target="_blank" style="text-decoration:underline">Joy Buolamwini</a> (MIT Media Lab and Algorithmic Justice League).</p>
 
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1" >
-            <p>6-6-1: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wallet</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">dollars</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">putMoneyInWallet</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="TWWsW1w-BVo" class="align-left youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="TWWsW1w-BVo" data-video-divid="TWWsW1w-BVo" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (TWWsW1w-BVo)</span> </p>
+    </div>
+    <p>Here are some other interesting videos to watch about bias in algorithms:</p>
+<ul><li><a href="https://www.youtube.com/watch?v=QxuyfWoVV98" target="_blank">AI, Ain't I a Woman?</a>, a poem by Joy Buolamwini</li>
+<li>Ted Talk video on <a href="https://www.youtube.com/watch?v=UG_X_7g63rY" target="_blank">Bias in Facial Recognition</a> by Joy Buolamwini,</li>
+<li><a href="https://www.youtube.com/watch?v=7lpCWxlRFAw" target="_blank">A report on police crime prediction software and bias</a></li>
+</ul><div class="section" id="groupwork-pogil-groupwork-impacts-of-cs">
+<h2><span class="section-number">6.10.1. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> POGIL Groupwork: Impacts of CS<a class="headerlink" href="#groupwork-pogil-groupwork-impacts-of-cs" title="Permalink to this headline">¶</a></h2>
+<p>In POGIL groups, choose a software application that has social and ethical implications. Discuss the beneficial and harmful effects of this software application. Discuss the ethical problems that may arise and how programmers can try to avoid them. Prepare a presentation for your class.</p>
 </div>
-<p>The putMoneyInWallet method is intended to increase the dollars in the wallet by the parameter amount and then return the updated dollars in the wallet. Which of the following code segments should replace  <em>missing code</em> so that the putMoneyInWallet method will work as intended?</p>
-<li data-component="answer"  id="AP5-6-1_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">+=</span> <span class="n">dollars</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_a">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer"  id="AP5-6-1_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_b">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer" data-correct id="AP5-6-1_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_c">
-<p>Correct.</p></li><li data-component="answer"  id="AP5-6-1_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_d">
-<p>amount is returned instead of dollars.</p></li><li data-component="answer"  id="AP5-6-1_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_e">
-<p>dollars should be incremented by amount.</p></li>
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-2" >
-            <p>6-6-2: Consider the Liquid class below.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boilingPoint</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">(</span><span class="kt">int</span> <span class="n">ct</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bp</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">ct</span><span class="p">;</span>
-        <span class="n">boilingPoint</span> <span class="o">=</span> <span class="n">bp</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoiling</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The isBoiling method is intended to return true if increasing the currentTemp by the parameter amount is greater than or equal to the boilingPoint, or otherwise return false. Which of the following code segments can replace <em>missing code</em> to ensure that the isBoiling method works as intended?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">.</span>   <span class="nf">if</span> <span class="p">(</span><span class="n">currentTemp</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">II</span><span class="p">.</span>  <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="n">currentTemp</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">III</span><span class="p">.</span> <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="n">currentTemp</span> <span class="o">&gt;=</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-</pre></div>
-</div>
-<li data-component="answer"  id="AP5-6-2_opt_a"><p>I only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_a">
-<p>I would work but it is not the only code that would work.</p></li><li data-component="answer"  id="AP5-6-2_opt_b"><p>II only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_b">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li><li data-component="answer"  id="AP5-6-2_opt_c"><p>III only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_c">
-<p>III would work but it is not the only code that would work.</p></li><li data-component="answer" data-correct id="AP5-6-2_opt_d"><p>I and III only.</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_d">
-<p>Correct!</p></li><li data-component="answer"  id="AP5-6-2_opt_e"><p>I, II, III</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_e">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li>
-
-            </ul>
-            </div>
-            </div>
 <div class="section" id="summary">
-<h2><span class="section-number">6.6.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.10.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
-<li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
-<li><p>To write methods, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> in {} and method calls using an object.the method name and arguments whenever you need it to do its job.</p></li>
-<li><p>To call an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
-<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
-<li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
-<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.</p></li>
-<li><p>When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.</p></li>
-<li><p>When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.</p></li>
+<li><p>While programs are typically designed to achieve a specific purpose, they may have unintended consequences.</p></li>
+<li><p>System reliability is limited. Programmers should make an effort to maximize system reliability.</p></li>
+<li><p>Legal issues and intellectual property concerns arise when creating programs.</p></li>
+<li><p>The creation of programs has impacts on society, economies, and culture. These impacts can be beneficial and/or harmful.</p></li>
 </ul>
 </div>
 </div>
@@ -523,8 +386,8 @@ Since the method may set and get instance variables, you must call the method on
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.5. Mutator Methods' data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" aria-label="6.5. Mutator Methods">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.9. this Keyword' data-toggle="tooltip">
+    <a href="topic-6-9-this.html" aria-label="6.9. this Keyword">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -534,8 +397,8 @@ Since the method may set and get instance variables, you must call the method on
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.7. Static Variables and Methods' data-toggle="tooltip" >
-    <a href="topic-5-7-static-vars-methods.html" aria-label="6.7. Static Variables and Methods">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.11. Unit 5 Summary' data-toggle="tooltip" >
+    <a href="topic-6-11-summary.html" aria-label="6.11. Unit 5 Summary">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

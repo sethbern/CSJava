@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.6. Writing Instance Methods &#8212; CS Java</title>
+    <title>6.11. Unit 5 Summary &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.7. Static Variables and Methods" href="topic-5-7-static-vars-methods.html" />
-    <link rel="prev" title="6.5. Mutator Methods" href="topic-5-5-mutator-methods.html" />
+    <link rel="next" title="6.12. Exercises" href="Exercises.html" />
+    <link rel="prev" title="6.10. Social Impacts of CS" href="topic-6-10-social-impacts.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-5-6-writing-methods'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-6-11-summary'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.5. </span>Mutator Methods" data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.10. </span>Social Impacts of CS" data-toggle="tooltip">
+    <a href="topic-6-10-social-impacts.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.7. </span>Static Variables and Methods' data-toggle="tooltip" >              
-    <a href="topic-5-7-static-vars-methods.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.12. </span>Exercises' data-toggle="tooltip" >              
+    <a href="Exercises.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,170 +348,77 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="writing-instance-methods">
-<span id="index-0"></span><h1><span class="section-number">6.6. </span>Writing Instance Methods<a class="headerlink" href="#writing-instance-methods" title="Permalink to this headline">¶</a></h1>
-<p>In Unit 5 you saw how to write <strong>static methods</strong>.  A static method is also referred to as a <strong>class method</strong>, and it is called
-without an object.  Because of this, static methods can’t access y attributes (instance variables) or other non-static methods without first
-creating an object.</p>
-<p>Non-static methods, which we will refer to  as <strong>instance methods</strong> or <strong>object methods</strong>
-are called using an object and therefore have access to an object’s instance variables.
-Note the method header will not include the keyword static.</p>
-<p>There are three steps to creating and calling an instance method:</p>
-<ol class="arabic">
-<li><p><strong>Object of the Class</strong>: Declare an object of your class in the main method or from outside the class.</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: declare an object in main or from outside the class</span>
-<span class="n">Classname</span> <span class="n">objectName</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Classname</span><span class="p">();</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong> code like below:</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 3: Define the method in the class</span>
-<span class="c1">// method header</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodName</span><span class="p">()</span>
-<span class="p">{</span>
-      <span class="c1">// method body for the code</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Call</strong>: whenever you want to use the method, call objectName.methodName();</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the object&#39;s method</span>
-<span class="n">objectName</span><span class="p">.</span><span class="na">methodName</span><span class="p">();</span> <span class="c1">//Step 2</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<p>How is this different than calling a static method?  Notice the object reference and dot notation before the method name.
-Since the method may set and get instance variables, you must call the method on an actual instance of the class.</p>
-<div class="section" id="practice">
-<h2><span class="section-number">6.6.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1" >
-            <p>6-6-1: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wallet</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">dollars</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">putMoneyInWallet</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The putMoneyInWallet method is intended to increase the dollars in the wallet by the parameter amount and then return the updated dollars in the wallet. Which of the following code segments should replace  <em>missing code</em> so that the putMoneyInWallet method will work as intended?</p>
-<li data-component="answer"  id="AP5-6-1_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">+=</span> <span class="n">dollars</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_a">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer"  id="AP5-6-1_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_b">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer" data-correct id="AP5-6-1_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_c">
-<p>Correct.</p></li><li data-component="answer"  id="AP5-6-1_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_d">
-<p>amount is returned instead of dollars.</p></li><li data-component="answer"  id="AP5-6-1_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_e">
-<p>dollars should be incremented by amount.</p></li>
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-2" >
-            <p>6-6-2: Consider the Liquid class below.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boilingPoint</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">(</span><span class="kt">int</span> <span class="n">ct</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bp</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">ct</span><span class="p">;</span>
-        <span class="n">boilingPoint</span> <span class="o">=</span> <span class="n">bp</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoiling</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The isBoiling method is intended to return true if increasing the currentTemp by the parameter amount is greater than or equal to the boilingPoint, or otherwise return false. Which of the following code segments can replace <em>missing code</em> to ensure that the isBoiling method works as intended?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">.</span>   <span class="nf">if</span> <span class="p">(</span><span class="n">currentTemp</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">II</span><span class="p">.</span>  <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="n">currentTemp</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">III</span><span class="p">.</span> <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="n">currentTemp</span> <span class="o">&gt;=</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-</pre></div>
-</div>
-<li data-component="answer"  id="AP5-6-2_opt_a"><p>I only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_a">
-<p>I would work but it is not the only code that would work.</p></li><li data-component="answer"  id="AP5-6-2_opt_b"><p>II only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_b">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li><li data-component="answer"  id="AP5-6-2_opt_c"><p>III only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_c">
-<p>III would work but it is not the only code that would work.</p></li><li data-component="answer" data-correct id="AP5-6-2_opt_d"><p>I and III only.</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_d">
-<p>Correct!</p></li><li data-component="answer"  id="AP5-6-2_opt_e"><p>I, II, III</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_e">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li>
-
-            </ul>
-            </div>
-            </div>
-<div class="section" id="summary">
-<h2><span class="section-number">6.6.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="unit-5-summary">
+<h1><span class="section-number">6.11. </span>Unit 5 Summary<a class="headerlink" href="#unit-5-summary" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concept-summary">
+<span id="index-0"></span><h2><span class="section-number">6.11.1. </span>Concept Summary<a class="headerlink" href="#concept-summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
-<li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
-<li><p>To write methods, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> in {} and method calls using an object.the method name and arguments whenever you need it to do its job.</p></li>
-<li><p>To call an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
-<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
-<li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
-<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.</p></li>
-<li><p>When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.</p></li>
-<li><p>When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.</p></li>
+<li><p><strong>Class</strong> - A class defines a type and is used to define what all objects of that class know and can do.</p></li>
+<li><p><strong>Compiler</strong> - Software that translates the Java source code (ends in .java) into the Java class file (ends in .class).</p></li>
+<li><p><strong>Compile time error</strong> - An error that is found during the compilation.  These are also called syntax errors.</p></li>
+<li><p><strong>Constructor</strong> - Used to initialize fields in a newly created object.</p></li>
+<li><p><strong>Field</strong> - A field holds data or a property - what an object knows or keeps track of.</p></li>
+<li><p><strong>Java</strong> - A programming language that you can use to tell a computer what to do.</p></li>
+<li><p><strong>Main Method</strong> - Where execution starts in a Java program.</p></li>
+<li><p><strong>Method</strong> - Defines behavior - what an object can do.</p></li>
+<li><p><strong>Object</strong> - Objects do the actual work in an object-oriented program.</p></li>
+<li><p><strong>Syntax Error</strong> - A syntax error is an error in the specification of the program.</p></li>
+</ul>
+</div>
+<div class="section" id="java-keyword-summary">
+<h2><span class="section-number">6.11.2. </span>Java Keyword Summary<a class="headerlink" href="#java-keyword-summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>class</strong> - used to define a new class</p></li>
+<li><p><strong>public</strong> - a visibility keyword which is used to control the classes that have access.  The keyword public means the code in any class has direct access.</p></li>
+<li><p><strong>private</strong> - a visibility keyword which is used to control the classes that have access.  The keyword private means that only the code in the current class has direct access.</p></li>
+</ul>
+</div>
+<div class="section" id="vocabulary-practice">
+<h2><span class="section-number">6.11.3. </span>Vocabulary Practice<a class="headerlink" href="#vocabulary-practice" title="Permalink to this headline">¶</a></h2>
+
+<div class="runestone">
+<ul data-component="dragndrop" id="ch2_vocab1" >
+    <span data-component="question">6-11-1: Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct</span>
+	<span data-component=feedback>Review the summaries above.</span>
+
+    <li data-component="draggable" id="ch2_vocab1_drag1">does the actual work in an object-oriented program.</li>
+    <li data-component="dropzone" for="ch2_vocab1_drag1">object</li>
+
+    <li data-component="draggable" id="ch2_vocab1_drag2">defines a type</li>
+    <li data-component="dropzone" for="ch2_vocab1_drag2">class</li>
+
+    <li data-component="draggable" id="ch2_vocab1_drag3">A programming language that you can use to tell a computer what to do.</li>
+    <li data-component="dropzone" for="ch2_vocab1_drag3">Java</li>
+
+    <li data-component="draggable" id="ch2_vocab1_drag4">Translates a Java source file (ends in .java) into a Java class file (ends in .class)</li>
+    <li data-component="dropzone" for="ch2_vocab1_drag4">compiler</li>
+</ul></div>
+<div class="runestone">
+<ul data-component="dragndrop" id="ch2_vocab2" >
+    <span data-component="question">6-11-2: Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct.</span>
+	<span data-component=feedback>Review the summaries above.</span>
+
+    <li data-component="draggable" id="ch2_vocab2_drag1">initializes the fields of an object after it has been created</li>
+    <li data-component="dropzone" for="ch2_vocab2_drag1">constructor</li>
+
+    <li data-component="draggable" id="ch2_vocab2_drag2">defines behavior</li>
+    <li data-component="dropzone" for="ch2_vocab2_drag2">method</li>
+
+    <li data-component="draggable" id="ch2_vocab2_drag3">holds data or a property</li>
+    <li data-component="dropzone" for="ch2_vocab2_drag3">field</li>
+
+    <li data-component="draggable" id="ch2_vocab2_drag4">where execution starts</li>
+    <li data-component="dropzone" for="ch2_vocab2_drag4">main method</li>
+</ul></div><p>For more practice, see this <a href="https://quizlet.com/434080544/cs-awesome-unit-5-vocabulary-flash-cards/" target="_blank" style="text-decoration:underline">Quizlet</a>.
+Common Mistakes
+—————-</p>
+<ul class="simple">
+<li><p>Forgetting to declare an object to call its methods.</p></li>
+<li><p>Forgetting to write get/set methods for private instance variables.</p></li>
+<li><p>Forgetting to write a constructor.</p></li>
+<li><p>Mismatch in name, number, type, order of arguments and return type between the  method definition and the method call.</p></li>
+<li><p>Forgetting data types for every argument in the method definition.</p></li>
+<li><p>Forgetting to use what the method returns.</p></li>
 </ul>
 </div>
 </div>
@@ -523,8 +430,8 @@ Since the method may set and get instance variables, you must call the method on
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.5. Mutator Methods' data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" aria-label="6.5. Mutator Methods">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.10. Social Impacts of CS' data-toggle="tooltip">
+    <a href="topic-6-10-social-impacts.html" aria-label="6.10. Social Impacts of CS">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -534,8 +441,8 @@ Since the method may set and get instance variables, you must call the method on
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.7. Static Variables and Methods' data-toggle="tooltip" >
-    <a href="topic-5-7-static-vars-methods.html" aria-label="6.7. Static Variables and Methods">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.12. Exercises' data-toggle="tooltip" >
+    <a href="Exercises.html" aria-label="6.12. Exercises">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.6. Writing Instance Methods &#8212; CS Java</title>
+    <title>6.7. Static Variables and Methods &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.7. Static Variables and Methods" href="topic-5-7-static-vars-methods.html" />
-    <link rel="prev" title="6.5. Mutator Methods" href="topic-5-5-mutator-methods.html" />
+    <link rel="next" title="6.8. Scope and Access" href="topic-6-8-scope-access.html" />
+    <link rel="prev" title="6.6. Writing Instance Methods" href="topic-6-6-writing-methods.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-5-6-writing-methods'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-6-7-static-vars-methods'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.5. </span>Mutator Methods" data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.6. </span>Writing Instance Methods" data-toggle="tooltip">
+    <a href="topic-6-6-writing-methods.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.7. </span>Static Variables and Methods' data-toggle="tooltip" >              
-    <a href="topic-5-7-static-vars-methods.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.8. </span>Scope and Access' data-toggle="tooltip" >              
+    <a href="topic-6-8-scope-access.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,170 +348,248 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="writing-instance-methods">
-<span id="index-0"></span><h1><span class="section-number">6.6. </span>Writing Instance Methods<a class="headerlink" href="#writing-instance-methods" title="Permalink to this headline">¶</a></h1>
-<p>In Unit 5 you saw how to write <strong>static methods</strong>.  A static method is also referred to as a <strong>class method</strong>, and it is called
-without an object.  Because of this, static methods can’t access y attributes (instance variables) or other non-static methods without first
-creating an object.</p>
-<p>Non-static methods, which we will refer to  as <strong>instance methods</strong> or <strong>object methods</strong>
-are called using an object and therefore have access to an object’s instance variables.
-Note the method header will not include the keyword static.</p>
-<p>There are three steps to creating and calling an instance method:</p>
-<ol class="arabic">
-<li><p><strong>Object of the Class</strong>: Declare an object of your class in the main method or from outside the class.</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: declare an object in main or from outside the class</span>
-<span class="n">Classname</span> <span class="n">objectName</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Classname</span><span class="p">();</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong> code like below:</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 3: Define the method in the class</span>
-<span class="c1">// method header</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodName</span><span class="p">()</span>
-<span class="p">{</span>
-      <span class="c1">// method body for the code</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Call</strong>: whenever you want to use the method, call objectName.methodName();</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the object&#39;s method</span>
-<span class="n">objectName</span><span class="p">.</span><span class="na">methodName</span><span class="p">();</span> <span class="c1">//Step 2</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<p>How is this different than calling a static method?  Notice the object reference and dot notation before the method name.
-Since the method may set and get instance variables, you must call the method on an actual instance of the class.</p>
-<div class="section" id="practice">
-<h2><span class="section-number">6.6.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1" >
-            <p>6-6-1: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wallet</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">dollars</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">putMoneyInWallet</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The putMoneyInWallet method is intended to increase the dollars in the wallet by the parameter amount and then return the updated dollars in the wallet. Which of the following code segments should replace  <em>missing code</em> so that the putMoneyInWallet method will work as intended?</p>
-<li data-component="answer"  id="AP5-6-1_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">+=</span> <span class="n">dollars</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_a">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer"  id="AP5-6-1_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_b">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer" data-correct id="AP5-6-1_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_c">
-<p>Correct.</p></li><li data-component="answer"  id="AP5-6-1_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_d">
-<p>amount is returned instead of dollars.</p></li><li data-component="answer"  id="AP5-6-1_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_e">
-<p>dollars should be incremented by amount.</p></li>
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-2" >
-            <p>6-6-2: Consider the Liquid class below.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boilingPoint</span><span class="p">;</span>
-
-    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">(</span><span class="kt">int</span> <span class="n">ct</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bp</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">ct</span><span class="p">;</span>
-        <span class="n">boilingPoint</span> <span class="o">=</span> <span class="n">bp</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoiling</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The isBoiling method is intended to return true if increasing the currentTemp by the parameter amount is greater than or equal to the boilingPoint, or otherwise return false. Which of the following code segments can replace <em>missing code</em> to ensure that the isBoiling method works as intended?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">.</span>   <span class="nf">if</span> <span class="p">(</span><span class="n">currentTemp</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">II</span><span class="p">.</span>  <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="n">currentTemp</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">III</span><span class="p">.</span> <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="n">currentTemp</span> <span class="o">&gt;=</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-</pre></div>
-</div>
-<li data-component="answer"  id="AP5-6-2_opt_a"><p>I only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_a">
-<p>I would work but it is not the only code that would work.</p></li><li data-component="answer"  id="AP5-6-2_opt_b"><p>II only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_b">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li><li data-component="answer"  id="AP5-6-2_opt_c"><p>III only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_c">
-<p>III would work but it is not the only code that would work.</p></li><li data-component="answer" data-correct id="AP5-6-2_opt_d"><p>I and III only.</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_d">
-<p>Correct!</p></li><li data-component="answer"  id="AP5-6-2_opt_e"><p>I, II, III</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_e">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li>
-
-            </ul>
-            </div>
-            </div>
-<div class="section" id="summary">
-<h2><span class="section-number">6.6.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="static-variables-and-methods">
+<h1><span class="section-number">6.7. </span>Static Variables and Methods<a class="headerlink" href="#static-variables-and-methods" title="Permalink to this headline">¶</a></h1>
+<p>In Unit 2, we explored the Math class and its many static methods like Math.random(), and we’ve always used a main method which is static. In this lesson, you will learn to write your own static variables and methods.</p>
 <ul class="simple">
-<li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
-<li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
-<li><p>To write methods, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> in {} and method calls using an object.the method name and arguments whenever you need it to do its job.</p></li>
-<li><p>To call an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
-<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
-<li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
-<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.</p></li>
-<li><p>When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.</p></li>
-<li><p>When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.</p></li>
+<li><p><strong>Static</strong> variables and methods belong to a class and are called with the Class Name rather than using object variables, like ClassName.methodName();</p></li>
+<li><p>There is only one copy of a static variable or method for the whole class. For example, the main method is static because there should only be 1 main method.</p></li>
+<li><p>Static methods can be public or private.</p></li>
+<li><p>The static keyword is placed right after the public/private modifier and right before the type of variables and methods in their declarations.</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">ClassName</span> <span class="p">{</span>
+  <span class="c1">// static variable</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">type</span> <span class="n">variableName</span><span class="p">;</span>
+
+  <span class="c1">// static method</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">returnType</span> <span class="nf">methodName</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// implementation not shown</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// To call a static method or variable, use the Class Name</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ClassName</span><span class="p">.</span><span class="na">staticVariable</span><span class="p">);</span>
+<span class="n">ClassName</span><span class="p">.</span><span class="na">staticMethod</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Static methods only have access to other static variables and static methods. Static methods cannot access or change the values of instance variables or the this reference (since there is no calling object for them), and static methods cannot call non-static methods. However, non-static methods have access to all variables (instance or static) and methods (static or non-static) in the class.</p>
+<p>Since there is only 1 copy of a static variable or method, static variables are often used to count how many objects are generated. In the following class Person, there is a static variable called personCounter that is incremented each time the Person constructor is called to initialize a new Person object. The static method printCounter() prints out its value.  You can also watch how it works in the <a href="http://www.pythontutor.com/visualize.html#code=%20public%20class%20Person%20%0A%20%20%7B%0A%20%20%20%20%20//%20instance%20variables%20%0A%20%20%20%20%20private%20String%20name%3B%0A%20%20%20%20%20private%20String%20email%3B%0A%20%20%20%20%20private%20String%20phoneNumber%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Static%20counter%20variable%0A%20%20%20%20%20public%20static%20int%20personCounter%20%3D%200%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20static%20method%20to%20print%20out%20counter%0A%20%20%20%20%20public%20static%20void%20printPersonCounter%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20System.out.println%28%22Person%20counter%3A%20%22%20%2B%20personCounter%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20construct%20a%20Person%20copying%20in%20the%20data%20into%20the%20instance%20variables%0A%20%20%20%20%20public%20Person%28String%20initName,%20String%20initEmail,%20String%20initPhone%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20name%20%3D%20initName%3B%0A%20%20%20%20%20%20%20%20email%20%3D%20initEmail%3B%0A%20%20%20%20%20%20%20%20phoneNumber%20%3D%20initPhone%3B%0A%20%20%20%20%20%20%20%20personCounter%2B%2B%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20toString%28%29%20method%0A%20%20%20%20%20public%20String%20toString%28%29%20%0A%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20return%20%20name%20%2B%20%22%3A%20%22%20%2B%20email%20%2B%20%22%20%22%20%2B%20phoneNumber%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20//%20call%20the%20constructor%20to%20create%20a%20new%20person%0A%20%20%20%20%20%20%20%20Person%20p1%20%3D%20new%20Person%28%22Sana%22,%20%22sana%40gmail.com%22,%20%22123-456-7890%22%29%3B%0A%20%20%20%20%20%20%20%20Person%20p2%20%3D%20new%20Person%28%22Jean%22,%20%22jean%40gmail.com%22,%20%22404%20899-9955%22%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20Person.printPersonCounter%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D%0A%20%20&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a> by clicking the CodeLens button below.</p>
+
+<div data-childcomponent="PersonClassStaticCounter" class="runestone explainer ac_section alert alert-warning">
+<p>What will the following code print out? Try adding another Person object and see what happens. Try the CodeLens button to run the code step by step.</p>
+
+<textarea data-component="activecode" id=PersonClassStaticCounter data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Person
+{
+   // instance variables
+   private String name;
+   private String email;
+   private String phoneNumber;
+
+   // Static counter variable
+   public static int personCounter = 0;
+
+   // static method to print out counter
+   public static void printPersonCounter() {
+        System.out.println("Person counter: " + personCounter);
+   }
+
+   // constructor: construct a Person copying in the data into the instance variables
+   public Person(String initName, String initEmail, String initPhone)
+   {
+      name = initName;
+      email = initEmail;
+      phoneNumber = initPhone;
+      personCounter++;
+   }
+
+   // toString() method
+   public String toString()
+   {
+     return  name + ": " + email + " " + phoneNumber;
+   }
+
+   // main method for testing
+   public static void main(String[] args)
+   {
+      // call the constructor to create a new person
+      Person p1 = new Person("Sana", "sana@gmail.com", "123-456-7890");
+      Person p2 = new Person("Jean", "jean@gmail.com", "404 899-9955");
+
+      Person.printPersonCounter();
+   }
+}
+====
+import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+    @Test
+      public void testMain() throws IOException
+      {
+          String output = getMethodOutput("main");
+          String expect = "Person counter: 2";
+          boolean passed = getResults(expect, output, "Expected output from main", true);
+          assertTrue(passed);
+      }
+  }
+</textarea>
+</div>
+<p>Another common use for static variables is the keep track of a minimum or maximum value or an average of the values in a collection of objects.</p>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check Your Understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="staticTrace" >
+            <p>6-7-1: Consider the class Temperature below which has a static variable. What is the output of the main method below?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Temperature</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">temperature</span><span class="p">;</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="n">maxTemp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">Temperature</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
+   <span class="p">{</span>
+        <span class="n">temperature</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">&gt;</span> <span class="n">maxTemp</span><span class="p">)</span>
+            <span class="n">maxTemp</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+        <span class="n">Temperature</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">75</span><span class="p">);</span>
+        <span class="n">Temperature</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+        <span class="n">Temperature</span> <span class="n">t3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">65</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Max Temp: &quot;</span> <span class="o">+</span> <span class="n">Temperature</span><span class="p">.</span><span class="na">maxTemp</span><span class="p">);</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<li data-component="answer"  id="staticTrace_opt_a"><p>Max Temp: 0</p>
+</li><li data-component="feedback" id="staticTrace_opt_a">
+<p>maxTemp is changed in each call to the Temperature() constructor.</p></li><li data-component="answer"  id="staticTrace_opt_b"><p>There is a compiler error because the static variable maxTemp cannot be used inside a non-static constructor.</p>
+</li><li data-component="feedback" id="staticTrace_opt_b">
+<p>Non-static methods and constructors can use any instance or static variables in the class.</p></li><li data-component="answer" data-correct id="staticTrace_opt_c"><p>Max Temp: 100</p>
+</li><li data-component="feedback" id="staticTrace_opt_c">
+<p>Yes, maxTemp is initialized to 0 and then changed to 75 and then 100 by the constructor calls.</p></li><li data-component="answer"  id="staticTrace_opt_d"><p>Max Temp: 75</p>
+</li><li data-component="feedback" id="staticTrace_opt_d">
+<p>maxTemp will be changed to 100 by the second constructor call since 100 &gt; 75.</p></li><li data-component="answer"  id="staticTrace_opt_e"><p>Max Temp: 65</p>
+</li><li data-component="feedback" id="staticTrace_opt_e">
+<p>maxTemp will not be changed to 65 by the third constructor call because 67 is not &gt; 100.</p></li>
+
+            </ul>
+            </div>
+            <p>You can see this code in action in the <a href="http://www.pythontutor.com/visualize.html#code=public%20class%20Temperature%20%0A%7B%0A%20%20%20private%20double%20temperature%3B%0A%20%20%20public%20static%20double%20maxTemp%20%3D%200%3B%0A%20%20%20%0A%20%20%20public%20Temperature%28double%20t%29%0A%20%20%20%7B%0A%20%20%20%20%20%20%20temperature%20%3D%20t%3B%0A%20%20%20%20%20%20%20if%20%28t%20%3E%20maxTemp%29%0A%20%20%20%20%20%20%20%20%20%20%20maxTemp%20%3D%20t%3B%0A%20%20%20%7D%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%7B%0A%20%20%20%20%20%20%20Temperature%20t1%20%3D%20new%20Temperature%2875%29%3B%0A%20%20%20%20%20%20%20Temperature%20t2%20%3D%20new%20Temperature%28100%29%3B%0A%20%20%20%20%20%20%20Temperature%20t3%20%3D%20new%20Temperature%2865%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22Max%20Temp%3A%20%22%20%2B%20Temperature.maxTemp%29%3B%0A%20%20%20%7D%0A%7D&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a>.</p>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="TemperatureBugs" class="runestone explainer ac_section alert alert-warning">
+<p>Fix the bugs in the following code.</p>
+
+<textarea data-component="activecode" id=TemperatureBugs data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Temperature
+{
+  private double temperature;
+  public static double maxTemp = 0;
+
+  public Temperature(double t)
+  {
+      temperature = t;
+      if (t > maxTemp)
+         maxTemp = t;
+  }
+
+  public static printMax()
+  {
+     System.out.println(temperature);
+  }
+
+  public static void main(String[] args)
+  {
+     Temperature t1 = new Temperature(75);
+     Temperature t2 = new Temperature(100);
+     Temperature.printMax();
+  }
+ }
+ ====
+ import static org.junit.Assert.*;
+  import org.junit.*;;
+  import java.io.*;
+
+  public class RunestoneTests extends CodeTestHelper
+  {
+      @Test
+      public void testCodeContains1()
+      {
+
+          boolean passed = checkCodeContains("return type of printMax()", "public static void printMax()");
+          assertTrue(passed);
+      }
+
+       @Test
+      public void testCodeContains2()
+      {
+
+          boolean passed = checkCodeContains("static variable maxTemp in static function", "System.out.println(maxTemp);");
+          assertTrue(passed);
+      }
+
+      @Test
+      public void testMain() throws IOException
+      {
+          String output = getMethodOutput("main");
+          String expect = "100.0";
+          boolean passed = getResults(expect, output, "Expected output from main", true);
+          assertTrue(passed);
+      }
+  }
+</textarea>
+</div>
+<div class="section" id="groupwork-programming-challenge-static-song-and-counter">
+<h2><span class="section-number">6.7.1. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : Static Song and counter<a class="headerlink" href="#groupwork-programming-challenge-static-song-and-counter" title="Permalink to this headline">¶</a></h2>
+<p>In the last lesson, we wrote a class with methods to print out the song <a href="https://www.lingokids.com/english-for-kids/songs/the-ants-go-marching-song" target="_blank">The Ants Go Marching</a>. Notice that this is a class where there are no instance variables and we don’t really need to generate multiple objects. With students or pets, it makes sense to have multiple objects. With the Song, we can just make the methods static and have just 1 copy of them.</p>
+<ol class="arabic simple">
+<li><p>Copy in your class from the last lesson into this active code window. Change the method(s) that print out the verses of the Song to be static. In the main method, change how you call the static methods by using just the classname instead of creating an object.</p></li>
+<li><p>Add a static variable to the class that keeps track of the number of verses. Increment this variable each time the method to print a verse is called and print it out.</p></li>
+</ol>
+
+<div data-childcomponent="challenge-5-7-static-song" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=challenge-5-7-static-song data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Song
+{
+  // Add a static verse counter variable
+
+
+  // Change the method(s) to be static
+
+
+
+  public static void main(String args[])
+  {
+    // Call the static method(s) to print out the Song
+
+  }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">6.7.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Static methods and variables include the keyword static  before their name in the header or declaration. They can be public or private.</p></li>
+<li><p>Static variables belong to the class, with all objects of a class sharing a single static variable.</p></li>
+<li><p>Static methods are associated with the class, not objects of the class.</p></li>
+<li><p>Static variables are used with the class name and the dot operator, since they are associated with a class, not objects of a class.</p></li>
+<li><p>Static methods cannot access or change the values of instance variables, but they can access or change the values of static variables.</p></li>
+<li><p>Static methods cannot call non-static methods.</p></li>
 </ul>
 </div>
 </div>
@@ -523,8 +601,8 @@ Since the method may set and get instance variables, you must call the method on
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.5. Mutator Methods' data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" aria-label="6.5. Mutator Methods">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.6. Writing Instance Methods' data-toggle="tooltip">
+    <a href="topic-6-6-writing-methods.html" aria-label="6.6. Writing Instance Methods">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -534,8 +612,8 @@ Since the method may set and get instance variables, you must call the method on
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.7. Static Variables and Methods' data-toggle="tooltip" >
-    <a href="topic-5-7-static-vars-methods.html" aria-label="6.7. Static Variables and Methods">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.8. Scope and Access' data-toggle="tooltip" >
+    <a href="topic-6-8-scope-access.html" aria-label="6.8. Scope and Access">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

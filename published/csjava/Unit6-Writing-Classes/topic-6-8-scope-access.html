@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.6. Writing Instance Methods &#8212; CS Java</title>
+    <title>6.8. Scope and Access &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.7. Static Variables and Methods" href="topic-5-7-static-vars-methods.html" />
-    <link rel="prev" title="6.5. Mutator Methods" href="topic-5-5-mutator-methods.html" />
+    <link rel="next" title="6.9. this Keyword" href="topic-6-9-this.html" />
+    <link rel="prev" title="6.7. Static Variables and Methods" href="topic-6-7-static-vars-methods.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-5-6-writing-methods'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-6-8-scope-access'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.5. </span>Mutator Methods" data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.7. </span>Static Variables and Methods" data-toggle="tooltip">
+    <a href="topic-6-7-static-vars-methods.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.7. </span>Static Variables and Methods' data-toggle="tooltip" >              
-    <a href="topic-5-7-static-vars-methods.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.9. </span>this Keyword' data-toggle="tooltip" >              
+    <a href="topic-6-9-this.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,170 +348,288 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="writing-instance-methods">
-<span id="index-0"></span><h1><span class="section-number">6.6. </span>Writing Instance Methods<a class="headerlink" href="#writing-instance-methods" title="Permalink to this headline">¶</a></h1>
-<p>In Unit 5 you saw how to write <strong>static methods</strong>.  A static method is also referred to as a <strong>class method</strong>, and it is called
-without an object.  Because of this, static methods can’t access y attributes (instance variables) or other non-static methods without first
-creating an object.</p>
-<p>Non-static methods, which we will refer to  as <strong>instance methods</strong> or <strong>object methods</strong>
-are called using an object and therefore have access to an object’s instance variables.
-Note the method header will not include the keyword static.</p>
-<p>There are three steps to creating and calling an instance method:</p>
-<ol class="arabic">
-<li><p><strong>Object of the Class</strong>: Declare an object of your class in the main method or from outside the class.</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: declare an object in main or from outside the class</span>
-<span class="n">Classname</span> <span class="n">objectName</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Classname</span><span class="p">();</span>
-</pre></div>
+  <div class="section" id="scope-and-access">
+<h1><span class="section-number">6.8. </span>Scope and Access<a class="headerlink" href="#scope-and-access" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>scope</strong> of a variable is defined as where a variable is accessible or can be used. The scope is determined by where you declare the variable when you write your programs. When you declare a variable, look for the closest enclosing curly brackets { } – this is its scope.</p>
+<p>Java has 3 levels of scope that correspond to different types of variables:</p>
+<ul class="simple">
+<li><p><strong>Class Level Scope</strong> for <strong>instance variables</strong> inside a class.</p></li>
+<li><p><strong>Method Level Scope</strong> for <strong>local variables</strong> (including <strong>parameter variables</strong>) inside a method.</p></li>
+<li><p><strong>Block Level Scope</strong> for <strong>loop variables</strong> and other local variables defined inside of blocks of code with { }.</p></li>
+</ul>
+<p>The image below shows these 3 levels of scope.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/scopeDiagram.png"><img alt="Scope Levels" src="../_images/scopeDiagram.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Class, Method, and Block Level Scope</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong> code like below:</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 3: Define the method in the class</span>
-<span class="c1">// method header</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodName</span><span class="p">()</span>
-<span class="p">{</span>
-      <span class="c1">// method body for the code</span>
-<span class="p">}</span>
-</pre></div>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> Check Your Understanding</p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="name_class_scope"    >
+<span data-question>6-8-1: Click on all the variable declarations that are at Class Level Scope.</span><span data-feedback>Remember that the instance variables declared at the top of the class have Class Scope.</span><pre><span data-incorrect>public class Name {</span>
+
+    <span data-correct>private String first;</span>
+    <span data-correct>public String last;</span>
+
+    <span data-incorrect>public Name(String theFirst, String theLast) {</span>
+        <span data-incorrect>String firstName = theFirst;</span>
+        <span data-incorrect>first = firstName;</span>
+        <span data-incorrect>last = theLast;</span>
+     <span data-incorrect>}</span>
+<span data-incorrect>}</span></pre>
+
 </div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Call</strong>: whenever you want to use the method, call objectName.methodName();</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the object&#39;s method</span>
-<span class="n">objectName</span><span class="p">.</span><span class="na">methodName</span><span class="p">();</span> <span class="c1">//Step 2</span>
-</pre></div>
 </div>
-</div></blockquote>
-</li>
-</ol>
-<p>How is this different than calling a static method?  Notice the object reference and dot notation before the method name.
-Since the method may set and get instance variables, you must call the method on an actual instance of the class.</p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="name_method_scope"    >
+<span data-question>6-8-2: Click on all the variable declarations that are at Method Level Scope.</span><span data-feedback>Remember that the parameter variables and the local variables declared inside a method have Method Level Scope.</span><pre><span data-incorrect>public class Name {</span>
+
+    <span data-incorrect>private String first;</span>
+    <span data-incorrect>public String last;</span>
+
+    <span data-correct>public Name(String theFirst, String theLast) {</span>
+        <span data-correct>String firstName = theFirst;</span>
+        <span data-incorrect>first = firstName;</span>
+        <span data-incorrect>last = theLast;</span>
+     <span data-incorrect>}</span>
+<span data-incorrect>}</span></pre>
+
+</div>
+</div>
+<p><strong>Local variables</strong> are variables that are declared inside a method, usually at the top of the method. These variables can only be used within the method and do not exist outside of the method. Parameter variables are also considered local variables that only exist for that method. It’s good practice to keep any variables that are used by just one method as local variables in that method.</p>
+<p>Instance variables at class scope are shared by all the methods in the class and can be marked as public or private with respect to their access outside of the class. They have Class scope regardless of whether they are public or private.</p>
+<p>Another way to look at scope is that a variable’s scope is where it lives and exists. You cannot use the variable in code outside of its scope. The variable does not exist outside of its scope.</p>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="PersonScope" class="runestone explainer ac_section alert alert-warning">
+<p>Try the following code to see that you cannot access the variables outside of their scope levels in the toString() method. Explain to someone sitting next to you why you can’t access these. Try to fix the errors by either using variables that are in scope or moving the variable declarations so that the variables have larger scope.</p>
+
+<textarea data-component="activecode" id=PersonScope data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Person
+{
+   private String name;
+   private String email;
+
+   public Person(String initName, String initEmail)
+   {
+      name = initName;
+      email = initEmail;
+   }
+
+   public String toString()
+   {
+     for (int i=0; i < 5; i++) {
+        int id = i;
+     }
+     // Can you access the blockScope variables i or id?
+     System.out.println("i at the end of the loop is " + i);
+     System.out.println("The last id is " + id);
+
+     // Can toString() access parameter variables in Person()?
+     return  initName + ": " + initEmail;
+   }
+
+   // main method for testing
+   public static void main(String[] args)
+   {
+      // call the constructor to create a new person
+      Person p1 = new Person("Sana", "sana@gmail.com");
+      System.out.println(p1);
+   }
+}
+</textarea>
+</div>
+<p>If there is a local variable with the same name as an instance variable, the variable name will refer to the local variable instead of the instance variable, as seen below. We’ll see in the next lesson, that we can distinguish between the local variable and the instance variable using the keyword this to refer to this object’s instance variables.</p>
+
+<div data-childcomponent="PersonLocalVar" class="runestone explainer ac_section alert alert-warning">
+
+<textarea data-component="activecode" id=PersonLocalVar data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class Person
+{
+   private String name;
+   private String email;
+
+   public Person(String initName, String initEmail)
+   {
+      name = initName;
+      email = initEmail;
+   }
+
+   public String toString()
+   {
+     String name = "unknown";
+     // The local variable name here will be used,
+     //  not the instance variable name.
+     return  name + ": " + email;
+   }
+
+   // main method for testing
+   public static void main(String[] args)
+   {
+      // call the constructor to create a new person
+      Person p1 = new Person("Sana", "sana@gmail.com");
+      System.out.println(p1);
+   }
+}
+</textarea>
+</div>
+<div class="section" id="groupwork-programming-challenge-debugging">
+<h2><span class="section-number">6.8.1. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : Debugging<a class="headerlink" href="#groupwork-programming-challenge-debugging" title="Permalink to this headline">¶</a></h2>
+
+<div data-childcomponent="challenge-5-8-Debug" class="runestone explainer ac_section alert alert-warning">
+<p>Debug the following program that has scope violations. Then, add comments that label the variable declarations as class, method, or block scope.</p>
+
+<textarea data-component="activecode" id=challenge-5-8-Debug data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class TesterClass
+{
+   public static void main(String[] args)
+   {
+      Fraction f1 = new Fraction();
+      Fraction f2 = new Fraction(1,2);
+      System.out.println(f1);
+      System.out.println(f2.numerator / f2.denominator);
+   }
+ }
+
+/** Class Fraction */
+class Fraction
+{
+   //  instance variables
+   private int numerator;
+   private int denominator;
+
+   // constructor: set instance variables to default values
+   public Fraction()
+   {
+      int d = 1;
+      numerator = d;
+      denominator = d;
+   }
+
+   // constructor: set instance variables to init parameters
+   public Fraction(int initNumerator, int initDenominator)
+   {
+      numerator = initNumerator;
+      denominator = initDenominator;
+   }
+
+   public String toString()
+   {
+     // if the denominator is 1, then just return the numerator
+     if (denominator == d) {
+        int newNumerator = 1;
+     }
+     return newNumerator + "/" + denominator;
+   }
+}
+</textarea>
+</div>
+</div>
 <div class="section" id="practice">
-<h2><span class="section-number">6.6.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8.2. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1" >
-            <p>6-6-1: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wallet</span>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-8-1" >
+            <p>6-8-3: Consider the following class definitions. Which of the following best explains why the class will not compile?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Party</span>
 <span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">dollars</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boxesOfFood</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">putMoneyInWallet</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="nf">Party</span><span class="p">(</span><span class="kt">int</span> <span class="n">people</span><span class="p">,</span> <span class="kt">int</span> <span class="n">foodBoxes</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
+        <span class="n">numOfPeople</span> <span class="o">=</span> <span class="n">people</span><span class="p">;</span>
+        <span class="n">boxesOfFood</span> <span class="o">=</span> <span class="n">foodBoxes</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">orderMoreFood</span><span class="p">(</span><span class="kt">int</span> <span class="n">additionalFoodBoxes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">updatedAmountOfFood</span> <span class="o">=</span> <span class="n">boxesOfFood</span> <span class="o">+</span> <span class="n">additionalFoodBoxes</span><span class="p">;</span>
+        <span class="n">boxesOfFood</span> <span class="o">=</span> <span class="n">updatedAmountOfFood</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eatFoodBoxes</span><span class="p">(</span><span class="kt">int</span> <span class="n">eatenBoxes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">boxesOfFood</span> <span class="o">=</span> <span class="n">updatedAmountOfFood</span> <span class="o">-</span> <span class="n">eatenBoxes</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The putMoneyInWallet method is intended to increase the dollars in the wallet by the parameter amount and then return the updated dollars in the wallet. Which of the following code segments should replace  <em>missing code</em> so that the putMoneyInWallet method will work as intended?</p>
-<li data-component="answer"  id="AP5-6-1_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">+=</span> <span class="n">dollars</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_a">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer"  id="AP5-6-1_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_b">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer" data-correct id="AP5-6-1_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_c">
-<p>Correct.</p></li><li data-component="answer"  id="AP5-6-1_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_d">
-<p>amount is returned instead of dollars.</p></li><li data-component="answer"  id="AP5-6-1_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_e">
-<p>dollars should be incremented by amount.</p></li>
+
+            <li data-component="answer"  id="AP5-8-1_opt_a">The class is missing an accessor method.</li><li data-component="feedback">There is a scope violation.</li>
+            
+            <li data-component="answer"  id="AP5-8-1_opt_b">The instance variables boxesOfFood and numOfPeople should be designated public instead of private.</li><li data-component="feedback">There is a scope violation. Instance variables are usually private.</li>
+            
+            <li data-component="answer"  id="AP5-8-1_opt_c">The return type for the Party constructor is missing.</li><li data-component="feedback">There is a scope violation. Constructors do not have return types.</li>
+            
+            <li data-component="answer" data-correct id="AP5-8-1_opt_d">The variable updatedAmountOfFood is not defined in eatFoodBoxes method.</li><li data-component="feedback">There is a scope violation. The updatedAmountOfFood variable is a local variable in another method.</li>
+            
+            <li data-component="answer"  id="AP5-8-1_opt_e">The Party class is missing a constructor</li><li data-component="feedback">There is a scope violation.</li>
+            
 
             </ul>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-2" >
-            <p>6-6-2: Consider the Liquid class below.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-8-2" >
+            <p>6-8-4: Consider the following class definition.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Movie</span>
 <span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boilingPoint</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentPrice</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">movieRating</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">(</span><span class="kt">int</span> <span class="n">ct</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bp</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="nf">Movie</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">ct</span><span class="p">;</span>
-        <span class="n">boilingPoint</span> <span class="o">=</span> <span class="n">bp</span><span class="p">;</span>
+        <span class="n">currentPrice</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+        <span class="n">movieRating</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoiling</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCurrentPrice</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
+        <span class="kt">int</span> <span class="n">currentPrice</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">currentPrice</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printPrice</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">getCurrentPrice</span><span class="p">());</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The isBoiling method is intended to return true if increasing the currentTemp by the parameter amount is greater than or equal to the boilingPoint, or otherwise return false. Which of the following code segments can replace <em>missing code</em> to ensure that the isBoiling method works as intended?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">.</span>   <span class="nf">if</span> <span class="p">(</span><span class="n">currentTemp</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">II</span><span class="p">.</span>  <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="n">currentTemp</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">III</span><span class="p">.</span> <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="n">currentTemp</span> <span class="o">&gt;=</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-</pre></div>
-</div>
-<li data-component="answer"  id="AP5-6-2_opt_a"><p>I only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_a">
-<p>I would work but it is not the only code that would work.</p></li><li data-component="answer"  id="AP5-6-2_opt_b"><p>II only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_b">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li><li data-component="answer"  id="AP5-6-2_opt_c"><p>III only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_c">
-<p>III would work but it is not the only code that would work.</p></li><li data-component="answer" data-correct id="AP5-6-2_opt_d"><p>I and III only.</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_d">
-<p>Correct!</p></li><li data-component="answer"  id="AP5-6-2_opt_e"><p>I, II, III</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_e">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li>
+<p>Which of the following reasons explains why the printPrice method is “broken” and only ever prints out a value of 16?</p>
+<li data-component="answer"  id="AP5-8-2_opt_a"><p>The private variables currentPrice and movieRating are not properly initialized.</p>
+</li><li data-component="feedback" id="AP5-8-2_opt_a">
+<p>The constructor will initialize them.</p></li><li data-component="answer"  id="AP5-8-2_opt_b"><p>The private variables currentPrice and movieRating should have been declared public.</p>
+</li><li data-component="feedback" id="AP5-8-2_opt_b">
+<p>Instance variables should be private.</p></li><li data-component="answer"  id="AP5-8-2_opt_c"><p>The printPrice method should have been declared as private.</p>
+</li><li data-component="feedback" id="AP5-8-2_opt_c">
+<p>Methods are usually public.</p></li><li data-component="answer" data-correct id="AP5-8-2_opt_d"><p>currentPrice is declared as a local variable in the getCurrentPrice method and set to 16, and will be used instead of the instance variable currentPrice.</p>
+</li><li data-component="feedback" id="AP5-8-2_opt_d">
+<p>Correct!</p></li><li data-component="answer"  id="AP5-8-2_opt_e"><p>The currentPrice instance variable does not have a value.</p>
+</li><li data-component="feedback" id="AP5-8-2_opt_e">
+<p>Accessor methods are usually public.</p></li>
 
             </ul>
             </div>
             </div>
 <div class="section" id="summary">
-<h2><span class="section-number">6.6.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
-<li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
-<li><p>To write methods, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> in {} and method calls using an object.the method name and arguments whenever you need it to do its job.</p></li>
-<li><p>To call an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
-<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
-<li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
-<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.</p></li>
-<li><p>When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.</p></li>
-<li><p>When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.</p></li>
+<li><p><strong>Scope</strong> is defined as where a variable is accessible or can be used.</p></li>
+<li><p>Local variables can be declared in the body of constructors and methods. These variables may only be used within the constructor or method and cannot be declared to be public or private.</p></li>
+<li><p>When there is a local variable with the same name as an instance variable, the variable name will refer to the local variable instead of the instance variable.</p></li>
+<li><p>Formal parameters and variables declared in a method or constructor can only be used within that method or constructor.</p></li>
 </ul>
 </div>
 </div>
@@ -523,8 +641,8 @@ Since the method may set and get instance variables, you must call the method on
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.5. Mutator Methods' data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" aria-label="6.5. Mutator Methods">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.7. Static Variables and Methods' data-toggle="tooltip">
+    <a href="topic-6-7-static-vars-methods.html" aria-label="6.7. Static Variables and Methods">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -534,8 +652,8 @@ Since the method may set and get instance variables, you must call the method on
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.7. Static Variables and Methods' data-toggle="tooltip" >
-    <a href="topic-5-7-static-vars-methods.html" aria-label="6.7. Static Variables and Methods">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.9. this Keyword' data-toggle="tooltip" >
+    <a href="topic-6-9-this.html" aria-label="6.9. this Keyword">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

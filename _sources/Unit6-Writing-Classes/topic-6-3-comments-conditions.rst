@@ -26,9 +26,7 @@ Comments and Conditions
 Comments
 ---------
 
-Adding comments to your code helps to make it more readable and maintainable. In the commercial world, software development is usually a team effort where many programmers will use your code and maintain it for years. Commenting is essential in this kind of environment and a good habit to develop. Comments will also help you to remember what you were doing when you look back to your code a month or a year from now.
-
-There are 3 types of comments in Java:
+Recall there are 3 types of comments in Java:
 
 1. ``//`` Single line comment
 2. ``/*`` Multiline comment ``*/``
@@ -46,23 +44,12 @@ There are 3 types of comments in Java:
 
    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank">String class</a>
    
-The special characters ``//`` are used to mark the rest of the line as a comment in many programming languages.  If the comment is going to be multiple lines, we use ``/*`` to start the comment and ``*/`` to end the comment. 
+There is also a special version of the multi-line comment, ``/**``  ``*/``, called the documentation comment. 
+The |javadoc|  tool will pull out all of these 
+comments to make documentation of a class as a web page.  
+It's a good idea to use the documentation comment in front of classes, methods, and instance 
+variables in case you want ot use this tool. 
 
-There is also a special version of the multi-line comment, ``/**``  ``*/``, called the documentation comment. Java has a cool tool called |javadoc| that comes with the |Java JDK| that will pull out all of these comments to make documentation of a class as a web page.  This tool generates the official Java documentation too, for example for the |String class|. 
-It's a good idea to use the documentation comment in front of classes, methods, and instance variables in case you want ot use this tool. 
-
-|Exercise| **Check your understanding**
-
-.. dragndrop:: comments
-    :feedback: Review the section above.
-    :match_1: single-line comment|||//
-    :match_2: multi-line comment|||/* */
-    :match_3: Java documentation comment|||/** */
-    
-    Drag the definition from the left and drop it on the correct symbols on the right.  Click the "Check Me" button to see if you are correct.
-    
-
-The compiler will skip over comments, and they don't affect how your program runs. They are for you, your teacher, and other programmers working with you.  Here are some examples of good commenting:
 
 .. code-block:: java 
 
@@ -78,22 +65,21 @@ The compiler will skip over comments, and they don't affect how your program run
        /* The print() method prints out the max */
        public print() {  System.out.println(max); }
 
-Note that most IDEs will tend to show comments formatted in italics -- to make them easier to spot.
-
-Notice that there are some special tags that you can use in Java documentation. These are not required but many programmers use them. Here are some common tags:
-
-- @author  Author of the program
-- @since   Date released
-- @version Version of program 
-- @param   Parameter of a method
-- @return  Return value for a method
  
 Preconditions and  Postconditions
 ---------------------------------
 
-As you write methods in a class, it is a good idea to keep in mind the **preconditions** and the **postconditions** for the method and write them in the comments. A precondition is a condition that must be true for your method code to work, for example the assumption that the parameters have values and are not null. The methods could check for these preconditions, but they do not have to. The precondition is what the method expects in order to do its job properly.
+If you recall from Unit 5, is a good idea to keep in mind the **preconditions** and the **postconditions** for 
+each method and write them in the comments. 
+A precondition is a condition that must be true for your method code to work, 
+for example the assumption that the parameters have values and are not null. 
+The methods could check for these preconditions, but they do not have to. 
+The precondition is what the method expects in order to do its job properly.
 
-A postcondition is a condition that is true after running the method. It is what the method promises to do. Postconditions describe the outcome of running the method, for example what is being returned or the changes to the instance variables. These assumptions are very useful to other programmers who want to use your class and get the correct results. 
+A postcondition is a condition that is true after running the method. 
+It is what the method promises to do. Postconditions describe the outcome of running the method, 
+for example what is being returned or the changes to the instance variables. 
+These assumptions are very useful to other programmers who want to use your class and get the correct results. 
 
 
 Here is an example of preconditions, postconditions, and @param in the Turtle code that we have used in the past for our drawing turtles.
@@ -131,6 +117,7 @@ Try to break the preconditions of the Turtle constructor below. Does the Turtle 
 
 .. activecode:: turtle-preconditions
     :language: java
+    :autograde: unittest
     :datafile: turtleClasses.jar
 
     import java.util.*;
@@ -146,6 +133,25 @@ Try to break the preconditions of the Turtle constructor below. Does the Turtle 
           t.turnRight();
           world.show(true); 
       }
+    }
+    ====
+    import static org.junit.Assert.*;
+    import org.junit.*;;
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+        public RunestoneTests() {
+            super("TurtlePreconditions");
+        }
+
+        @Test
+        public void test1()
+        {
+            String orig = "import java.util.*;\nimport java.awt.*;\n\npublic class TurtlePreconditions\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      // Change 0,0 to other values outside of 0-300 to break the preconditions and see what happens\n      Turtle t = new Turtle(0,0,world);\n      t.turnRight();\n      world.show(true);\n  }\n}";
+            boolean passed = codeChanged(orig);
+            assertTrue(passed);
+        }
     }
     
 The Turtle constructor's precondition is that x and y should be between 0 and the width and height of the world. If it receives values out of this range, it sets x and y to the closest legal values that it can so that the turtle appears just at the edge of the world. Similarly, the forward() method will not allow the turtle to leave the world.  
@@ -187,77 +193,6 @@ The Turtle constructor's precondition is that x and y should be between 0 and th
 
      Which of the following preconditions are reasonable for the TestScore constructor?
             
-
-Let's consider the substring method in Java. This method has a strong precondition that its arguments refer to indices within the given string. 
-
-|CodingEx| **Coding Exercise**
-
-.. activecode:: substring-preconditions
-    :language: java
-    :autograde: unittest
-
-    The following code breaks the preconditions of the substring method and throws an IndexOutOfBoundsException. Can you fix the code by changing the arguments for the substring method to print out the substring "lo"? What are the preconditions for the substring method?
-    ~~~~
-    public class SubstringPreconditions
-    {
-      public static void main(String[] args)
-      {
-          String str = "hello";
-          System.out.println( str.substring(-1,10) );
-      }
-    }
-    ====
-    // Test for Lesson 5.3.2 Substring-preconditions
-    import static org.junit.Assert.*;
-    import org.junit.*;
-    import java.io.*;
-
-    public class RunestoneTests extends CodeTestHelper
-    {
-        public RunestoneTests() {
-            super("SubstringPreconditions");
-        }
-
-        @Test
-        public void testMain() throws IOException
-        {
-            String output = getMethodOutput("main");
-            String expect = "lo";
-            boolean passed = getResults(expect, output, "Expected output from main");
-            assertTrue(passed);
-        }
-    }
-
-.. note::
- 
-    The method str.substring(beginIndex, endIndex) has the precondition that 0 <= beginIndex <= endIndex <= str.length.
-    
-|Exercise| **Check your understanding**
-
-.. mchoice:: AP5-3-2
-   :practice: T
-   :answer_a: /* Precondition: i >= 0 */
-   :answer_b: /* Precondition: i <= str.length() */
-   :answer_c: /* Precondition: 0 < i < str.length() */
-   :answer_d: /* Precondition: 0 <= i < str.length() */
-   :correct: d
-   :feedback_a: This is true but it could still throw an exception if i is a large value.
-   :feedback_b: This is true but it could still throw an exception if i is a negative value.   
-   :feedback_c: This is true but a little too restrictive.
-   :feedback_d: Correct. i can refer to character 0 up to str.length().
-      
-   The following method is intended to return the substring starting at index i until the end of the string. For example, getiToEnd("012",1) should return "12". Which of the following is the most appropriate precondition for the method so that it does not throw an exception?
-
-   .. code-block:: java
-
-        /* missing precondition */
-        public String getiToEnd(String str, int i)
-        {
-            return str.substring(i, str.length());
-        }
-    
-
-
 
 
 Software Validity and Use-Case Diagrams
@@ -391,7 +326,7 @@ Here is a simple class called User that could be used in an online store. Add go
         private String program;
 
         @Test
-        public void testMain() throws IOException
+        public void testMain()
         {
             String output = getMethodOutput("main");
             String expect = "Welcome guest!\nWelcome cooldude@gmail.com!";
@@ -400,9 +335,8 @@ Here is a simple class called User that could be used in an online store. Add go
         }
 
         @Test
-        public void testClassComment() throws IOException {
-            //System.out.println(program);
-            program = new String(Files.readAllBytes(Paths.get("User.java")));
+        public void testClassComment() {
+            program = getCodeWithComments();
 
             int index = program.indexOf("public class User");
 
@@ -417,9 +351,8 @@ Here is a simple class called User that could be used in an online store. Add go
         }
 
         @Test
-        public void testVariablesComment() throws IOException {
-            //System.out.println(program);
-            program = new String(Files.readAllBytes(Paths.get("User.java")));
+        public void testVariablesComment() {
+            program = getCodeWithComments();
 
             int start = program.indexOf("{") + 1;
             int end = program.indexOf("private String username");
@@ -433,9 +366,8 @@ Here is a simple class called User that could be used in an online store. Add go
         }
 
         @Test
-        public void testDefaultConstructorComment() throws IOException {
-            //System.out.println(program);
-            program = new String(Files.readAllBytes(Paths.get("User.java")));
+        public void testDefaultConstructorComment() {
+            program = getCodeWithComments();
 
             int start = program.indexOf("password;") + "password;".length() + 1;
             int end = program.indexOf("public User()");
@@ -449,9 +381,8 @@ Here is a simple class called User that could be used in an online store. Add go
         }
 
         @Test
-        public void testConstructorComment() throws IOException {
-            //System.out.println(program);
-            program = new String(Files.readAllBytes(Paths.get("User.java")));
+        public void testConstructorComment() {
+            program = getCodeWithComments();
 
             int start = program.indexOf("*1000);");
             start = program.indexOf("}", start) + 1;
@@ -466,9 +397,8 @@ Here is a simple class called User that could be used in an online store. Add go
         }
 
         @Test
-        public void testWelcomeComment() throws IOException {
-            //System.out.println(program);
-            program = new String(Files.readAllBytes(Paths.get("User.java")));
+        public void testWelcomeComment() {
+            program = getCodeWithComments();
 
             int start = program.indexOf("password = pwordInit;");
             start = program.indexOf("}", start) + 1;
@@ -483,9 +413,8 @@ Here is a simple class called User that could be used in an online store. Add go
         }
 
         @Test
-        public void testMainComment() throws IOException {
-            //System.out.println(program);
-            program = new String(Files.readAllBytes(Paths.get("User.java")));
+        public void testMainComment() {
+            program = getCodeWithComments();
 
             int start = program.indexOf("username + \"!\");");
             start = program.indexOf("}", start) + 1;
@@ -509,7 +438,6 @@ Here is a simple class called User that could be used in an online store. Add go
         }
     }
 
-
 Summary
 -------
 
@@ -523,6 +451,5 @@ Summary
 - A postcondition is a condition that must always be true after the execution of a section of program code. Postconditions describe the outcome of the execution in terms of what is being returned or the state of an object.
 
 - Programmers write method code to satisfy the postconditions when preconditions are met.
-
 
 

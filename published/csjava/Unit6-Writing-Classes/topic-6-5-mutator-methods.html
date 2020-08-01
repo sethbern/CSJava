@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.6. Writing Instance Methods &#8212; CS Java</title>
+    <title>6.5. Mutator Methods &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.7. Static Variables and Methods" href="topic-5-7-static-vars-methods.html" />
-    <link rel="prev" title="6.5. Mutator Methods" href="topic-5-5-mutator-methods.html" />
+    <link rel="next" title="6.6. Writing Instance Methods" href="topic-6-6-writing-methods.html" />
+    <link rel="prev" title="6.4. Accessor Methods" href="topic-6-4-accessor-methods.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-5-6-writing-methods'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-6-5-mutator-methods'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.5. </span>Mutator Methods" data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.4. </span>Accessor Methods" data-toggle="tooltip">
+    <a href="topic-6-4-accessor-methods.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.7. </span>Static Variables and Methods' data-toggle="tooltip" >              
-    <a href="topic-5-7-static-vars-methods.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.6. </span>Writing Instance Methods' data-toggle="tooltip" >              
+    <a href="topic-6-6-writing-methods.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,170 +348,289 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="writing-instance-methods">
-<span id="index-0"></span><h1><span class="section-number">6.6. </span>Writing Instance Methods<a class="headerlink" href="#writing-instance-methods" title="Permalink to this headline">¶</a></h1>
-<p>In Unit 5 you saw how to write <strong>static methods</strong>.  A static method is also referred to as a <strong>class method</strong>, and it is called
-without an object.  Because of this, static methods can’t access y attributes (instance variables) or other non-static methods without first
-creating an object.</p>
-<p>Non-static methods, which we will refer to  as <strong>instance methods</strong> or <strong>object methods</strong>
-are called using an object and therefore have access to an object’s instance variables.
-Note the method header will not include the keyword static.</p>
-<p>There are three steps to creating and calling an instance method:</p>
-<ol class="arabic">
-<li><p><strong>Object of the Class</strong>: Declare an object of your class in the main method or from outside the class.</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1: declare an object in main or from outside the class</span>
-<span class="n">Classname</span> <span class="n">objectName</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Classname</span><span class="p">();</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Definition</strong>:  write the method’s <strong>header</strong> and <strong>body</strong> code like below:</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 3: Define the method in the class</span>
-<span class="c1">// method header</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">methodName</span><span class="p">()</span>
-<span class="p">{</span>
-      <span class="c1">// method body for the code</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Method Call</strong>: whenever you want to use the method, call objectName.methodName();</p>
-<blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 2: call the object&#39;s method</span>
-<span class="n">objectName</span><span class="p">.</span><span class="na">methodName</span><span class="p">();</span> <span class="c1">//Step 2</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<p>How is this different than calling a static method?  Notice the object reference and dot notation before the method name.
-Since the method may set and get instance variables, you must call the method on an actual instance of the class.</p>
-<div class="section" id="practice">
-<h2><span class="section-number">6.6.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="mutator-methods">
+<h1><span class="section-number">6.5. </span>Mutator Methods<a class="headerlink" href="#mutator-methods" title="Permalink to this headline">¶</a></h1>
+<p>Corresponding to each get method, programmers also provide a public <strong>set method</strong> to change the value of a private instance variable in a class. These are called <strong>mutator methods</strong> (or settters or set or modifier methods). They are <strong>void methods</strong> meaning that they do not return a value, but they do take a <strong>parameter</strong>, the new value for the instance variable. Here are some examples of how to write a set method for an instance variable:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">ExampleTemplate</span> <span class="p">{</span>
 
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-1" >
-            <p>6-6-1: Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wallet</span>
-<span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">double</span> <span class="n">dollars</span><span class="p">;</span>
+    <span class="c1">//Instance variable declaration</span>
+    <span class="kd">private</span> <span class="n">typeOfVar</span> <span class="n">varName</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">putMoneyInWallet</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="c1">// Mutator (setter) method template</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVarName</span><span class="p">(</span><span class="n">typeOfVar</span> <span class="n">newValue</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
+       <span class="n">varName</span> <span class="o">=</span> <span class="n">newValue</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The putMoneyInWallet method is intended to increase the dollars in the wallet by the parameter amount and then return the updated dollars in the wallet. Which of the following code segments should replace  <em>missing code</em> so that the putMoneyInWallet method will work as intended?</p>
-<li data-component="answer"  id="AP5-6-1_opt_a"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">+=</span> <span class="n">dollars</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
+<p>Here’s an example of the Student class with a mutator method called setName():</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Student</span> <span class="p">{</span>
+
+   <span class="c1">//Instance variable name</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+   <span class="cm">/** setName sets name to newName</span>
+<span class="cm">    *  @param newName                */</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="p">(</span><span class="n">String</span> <span class="n">newName</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">name</span> <span class="o">=</span> <span class="n">newName</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// To call a set method, use objectName.setVar(newValue)</span>
+      <span class="n">Student</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span><span class="p">();</span>
+      <span class="n">s</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&quot;Ayanna&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+  <span class="p">}</span>
 </pre></div>
 </div>
-</li><li data-component="feedback" id="AP5-6-1_opt_a">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer"  id="AP5-6-1_opt_b"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
+<p>Notice the difference between set (mutator) and get (accessor) methods in the following figure. Getters return an instance variable’s value and have the same return type as this variable and no parameters. Setters have a void return type and take a new value as a parameter to change the value of the instance variable.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/get-set-comparison.png"><img alt="../_images/get-set-comparison.png" src="../_images/get-set-comparison.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Comparison of set and get methods</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="../_images/codingExercise7.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise7.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+<p>Try the Student class below which this time has set methods added. You will need to fix one error. The main method is in a separate Tester class and does not have access to the private instance variables in the other Student class. Change the main method so that it uses a public mutator method (set method) to access the value instead.</p>
+
+<div data-childcomponent="StudentObjExample2" class="runestone explainer ac_section alert alert-warning">
+<p>Fix the main method to include a call to the appropriate set method.</p>
+
+<textarea data-component="activecode" id=StudentObjExample2 data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class TesterClass
+{
+   // main method for testing
+   public static void main(String[] args)
+   {
+      Student s1 = new Student("Skyler", "skyler@sky.com", 123456);
+      System.out.println(s1);
+      s1.setName("Skyler 2");
+      // Main doesn't have access to email, use set method!
+      s1.email = "skyler2@gmail.com";
+      System.out.println(s1);
+   }
+ }
+
+class Student
+{
+   private String name;
+   private String email;
+   private int id;
+
+   public Student(String initName, String initEmail, int initId)
+   {
+      name = initName;
+      email = initEmail;
+      id = initId;
+   }
+   // mutator methods - setters
+   public void setName(String newName)
+   {
+     name = newName;
+   }
+   public void setEmail(String newEmail)
+   {
+     email = newEmail;
+   }
+   public void setId(int newId)
+   {
+     id = newId;
+   }
+   // accessor methods - getters
+   public String getName()
+   {
+      return name;
+   }
+   public String getEmail()
+   {
+      return email;
+   }
+   public int getId()
+   {
+      return id;
+   }
+   public String toString() {
+      return id + ": " + name + ", " + email;
+   }
+}
+</textarea>
+</div>
+<p><a class="reference internal" href="../_images/exercise7.png"><img alt="exercise" class="align-middle" src="../_images/exercise7.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="setSignature" >
+            <p>6-5-1: Consider the class Party which keeps track of the number of people at the party.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Party</span>
+<span class="p">{</span>
+    <span class="c1">//number of people at the party</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">;</span>
+
+    <span class="cm">/* Missing header of set method */</span>
+    <span class="p">{</span>
+        <span class="n">numOfPeople</span> <span class="o">=</span> <span class="n">people</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</li><li data-component="feedback" id="AP5-6-1_opt_b">
-<p>dollars should be incremented by amount.</p></li><li data-component="answer" data-correct id="AP5-6-1_opt_c"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
+<p>Which of the following method signatures could replace the missing header for the set method in the code above so that the method will work as intended?</p>
+<li data-component="answer"  id="setSignature_opt_a"><p>public int getNum(int people)</p>
+</li><li data-component="feedback" id="setSignature_opt_a">
+<p>The set method should not have a return value and is usually named set, not get.</p></li><li data-component="answer"  id="setSignature_opt_b"><p>public int setNum()</p>
+</li><li data-component="feedback" id="setSignature_opt_b">
+<p>The set method should not have a return value and needs a parameter.</p></li><li data-component="answer"  id="setSignature_opt_c"><p>public int setNum(int people)</p>
+</li><li data-component="feedback" id="setSignature_opt_c">
+<p>The set method should not have a return value.</p></li><li data-component="answer" data-correct id="setSignature_opt_d"><p>public void setNum(int people)</p>
+</li><li data-component="feedback" id="setSignature_opt_d">
+<p>Yes, the set method should take a parameter called people and have a void return value. The name of the set method is usually set followed by the full instance variable name, but it does not have to be an exact match.</p></li><li data-component="answer"  id="setSignature_opt_e"><p>public int setNumOfPeople(int p)</p>
+</li><li data-component="feedback" id="setSignature_opt_e">
+<p>The parameter of this set method should be called people in order to match the code in the method body.</p></li>
+
+            </ul>
+            </div>
+            
+<div class="runestone">
+<ul data-component="dragndrop" id="AccessorMutator" >
+    <span data-component="question">6-5-2: Drag the definition from the left and drop it on the correct word on the right.  Click the "Check Me" button to see if you are correct.</span>
+	<span data-component=feedback>Review the vocabulary.</span>
+
+    <li data-component="draggable" id="AccessorMutator_drag1">gets and returns the value of an instance variable</li>
+    <li data-component="dropzone" for="AccessorMutator_drag1">accessor method</li>
+
+    <li data-component="draggable" id="AccessorMutator_drag2">sets the instance variable to a value in its parameter</li>
+    <li data-component="dropzone" for="AccessorMutator_drag2">mutator method</li>
+
+    <li data-component="draggable" id="AccessorMutator_drag3">initializes the instance variables to values</li>
+    <li data-component="dropzone" for="AccessorMutator_drag3">constructor</li>
+
+    <li data-component="draggable" id="AccessorMutator_drag4">accessible from outside the class</li>
+    <li data-component="dropzone" for="AccessorMutator_drag4">public</li>
+
+    <li data-component="draggable" id="AccessorMutator_drag5">accessible only inside the class</li>
+    <li data-component="dropzone" for="AccessorMutator_drag5">private</li>
+</ul></div><p>Mutator methods do not have to have a name with “set” in it, although most do. They can be any methods that change the value of an instance
+variable or a static variable in the class.</p>
+<div class="section" id="groupwork-programming-challenge-class-pet-setters">
+<h2><span class="section-number">6.5.1. </span><a class="reference internal" href="../_images/groupwork7.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork7.png" style="width: 35px;" /></a> Programming Challenge : Class Pet Setters<a class="headerlink" href="#groupwork-programming-challenge-class-pet-setters" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/animalclinic1.png"><img alt="Animal Clinic" class="align-left" src="../_images/animalclinic1.png" style="width: 150px;" /></a>
+<ol class="arabic simple">
+<li><p>Copy your Awesome Animal Clinic Pet class from the last lesson into this Active Code window.</p></li>
+<li><p>Add set methods for each of the 5 instance variables. Make sure you use good commenting!</p></li>
+<li><p>Test each of the set methods in the main method.</p></li>
+</ol>
+
+<div data-childcomponent="challenge-5-5-Pet-Class" class="runestone explainer ac_section alert alert-warning">
+<p>Create a Pet class that keeps track of the name, age, weight, type of animal, and breed for records at an animal clinic with 2 constructors, accessor (get) methods, a toString method, and mutator (set) methods for each instance variable.</p>
+
+<textarea data-component="activecode" id=challenge-5-5-Pet-Class data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+/**
+    Pet class (complete comments)
+    @author
+    @since
+
+*/
+class Pet
+{
+   // complete class definition with set methods
+
+}
+
+public class TesterClass
+{
+   // main method for testing
+   public static void main(String[] args)
+   {
+      // Create Pet objects and test all your set methods
+
+   }
+ }
+</textarea>
+</div>
+</div>
+<div class="section" id="practice">
+<h2><span class="section-number">6.5.2. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-5-1" >
+            <p>6-5-3: Consider the following class definition.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">(</span><span class="kt">int</span> <span class="n">temp</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">resetTemp</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">newTemp</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</li><li data-component="feedback" id="AP5-6-1_opt_c">
-<p>Correct.</p></li><li data-component="answer"  id="AP5-6-1_opt_d"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dollars</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">amount</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_d">
-<p>amount is returned instead of dollars.</p></li><li data-component="answer"  id="AP5-6-1_opt_e"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="n">dollars</span> <span class="o">+</span> <span class="n">amount</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">dollars</span><span class="p">;</span>
-</pre></div>
-</div>
-</li><li data-component="feedback" id="AP5-6-1_opt_e">
-<p>dollars should be incremented by amount.</p></li>
+<p>Which of the following best identifies the reason the class does not compile?</p>
+<li data-component="answer"  id="AP5-5-1_opt_a"><p>The constructor header does not have a return type.</p>
+</li><li data-component="feedback" id="AP5-5-1_opt_a">
+<p>The constructor should not have a return type.</p></li><li data-component="answer"  id="AP5-5-1_opt_b"><p>The resetTemp method is missing a return type.</p>
+</li><li data-component="feedback" id="AP5-5-1_opt_b">
+<p>Mutator methods usually have a void return type.</p></li><li data-component="answer"  id="AP5-5-1_opt_c"><p>The constructor should not have a parameter.</p>
+</li><li data-component="feedback" id="AP5-5-1_opt_c">
+<p>Constructors can have parameters.</p></li><li data-component="answer" data-correct id="AP5-5-1_opt_d"><p>The resetTemp method should have a parameter.</p>
+</li><li data-component="feedback" id="AP5-5-1_opt_d">
+<p>Correct! The resetTemp method should have a parameter for the newTemp value to set the currentTemp.</p></li><li data-component="answer"  id="AP5-5-1_opt_e"><p>The instance variable currentTemp should be public instead of private.</p>
+</li><li data-component="feedback" id="AP5-5-1_opt_e">
+<p>Instance variables should be private variables.</p></li>
 
             </ul>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-6-2" >
-            <p>6-6-2: Consider the Liquid class below.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Liquid</span>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="AP5-5-2" >
+            <p>6-5-4: In the Party class below, the addPeople method is intended to increase the value of the instance variable numOfPeople by the value of the parameter additionalPeople. The method does not work as intended.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Party</span>
 <span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">currentTemp</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">boilingPoint</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">numOfPeople</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="nf">Liquid</span><span class="p">(</span><span class="kt">int</span> <span class="n">ct</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bp</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="nf">Party</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">ct</span><span class="p">;</span>
-        <span class="n">boilingPoint</span> <span class="o">=</span> <span class="n">bp</span><span class="p">;</span>
+        <span class="n">numOfPeople</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoiling</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">addPeople</span><span class="p">(</span><span class="kt">int</span> <span class="n">additionalPeople</span><span class="p">)</span> <span class="c1">// Line 10</span>
     <span class="p">{</span>
-        <span class="cm">/* missing code */</span>
+        <span class="n">numOfPeople</span> <span class="o">+=</span> <span class="n">additionalPeople</span><span class="p">;</span> <span class="c1">// Line 12</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The isBoiling method is intended to return true if increasing the currentTemp by the parameter amount is greater than or equal to the boilingPoint, or otherwise return false. Which of the following code segments can replace <em>missing code</em> to ensure that the isBoiling method works as intended?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="p">.</span>   <span class="nf">if</span> <span class="p">(</span><span class="n">currentTemp</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">II</span><span class="p">.</span>  <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="n">currentTemp</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="n">currentTemp</span><span class="p">;</span>
-     <span class="p">}</span>
-<span class="n">III</span><span class="p">.</span> <span class="nf">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="n">currentTemp</span> <span class="o">&gt;=</span> <span class="n">boilingPoint</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-     <span class="p">}</span>
-     <span class="k">else</span>
-     <span class="p">{</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-     <span class="p">}</span>
-</pre></div>
-</div>
-<li data-component="answer"  id="AP5-6-2_opt_a"><p>I only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_a">
-<p>I would work but it is not the only code that would work.</p></li><li data-component="answer"  id="AP5-6-2_opt_b"><p>II only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_b">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li><li data-component="answer"  id="AP5-6-2_opt_c"><p>III only</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_c">
-<p>III would work but it is not the only code that would work.</p></li><li data-component="answer" data-correct id="AP5-6-2_opt_d"><p>I and III only.</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_d">
-<p>Correct!</p></li><li data-component="answer"  id="AP5-6-2_opt_e"><p>I, II, III</p>
-</li><li data-component="feedback" id="AP5-6-2_opt_e">
-<p>II does not check against the boilingPoint and does not return only boolean values.</p></li>
+<p>Which of the following changes should be made so that the class definition compiles without error and the method addPeople works as intended?</p>
+
+            <li data-component="answer"  id="AP5-5-2_opt_a">Replace line 12 with numOfPeople = additionalPeople;</li><li data-component="feedback">This method should add additionalPeople to numOfPeople.</li>
+            
+            <li data-component="answer"  id="AP5-5-2_opt_b">Replace line 12 with return additionalPeople;</li><li data-component="feedback">This method should add additionalPeople to numOfPeople.</li>
+            
+            <li data-component="answer"  id="AP5-5-2_opt_c">Replace line 12 with additionalPeople += 3;</li><li data-component="feedback">This method should add additionalPeople to numOfPeople.</li>
+            
+            <li data-component="answer"  id="AP5-5-2_opt_d">Replace line 10 with public addPeople (int additionalPeople)</li><li data-component="feedback">Mutator methods should have a void return type.</li>
+            
+            <li data-component="answer" data-correct id="AP5-5-2_opt_e">Replace line 10 with public void addPeople(int additionalPeople)</li><li data-component="feedback">Mutator methods should have a void return type.</li>
+            
 
             </ul>
             </div>
             </div>
 <div class="section" id="summary">
-<h2><span class="section-number">6.6.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
-<li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
-<li><p>To write methods, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> in {} and method calls using an object.the method name and arguments whenever you need it to do its job.</p></li>
-<li><p>To call an object’s method, you must use the object name and the dot (.) operator followed by the method name, for example <strong>object.method();</strong></p></li>
-<li><p>When you call a method, you can give or pass in <strong>arguments</strong> or <strong>actual parameters</strong> to it inside the parentheses <strong>object.method(arguments)</strong>. The arguments are saved in local <strong>formal parameter</strong> variables that are declared in the method header, for example: public void method(type param1, type param2) { … }.</p></li>
-<li><p>Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.</p></li>
-<li><p>When an actual parameter is a primitive value, the formal parameter is initialized with a copy of that value. Changes to the formal parameter have no effect on the corresponding actual parameter.</p></li>
-<li><p>When an actual parameter is a reference to an object, the formal parameter is initialized with a copy of that reference, not a copy of the object. The formal parameter and the actual parameter are then aliases, both refering to the same object.</p></li>
-<li><p>When an actual parameter is a reference to an object, the method or constructor could use this reference to alter the state of the original object. However, it is good programming practice to not modify mutable objects that are passed as parameters unless required in the specification.</p></li>
+<li><p>A void method does not return a value. Its header contains the keyword void before the method name.</p></li>
+<li><p>A <strong>mutator method</strong> is often a void method that changes the values of instance variables or static variables.</p></li>
 </ul>
 </div>
 </div>
@@ -523,8 +642,8 @@ Since the method may set and get instance variables, you must call the method on
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.5. Mutator Methods' data-toggle="tooltip">
-    <a href="topic-5-5-mutator-methods.html" aria-label="6.5. Mutator Methods">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.4. Accessor Methods' data-toggle="tooltip">
+    <a href="topic-6-4-accessor-methods.html" aria-label="6.4. Accessor Methods">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -534,8 +653,8 @@ Since the method may set and get instance variables, you must call the method on
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.7. Static Variables and Methods' data-toggle="tooltip" >
-    <a href="topic-5-7-static-vars-methods.html" aria-label="6.7. Static Variables and Methods">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.6. Writing Instance Methods' data-toggle="tooltip" >
+    <a href="topic-6-6-writing-methods.html" aria-label="6.6. Writing Instance Methods">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>
