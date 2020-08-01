@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 6-7-
+   :prefix: 7-6-
    :start: 1
 
 Code Practice with Arrays

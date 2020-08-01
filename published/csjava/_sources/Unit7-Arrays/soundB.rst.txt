@@ -1,6 +1,3 @@
-.. qnum::
-   :prefix: 6-4-5-
-   :start: 1
 
 Free Response - Sound B
 =======================

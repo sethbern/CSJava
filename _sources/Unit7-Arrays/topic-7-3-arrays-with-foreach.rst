@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 6-3-
+   :prefix: 7-3-
    :start: 1
  
 .. |CodingEx| image:: ../../_static/codingExercise.png
@@ -28,18 +28,19 @@ Enhanced For-Loop (For-Each) for Arrays
 	single: for-each
 	pair: loop; for-each
    
-There is a special kind of loop that can be used with arrays that is called an **enhanced for loop** or a **for each loop**. This loop is much easier to write because it does not involve an index variable or the use of the []. It just sets up a variable that is set to each value in the array successively. 
+There is a special kind of loop that can be used with arrays  called an **enhanced for loop** or a **for each loop**. This loop is much easier to write because it does not involve an index variable or the use of the []. It just sets up a variable that is set to each value in the array successively. 
 
-To set up a for-each loop, use **for (type variable : arrayname)** where the type is the type for elements in the array, and read it as "for each variable value in arrayname". You may have used a similar loop in AP CSP Pseudocode or App Inventor with lists like below.
+To set up a for-each loop, use **for (type variable : arrayname)** where the type is the type for elements 
+in the array, and read it as "for each variable value in arrayname". 
+
+ .. code-block:: java
+
+    for (type item: array)
+    {
+         //statements using item;
+    }
 
 
-.. figure:: Figures/appinvForEachComparison.png
-    :width: 100%
-    :align: center
-    :figclass: align-center
-    
-    Figure 1: Comparing App Inventor, AP CSP, and Java for each
-    
 See the examples below in Java that loop through an int and a String array. Notice the type of the loop variable is the type of the array.
 
 .. code-block:: java 
@@ -343,14 +344,8 @@ Here is an object-oriented example that has the array as a private instance vari
    ~~~~
    public class ArrayWorker
    {
-      private int[ ] values;
       
-      public ArrayWorker(int[] theValues)
-      {
-         values = theValues;
-      }
-      
-      public double getAverage()
+      public static double getAverage(int[] values)
       {
         double total = 0;
         for (int val : values)
@@ -363,8 +358,7 @@ Here is an object-oriented example that has the array as a private instance vari
       public static void main(String[] args)
       {
         int[] numArray =  {2, 6, 7, 12, 5};
-        ArrayWorker aWorker = new ArrayWorker(numArray); 
-        System.out.println(aWorker.getAverage());
+        System.out.println(getAverage(numArray));
       }
    }
    ====
@@ -478,7 +472,9 @@ If you want to step through the correct code to see what it does in the Java Vis
 
    <a href= "https://repl.it/@BerylHoffman/SpellChecker1" target="_blank">repl.it</a>
    
-Copy the spellcheck method that you used in the Spell Checker Challenge in the last lesson. Re-write the method  to use an enhanced for-each loop instead of an indexed for-loop. If you did the optional printStartsWith(firstLetters) method, re-write that one too. You may use the code in |repl.it| instead to have the full dictionary.
+Copy the spellcheck method that you used in the Spell Checker Challenge in the last lesson. 
+Re-write the method  to use an enhanced for-each loop instead of an indexed for-loop. 
+If you did the optional printStartsWith(firstLetters) method, re-write that one too. 
 
 .. activecode:: challenge-6-3-spellchecker2
    :language: java
@@ -488,30 +484,24 @@ Copy the spellcheck method that you used in the Spell Checker Challenge in the l
    ~~~~
    public class SpellChecker
    {
-     private String[] dictionary = {"the","of","and","a","to","in","is","you","that","it","he","was","for","on","are","as","with","his","they","I","at","be","this","have","from","or","one","had","by","word","but","not","what","all","were","we","when","your","can","said","there","use","an","each","which","she","do","how","their","if","will","up","other","about","out","many","then","them","these","so","some","her","would","make","like","him","into","time","has","look","two","more","write","go","see","number","no","way","could","people","my","than","first","water","been","call","who","oil","its","now","find","long","down","day","did","get","come","made","may","cat","dog","cats","dogs"};
-
-      // Re-write the spellcheck(word) (and optionally the printStartsWith(firstLetters)) methods to use enhanced for-each loops.
-       
-      /* Write a spellcheck() method using an enhanced for-each loop 
-       * that takes a word as a parameter and returns true if it is 
-       * in the dictionary array. Return false if it is not found.
-       */
+      // Re-write the spellcheck(word, dictionary) (and optionally the printStartsWith(firstLetters, dictionary)) methods to use enhanced for-each loops.
        
        
       
       public static void main(String[] args)
       {
-        SpellChecker checker = new SpellChecker();
+        String[] dictionary = {"the","of","and","a","to","in","is","you","that","it","he","was","for","on","are","as","with","his","they","I","at","be","this","have","from","or","one","had","by","word","but","not","what","all","were","we","when","your","can","said","there","use","an","each","which","she","do","how","their","if","will","up","other","about","out","many","then","them","these","so","some","her","would","make","like","him","into","time","has","look","two","more","write","go","see","number","no","way","could","people","my","than","first","water","been","call","who","oil","its","now","find","long","down","day","did","get","come","made","may","cat","dog","cats","dogs"};
+
         /* Uncomment to test your method
         String word = "catz";
-        if (checker.spellcheck(word) == true)
+        if (checker.spellcheck(word, dictionary) == true)
             System.out.println(word + " is spelled correctly!");
         else
             System.out.println(word + " is misspelled!");
         */
 
        // Optional (not autograded)
-       // checker.printStartsWith("a");
+       // checker.printStartsWith("a", dictionary);
       }
    }
    ====

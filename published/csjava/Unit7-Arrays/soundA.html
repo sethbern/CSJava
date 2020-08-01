@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>7.4.4. Free Response - Sound A &#8212; CS Java</title>
+    <title>Free Response - Sound A &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.4.5. Free Response - Sound B" href="soundB.html" />
-    <link rel="prev" title="7.4.3. Free Response - Self Divisor B" href="selfDivisorB.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -303,18 +301,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">7.4.3. </span>Free Response - Self Divisor B" data-toggle="tooltip">
-    <a href="selfDivisorB.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">7.4.5. </span>Free Response - Sound B' data-toggle="tooltip" >              
-    <a href="soundB.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -349,7 +335,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="free-response-sound-a">
-<h1><span class="section-number">7.4.4. </span>Free Response - Sound A<a class="headerlink" href="#free-response-sound-a" title="Permalink to this headline">¶</a></h1>
+<h1>Free Response - Sound A<a class="headerlink" href="#free-response-sound-a" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">The following is a free response question from 2011.  It was question 1 on the exam.  You can see all the free response questions from past exams at <a class="reference external" href="https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year">https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year</a>.</p>
 <p><strong>Question 1.</strong>  Digital sounds can be represented as an array of integer values. For this question, you will write two unrelated methods of the <em>Sound</em> class.</p>
 <p>A partial declaration of the <code class="docutils literal notranslate"><span class="pre">Sound</span></code> class is shown below.</p>
@@ -400,7 +386,7 @@ the array. For example, assume that the array samples has been initialized with 
 <a class="reference internal image-reference" href="../_images/soundTable2.png"><img alt="../_images/soundTable2.png" src="../_images/soundTable2.png" style="width: 593px;" /></a>
 </div>
 <div class="section" id="how-to-solve-this">
-<h2><span class="section-number">7.4.4.1. </span>How to Solve This<a class="headerlink" href="#how-to-solve-this" title="Permalink to this headline">¶</a></h2>
+<h2>How to Solve This<a class="headerlink" href="#how-to-solve-this" title="Permalink to this headline">¶</a></h2>
 <p>We will have to loop through each value in the array and compare the value to the limit. We will need to keep track of the number of values changed.</p>
 <p>If the current value is greater than the
 limit, it should be reset to the limit and the count of the values changed should be incremented.</p>
@@ -409,7 +395,7 @@ limit, it should be reset to the limit and the count of the values changed shoul
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="fr_sounda_1" >
-            <p>6-4-4-1: Which loop would be best for this problem?</p>
+            <p>7-6-1: Which loop would be best for this problem?</p>
 
             <li data-component="answer"  id="fr_sounda_1_opt_a">while</li><li data-component="feedback">You could use a while loop, but if you are looping through all values in an array it is better to use a for loop.  It is easier to make mistakes with a while loop and forget to increment a value in the body of the loop so that the loop eventually stops.</li>
             
@@ -423,7 +409,7 @@ limit, it should be reset to the limit and the count of the values changed shoul
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="fr_sounda_2" >
-            <p>6-4-4-2: Which is the correct code for changing the current value to the negative of the limit?</p>
+            <p>7-6-2: Which is the correct code for changing the current value to the negative of the limit?</p>
 
             <li data-component="answer"  id="fr_sounda_2_opt_a">samples[i].set(-limit);</li><li data-component="feedback">There is no set method on arrays.</li>
             
@@ -436,11 +422,11 @@ limit, it should be reset to the limit and the count of the values changed shoul
             </div>
             </div>
 <div class="section" id="mixed-up-code">
-<h2><span class="section-number">7.4.4.2. </span>Mixed Up Code<a class="headerlink" href="#mixed-up-code" title="Permalink to this headline">¶</a></h2>
+<h2>Mixed Up Code<a class="headerlink" href="#mixed-up-code" title="Permalink to this headline">¶</a></h2>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="SoundA"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>6-4-4-3: The method <code>limitAmplitude</code> below contains the correct code for a solution to this problem, but the code blocks are mixed up.  Drag the blocks from the left to the right and put them in order with the correct indentation so that the code would work correctly.</span>public int limitAmplitude(int limit)
+        <span data-question>7-6-3: The method <code>limitAmplitude</code> below contains the correct code for a solution to this problem, but the code blocks are mixed up.  Drag the blocks from the left to the right and put them in order with the correct indentation so that the code would work correctly.</span>public int limitAmplitude(int limit)
 {
 ---
     int numChanged = 0;
@@ -471,7 +457,7 @@ limit, it should be reset to the limit and the count of the values changed shoul
         </div>
     </div>
 <div class="section" id="try-and-solve-part-a">
-<h2><span class="section-number">7.4.4.3. </span>Try and Solve Part A<a class="headerlink" href="#try-and-solve-part-a" title="Permalink to this headline">¶</a></h2>
+<h2>Try and Solve Part A<a class="headerlink" href="#try-and-solve-part-a" title="Permalink to this headline">¶</a></h2>
 <p>Write the method <code class="docutils literal notranslate"><span class="pre">limitAmplitude</span></code> that will change any value that has an amplitude greater than the
 given limit. Values that are greater than <code class="docutils literal notranslate"><span class="pre">limit</span></code> are replaced with <code class="docutils literal notranslate"><span class="pre">limit</span></code>, and values that are less than
 <code class="docutils literal notranslate"><span class="pre">-limit</span></code> are replaced with <code class="docutils literal notranslate"><span class="pre">–limit</span></code>. The method returns the total number of values that were changed in
@@ -520,26 +506,6 @@ public class Sound
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 7.4.3. Free Response - Self Divisor B' data-toggle="tooltip">
-    <a href="selfDivisorB.html" aria-label="7.4.3. Free Response - Self Divisor B">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-        </div>
-    </a>
-  </li>
-</ul>
-
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 7.4.5. Free Response - Sound B' data-toggle="tooltip" >
-    <a href="soundB.html" aria-label="7.4.5. Free Response - Sound B">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-      </div>
-    </a>
-  </li>
-</ul>
 
 <script type="text/javascript">
 

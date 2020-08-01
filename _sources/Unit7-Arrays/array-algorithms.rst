@@ -1,6 +1,3 @@
-.. qnum::
-   :prefix: 6-4-
-   :start: 1
 
 .. |CodingEx| image:: ../../_static/codingExercise.png
     :width: 30px
@@ -28,10 +25,7 @@ Array Algorithms (FRQs)
 	pair: array; algorithms
     pair: array; FRQ
     
-In this lesson, you will study different Free Response Questions and responses that develop algorithms using arrays. 
-
-
-Here are some common algorithms that you should be familiar with for the AP CS A exam:
+In this lesson, you will study different algorithms using arrays.   Here are a few common tasks involving arrays:
 
 - Determine the minimum or maximum value in an array
 - Compute a sum, average, or mode of array elements

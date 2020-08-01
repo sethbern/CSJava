@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>7.4.6. Free Response - Number Cube A &#8212; CS Java</title>
+    <title>Free Response - Number Cube A &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.4.7. Free Response - Number Cube B" href="numberCubeB.html" />
-    <link rel="prev" title="7.4.5. Free Response - Sound B" href="soundB.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -303,18 +301,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">7.4.5. </span>Free Response - Sound B" data-toggle="tooltip">
-    <a href="soundB.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">7.4.7. </span>Free Response - Number Cube B' data-toggle="tooltip" >              
-    <a href="numberCubeB.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -349,7 +335,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="free-response-number-cube-a">
-<h1><span class="section-number">7.4.6. </span>Free Response - Number Cube A<a class="headerlink" href="#free-response-number-cube-a" title="Permalink to this headline">¶</a></h1>
+<h1>Free Response - Number Cube A<a class="headerlink" href="#free-response-number-cube-a" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">The following is a free response question from 2009.  It was question 1 on the exam.  You can see all the free response questions from past exams at <a class="reference external" href="https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year">https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year</a>.</p>
 <p><strong>Question 1.</strong>  A statistician is studying sequences of numbers obtained by repeatedly tossing a six-sided number cube. On each side of the number cube is a single number in the range of 1 to 6, inclusive, and no number is repeated on the cube. The statistician is particularly interested in runs of numbers. A run occurs when two or more consecutive tosses of the cube produce the same value. For example, in the following sequence of cube tosses, there are runs starting at positions 1, 6, 12, and 14.</p>
 <div class="align-center figure">
@@ -369,12 +355,12 @@
 <p><strong>Part a.</strong> Write the method <code class="docutils literal notranslate"><span class="pre">getCubeTosses</span></code> that takes a number cube and a number of tosses as parameters. The
 method should return an array of the values produced by tossing the number cube the given number of times.</p>
 <div class="section" id="how-to-solve">
-<h2><span class="section-number">7.4.6.1. </span>How to Solve<a class="headerlink" href="#how-to-solve" title="Permalink to this headline">¶</a></h2>
+<h2>How to Solve<a class="headerlink" href="#how-to-solve" title="Permalink to this headline">¶</a></h2>
 <p>You will need to create an array to hold the results of each cube toss.  The size of the array should be the passed number of times you will call <code class="docutils literal notranslate"><span class="pre">toss</span></code>.  You will need to loop that number of times and each time set the value of the array at that index to the result of the <code class="docutils literal notranslate"><span class="pre">toss</span></code>.  Return the array.</p>
 
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="numbercubea_1" >
-            <p>6-4-6-1: Which Java expression correctly generates a random number between 1 and 6?</p>
+            <p>7-6-1: Which Java expression correctly generates a random number between 1 and 6?</p>
 
             <li data-component="answer" data-correct id="numbercubea_1_opt_a">(int) (Math.random() * 6) + 1)</li><li data-component="feedback">This expression correctly generates a random number between 1 and 6.</li>
             
@@ -388,7 +374,7 @@ method should return an array of the values produced by tossing the number cube 
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="numbercubea_2" >
-            <p>6-4-6-2: Which of the following correctly creates an array of size numTosses?</p>
+            <p>7-6-2: Which of the following correctly creates an array of size numTosses?</p>
 
             <li data-component="answer"  id="numbercubea_2_opt_a">int[] tossArray = new int[];</li><li data-component="feedback">You need to specify the size of the array when you create it.</li>
             
@@ -402,7 +388,7 @@ method should return an array of the values produced by tossing the number cube 
             
             <div class="runestone alert alert-warning">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="numbercubea_3" >
-            <p>6-4-6-3: Which of the following correctly loops numTosses number of times?</p>
+            <p>7-6-3: Which of the following correctly loops numTosses number of times?</p>
 
             <li data-component="answer"  id="numbercubea_3_opt_a">for (int i = 0; i <= numTosses; i++)</li><li data-component="feedback">This will execute numTosses + 1 times.</li>
             
@@ -415,11 +401,11 @@ method should return an array of the values produced by tossing the number cube 
             </div>
             </div>
 <div class="section" id="mixed-up-code">
-<h2><span class="section-number">7.4.6.2. </span>Mixed Up Code<a class="headerlink" href="#mixed-up-code" title="Permalink to this headline">¶</a></h2>
+<h2>Mixed Up Code<a class="headerlink" href="#mixed-up-code" title="Permalink to this headline">¶</a></h2>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="NumberCubeA"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>6-4-6-4: The method getCubeTosses below contains the correct code for one solution to this problem, but it is mixed up.  Drag the needed code from the left to the right and put them in order with the correct indention so that the code would work correctly.</span>public static int[] getCubeTosses(NumberCube cube,
+        <span data-question>7-6-4: The method getCubeTosses below contains the correct code for one solution to this problem, but it is mixed up.  Drag the needed code from the left to the right and put them in order with the correct indention so that the code would work correctly.</span>public static int[] getCubeTosses(NumberCube cube,
                                   int numTosses)
 {
 ---
@@ -439,7 +425,7 @@ method should return an array of the values produced by tossing the number cube 
         </div>
     </div>
 <div class="section" id="try-and-solve-part-a">
-<h2><span class="section-number">7.4.6.3. </span>Try and Solve Part A<a class="headerlink" href="#try-and-solve-part-a" title="Permalink to this headline">¶</a></h2>
+<h2>Try and Solve Part A<a class="headerlink" href="#try-and-solve-part-a" title="Permalink to this headline">¶</a></h2>
 <p>Write the method <code class="docutils literal notranslate"><span class="pre">getCubeTosses</span></code> that takes a number cube and a number of tosses as parameters. The method should return an array of the values produced by tossing the number cube the given number of times.</p>
 
 <div data-childcomponent="FRQNumberCubeA" class="runestone explainer ac_section alert alert-warning">
@@ -487,26 +473,6 @@ method should return an array of the values produced by tossing the number cube 
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 7.4.5. Free Response - Sound B' data-toggle="tooltip">
-    <a href="soundB.html" aria-label="7.4.5. Free Response - Sound B">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-        </div>
-    </a>
-  </li>
-</ul>
-
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 7.4.7. Free Response - Number Cube B' data-toggle="tooltip" >
-    <a href="numberCubeB.html" aria-label="7.4.7. Free Response - Number Cube B">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-      </div>
-    </a>
-  </li>
-</ul>
 
 <script type="text/javascript">
 

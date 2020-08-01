@@ -1,6 +1,3 @@
-.. qnum::
-   :prefix: 6-4-1-
-   :start: 1
 
 Free Response - Horse Barn A
 -------------------------------

@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 6-1-
+   :prefix: 7-1-
    :start: 1
 
 .. |CodingEx| image:: ../../_static/codingExercise.png
@@ -294,15 +294,9 @@ Arrays know their length (how many elements they can store).  It is a public rea
 Access and Modify Array Values 
 =====================================
 
-To access the items in an array, we use an **indexed array variable** which is the array name and the index inside of square bracket [ ]. Remember that an **index** is a number that indicates the position of an item in a list, starting at 0. Here's a comparison of App Inventor, AP CSP Pseudocode, and Java array access.
-
-
-.. figure:: Figures/appinvSelectComparison.png
-    :width: 100%
-    :align: center
-    :figclass: align-center
-    
-    Figure 5: Comparing Access to App Inventor lists and Java arrays
+To access the items in an array, we use an **indexed array variable** which is the array name and the 
+index inside of square bracket [ ]. Remember that an **index** is a number that indicates 
+the position of an item in a list, starting at 0. 
 
 An indexed variable like **arrayname[index]** can be used anywhere a regular variable can be used, for example to assign a new value or to get a value from the array like below.
 
@@ -516,15 +510,14 @@ Here's a fun String array of image filenames. The following code displays an onl
         String[] images = {"cow.jpg", "kitten.jpg", 
                   "puppy.jpg", "pig.jpg", "reindeer.jpg"};
    
-        ImageEx obj = new ImageEx();
         // Change index to see different images in the array!
         // Can you have it pick out a random image?
         int index = 0;
-        obj.printHTMLimage( images[index] );
+        printHTMLimage( images[index] );
      }
       
      // This method will just work in Active Code which interprets html
-     public void printHTMLimage(String filename)
+     public static void printHTMLimage(String filename)
      {
         String baseURL = "https://raw.githubusercontent.com/bhoffman0/CSAwesome/master/_sources/Unit6-Arrays/6-1-images/";
         System.out.print("<img src=" + baseURL + filename + ">");
@@ -533,10 +526,6 @@ Here's a fun String array of image filenames. The following code displays an onl
 
 |Groupwork| Programming Challenge : Countries Array
 ===================================================
-
-.. image:: 6-1-images/US.jpg
-    :width: 200
-    :align: left
     
 In this challenge, you will create a guide to different countries using arrays. 
 
@@ -573,13 +562,12 @@ In this challenge, you will create a guide to different countries using arrays.
         // 3. Print out the info in each array using the random index
         
         // Sample image printing - this will only work in Active Code
-         // Countries obj = new Countries();
-         // obj.printHTMLimage( images[index] );
+        // printHTMLimage( images[index] );
 
       }
       
       // This method will just work in Active Code which interprets html
-      public void printHTMLimage(String filename)
+      public static void printHTMLimage(String filename)
       {
         String baseURL = "https://raw.githubusercontent.com/bhoffman0/CSAwesome/master/_sources/Unit6-Arrays/6-1-images/";
         System.out.print("<img src=" + baseURL + filename + ">");

@@ -1,6 +1,4 @@
-.. qnum::
-   :prefix: 6-4-7-
-   :start: 1
+
 
 Free Response - Number Cube B
 =============================

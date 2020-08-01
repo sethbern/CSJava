@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 6-2-
+   :prefix: 7-2-
    :start: 1
 
 .. |CodingEx| image:: ../../_static/codingExercise.png
@@ -26,7 +26,8 @@ Traversing Arrays with For Loops
 Index Variables
 -----------------------
 
-In the last lesson, we mentioned that you can use a variable for the index of an array. You can even do math with that index and have an arithmetic expression inside the [], like below.
+In the last lesson, we mentioned that you can use a variable for the index of an array. 
+You can even do math with that index and have an arithmetic expression inside the [], like below.
 
 .. code-block:: java 
  
@@ -424,11 +425,12 @@ You don't have to loop through an array from the front to the back.  You can loo
    :feedback_c: Since the method loops from the back towards the front -15 is the last value in the array that is less than -13 and it is at index 1. 
    :feedback_d: No, the method correctly starts the index at values.length - 1 and continues as long as i is greater than or equal to 0.  
 
-   Given the following code segment (which is identical to the method above) what will be returned when you execute: getIndexOfLastElementSmallerThanTarget(values,-13);
+   Given the following code segment (which is identical to the method above) what will be returned 
+   when you execute: getIndexOfLastElementSmallerThanTarget(values,-13);
    
    .. code-block:: java 
    
-      private int[ ] values = {-20, -15, 2, 8, 16, 33};
+      int[ ] values = {-20, -15, 2, 8, 16, 33};
       
       public static int getIndexOfLastElementSmallerThanTarget(int[ ] values, int compare)
       { 
@@ -452,7 +454,8 @@ You don't have to loop through an array from the front to the back.  You can loo
    :feedback_c: Check the starting index.   Is it correct?
    :feedback_d: You can not start the index at the length of the array.  You must start at the length of the array minus one.  This is a common mistake.
 
-   Given the following code segment (which is identical to the method above) what will be returned when you execute: getIndexOfLastElementSmallerThanTarget(values, 7);
+   Given the following code segment (which is identical to the method above) what will be returned 
+   when you execute: getIndexOfLastElementSmallerThanTarget(values, 7);
    
    .. code-block:: java
    
@@ -488,15 +491,9 @@ You don't have to loop through all of the elements of an array.  You can loop th
    ~~~~
    public class ArrayWorker
    {
-      private int[ ] values;
-      
-      public ArrayWorker(int[] theValues)
-      {
-         values = theValues;
-      }
 
       /** Doubles the first 5 elements of the array */
-      public void doubleFirstFive()
+      public static void doubleFirstFive(int[] values)
       {
         // Notice: && i < 5 
         for (int i = 0; i < values.length && i < 5; i++)
@@ -509,7 +506,7 @@ You don't have to loop through all of the elements of an array.  You can loop th
       
       
       
-      public void printArray()
+      public static void printArray(int[] values)
       {
         for (int i = 0; i < values.length; i++)
          {
@@ -520,9 +517,8 @@ You don't have to loop through all of the elements of an array.  You can loop th
       public static void main(String[] args)
       {
         int[] numArray = {3, 8, -3, 2, 20, 5, 33, 1};
-        ArrayWorker worker = new ArrayWorker(numArray);
-        worker.doubleFirstFive();
-        worker.printArray();
+        doubleFirstFive(numArray);
+        printArray(numArray);
       }
    }
    ====
@@ -579,14 +575,8 @@ You can even start in the middle and loop through the rest of the array.
    ~~~~
    public class ArrayWorker
    {
-      private int[ ] values;
       
-      public ArrayWorker(int[] theValues)
-      {
-         values = theValues;
-      }
-      
-      public void doubleLastHalf()
+      public static void doubleLastHalf(int[] values)
       {
         for (int i = values.length / 2; i < values.length; i++)
         {
@@ -594,7 +584,7 @@ You can even start in the middle and loop through the rest of the array.
         }
       }
       
-      public void printArray()
+      public static void printArray(int[] values)
       {
          for (int i = 0; i < values.length; i++)
          {
@@ -605,13 +595,11 @@ You can even start in the middle and loop through the rest of the array.
       public static void main(String[] args)
       {
         int[] numArray = {3,8,-3, 2};
-        ArrayWorker worker = new ArrayWorker(numArray);
-        worker.doubleLastHalf();
-        worker.printArray();
+        doubleLastHalf(numArray);
+        printArray(numArray);
       }
    }
    
-|Exercise| **Check Your Understanding**
 
 
 .. mchoice:: qab_8
@@ -626,21 +614,43 @@ You can even start in the middle and loop through the rest of the array.
    :feedback_c: It loops from the middle to the end doubling each value. Since there are 6 elements it will start at index 3.  
    :feedback_d: This would be true if array elements didn't change, but they do.  
 
-   Given the following values of a and the method doubleLast what will the values of a be after you execute: doubleLast()?
+   Given the following values of a and the method doubleLast what will the values of a be after you 
+   execute: doubleLast(a)?
    
    .. code-block:: java 
    
-      private int[ ] a = {-20, -15, 2, 8, 16, 33};
+      int[ ] a = {-20, -15, 2, 8, 16, 33};
 
-      public void doubleLast()
+      public static void doubleLast(int[] values)
       {
     
-         for (int i = a.length / 2; i < a.length; i++)
+         for (int i = values.length / 2; i < values.length; i++)
          {
-            a[i] = a[i] * 2;
+            values[i] = values[i] * 2;
          }
       }
       
+
+
+Parameter passing and arrays - pass by value
+--------------------------------------------
+
+Wait a minute!  In Unit 5 we discussed Java parameter passing and pass by value, 
+in which the actual argument value is copied into the formal parameter variable.  We saw how
+assigning a new value to a formal parameter variable inside the method does not alter the 
+value stored in the actual argument
+variable used in the method call.
+
+How come the **doubleFirstFive**, **doubleLastHalf**, and **doubleLast** methods in the last 3 programs 
+were able to modify the contents of an array that was passed into a method through a formal parameter?  It is because arrays are objects and the value that gets passed into 
+the method is a reference to the array, meaning a copy of the array's memory location.
+Notice the methods do not reassign the formal parameter variable that references the array, but instead
+use array indexing through the [] operator to assign values into one or more array cells.
+When you use array indexing to assign a value within a method, you will be 
+assigning to the same array object that was used for the method call.
+
+|Exercise| **Check Your Understanding**
+
 .. mchoice:: qab_9
    :practice: T
    :answer_a: {-40, -30, 4, 16, 32, 66}
@@ -655,23 +665,22 @@ You can even start in the middle and loop through the rest of the array.
    :feedback_d: This loops from the beginning to the middle and doubles every other element (i+=2 is the same as i = i + 2). 
    :feedback_e: This would be true if it looped through the whole array and doubled every other element.  Does it?
 
-   Given the following values of a and the method mystery what will the values of a be after you execute: mystery()?
+   Given the following values of a and the method mystery what will the values of a be after you 
+   execute: mystery(a)?
    
    .. code-block:: java
    
-      private int[ ] a = {-20, -15, 2, 8, 16, 33};
+      int[] a = {-20, -15, 2, 8, 16, 33};
 
-      public void mystery()
+      public static void mystery(int[] values)
       {
     
-         for (int i = 0; i < a.length/2; i+=2)
+         for (int i = 0; i < values.length/2; i+=2)
          {
-            a[i] = a[i] * 2;
+            values[i] = values[i] * 2;
          }
       }
    
-
-
 .. parsonsprob:: pab_3
    :numbered: left
    :practice: T
@@ -793,13 +802,16 @@ Be careful not to jump out of loop too early when you are looking for a value in
 .. activecode:: lcap1
    :language: java
    
-   What is wrong with the code below?  The first time through the loop it will start with the element at index 0 and check if the item at the array index equals the passed target string.  If they have the same characters in the same order it will return 0, otherwise it will return -1.  But, it has only processed one element of the array.  How would you fix the code to work correctly (process all array elements before returning)? 
+   What is wrong with the code below?  The first time through the loop it will start with the 
+   element at index 0 and check if the item at the array index equals the passed target string.  
+   If they have the same characters in the same order it will return 0, otherwise it will return -1.  
+   But, it has only processed one element of the array.  How would you fix the code to 
+   work correctly (process all array elements before returning)? 
    ~~~~
    public class StringWorker
    {
-      private String[ ] arr = {"Hello", "Hey", "Good morning!"};
-
-      public int findString(String target)
+      
+      public static int findString(String target, String[] arr)
       {
         String word = null;
         for (int index = 0; index < arr.length; index++)
@@ -820,8 +832,8 @@ Be careful not to jump out of loop too early when you are looking for a value in
       
       public static void main(String[] args)
       {
-        StringWorker sWorker = new StringWorker();
-        System.out.println(sWorker.findString("Hey"));
+        String[] arr = {"Hello", "Hey", "Good morning!"};
+        System.out.println(findString("Hey", arr));
       }
    }
 
@@ -856,12 +868,6 @@ Be careful not to jump out of loop too early when you are looking for a value in
 |Groupwork| Programming Challenge : SpellChecker 
 --------------------------------------------------
 
-.. image:: Figures/spellcheck.png
-    :width: 100
-    :align: left
-    :alt: Spell Checker
-
-
 .. |startsWith()| raw:: html
 
    <a href= "https://www.w3schools.com/java/ref_string_startswith.asp" target="_blank">startsWith()</a>
@@ -870,13 +876,14 @@ Be careful not to jump out of loop too early when you are looking for a value in
 
    <a href= "https://repl.it/@BerylHoffman/SpellChecker1" target="_blank">repl.it</a>
    
-We encourage you to work in pairs for this challenge. Make sure you have done the last coding exercise above which will help you with this challenge.
+Make sure you have done the last coding exercise above which will help you with this challenge.
 
 The following Active Code uses a dictionary array of the most common 100 English words. We can use it as a spelling checker! For a more realistic application, you may want to use this |repl.it| code instead that has a huge dictionary of English words read in from a file and lets you do input with your spell checker. If you use repl, copy in the link for your repl in the Active Code window below to turn it in.
 
 
-1. Write a print10() method that prints out the first 10 words of the dictionary array.
-2. Write a spellcheck() method that takes a word as a parameter and returns true if it is in the dictionary array. It should return false if it is not found. Test your code below by changing the word sent to the spellcheck() method in main. This algorithm is called a **linear search** where we step through the array one element at a time (here the dictionary one word at a time) looking for a certain element.
+1. Write a print10() method that takes an array as a parameter and prints out the first 10 words of the array.
+2. Write a spellcheck() method that takes a word and an array as parameters and returns true if the word is in the array. It should return false if it is not found. Test your code below by changing the word sent to the spellcheck() method in main. This algorithm is called a **linear search** where we step through the array one element at a time (here the dictionary one word at a time) looking for a certain element.
+3. Optional Challenge: Write a method printStartsWith(String firstLetters, String[] dictionary) that prints out the words in the dictionary array that start with the characters in the word firstLetters. You could use the Java String |startsWith()| method here if you'd like to, or use indexOf() to see if the firstLetters is at index 0 of the string. This is not autograded.
 
 
 .. activecode:: challenge-6-2-spellchecker
@@ -885,27 +892,27 @@ The following Active Code uses a dictionary array of the most common 100 English
    
    public class SpellChecker
    {
-      private String[] dictionary = {"the","of","and","a","to","in","is","you","that","it","he","was","for","on","are","as","with","his","they","I","at","be","this","have","from","or","one","had","by","word","but","not","what","all","were","we","when","your","can","said","there","use","an","each","which","she","do","how","their","if","will","up","other","about","out","many","then","them","these","so","some","her","would","make","like","him","into","time","has","look","two","more","write","go","see","number","no","way","could","people","my","than","first","water","been","call","who","oil","its","now","find","long","down","day","did","get","come","made","may","cat","dog","cats","dogs"};
-
-      /* 1. Write a print10() method that prints out the first 
-       * 10 words of the dictionary array.
+      
+      /* 1. Write a print10() method that takes an array as a parameter and prints out the first 
+       * 10 words of the array.
        */
        
-      /* 2. Write a spellcheck() method that takes a word as a 
-       * parameter and returns true if it is in the dictionary array.
+      /* 2. Write a spellcheck() method that takes a word and an array as 
+       * parameters  and returns true if the word is in the array.
        * Return false if it is not found.
        */
        
       public static void main(String[] args)
       {
-        SpellChecker checker = new SpellChecker();
+        String[] dictionary = {"the","of","and","a","to","in","is","you","that","it","he","was","for","on","are","as","with","his","they","I","at","be","this","have","from","or","one","had","by","word","but","not","what","all","were","we","when","your","can","said","there","use","an","each","which","she","do","how","their","if","will","up","other","about","out","many","then","them","these","so","some","her","would","make","like","him","into","time","has","look","two","more","write","go","see","number","no","way","could","people","my","than","first","water","been","call","who","oil","its","now","find","long","down","day","did","get","come","made","may","cat","dog","cats","dogs"};
+
         /* Uncomment to test Part 1 
-        checker.print10();
+        print10(dictionary);
 	    */
         
 	    /* Uncomment to test Part 2
         String word = "catz";
-        if (checker.spellcheck(word) == true)
+        if (spellcheck(word, dictionary) == true)
 	    {
             System.out.println(word + " is spelled correctly!");
      	}
@@ -916,7 +923,7 @@ The following Active Code uses a dictionary array of the most common 100 English
         */
         
         // 3. optional and not autograded
-        // checker.printStartsWith("a");
+        // printStartsWith("a", dictionary);
       }
    }
    ====
@@ -978,8 +985,6 @@ The following Active Code uses a dictionary array of the most common 100 English
     }
  
  
-3. Optional Challenge: Write a method printStartsWith(String) that prints out the words that start with a String of letters in the dictionary array. Your method should take 
-a parameter for the firstLetters as a String. You could use the Java String |startsWith()| method here if you'd like to, or use indexOf() to see if the firstLetters is at index 0 of the string. This is not autograded.
 
  
 Summary

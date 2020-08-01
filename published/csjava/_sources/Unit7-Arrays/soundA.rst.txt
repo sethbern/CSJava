@@ -1,6 +1,4 @@
-.. qnum::
-   :prefix: 6-4-4-
-   :start: 1
+
 
 Free Response - Sound A
 =======================

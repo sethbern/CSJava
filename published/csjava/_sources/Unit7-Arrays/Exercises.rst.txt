@@ -1,6 +1,4 @@
-.. qnum::
-   :prefix: 6-8-
-   :start: 1
+
 
 Multiple-Choice Exercises
 =========================

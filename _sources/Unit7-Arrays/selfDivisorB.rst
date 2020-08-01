@@ -1,6 +1,4 @@
-.. qnum::
-   :prefix: 6-4-3-
-   :start: 1
+
 
 Free Response - Self Divisor B
 -------------------------------
