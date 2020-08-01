@@ -25,7 +25,7 @@
 
 
 
-What is Recursion? (Day 1)
+What is Recursion? 
 ===============================
 
 ..	index::

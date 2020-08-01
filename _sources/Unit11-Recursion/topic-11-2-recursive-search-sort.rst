@@ -25,12 +25,12 @@
 Recursive Searching and Sorting
 -------------------------------
 
-In Unit 7, we learned about searching and sorting algorithms using iteration (loops) to search or sort arrays and ArrayLists. In this lesson, we will take a look at a **recursive binary search** algorithm and a **recursive merge-sort** algorithm.
+In Unit 8, we learned about searching and sorting algorithms using iteration (loops) to search or sort arrays and ArrayLists. In this lesson, we will take a look at a **recursive binary search** algorithm and a **recursive merge-sort** algorithm.
 
 Recursive Binary Search
 =========================
 
-In Unit 7, we learned about two search algorithms, linear search and binary search. Linear search searches for an element in an array or ArrayList by checking each element in order. Binary search is more efficient (faster) because it starts at the middle of a sorted array or ArrayList and eliminates half of the array or ArrayList each pass through the algorithm. Binary search only works on sorted data. It can be written with iteration (using a loop) like below or recursively.
+In Unit 8, we learned about two search algorithms, linear search and binary search. Linear search searches for an element in an array or ArrayList by checking each element in order. Binary search is more efficient (faster) because it starts at the middle of a sorted array or ArrayList and eliminates half of the array or ArrayList each pass through the algorithm. Binary search only works on sorted data. It can be written with iteration (using a loop) like below or recursively.
 
 .. activecode:: BinarySearchLoop
   :language: java
@@ -141,7 +141,7 @@ Merge Sort
 	single: merge sort
 	pair: sort; merge
 
-In Unit 7, we looked at two sorting algorithms, Selection Sort and Insertion Sort. In this lesson, we will look at a third sorting algorithm, Merge Sort, which uses recursion. Merge Sort is actually more efficient (faster) than Selection Sort and Insertion Sort because it divides the problem in half each time like binary search. This is called a **divide and conquer** algorithm.
+In Unit 8, we looked at two sorting algorithms, Selection Sort and Insertion Sort. In this lesson, we will look at a third sorting algorithm, Merge Sort, which uses recursion. Merge Sort is actually more efficient (faster) than Selection Sort and Insertion Sort because it divides the problem in half each time like binary search. This is called a **divide and conquer** algorithm.
 
 A merge sort recursively breaks the values to be sorted in half until there is only one value to be sorted and then it merges the two sorted lists into one sorted list.  The code shown below uses a second array the same size as the original array for merging the values in order.  Then it copies all of the sorted values back into the original array.
 
@@ -155,8 +155,6 @@ And here is a short video that describes how merge sort works.
 .. youtube:: 4VqmGXwpLqc
     :align: center
     
-
-The code for ``mergeSort`` below is from the AP CS A course description.
 
 To identify a merge sort look for the following:
 
@@ -283,12 +281,12 @@ You can trace through a merge sort algorithm given an array by using parentheses
 ==========================================================
 
 
-Working in pairs, practice the recursive binary search and merge sort algorithms with a deck of cards or pieces of paper with numbers or names on them.  Here's a video that shows merge sort with cards. 
+Practice the recursive binary search and merge sort algorithms with a deck of cards or pieces of paper with numbers or names on them.  Here's a video that shows merge sort with cards. 
 
 .. youtube:: AMJjtTo1LLE
     :align: center
     
-Work in pairs to do the following tracing problems. 
+Do the following tracing problems. 
 
 .. shortanswer:: challenge-10-2-mergesort
 

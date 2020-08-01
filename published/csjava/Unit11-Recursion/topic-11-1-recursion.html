@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>11.4. Mixed Up Code Practice &#8212; CS Java</title>
+    <title>11.1. Recursion &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11.5. More Mixed Up Code Practice" href="rMixedUpCodePractice.html" />
-    <link rel="prev" title="11.3. Recursion Summary" href="summary.html" />
+    <link rel="next" title="11.2. Recursive Searching and Sorting" href="topic-11-2-recursive-search-sort.html" />
+    <link rel="prev" title="11. Recursion" href="toctree.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +271,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=rParsonsPractice'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-11-1-recursion'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,14 +303,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">11.3. </span>Recursion Summary" data-toggle="tooltip">
-    <a href="summary.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">11. </span>Recursion" data-toggle="tooltip">
+    <a href="toctree.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">11.5. </span>More Mixed Up Code Practice' data-toggle="tooltip" >              
-    <a href="rMixedUpCodePractice.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">11.2. </span>Recursive Searching and Sorting' data-toggle="tooltip" >              
+    <a href="topic-11-2-recursive-search-sort.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -348,274 +348,12 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="mixed-up-code-practice">
-<h1><span class="section-number">11.4. </span>Mixed Up Code Practice<a class="headerlink" href="#mixed-up-code-practice" title="Permalink to this headline">¶</a></h1>
-<p>Try to solve each of the following. Click the <em>Check Me</em> button to check each solution.  You will be told if your solution is too short, has a block in the wrong order, or you are using the wrong block.  Some of the problems have an extra block or two that aren’t needed in the correct solution.  Try to solve these on your phone or other mobile device!</p>
-
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex1muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-1: The following method should reverse the order of the characters in the given string -- so "abcd" should become "dcba".  But, the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String reverse(String myText)
-{
-    if (myText.length() == 0)
-    {
----
-        return "";
----
-    } //end if
----
-    else
-    {
----
-        return reverse(myText.substring(1)) + myText.charAt(0);
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex2muc"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>11-10-2: The following method should multiply the two passed-in positive integers (using the fact that multiplcation is repeated addition) -- so multipy(3, 4) should become 12 (3+3+3+3).  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int multiply(int a, int b)
-{
----
-    if (b == 0)
-    {
----
-      return 0;
----
-      return 1; #distractor
----
-    } //end if
----
-    else
-    {
----
-      return multiply(a, b - 1) + a;
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex3muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-3: The following method should add up all of the elements in the passed-in array -- so {1,2,3,12} should return 18 (Note when the method is called, the index will always start off as 0).  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int sumElements(int[] arr, int index)
-{
----
-    if (index >= arr.length)
-    {
-        return 0;
-    } //end if
----
-    if (index >= arr.length) #distractor
-    {
-        return 1;
-    } //end if
----
-    else
-    {
----
-        return sumElements(arr, index + 1) + arr[index];
----
-        return sumElements(arr, index) + arr[index]; #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex4muc"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>11-10-4: The following method should remove any occurrence of an asterisk "*" from a passed-in string -- so "ab*c**d" should become "abcd".  But the blocks have been mixed up.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String removeStar(String myText)
-{
----
-    if (myText.length() == 0)
-    {
-       return "";
-    } //end if
----
-    else
-    {
----
-      if (myText.charAt(0) == '*')
-      {
-         return removeStar(myText.substring(1));
-      } //end if
----
-      return myText.charAt(0) + removeStar(myText.substring(1));
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex5muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-5: The following method should return the base multiplied power times. In otherwords, the base ^ power -- so exponent(2, 4) should return 16.  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int exponent(int base, int power)
-{
----
-    if (power == 0)
-    {
----
-        return 1;
----
-        return 0; #distractor
----
-    } //end if
-    else
-    {
----
-        return base * exponent(base, power - 1);
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex6muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-6: The following method should return the number of times "5" is an element in the passed-in array -- so {1, 5, 7, 14, 5} will return 2 (Note that when the method is called the index will always start off as 0).  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int numFiveOccurrence(int[] arr, int index)
-{
----
-    if (index >= arr.length)
-    {
----
-    if (index <= arr.length) #distractor
-    {
----
-        return 0;
----
-    } //end if
-    else
-    {
----
-        if (arr[index] == 5)
-        {
-            return numFiveOccurrence(arr, index + 1) + 1;
-        }
----
-        return numFiveOccurrence(arr, index + 1);
----
-        return numFiveOccurrence(arr, index); #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex7muc"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>11-10-7: The following method should repeat the passed-in string a set number of times -- so repeatThis("hi", 3) should return "hihihi".  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String repeatThis(String s, int i)
-{
----
-    if (i == 0)
-    {
----
-    if (i >= 0) #distractor
-    {
----
-       return "";
----
-    } //end if
-    else
-    {
----
-       return s + repeatThis(s, i-1);
----
-       return repeatThis(s, i-1); #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex8muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-8: The following method should return number of times the character " x " is in a String -- so findNumX("xHihxixx") should return 4.  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int findNumX(String s)
-{
----
-    if (s.length() == 0)
-    {
-        return 0;
-    } //end if
----
-    else
-    {
----
-        if (s.charAt(0) == 'x')
-        {
-            return 1 + findNumX(s.substring(1));
-        } //end if
----
-        if (s.charAt(0) = 'x') #distractor
-        {
-            return 1 + findNumX(s.substring(0));
-        } //end if
----
-        return findNumX(s.substring(1));
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex9muc"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>11-10-9: The following method should return a string counting from 1 to the specified number -- so countTo(4) should return "1...2...3...4...".  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String countTo(int x)
-{
----
-    if (x == 0)
-    {
----
-    if (x == 1) #distractor
-    {
----
-        return "";
----
-    } //end if
-    else
-    {
----
-        return countTo(x - 1) + x + "...";
----
-        return countTo(x - 1) + (x - 1) + "..."; #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex10muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-10: The following method should take an passed-in number and return a string such that only the even numbers are still present. All of the odd digits should be replaced with a "_" -- so 4321 should become "4_2_".  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String displayEvenDigits(int num)
-{
----
-    if (num == 0)
-    {
-        return "";
-    } //end if
----
-    else
-    {
----
-        if ((num % 10) % 2 == 0)
-        {
----
-        if ((num % 10) % 2 == 1) #distractor
-        {
----
-            return "" + displayEvenDigits(num / 10) + (num % 10);
-        } //end if
----
-        return displayEvenDigits(num / 10) + "_";
----
-        return "_" + displayEvenDigits(num / 10); #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    </div>
+  <div class="section" id="recursion">
+<h1><span class="section-number">11.1. </span>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h1>
+<p><strong>Recursion</strong> is when a method calls itself.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
 
 
   <div id=scprogresscontainer>
@@ -624,8 +362,8 @@
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 11.3. Recursion Summary' data-toggle="tooltip">
-    <a href="summary.html" aria-label="11.3. Recursion Summary">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 11. Recursion' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="11. Recursion">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -635,8 +373,8 @@
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 11.5. More Mixed Up Code Practice' data-toggle="tooltip" >
-    <a href="rMixedUpCodePractice.html" aria-label="11.5. More Mixed Up Code Practice">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 11.2. Recursive Searching and Sorting' data-toggle="tooltip" >
+    <a href="topic-11-2-recursive-search-sort.html" aria-label="11.2. Recursive Searching and Sorting">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

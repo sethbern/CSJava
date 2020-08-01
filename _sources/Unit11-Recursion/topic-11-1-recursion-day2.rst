@@ -19,7 +19,7 @@
     :align: middle
     :alt: groupwork
 
-Tracing Recursive Methods (Day 2)
+Tracing Recursive Methods 
 ===================================
 
 ..	index::

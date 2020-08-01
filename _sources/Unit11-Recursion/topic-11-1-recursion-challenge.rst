@@ -10,7 +10,7 @@
 |Groupwork| Tracing Challenge : Recursion
 ===========================================
 
-Working in pairs, trace through the following recursion problems.
+Trace through the following recursion problems.
 
 Consider the following recursive method:
 

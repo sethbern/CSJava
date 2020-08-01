@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>11.4. Mixed Up Code Practice &#8212; CS Java</title>
+    <title>What is Recursion? &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11.5. More Mixed Up Code Practice" href="rMixedUpCodePractice.html" />
-    <link rel="prev" title="11.3. Recursion Summary" href="summary.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -271,7 +269,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=rParsonsPractice'>Report A Problem</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=csjava&page=topic-11-1-recursion-day1'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -303,18 +301,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">11.3. </span>Recursion Summary" data-toggle="tooltip">
-    <a href="summary.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">11.5. </span>More Mixed Up Code Practice' data-toggle="tooltip" >              
-    <a href="rMixedUpCodePractice.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -348,274 +334,284 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="mixed-up-code-practice">
-<h1><span class="section-number">11.4. </span>Mixed Up Code Practice<a class="headerlink" href="#mixed-up-code-practice" title="Permalink to this headline">¶</a></h1>
-<p>Try to solve each of the following. Click the <em>Check Me</em> button to check each solution.  You will be told if your solution is too short, has a block in the wrong order, or you are using the wrong block.  Some of the problems have an extra block or two that aren’t needed in the correct solution.  Try to solve these on your phone or other mobile device!</p>
+  <div class="section" id="what-is-recursion">
+<h1>What is Recursion?<a class="headerlink" href="#what-is-recursion" title="Permalink to this headline">¶</a></h1>
+<p id="index-0"><strong>Recursion</strong> is when a method calls itself. See the example method below.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">neverEnd</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;This is the method that never ends!&quot;</span><span class="p">);</span>
+  <span class="n">neverEnd</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p id="index-1">This method will print out “This is the method that never ends!” and then call itself, which will print out the message again, and then call itself, and so on.  This is called <strong>infinite recursion</strong>, which is a recursion that never ends.  Of course, this particular method is not very useful.</p>
+<p><a class="reference internal" href="../_images/exercise2.png"><img alt="exercise" class="align-middle" src="../_images/exercise2.png" style="width: 35px;" /></a> <strong>Check your Understanding</strong></p>
 
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex1muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-1: The following method should reverse the order of the characters in the given string -- so "abcd" should become "dcba".  But, the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String reverse(String myText)
-{
-    if (myText.length() == 0)
-    {
----
-        return "";
----
-    } //end if
----
-    else
-    {
----
-        return reverse(myText.substring(1)) + myText.charAt(0);
----
-    } //end else
-} //end method
-        </pre>
+        <div class="runestone">
+        <div data-component="fillintheblank" id="recurb1fill" >
+            <p>10-1-1: Which line in the method neverEnd (shown above) contains the recursive call (the call to the same method)?</p>
+<input type="text">
+        <script type="application/json">
+            [[{"regex": "^\\s*4$\\s*$", "regexFlags": "", "feedback": "<p>Correct.  This line contains a call to the same method, which makes it a recursive method.</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Look for a call to the same method name</p>\n"}]]
+        </script>
+
         </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex2muc"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>11-10-2: The following method should multiply the two passed-in positive integers (using the fact that multiplcation is repeated addition) -- so multipy(3, 4) should become 12 (3+3+3+3).  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int multiply(int a, int b)
-{
----
-    if (b == 0)
-    {
----
-      return 0;
----
-      return 1; #distractor
----
-    } //end if
----
-    else
-    {
----
-      return multiply(a, b - 1) + a;
----
-    } //end else
-} //end method
-        </pre>
         </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex3muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-3: The following method should add up all of the elements in the passed-in array -- so {1,2,3,12} should return 18 (Note when the method is called, the index will always start off as 0).  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int sumElements(int[] arr, int index)
-{
----
-    if (index >= arr.length)
-    {
-        return 0;
-    } //end if
----
-    if (index >= arr.length) #distractor
-    {
-        return 1;
-    } //end if
----
-    else
-    {
----
-        return sumElements(arr, index + 1) + arr[index];
----
-        return sumElements(arr, index) + arr[index]; #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex4muc"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>11-10-4: The following method should remove any occurrence of an asterisk "*" from a passed-in string -- so "ab*c**d" should become "abcd".  But the blocks have been mixed up.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String removeStar(String myText)
-{
----
-    if (myText.length() == 0)
-    {
-       return "";
-    } //end if
----
-    else
-    {
----
-      if (myText.charAt(0) == '*')
-      {
-         return removeStar(myText.substring(1));
-      } //end if
----
-      return myText.charAt(0) + removeStar(myText.substring(1));
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex5muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-5: The following method should return the base multiplied power times. In otherwords, the base ^ power -- so exponent(2, 4) should return 16.  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int exponent(int base, int power)
-{
----
-    if (power == 0)
-    {
----
-        return 1;
----
-        return 0; #distractor
----
-    } //end if
-    else
-    {
----
-        return base * exponent(base, power - 1);
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex6muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-6: The following method should return the number of times "5" is an element in the passed-in array -- so {1, 5, 7, 14, 5} will return 2 (Note that when the method is called the index will always start off as 0).  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int numFiveOccurrence(int[] arr, int index)
-{
----
-    if (index >= arr.length)
-    {
----
-    if (index <= arr.length) #distractor
-    {
----
-        return 0;
----
-    } //end if
-    else
-    {
----
-        if (arr[index] == 5)
-        {
-            return numFiveOccurrence(arr, index + 1) + 1;
-        }
----
-        return numFiveOccurrence(arr, index + 1);
----
-        return numFiveOccurrence(arr, index); #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex7muc"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>11-10-7: The following method should repeat the passed-in string a set number of times -- so repeatThis("hi", 3) should return "hihihi".  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String repeatThis(String s, int i)
-{
----
-    if (i == 0)
-    {
----
-    if (i >= 0) #distractor
-    {
----
-       return "";
----
-    } //end if
-    else
-    {
----
-       return s + repeatThis(s, i-1);
----
-       return repeatThis(s, i-1); #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex8muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-8: The following method should return number of times the character " x " is in a String -- so findNumX("xHihxixx") should return 4.  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static int findNumX(String s)
-{
----
-    if (s.length() == 0)
-    {
-        return 0;
-    } //end if
----
-    else
-    {
----
-        if (s.charAt(0) == 'x')
-        {
-            return 1 + findNumX(s.substring(1));
-        } //end if
----
-        if (s.charAt(0) = 'x') #distractor
-        {
-            return 1 + findNumX(s.substring(0));
-        } //end if
----
-        return findNumX(s.substring(1));
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex9muc"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>11-10-9: The following method should return a string counting from 1 to the specified number -- so countTo(4) should return "1...2...3...4...".  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String countTo(int x)
-{
----
-    if (x == 0)
-    {
----
-    if (x == 1) #distractor
-    {
----
-        return "";
----
-    } //end if
-    else
-    {
----
-        return countTo(x - 1) + x + "...";
----
-        return countTo(x - 1) + (x - 1) + "..."; #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
-    
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="ch12ex10muc"  data-adaptive="true"    data-noindent="true"   data-numbered="left" >
-        <span data-question>11-10-10: The following method should take an passed-in number and return a string such that only the even numbers are still present. All of the odd digits should be replaced with a "_" -- so 4321 should become "4_2_".  But the blocks have been mixed up and include <b>two extra blocks</b> that are not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p></span>public static String displayEvenDigits(int num)
-{
----
-    if (num == 0)
-    {
-        return "";
-    } //end if
----
-    else
-    {
----
-        if ((num % 10) % 2 == 0)
-        {
----
-        if ((num % 10) % 2 == 1) #distractor
-        {
----
-            return "" + displayEvenDigits(num / 10) + (num % 10);
-        } //end if
----
-        return displayEvenDigits(num / 10) + "_";
----
-        return "_" + displayEvenDigits(num / 10); #distractor
----
-    } //end else
-} //end method
-        </pre>
-        </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qrb_1" >
+            <p>10-1-2:      Is the following method recursive?</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">mystery</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="n">total</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+
+            <li data-component="answer"  id="qrb_1_opt_a">Yes</li><li data-component="feedback">Where is the call to the same method?</li>
+            
+            <li data-component="answer" data-correct id="qrb_1_opt_b">No</li><li data-component="feedback">There is no call to the same method, so this can not be a recursive method. It uses iteration instead.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qrb_2" >
+            <p>10-1-3: Is the following method recursive?</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">mystery2</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="k">else</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">mystery2</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+
+            <li data-component="answer" data-correct id="qrb_2_opt_a">Yes</li><li data-component="feedback">Yes, any method that contains at least one call to the same method is recursive.</li>
+            
+            <li data-component="answer"  id="qrb_2_opt_b">No</li><li data-component="feedback">Look again.  Check if the method contains a call to itself.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="why-use-recursion">
+<h1>Why use Recursion?<a class="headerlink" href="#why-use-recursion" title="Permalink to this headline">¶</a></h1>
+<p id="index-2">Recursion is most useful when it is used to solve problems where the structure of the problem repeats.  For example, what if you wanted to find out how much space a folder on your computers uses?  You could add up the sizes of all the files in that folder, but folders can also contain subfolders.  So you will have to repeat the procedure (method) for each subfolder.  Each subfolder can also contain subfolders.</p>
+<p>Recursion can also be used to create fractals.  A simple example is Sierpinski’s triangle in which you subdivide a triangle into 4 new triangles as shown below.  You can then do the some procedure with each new triangle except the center one.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/triangleSub.png"><img alt="../_images/triangleSub.png" src="../_images/triangleSub.png" style="width: 452px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: A sequence of Sierpinski’s triangles</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Recursion can also be used to traverse String, array, and ArrayList objects, much like a loop. In fact, any recursive solution could be written with iteration (loops) instead.</p>
+</div>
+<div class="section" id="factorial-method">
+<h1>Factorial Method<a class="headerlink" href="#factorial-method" title="Permalink to this headline">¶</a></h1>
+<p>The following video is also on YouTube at <a class="reference external" href="https://youtu.be/V2S_8E_ubBY">https://youtu.be/V2S_8E_ubBY</a>.  It introduces the concept of recursion and tracing recursion with the factorial method.</p>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="V2S_8E_ubBY" class="align-center youtube-video" data-video-height="281" data-video-width="800" data-video-videoid="V2S_8E_ubBY" data-video-divid="V2S_8E_ubBY" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (V2S_8E_ubBY)</span> </p>
     </div>
+    <p id="index-3">See the method <cite>factorial</cite> below that calculates the <strong>factorial</strong> of a number.  The <strong>factorial</strong> of a number is defined as 1 for 0 and n * factorial (n-1) for any other number.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference internal" href="../_images/exercise2.png"><img alt="exercise" class="align-middle" src="../_images/exercise2.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+        <div class="runestone">
+        <div data-component="fillintheblank" id="recurb2fill" >
+            <p>10-1-4: Which line in the method factorial contains the recursive call (the call to the same method)?</p>
+<input type="text">
+        <script type="application/json">
+            [[{"regex": "^\\s*6$\\s*$", "regexFlags": "", "feedback": "<p>Correct.  This line contains a call to the same method, which makes it a recursive method.</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Look for a call to the same method name</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            <p><a class="reference internal" href="../_images/codingExercise2.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise2.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
+
+<div data-childcomponent="FactorialTest" class="runestone explainer ac_section alert alert-warning">
+<p>Run the code below to test the factorial method. What’s the factorial of 6? Add another test to print out the factorial of 6. What’s the factorial of 1? Add another test to print out the factorial of 1.</p>
+
+<textarea data-component="activecode" id=FactorialTest data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class FactorialTest
+{
+
+    public static int factorial(int n)
+    {
+        if (n == 0)
+            return 1;
+        else
+            return n * factorial(n-1);
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println("factorial of 3 is: " + factorial(3));
+        System.out.println("factorial of 4 is: " +factorial(4));
+        System.out.println("factorial of 5 is: " +factorial(5));
+    }
+}
+</textarea>
+</div>
+</div>
+<div class="section" id="base-case">
+<h1>Base Case<a class="headerlink" href="#base-case" title="Permalink to this headline">¶</a></h1>
+<p id="index-4">Every recursive method must have at least one <strong>base case</strong> which halts the recursion. This is usually an if statement that causes the recursion to stop by just giving an answer without needing a recursive method call. You could also think of it as the simplest case where you can give the answer right away. The factorial method has a way to stop the recursion (not call itself).  It stops when n is equal to 0, since it just returns 1. This is the base case.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The thing that stops a recursive method from calling itself is called the <strong>base case</strong>.  A method can have more than one <strong>base case</strong> (way to stop the recursion).</p>
+</div>
+<p><a class="reference internal" href="../_images/exercise2.png"><img alt="exercise" class="align-middle" src="../_images/exercise2.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
+
+<div class="runestone">
+<div data-component="clickablearea" class="runestone alert alert-warning" id="rec_base1"    >
+<span data-question>10-1-5: Click on the line or lines that contain the test for the base case</span><span data-feedback>When a base case test is true a value is returned and the recursion stops.</span><pre><span data-incorrect>public static int factorial(int n)</span>
+<span data-incorrect>{</span>
+    <span data-correct>if (n == 0)</span>
+        <span data-incorrect>return 1;</span>
+    <span data-incorrect>else</span>
+        <span data-incorrect>return n * factorial(n-1);</span>
+<span data-incorrect>}</span></pre>
+
+</div>
+</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qrb_3" >
+            <p>10-1-6: What is the value of n when this method stops calling itself (when it reaches the base case)?</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">product</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="k">else</span>
+      <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">product</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+
+            <li data-component="answer"  id="qrb_3_opt_a">0</li><li data-component="feedback">Look again.  What is the value of n when this method returns a value, without doing a recursive call?</li>
+            
+            <li data-component="answer" data-correct id="qrb_3_opt_b">1</li><li data-component="feedback">This method stops calling itself when n equals 1 (line 3).</li>
+            
+            <li data-component="answer"  id="qrb_3_opt_c">2</li><li data-component="feedback">Look for a return with a number after it.  When is this code executed?</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qrb_4" >
+            <p>10-1-7: What is/are the values of the variable bunnies when this method stops calling itself (when it reaches the base case)?</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">bunnyEars</span><span class="p">(</span><span class="kt">int</span> <span class="n">bunnies</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">bunnies</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bunnies</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+   <span class="k">else</span> <span class="k">return</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">bunnyEars</span><span class="p">(</span><span class="n">bunnies</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+
+            <li data-component="answer"  id="qrb_4_opt_a">0</li><li data-component="feedback">This method also stops for another value of n.</li>
+            
+            <li data-component="answer"  id="qrb_4_opt_b">1</li><li data-component="feedback">This method also stops for another value of n.</li>
+            
+            <li data-component="answer" data-correct id="qrb_4_opt_c">Both 0 and 1</li><li data-component="feedback">This method stops calling itself when n is either 0 or 1.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="qrb_5-new" >
+            <p>10-1-8: Is the following method recursive?</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">bunnyEars</span><span class="p">(</span><span class="kt">int</span> <span class="n">bunnies</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">bunnies</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="n">total</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+
+            <li data-component="answer"  id="qrb_5-new_opt_a">yes</li><li data-component="feedback">Where is the call to the same method?</li>
+            
+            <li data-component="answer" data-correct id="qrb_5-new_opt_b">no</li><li data-component="feedback">There is no call to the same method, so it is not recursive. This uses iteration instead.</li>
+            
+
+            </ul>
+            </div>
+            <p>Continue to the next page for Day 2 of the Recursion lesson.</p>
+</div>
 
 
   <div id=scprogresscontainer>
@@ -623,26 +619,6 @@
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 11.3. Recursion Summary' data-toggle="tooltip">
-    <a href="summary.html" aria-label="11.3. Recursion Summary">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-        </div>
-    </a>
-  </li>
-</ul>
-
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 11.5. More Mixed Up Code Practice' data-toggle="tooltip" >
-    <a href="rMixedUpCodePractice.html" aria-label="11.5. More Mixed Up Code Practice">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-      </div>
-    </a>
-  </li>
-</ul>
 
 <script type="text/javascript">
 
