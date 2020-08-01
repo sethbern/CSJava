@@ -1,11 +1,9 @@
 .. qnum::
-   :prefix: 8-7-
+   :prefix: 9-7-
    :start: 1
    
 Easier Multiple Choice Questions
 ----------------------------------
-
-These problems are easier than most of those that you will usually see on the AP CS A exam.
 
 
 .. mchoice:: qa2de_1

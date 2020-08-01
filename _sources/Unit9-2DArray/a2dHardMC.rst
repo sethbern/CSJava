@@ -1,11 +1,10 @@
 .. qnum::
-   :prefix: 8-7-
+   :prefix: 9-7-
    :start: 7
 
 Hard Multiple Choice Questions
 ----------------------------------
 
-These problems are harder than those that you will typically see on the AP CS A exam.
       
 .. mchoice:: qa2dh_1
    :practice: T
@@ -75,7 +74,3 @@ To step through this code in the Java Visualizer click on the following link: `H
          return iMax;
       }
       
-More Practice
--------------
-
-For more practice with 2D arrays see http://coweb.cc.gatech.edu/ice-gt/1277 Question 4 from 2012 and Question 4 from 2011.

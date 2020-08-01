@@ -6,5 +6,5 @@ We have only worked with one-dimensional arrays so far, which have a single row 
 .. toctree::
    :maxdepth: 3
 
-   topic-8-1-2D-arrays-Day1.rst
-   topic-8-1-2D-arrays-Day2.rst
+   topic-9-1-2D-arrays-Day1.rst
+   topic-9-1-2D-arrays-Day2.rst

@@ -1,11 +1,10 @@
 .. qnum::
-   :prefix: 8-7-
+   :prefix: 9-7-
    :start: 4
 
 Medium Multiple Choice Questions
 ----------------------------------
 
-These problems are similar to those you will see on the AP CS A exam.
 
 .. mchoice:: qa2dm_1
    :practice: T
