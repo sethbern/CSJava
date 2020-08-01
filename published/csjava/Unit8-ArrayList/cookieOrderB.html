@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>8.4.6. Free Response - CookieOrder B &#8212; CS Java</title>
+    <title>Free Response - CookieOrder B &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.4.7. Free Response - StringFormatter A" href="2016freeresponseQ4A.html" />
-    <link rel="prev" title="8.4.5. Free Response - CookieOrder A" href="cookieOrderA.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -303,18 +301,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">8.4.5. </span>Free Response - CookieOrder A" data-toggle="tooltip">
-    <a href="cookieOrderA.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">8.4.7. </span>Free Response - StringFormatter A' data-toggle="tooltip" >              
-    <a href="2016freeresponseQ4A.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -349,7 +335,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="free-response-cookieorder-b">
-<h1><span class="section-number">8.4.6. </span>Free Response - CookieOrder B<a class="headerlink" href="#free-response-cookieorder-b" title="Permalink to this headline">¶</a></h1>
+<h1>Free Response - CookieOrder B<a class="headerlink" href="#free-response-cookieorder-b" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">The following is a free response question from 2010.  It was question 1 on the exam.  You can see all the free response questions from past exams at <a class="reference external" href="https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year">https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year</a>.</p>
 <p><strong>Question 1.</strong>  An organization raises money by selling boxes of cookies. A cookie order specifies the variety of cookie and the number of boxes ordered. The declaration of the <code class="docutils literal notranslate"><span class="pre">CookieOrder</span></code> class is shown below.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CookieOrder</span>
@@ -419,7 +405,7 @@ The method returns the total number of boxes removed from the master order.</p>
 </div>
 <p>The method call <code class="docutils literal notranslate"><span class="pre">goodies.removeVariety(&quot;Brownie&quot;)</span></code> returns <cite>0</cite> and does not change the master order.</p>
 <div class="section" id="how-to-solve-this">
-<h2><span class="section-number">8.4.6.1. </span>How to Solve This<a class="headerlink" href="#how-to-solve-this" title="Permalink to this headline">¶</a></h2>
+<h2>How to Solve This<a class="headerlink" href="#how-to-solve-this" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>How will you keep track of the number of boxes of cookies that were removed?</p></li>
 <li><p>You will need to check the variety of each cookie order in the list of orders. What type of loop will you use?</p></li>
@@ -429,11 +415,11 @@ The method returns the total number of boxes removed from the master order.</p>
 </ol>
 </div>
 <div class="section" id="the-algorithm">
-<h2><span class="section-number">8.4.6.2. </span>The Algorithm<a class="headerlink" href="#the-algorithm" title="Permalink to this headline">¶</a></h2>
+<h2>The Algorithm<a class="headerlink" href="#the-algorithm" title="Permalink to this headline">¶</a></h2>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="CookieOrderB"  data-adaptive="true"      data-numbered="left" >
-        <span data-question>8-19-1: The method removeVariety below contains the correct code for one solution to this problem, but it is mixed up.  Drag the needed code from the left to the right and put them in order with the correct indention so that the code would work correctly.  There may be extra blocks that are not needed in a correct solution.</span>private int removeVariety(String cookieVar) {
+        <span data-question>8-3-1: The method removeVariety below contains the correct code for one solution to this problem, but it is mixed up.  Drag the needed code from the left to the right and put them in order with the correct indention so that the code would work correctly.  There may be extra blocks that are not needed in a correct solution.</span>private int removeVariety(String cookieVar) {
     int numBoxesRemoved = 0;
 ---
     for (int i = this.orders.size() - 1; i >= 0; i--) {
@@ -460,7 +446,7 @@ The method returns the total number of boxes removed from the master order.</p>
         </div>
     </div>
 <div class="section" id="solve-part-b">
-<h2><span class="section-number">8.4.6.3. </span>Solve Part B<a class="headerlink" href="#solve-part-b" title="Permalink to this headline">¶</a></h2>
+<h2>Solve Part B<a class="headerlink" href="#solve-part-b" title="Permalink to this headline">¶</a></h2>
 <p>Complete the method <code class="docutils literal notranslate"><span class="pre">removeVariety</span></code> below.</p>
 
 <div data-childcomponent="FRQCookieOrderB" class="runestone explainer ac_section alert alert-warning">
@@ -562,26 +548,6 @@ public class MasterOrder
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 8.4.5. Free Response - CookieOrder A' data-toggle="tooltip">
-    <a href="cookieOrderA.html" aria-label="8.4.5. Free Response - CookieOrder A">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-        </div>
-    </a>
-  </li>
-</ul>
-
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 8.4.7. Free Response - StringFormatter A' data-toggle="tooltip" >
-    <a href="2016freeresponseQ4A.html" aria-label="8.4.7. Free Response - StringFormatter A">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-      </div>
-    </a>
-  </li>
-</ul>
 
 <script type="text/javascript">
 

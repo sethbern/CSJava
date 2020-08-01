@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 7-3-
+   :prefix: 8-3-
    :start: 1
    
 .. |CodingEx| image:: ../../_static/codingExercise.png
@@ -312,7 +312,6 @@ You can put any kind of Objects into an ArrayList. For example, here is an Array
 
 
 
-This challenge is based on the |2018 Free Response Question #2 WordPair|. We encourage you to work in pairs on this challenge.
 
 You are given a class called WordPair that can store pairs of words.
 

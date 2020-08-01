@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 7-4-
+   :prefix: 8-4-
    :start: 1
 
 .. |CodingEx| image:: ../../_static/codingExercise.png
@@ -176,18 +176,3 @@ Some algorithms require multiple String, array, or ArrayList objects to be trave
     }
 
 
-We encourage you to work in pairs or groups to tackle the following challenging FRQ problems and take them one step at a time. These will get easier with practice!
-
-.. toctree::
-   :maxdepth: 3
-
-   stringScrambleB.rst
-   climbClubA.rst
-   climbClubB.rst
-   climbClubC.rst
-   cookieOrderA.rst
-   cookieOrderB.rst
-   2016freeresponseQ4A.rst
-   2016freeresponseQ4B.rst
-   2019delimitersQ3a.rst
-   2019delimitersQ3b.rst

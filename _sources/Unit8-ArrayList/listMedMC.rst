@@ -5,7 +5,6 @@
 Medium Multiple Choice Questions
 ----------------------------------
 
-These problems are like those you will see on the AP CS A exam.
 
 .. mchoice:: qalm_1
    :practice: T

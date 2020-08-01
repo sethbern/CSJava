@@ -5,7 +5,6 @@
 Medium Search/Sort Multiple Choice Questions
 --------------------------------------------
 
-These problems are similar to those you will see on the AP CS A exam.
 
 .. mchoice:: qsearchsm_1
    :practice: T

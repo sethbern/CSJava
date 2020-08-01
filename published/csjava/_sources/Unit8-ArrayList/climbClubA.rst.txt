@@ -1,6 +1,4 @@
-.. qnum::
-   :prefix: 8-15-
-   :start: 1
+
 
 Free Response - Climbing Club A
 ================================

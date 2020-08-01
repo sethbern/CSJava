@@ -5,7 +5,6 @@
 Hard Search/Sort Multiple Choice Questions
 ------------------------------------------
 
-These problems are harder than those you will see on the AP CS A exam.
 
 .. mchoice:: qssm_1
    :practice: T

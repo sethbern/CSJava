@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 7-5-
+   :prefix: 8-5-
    :start: 1
 
 .. |CodingEx| image:: ../../_static/codingExercise.png
@@ -33,7 +33,9 @@ Searching Algorithms
 	pair: search; sequential
 	pair: search; binary
 
-Computers store vast amounts of data. One of the strengths of computers is their ability to find things quickly.  This ability is called **searching**.  For the AP CS A exam you will need to know both **linear (sequential) search** and **binary search** algorithms.
+Computers store vast amounts of data. 
+One of the strengths of computers is their ability to find things quickly.  
+This ability is called **searching**.  
 
 .. the video is Searching.mov
 
@@ -68,7 +70,7 @@ Sequential or linear search is the only method that can be used to find a value 
 .. activecode:: seqSearch
   :language: java
 
-  The code for ``sequentialSearch`` for arrays below is from a previous AP CS A course description.
+  
   ~~~~
   public class ArraySearcher
   {
@@ -104,7 +106,9 @@ Sequential or linear search is the only method that can be used to find a value 
 
 To see this executing using the Java Visualizer click on the following link `SequentialSearch <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+ArraySearcher%0A%7B%0A++%0A++/**+Finds+the+index+of+a+value+in+an+array+of+integers.%0A++++*+%40param+elements+an+array+containing+the+items+to+be+searched.+%0A++++*+%40param+target+the+item+to+be+found+in+elements.+%0A++++*+%40return+an+index+of+target+in+elements+if+found%3B+-1+otherwise.+%0A++++*/%0A++public+static+int+sequentialSearch(int%5B%5D+elements,+int+target)+%0A++%7B+%0A++++for+(int+j+%3D+0%3B+j+%3C+elements.length%3B+j%2B%2B)+%0A++++%7B+%0A++++++if+(elements%5Bj%5D+%3D%3D+target)+%0A++++++%7B+%0A++++++++return+j%3B+%0A++++++%7D+%0A++++%7D+%0A++++return+-1%3B+%0A++%7D%0A++%0A++public+static+void+main(String%5B%5D+args)%0A++%7B%0A++++int%5B%5D+numArray+%3D+%7B3,+-2,+9,+38,+-23%7D%3B%0A++++System.out.println(%22Tests+of+sequentialSearch%22)%3B%0A++++System.out.println(sequentialSearch(numArray,3))%3B%0A++++System.out.println(sequentialSearch(numArray,9))%3B%0A++++System.out.println(sequentialSearch(numArray,-23))%3B%0A++++System.out.println(sequentialSearch(numArray,99))%3B%0A++%7D%0A++%0A%7D&mode=display&curInstr=3>`_
 
-Here is the same search with an ArrayList. The same algorithms can be used with arrays or ArrayLists, but notice that size() and get(i) is used with ArrayLists instead of length and [i] which are used in arrays. Many of our examples will use arrays for simplicity since with arrays, we know how many items we have and the size won't change during runtime. There are methods such as contains that can be used in ArrayLists instead of writing your own algorithms. However, they are not in the AP CSA Java subset.
+Here is the same search with an ArrayList. 
+The same algorithms can be used with arrays or ArrayLists, but notice that size() and get(i) is used with ArrayLists instead of length and [i] which are used in arrays. Many of our examples will use arrays for simplicity since with arrays, we know how many items we have and the size won't change during runtime. There are methods such as contains that can be used in ArrayLists instead of writing your own algorithms. 
+
 
 .. activecode:: seqSearchList
     :language: java
@@ -230,7 +234,7 @@ It compares a target value to the value in the middle of a range of indices.  If
 
 Binary search calculates the middle index as ``left + right / 2`` where left starts out at 0 and right starts out at the array length - 1 (the index of the last element).   Remember that integer division gives an integer result so 2.5 becomes 2.  It compares the value at the middle index with the target value (the value you are searching for).  If the target value is less than the value at the middle it sets right to middle minus one.  If the target value is greater than the value at the middle it sets left to middle plus one. Otherwise the values match and it returns the middle index.    It also stops when left is greater than right which indicates that the value wasn't found and it returns -1.
 
-The code for ``binarySearch`` below is from the AP CS A course description. A recursive version of this algorithm will be covered in Unit 10.
+A recursive version of this algorithm will be covered in Unit 11.
 
 .. activecode:: binSearch
   :language: java

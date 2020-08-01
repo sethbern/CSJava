@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 7-2-
+   :prefix: 8-2-
    :start: 1
 
 .. |CodingEx| image:: ../../_static/codingExercise.png
@@ -37,7 +37,8 @@ ArrayList Methods
 
    <a href="https://apcentral.collegeboard.org/pdf/ap-computer-science-a-java-quick-reference-0.pdf?course=ap-computer-science-a" target="_blank">AP CS A Java Quick Reference Sheet</a>
    
-The following are the ``ArrayList`` methods that you need to know for the AP CS A exam.  These are included on the |AP CS A Reference Sheet| that you will receive during the exam so you do not need to memorize them. We will look at how these methods work below.
+The following are ``ArrayList`` methods that are often used in programs.  
+
 
     -  **int size()** returns the number of elements in the list
     
