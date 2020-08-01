@@ -6,8 +6,8 @@
 .. toctree::
    :maxdepth: 3
 
-   topic-8-1-2D-arrays.rst
-   topic-8-2-2D-array-loops.rst
+   topic-9-1-2D-arrays.rst
+   topic-9-2-2D-array-loops.rst
    a2dSummary.rst
    Array2dParsonsPractice.rst
    Array2dCodePractice.rst

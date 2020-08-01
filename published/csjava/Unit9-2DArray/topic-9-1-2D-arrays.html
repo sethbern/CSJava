@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Two-dimensional (2D) Arrays &#8212; CS Java</title>
+    <title>9.1. Two-dimensional (2D) Arrays &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,6 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9.1.1. 2D Arrays" href="topic-9-1-2D-arrays-Day1.html" />
+    <link rel="prev" title="9. 2D Arrays" href="toctree.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -301,6 +303,18 @@
         
         <!-- 
           
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">9. </span>2D Arrays" data-toggle="tooltip">
+    <a href="toctree.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">9.1.1. </span>2D Arrays' data-toggle="tooltip" >              
+    <a href="topic-9-1-2D-arrays-Day1.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -335,19 +349,19 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="two-dimensional-2d-arrays">
-<h1>Two-dimensional (2D) Arrays<a class="headerlink" href="#two-dimensional-2d-arrays" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.1. </span>Two-dimensional (2D) Arrays<a class="headerlink" href="#two-dimensional-2d-arrays" title="Permalink to this headline">¶</a></h1>
 <p>We have only worked with one-dimensional arrays so far, which have a single row of elements. But in the real world, data is often represented in a two-dimensional table with rows and columns. Programming languages can also represent arrays this way with multiple dimensions. A two-dimensional (2D) array has rows and columns. A 2D array in Java is actually an array of arrays.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day1.html">2D Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day1.html#array-storage">Array Storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day1.html#how-java-stores-2d-arrays">How Java Stores 2D Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day1.html#declaring-2d-arrays">Declaring 2D Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html">Set Value(s) in a 2D Array (Day 2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html#initializer-lists-for-2d-arrays">Initializer Lists for 2D Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html#get-a-value-from-a-2d-array">Get a Value from a 2D Array</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html#groupwork-programming-challenge-ascii-art"> Programming Challenge : ASCII Art</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html#summary">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day1.html">9.1.1. 2D Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day1.html#array-storage">9.1.2. Array Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day1.html#how-java-stores-2d-arrays">9.1.3. How Java Stores 2D Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day1.html#declaring-2d-arrays">9.1.4. Declaring 2D Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html">9.1.5. Set Value(s) in a 2D Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html#initializer-lists-for-2d-arrays">9.1.6. Initializer Lists for 2D Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html#get-a-value-from-a-2d-array">9.1.7. Get a Value from a 2D Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html#groupwork-programming-challenge-ascii-art">9.1.8.  Programming Challenge : ASCII Art</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-1-2D-arrays-Day2.html#summary">9.1.9. Summary</a></li>
 </ul>
 </div>
 </div>
@@ -358,6 +372,26 @@
   </div>
   
       
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 9. 2D Arrays' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="9. 2D Arrays">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 9.1.1. 2D Arrays' data-toggle="tooltip" >
+    <a href="topic-9-1-2D-arrays-Day1.html" aria-label="9.1.1. 2D Arrays">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
 
 <script type="text/javascript">
 

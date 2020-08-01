@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 9-1-
+   :prefix: 10-1-
    :start: 5
    
    
@@ -20,7 +20,7 @@
     :align: middle
     :alt: groupwork
 
-is-a vs. has-a (Day 2)
+is-a vs. has-a 
 ---------------------------------------
 
 ..	index::

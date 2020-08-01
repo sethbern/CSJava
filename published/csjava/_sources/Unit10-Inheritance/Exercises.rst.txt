@@ -7,5 +7,4 @@ Multiple-Choice Exercises
    ooEasyMC.rst
    ooMedMC.rst
    ooHardMC.rst
-   ooPractice.rst
-
+  

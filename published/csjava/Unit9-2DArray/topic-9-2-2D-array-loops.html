@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Traversing 2D Arrays (nested loops) &#8212; CS Java</title>
+    <title>9.2. Traversing 2D Arrays (nested loops) &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,6 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9.2.1. Nested Loops for 2D Arrays" href="topic-9-2-2D-array-loops-Day1.html" />
+    <link rel="prev" title="9.1.5. Set Value(s) in a 2D Array" href="topic-9-1-2D-arrays-Day2.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -301,6 +303,18 @@
         
         <!-- 
           
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">9.1.5. </span>Set Value(s) in a 2D Array" data-toggle="tooltip">
+    <a href="topic-9-1-2D-arrays-Day2.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">9.2.1. </span>Nested Loops for 2D Arrays' data-toggle="tooltip" >              
+    <a href="topic-9-2-2D-array-loops-Day1.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -335,17 +349,17 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="traversing-2d-arrays-nested-loops">
-<h1>Traversing 2D Arrays (nested loops)<a class="headerlink" href="#traversing-2d-arrays-nested-loops" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.2. </span>Traversing 2D Arrays (nested loops)<a class="headerlink" href="#traversing-2d-arrays-nested-loops" title="Permalink to this headline">¶</a></h1>
 <p>Nested loops can be used to traverse 2D arrays row by row and column by column.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day1.html">Nested Loops for 2D Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day1.html#getting-the-number-of-rows-and-columns">Getting the Number of Rows and Columns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day1.html#looping-through-a-2d-array">Looping Through a 2D Array</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day2.html">Enhanced For-Each Loop for 2D Arrays (Day 2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day2.html#d-array-algorithms">2D Array Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day2.html#groupwork-programming-challenge-picture-lab"> Programming Challenge : Picture Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day2.html#summary">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day1.html">9.2.1. Nested Loops for 2D Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day1.html#getting-the-number-of-rows-and-columns">9.2.2. Getting the Number of Rows and Columns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day1.html#looping-through-a-2d-array">9.2.3. Looping Through a 2D Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day2.html">9.2.4. Enhanced For-Each Loop for 2D Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day2.html#d-array-algorithms">9.2.5. 2D Array Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day2.html#groupwork-programming-challenge-picture-lab">9.2.6.  Programming Challenge : Picture Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic-9-2-2D-array-loops-Day2.html#summary">9.2.7. Summary</a></li>
 </ul>
 </div>
 </div>
@@ -356,6 +370,26 @@
   </div>
   
       
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 9.1.5. Set Value(s) in a 2D Array' data-toggle="tooltip">
+    <a href="topic-9-1-2D-arrays-Day2.html" aria-label="9.1.5. Set Value(s) in a 2D Array">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 9.2.1. Nested Loops for 2D Arrays' data-toggle="tooltip" >
+    <a href="topic-9-2-2D-array-loops-Day1.html" aria-label="9.2.1. Nested Loops for 2D Arrays">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
 
 <script type="text/javascript">
 

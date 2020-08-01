@@ -22,7 +22,7 @@
 
 
   
-Set Value(s) in a 2D Array (Day 2)
+Set Value(s) in a 2D Array 
 ----------------------------------------
 
 ..	index::

@@ -1,6 +1,4 @@
-.. qnum::
-   :prefix: 10-15-
-   :start: 1
+
 
 More Practice
 ============= 

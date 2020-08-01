@@ -21,7 +21,7 @@
     
 
 
-Enhanced For-Each Loop for 2D Arrays (Day 2)
+Enhanced For-Each Loop for 2D Arrays
 ----------------------------------------------------
 
 ..	index::

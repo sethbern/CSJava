@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 9-7-
+   :prefix: 10-7-
    :start: 1
 
 
@@ -27,7 +27,12 @@
 Object Superclass
 ====================
 
-The **Object** class is the superclass of all other classes in Java and a part of the built-in java.lang package. If a parent class isn't specified using the **extends** keyword, the class will inherit from the ``Object`` class.  What does a class inherit from the ``Object`` class?  The |AP CS A Reference Sheet| lists the two main methods that are most used, toString() and equals(Object), from the Object class at the bottom, which are covered in more detail below.
+The **Object** class is the superclass of all other classes in Java and a part of the 
+built-in java.lang package. If a parent class isn't specified using the **extends** keyword, the 
+class will inherit from the ``Object`` class.  
+What does a class inherit from the ``Object`` class?  
+There are two main methods that are most used, toString() and equals(Object), from the 
+Object class at the bottom, which are covered in more detail below.
 
 - String toString()
 - boolean equals(Object other)

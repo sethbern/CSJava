@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Set Value(s) in a 2D Array (Day 2) &#8212; CS Java</title>
+    <title>9.1.5. Set Value(s) in a 2D Array &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,6 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9.2. Traversing 2D Arrays (nested loops)" href="topic-9-2-2D-array-loops.html" />
+    <link rel="prev" title="9.1.1. 2D Arrays" href="topic-9-1-2D-arrays-Day1.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -301,6 +303,18 @@
         
         <!-- 
           
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">9.1.1. </span>2D Arrays" data-toggle="tooltip">
+    <a href="topic-9-1-2D-arrays-Day1.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">9.2. </span>Traversing 2D Arrays (nested loops)' data-toggle="tooltip" >              
+    <a href="topic-9-2-2D-array-loops.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -334,8 +348,8 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="set-value-s-in-a-2d-array-day-2">
-<h1>Set Value(s) in a 2D Array (Day 2)<a class="headerlink" href="#set-value-s-in-a-2d-array-day-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="set-value-s-in-a-2d-array">
+<h1><span class="section-number">9.1.5. </span>Set Value(s) in a 2D Array<a class="headerlink" href="#set-value-s-in-a-2d-array" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">When arrays are created their contents are automatically initialized to 0 for numeric types, null for object references, and false for type boolean.  To explicitly put a value in an array, you can use assignment statements with the name of the array followed by the row index in brackets followed by the column index in brackets and then an <code class="docutils literal notranslate"><span class="pre">=</span></code> followed by a value.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">ticketInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
 <span class="n">ticketInfo</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
@@ -451,7 +465,7 @@ import static org.junit.Assert.*;
             </div>
             </div>
 <div class="section" id="initializer-lists-for-2d-arrays">
-<h1>Initializer Lists for 2D Arrays<a class="headerlink" href="#initializer-lists-for-2d-arrays" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.1.6. </span>Initializer Lists for 2D Arrays<a class="headerlink" href="#initializer-lists-for-2d-arrays" title="Permalink to this headline">¶</a></h1>
 <p>You can also initialize (set) the values for the array when you create it.  In this case you don’t need to specify the size of the array, it will be determined from the values you give.  The code below creates an array called <code class="docutils literal notranslate"><span class="pre">ticketInfo</span></code> with 2 rows and 3 columns.  It also creates an array called <code class="docutils literal notranslate"><span class="pre">seatingInfo</span></code> with 3 rows and 2 columns.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">ticketInfo</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">},</span> <span class="p">{</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">}</span> <span class="p">};</span>
 <span class="n">String</span><span class="o">[][]</span> <span class="n">seatingInfo</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="s">&quot;Jamal&quot;</span><span class="p">,</span> <span class="s">&quot;Maria&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;Jake&quot;</span><span class="p">,</span> <span class="s">&quot;Suzy&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;Emma&quot;</span><span class="p">,</span> <span class="s">&quot;Luke&quot;</span><span class="p">}</span> <span class="p">};</span>
@@ -471,7 +485,7 @@ import static org.junit.Assert.*;
         </div>
             </div>
 <div class="section" id="get-a-value-from-a-2d-array">
-<h1>Get a Value from a 2D Array<a class="headerlink" href="#get-a-value-from-a-2d-array" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.1.7. </span>Get a Value from a 2D Array<a class="headerlink" href="#get-a-value-from-a-2d-array" title="Permalink to this headline">¶</a></h1>
 <p id="index-1">To get the value in a 2D array give the name of the array followed by the row and column indicies in square brackets. The code below will get the value at row index 1 and column index 0 from <code class="docutils literal notranslate"><span class="pre">ticketInfo</span></code>.  It will also get the value at row index 0 and column index 1 from <code class="docutils literal notranslate"><span class="pre">seatingChart</span></code>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">ticketInfo</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">},</span> <span class="p">{</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">}</span> <span class="p">};</span>
 <span class="n">String</span><span class="o">[][]</span> <span class="n">seatingInfo</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="s">&quot;Jamal&quot;</span><span class="p">,</span> <span class="s">&quot;Maria&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;Jake&quot;</span><span class="p">,</span> <span class="s">&quot;Suzy&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;Emma&quot;</span><span class="p">,</span> <span class="s">&quot;Luke&quot;</span><span class="p">}</span> <span class="p">};</span>
@@ -590,7 +604,7 @@ import static org.junit.Assert.*;
 </div>
 </div>
 <div class="section" id="groupwork-programming-challenge-ascii-art">
-<h1><a class="reference internal" href="../_images/groupwork10.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork10.png" style="width: 35px;" /></a> Programming Challenge : ASCII Art<a class="headerlink" href="#groupwork-programming-challenge-ascii-art" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.1.8. </span><a class="reference internal" href="../_images/groupwork10.png"><img alt="groupwork" class="align-middle" src="../_images/groupwork10.png" style="width: 35px;" /></a> Programming Challenge : ASCII Art<a class="headerlink" href="#groupwork-programming-challenge-ascii-art" title="Permalink to this headline">¶</a></h1>
 <p>ASCII is a commonly used character encoding standard where each key you press on the keyboard is translated to an ASCII number to be stored in the computer. ASCII has been mostly replaced by UNICODE which includes characters in other languages like Chinese. In the days before good graphics, some people made ASCII art just using the keyboard characters. Take a look at this <a href= "https://www.asciiart.eu/" style="text-decoration:underline" target="_blank" >ASCII art</a> collection!</p>
 <p>We can represent ASCII art in a 2D array of rows and columns. What do you think the following code will print out? Try to guess before you run it. The loops to print out the 2D array will be explained in the next lesson. Then, do the following:</p>
 <ol class="arabic simple">
@@ -687,7 +701,7 @@ import static org.junit.Assert.*;
 </div>
 </div>
 <div class="section" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.1.9. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>2D arrays are stored as arrays of arrays. Therefore, the way 2D arrays are created and indexed is similar to 1D array objects.</p></li>
 <li><p>2D arrays are declared and created with the following syntax: datatype[][] variableName = new datatype[numberRows][numberCols];</p></li>
@@ -705,6 +719,26 @@ import static org.junit.Assert.*;
   </div>
   
       
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 9.1.1. 2D Arrays' data-toggle="tooltip">
+    <a href="topic-9-1-2D-arrays-Day1.html" aria-label="9.1.1. 2D Arrays">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 9.2. Traversing 2D Arrays (nested loops)' data-toggle="tooltip" >
+    <a href="topic-9-2-2D-array-loops.html" aria-label="9.2. Traversing 2D Arrays (nested loops)">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
 
 <script type="text/javascript">
 

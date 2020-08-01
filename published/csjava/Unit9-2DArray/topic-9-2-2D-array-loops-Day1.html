@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Nested Loops for 2D Arrays &#8212; CS Java</title>
+    <title>9.2.1. Nested Loops for 2D Arrays &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,6 +56,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9.2.4. Enhanced For-Each Loop for 2D Arrays" href="topic-9-2-2D-array-loops-Day2.html" />
+    <link rel="prev" title="9.2. Traversing 2D Arrays (nested loops)" href="topic-9-2-2D-array-loops.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -301,6 +303,18 @@
         
         <!-- 
           
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">9.2. </span>Traversing 2D Arrays (nested loops)" data-toggle="tooltip">
+    <a href="topic-9-2-2D-array-loops.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">9.2.4. </span>Enhanced For-Each Loop for 2D Arrays' data-toggle="tooltip" >              
+    <a href="topic-9-2-2D-array-loops-Day2.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -335,11 +349,11 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="nested-loops-for-2d-arrays">
-<h1>Nested Loops for 2D Arrays<a class="headerlink" href="#nested-loops-for-2d-arrays" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.2.1. </span>Nested Loops for 2D Arrays<a class="headerlink" href="#nested-loops-for-2d-arrays" title="Permalink to this headline">¶</a></h1>
 <p>In this lesson, you will learn how to use nested loops to traverse a 2D Array.</p>
 </div>
 <div class="section" id="getting-the-number-of-rows-and-columns">
-<h1>Getting the Number of Rows and Columns<a class="headerlink" href="#getting-the-number-of-rows-and-columns" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.2.2. </span>Getting the Number of Rows and Columns<a class="headerlink" href="#getting-the-number-of-rows-and-columns" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">Arrays know their length (how many elements they can store).  The length is a public read-only field so you can use <em>dot-notation</em> to access the field (<code class="docutils literal notranslate"><span class="pre">arrayName.length</span></code>). The length of the outer array is the number of rows and the length of one of the inner arrays is the number of columns.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ticketInfo</span><span class="p">.</span><span class="na">length</span> <span class="c1">// returns the number of rows</span>
 <span class="n">ticketInfo</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span> <span class="c1">// returns the number of columns</span>
@@ -382,7 +396,7 @@
             </div>
             </div>
 <div class="section" id="looping-through-a-2d-array">
-<h1>Looping Through a 2D Array<a class="headerlink" href="#looping-through-a-2d-array" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9.2.3. </span>Looping Through a 2D Array<a class="headerlink" href="#looping-through-a-2d-array" title="Permalink to this headline">¶</a></h1>
 <p id="index-1">Since you can find out the number of rows and columns in a 2D array you can use a <strong>nested for loop</strong> (one loop inside of another loop) to loop/traverse through all of the elements of a 2D array.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}};</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span>
@@ -549,6 +563,26 @@ import static org.junit.Assert.*;
   </div>
   
       
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 9.2. Traversing 2D Arrays (nested loops)' data-toggle="tooltip">
+    <a href="topic-9-2-2D-array-loops.html" aria-label="9.2. Traversing 2D Arrays (nested loops)">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 9.2.4. Enhanced For-Each Loop for 2D Arrays' data-toggle="tooltip" >
+    <a href="topic-9-2-2D-array-loops-Day2.html" aria-label="9.2.4. Enhanced For-Each Loop for 2D Arrays">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
 
 <script type="text/javascript">
 
