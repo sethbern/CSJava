@@ -150,38 +150,34 @@ The return type must match with the value in the return statement.
       super("InchesToCentimeters");
     }
 
-      @Test
-      public void checkCodeContainsSig(){
-        String code = getCode();
-        int num = countOccurences(code, "public static double inchesToCentimeters(double inches)");
-        boolean passed = num ==1;
-        passed = getResults("1", num , "Change the return type of inchesToCentimeters", passed);
-        assertTrue(passed);
-      }
+    @Test
+    public void checkCodeContainsSig(){
+      String code = getCode();
+      int num = countOccurences(code, "public static double inchesToCentimeters(double inches)");
+      boolean passed = num ==1;
+      passed = getResults("1 signature", num + " signature", "Change the return type of inchesToCentimeters", passed);
+      assertTrue(passed);
+    }
 
-     @Test
-      public void checkCodeContainsReturn(){
-        String code = getCode();
-        int num = countOccurences(code, "return");
-        boolean passed = num ==1;
-        passed = getResults("1", num , "The method inchesToCentiments is missing a return statement", passed);
-        assertTrue(passed);
-      }
+    @Test
+    public void checkCodeContainsReturn(){
+      String code = getCode();
+      int num = countOccurences(code, "return");
+      boolean passed = num ==1;
+      passed = getResults("1 return", num + " return" , "The method inchesToCentiments is missing a return statement", passed);
+      assertTrue(passed);
+    }
 
-      @Test
-      public void testMain() throws IOException
-      {
-            String output = getMethodOutput("main");
-            String expect = "25.4\n9.95\n31.74";
-            boolean passed = output.contains(expect);
-            getResults(expect, output, "Expected output from main");
-            assertTrue(passed);
-      }
+    @Test
+    public void testMain() throws IOException
+    {
+          String output = getMethodOutput("main");
+          String expect = "25.4\n31.75";
+          boolean passed = output.contains(expect);
+          getResults(expect, output, "Expected output from main");
+          assertTrue(passed);
     }
   }
-
-
-
 
 
 |Exercise| **Check your understanding**
@@ -253,14 +249,14 @@ The return type must match with the value in the return statement.
    :feedback_c: A void return type means no value is returned.  There is no value to assign. 
    :feedback_d: A void return type means no value is returned.  You call the method as a statement.
    
-   Based on the method header below, which statement is correct for the method?  
+   Based on the method header below, which statement is correct for calling the method?  
     
    .. code-block:: java
 
      public static void mystery4()
 
 
-.. mchoice:: m_5_3_1
+.. mchoice:: m_5_3_5
    :practice: T
    :answer_a: return 10;
    :answer_b: return 12 * 4;
@@ -288,8 +284,8 @@ The return type must match with the value in the return statement.
   
   A pedometer estimates that taking 2,000 steps is the same as walking 1 mile. 
   Write a method ``convertToMiles`` that takes a parameter for the number of steps and returns the equivalent miles walked.
-  Update the main method to call ``convertToMiles`` 4 times with values 500, 2000, 3000, 9000. 
-  Carefully consider what the return type should be.
+  Update the main method to call ``convertToMiles`` 3 times with values 500, 2000, 3000. 
+  Carefully consider the method return type.  Watch out for integer division in the method body!
   You can assume the number of steps is an integer.
 
   ~~~~
@@ -300,7 +296,7 @@ The return type must match with the value in the return statement.
       public static void main(String[] args)  
       {
          System.out.println("500 steps is equal to " + convertToMiles(500) + " miles");
-         //add 3 more method calls here
+         //add 2 more method calls here for 2000 and 3000 steps.
 
       }
   }
@@ -317,45 +313,34 @@ The return type must match with the value in the return statement.
       super("InchesToCentimeters");
     }
 
-      @Test
-      public void checkCodeContainsSig(){
-        String code = getCode();
-        int num = countOccurences(code, "public static double convertToMiles(int");
-        boolean passed = num ==1;
-        passed = getResults("1", num , "The convertToMiles signature is not correct. Check your return type and the parameter type", passed);
-        assertTrue(passed);
-      }
-
      @Test
-      public void checkCodeContainsReturn(){
-        String code = getCode();
-        int num = countOccurences(code, "return");
-        boolean passed = num ==1;
-        passed = getResults("1", num , "The method convertToMiles is missing a return statement", passed);
-        assertTrue(passed);
-      }
-
-      @Test
-      public void testMain() throws IOException
-      {
-            String output = getMethodOutput("main");
-            String expect = "500 steps is equal to 0.25 miles";
-            boolean passed = output.contains(expect);
-            getResults(expect, output, "Expected output from main");
-            assertTrue(passed);
-      }
-
-      @Test
-      public void testMain2() throws IOException
-      {
-            String output = getMethodOutput("main");
-            String expect = "2000 steps is equal to 1 mile";
-            boolean passed = output.contains(expect);
-            getResults(expect, output, "Expected output from main");
-            assertTrue(passed);
-      }
+    public void checkCodeContainsSig(){
+      String code = getCode();
+      int num = countOccurences(code, "public static double convertToMiles(int");
+      boolean passed = num ==1;
+      passed = getResults("1 signature", num + "signature", "The convertToMiles signature is not correct. Check your return type and the parameter type", passed);
+      assertTrue(passed);
     }
-  }
+
+    @Test
+    public void checkCodeContainsReturn(){
+      String code = getCode();
+      int num = countOccurences(code, "return");
+      boolean passed = num ==1;
+      passed = getResults("1 return", num + " return", "The method convertToMiles is missing a return statement", passed);
+      assertTrue(passed);
+    }
+
+
+    @Test
+    public void testMain() throws IOException
+    {
+          String output = getMethodOutput("main");
+          String expect = "500 steps is equal to 0.25 miles\n2000 steps is equal to 1.0 miles\n3000 steps is equal to 1.5 miles";
+          boolean passed = output.equals(expect);
+          getResults(expect, output, "Expected output from main");
+          assertTrue(passed);
+    }
 
 
 
@@ -400,7 +385,7 @@ The return type must match with the value in the return statement.
       String code = getCode();
       int num = countOccurences(code, "public static int randomInteger(int min, int max");
       boolean passed = num ==1;
-      passed = getResults("1", num , "The randomInteger signature is not correct. Check your return type and the parameters", passed);
+      passed = getResults("1 signature", num + " signature" , "The randomInteger signature is not correct. Check your return type and the parameters", passed);
       assertTrue(passed);
     }
 
@@ -409,7 +394,7 @@ The return type must match with the value in the return statement.
       String code = getCode();
       int num = countOccurences(code, "return");
       boolean passed = num ==1;
-      passed = getResults("1", num , "The method randomInteger is missing a return statement", passed);
+      passed = getResults("1 return", num + " return", "The method randomInteger is missing a return statement", passed);
       assertTrue(passed);
     }
 
@@ -425,7 +410,6 @@ The return type must match with the value in the return statement.
       }
 
   }
-
 
 
 Summary

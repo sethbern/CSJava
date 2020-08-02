@@ -410,7 +410,7 @@ into the formal parameter variables.</p>
 <p>Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to watch how the main method
 passes actual argument values into each call to the verse method.
 Update the main method to add a third verse to the song with another animal and noise.
-Rerun the program to confirm the third verse correctly prints.</p>
+Rerun the program to confirm the third verse is correct.</p>
 
 <textarea data-component="activecode" id=SongFarm data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
@@ -456,7 +456,9 @@ public class RunestoneTests extends CodeTestHelper
   {
     String code = getCode();
     int numVerses = countOccurences(code, "verse(");
+    numVerses--; //exclude definition
     boolean passed = numVerses >= 3;
+
     passed = getResults("3 verses", numVerses + " verses", "Update the main with a third verse call", passed);
     assertTrue(passed);
   }
@@ -578,7 +580,7 @@ public class RunestoneTests extends CodeTestHelper
       {
           String output = getMethodOutput("main");
           String expect = "Fred:250.0\nAmir:525.0\n";
-          boolean passed = getResults(expect, output, "Expected output from main", true);
+          boolean passed = getResults(expect, output, "Expected output from main");
           assertTrue(passed);
       }
 
@@ -596,11 +598,12 @@ public class RunestoneTests extends CodeTestHelper
       public void test3()
       {
          String code = getCode();
-         int calls = countOccurences(code, "calculatePay(");
-         boolean passed = calls >=2;
+         int calls = countOccurences(code, "calculatePay(\"");
+         boolean passed = (calls==2);
          passed = getResults("2 calls", calls + " calls", "Update the main with two calls to calculatePay", passed);
          assertTrue(passed);
       }
+
 }
 </textarea>
 </div>
@@ -700,28 +703,44 @@ You can’t use a variable before it is declared, so in fact the scope begins wh
 and continues until the last line of code in the method or block.    The local variable’s memory location is also only available while
 the method is executing.  When the method completes, the memory location is released. If you called
 the method again, the old value would not be available.</p>
-<p>Consider the following methods:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inchesToCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">centimeters</span> <span class="o">=</span> <span class="n">inches</span> <span class="o">*</span> <span class="mf">2.54</span><span class="p">;</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">inches</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">centimeters</span><span class="p">);</span>
-<span class="p">}</span>
 
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">inchesToCentimeters</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-    <span class="n">inchesToCentimeters</span><span class="p">(</span><span class="mf">15.7</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
+<div data-childcomponent="scopeexample" class="runestone explainer ac_section alert alert-warning">
+<p>Use the CodeLens button to step through the two method calls in the main.  Notice the <code class="docutils literal notranslate"><span class="pre">inches</span></code> and <code class="docutils literal notranslate"><span class="pre">centimeters</span></code> variables are
+visible in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method but not the <code class="docutils literal notranslate"><span class="pre">main</span></code> method.</p>
+
+<textarea data-component="activecode" id=scopeexample data-lang="java" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static>
+public class ScopeExample
+{
+  public static void inchesToCentimeters(double inches)
+  {
+      double centimeters = inches * 2.54;
+      System.out.println(inches + "-->" + centimeters);
+  }
+
+  public static void main(String[] args)
+  {
+      inchesToCentimeters(10);
+      inchesToCentimeters(15.7);
+  }
+
+}
+</textarea>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">inchestToCentimeters</span></code> method defines a local
 variable <code class="docutils literal notranslate"><span class="pre">centimeters</span></code>, which is only visible inside that method.
 The main method can’t see or use the variable.  Each time the inchestToCentimeters method is called, a new memory location is
-created for the variable.</p>
+created for the local variable.</p>
 <p>A formal parameter is like a local variable in that its scope is the body of the corresponding method.
-The <code class="docutils literal notranslate"><span class="pre">inches</span></code> formal parameter variable is only visible in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method body.</p>
-<p>While a local variable has its value initialized within the method body, the formal parameter variable has its value
-initialized by the method call.  You must explicitly assign a local variable a value before you can use it
+The <code class="docutils literal notranslate"><span class="pre">inches</span></code> variable is only visible in the <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> method body.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A local variable has its value initialized within the method body.</p>
+<p>A formal parameter has its value initialized by the method call.</p>
+</div>
+<p>You must explicitly assign a local variable a value before you can use it
 in a calculation.  The compiler will warn you if you try to use a local variable in a calculation or print statement before it has been assigned a value.</p>
 <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
@@ -801,7 +820,7 @@ the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">
 
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printInCentimeters</span><span class="p">(</span><span class="kt">double</span> <span class="n">inches</span><span class="p">,</span> <span class="kt">double</span> <span class="n">centimeters</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">inches</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">centimeters</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">inches</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">centimeters</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -904,14 +923,14 @@ assigned a new value inside the method.  <strong>It is generally not a good idea
 value of a parameter inside a method, however it is possible as the example below shows.</strong></p>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Check your understanding</strong></p>
 
-<div data-childcomponent="changeparamvalue" class="runestone explainer ac_section alert alert-warning">
+<div data-childcomponent="testcallbyvalue" class="runestone explainer ac_section alert alert-warning">
 <p>Use the CodeLens button or copy the code into the <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> to watch how the square method
 alters the value of x, while the value of y in the main method is not affected.</p>
 <p>Try changing the name of the variable in the main method to “x” and rerun the program.  You should see
 that the variable in the main method remains unaffected by changes made in the square method, even when
 the variables have the same name.</p>
 
-<textarea data-component="activecode" id=changeparamvalue data-lang="java" 
+<textarea data-component="activecode" id=testcallbyvalue data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
@@ -920,36 +939,14 @@ public class CallByValue
   public static void square(int x)
   {
     x = x * x;
-    System.out.print(x);
+    System.out.println(x);
   }
 
   public static void main(String[] args)
   {
     int y = 5;
     square(y);
-  }
-}
-
-====
-import static org.junit.Assert.*;
-import org.junit.*;;
-import java.io.*;
-
-public class RunestoneTests extends CodeTestHelper
-{
-
-  public RunestoneTests() {
-    super("CallByValue");
-  }
-
-  @Test
-  public void test1()
-  {
-    String code = getCode();
-    int num = countOccurences(code, "square(");
-    boolean passed = numVerses = 1;
-    passed = getResults("1 call", 1 + " ca;;", "The main should call the square method", passed);
-    assertTrue(passed);
+    System.out.println(y);
   }
 }
 </textarea>
@@ -1086,10 +1083,10 @@ import static org.junit.Assert.*;
     super("ShippingCostCalculator");
   }
     @Test
-    public void checkCodeContains3(){
+    public void checkSig(){
       String code = getCode();
       int num = countOccurences(code, "public static void calculateShipping(");
-      boolean passed = num = 1;
+      boolean passed = num == 1;
       passed = getResults("1 method declaration", num + " method declaration", "Declare the static calculateShipping method", passed);
       assertTrue(passed);
     }
@@ -1098,7 +1095,8 @@ import static org.junit.Assert.*;
     public void checkCodeContains3(){
       String code = getCode();
       int num = countOccurences(code, "calculateShipping(");
-      boolean passed = num >=3;
+      num--;  //exclude method signature
+      boolean passed = num ==3;
       passed = getResults("3 method calls", num + " method calls", "Call the calculateShipping method 3 times", passed);
       assertTrue(passed);
     }

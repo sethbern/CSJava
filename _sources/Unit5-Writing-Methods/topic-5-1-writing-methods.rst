@@ -77,7 +77,12 @@ we call the method using its name.
 In a subsequent lesson you will create methods that are called using an object, 
 referred to as **instance methods** or **object methods**.
 The methods in this unit are called without an object, so they are  **static methods**.  
-Static methods are also referred to as class methods.
+Static methods are also referred to as **class methods**.
+
+.. note::
+  static methods - can call without an object ``m()``
+
+  instance methods - must call using an object  ``obj.m()``
 
 Writing Static Methods
 ----------------------
@@ -282,14 +287,14 @@ When the method is done, the program returns back to the main method.
 
 .. mchoice:: likeFoodMethods
    :practice: T
-   :answer_a: I like to eat eat eat.
-   :answer_b: I like to eat eat eat fruit.
-   :answer_c: I like to apples and bananas eat.
+   :answer_a: apples and bananas! eat I like to.
+   :answer_b: I like to consume consume consume fruit.
+   :answer_c: I like to apples and bananas! eat.
    :answer_d: I like to eat eat eat apples and bananas!
    :correct: d
-   :feedback_a: Try tracing through the print method and see what happens when it calls the other methods.
-   :feedback_b: There is a fruit() method but it does not print out the word fruit.
-   :feedback_c: The order things are printed out depends on the order in which they are called from the print method.
+   :feedback_a: Try tracing through the main method and see what happens when it calls the other methods.
+   :feedback_b: The consume() method does not print the word consume, and the fruit() method but it does not print the word fruit.
+   :feedback_c: Try tracing through the main method and see what happens when it calls the other methods.
    :feedback_d: Yes, the print method calls the consume method 3 times and then the fruit method to print this.
   
    What does the following code print out?
@@ -375,6 +380,6 @@ Summary
 
 - A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.
 
-- To write a method, write a **method definition** with a **method signature** like "public void chorus()" and a **method body** that consists of statements nested within {}.
+- Write a **method definition** with a **method signature** like ``public static void chorus()`` and a **method body** that consists of statements nested within {}.
 
-- Call the method using its name to execute the statements in the method body.
+- Call the method using its name followed by parentheses ``chorus()`` to execute the statements in the method body.

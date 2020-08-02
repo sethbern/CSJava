@@ -392,7 +392,12 @@ we call the method using its name.
 In a subsequent lesson you will create methods that are called using an object,
 referred to as <strong>instance methods</strong> or <strong>object methods</strong>.
 The methods in this unit are called without an object, so they are  <strong>static methods</strong>.
-Static methods are also referred to as class methods.</p>
+Static methods are also referred to as <strong>class methods</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>static methods - can call without an object <code class="docutils literal notranslate"><span class="pre">m()</span></code></p>
+<p>instance methods - must call using an object  <code class="docutils literal notranslate"><span class="pre">obj.m()</span></code></p>
+</div>
 <div class="section" id="writing-static-methods">
 <h2><span class="section-number">5.1.1. </span>Writing Static Methods<a class="headerlink" href="#writing-static-methods" title="Permalink to this headline">¶</a></h2>
 <p>There are two steps to writing and using a static method:</p>
@@ -607,11 +612,11 @@ When the method is done, the program returns back to the main method.</p>
 </pre></div>
 </div>
 
-            <li data-component="answer"  id="likeFoodMethods_opt_a">I like to eat eat eat.</li><li data-component="feedback">Try tracing through the print method and see what happens when it calls the other methods.</li>
+            <li data-component="answer"  id="likeFoodMethods_opt_a">apples and bananas! eat I like to.</li><li data-component="feedback">Try tracing through the main method and see what happens when it calls the other methods.</li>
             
-            <li data-component="answer"  id="likeFoodMethods_opt_b">I like to eat eat eat fruit.</li><li data-component="feedback">There is a fruit() method but it does not print out the word fruit.</li>
+            <li data-component="answer"  id="likeFoodMethods_opt_b">I like to consume consume consume fruit.</li><li data-component="feedback">The consume() method does not print the word consume, and the fruit() method but it does not print the word fruit.</li>
             
-            <li data-component="answer"  id="likeFoodMethods_opt_c">I like to apples and bananas eat.</li><li data-component="feedback">The order things are printed out depends on the order in which they are called from the print method.</li>
+            <li data-component="answer"  id="likeFoodMethods_opt_c">I like to apples and bananas! eat.</li><li data-component="feedback">Try tracing through the main method and see what happens when it calls the other methods.</li>
             
             <li data-component="answer" data-correct id="likeFoodMethods_opt_d">I like to eat eat eat apples and bananas!</li><li data-component="feedback">Yes, the print method calls the consume method 3 times and then the fruit method to print this.</li>
             
@@ -673,8 +678,8 @@ import static org.junit.Assert.*;
 <ul class="simple">
 <li><p><strong>Procedural Abstraction</strong> (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.</p></li>
 <li><p>A programmer breaks down a large problem into smaller subproblems by creating methods to solve each individual subproblem.</p></li>
-<li><p>To write a method, write a <strong>method definition</strong> with a <strong>method signature</strong> like “public void chorus()” and a <strong>method body</strong> that consists of statements nested within {}.</p></li>
-<li><p>Call the method using its name to execute the statements in the method body.</p></li>
+<li><p>Write a <strong>method definition</strong> with a <strong>method signature</strong> like <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">void</span> <span class="pre">chorus()</span></code> and a <strong>method body</strong> that consists of statements nested within {}.</p></li>
+<li><p>Call the method using its name followed by parentheses <code class="docutils literal notranslate"><span class="pre">chorus()</span></code> to execute the statements in the method body.</p></li>
 </ul>
 </div>
 </div>

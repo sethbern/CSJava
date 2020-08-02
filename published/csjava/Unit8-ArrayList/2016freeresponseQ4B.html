@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>8.4.8. Free Response - StringFormatter B &#8212; CS Java</title>
+    <title>Free Response - StringFormatter B &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.4.9. Free Response - Delimiters A" href="2019delimitersQ3a.html" />
-    <link rel="prev" title="8.4.7. Free Response - StringFormatter A" href="2016freeresponseQ4A.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -303,18 +301,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">8.4.7. </span>Free Response - StringFormatter A" data-toggle="tooltip">
-    <a href="2016freeresponseQ4A.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">8.4.9. </span>Free Response - Delimiters A' data-toggle="tooltip" >              
-    <a href="2019delimitersQ3a.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -349,7 +335,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="free-response-stringformatter-b">
-<h1><span class="section-number">8.4.8. </span>Free Response - StringFormatter B<a class="headerlink" href="#free-response-stringformatter-b" title="Permalink to this headline">¶</a></h1>
+<h1>Free Response - StringFormatter B<a class="headerlink" href="#free-response-stringformatter-b" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">The following is a free response question from 2016. It was question 4 part B on the exam. You can see all the free response questions from past exams at <a class="reference external" href="https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year">https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year</a>.</p>
 <p>This question involves the process of taking a list of words, called <code class="docutils literal notranslate"><span class="pre">wordList</span></code>, and producing a formatted string of a specified length.
 The list <code class="docutils literal notranslate"><span class="pre">wordList</span></code> contains at least two words, consisting of letters only.
@@ -361,7 +347,7 @@ Any leftover spaces are inserted one at a time into the gaps from left to right 
 <a class="reference internal image-reference" href="../_images/2016FRQ4A1.png"><img alt="../_images/2016FRQ4A1.png" src="../_images/2016FRQ4A1.png" style="width: 700px;" /></a>
 </div>
 <div class="section" id="part-b">
-<h2><span class="section-number">8.4.8.1. </span>Part B<a class="headerlink" href="#part-b" title="Permalink to this headline">¶</a></h2>
+<h2>Part B<a class="headerlink" href="#part-b" title="Permalink to this headline">¶</a></h2>
 <ol class="loweralpha simple" start="2">
 <li><p>Write the <code class="docutils literal notranslate"><span class="pre">StringFormatter</span></code> method <code class="docutils literal notranslate"><span class="pre">basicGapWidth</span></code>, which returns the basic gap width as defined above.</p></li>
 </ol>
@@ -382,7 +368,7 @@ You must use <code class="docutils literal notranslate"><span class="pre">totalL
 </div>
 </div>
 <div class="section" id="how-to-solve-part-b">
-<h2><span class="section-number">8.4.8.2. </span>How to Solve Part B<a class="headerlink" href="#how-to-solve-part-b" title="Permalink to this headline">¶</a></h2>
+<h2>How to Solve Part B<a class="headerlink" href="#how-to-solve-part-b" title="Permalink to this headline">¶</a></h2>
 <p>To calculate <code class="docutils literal notranslate"><span class="pre">basicGapWidth</span></code> we need to find the number of spaces left after the characters fill the <code class="docutils literal notranslate"><span class="pre">formattedLen</span></code> and divide that
 by the number of gaps between words.  We can use <code class="docutils literal notranslate"><span class="pre">totalLetters</span></code> (written in part A) to get the total number of characters for all the strings in <code class="docutils literal notranslate"><span class="pre">wordList</span></code>.
 The number of gaps between words is the number of words in <code class="docutils literal notranslate"><span class="pre">wordList</span></code> minus 1.  The <code class="docutils literal notranslate"><span class="pre">basicGapWidth</span></code> is the number of spaces left divided by the number of gaps between words.  Remember that if we do an integer division any fractional part will be thrown away, which is what we want to happen in this case.</p>
@@ -391,7 +377,7 @@ The number of gaps between words is the number of words in <code class="docutils
 <p>If <code class="docutils literal notranslate"><span class="pre">formattedLen</span></code> is 20 and <code class="docutils literal notranslate"><span class="pre">wordList</span></code> is [“BEACH”, “BALL”] then the number of spaces left is 20 - 9 = 11 and the number of gaps is 2 - 1 = 1 so 11 / 1 = 11.</p>
 </div>
 <div class="section" id="put-the-code-in-order">
-<h2><span class="section-number">8.4.8.3. </span>Put the Code in Order<a class="headerlink" href="#put-the-code-in-order" title="Permalink to this headline">¶</a></h2>
+<h2>Put the Code in Order<a class="headerlink" href="#put-the-code-in-order" title="Permalink to this headline">¶</a></h2>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="2016Q4B"  data-adaptive="true"      data-numbered="left" >
@@ -413,7 +399,7 @@ The number of gaps between words is the number of words in <code class="docutils
         </div>
     </div>
 <div class="section" id="write-the-code">
-<h2><span class="section-number">8.4.8.4. </span>Write the Code<a class="headerlink" href="#write-the-code" title="Permalink to this headline">¶</a></h2>
+<h2>Write the Code<a class="headerlink" href="#write-the-code" title="Permalink to this headline">¶</a></h2>
 <p>Finish writing the <code class="docutils literal notranslate"><span class="pre">basicGapWidth</span></code> method below so that it returns the size that the gap should be.  The <code class="docutils literal notranslate"><span class="pre">main</span></code> method below will test your code to check that you solved it correctly.</p>
 
 <div data-childcomponent="lcfrsbasicGapWidth" class="runestone explainer ac_section alert alert-warning">
@@ -478,26 +464,6 @@ public class StringFormatter
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 8.4.7. Free Response - StringFormatter A' data-toggle="tooltip">
-    <a href="2016freeresponseQ4A.html" aria-label="8.4.7. Free Response - StringFormatter A">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-        </div>
-    </a>
-  </li>
-</ul>
-
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 8.4.9. Free Response - Delimiters A' data-toggle="tooltip" >
-    <a href="2019delimitersQ3a.html" aria-label="8.4.9. Free Response - Delimiters A">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-      </div>
-    </a>
-  </li>
-</ul>
 
 <script type="text/javascript">
 

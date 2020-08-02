@@ -79,7 +79,7 @@ into the formal parameter variables.
   Use the CodeLens button or copy the code into the |visualizer| to watch how the main method
   passes actual argument values into each call to the verse method.
   Update the main method to add a third verse to the song with another animal and noise.
-  Rerun the program to confirm the third verse correctly prints.
+  Rerun the program to confirm the third verse is correct.
   ~~~~
   public class Song 
   { 
@@ -121,7 +121,9 @@ into the formal parameter variables.
     {
       String code = getCode();
       int numVerses = countOccurences(code, "verse(");
+      numVerses--; //exclude definition
       boolean passed = numVerses >= 3;
+      
       passed = getResults("3 verses", numVerses + " verses", "Update the main with a third verse call", passed);
       assertTrue(passed);
     }
@@ -237,7 +239,7 @@ will need to be provided as shown.
         {
             String output = getMethodOutput("main");
             String expect = "Fred:250.0\nAmir:525.0\n";
-            boolean passed = getResults(expect, output, "Expected output from main", true);
+            boolean passed = getResults(expect, output, "Expected output from main");
             assertTrue(passed);
         }
 
@@ -255,11 +257,12 @@ will need to be provided as shown.
         public void test3()
         {
            String code = getCode();
-           int calls = countOccurences(code, "calculatePay(");
-           boolean passed = calls >=2;
+           int calls = countOccurences(code, "calculatePay(\"");
+           boolean passed = (calls==2);
            passed = getResults("2 calls", calls + " calls", "Update the main with two calls to calculatePay", passed);
            assertTrue(passed);
         }
+
   }
 
 
@@ -371,14 +374,18 @@ and continues until the last line of code in the method or block.    The local v
 the method is executing.  When the method completes, the memory location is released. If you called 
 the method again, the old value would not be available.  
 
-Consider the following methods:
+.. activecode:: scopeexample
+  :language: java
     
-.. code-block:: java
-
+  Use the CodeLens button to step through the two method calls in the main.  Notice the ``inches`` and ``centimeters`` variables are
+  visible in the ``inchesToCentimeters`` method but not the ``main`` method.  
+  ~~~~
+  public class ScopeExample 
+  {
     public static void inchesToCentimeters(double inches)
     {
         double centimeters = inches * 2.54;
-        System.out.print(inches + "-->" + centimeters);
+        System.out.println(inches + "-->" + centimeters);
     }
 
     public static void main(String[] args)  
@@ -387,17 +394,25 @@ Consider the following methods:
         inchesToCentimeters(15.7);
     }
 
+  }
 
 The ``inchestToCentimeters`` method defines a local 
 variable ``centimeters``, which is only visible inside that method. 
 The main method can't see or use the variable.  Each time the inchestToCentimeters method is called, a new memory location is
-created for the variable.
+created for the local variable.
 
 A formal parameter is like a local variable in that its scope is the body of the corresponding method.   
-The ``inches`` formal parameter variable is only visible in the ``inchesToCentimeters`` method body. 
+The ``inches`` variable is only visible in the ``inchesToCentimeters`` method body. 
 
-While a local variable has its value initialized within the method body, the formal parameter variable has its value
-initialized by the method call.  You must explicitly assign a local variable a value before you can use it 
+
+.. note::
+
+   A local variable has its value initialized within the method body.
+
+   A formal parameter has its value initialized by the method call.
+
+
+You must explicitly assign a local variable a value before you can use it 
 in a calculation.  The compiler will warn you if you try to use a local variable in a calculation or print statement before it has been assigned a value.
 
 |Exercise| **Check your understanding**
@@ -462,8 +477,6 @@ in a calculation.  The compiler will warn you if you try to use a local variable
       }
 
 
-
-
 Method Tracing
 ------------------
 
@@ -488,7 +501,7 @@ the code into the |visualizer|.
 
         public static void printInCentimeters(double inches, double centimeters)
         {
-            System.out.print(inches + "-->" + centimeters);
+            System.out.println(inches + "-->" + centimeters);
         }
 
         public static void main(String[] args)  
@@ -615,10 +628,8 @@ value of a parameter inside a method, however it is possible as the example belo
 
 |CodingEx| **Check your understanding**
 
-.. activecode:: changeparamvalue
+.. activecode:: testcallbyvalue
   :language: java
-  :autograde: unittest
-  :practice: T
     
   Use the CodeLens button or copy the code into the |visualizer| to watch how the square method
   alters the value of x, while the value of y in the main method is not affected.
@@ -631,39 +642,19 @@ value of a parameter inside a method, however it is possible as the example belo
   {
     public static void square(int x)
     {
-      x = x * x;
-      System.out.print(x);
+      x = x * x;  
+      System.out.println(x);
     }
 
     public static void main(String[] args) 
     {
       int y = 5;
-      square(y);   
+      square(y);  
+      System.out.println(y); 
     }
   }
 
-  ====
-  import static org.junit.Assert.*;
-  import org.junit.*;;
-  import java.io.*;
 
-  public class RunestoneTests extends CodeTestHelper
-  {
-    
-    public RunestoneTests() {
-      super("CallByValue");
-    }
-
-    @Test
-    public void test1()
-    {
-      String code = getCode();
-      int num = countOccurences(code, "square(");
-      boolean passed = numVerses = 1;
-      passed = getResults("1 call", 1 + " ca;;", "The main should call the square method", passed);
-      assertTrue(passed);
-    }
-  }
 
 If you pass in an argument that holds a reference to an object, 
 like a String or Person or Turtle object, a copy of this reference 
@@ -800,10 +791,10 @@ compute and print the cost based on item weight.
       super("ShippingCostCalculator");
     }
       @Test
-      public void checkCodeContains3(){
+      public void checkSig(){
         String code = getCode();
         int num = countOccurences(code, "public static void calculateShipping(");
-        boolean passed = num = 1;
+        boolean passed = num == 1;
         passed = getResults("1 method declaration", num + " method declaration", "Declare the static calculateShipping method", passed);
         assertTrue(passed);
       }
@@ -812,7 +803,8 @@ compute and print the cost based on item weight.
       public void checkCodeContains3(){
         String code = getCode();
         int num = countOccurences(code, "calculateShipping(");
-        boolean passed = num >=3;
+        num--;  //exclude method signature
+        boolean passed = num ==3;
         passed = getResults("3 method calls", num + " method calls", "Call the calculateShipping method 3 times", passed);
         assertTrue(passed);
       }

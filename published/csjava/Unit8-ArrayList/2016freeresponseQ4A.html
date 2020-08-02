@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>8.4.7. Free Response - StringFormatter A &#8212; CS Java</title>
+    <title>Free Response - StringFormatter A &#8212; CS Java</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
@@ -56,8 +56,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.4.8. Free Response - StringFormatter B" href="2016freeresponseQ4B.html" />
-    <link rel="prev" title="8.4.6. Free Response - CookieOrder B" href="cookieOrderB.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -303,18 +301,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">8.4.6. </span>Free Response - CookieOrder B" data-toggle="tooltip">
-    <a href="cookieOrderB.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">8.4.8. </span>Free Response - StringFormatter B' data-toggle="tooltip" >              
-    <a href="2016freeresponseQ4B.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -349,7 +335,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="free-response-stringformatter-a">
-<h1><span class="section-number">8.4.7. </span>Free Response - StringFormatter A<a class="headerlink" href="#free-response-stringformatter-a" title="Permalink to this headline">¶</a></h1>
+<h1>Free Response - StringFormatter A<a class="headerlink" href="#free-response-stringformatter-a" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">The following is a free response question from 2016. It was question 4 part A on the exam. You can see all the free response questions from past exams at <a class="reference external" href="https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year">https://apstudents.collegeboard.org/courses/ap-computer-science-a/free-response-questions-by-year</a>.</p>
 <p>4.  This question involves the process of taking a list of words, called <code class="docutils literal notranslate"><span class="pre">wordList</span></code>, and producing a formatted string of a specified length.
 The list <code class="docutils literal notranslate"><span class="pre">wordList</span></code> contains at least two words, consisting of letters only.
@@ -367,7 +353,7 @@ In this example, the first two gaps get an extra space.</p>
 </div>
 <p>You will implement three static methods in a class named <code class="docutils literal notranslate"><span class="pre">StringFormatter</span></code> that is not shown.</p>
 <div class="section" id="part-a">
-<h2><span class="section-number">8.4.7.1. </span>Part A<a class="headerlink" href="#part-a" title="Permalink to this headline">¶</a></h2>
+<h2>Part A<a class="headerlink" href="#part-a" title="Permalink to this headline">¶</a></h2>
 <p>(a) Write the <code class="docutils literal notranslate"><span class="pre">StringFormatter</span></code> method <code class="docutils literal notranslate"><span class="pre">totalLetters</span></code>, which returns the total number of letters in the words in its parameter <code class="docutils literal notranslate"><span class="pre">wordList</span></code>.
 For example, if the <code class="docutils literal notranslate"><span class="pre">variableList&lt;String&gt;</span> <span class="pre">words</span></code> is [“A”, “frog”, “is”],then the call <code class="docutils literal notranslate"><span class="pre">StringFormatter.totalLetters(words)</span></code> returns 7.
 You may assume that all words in <code class="docutils literal notranslate"><span class="pre">wordList</span></code> consist of one or more letters.</p>
@@ -380,13 +366,13 @@ You may assume that all words in <code class="docutils literal notranslate"><spa
 </div>
 </div>
 <div class="section" id="how-to-solve-part-a">
-<h2><span class="section-number">8.4.7.2. </span>How to Solve Part A<a class="headerlink" href="#how-to-solve-part-a" title="Permalink to this headline">¶</a></h2>
+<h2>How to Solve Part A<a class="headerlink" href="#how-to-solve-part-a" title="Permalink to this headline">¶</a></h2>
 <p>We need to return the total number of letters for all of the strings in <code class="docutils literal notranslate"><span class="pre">wordList</span></code>.  We will need to create an
 integer variable to keep track of the number of letters and initialize it to 0.  Then we will loop through all of the strings in <code class="docutils literal notranslate"><span class="pre">wordList</span></code> and
 add the length of the current string to the number of letters.  When the loop is finished we will return the number of letters.</p>
 </div>
 <div class="section" id="put-the-code-in-order">
-<h2><span class="section-number">8.4.7.3. </span>Put the Code in Order<a class="headerlink" href="#put-the-code-in-order" title="Permalink to this headline">¶</a></h2>
+<h2>Put the Code in Order<a class="headerlink" href="#put-the-code-in-order" title="Permalink to this headline">¶</a></h2>
 
         <div class="runestone" style="max-width: none;">
         <pre data-component="parsons" id="2016Q4A"  data-adaptive="true"      data-numbered="left" >
@@ -412,7 +398,7 @@ add the length of the current string to the number of letters.  When the loop is
         </div>
     </div>
 <div class="section" id="write-the-code">
-<h2><span class="section-number">8.4.7.4. </span>Write the Code<a class="headerlink" href="#write-the-code" title="Permalink to this headline">¶</a></h2>
+<h2>Write the Code<a class="headerlink" href="#write-the-code" title="Permalink to this headline">¶</a></h2>
 <p>Finish writing the <code class="docutils literal notranslate"><span class="pre">totalLetters</span></code> method below so that it returns the number of letters for all the strings in <code class="docutils literal notranslate"><span class="pre">wordList</span></code>.  The <code class="docutils literal notranslate"><span class="pre">main</span></code> method below will test your code to check that you solved it correctly.</p>
 
 <div data-childcomponent="lcfrsTotalLetters" class="runestone explainer ac_section alert alert-warning">
@@ -456,26 +442,6 @@ public class StringFormatter
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 8.4.6. Free Response - CookieOrder B' data-toggle="tooltip">
-    <a href="cookieOrderB.html" aria-label="8.4.6. Free Response - CookieOrder B">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-        </div>
-    </a>
-  </li>
-</ul>
-
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 8.4.8. Free Response - StringFormatter B' data-toggle="tooltip" >
-    <a href="2016freeresponseQ4B.html" aria-label="8.4.8. Free Response - StringFormatter B">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-      </div>
-    </a>
-  </li>
-</ul>
 
 <script type="text/javascript">
 
