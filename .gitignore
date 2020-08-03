@@ -2,6 +2,9 @@
 build_info
 build
 
+#ignore published folder
+published
+
 # Miscellaneous source files
 _sources/Tests/test6.rst
 _sources/Tests/test5.rst
