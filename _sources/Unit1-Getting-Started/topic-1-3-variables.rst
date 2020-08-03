@@ -19,11 +19,19 @@
     :width: 35
     :align: middle
     :alt: groupwork
+
+.. |visualizer| raw:: html
+
+   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>    
+ 
    
 Variables and Data Types
 ========================
 
 In this lesson, you will learn about variables and primitive data types.
+
+You can use the |visualizer| for any of the coding problems in this unit.  Copy and paste the code into the class definition.
+
 
 What is a Variable?
 -------------------
@@ -31,21 +39,19 @@ What is a Variable?
 ..	index::
 	single: variable
 
-A **variable** is a name associated with a memory location in the computer.  Computer memory can store a value and that value can change or vary. The following `video <https://youtu.be/pHgYlVjagmA>`_ explains what a variable is and gives a couple of real word examples of variables.
+A **variable** is a name associated with a memory location in the computer.  
+Computer memory can store a value and that value can change or vary. 
+When you play a game, it will often have a score.  
+Scores often start at 0 and increase.  A score can be stored in a variable.  
+
+
+The following `video <https://youtu.be/pHgYlVjagmA>`_ explains what a variable is and gives a couple of real word examples of variables.
 
 .. youtube:: pHgYlVjagmA
     :width: 600
     :align: center
 
 
-When you play a game, it will often have a score.  Scores often start at 0 and increase.  A score can be stored in a variable.  
-
-.. figure:: Figures/pongScore.png
-    :width: 400px
-    :align: center
-    :figclass: align-center
-    
-    Figure 1: A pong game in `Scratch <http://scratch.mit.edu>`_ with a score shown in the upper left.
 
 Data Types
 ----------
@@ -190,7 +196,7 @@ gets 64 bits of space and a boolean could be represented by just one bit.
     :width: 500px
     :figclass: align-center
     
-    Figure 2: Examples of variables with names and values.  Notice that the different types get a different amount of space.
+    Figure 1: Examples of variables with names and values.  Notice that the different types get a different amount of space.
 
 To **declare** (create) a variable, you  specify the type, leave at least one space, 
 then the name for the variable and end the line with a semicolon (``;``). 

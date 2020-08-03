@@ -365,13 +365,13 @@ you how to create static methods that are functions.
 A function takes one or more values passed as formal parameters and computes a new value to return.</p>
 <p>An example method that returns a value (i.e. a function) is shown in the code below.</p>
 
-<div data-childcomponent="volumeCylinder" class="runestone explainer ac_section alert alert-warning">
+<div data-childcomponent="volumeCyl" class="runestone explainer ac_section alert alert-warning">
 <p>The method <code class="docutils literal notranslate"><span class="pre">volumeCylinder</span></code> takes parameters representing the radius and height of a cylinder,
 and returns the corresponding volume.  The method returns a value that has type <code class="docutils literal notranslate"><span class="pre">double</span></code>.
 Use the CodeLens to step through the code.
 Experiment with passing different values to the method.</p>
 
-<textarea data-component="activecode" id=volumeCylinder data-lang="java" 
+<textarea data-component="activecode" id=volumeCyl data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
@@ -423,14 +423,14 @@ If a method has a <strong>non-void</strong> return type, then it must contain a 
 The return type must match with the value in the return statement.</p>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
-<div data-childcomponent="inchestocentimeters" class="runestone explainer ac_section alert alert-warning">
+<div data-childcomponent="inchestocentimeter4" class="runestone explainer ac_section alert alert-warning">
 <p>The code below contains a method <code class="docutils literal notranslate"><span class="pre">inchesToCentimeters</span></code> that computes and prints the centimeter equivalent of the value passed into the inches parameter.
 Instead of printing the centimeter value inside the inchesToCentimeters method, you should update the
 method to return the value and then move the printing to the main method.  You will have to change
 the return type of the inchesToCentimeters method to match the type of the value being returned.
 Update the <code class="docutils literal notranslate"><span class="pre">main</span></code> method to print the value returned by the <code class="docutils literal notranslate"><span class="pre">inchesToCentiments</span></code> method.</p>
 
-<textarea data-component="activecode" id=inchestocentimeters data-lang="java" 
+<textarea data-component="activecode" id=inchestocentimeter4 data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
@@ -494,107 +494,107 @@ public class RunestoneTests extends CodeTestHelper
 <p><a class="reference internal" href="../_images/exercise6.png"><img alt="exercise" class="align-middle" src="../_images/exercise6.png" style="width: 35px;" /></a> <strong>Check your understanding</strong></p>
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_1" >
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_1a" >
             <p>5-3-1: Based on the method header below, which return statement has the correct type?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">mystery</span><span class="p">()</span>
 </pre></div>
 </div>
 
-            <li data-component="answer"  id="m_5_3_1_opt_a">return "hello";</li><li data-component="feedback">The method return type int does not match the return statement type String.</li>
+            <li data-component="answer"  id="m_5_3_1a_opt_a">return "hello";</li><li data-component="feedback">The method return type int does not match the return statement type String.</li>
             
-            <li data-component="answer"  id="m_5_3_1_opt_b">return true;</li><li data-component="feedback">The method return type int does not match the return statement type boolean.</li>
+            <li data-component="answer"  id="m_5_3_1a_opt_b">return true;</li><li data-component="feedback">The method return type int does not match the return statement type boolean.</li>
             
-            <li data-component="answer"  id="m_5_3_1_opt_c">return 7.5;</li><li data-component="feedback">The method return type int does not match the return statement type double.</li>
+            <li data-component="answer"  id="m_5_3_1a_opt_c">return 7.5;</li><li data-component="feedback">The method return type int does not match the return statement type double.</li>
             
-            <li data-component="answer" data-correct id="m_5_3_1_opt_d">return 10;</li><li data-component="feedback">The method return type int matches the return statement type int.</li>
+            <li data-component="answer" data-correct id="m_5_3_1a_opt_d">return 10;</li><li data-component="feedback">The method return type int matches the return statement type int.</li>
             
 
             </ul>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_2" >
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_2b" >
             <p>5-3-2: Based on the method header below, which return statement has the correct type?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">mystery2</span><span class="p">()</span>
 </pre></div>
 </div>
 
-            <li data-component="answer"  id="m_5_3_2_opt_a">return "hello";</li><li data-component="feedback">The method return type boolean does not match the return statement type String.</li>
+            <li data-component="answer"  id="m_5_3_2b_opt_a">return "hello";</li><li data-component="feedback">The method return type boolean does not match the return statement type String.</li>
             
-            <li data-component="answer" data-correct id="m_5_3_2_opt_b">return true;</li><li data-component="feedback">The method return type boolean matches the return statement type boolean.</li>
+            <li data-component="answer" data-correct id="m_5_3_2b_opt_b">return true;</li><li data-component="feedback">The method return type boolean matches the return statement type boolean.</li>
             
-            <li data-component="answer"  id="m_5_3_2_opt_c">return "7";</li><li data-component="feedback">The method return type boolean does not match the return statement type String.</li>
+            <li data-component="answer"  id="m_5_3_2b_opt_c">return "7";</li><li data-component="feedback">The method return type boolean does not match the return statement type String.</li>
             
-            <li data-component="answer"  id="m_5_3_2_opt_d">return 10;</li><li data-component="feedback">The method return type boolean does not match the return statement type int.</li>
+            <li data-component="answer"  id="m_5_3_2b_opt_d">return 10;</li><li data-component="feedback">The method return type boolean does not match the return statement type int.</li>
             
 
             </ul>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_3" >
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_3c" >
             <p>5-3-3: Based on the method header below, which assignment statement is correct?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">mystery3</span><span class="p">()</span>
 </pre></div>
 </div>
 
-            <li data-component="answer"  id="m_5_3_3_opt_a">String result = mystery3();</li><li data-component="feedback">The method return type int does not match the variable type String.</li>
+            <li data-component="answer"  id="m_5_3_3c_opt_a">String result = mystery3();</li><li data-component="feedback">The method return type int does not match the variable type String.</li>
             
-            <li data-component="answer" data-correct id="m_5_3_3_opt_b">int result = mystery3();</li><li data-component="feedback">The method return type int matches the variable type int.</li>
+            <li data-component="answer" data-correct id="m_5_3_3c_opt_b">int result = mystery3();</li><li data-component="feedback">The method return type int matches the variable type int.</li>
             
-            <li data-component="answer"  id="m_5_3_3_opt_c">boolean result = mystery3();</li><li data-component="feedback">The method return type int does not match the variable type boolean.</li>
+            <li data-component="answer"  id="m_5_3_3c_opt_c">boolean result = mystery3();</li><li data-component="feedback">The method return type int does not match the variable type boolean.</li>
             
 
             </ul>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_4" >
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_4d" >
             <p>5-3-4: Based on the method header below, which statement is correct for calling the method?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mystery4</span><span class="p">()</span>
 </pre></div>
 </div>
 
-            <li data-component="answer"  id="m_5_3_4_opt_a">String result = mystery4();</li><li data-component="feedback">A void return type means no value is returned.  There is no value to assign.</li>
+            <li data-component="answer"  id="m_5_3_4d_opt_a">String result = mystery4();</li><li data-component="feedback">A void return type means no value is returned.  There is no value to assign.</li>
             
-            <li data-component="answer"  id="m_5_3_4_opt_b">int result = mystery4();</li><li data-component="feedback">A void return type means no value is returned.  There is no value to assign.</li>
+            <li data-component="answer"  id="m_5_3_4d_opt_b">int result = mystery4();</li><li data-component="feedback">A void return type means no value is returned.  There is no value to assign.</li>
             
-            <li data-component="answer"  id="m_5_3_4_opt_c">boolean result = mystery4();</li><li data-component="feedback">A void return type means no value is returned.  There is no value to assign.</li>
+            <li data-component="answer"  id="m_5_3_4d_opt_c">boolean result = mystery4();</li><li data-component="feedback">A void return type means no value is returned.  There is no value to assign.</li>
             
-            <li data-component="answer" data-correct id="m_5_3_4_opt_d">mystery4();</li><li data-component="feedback">A void return type means no value is returned.  You call the method as a statement.</li>
+            <li data-component="answer" data-correct id="m_5_3_4d_opt_d">mystery4();</li><li data-component="feedback">A void return type means no value is returned.  You call the method as a statement.</li>
             
 
             </ul>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_5" >
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="m_5_3_5e" >
             <p>5-3-5: Based on the method header below, which return statement DOES NOT have the correct type?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">mystery</span><span class="p">()</span>
 </pre></div>
 </div>
 
-            <li data-component="answer"  id="m_5_3_5_opt_a">return 10;</li><li data-component="feedback">The method return type int matches the return statement type int.</li>
+            <li data-component="answer"  id="m_5_3_5e_opt_a">return 10;</li><li data-component="feedback">The method return type int matches the return statement type int.</li>
             
-            <li data-component="answer"  id="m_5_3_5_opt_b">return 12 * 4;</li><li data-component="feedback">The method return type int matches the return statement type int.</li>
+            <li data-component="answer"  id="m_5_3_5e_opt_b">return 12 * 4;</li><li data-component="feedback">The method return type int matches the return statement type int.</li>
             
-            <li data-component="answer"  id="m_5_3_5_opt_c">return 15 / 2;</li><li data-component="feedback">The method return type int matches the return statement type int.</li>
+            <li data-component="answer"  id="m_5_3_5e_opt_c">return 15 / 2;</li><li data-component="feedback">The method return type int matches the return statement type int.</li>
             
-            <li data-component="answer" data-correct id="m_5_3_5_opt_d">return 3.7 ;</li><li data-component="feedback">The method return type int does not match the return statement type double.</li>
+            <li data-component="answer" data-correct id="m_5_3_5e_opt_d">return 3.7 ;</li><li data-component="feedback">The method return type int does not match the return statement type double.</li>
             
 
             </ul>
             </div>
             <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
-<div data-childcomponent="stepcounter" class="runestone explainer ac_section alert alert-warning">
+<div data-childcomponent="stepcounter2" class="runestone explainer ac_section alert alert-warning">
 <p>A pedometer estimates that taking 2,000 steps is the same as walking 1 mile.
 Write a method <code class="docutils literal notranslate"><span class="pre">convertToMiles</span></code> that takes a parameter for the number of steps and returns the equivalent miles walked.
 Update the main method to call <code class="docutils literal notranslate"><span class="pre">convertToMiles</span></code> 3 times with values 500, 2000, 3000.
 Carefully consider the method return type.  Watch out for integer division in the method body!
 You can assume the number of steps is an integer.</p>
 
-<textarea data-component="activecode" id=stepcounter data-lang="java" 
+<textarea data-component="activecode" id=stepcounter2 data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>
@@ -654,13 +654,13 @@ public class RunestoneTests extends CodeTestHelper
 </div>
 <p><a class="reference internal" href="../_images/codingExercise6.png"><img alt="coding exercise" class="align-middle" src="../_images/codingExercise6.png" style="width: 30px;" /></a> <strong>Coding Exercise</strong></p>
 
-<div data-childcomponent="randomNumberInRange" class="runestone explainer ac_section alert alert-warning">
+<div data-childcomponent="randomNumberInRange2" class="runestone explainer ac_section alert alert-warning">
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">randomInteger</span></code> that takes two integer
 parameters <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> and returns a random integer value between min and max (inclusive).
 Have the main method call the function with different values.  You might want to go back and
 review random number generation in Unit 2-9.</p>
 
-<textarea data-component="activecode" id=randomNumberInRange data-lang="java" 
+<textarea data-component="activecode" id=randomNumberInRange2 data-lang="java" 
       data-timelimit=25000  data-codelens="true"   
     data-audio=''      
            data-wasm=/_static>

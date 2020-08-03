@@ -30,7 +30,7 @@
     pair: method; return 
     
 Writing Instance Methods
-======================
+=========================
 
 In Unit 5 you saw how to write **static methods**.  A static method is also referred to as a **class method**, and it is called
 without an object.  Because of this, static methods can't access y attributes (instance variables) or other non-static methods without first
@@ -209,7 +209,7 @@ Practice
       - II does not check against the boilingPoint and does not return only boolean values.
 
 Summary
--------
+--------
 
 - **Procedural Abstraction** (creating methods) reduces the complexity and repetition of code. We can name a block of code as a method and call it whenever we need it, abstracting away the details of how it works.  
 

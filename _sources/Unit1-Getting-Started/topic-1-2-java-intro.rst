@@ -447,14 +447,8 @@ For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the c
 
 |Groupwork| Debugging Challenge
 -----------------------------------
- 
-Pair programming is a successful software development technique 
-where two programmers work together at one computer. One, the driver, 
-types in code while the other, the navigator, gives ideas and feedback. 
-The two coders switch roles frequently. 
 
-Working with a partner, debug the following code. 
-Can you find the all the bugs and get the code to run? 
+
 
 
 .. activecode:: challenge1-2
@@ -462,7 +456,8 @@ Can you find the all the bugs and get the code to run?
    :autograde: unittest 
    :practice: T
 
-   Fix the code below.
+   Debug the following code. 
+   Can you find all the bugs and get the code to run? 
    ~~~~
    public class Challenge1_2
    {

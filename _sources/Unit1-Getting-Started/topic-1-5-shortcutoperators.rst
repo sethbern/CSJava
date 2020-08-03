@@ -42,6 +42,11 @@
 
    </strike>
 
+.. |visualizer| raw:: html
+
+   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>    
+
+
 Compound Assignment Operators 
 =============================
    

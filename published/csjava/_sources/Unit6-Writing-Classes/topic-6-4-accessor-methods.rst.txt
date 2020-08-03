@@ -54,9 +54,11 @@ Here's an example of an accessor method called getName() for the Student class w
 demonstrates how to call getName() using a Student object.  
 
 .. note: 
+
 Notice the signature **does not include the keyword static**.
 A static method does not have access to instance variables since it is not called on an object.  A non-static method
 on the other hand must be called with an object, and therefore can access the instance variables.
+
 
 .. code-block:: java
 
@@ -78,6 +80,7 @@ on the other hand must be called with an object, and therefore can access the in
         Student s = new Student();
         System.out.println("Name: " + s.getName() );
      }
+
 
 .. note::
 
@@ -103,6 +106,7 @@ Try the following code. Note that this active code window has 2 classes! The mai
   :practice: T
 
   Try the following code. Note that it has a bug! It tries to access the private instance variable email from outside the class Student.  Change the main method in Tester class so that it uses the appropriate public accessor method (get method) to access the email value instead.
+
   ~~~~
   public class TesterClass 
   {
@@ -147,7 +151,9 @@ Try the following code. Note that this active code window has 2 classes! The mai
         return id;
      }
   }
+
   ====
+
   import static org.junit.Assert.*;
     import org.junit.*;;
     import java.io.*;
@@ -179,7 +185,7 @@ There is a subtle difference in methods that return primitive types versus refer
 However, object variables really hold a reference to the object in memory. This is not the actual value, but its address in memory. So, if the method is returning an object like String, Java returns a copy of the object reference, not the value itself. Java was especially designed this way because objects tend to be large and we want to avoid copying large objects, so we just pass around references to the objects (their addresses in memory). So, when we call getName(), we actually get back a reference to the String for the name in memory. 
   
 toString()
-----------
+-----------
 
 .. |Java visualizer| raw:: html
 
@@ -248,6 +254,7 @@ Here is the Student class again, but this time with a toString() method. Note th
 --------------------------------------------------
 
 .. image:: Figures/animalclinic.png
+
     :width: 150
     :align: left
     :alt: Animal Clinic
@@ -344,6 +351,7 @@ Practice
             }
         }
 
+
 .. mchoice:: AP5-4-2
     :practice: T
 
@@ -383,6 +391,8 @@ Practice
     
       + Correct! Accessor methods have a return type of the instance variable they are returning.
       
+
+
 
 Summary
 -------

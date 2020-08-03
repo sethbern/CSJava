@@ -44,7 +44,7 @@ A function takes one or more values passed as formal parameters and computes a n
 
 An example method that returns a value (i.e. a function) is shown in the code below.
 
-.. activecode:: volumeCylinder
+.. activecode:: volumeCyl
   :language: java
   :autograde: unittest
   :practice: T
@@ -111,7 +111,7 @@ The return type must match with the value in the return statement.
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: inchestocentimeters
+.. activecode:: inchestocentimeter4
   :language: java
   :autograde: unittest
   :practice: T
@@ -182,7 +182,7 @@ The return type must match with the value in the return statement.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: m_5_3_1
+.. mchoice:: m_5_3_1a
    :practice: T
    :answer_a: return "hello";
    :answer_b: return true;
@@ -201,7 +201,7 @@ The return type must match with the value in the return statement.
      public static int mystery()
 
 
-.. mchoice:: m_5_3_2
+.. mchoice:: m_5_3_2b
    :practice: T
    :answer_a: return "hello";
    :answer_b: return true;
@@ -220,7 +220,7 @@ The return type must match with the value in the return statement.
      public static boolean mystery2()
 
 
-.. mchoice:: m_5_3_3
+.. mchoice:: m_5_3_3c
    :practice: T
    :answer_a: String result = mystery3();
    :answer_b: int result = mystery3();
@@ -237,7 +237,7 @@ The return type must match with the value in the return statement.
      public static int mystery3()
 
 
-.. mchoice:: m_5_3_4
+.. mchoice:: m_5_3_4d
    :practice: T
    :answer_a: String result = mystery4();
    :answer_b: int result = mystery4();
@@ -256,7 +256,7 @@ The return type must match with the value in the return statement.
      public static void mystery4()
 
 
-.. mchoice:: m_5_3_5
+.. mchoice:: m_5_3_5e
    :practice: T
    :answer_a: return 10;
    :answer_b: return 12 * 4;
@@ -277,7 +277,7 @@ The return type must match with the value in the return statement.
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: stepcounter
+.. activecode:: stepcounter2
   :language: java
   :autograde: unittest
   :practice: T
@@ -346,7 +346,7 @@ The return type must match with the value in the return statement.
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: randomNumberInRange
+.. activecode:: randomNumberInRange2
   :language: java
   :autograde: unittest
   :practice: T

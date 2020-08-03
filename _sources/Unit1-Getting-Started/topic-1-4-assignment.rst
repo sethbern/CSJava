@@ -18,12 +18,20 @@
     :width: 35
     :align: middle
     :alt: groupwork
+
+.. |visualizer| raw:: html
+
+   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>    
+ 
+
     
 Expressions and Assignment Statements
 =====================================
 
 In this lesson, you will learn about assignment statements and expressions 
 that contain math operators and variables. 
+
+You can use the |visualizer| for any of the coding problems in this unit.  Copy and paste the code into the class definition.
 
 Assignment Statements
 ---------------------
