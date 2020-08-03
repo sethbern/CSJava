@@ -20,18 +20,19 @@
     :align: middle
     :alt: groupwork
 
+
 .. |visualizer| raw:: html
 
-   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>    
- 
-   
+   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a> 
+
+.. |cup| raw:: html
+
+   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/"><img width="20" title="Based on icons by Jacob Halton and Francesco Terzini of the Noun Project" src="../_static/cup.png"></a>    
+
 Variables and Data Types
 ========================
 
 In this lesson, you will learn about variables and primitive data types.
-
-You can use the |visualizer| for any of the coding problems in this unit.  Copy and paste the code into the class definition.
-
 
 What is a Variable?
 -------------------
@@ -300,6 +301,7 @@ the memory location called score to 4.
             assertTrue(passed);
         }
    }
+
 
 When you are printing the value of a variable, never put quotes "" around the variable 
 because that will print out the variable 

@@ -23,6 +23,9 @@
 
    <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>    
  
+.. |cup| raw:: html
+
+   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/"><img width="20" title="Based on icons by Jacob Halton and Francesco Terzini of the Noun Project" src="../_static/cup.png">Java Visualizer</a>    
 
     
 Expressions and Assignment Statements
@@ -30,8 +33,6 @@ Expressions and Assignment Statements
 
 In this lesson, you will learn about assignment statements and expressions 
 that contain math operators and variables. 
-
-You can use the |visualizer| for any of the coding problems in this unit.  Copy and paste the code into the class definition.
 
 Assignment Statements
 ---------------------
@@ -182,6 +183,8 @@ previous value of score + 1.
         System.out.println(score);
         score = score + 1;
         System.out.println(score);
+        score = score + 1;
+        System.out.println(score);
       }
    }
    ====
@@ -199,7 +202,7 @@ previous value of score + 1.
         public void test1()
         {
             String output = getMethodOutput("main");
-            String expect = "0\n1\n";
+            String expect = "0\n1\n2\n";
             boolean passed = getResults(expect, output, "Expected output from main", true);
             assertTrue(passed);
         }
@@ -207,8 +210,8 @@ previous value of score + 1.
 
 
    
-Input with Variables
---------------------
+Storing User Input in Variables
+---------------------------------
 
 .. |repl JavaIOExample| raw:: html
 
@@ -219,23 +222,146 @@ Input with Variables
 
 Variables are a powerful abstraction in programming because the same algorithm can be 
 used with different input values saved in variables.  
-The code below (|repl JavaIOExample|) will say hello to anyone who types in their 
-name for different name values. Click on run and then type in your name. 
-The code ``scan.nextLine()`` gets the string value that you type into the window.  
+
+A Java program can ask the user to type in one or more values.   The Java class ``Scanner`` is used to read from
+an input stream, which is referenced by ``System.in``.  The code below shows an example of prompting the user to enter a name and 
+then printing a greeting.    
 The code ``String name = scan.nextLine()`` 
-stores the string value you typed into the *name* variable.  The program
-uses string concatenation to print a greeting using the name.
+gets a string value you typed into the window and then stores the value in a variable.  
 
 Run the program a few times, typing in a different name. The code works for any name: 
 behold, the power of variables!
 
-.. raw:: html
+.. activecode:: readinputstream
+   :language: java
+   :stdin: Fred Smith  
+   
+   Run this program to read in a name from the input stream. 
+   You can type a different name in the input window shown below the code.
+   ~~~~
 
-    <iframe height="500px" width="100%" style="max-width:90%; margin-left:5%"  src="https://repl.it/@BerylHoffman/JavaIOExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+    import java.util.Scanner;
+    public class NameReader {
+
+        public static void main(String[] args) {
+
+            Scanner scan = new Scanner(System.in);  
+
+            System.out.println("Please Enter your name: ");
+            String name = scan.nextLine();
+            System.out.println("Hello " + name);
+
+        }
+
+    }
+
+ 
+
+
+
+.. .. raw:: html
+
+..    <iframe height="500px" width="100%" style="max-width:90%; margin-left:5%"  src="https://repl.it/@BerylHoffman/JavaIOExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
     
 
-Most of the examples in this textbook will not use the
-Java System.in and Scanner classes.  However,  learning how to do input in Java is still very useful. 
+
+The Scanner class has several useful methods for reading user input:
+
+.. table:: 
+  :align: left
+  :widths: auto
+
+  =========================  ================================================
+  Method                           Description             
+  =========================  ================================================
+  nextLine()                 Scans all input up to the line break as a String     
+  next()                     Scans the next token of the input as a String    
+  nextInt()                  Scans the next token of the input as an int                    
+  nextDouble()               Scans the next token of the input as a double                      
+  nextBoolean()              Scans the next token of the input as a boolean                     
+  =========================  ================================================
+
+
+.. activecode:: readage
+   :language: java
+   :stdin: 20  
+   
+   Run this program to read in an integer from the input stream. 
+   You can type a different integer value in the input window shown below the code.
+   ~~~~
+
+    import java.util.Scanner;
+    public class AgeReader {
+        public static void main(String[] args) {
+            int age;
+            Scanner scan = new Scanner(System.in);
+            
+            System.out.println("How old are you?");
+            age = scan.nextInt();
+            System.out.println(age + " is a great age!");
+            
+        }
+    }
+
+
+
+
+|CodingEx| **Coding Exercise:** 
+
+The program below reads two integer values from the input stream and attempts to print the sum.  Unfortunately there is a problem
+with the last line of code that prints the sum.  
+
+.. activecode:: addtwonums
+   :language: java
+   :autograde: unittest   
+   :stdin: 5 7
+   
+   Run the program and look at the result. When the input is ``5`` and ``7``, the output is ``Sum is 57``. 
+   Both of the ``+`` operators in the print statement are performing string concatenation.  
+   While the first ``+`` operator 
+   should perform string concatenation, the second ``+`` operator should perform addition.   
+   You can force the second ``+`` operator to perform addition by putting the arithmetic expression in parentheses ``( num1 + num2 )``.  
+   ~~~~
+
+    import java.util.Scanner;
+    public class SumInput {
+        public static void main(String[] args) {
+            int num1, num2;
+            Scanner scan = new Scanner(System.in);
+            
+            System.out.println("Enter first number");
+            num1= scan.nextInt();
+            System.out.println("Enter second number");
+            num2= scan.nextInt();
+            System.out.println("Sum is " + num1 + num2);
+
+        }
+    }
+   ====
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+    
+    public RunestoneTests() {
+      super("SumInput");
+    }
+
+    @Test
+    public void test1()
+    {
+      String code = getCode();
+      int sum = countOccurences(code, "(num1 + num2)");
+      boolean passed = sum == 1;
+      
+      passed = getResults("1 sum", sum + " sum", "Update the last print statement to force addition (num1 + num2)", passed);
+      assertTrue(passed);
+    }
+   }
+
+
 More information on using the Scanner class can be found here https://www.w3schools.com/java/java_user_input.asp 
 
 Operators
@@ -469,10 +595,6 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
    What is the result of 3 % 8?
 	
 
-
-
-   
-
 |Groupwork| Programming Challenge : Dog Years
 ------------------------------------------------
 
@@ -501,9 +623,12 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
    :language: java
    :autograde: unittest
    :practice: T
+   :stdin: 2020 2005 2012  
 
    Calculate your age and your pet's age from the birthdates, and then your pet's age in dog years.
+   If you want an extra challenge, try reading the values using a Scanner.  
    ~~~~
+   import java.util.Scanner;
    public class Challenge1_4
    {
       public static void main(String[] args)
@@ -526,7 +651,6 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
          
          // Print out your age, your dog's age, and your dog's age in dog years. Make sure you print out text too so that the user knows what is being printed out.
         
-      
       
       }
    }

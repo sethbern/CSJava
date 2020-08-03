@@ -46,10 +46,15 @@
 
    <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>    
 
+.. |cup| raw:: html
+
+   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/"><img width="20" title="Based on icons by Jacob Halton and Francesco Terzini of the Noun Project" src="../_static/cup.png">Java Visualizer</a>    
+
 
 Compound Assignment Operators 
 =============================
-   
+|cup| 
+
 Compound assignment operators are shortcuts that do a math operation and assignment in one step. For example, ``x += 1`` adds 1 to x and assigns the sum to x. It is the same as ``x = x + 1``. This pattern is possible with any operator put in front of the = sign, as seen below.
 
 +------------+------------+-----------+----------+----------+
@@ -250,8 +255,7 @@ values of the variables at the end.   Be careful, ``%`` is the remainder operato
 
     <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java visualizer</a>
 
-If you have problems tracing the code to produce the correct result, use the |Java visualizer|. 
-Copy the code from above into the main method, click "Visualize execution", then step through the code.
+
 
 .. |Operators Maze game| raw:: html
 
