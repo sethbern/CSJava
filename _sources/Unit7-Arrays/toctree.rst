@@ -11,3 +11,4 @@ Arrays
    topic-7-4-summary.rst
    ArrayParsonsPractice.rst
    ArrayPractice.rst
+   Exercises.rst

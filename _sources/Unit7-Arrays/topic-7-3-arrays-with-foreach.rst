@@ -67,7 +67,7 @@ Use the enhanced for each loop with arrays whenever you can, because it cuts dow
 
 
 
-.. activecode:: foreach1
+.. activecode:: code7_3_1
    :language: java
    :autograde: unittest
    
@@ -132,7 +132,7 @@ Use the enhanced for each loop with arrays whenever you can, because it cuts dow
 
 
 
-.. activecode:: evenLoop
+.. activecode:: code7_3_2
    :language: java
    :autograde: unittest
    :practice: T
@@ -195,7 +195,7 @@ What if we had a loop that incremented all the elements in the array. Would that
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: incrementLoop
+.. activecode:: code7_3_3
    :language: java
    :autograde: unittest
    :practice: T
@@ -267,7 +267,7 @@ What if we had a loop that incremented all the elements in the array. Would that
 
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: qab_6A
+.. mchoice:: q7_3_1
    :practice: T
    :answer_a: Only I.
    :answer_b: I and III only.
@@ -289,7 +289,7 @@ What if we had a loop that incremented all the elements in the array. Would that
       III: If you wish to refer to elements through a variable name instead of an array index. 
 
 
-.. mchoice:: qfor-each
+.. mchoice:: q7_3_2
    :practice: T
    
    What is the output of the following code segment?
@@ -336,7 +336,7 @@ Foreach Loop Algorithms
 Here is an object-oriented example that has the array as a private instance variable in the class and provides a public method average that uses a for-each loop.  You can use the |Java Visualizer| or the Code Lens button to step through this code. 
      
 
-.. activecode:: lcaf2
+.. activecode:: code7_3_4
    :language: java
    :autograde: unittest
    
@@ -390,7 +390,7 @@ Here is an object-oriented example that has the array as a private instance vari
 
 |Exercise| **Check Your Understanding**
 
-.. parsonsprob:: pab_2
+.. parsonsprob:: q7_3_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -429,7 +429,7 @@ If you want to step through the correct code to see what it does in the Java Vis
 
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: qab_3
+.. mchoice:: q7_3_4
    :practice: T
    :answer_a: Whenever the first element in <i>array</i> is equal to <i>target</i>.
    :answer_b: Whenever <i>array</i> contains any element which equals <i>target</i>.
@@ -476,7 +476,7 @@ Copy the spellcheck method that you used in the Spell Checker Challenge in the l
 Re-write the method  to use an enhanced for-each loop instead of an indexed for-loop. 
 If you did the optional printStartsWith(firstLetters) method, re-write that one too. 
 
-.. activecode:: challenge-6-3-spellchecker2
+.. activecode:: code7_3_5
    :language: java
    :autograde: unittest
    

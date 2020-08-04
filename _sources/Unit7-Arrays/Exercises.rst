@@ -1,17 +1,16 @@
+.. qnum::
+   :prefix: 7-7-
+   :start: 1
 
 
 Multiple-Choice Exercises
 =========================
-
-
-
    
 Easier Multiple Choice Questions
 ----------------------------------
 
-These problems are easier than most of those that you will usually see on the AP CS A exam.
 
-.. mchoice:: qaeasy_1
+.. mchoice:: q7_7_1
    :practice: T
    :answer_a: <code>nums.length</code>
    :answer_b: <code>nums.length - 1</code>
@@ -21,7 +20,7 @@ These problems are easier than most of those that you will usually see on the AP
 
    Which index is the last element in an array called ``nums`` at?
    
-.. mchoice:: qaeasy_2new
+.. mchoice:: q7_7_2
    :practice: T
    :answer_a: <code>int[] scores = null;</code>
    :answer_b: <code>int[] scoreArray = {50,90,85};</code>
@@ -37,7 +36,7 @@ These problems are easier than most of those that you will usually see on the AP
 
    Which of the following declarations will cause a compile time error?
    
-.. mchoice:: qaeasy_3
+.. mchoice:: q7_7_3
    :practice: T
    :answer_a: 1
    :answer_b: 2
@@ -53,7 +52,7 @@ These problems are easier than most of those that you will usually see on the AP
 
    What is returned from ``arr[3]`` if ``arr={6, 3, 1, 2}``?  
    
-.. mchoice:: qaeasy_4
+.. mchoice:: q7_7_4
    :practice: T
    :answer_a: 17.5
    :answer_b: 30.0
@@ -83,7 +82,7 @@ These problems are easier than most of those that you will usually see on the AP
       
 You can step through the code above using the Java Visualizer by clicking on the following link `Prob-7-9-4 <http://www.pythontutor.com/java.html#code=public+class+ClassNameHere+%7B%0A+++%0A+++public+static+double+mystery(int%5B%5D+arr)%0A+++%7B%0A++++++double+output+%3D+0%3B%0A++++++for+(int+i+%3D+0%3B+i+%3C+arr.length%3B+i%2B%2B)%0A++++++%7B%0A+++++++++output+%3D+output+%2B+arr%5Bi%5D%3B%0A++++++%7D%0A++++++return+output+/+arr.length%3B%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+test+%3D+%7B10,+30,+30,+60%7D%3B%0A++++++System.out.println(mystery(test))%3B%0A++++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
-.. mchoice:: qaeasy_5old3
+.. mchoice:: q7_7_5
    :practice: T
    :answer_a: {-20, -10, 2, 8, 16, 60}
    :answer_b: {-20, -10, 2, 4, 8, 30}
@@ -113,7 +112,7 @@ You can step through the code above using the Java Visualizer by clicking on the
 You can step through the code above using the Java Visualizer by clicking on the following link `Prob-7-9-5 <http://www.pythontutor.com/java.html#code=public+class+Test+%7B%0A+++%0A+++private+int%5B+%5D+a+%3D+%7B-10,+-5,+1,+4,+8,+30%7D%3B%0A%0A+++public+void+doubleLast()%0A+++%7B%0A++++%0A+++++++for+(int+i+%3D+a.length+/+2%3B+i+%3C+a.length%3B+i%2B%2B)%0A+++++++%7B%0A+++++++++++a%5Bi%5D+%3D+a%5Bi%5D+*+2%3B%0A+++++++%7D%0A+++%7D%0A+++%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++%0A++++++Test+myTest+%3D+new+Test()%3B%0A++++++myTest.doubleLast()%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 
-.. mchoice:: qaeasy_6
+.. mchoice:: q7_7_6
    :practice: T
    :answer_a: {1, 3, -5, -2}
    :answer_b: {3, 9, -15, -6}
@@ -141,7 +140,7 @@ You can step through the code above using the Java Visualizer by clicking on the
         } // end while
      } // end method  
      
-.. mchoice:: qaeasy
+.. mchoice:: q7_7_7
    :practice: T
    :answer_a: {1, 3, -5, -2}
    :answer_b: {3, 9, -15, -6}
@@ -177,9 +176,8 @@ You can step through the code above using the Java Visualizer by clicking on the
 Medium Multiple Choice Questions
 ----------------------------------
 
-These problems are similar to those you will see on the AP CS A exam.
 
-.. mchoice:: qamed_1
+.. mchoice:: q7_7_8
    :practice: T
    :answer_a: The value in <code>b[0]</code> does not occur anywhere else in the array
    :answer_b: Array <code>b</code> is sorted
@@ -199,7 +197,7 @@ These problems are similar to those you will see on the AP CS A exam.
 
      b[0] != b[i] for all i from 1 to k-1
 
-.. mchoice:: qamed_2
+.. mchoice:: q7_7_9
    :practice: T
    :answer_a: whenever the first element in <code>a</code> is equal to <code>val</code>
    :answer_b: Whenever <code>a</code> contains any element which equals <code>val</code>
@@ -225,7 +223,7 @@ These problems are similar to those you will see on the AP CS A exam.
      
 You can step through the code above with the Java Visualizer by clicking the following link `Prob-7-10-2 <http://www.pythontutor.com/java.html#code=public+class+ClassNameHere+%7B%0A+++%0A+++public+static+boolean+test(int%5B%5D+a,int+val)+%7B%0A++++++boolean+temp+%3D+false%3B%0A+++++for+(int+i+%3D+0%3B+i+%3C+a.length%3B+i%2B%2B)+%7B%0A++++++++temp+%3D+(a%5Bi%5D+%3D%3D+val)%3B%0A+++++%7D%0A+++++return(temp)%3B%0A+++%7D%0A++++++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+myArray+%3D+%7B9,+-3,+81,+-3028,+5%7D%3B%0A++++++System.out.println(test(myArray,9))%3B%0A++++++System.out.println(test(myArray,5))%3B%0A++++++System.out.println(test(myArray,0))%3B%0A++++++System.out.println(test(myArray,-3))%3B+%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
-.. mchoice:: qamed_3
+.. mchoice:: q7_7_10
    :practice: T
    :answer_a: It is the length of the shortest consecutive block of the value <code>target</code>  in <code>nums</code> 
    :answer_b: It is the length of the array <code>nums</code> 
@@ -263,7 +261,7 @@ You can step through the code above with the Java Visualizer by clicking the fol
      
 You can step through the code above with the Java Visualizer by clicking the following link `Prob-7-10-3 <http://www.pythontutor.com/java.html#code=public+class+ArrayWorker+%7B%0A+++%0A++++private+int%5B%5D+nums%3B%0A+++%0A++++public+ArrayWorker(int%5B%5D+theNums)%0A++++%7B%0A+++++++nums+%3D+theNums%3B%0A++++%7D%0A+++%0A+++++public+int+findLongest(int+target)+%7B%0A++++++++int+lenCount+%3D+0%3B%0A++++++++int+maxLen+%3D+0%3B%0A++++++++for+(int+k+%3D+0%3B+k+%3C+nums.length%3B+k%2B%2B)+%7B%0A+++++++++++if+(nums%5Bk%5D+%3D%3D+target)+%7B%0A++++++++++++++lenCount%2B%2B%3B%0A+++++++++++%7D+else+if+(lenCount+%3E+maxLen)+%7B%0A++++++++++++++maxLen+%3D+lenCount%3B%0A+++++++++++%7D%0A++++++++%7D%0A++++++++if+(lenCount+%3E+maxLen)+%7B%0A+++++++++++maxLen+%3D+lenCount%3B%0A++++++++%7D%0A++++++++return+maxLen%3B%0A+++++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+temp+%3D+%7B7,+10,+10,+15,+15,+15,+15,+10,+10,+10,+15,+10,+10%7D%3B%0A++++++ArrayWorker+arrayWorker+%3D+new+ArrayWorker(temp)%3B%0A++++++System.out.println(arrayWorker.findLongest(10))%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.  Can you fix the code in the Java Visualizer so that it works as intended?
 
-.. mchoice:: qamed_4
+.. mchoice:: q7_7_11
    :practice: T
    :answer_a: All values in positions <code>m+1</code> through <code>myStuff.length-1</code> are greater than or equal to <code>n</code>.
    :answer_b: All values in position 0 through <code>m</code> are less than <code>n</code>.
@@ -299,7 +297,7 @@ You can step through the code above with the Java Visualizer by clicking the fol
 You can step through the code above with the Java Visualizer by clicking the following link `Prob-7-10-4 <http://www.pythontutor.com/java.html#code=public+class+ArrayWorker+%7B%0A+++%0A++++private+int%5B%5D+myStuff%3B%0A+++%0A++++public+ArrayWorker(int%5B%5D+theStuff)%0A++++%7B%0A+++++++myStuff+%3D+theStuff%3B%0A++++%7D%0A%0A+++++//precondition%3A+myStuff+contains%0A+++++//+++integers+in+no+particular+order%0A+++++public+int+mystery(int+num)+%7B%0A++++++++for+(int+k+%3D+myStuff.length+-+1%3B+k+%3E%3D+0%3B+k--)+%7B%0A+++++++++++if+(myStuff%5Bk%5D+%3C+num)+%7B%0A+++++++++++++++return+k%3B%0A+++++++++++%7D%0A++++++++%7D%0A++++++++return+-1%3B%0A+++++%7D%0A%0A+++++%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+temp+%3D+%7B-3,+1,+3,+2,+6%7D%3B%0A++++++ArrayWorker+arrayWorker+%3D+new+ArrayWorker(temp)%3B%0A++++++int+m+%3D+arrayWorker.mystery(2)%3B%0A++++++System.out.println(m)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 
-.. mchoice:: qamed_5
+.. mchoice:: q7_7_12
    :practice: T
    :answer_a: Returns the index of the largest value in array <code>arr</code>.
    :answer_b: Returns the index of the first element in array <code>arr</code> whose value is greater than <code>arr[loc]</code>.
@@ -335,7 +333,7 @@ You can step through the code above with the Java Visualizer by clicking the fol
      
 You can step through the code above with the Java Visualizer by clicking the following link `Prob-7-10-5 <http://www.pythontutor.com/java.html#code=public+class+Test+%7B%0A+++%0A+++private+int%5B%5D+arr+%3D+null%3B%0A+++%0A+++public+Test(int%5B%5D+theArr)%0A+++%7B%0A++++++arr+%3D+theArr%3B%0A+++%7D%0A%0A+++//+precondition%3A+arr.length+!%3D+0%0A+++public+int+checkArray()%0A+++%7B%0A++++++int+loc+%3D+arr.length+/+2%3B%0A++++++for+(int+k+%3D+0%3B+k+%3C+arr.length%3B+k%2B%2B)%0A++++++%7B%0A++++++++if+(arr%5Bk%5D+%3E+arr%5Bloc%5D)%0A++++++++%7B%0A++++++++++++loc+%3D+k%3B%0A++++++++%7D%0A++++++%7D%0A++++++return+loc%3B%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+temp+%3D+%7B5,+93,+3,+20,+81%7D%3B%0A++++++Test+myTest+%3D+new+Test(temp)%3B%0A++++++System.out.println(myTest.checkArray())%3B%0A++++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
      
-.. mchoice:: qamed_6
+.. mchoice:: q7_7_13
         :practice: T
         :answer_a: 4
         :answer_b: 2
@@ -363,7 +361,7 @@ You can step through the code above with the Java Visualizer by clicking the fol
             
 You can step through the code above with the Java Visualizer by clicking the following link `Prob-7-10-6 <http://www.pythontutor.com/java.html#code=public+class+Test+%7B%0A+++%0A%0A+++public+static+int+m1(int%5B%5D+a)%0A+++%7B%0A++++++a%5B1%5D--%3B%0A++++++return+(a%5B1%5D+*+2)%3B%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+temp+%3D+%7B7,+3,+-1%7D%3B%0A++++++System.out.println(temp%5B1%5D)%3B%0A++++++m1(temp)%3B%0A++++++System.out.println(temp%5B1%5D)%3B+%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
-.. mchoice:: qamed_7
+.. mchoice:: q7_7_14
    :practice: T
    :answer_a: k - 1
    :answer_b: k + 1
@@ -391,7 +389,7 @@ You can step through the code above with the Java Visualizer by clicking the fol
       
 You can step through the code above with the Java Visualizer by clicking the following link `Prob-7-10-7 <http://www.pythontutor.com/java.html#code=public+class+ClassNameHere+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+arr+%3D+%7B1,+5,+3%7D%3B%0A++++++int+someValue+%3D+10%3B%0A++++++int+k+%3D+3%3B%0A++++++%0A++++++for+(int+i+%3D+1%3B+i+%3C+k%3B+i%2B%2B)%0A++++++%7B%0A+++++++++if+(arr%5Bi%5D+%3C+someValue)%0A+++++++++%7B%0A++++++++++++System.out.print(%22HELLO%22)%3B%0A+++++++++%7D%0A++++++%7D%0A++++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
-.. mchoice:: qamed_8
+.. mchoice:: q7_7_15
    :practice: T
    :answer_a: {2, 6, 2, -1, -3}
    :answer_b: {-23, -21, -13, -3, 6}
@@ -417,7 +415,7 @@ You can step through the code above with the Java Visualizer by clicking the fol
       
 You can step through the code above with the Java Visualizer by clicking the following link `Prob-7-10-8 <http://www.pythontutor.com/java.html#code=public+class+Test+%7B%0A+++%0A+++public+static+void+changeArray(int%5B%5D+data)%0A+++%7B%0A++++++for+(int+k+%3D+data.length+-+1%3B+k+%3E+0%3B+k--)%0A+++++++++data%5Bk+-+1%5D+%3D+data%5Bk%5D+%2B+data%5Bk+-+1%5D%3B%0A+++%7D%0A+++%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++%0A++++++int%5B%5D+temp+%3D+%7B2,+8,+10,+9,+6%7D%3B%0A++++++changeArray(temp)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
-.. mchoice:: qamed_9
+.. mchoice:: q7_7_16
    :practice: T
    :answer_a: [-2, -1, -5, 3, -4]
    :answer_b: [-2, -1, 3, -8, 6]
@@ -445,7 +443,7 @@ You can step through the code above with the Java Visualizer by clicking the fol
       
 You can step through the code above with the Java Visualizer by clicking the following link `Prob-7-10-9 <http://www.pythontutor.com/java.html#code=public+class+Test+%7B%0A+++%0A%0A+++public+static+void+copyArray(int%5B%5D+arr1,+int%5B%5D+arr2)%0A+++%7B%0A+++++++++for+(int+i+%3D+arr1.length+/+2%3B+i+%3C+arr1.length%3B+i%2B%2B)%0A+++++++++%7B%0A++++++++++++arr1%5Bi%5D+%3D+arr2%5Bi%5D%3B%0A+++++++++%7D%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+temp1+%3D+%7B1,+5,+3,+-8,+6%7D%3B%0A++++++int%5B%5D+temp2+%3D+%7B-2,+-1,+-5,+3,+-4%7D%3B%0A++++++copyArray(temp1,temp2)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
-.. mchoice:: qamed_10
+.. mchoice:: q7_7_17
    :practice: T
    :answer_a: The values don't matter this will always cause an infinite loop.
    :answer_b: Whenever <code>a</code> includes a value that is less than or equal to zero.
@@ -475,7 +473,7 @@ You can step through the code above using the Java Visualizer by clicking on the
 
 
      
-.. mchoice:: qab_4
+.. mchoice:: q7_7_18
    :practice: T
    :answer_a: All values in positions <i>m+1</i> through <i>myStuff.length-1</i> are greater than or equal to <i>n</i>.
    :answer_b: All values in position 0 through <i>m</i> are less than <i>n</i>.
@@ -512,9 +510,8 @@ You can step through the code above using the Java Visualizer by clicking on the
 Hard Multiple Choice Questions
 ----------------------------------
 
-These problems are harder than most of those that you will usually see on the AP CS A exam.
 
-.. mchoice:: qahard_1
+.. mchoice:: q7_7_19
    :practice: T
    :answer_a: Both implementations work as intended and are equally fast.
    :answer_b: Both implementations work as intended, but implementation 1 is faster than implementation 2.

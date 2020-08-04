@@ -60,7 +60,7 @@ What does the code above print out? You can follow the code in this |visualizer|
    
 |CodingEx| **Coding Exercise**
 
-.. activecode:: arraytrace1
+.. activecode:: code7_2_1
    :language: java
    :autograde: unittest    
    
@@ -143,7 +143,7 @@ For example, here is a loop traversing the highScores array to print every score
     
 |CodingEx| **Coding Exercise**
 
-.. activecode:: arraytrace2
+.. activecode:: code7_2_2
    :language: java
    :autograde: unittest  
       
@@ -212,7 +212,7 @@ The following code demonstrates a loop that changes the values in an array. In t
 
 
 
-.. activecode:: lcal1
+.. activecode:: code7_2_3
    :language: java
    :autograde: unittest  
    
@@ -276,7 +276,7 @@ The following code demonstrates a loop that changes the values in an array. In t
    
 |Exercise| **Check Your Understanding**
 
-.. parsonsprob:: pab_1r
+.. parsonsprob:: q7_2_1
    :numbered: left
    :practice: T
    :adaptive:
@@ -316,7 +316,7 @@ You don't have to loop through an array from the front to the back.  You can loo
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: lcbf1
+.. activecode:: code7_2_4
    :language: java
    :autograde: unittest  
    :practice: T
@@ -413,7 +413,7 @@ You don't have to loop through an array from the front to the back.  You can loo
 
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: qab_6
+.. mchoice:: q7_2_2
    :practice: T
    :answer_a: -1
    :answer_b: -15
@@ -442,7 +442,7 @@ You don't have to loop through an array from the front to the back.  You can loo
          return -1; // to show none found
       }
 
-.. mchoice:: qab_7
+.. mchoice:: q7_2_3
    :practice: T
    :answer_a: -1
    :answer_b: 1
@@ -482,7 +482,7 @@ Looping through Part of an Array
 	
 You don't have to loop through all of the elements of an array.  You can loop through just some of the elements of an array using a for loop.  The following code doubles the first five elements in an array.  Notice that it uses a complex conditional (``&&``) on line 14 to make sure that the loop doesn't go beyond the length of the array, because if you had an array that had less than 5 elements, you wouldn't want the code to try to double the 5th element which doesn't exist! Notice that in this code, the array is a private instance variable of the class ArrayWorker. It is created in the constructor and changed or accessed by the methods. 
 
-.. activecode:: lclp1
+.. activecode:: code7_2_5
    :language: java
    :autograde: unittest  
    :practice: T
@@ -568,7 +568,7 @@ You don't have to loop through all of the elements of an array.  You can loop th
 
 You can even start in the middle and loop through the rest of the array.  
 
-.. activecode:: lclp2
+.. activecode:: code7_2_6
    :language: java
    
    Does this work for arrays that have an even number of elements?  Does it work for arrays that have an odd number of elements?  Modify the main code below to test with both arrays with an even number of items and an odd number.
@@ -602,7 +602,7 @@ You can even start in the middle and loop through the rest of the array.
    
 
 
-.. mchoice:: qab_8
+.. mchoice:: q7_2_4
    :practice: T
    :answer_a: {-40, -30, 4, 16, 32, 66}
    :answer_b: {-40, -30, 4, 8, 16, 32}
@@ -651,7 +651,7 @@ assigning to the same array object that was used for the method call.
 
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: qab_9
+.. mchoice:: q7_2_5
    :practice: T
    :answer_a: {-40, -30, 4, 16, 32, 66}
    :answer_b: {-40, -30, 4, 8, 16, 33}
@@ -681,7 +681,7 @@ assigning to the same array object that was used for the method call.
          }
       }
    
-.. parsonsprob:: pab_3
+.. parsonsprob:: q7_2_6
    :numbered: left
    :practice: T
    :adaptive:
@@ -709,7 +709,7 @@ assigning to the same array object that was used for the method call.
    =====
    } // end method
    
-.. parsonsprob:: pab_4
+.. parsonsprob:: q7_2_7
    :numbered: left
    :practice: T
    :adaptive:
@@ -741,7 +741,7 @@ When processing all array elements, be careful to start at the first index which
 
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: qIndexOutOfBounds
+.. mchoice:: q7_2_8
    :practice: T
 
    Which of the following loop headers will cause an ArrayIndexOutOfBounds error while traversing the array scores?
@@ -772,7 +772,7 @@ When processing all array elements, be careful to start at the first index which
 
 
 
-.. activecode:: offbyone
+.. activecode:: code7_2_7
    :language: java
    
    The following code has an ArrayIndexOutOfBoundsException. It has 2 common off-by-one errors in the loop. Can you fix it and make the loop print out all the scores?
@@ -799,7 +799,7 @@ Be careful not to jump out of loop too early when you are looking for a value in
 
 
 
-.. activecode:: lcap1
+.. activecode:: code7_2_8
    :language: java
    
    What is wrong with the code below?  The first time through the loop it will start with the 
@@ -839,7 +839,7 @@ Be careful not to jump out of loop too early when you are looking for a value in
 
 
       
-.. mchoice:: qab_5
+.. mchoice:: q7_2_9
    :practice: T
    :answer_a: The values don't matter this will always cause an infinite loop.
    :answer_b: Whenever <i>a</i> includes a value that is less than or equal to zero.
@@ -886,7 +886,7 @@ The following Active Code uses a dictionary array of the most common 100 English
 3. Optional Challenge: Write a method printStartsWith(String firstLetters, String[] dictionary) that prints out the words in the dictionary array that start with the characters in the word firstLetters. You could use the Java String |startsWith()| method here if you'd like to, or use indexOf() to see if the firstLetters is at index 0 of the string. This is not autograded.
 
 
-.. activecode:: challenge-6-2-spellchecker
+.. activecode:: code7_2_9
    :language: java
    :autograde: unittest    
    

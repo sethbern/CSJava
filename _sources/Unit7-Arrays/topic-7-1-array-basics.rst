@@ -55,19 +55,9 @@ An array is like a row of small lockers, except that you can't cram lots of stuf
 
 You can store a value in an array using an **index** (location in the array). An array index is like a locker number.  It helps you find a particular place to store your stuff and retrieve stuff.    You can get or store a value from or to an array using an index. 
 
-Arrays and lists in most programming languages start counting elements from the number 0, so the first element in an array is at index 0. This is similar to how Strings are indexed in Java -- the first character is at index 0.  If you used App Inventor in the past, you might remember that list elements there start at 1 instead of 0, so make sure you remember that in Java, arrays start the index at 0!
-
-.. figure:: Figures/appinvListComparison.png
-    :width: 100%
-    :align: center
-    :figclass: align-center
-    
-    Figure 2: Comparing App Inventor lists and Java arrays
-    
-.. shortanswer:: arrayAnalogy
-
-   Can you think of another example of something that is like an array (like a row of lockers)?
-   
+Arrays and lists in most programming languages start counting elements from the number 0, 
+so the first element in an array is at index 0. 
+This is similar to how Strings are indexed in Java -- the first character is at index 0.  
 
 
 Declaring and Creating an Array
@@ -101,7 +91,7 @@ To actually create an array after declaring the variable, use the **new** keywor
 
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: createarray
+.. mchoice:: q7_1_1
    :practice: T
    :answer_a: int[] prices = new int[10];
    :answer_b: double[] prices = new double[10];
@@ -120,7 +110,7 @@ To actually create an array after declaring the variable, use the **new** keywor
 
 
 
-.. activecode:: lcab1
+.. activecode:: code7_1_1
    :language: java
    :autograde: unittest
    :practice: T
@@ -222,7 +212,7 @@ Arrays know their length (how many elements they can store).  It is a public rea
 
 
 
-.. activecode:: lcab2
+.. activecode:: code7_1_2
    :language: java
    :autograde: unittest   
    
@@ -280,7 +270,7 @@ Arrays know their length (how many elements they can store).  It is a public rea
 
 |Exercise| **Check your understanding**
    
-.. mchoice:: qab_2
+.. mchoice:: q7_1_2
    :practice: T
    :answer_a: <code>highScores.length</code>
    :answer_b: <code>highScores.length - 1</code>
@@ -317,7 +307,18 @@ An indexed variable like **arrayname[index]** can be used anywhere a regular var
 
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: array-access1
+.. mchoice:: q7_1_3
+   :practice: T
+   :answer_a: 0
+   :answer_b: 1
+   :correct: a
+   :feedback_a: The index is really telling the computer how far the item is from the front of the array.  So the first element in an array is at index 0. 
+   :feedback_b: While this matches with how we number some things, the first item in an array is at index 0.
+
+   At what index do you find the first element of an array?
+ 
+
+.. fillintheblank:: q7_1_4
     
     Fill in the blank with code to access the cars array.
 
@@ -329,9 +330,9 @@ An indexed variable like **arrayname[index]** can be used anywhere a regular var
    String v = |blank|;
 
    -   :cars\[1\]: Correct.
-       :x: Use the array name cars with [ ] with a number in it. Don't use spaces in your answer!
+       :x: Use the array name cars with [ ] with a number in it. Don't use spaces in your answer! Remember that the first element in an array starts at index 0. 
        
-.. fillintheblank:: array-access2
+.. fillintheblank:: q7_1_5
 
     Fill in the blank with code to access the cars array.  NOTE: The semicolon is provided for you after the box.
     
@@ -344,33 +345,13 @@ An indexed variable like **arrayname[index]** can be used anywhere a regular var
    -   :cars\[0\]: Correct.
        :x: Use the array name cars with [ ] with a number in it. Remember which index is for the first item in the array. Don't use spaces in your answer!
 
-.. .. clickablearea:: arrayClick1
-        :question: Click on the values at index 1 and 3 in the following array.
+  
+.. clickablearea:: q7_1_6
+        :question: Click on the value at index 2 in the following array.
         :feedback: Remember that the first value is at index 0.  Click on an area again to unselect it and try again.
         :table:
-        :correct: 1,2;1,4
-        :incorrect: 1,1;1,3;
-        
-        +----+----+----+----+
-        | 3  | 2  | 1  | -3 |
-        +----+----+----+----+
-
-.. .. mchoice:: qab_1
-   :practice: T
-   :answer_a: 0
-   :answer_b: 1
-   :correct: a
-   :feedback_a: The index is really telling the computer how far the item is from the front of the array.  So the first element in an array is at index 0. 
-   :feedback_b: While this matches with how we number some things, the first item in an array is at index 0.
-
-   At what index do you find the first element of an array?
-   
-.. .. clickablearea:: arrayClick2
-        :question: Click on the values at index 0 and 2 in the following array.
-        :feedback: Remember that the first value is at index 0.  Click on an area again to unselect it and try again.
-        :table:
-        :correct: 1,1;1,3
-        :incorrect: 1,2;1,4;
+        :correct: 1,3;
+        :incorrect: 1,1;1,2;1,4;
         
         +----+----+----+----+
         | 4  | -2 |  8 | 7  |
@@ -379,9 +360,9 @@ An indexed variable like **arrayname[index]** can be used anywhere a regular var
 
 ..  **Coding Exercise**
 
-.. Try out the following code which has an int array of highScores and names. Can you print out 3rd score in the array (remember that the first score is at index 0)? Can you change last score to 97 using an assignment statement in the code? Can you change the array so that it has 6 elements and add another score and print it out? What happens if you try to access an element that is not there, for example at index 7?
+Try out the following code which has an int array of highScores and names. Can you print out 3rd score in the array (remember that the first score is at index 0)? Can you change last score to 97 using an assignment statement in the code? Can you change the array so that it has 6 elements and add another score and print it out? What happens if you try to access an element that is not there, for example at index 7?
 
-.. .. activecode:: arrayAccess
+.. activecode:: code7_1_3
    :language: java
    
    public class Test1
@@ -416,7 +397,7 @@ If you want to keep track of the top 5 highest scores in a game and the names of
 
 
 
-.. activecode:: array-set
+.. activecode:: code7_1_4
    :language: java
    :autograde: unittest   
    
@@ -498,7 +479,7 @@ Here's a fun String array of image filenames. The following code displays an onl
 
 
     
-.. activecode:: imageArray
+.. activecode:: code7_1_5
    :language: java
    
    Can you change the index variable's value so that it prints out the puppy image? Can you print out the reindeer? Try all of them! What indices did you need to use? Then try using a random number for the index instead. Remember that (int)(Math.random()*max) will return a number from 0 up to max. What's the maximum number it can be for this array?
@@ -543,7 +524,7 @@ In this challenge, you will create a guide to different countries using arrays.
 
 3. Print out the country name, its capital, and its language, and the map image for that country using the random index to access the corresponding item in each parallel array. For the images, the printHTMLimage method has been given to get the image URL online and print it out as an HTML image.
 
-.. activecode:: challenge-1-6-countries
+.. activecode:: code7_1_6
    :language: java
    :autograde: unittest        
    

@@ -7,7 +7,7 @@ Mixed Up Code Practice
 
 Try to solve each of the following. Click the *Check Me* button to check each solution.  You will be told if your solution is too short, has a block in the wrong order, or you are using the wrong block.  Some of the problems have an extra block or two that aren't needed in the correct solution.  Try to solve these on your phone or other mobile device!
 
-.. parsonsprob:: ch7ex1muc
+.. parsonsprob:: q7_5_1
    :numbered: left
    :practice: T
    :adaptive:
@@ -26,7 +26,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    }
 
 
-.. parsonsprob:: ch7ex2muc
+.. parsonsprob:: q7_5_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -45,7 +45,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    }
 
 
-.. parsonsprob:: ch7ex3muc
+.. parsonsprob:: q7_5_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -66,7 +66,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end for loop
 
 
-.. parsonsprob:: ch7ex4muc
+.. parsonsprob:: q7_5_4
    :numbered: left
    :practice: T
    :adaptive:
@@ -94,7 +94,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end findSmallest method
 
 
-.. parsonsprob:: ch7ex5muc
+.. parsonsprob:: q7_5_5
    :numbered: left
    :practice: T
    :adaptive:
@@ -118,7 +118,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end findAverage method
 
 
-.. parsonsprob:: ch7ex6muc
+.. parsonsprob:: q7_5_6
    :numbered: left
    :practice: T
    :adaptive:
@@ -148,7 +148,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end findLargest method
 
 
-.. parsonsprob:: ch7ex7muc
+.. parsonsprob:: q7_5_7
    :numbered: left
    :practice: T
    :adaptive:
@@ -174,7 +174,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end shiftRight method
 
 
-.. parsonsprob:: ch7ex8muc
+.. parsonsprob:: q7_5_8
    :numbered: left
    :practice: T
    :adaptive:
@@ -197,7 +197,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end makeMiddle method
 
 
-.. parsonsprob:: ch7ex9muc
+.. parsonsprob:: q7_5_9
    :numbered: left
    :practice: T
    :adaptive:
@@ -227,7 +227,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end reverse method
 
 
-.. parsonsprob:: ch7ex10muc
+.. parsonsprob:: q7_5_10
    :numbered: left
    :practice: T
    :adaptive:
