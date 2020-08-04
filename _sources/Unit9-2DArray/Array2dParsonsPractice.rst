@@ -8,7 +8,7 @@ Mixed Up Code Practice
 Try to solve each of the following. Click the *Check Me* button to check each solution.  You will be told if your solution is too short, has a block in the wrong order, or you are using the wrong block.  Some of the problems have an extra block or two that aren't needed in the correct solution.  Try to solve these on your phone or other mobile device!
 
 
-.. parsonsprob:: ch9ex1muc
+.. parsonsprob:: q9_4_1
    :numbered: left
    :practice: T
    :adaptive:
@@ -31,7 +31,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end outer for loop
 
 
-.. parsonsprob:: ch9ex2muc
+.. parsonsprob:: q9_4_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -58,7 +58,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end outer for loop
 
 
-.. parsonsprob:: ch9ex3muc
+.. parsonsprob:: q9_4_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -90,7 +90,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end method
 
 
-.. parsonsprob:: ch9ex4muc
+.. parsonsprob:: q9_4_4
    :numbered: left
    :practice: T
    :adaptive:
@@ -123,7 +123,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end method
 
 
-.. parsonsprob:: ch9ex5muc
+.. parsonsprob:: q9_4_5
    :numbered: left
    :practice: T
    :adaptive:
@@ -153,7 +153,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end method
 
 
-.. parsonsprob:: ch9ex6muc
+.. parsonsprob:: q9_4_6
    :numbered: left
    :practice: T
    :adaptive:
@@ -185,7 +185,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end method
 
 
-.. parsonsprob:: ch9ex7muc
+.. parsonsprob:: q9_4_7
    :numbered: left
    :practice: T
    :adaptive:
@@ -219,7 +219,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end method
 
 
-.. parsonsprob:: ch9ex8muc
+.. parsonsprob:: q9_4_8
    :numbered: left
    :practice: T
    :adaptive:
@@ -256,7 +256,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end method
 
 
-.. parsonsprob:: ch9ex9muc
+.. parsonsprob:: q9_4_9
    :numbered: left
    :practice: T
    :adaptive:
@@ -292,7 +292,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    } //end method
 
 
-.. parsonsprob:: ch9ex10muc
+.. parsonsprob:: q9_4_10
    :numbered: left
    :practice: T
    :adaptive:

@@ -39,7 +39,7 @@ Concept Summary
 Vocabulary Practice
 ----------------------
 
-.. dragndrop:: ch2darr_match_1
+.. dragndrop:: q9_3_1
     :feedback: Review the summaries above.
     :match_1: The index of the last row|||arr.length - 1
     :match_2: The number of elements in the array|||arr.length * arr[0].length
@@ -48,7 +48,7 @@ Vocabulary Practice
     
     Drag the item from the left and drop it on its corresponding answer on the right.  Click the "Check Me" button to see if you are correct.
     
-.. dragndrop:: ch2darr_match_2
+.. dragndrop:: q9_3_2
     :feedback: Review the summaries above.
     :match_1: Declare an 2d integer array named nums|||int[][] nums;
     :match_2: Declare and create a String 2d array named list1 that has 3 rows and 2 columns|||String[][] list1 = new String[3][2];
@@ -57,22 +57,16 @@ Vocabulary Practice
     
     Drag the description from the left and drop it on the correct code on the right.  Click the "Check Me" button to see if you are correct.
     
-.. |Quizlet| raw:: html
-
-   <a href="https://quizlet.com/434082842/cs-awesome-unit-8-vocabulary-flash-cards/" target="_blank" style="text-decoration:underline">Quizlet</a>
-
-
-For more practice, see this |Quizlet|.
 
 Common Mistakes
 ---------------
 
-  -  forgetting to create the array - only declaring it (``int[][] nums;``).
-  -  using 1 as the first index not 0 for rows and/or columns.
-  -  using ``array.length`` as the last valid row index, not ``array.length - 1``.
-  -  using ``array[0].length`` as the last valid column index, not ``array[0].length - 1``.
-  -  using ``array.length()`` instead of ``array.length`` (not penalized on the free response)
-  -  going out of bounds when looping through an array  (using ``index <= array.length``).  You will get an ``ArrayIndexOutOfBoundsException``.  
-  -  jumping out an loop by using one or more return statements before every value has been processed.  
-  -  using the wrong starting and ending indicies on loops.
-  -  using ``array.length`` for both the number of rows and columns.  Use ``array[0].length`` for the number of columns.
+-  forgetting to create the array - only declaring it (``int[][] nums;``).
+-  using 1 as the first index not 0 for rows and/or columns.
+-  using ``array.length`` as the last valid row index, not ``array.length - 1``.
+-  using ``array[0].length`` as the last valid column index, not ``array[0].length - 1``.
+-  using ``array.length()`` instead of ``array.length`` (not penalized on the free response)
+-  going out of bounds when looping through an array  (using ``index <= array.length``).  You will get an ``ArrayIndexOutOfBoundsException``.  
+-  jumping out an loop by using one or more return statements before every value has been processed.  
+-  using the wrong starting and ending indicies on loops.
+-  using ``array.length`` for both the number of rows and columns.  Use ``array[0].length`` for the number of columns.

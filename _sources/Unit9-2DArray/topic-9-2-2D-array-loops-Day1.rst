@@ -45,7 +45,7 @@ Arrays know their length (how many elements they can store).  The length is a pu
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: qa2ldb_2
+.. mchoice:: q9_2_1
    :practice: T
    :answer_a: 2
    :answer_b: 4
@@ -57,7 +57,7 @@ Arrays know their length (how many elements they can store).  The length is a pu
 
    How many rows does ``a`` have if it is created as follows ``int[][] a = { {2, 4, 6, 8}, {1, 2, 3, 4}};``?	
    
-.. mchoice:: qa2ldb_3
+.. mchoice:: q9_2_2
    :practice: T
    :answer_a: nums[3][2]
    :answer_b: nums[2][3]
@@ -96,7 +96,7 @@ Since you can find out the number of rows and columns in a 2D array you can use 
 
 
 
-.. activecode:: lcgetAverage
+.. activecode:: code9_2_1
    :language: java 
    :autograde: unittest
    
@@ -171,7 +171,7 @@ Some key things to notice about this code are:
 
 |Exercise| **Mixed up programs**
 
-.. parsonsprob:: 9_largest
+.. parsonsprob:: q9_2_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -214,7 +214,7 @@ Most nested loops with 2D Arrays use "row-major order" where the outer loop goes
 
 
 
-.. activecode:: ColumnMajorTraversal
+.. activecode:: code9_2_2
    :language: java 
    :autograde: unittest
    

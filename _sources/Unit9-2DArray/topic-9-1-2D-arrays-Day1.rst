@@ -80,7 +80,7 @@ On the exam assume that any 2 dimensional (2D) array is in row-major order.  The
 
 Try to answer the following questions.  Click on the value or values to select them.  Click again to unselect a value.
 
-.. clickablearea:: clicktd1
+.. clickablearea:: q9_1_1
    :question: Click on all the values in the row at index 2
    :feedback: Rows are horizontal and columns are vertical and both start with index 0.
    :table:
@@ -95,7 +95,7 @@ Try to answer the following questions.  Click on the value or values to select t
    | 2  | -3 | -4 | -5 |
    +----+----+----+----+
    
-.. clickablearea:: clicktd2
+.. clickablearea:: q9_1_2
    :question: Click on all the values in the column at index 1
    :feedback: Rows are horizontal and columns are vertical and both start with index 0.
    :table:
@@ -110,7 +110,7 @@ Try to answer the following questions.  Click on the value or values to select t
    | 2  | -3 | -4 | -5 |
    +----+----+----+----+
 
-.. clickablearea:: clicktd3
+.. clickablearea:: q9_1_3
    :question: Click on the value at row index 2 and column index 1
    :feedback: Rows are horizontal and columns are vertical and both start with index 0.
    :table:
@@ -125,7 +125,7 @@ Try to answer the following questions.  Click on the value or values to select t
    | 2  | -3 | -4 | -5 |
    +----+----+----+----+
    
-.. clickablearea:: clicktd4
+.. clickablearea:: q9_1_4
    :question: Click on the value at row index 0 and column index 2
    :feedback: Rows are horizontal and columns are vertical and both start with index 0.
    :table:
@@ -140,7 +140,7 @@ Try to answer the following questions.  Click on the value or values to select t
    | 2  | -3 | -4 | -5 |
    +----+----+----+----+
    
-.. clickablearea:: clicktd5
+.. clickablearea:: q9_1_5
    :question: Click on the value at row index 1 and column index 1
    :feedback: Rows are horizontal and columns are vertical and both start with index 0.
    :table:
@@ -170,7 +170,7 @@ To declare a 2D array, specify the type of elements that will be stored in the a
 
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: 2darrayNullfill
+.. fillintheblank:: q9_1_6
 
    What is printed when you type System.out.println(ticketInfo); after you do the above declarations?
    
@@ -195,7 +195,7 @@ The code below creates a 2D array with 2 rows and 3 columns named ``ticketInfo``
   
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: 2daNumElfill
+.. fillintheblank:: q9_1_7
 
    How many elements are in ticketInfo? 
 
@@ -206,7 +206,7 @@ The code below creates a 2D array with 2 rows and 3 columns named ``ticketInfo``
 
 
 
-.. activecode:: 2DArrayCreate
+.. activecode:: code9_1_1
   :language: java
   :autograde: unittest  
   :practice: T

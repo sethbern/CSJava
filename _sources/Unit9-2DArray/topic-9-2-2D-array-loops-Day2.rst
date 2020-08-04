@@ -29,7 +29,7 @@ Enhanced For-Each Loop for 2D Arrays
 
 Since 2D arrays are really arrays of arrays you can also use a nested enhanced for-each loop to loop through all elements in an array.  We loop through each of the inner arrays and loop through all the values in each inner array. Notice the type of the outer loop array variable -- it is an array that will hold each row!
 
-.. activecode:: getAvgForEach
+.. activecode:: code9_2_3
    :language: java
    
    Nested enhanced for loops demo. Click on the CodeLens button to visualize and step through the code.
@@ -72,7 +72,7 @@ All of the array algorithms can be applied to 2D arrays too. For example, counti
 
 
 
-.. activecode:: lca2dloopPart
+.. activecode:: code9_2_4
    :language: java 
  
    What will the following code print out? Can you add another method that gets the total for a column? 
@@ -102,7 +102,7 @@ All of the array algorithms can be applied to 2D arrays too. For example, counti
 
 You can loop through just part of a 2D array. You can change the starting value and ending value to loop through a subset of a 2D array. 
 
-.. activecode:: lca2dloopPart2
+.. activecode:: code9_2_5
    :language: java 
 
    Loooping through just part of a 2D array.
@@ -138,7 +138,7 @@ Here is a linear search algorithm where we access each row and then apply a line
 
 
 
-.. activecode:: linearSearch2DArrays
+.. activecode:: code9_2_6
    :language: java 
    
    What will the following code print? Can you change the code to work for a String 2D array?
@@ -230,7 +230,7 @@ Now, write a similar method called zeroBlue() that sets the blue values at all p
    :fromfile: ../../_static/arch.jpg
 
 
-.. activecode:: challenge-8-2-picture
+.. activecode:: code9_2_7
     :language: java
     :datafile: pictureClasses.jar, arch.jpg
 

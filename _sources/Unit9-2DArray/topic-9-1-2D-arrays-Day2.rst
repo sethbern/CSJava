@@ -45,7 +45,7 @@ When arrays are created their contents are automatically initialized to 0 for nu
 
 Try the code below. Did it print what you expected?  When you print a two dimensional array you just get the reference to the object. In the next lesson, we'll learn how to use nested loops to print out the whole 2D Array. Right now, use the |Java visualizer| with the Code Lens button to see what the values are after this code runs. Edit the code to add in an extra row to the seatingChart and add your name and a friend's name in the columns of this extra row using assignment statements.
 
-.. activecode:: 2DArraySet
+.. activecode:: code9_1_2
   :language: java
   :autograde: unittest   
   
@@ -136,7 +136,7 @@ Try the code below. Did it print what you expected?  When you print a two dimens
   
 |Exercise| **Check your understanding**
 
-.. mchoice:: qa2dab_1
+.. mchoice:: q9_1_8
    :practice: T
    :answer_a: nums[3][2] = 5;
    :answer_b: nums[1][2] = 5;
@@ -162,7 +162,7 @@ You can also initialize (set) the values for the array when you create it.  In t
 
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: 2daGetElfill
+.. fillintheblank:: q9_1_9
 
    What is the value at ``seatingInfo[2][1]`` after the code above executes?
 
@@ -188,7 +188,7 @@ To get the value in a 2D array give the name of the array followed by the row an
   
 |Exercise| **Check your understanding**
 
-.. mchoice:: qa2dab_2
+.. mchoice:: q9_1_10
    :practice: T
    :answer_a: Jamal
    :answer_b: Maria
@@ -208,7 +208,7 @@ To get the value in a 2D array give the name of the array followed by the row an
 
 
 
-.. activecode:: 2DArrayInitGet
+.. activecode:: code9_1_3
   :language: java
   :autograde: unittest   
   
@@ -309,7 +309,7 @@ We can represent ASCII art in a 2D array of rows and columns. What do you think 
 
 2. Add a new asciiArt array with a different |ASCII art| from the collection or of your own design. Be careful with the special characters like ``"`` and ``\``. You will need to put another backslash in front of these to print them out like ``\"`` and ``\\``. 
 
-.. activecode:: challenge-8-1-ascii-art
+.. activecode:: code9_1_4
   :language: java
   :autograde: unittest
   
