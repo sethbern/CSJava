@@ -19,12 +19,7 @@
     :align: middle
     :alt: groupwork
 
-
-.. |visualizer| raw:: html
-
-   <a href="https://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a>    
- 
-    
+   
 Method Parameters
 =================
 
@@ -76,7 +71,7 @@ into the formal parameter variables.
   :autograde: unittest
   :practice: T
     
-  Use the CodeLens button or copy the code into the |visualizer| to watch how the main method
+  Use the CodeLens button to watch how the main method
   passes actual argument values into each call to the verse method.
   Update the main method to add a third verse to the song with another animal and noise.
   Rerun the program to confirm the third verse is correct.
@@ -204,7 +199,7 @@ will need to be provided as shown.
     
   Update the code below to add the ``calculatePay`` method shown in Figure 2.  Update the ``main`` method to 
   call the ``calculatePay`` method twice to compute the pay for each employee.  
-  Use the CodeLens button or copy the code into the |visualizer| to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.
+  Use the CodeLens button to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.
 
   ~~~~
   public class PayrollCalculator
@@ -480,9 +475,8 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 Method Tracing
 ------------------
 
-A method can call other methods to help it do its job.  See if you can trace through the code in the following examples to predict the output.  If you have trouble, copy
-the code into the |visualizer|.
-
+A method can call other methods to help it do its job.  
+See if you can trace through the code in the following examples to predict the output.  
 
 |Exercise| **Check your understanding**
 
@@ -591,7 +585,7 @@ the code into the |visualizer|.
    :feedback_b: The order of the arguments to the divide(x,y) method will divide x by y and return an int result.
    :feedback_c: The square(x) method is called before the divide(x,y) method.
    :feedback_d: The main method prints out " and " in between the method calls.
-   :feedback_e: Try the code in the visualizer.
+   :feedback_e: Try the code in the CodeLens visualizer.
    
    What does the following code print out?
    
@@ -620,18 +614,17 @@ the code into the |visualizer|.
 Pass by value
 ---------------
 
-Java uses **pass by Value** when it passes arguments to methods. 
-This means that a copy of the value in the argument is saved in the parameter variable. 
-The original value outside the method is not changed if the parameter variable is 
-assigned a new value inside the method.  **It is generally not a good idea to change the 
-value of a parameter inside a method, however it is possible as the example below shows.**
+Java uses **pass by Value** when it passes arguments into a method. 
+This means that a copy of the actual parameter value is stored in the formal parameter variable. 
+The original value outside the method is not changed if a new value is assigned to the formal parameter within the method body.  **It is generally not a good idea to change the 
+value of a formal parameter inside a method, however it is possible as the example below shows.**
 
 |CodingEx| **Check your understanding**
 
 .. activecode:: code5_2_4
   :language: java
     
-  Use the CodeLens button or copy the code into the |visualizer| to watch how the square method
+  Use the CodeLens button to watch how the square method
   alters the value of x, while the value of y in the main method is not affected.
 
   Try changing the name of the variable in the main method to "x" and rerun the program.  You should see
@@ -824,7 +817,7 @@ compute and print the cost based on item weight.
 Summary
 -------
 
-- When you call a method, you can give or pass in **arguments** or **actual parameters** inside the parentheses **object.method(arguments)**. The arguments are saved in local **formal parameter** variables that are declared in the method header, for example: public void method(type param1, type param2) { ... }.
+- When you call a method, you can give or pass in values called **arguments** or **actual parameters** inside the parentheses. The arguments are saved in local **formal parameter** variables  that are declared in the method header.
 
 - Values provided in the arguments in a method call need to correspond to the order and type of the parameters in the method signature.
 

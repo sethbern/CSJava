@@ -205,7 +205,7 @@ The return type must match with the value in the return statement.
    :practice: T
    :answer_a: return "hello";
    :answer_b: return true;
-   :answer_c: return "7";
+   :answer_c: return "true";
    :answer_d: return 10;
    :correct: b
    :feedback_a: The method return type boolean does not match the return statement type String. 

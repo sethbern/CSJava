@@ -46,8 +46,8 @@ Here are some of the main reasons to use multiple methods in your programs:
 - Reusing Code: Avoid repetition of code. 
 - Maintainability and Debugging: Smaller methods are easier to debug and understand.
 
-Let's look at an example with repetition of code and then we will 
-create a method to reduce the repetition. 
+Let's look at an example with repetition and then we will 
+create a method to reduce the redundant code. 
 
 
 .. clickablearea:: q5_1_1
@@ -67,11 +67,11 @@ create a method to reduce the repetition.
         :click-correct:System.out.println("That I overlooked before");:endclick:
     :click-incorrect:}:endclick:
             
-Did you find some repeated lines? 
-The chorus is 
+Did you find some repetition in the song? 
+The two-line chorus is 
 repeated at the beginning and ending of the song: "I'm looking over a four-leaf clover That I overlooked before". 
 
-When you see repeated code, that is a signal for you to make a new method!
+When you see duplicate lines of code, that is a signal for you to make a new method!
 A method is a **named** set of statements.  When we want to execute the statements, 
 we call the method using its name.
 In a subsequent lesson you will create methods that are called using an object, 
@@ -142,9 +142,9 @@ The main method can call the chorus method multiple times to repeat the two line
   Run the following code to see the song print out.  
   Notice the first line of code in the main method
   is a call to the new method ``chorus()``.
-  Can you replace the last two lines in the second verse in the main 
+  Can you replace the last two print statements in the main 
   method with another call to the ``chorus()`` method? 
-  Step through using on the Code Lens button to see how the main method calls the chorus method.
+  Use the CodeLens to step through the program and notice what happens when the main method calls the chorus method.
   ~~~~
   public class Song 
   { 
@@ -201,7 +201,7 @@ The main method can call the chorus method multiple times to repeat the two line
     :iscode:
     :feedback: There is one method header for the greet method.  
     
-    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:public class GreetingExample:endclick:
     :click-incorrect:{:endclick:
         :click-correct:public static void greet():endclick:
         :click-incorrect:{:endclick:
@@ -224,7 +224,7 @@ The main method can call the chorus method multiple times to repeat the two line
     :iscode:
     :feedback: The greet method body consists of the 2 print statements nested between the curly braces that follow the method header  
     
-    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:public class GreetingExample:endclick:
     :click-incorrect:{:endclick:
         :click-incorrect:public static void greet():endclick:
         :click-incorrect:{:endclick:
@@ -247,7 +247,7 @@ The main method can call the chorus method multiple times to repeat the two line
     :iscode:
     :feedback: The greet() method call occurs in the main method.  
     
-    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:public class GreetingExample:endclick:
     :click-incorrect:{:endclick:
         :click-incorrect:public static void greet():endclick:
         :click-incorrect:{:endclick:
@@ -266,7 +266,7 @@ The main method can call the chorus method multiple times to repeat the two line
 
 .. fillintheblank:: q5_1_5
 
-   Given the Test2 class from the previous exercise, how many times is the **System.out.println** called when the main method runs?
+   Given the GreetingExample class in the previous problem, how many times is the **System.out.println** called in total when the main method executes?
 
    -    :4: Correct.  
         :.*: Incorrect. The main method calls System.out.println directly 2 times, and the call to greet() results in 2 additional calls to System.out.println.
@@ -279,9 +279,9 @@ appear in the class, but this is not the case.
 
 A program always begins at the first statement in the main method. 
 Each statement in the main is executed one at a time until you reach a method call. 
-A method call causes the program execution to jump to the first line of the method. 
-Each statement in the method is then executed in order.
-When the method is done, the program returns back to the main method.
+A method call causes the program execution to jump to the first line of the called method. 
+Each statement in the called method is then executed in order.
+When the called method is done, the program returns back to the main method.
 
 |Exercise| **Check your understanding**
 
@@ -332,11 +332,15 @@ When the method is done, the program returns back to the main method.
   :practice: T
 
   A refrain is similar to a chorus, although usually shorter in length such as a single line that gets repeated.
-  Add a method named "refrain" to reduce redundancy in the following code.
-  You should update the main method to call the new method.
+  In the song below, the refrain is "The farmer in the dell".  
+  Add a method named "refrain" and update the main method to call the new method 3 times.  Run your program to ensure the output is correct.
   ~~~~
   public class FarmerSong 
   { 
+
+    //add your new method here
+
+
 
     public static void main(String args[]) 
     {
@@ -382,4 +386,4 @@ Summary
 
 - Write a **method definition** with a **method signature** like ``public static void chorus()`` and a **method body** that consists of statements nested within {}.
 
-- Call the method using its name followed by parentheses ``chorus()`` to execute the statements in the method body.
+- Call the method using its name followed by parentheses ``chorus()``.  The method call executes the statements in the method body.

@@ -568,7 +568,9 @@ It is helpful to add comments to your code to help explain what the code is doin
 In Java and many text-based coding languages, ``//`` is used to mark the beginning of a comment. 
 Everything on the line that
 follows the ``//`` is ignored by the compiler. 
-For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the comment. The compiler will skip over comments. However, it is a good idea to use comments to make notes to yourself and other programmers working with you. Here are some examples of good commenting:
+For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the comment. 
+The compiler will skip over comments. However, it is a good idea to use comments 
+to make notes to yourself and other programmers working with you. Here are some examples of commenting:
 
 .. code-block:: java 
 
@@ -609,7 +611,7 @@ Summary
 
 - A **string literal** is enclosed in double quotes ('' '').
 
-- Java command lines end in ; (semicolon). { } are used to enclose blocks of code. // and ``/* */`` are used for comments.
+- Java command lines end in ; (semicolon). { } are used to enclose blocks of code. ``//`` and ``/* */`` are used for comments.
 
 - A **compiler** translates Java code into a class file that can be run on your computer. **Compiler or syntax errors** are reported to you by the compiler if the Java code is not correctly written. Some things to check for are ; at end of command lines, matching { }, (), and "". 
 
