@@ -47,7 +47,7 @@ What if you want two things to be true before the body of the conditional is exe
 
 
 
-.. activecode:: lccc1
+.. activecode:: code3_5_1
    :language: java
    :autograde: unittest   
 
@@ -98,7 +98,7 @@ What if it is okay if only one of two things is true? Use ``||`` as a logical **
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: lccc2
+.. activecode:: code3_5_2
    :language: java
    :autograde: unittest 
 
@@ -154,7 +154,7 @@ With numerical values, the or-operator is often used to check for error conditio
 
 
 
-.. activecode:: lcccnum
+.. activecode:: code3_5_3
    :language: java
    :autograde: unittest 
    
@@ -199,7 +199,7 @@ The **not** (!) operator can be used to negate a boolean value. We've seen ! bef
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: lcccnot
+.. activecode:: code3_5_4
    :language: java
    :autograde: unittest
       
@@ -255,7 +255,7 @@ The following table (also called a **truth table**) shows the result for P && Q 
 
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: 3_5_1_trueAndFalse
+.. fillintheblank:: q3_5_1
 
    The truth table above is missing one result.  What is the result of P && Q when ``P=true`` and ``Q=false``?  
 
@@ -278,7 +278,7 @@ The following table shows the result for P || Q when P and Q are both expression
 
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: 3_5_2_falseOrTrue
+.. fillintheblank:: q3_5_2
 
    The truth table above is missing one result.  What is the result of ``P || Q`` when ``P=false`` and ``Q=true``? 
 
@@ -290,7 +290,7 @@ The following table shows the result for P || Q when P and Q are both expression
 |Exercise| **Check your understanding**
 
 
-.. mchoice:: qcbc_7
+.. mchoice:: q3_5_3
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -312,7 +312,7 @@ The following table shows the result for P || Q when P and Q are both expression
      }
      
      
-.. mchoice:: qcbc_8
+.. mchoice:: q3_5_4
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -333,7 +333,7 @@ The following table shows the result for P || Q when P and Q are both expression
         System.out.println("second case");
      }
      
-.. mchoice:: qcbc_or
+.. mchoice:: q3_5_5
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -369,7 +369,7 @@ Both ``&&`` and ``||`` use **short circuit evaluation**.  That means that the se
  
 |Exercise| **Check your understanding**
 
-.. mchoice:: qcbc_5
+.. mchoice:: q3_5_6
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -392,7 +392,7 @@ Both ``&&`` and ``||`` use **short circuit evaluation**.  That means that the se
         System.out.println("second case");
      }
      
-.. mchoice:: qcb_7sc
+.. mchoice:: q3_5_7
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -415,7 +415,7 @@ Both ``&&`` and ``||`` use **short circuit evaluation**.  That means that the se
         System.out.println("second case");
      }
      
-.. .. mchoice:: qcb_8sc
+.. .. mchoice:: q3_5_8
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -433,7 +433,7 @@ Both ``&&`` and ``||`` use **short circuit evaluation**.  That means that the se
      if (x >= 0 && message.substring(x).equals("help")) System.out.println("first case");
      else System.out.println("second case");
      
-.. .. mchoice:: qcb_9sc
+.. .. mchoice:: q3_5_9
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -480,7 +480,7 @@ Explore the following problems with your group:
 
 4. Write Java code below to test your if statement and try all the values in your truth table to see if you filled it out correctly. You will need test case for each of the 8 rows in your truth table, for example when sunny is true and false, when raining is true or false, and for a value of temperature greater than 80, for example 90, and less than 80, for example 60.
 
-.. activecode:: challenge3-5-truthtables
+.. activecode:: code3_5_5
    :language: java
    :autograde: unittest
    :practice: T

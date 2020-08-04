@@ -41,7 +41,7 @@ Java Keyword Summary
 Vocabulary Practice
 --------------------
 
-.. dragndrop:: ch5_cond1
+.. dragndrop:: q3_8_1
     :feedback: Review the summaries above.
     :match_1: joints two conditions and it will only be true if both of the conditions are true|||logical and
     :match_2: used to execute code only when a Boolean condition is true|||conditional
@@ -50,7 +50,7 @@ Vocabulary Practice
     
     Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct
     
-.. dragndrop:: ch5_cond2
+.. dragndrop:: q3_8_2
     :feedback: Review the summaries above.
     :match_1: used to execute code when one of two conditions is true|||logical or
     :match_2: one or more statements enclosed in a open curly brace and a close curly brace|||blocks of statements
@@ -69,16 +69,16 @@ For more practice, see this |Quizlet|.
 Common Mistakes
 ---------------
 
-  -  Using = instead of == in ``if``'s. Remember that = is used to assign values and == is used to test. Ifs always use ==. 
-  
-  - Putting a ; at the end of ``if (test);``. Remember that the if statement ends after ``if (test) statement;`` or use curly brackets ``if (test) { statements; }``.
-  
-  -  Using two ``if``'s one after the other instead of an ``if`` and ``else``.    
-  
-  -  Trouble with complex conditionals which are two or more Boolean expressions joined by ``&&`` or ``||``.  
-  
-  - Not understanding that `||` is an inclusive-or where one or *both* conditions must be true.
+-  Using = instead of == in ``if``'s. Remember that = is used to assign values and == is used to test. Ifs always use ==. 
 
-  -  Trouble with understanding or applying negation (``!``).  See the section on DeMorgan's Laws.   
-  
-  -  Not understanding short circuit evaluation which is that if evaluation of the first Boolean expression is enough to determine the truth of a complex conditional the second expression will not be evaluated.  
+- Putting a ; at the end of ``if (test);``. Remember that the if statement ends after ``if (test) statement;`` or use curly brackets ``if (test) { statements; }``.
+
+-  Using two ``if``'s one after the other instead of an ``if`` and ``else``.    
+
+-  Trouble with complex conditionals which are two or more Boolean expressions joined by ``&&`` or ``||``.  
+
+- Not understanding that `||` is an inclusive-or where one or *both* conditions must be true.
+
+-  Trouble with understanding or applying negation (``!``).  See the section on DeMorgan's Laws.   
+
+-  Not understanding short circuit evaluation which is that if evaluation of the first Boolean expression is enough to determine the truth of a complex conditional the second expression will not be evaluated.  

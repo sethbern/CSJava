@@ -48,7 +48,7 @@ Using if/else statements, you can even pick between 3 or more possibilites. Just
 
 
 
-.. activecode:: lccbElseIf
+.. activecode:: code3_4_1
    :language: java
    :autograde: unittest
    
@@ -106,7 +106,7 @@ Here is a flowchart for a conditional with 3 options like in the code above.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: qcb3_4_1
+.. mchoice:: q3_4_1
    :practice: T
    :answer_a: x is negative
    :answer_b: x is zero
@@ -133,7 +133,7 @@ Here is a flowchart for a conditional with 3 options like in the code above.
         System.out.println("x is positive"); 
      }
      
-.. mchoice:: qcb3_4_2
+.. mchoice:: q3_4_2
    :practice: T
    :answer_a: x is negative
    :answer_b: x is zero
@@ -160,7 +160,7 @@ Here is a flowchart for a conditional with 3 options like in the code above.
         System.out.println("x is positive"); 
      }
      
-.. mchoice:: qcb3_4_3
+.. mchoice:: q3_4_3
    :practice: T
    :answer_a: first quartile
    :answer_b: second quartile
@@ -197,7 +197,7 @@ Here is a flowchart for a conditional with 3 options like in the code above.
 
 
 
-.. activecode:: lccbIfDebug
+.. activecode:: code3_4_2
    :language: java
    :autograde: unittest
    :practice: T
@@ -274,7 +274,7 @@ Here is a flowchart for a conditional with 3 options like in the code above.
 
 
 
-.. activecode::  ifelseifBattery
+.. activecode::  code3_4_3
   :language: java
   :autograde: unittest
   :practice: T
@@ -369,7 +369,7 @@ In a game like Adventure, else if statements can be used to respond to commands 
 
     <iframe height="650px" width="100%" style="max-width:90%; margin-left:5%" src="https://repl.it/@BerylHoffman/Adventure?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-.. activecode:: challenge3-4-ElseIf-Adventure-autograde
+.. activecode:: code3_4_4
   :language: java
   :autograde: unittest  
 

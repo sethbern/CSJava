@@ -9,7 +9,7 @@ Multiple Choice Exercises
 Easier Multiple Choice Questions
 ----------------------------------
 
-.. mchoice:: qce_1
+.. mchoice:: q3_11_1
    :practice: T
    :answer_a: x is negative
    :answer_b: x is zero
@@ -36,7 +36,7 @@ Easier Multiple Choice Questions
          System.out.println("x is positive");
      }
       
-.. mchoice:: qce_2
+.. mchoice:: q3_11_2
    :practice: T
    :answer_a: first case
    :answer_b: second case 
@@ -53,7 +53,7 @@ Easier Multiple Choice Questions
      else 
         System.out.println("second case");
 
-.. mchoice:: qce_3
+.. mchoice:: q3_11_3
    :practice: T
    :answer_a: A
    :answer_b: B
@@ -77,7 +77,7 @@ Easier Multiple Choice Questions
      if (score >= 60) grade = "D";
      else grade = "E";
 
-.. mchoice:: qce_4
+.. mchoice:: q3_11_4
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -102,7 +102,7 @@ Medium Multiple Choice Questions
 ----------------------------------
 
 
-.. mchoice:: qcm_1
+.. mchoice:: q3_11_5
    :practice: T
    :answer_a: (!c) && (!d)
    :answer_b: (c || d)
@@ -119,7 +119,7 @@ Medium Multiple Choice Questions
    Which of the following expressions is equivalent to !(c || d) ?  
    
 
-.. mchoice:: qcm_2
+.. mchoice:: q3_11_6
    :practice: T
    :answer_a: x = 0;
    :answer_b: if (x > 2) x *= 2;
@@ -141,7 +141,7 @@ Medium Multiple Choice Questions
         x = 0;
 
 
-.. mchoice:: qcm_3
+.. mchoice:: q3_11_7
    :practice: T
    :answer_a: x = 0;
    :answer_b: if (x > 0) x = 0;
@@ -165,7 +165,7 @@ Medium Multiple Choice Questions
         x = 0;
 
 
-.. mchoice:: qcm_4
+.. mchoice:: q3_11_8
    :practice: T
    :answer_a: I and III only
    :answer_b: II only
@@ -240,7 +240,7 @@ Hard Multiple Choice Questions
      }
 
 
-.. mchoice:: qch_3
+.. mchoice:: q3_11_9
    :practice: T
    :answer_a: (x > 15 && x < 18) && (x > 10)
    :answer_b: (y < 20) || (x > 15 && x < 18)
@@ -259,7 +259,7 @@ Hard Multiple Choice Questions
      (x > 15 && x < 18) || (x > 10 || y < 20)
      
 
-.. mchoice:: qch_4
+.. mchoice:: q3_11_10
    :practice: T
    :answer_a: first
    :answer_b: first second
@@ -290,7 +290,7 @@ Hard Multiple Choice Questions
       System.out.print("third");
    
 
-.. mchoice:: qch_5
+.. mchoice:: q3_11_11
    :practice: T
    :answer_a: first 
    :answer_b: second

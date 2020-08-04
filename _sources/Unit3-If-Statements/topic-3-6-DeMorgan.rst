@@ -30,17 +30,17 @@ Equivalent Boolean Expressions (De Morgan's Laws)
 	single: De Morgan's Laws
 	single: negation
 
-What if you heard a rumor about a senior at your high school? And then you heard that the rumor wasn't true. Which part of "a senior at your high school" wasn't true? Maybe they weren't a senior? Or maybe they didn't go to your high school? You could write this as a logic statement like below using negation (!) and the AND (&&) operator since both parts have to be true for the whole statement to be true. (Thank you to Kevin Saxton from Kent School, CT for this example.)
+What if you heard a rumor about a senior at your school? And then you heard that the rumor wasn't true. Which part of "a senior at your school" wasn't true? Maybe they weren't a senior? Or maybe they didn't go to your school? You could write this as a logic statement like below using negation (!) and the AND (&&) operator since both parts have to be true for the whole statement to be true. (Thank you to Kevin Saxton from Kent School, CT for this example.)
 
 .. code-block:: java 
 
         !(a && b)
         
         a = "senior"
-        b = "at our high school"
+        b = "at our school"
         
 
-In this lesson, you will learn about De Morgan's Laws which simplify statements like this. We know that !(a senior at our high school) could mean !(a senior) or !(at our high school). Let's learn more about De Morgan's Laws.
+In this lesson, you will learn about De Morgan's Laws which simplify statements like this. We know that !(a senior at our school) could mean !(a senior) or !(at our school). Let's learn more about De Morgan's Laws.
 
 De Morgan's Laws were developed by Augustus De Morgan in the 1800s.  They show how to simplify the negation of a complex boolean expression, which is when there are multiple expressions joined by an AND (&&) or OR (||), such as ``(x < 3) && (y > 2)``. When you negate one of these complex expressions, you can simplify it by flipping the operators and end up with an equivalent expression. De Morgan's Laws state the following equivalencies. Here's an easy way to remember De Morgan's Laws: **move the NOT inside, AND becomes OR** and **move the NOT inside, OR becomes AND**.
 
@@ -58,14 +58,14 @@ In Java, De Morgan's Laws are written with the following operators:
     
     -  **!(a || b)** is equivalent to **!a && !b** 
     
-Going back to our example above, !(a senior && at our high school) is equivalent to !(a senior) or !(at our high school) using De Morgan's Laws:
+Going back to our example above, !(a senior && at our school) is equivalent to !(a senior) or !(at our school) using De Morgan's Laws:
 
 .. code-block:: java 
 
         !(a && b) is equivalent to !a || !b
         
         a = "senior"
-        b = "at our high school"
+        b = "at our school"
         
 You can also simplify negated boolean expressions that have relational operators like <, >, ==. You can  remove negation by moving it inside and flipping the relational operator to its opposite sign. For example, not (c equals d) is the same as saying c does not equal d.  An easy way to remember this is **Move the NOT inside, flip the sign** (== becomes !=, < becomes >=, and > becomes <=).
 
@@ -111,7 +111,7 @@ Often, you can simplify boolean expressions to create equivalent expressions. Fo
 
 
 
-.. activecode:: lcdmtest
+.. activecode:: code3_6_1
    :language: java
    :autograde: unittest
 
@@ -145,7 +145,7 @@ Often, you can simplify boolean expressions to create equivalent expressions. Fo
  
 |Exercise| **Check your understanding**
 
-.. mchoice:: qcbdm1_8
+.. mchoice:: q3_6_1
    :practice: T
    :answer_a: first case
    :answer_b: second case 
@@ -167,7 +167,7 @@ Often, you can simplify boolean expressions to create equivalent expressions. Fo
         System.out.println("second case");
      }
      
-.. mchoice:: qcbdm2_9
+.. mchoice:: q3_6_2
    :practice: T
    :answer_a: first case
    :answer_b: second case 
@@ -222,7 +222,7 @@ Explore the following problems with your group. You may use |this worksheet| to 
 
 6. Complete the following exercises 3-6-3 through 3-6-7 in your POGIL groups.
 
-.. activecode:: challenge3-6-booleanExpr
+.. activecode:: code3_6_2
    :language: java
    :autograde: unittest
    
@@ -268,7 +268,7 @@ Explore the following problems with your group. You may use |this worksheet| to 
       }
     }
 
-.. mchoice:: qcbdm3_1
+.. mchoice:: q3_6_3
    :practice: T
    :answer_a: (x < 2) || (y > 4)
    :answer_b: (x < 2) && (y > 4)
@@ -286,7 +286,7 @@ Explore the following problems with your group. You may use |this worksheet| to 
 
      !(x > 2 && y < 4)
      
-.. mchoice:: qcbdm4_2
+.. mchoice:: q3_6_4
    :practice: T
    :answer_a: (x != 2) || (y < 4)
    :answer_b: (x != 2) && (y < 4)
@@ -304,7 +304,7 @@ Explore the following problems with your group. You may use |this worksheet| to 
 
      !(x == 2 && y > 4)
      
-.. mchoice:: qcbdm5_3
+.. mchoice:: q3_6_5
    :practice: T
    :answer_a: (x == 5) || (y == 7)
    :answer_b: (x == 5) && (y == 7)
@@ -322,7 +322,7 @@ Explore the following problems with your group. You may use |this worksheet| to 
 
      !(x!=5 && y!=7)
      
-.. mchoice:: qcbdm6_4
+.. mchoice:: q3_6_6
    :practice: T
    :answer_a: (x > 5) && (y < 7)
    :answer_b: (x > 5) || (y < 7)
@@ -342,9 +342,7 @@ Explore the following problems with your group. You may use |this worksheet| to 
      !(x<= 5 && y > 7)
 
 
-**AP CSA Sample Question**
-
-.. mchoice:: apcsa-sample5
+.. mchoice:: q3_6_7
    :practice: T
    :answer_a: The value is always true.
    :answer_b: The value is always false.

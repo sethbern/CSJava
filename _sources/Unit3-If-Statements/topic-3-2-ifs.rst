@@ -30,17 +30,25 @@ if Statements and Control Flow
 	pair: conditional; if
 
 
-The statements in a Java main method normally run or execute one at a time in the order they are found from top to bottom.   **If statements** (also called **conditionals** or **selection**) change the flow of control through the program so that some code is only run when something is true.  In an if statement, if the condition is true then the next statement or a block of statements will execute.  If the condition is false then the next statement or block of statements is skipped.
+The statements in a Java main method normally run or execute one at a time in the order they are found from top to 
+bottom.   **If statements** (also called **conditionals** or **selection**) change the flow of control 
+through the program so that some code is only run when something is true.  In an if statement, if the 
+condition is true then the next statement or a block of statements will execute.  If the condition is 
+false then the next statement or block of statements is skipped.
 
 .. figure:: Figures/Condition.png
     :width: 200px
     :align: center
     :figclass: align-center
 
-    Figure 2: The order that statements execute in a conditional
+    Figure 1: The order that statements execute in a conditional
     
 
-A conditional uses the keyword ``if`` followed by Boolean expression inside of  an open parenthesis ``(`` and a close parenthesis ``)`` and then followed by a single statement or block of statements.  The single statement or block of statements are only executed if the condition is true.  The open curly brace ``{`` and a close curly brace ``}`` are used to group a block of statements together.  It is recommended to always put in the curly braces even if you have just one statement under the if statement. The questions you will see on the AP exam will use curly braces.
+A conditional uses the keyword ``if`` followed by Boolean expression inside of  an 
+open parenthesis ``(`` and a close parenthesis ``)`` and then followed by a single statement or block of statements.  
+The single statement or block of statements are only executed if the condition is true.  
+The open curly brace ``{`` and a close curly brace ``}`` are used to group a block of statements together.  
+It is recommended to always put in the curly braces even if you have just one statement under the if statement. 
 
 
 .. code-block:: java
@@ -68,13 +76,13 @@ A conditional uses the keyword ``if`` followed by Boolean expression inside of  
     
 Imagine that your cell phone wanted to remind you to take an umbrella if it was currently raining in your area when it detected that you were leaving the house.  This type of thing is going to become more common in the future and it is an area of research called Human Computer Interaction (HCI) or Ubiquitous Computing (computers are everywhere).  
 
-.. activecode:: lccb1
+.. activecode:: code3_2_1
    :language: java
    :autograde: unittest
   
    The variable ``isRaining`` is a boolean variable that is either true or false. If it is true then the message ``Take an umbrella!`` will be printed and then execution will continue with the next statement which will print ``Drive carefully``. Run the code below to see this.
    ~~~~
-   public class Test1
+   public class TestRaining
    {
       public static void main(String[] args)
       {
@@ -108,13 +116,61 @@ Imagine that your cell phone wanted to remind you to take an umbrella if it was 
 
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: 5_1_1_falseOutput
+.. fillintheblank:: q3_2_1
 
    Try changing the code above to ``boolean isRaining = false;``.  What will it print?
 
    -    :^Drive carefully$: Correct.  If the boolean is false, it will skip executing the print statement after the if.
         :.*: Try it and see
         
+You can test for a false value using the ``!`` operator, which is read as "not".  We will see a better way to test for both
+true and false in the next lesson.  However, the code below shows how to print different messages based on whether a value is true or false.
+
+
+.. activecode:: code3_2_2
+   :language: java
+   :autograde: unittest
+   :stdin: true
+   
+   This program reads in a boolean value from standard input and tests whether the value is true ``if (passedExam)`` or false ``if (!passedExam)``.  
+   Use the CodeLens to step through the program.   Change the value in the standard input window to test the program with each possible boolean value.
+   
+   ~~~~
+   import java.util.Scanner; 
+   public class TestMidterm
+   {
+      public static void main(String[] args)
+      {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Did you pass the midterm exam?");
+
+        boolean passedExam = scan.nextBoolean();
+        if (passedExam) 
+        {
+           System.out.println("Good job studying!"); 
+        }
+        if (!passedExam) 
+        {
+           System.out.println("Study harder next time."); 
+        }
+      }
+   }
+   ====
+   import static org.junit.Assert.*;
+    import org.junit.*;;
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+        @Test
+        public void testMain() throws IOException
+        {
+            boolean passed = getResults("true", "true", "main()");
+            assertTrue(passed);
+        }
+    }
+  
 
 Relational Operators in If Statements
 ---------------------------------------
@@ -126,7 +182,7 @@ Most if statements have a boolean condition that uses relational operators like 
 
 
 
-.. activecode:: if-relational
+.. activecode:: code3_2_3
    :language: java
    :autograde: unittest
    :practice: T
@@ -235,7 +291,7 @@ Most if statements have a boolean condition that uses relational operators like 
     
 |Exercise| **Check your understanding**
 
-.. mchoice:: qcb1_2
+.. mchoice:: q3_2_2
    :practice: T
    :answer_a: 3
    :answer_b: 6
@@ -274,24 +330,24 @@ Common Errors with If Statements
 
 Here are some rules to follow with if statements to avoid some common errors:
 
-   - Always use curly brackets ``{`` and ``}`` to enclose the block of statements under the if condition. Java doesn't care if you indent the code -- it goes by the { }. 
-   
-   - Don't put in a semicolon ``;`` after the first line of the if statement, if (test);. The if statement is a multiline block of code that starts with the if condition and then { the body of the if statement }. 
-   
-   - Always use **==**, not =, in the condition of an if statement to test a variable. One = assigns, two == tests!
+- Always use curly brackets ``{`` and ``}`` to enclose the block of statements under the if condition. Java doesn't care if you indent the code -- it goes by the { }. 
+
+- Don't put in a semicolon ``;`` after the first line of the if statement, if (test);. The if statement is a multiline block of code that starts with the if condition and then { the body of the if statement }. 
+
+- Always use **==**, not =, in the condition of an if statement to test a variable. One = assigns, two == tests!
 
 
 |CodingEx| **Coding Exercise**
 
    
-.. activecode:: lccb2-indent
+.. activecode:: code3_2_4
    :language: java
    :autograde: unittest
    :practice: T
 
    The code below doesn't work as expected.  Fix it to only print "Wear a coat" and "Wear gloves" when isCold is true.
    ~~~~
-   public class Test
+   public class TestCold
    {
       public static void main(String[] args)
       {
@@ -352,12 +408,18 @@ Have you ever seen a Magic 8 ball? You ask it a yes-no question and then shake i
 Come up with 8 responses to yes-no questions. 
 Write a program below that chooses a random number from 1 to 8 and then uses if 
 statements to test the number and print out the associated random response from 1-8. 
+
 If you need help with random numbers, see lesson 2.9.
 
-.. activecode:: challenge3-2-if-Magic8ball
+For an extra challenge, have the program create a Scanner and read the question from standard input before generating a response. 
+ 
+
+.. activecode:: code3_2_5
    :language: java
    :autograde: unittest
+   :stdin: Should I order a pizza for dinner?
    
+   import java.util.Scanner; 
    public class Magic8Ball
    {
       public static void main(String[] args)
@@ -437,9 +499,9 @@ If you need help with random numbers, see lesson 2.9.
     <a href="https://repl.it/@BerylHoffman/Magic8BallTemplate" target="_blank" style="text-decoration:underline">repl version</a>
 
 
-Here's a |repl version| that uses the Scanner class to first have the user ask a question. You can add your code in from above and try running it. 
+.. Here's a |repl version| that uses the Scanner class to first have the user ask a question. You can add your code in from above and try running it. 
 
-.. raw:: html
+.. .. raw:: html
 
     <iframe height="650px" width="100%" style="max-width:90%; margin-left:5%" src="https://repl.it/@BerylHoffman/Magic8BallTemplate?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
     

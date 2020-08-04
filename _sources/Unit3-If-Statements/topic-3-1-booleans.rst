@@ -29,6 +29,7 @@
 Boolean Expressions
 ===================
 
+
 **Boolean** variables or expressions can only have **true** or **false** values.  
 
 Testing Equality (==)
@@ -48,7 +49,7 @@ Note that ``x == 4`` does not assign a value to variable x, rather it simply com
 
 
 
-.. activecode:: bool1
+.. activecode:: code3_1_1
    :language: java
    :autograde: unittest
 
@@ -100,7 +101,7 @@ We can also use == or != to test if two reference values, like Turtle and String
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: boolRef
+.. activecode:: code3_1_2
    :language: java
    :datafile: turtleClasses.jar   
    :autograde: unittest
@@ -162,11 +163,11 @@ With <= and >=, remember to write the two symbols in the order that you would sa
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: bool2
+.. activecode:: code3_1_3
    :language: java 
-   :autograde: unittest   
+   :autograde: unittest  
    
-   Try to guess what the code below will print out before you run it.
+   Try to guess what the code below will print out before you run it.  
    ~~~~
    public class BoolTest2
    {
@@ -202,7 +203,7 @@ With <= and >=, remember to write the two symbols in the order that you would sa
 
 |Exercise| **Check your understanding**
 
-.. dragndrop:: BooleanExps
+.. dragndrop:: q3_1_1
     :feedback: Review the relational operators above.
     :match_1: x > 0|||x is positive
     :match_2: x == y|||x equals y
@@ -214,6 +215,8 @@ With <= and >=, remember to write the two symbols in the order that you would sa
     
     Drag the boolean expression from the left and drop it on what it is testing on the right.  Click the "Check Me" button to see if you are correct.
  
+
+
 
 Testing with mod (%)
 ---------------------
@@ -236,7 +239,7 @@ Here are some boolean expressions that are very useful in coding:
   
 
 
-.. activecode:: boolMod
+.. activecode:: code3_1_4
    :language: java 
    :autograde: unittest
    
@@ -274,15 +277,98 @@ Here are some boolean expressions that are very useful in coding:
    
 The **modulo** operator has been used quite a bit on the AP CS A exam, so you should be familiar with it.
     
-    -  Use it to check for odd or even numbers ``(num % 2 == 1) is odd`` and ``(num % 2 == 0) is even``.  Actually, you can use it to check if any number is evenly divisible by another (``num1 % num2 == 0``)
+-  Use it to check for odd or even numbers ``(num % 2 == 1) is odd`` and ``(num % 2 == 0) is even``.  Actually, you can use it to check if any number is evenly divisible by another (``num1 % num2 == 0``)
 
-    -  Use it to get the last digit from an integer number (``num % 10 = last digit on right``).  
-    
-    -  Use it to get the number of minutes left when you convert to hours (``num % 60``).  
-    
-    - Use it whenever you have limited storage and you need to wrap around to the front if the value goes over the limit (``num % limit``).
-    
-    
+-  Use it to get the last digit from an integer number (``num % 10 = last digit on right``).  
+
+-  Use it to get the number of minutes left when you convert to hours (``num % 60``).  
+
+- Use it whenever you have limited storage and you need to wrap around to the front if the value goes over the limit (``num % limit``).
+
+
+Boolean Variables
+---------------------
+
+You can use the ``!`` operator to negate 
+the result of a Boolean expression.
+
+.. activecode:: code3_1_5
+   :language: java 
+   :autograde: unittest  
+   
+   Try to guess what the code below will print out before you run it.  
+   ~~~~
+   public class BooleanExpressions
+   {
+      public static void main(String[] args)
+      {
+        boolean isRaining = true;
+        boolean hasMoney = false;
+
+        // Will these print true or false?
+        System.out.println( isRaining );
+        System.out.println( !isRaining );
+        System.out.println( hasMoney );
+        System.out.println( !hasMoney );
+        System.out.println( 5 === 7 );
+        System.out.println( !(5 === 7) );
+        
+      }
+   }
+   ====
+   import static org.junit.Assert.*;
+    import org.junit.*;;
+    import java.io.*;
+ 
+    public class RunestoneTests extends CodeTestHelper
+    {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "true\nfalse\nfalse\ntrue\ntrue\nfalse\n";
+            boolean passed = getResults(expect, output, "Expected output from main", true);
+            assertTrue(passed);
+        }
+    }
+
+
+
+
+|Exercise| **Check your understanding**
+
+.. mchoice:: q3_1_2
+   :answer_a: true
+   :answer_b: false
+   :correct: a
+   :feedback_a: Correct.  !false = true 
+   :feedback_b: Incorrect.  !false = true   
+
+   What is printed?
+
+   .. code-block:: java 
+
+        boolean isHappy = false;
+        System.out.println( !isHappy );
+
+
+
+.. mchoice:: q3_1_3
+   :answer_a: true
+   :answer_b: false
+   :correct: b
+   :feedback_a: Incorrect.  5 > 10 is false 
+   :feedback_b: Correct.  5 > 10 is false
+
+   What is printed?
+
+   .. code-block:: java 
+
+        int num1 = 5;
+        int num2 = 10;
+        boolean isGt =  num1 > num2;
+        System.out.println( isGt );
+
 
 
 
@@ -311,16 +397,16 @@ Prime numbers are very useful in encryption algorithms because they can be used 
 
 The following program checks if 5 is a prime number by seeing if it is divisible by the numbers 1 - 5. Run the code, and then answer the following questions. 
 
-    1. Is 5 a prime number? 
-    2. What boolean tests determine that a number is prime?
-    3. Change the number to 6 and add more boolean expressions to determine if 6 is prime. Is 6 prime?
-    4. Change the number to 7 and add more boolean expressions to determine if 7 is prime. Is 7 prime?
-    5. If you changed the boolean expressions to use <= instead of ==, would the code still help you to find prime numbers? Why or why not? Experiment and find out.
-    6. If you changed the boolean expressions to use >= instead of ==, would the code still help you to find prime numbers? Why or why not? Experiment and find out.
-    7. Are all odd numbers prime? Can you find one that is not by using boolean expressions in the code below?
-    8. Are all even numbers not prime? Can you find an even prime number?
+1. Is 5 a prime number? 
+2. What boolean tests determine that a number is prime?
+3. Change the number to 6 and add more boolean expressions to determine if 6 is prime. Is 6 prime?
+4. Change the number to 7 and add more boolean expressions to determine if 7 is prime. Is 7 prime?
+5. If you changed the boolean expressions to use <= instead of ==, would the code still help you to find prime numbers? Why or why not? Experiment and find out.
+6. If you changed the boolean expressions to use >= instead of ==, would the code still help you to find prime numbers? Why or why not? Experiment and find out.
+7. Are all odd numbers prime? Can you find one that is not by using boolean expressions in the code below?
+8. Are all even numbers not prime? Can you find an even prime number?
 
-.. activecode:: challenge3-1-primeNumbers
+.. activecode:: code3_1_6
    :language: java
    :autograde: unittest
    :practice: T

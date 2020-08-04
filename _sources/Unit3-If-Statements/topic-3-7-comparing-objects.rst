@@ -49,7 +49,7 @@ When the operator ``==`` is used to compare object variables, it returns true wh
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: lcse1
+.. activecode:: code3_7_1
    :language: java
    :autograde: unittest    
    
@@ -106,7 +106,7 @@ The one common place to use == or != with objects is to compare them to **null**
 
 
 
-.. activecode:: nullTest
+.. activecode:: code3_7_2
    :language: java
    :autograde: unittest    
 
@@ -151,7 +151,7 @@ Using new with Strings
 
 If you use the ``new`` keyword to create a string, it will always create a new string object. So, even if we create two string objects with new that contain all the same characters in the same order, they will not refer to the same object. 
 
-.. activecode:: lcse2
+.. activecode:: code3_7_3
    :language: java
    :autograde: unittest    
    
@@ -201,7 +201,7 @@ already exist instead of creating a new object.
   
 |Exercise| **Check your understanding**
 
-.. mchoice:: qsbeq_1
+.. mchoice:: q3_7_1
    :practice: T
    :answer_a: s1 == s2 && s1 == s3
    :answer_b: s1 == s2 && s1.equals(s3)
@@ -220,7 +220,7 @@ already exist instead of creating a new object.
      String s3 = new String("hi");
      s2 = s1;
      
-.. mchoice:: qsbeq_2
+.. mchoice:: q3_7_2
    :practice: T
    :answer_a: s1 == s2 && s1 == s3
    :answer_b: s2.equals(s3) && s1.equals(s3)
@@ -238,7 +238,7 @@ already exist instead of creating a new object.
      String s2 = new String("bye");
      String s3 = new String("hi");
      
-.. mchoice:: qsbeq_3
+.. mchoice:: q3_7_3
    :practice: T
    :answer_a: s1 == s3 && s1.equals(s3)
    :answer_b: s2.equals(s3) && s1.equals(s3)

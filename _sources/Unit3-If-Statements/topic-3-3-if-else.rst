@@ -67,7 +67,7 @@ The following flowchart demonstrates that if the condition (the boolean expressi
 
 
 
-.. activecode:: lccb2
+.. activecode:: code3_3_1
    :language: java
    :autograde: unittest
    
@@ -112,7 +112,7 @@ The following flowchart demonstrates that if the condition (the boolean expressi
 
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: 3_3_1_falseElse
+.. fillintheblank:: q3_3_1
 
    Try changing the code above to ``boolean isHeads = false;``.  What line will be printed before the ``after conditional``?
 
@@ -127,7 +127,7 @@ If/else statements can also be used with relational operators and numbers like b
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: licenseifelse
+.. activecode:: code3_3_2
    :language: java
    :autograde: unittest
    :practice: T
@@ -166,7 +166,7 @@ If/else statements can also be used with relational operators and numbers like b
        }
     }
 
-.. parsonsprob:: ifelseevenOdd
+.. parsonsprob:: q3_3_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -203,7 +203,7 @@ If/else statements can also be used with relational operators and numbers like b
 
 
 
-.. activecode:: scoreifelse
+.. activecode:: q3_3_3
    :language: java
    :autograde: unittest
    :practice: T
@@ -268,7 +268,7 @@ If statements can be nested inside other if statements. Sometimes with nested if
 
 
 
-.. activecode:: danglingelse
+.. activecode:: q3_3_4
    :language: java
    :autograde: unittest
    :practice: T
@@ -380,7 +380,7 @@ The |Animal Guessing program| below uses the following decision tree:
 
 After you complete your code on repl.it, paste in your code below to run it through the auto-grader. Also include a link to your code on repl.it in comments.
 
-.. activecode:: challenge3-3-IfElse-20Questions-autograde
+.. activecode:: code3_3_5
   :language: java
   :autograde: unittest  
 
@@ -477,7 +477,7 @@ After you complete your code on repl.it, paste in your code below to run it thro
     
    
     
-.. shortanswer:: challenge3-3-IfElse-20Questions
+.. shortanswer:: q3_3_5
 
   After you complete your code on repl, paste in a link to it (click on share) here.
    

@@ -10,7 +10,7 @@ You will be told if your solution is too short, has a block in the wrong order,
 or you are using the wrong block.  Some of the problems have an extra block or 
 two that aren't needed in the correct solution. 
                 
-.. parsonsprob:: ch5ex1muc
+.. parsonsprob:: q3_9_1
    :numbered: left
    :practice: T
    :adaptive:
@@ -40,7 +40,7 @@ two that aren't needed in the correct solution.
         System.out.println("Your guess is too high");
    }
       
-.. parsonsprob:: ch5ex2muc
+.. parsonsprob:: q3_9_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -73,7 +73,7 @@ two that aren't needed in the correct solution.
    }
 
    
-.. parsonsprob:: ch5ex3muc
+.. parsonsprob:: q3_9_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -104,7 +104,7 @@ two that aren't needed in the correct solution.
    }
            
   
-.. parsonsprob:: ch5ex4muc
+.. parsonsprob:: q3_9_4
    :numbered: left
    :practice: T
    :adaptive:
@@ -135,7 +135,7 @@ two that aren't needed in the correct solution.
    }
         
    
-.. parsonsprob:: ch5ex5muc
+.. parsonsprob:: q3_9_5
    :numbered: left
    :practice: T
    :adaptive:
@@ -167,7 +167,7 @@ two that aren't needed in the correct solution.
    }
            
                
-.. parsonsprob:: ch5ex6muc
+.. parsonsprob:: q3_9_6
    :numbered: left
    :practice: T
    :adaptive:
@@ -202,7 +202,7 @@ two that aren't needed in the correct solution.
    }
 
            
-.. parsonsprob:: ch5ex7muc
+.. parsonsprob:: q3_9_7
    :numbered: left
    :practice: T
    :adaptive:
@@ -231,7 +231,7 @@ two that aren't needed in the correct solution.
    }
 
        
-.. parsonsprob:: ch5ex8muc
+.. parsonsprob:: q3_9_8
    :numbered: left
    :practice: T
    :adaptive:
@@ -262,7 +262,7 @@ two that aren't needed in the correct solution.
        }
    }
           
-.. parsonsprob:: ch5ex9muc
+.. parsonsprob:: q3_9_9
    :numbered: left
    :practice: T
    :adaptive:
@@ -300,7 +300,7 @@ two that aren't needed in the correct solution.
    }
 
           
-.. parsonsprob:: ch5ex10muc
+.. parsonsprob:: q3_9_10
    :numbered: left
    :practice: T
    :adaptive:
