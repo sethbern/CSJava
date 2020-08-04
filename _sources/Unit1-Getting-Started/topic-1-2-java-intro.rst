@@ -135,6 +135,8 @@ Java has two different print commands to print output to the screen:
 
 ``System.out.println("Hi there!");`` prints out the characters between the first ``"`` and the second ``"`` followed by a new line.  The ``"Hi there!"`` is called a **string literal**, and it can have zero to many characters enclosed in starting and ending double quotes. 
 
+|CodingEx| **Coding Exercise:**
+
 .. activecode:: code1_2_2
    :language: java
    :autograde: unittest 
@@ -185,6 +187,95 @@ Java has two different print commands to print output to the screen:
            assertTrue(passed);
         }
    }
+
+
+|Exercise| **Check Your Understanding**
+
+
+.. mchoice:: q1_2_1
+    :practice: T
+    
+    Consider the following code segment.
+
+    .. code-block:: java
+
+       System.out.print("Java is ");
+       System.out.println("fun ");
+       System.out.print("and cool!");
+
+    What is printed as a result of executing the code segment?       
+    
+    - .. raw:: html
+    
+         <pre>Java is fun and cool!</pre>
+
+      - Notice the println in line 2.
+
+    - .. raw:: html
+    
+         <pre>
+         Java isfun 
+         and cool!
+         </pre>
+
+      - Notice the space after is in the first line. 
+      
+    - .. raw:: html
+      
+         <pre>Java is
+         fun 
+         and cool!  </pre>
+
+      - Notice that the first line is a print, not println.
+      
+    - .. raw:: html
+      
+         <pre>Java is fun
+         and cool!  </pre>
+      
+      + Correct! Pay attention to which lines are print or println.
+      
+ 
+.. mchoice:: q1_2_2
+    :practice: T
+    
+    Consider the following code segment.
+
+    .. code-block:: java
+    
+       System.out.println("Roses are red, ")      // Line 1;
+       System.out.println("Violets are blue, ")  // Line 2;
+       System.out.print("Unexpected '}' ")        // Line 3;
+       System.out.print("on line 32. ")           // Line 4;
+
+    The code segment is intended to produce the following output but may not work as intended.
+
+    .. raw:: html
+      
+       <pre>Roses are red,
+       Violets are blue,
+       Unexpected '}' on line 32.</pre>
+
+    Which change, if any, can be made so that the code segment produces the intended output?
+    
+    - Replacing print with println on lines 3 and 4.
+    
+      - These should print on the same line without a newline in between.
+      
+    - Replacing println with print on lines 1 and 2.
+    
+      - These should print out with a newline in between.
+      
+    - Removing the single quotes in line 3.
+    
+      - The single quotes are fine in this line.
+    
+    - Putting the semicolon after the ) on each line.
+    
+      + Correct! The semicolon should go after each command but not in the comment.
+
+
+
    
 Most command keywords in Java must be in lowercase, 
 but class names such as System and String are capitalized. 
@@ -193,6 +284,10 @@ in Java like a period in English. You use a semicolon ``;`` to show the
 end of a Java **statement**, just the way you use a period to show the end 
 of an English sentence.   Your programs won't run if you forget the semicolon at the 
 end of each statement.
+
+
+
+
 
 Syntax Errors
 ---------------
@@ -239,7 +334,7 @@ Let's practice debugging some code!
 |Exercise| **Check Your Understanding: Mixed up programs**
 
 
-.. parsonsprob:: q1_2_1
+.. parsonsprob:: q1_2_3
    :numbered: left
    :adaptive:
    :noindent:
@@ -268,7 +363,7 @@ Let's practice debugging some code!
       =====
    }
    
-.. parsonsprob:: q1_2_2
+.. parsonsprob:: q1_2_4
    :numbered: left
    :adaptive:
    :noindent:
@@ -425,31 +520,9 @@ Also, check for capitalization.
 Did you remember that System is capitalized in System.out.println? Did you find the missing semicolon? 
    
    
-Comments
---------
-
-It is helpful to add comments to your code to help explain what the code is doing.
-
-In Java and many text-based coding languages, ``//`` is used to mark the beginning of a comment. 
-Everything on the line that
-follows the ``//`` is ignored by the compiler. 
-For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the comment. The compiler will skip over comments. However, it is a good idea to use comments to make notes to yourself and other programmers working with you. Here are some examples of good commenting:
-
-.. code-block:: java 
-
-    /* MyClass.java
-       Programmer: My Name
-       Date: 
-    */   
-    
-    int max = 10; // this keeps track of the max score
-    
 
 |Groupwork| Debugging Challenge
 -----------------------------------
-
-
-
 
 .. activecode:: code1_2_6
    :language: java
@@ -487,90 +560,25 @@ For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the c
         }
    }
 
-Practice
-------------
+Comments
+--------
 
-.. mchoice:: q1_2_3
-    :practice: T
-    
-    Consider the following code segment.
+It is helpful to add comments to your code to help explain what the code is doing.
 
-    .. code-block:: java
+In Java and many text-based coding languages, ``//`` is used to mark the beginning of a comment. 
+Everything on the line that
+follows the ``//`` is ignored by the compiler. 
+For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the comment. The compiler will skip over comments. However, it is a good idea to use comments to make notes to yourself and other programmers working with you. Here are some examples of good commenting:
 
-       System.out.print("Java is ");
-       System.out.println("fun ");
-       System.out.print("and cool!");
+.. code-block:: java 
 
-    What is printed as a result of executing the code segment?       
+    /* MyClass.java
+       Programmer: My Name
+       Date: 
+    */   
     
-    - .. raw:: html
+    int max = 10; // this keeps track of the max score
     
-         <pre>Java is fun and cool!</pre>
-
-      - Notice the println in line 2.
-
-    - .. raw:: html
-    
-         <pre>
-         Java isfun 
-         and cool!
-         </pre>
-
-      - Notice the space after is in the first line. 
-      
-    - .. raw:: html
-      
-         <pre>Java is
-         fun 
-         and cool!  </pre>
-
-      - Notice that the first line is a print, not println.
-      
-    - .. raw:: html
-      
-         <pre>Java is fun
-         and cool!  </pre>
-      
-      + Correct! Pay attention to which lines are print or println.
-      
- 
-.. mchoice:: q1_2_4
-    :practice: T
-    
-    Consider the following code segment.
-
-    .. code-block:: java
-    
-       System.out.println("Roses are red, ")      // Line 1;
-       System.out.println("Violets are blue, ")  // Line 2;
-       System.out.print("Unexpected '}' ")        // Line 3;
-       System.out.print("on line 32. ")           // Line 4;
-
-    The code segment is intended to produce the following output but may not work as intended.
-
-    .. raw:: html
-      
-       <pre>Roses are red,
-       Violets are blue,
-       Unexpected '}' on line 32.</pre>
-
-    Which change, if any, can be made so that the code segment produces the intended output?
-    
-    - Replacing print with println on lines 3 and 4.
-    
-      - These should print on the same line without a newline in between.
-      
-    - Replacing println with print on lines 1 and 2.
-    
-      - These should print out with a newline in between.
-      
-    - Removing the single quotes in line 3.
-    
-      - The single quotes are fine in this line.
-    
-    - Putting the semicolon after the ) on each line.
-    
-      + Correct! The semicolon should go after each command but not in the comment.
 
 
 

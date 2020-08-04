@@ -305,6 +305,7 @@ When it is placed after, it is called **postfix** increment.
 |x = - -y;                   |Subtract one from y, then copy the value of y into x     |Prefix |
 +----------------------------+---------------------------------------------------------+-------+
 
+|Exercise| **Check Your Understanding**
 
 .. dragndrop:: q1_5_4
    :feedback: Try again.
@@ -335,6 +336,8 @@ When it is placed after, it is called **postfix** increment.
         System.out.println(z);
         z--;
 
+
+|Exercise| **Check Your Understanding**
 
 .. dragndrop:: q1_5_5
    :feedback: Try again.

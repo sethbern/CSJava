@@ -61,7 +61,7 @@ You must always include the parentheses after the method name.
 
 |Exercise| **Check Your Understanding: Mixed-up Code**
 
-.. parsonsprob:: 2_3_Draw7
+.. parsonsprob:: q2_3_1
    :practice: T
    :numbered: left
    :adaptive:
@@ -94,9 +94,10 @@ You must always include the parentheses after the method name.
    =====
    } // end class
 
+
 |CodingEx| **Coding Exercise:**
 
-.. activecode:: TurtleDraw8
+.. activecode:: code2_3_1
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -177,7 +178,7 @@ Here are some simple turtle methods that you can use:
 - ``penDown();``
 
 
-.. activecode:: challenge2-3-Turtle_Letter
+.. activecode:: code2_3_2
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -185,7 +186,7 @@ Here are some simple turtle methods that you can use:
     
     ~~~~
     
-    public class TurtleLetter
+    public class Turtle2Letters
     {
       public static void main(String[] args)
       {
@@ -204,7 +205,7 @@ Here are some simple turtle methods that you can use:
     public class RunestoneTests extends CodeTestHelper
     {
         public RunestoneTests() {
-            super("TurtleLetter");
+            super("Turtle2Letters");
         }
 
         @Test

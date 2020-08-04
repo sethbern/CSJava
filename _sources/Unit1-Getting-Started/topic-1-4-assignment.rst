@@ -70,6 +70,8 @@ As we saw in the video,
 we can set one variable to a copy of the value of another variable like y = x;. 
 This won’t change the value of the variable that you are copying from.
 
+|CodingEx| **Coding Exercise:** 
+
 .. activecode:: code1_4_1
    :language: java
    :autograde: unittest   
@@ -112,6 +114,8 @@ This won’t change the value of the variable that you are copying from.
         :.*: num3 - num1 = 19 - 7 = 12 
   
 
+|CodingEx| **Coding Exercise:** 
+
 The code below makes an attempt to swap the values stored in the two variables x and y (so x ends up with y's initial 
 value  of 5 and y ends up with x's initial value of 3).  Unfortunately this code does not work.
 You will see in the next exercise that swapping two variables requires a third variable.
@@ -139,6 +143,8 @@ You will see in the next exercise that swapping two variables requires a third v
       }
     }
     ====
+
+|Exercise| **Check your understanding**
 
 
 In the mixed up programs below, drag the blocks to the right to put them in the right order.
@@ -186,6 +192,9 @@ because the variable on the left is set to the value of the arithmetic
 expression on the right. So, the score variable is set to the 
 previous value of score + 1.
 
+
+|CodingEx| **Coding Exercise:** 
+
 .. activecode:: code1_4_3
    :language: java
    :autograde: unittest   
@@ -226,6 +235,8 @@ previous value of score + 1.
     }
 
    
+|Exercise| **Check your understanding**
+
 .. mchoice:: q1_4_3
    :practice: T
    :answer_a: b = 5
@@ -298,6 +309,8 @@ gets a string value you typed into the window and then stores the value in a var
 Run the program a few times, typing in a different name. The code works for any name: 
 behold, the power of variables!
 
+|CodingEx| **Coding Exercise:** 
+
 .. activecode:: code1_4_4
    :language: java
    :stdin: Fred Smith  
@@ -347,6 +360,8 @@ The Scanner class has several useful methods for reading user input:
   nextBoolean()              Scans the next token of the input as a boolean                     
   =========================  ================================================
 
+
+|CodingEx| **Coding Exercise:** 
 
 .. activecode:: code1_4_5
    :language: java
@@ -450,8 +465,6 @@ Java uses the operator ``==`` to test if the value on the left is equal to the v
 
 |CodingEx| **Coding Exercise:** 
 
-
-
 .. activecode:: code1_4_7
    :language: java
    :autograde: unittest      
@@ -502,8 +515,6 @@ With division, another thing to watch out for is dividing by 0. An attempt to di
 Operators can be used to create compound expressions with more than one operator. You can either use a literal value which is a fixed value like 2, or variables in them.  When compound expressions are evaluated, **operator precedence** rules are used, so that \*, /, and % are done before + and -. However, anything in parentheses is done first. It doesn't hurt to put in extra parentheses if you are unsure as to what will be done first.  
 
 |CodingEx| **Coding Exercise:** 
-
-
 
 .. activecode:: code1_4_8
    :language: java

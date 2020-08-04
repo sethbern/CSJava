@@ -11,7 +11,7 @@ The coding problems below are mostly about Strings, but more problems on other t
 
 Try to solve each of the following. Click the *Check Me* button to check each solution.  You will be told if your solution is too short, has a block in the wrong order, or you are using the wrong block.  Some of the problems have an extra block that isn't needed in the correct solution.  
 
-.. parsonsprob:: ch3ex3muc
+.. parsonsprob:: q2_11_1
    :numbered: left
    :practice: T
    :adaptive:
@@ -39,7 +39,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
 
 
 
-.. parsonsprob:: ch4ex4muc
+.. parsonsprob:: q2_11_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -68,7 +68,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
 
 
 
-.. parsonsprob:: ch4ex7muc
+.. parsonsprob:: q2_11_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -103,7 +103,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
            System.out.println(initials); #distractor
 
 
-.. parsonsprob:: ch4ex8muc
+.. parsonsprob:: q2_11_4
    :numbered: left
    :practice: T
    :adaptive:
@@ -130,7 +130,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    =====
           System.print(upperMessage); #distractor
 
-.. parsonsprob:: ch4ex9muc
+.. parsonsprob:: q2_11_5
    :numbered: left
    :practice: T
    :adaptive:
@@ -159,7 +159,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    =====
            String part = message.substring(0,4); #distractor
 
-.. parsonsprob:: ch4ex10muc
+.. parsonsprob:: q2_11_6
    :numbered: left
    :practice: T
    :adaptive:

@@ -91,7 +91,7 @@ from each getter method is either stored in a variable or used in a print statem
 
 
 
-.. activecode:: TurtleTestGetSet
+.. activecode:: code2_5_1
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -136,7 +136,7 @@ from each getter method is either stored in a variable or used in a print statem
     
 |CodingEx| **Coding Exercise:**    
 
-.. activecode:: TurtleArea
+.. activecode:: code2_5_2
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -192,7 +192,7 @@ Another common method that returns a value is the **toString()** method. This me
 
 |CodingEx| **Coding Exercise:**
 
-.. activecode:: TurtleTestMethodsReturn2
+.. activecode:: code2_5_3
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -281,7 +281,7 @@ method calls that return a value such as the Turtle accessor/getter methods.
 
 2. Add another turtle and make both turtles move. Then find the distance between them. You must use the getXPos() and getYPos() methods as well as the getDistance() method.
 
-.. activecode:: challenge2-5-TurtleDistance
+.. activecode:: code2_5_4
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar

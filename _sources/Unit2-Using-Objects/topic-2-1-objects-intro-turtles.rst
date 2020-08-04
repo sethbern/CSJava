@@ -61,11 +61,15 @@ In the 1960s, an educational programming language called **Logo** was developed.
 	pair: turtle; screen
 	pair: turtle; library
 
+
+|CodingEx| **Coding Exercise:**
+
 Today, we can play with virtual turtles in a graphical world. Below is a sample Java program that works with Turtle objects.
 
-.. activecode:: code_2-1-Turtle1
+.. activecode:: code2_1_1
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
     Run the code below to see what the following program does.  
@@ -77,7 +81,7 @@ Today, we can play with virtual turtles in a graphical world. Below is a sample 
     NOTE: The CodeLens Visualizer will not work with graphics programs.
     ~~~~
     
-    public class TurtleTest1
+    public class TurtleGraphics
     {
       public static void main(String[] args)
       {
@@ -122,6 +126,7 @@ which is the graphical window that they can draw on.
 ``World`` and ``Turtle`` are two Java classes are not part of the core Java language.  
 The program relies on a separate library of Java code that defines both classes.  
 
+|Exercise| **Check your understanding**
 
 .. mchoice:: q2_1_1
    :practice: T
@@ -163,9 +168,13 @@ The parentheses ``()`` after a method name are there in case you need to give
 the method some data to do its job, for example to go forward 50 pixels 
 instead of 100. You would do this using the code ``yertle.forward(50);``.
 
-.. activecode:: code_2-1-Turtle2
+
+|CodingEx| **Coding Exercise:**
+
+.. activecode:: code2_1_2
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
     You can create many objects of a class. In the code below, two turtle objects are created and 
@@ -176,7 +185,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
     turtle to move and turn independently.
     ~~~~
    
-    public class TurtleTest2
+    public class TurtleGraphics2
     {
       public static void main(String[] args)
       {
@@ -202,7 +211,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
     public class RunestoneTests extends CodeTestHelper
     {
         public RunestoneTests() {
-            super("TurtleTest2");
+            super("TurtleGraphics2");
         }
 
         @Test
@@ -213,6 +222,8 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
         }
 
     }
+
+|Exercise| **Check your understanding**
 
 .. mchoice:: q2_1_2
    :practice: T
@@ -324,7 +335,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
    How many objects can you create from a class in Java?
 
 
-.. parsonsprob:: p2_1_10
+.. parsonsprob:: q2_1_10
    :practice: T
    :numbered: left
    :adaptive:
@@ -343,7 +354,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
    any of the lines are in the wrong order or are the wrong blocks.  </p>
 
    -----
-   public class TurtleTest {
+   public class TurtleExample3 {
    =====
        public static void main(String[] args) {
    =====
@@ -371,14 +382,14 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 
 
 
-.. parsonsprob:: p2_1_11
+.. parsonsprob:: q2_1_11
        :numbered: left
        :adaptive:
        :noindent:
 
        The following program uses a turtle to draw the picture shown to the left, <img src="../_static/turtleTurnForwardRightForward.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: start the class definition, start the main method, and create a world and turtle. Then it should ask the turtle to turn 45 degrees, go forward 100 pixels, turn right, and then go forward 50 pixels. Next, it should ask the world to show itself. Finally, it should close the main method and class definition. We have added a compass to the picture to indicate the directions north, south, west, and east. <br /><br /><p>Drag the needed blocks of statements from the left column to the right column and put them in the right order.  There are <b>three extra blocks</b> that are not needed in a correct solution.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are the wrong blocks.  </p>
        -----
-       public class TurtleTest {
+       public class TurtleExample4 {
        =====
            public static void main(String[] args) {
        =====
@@ -420,12 +431,13 @@ For example, have it draw a small square and then a large square by calling the 
 
 After writing your code below, if you'd like your own copy, you can open this |repl link|, copy in your code, and save it in your own repl.it account.
 
-.. activecode:: code_2-1-Challenge1
+.. activecode:: code2_1_3
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
-    public class TurtleTest
+    public class TurtleChallenge
     {
       public static void main(String[] args)
       {
@@ -451,7 +463,7 @@ After writing your code below, if you'd like your own copy, you can open this |r
     public class RunestoneTests extends CodeTestHelper
     {
         public RunestoneTests() {
-            super("TurtleTest");
+            super("TurtleChallenge");
         }
 
         @Test

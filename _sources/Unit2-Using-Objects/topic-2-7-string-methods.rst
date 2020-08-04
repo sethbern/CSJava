@@ -79,7 +79,7 @@ String Methods: length, substring, indexOf
 
 Run the code below to see the output from the String methods ``length``, ``substring``, and ``indexOf``. The length method returns the number of characters in the string, not the last index which is length-1. The ``str.substring(from,to)`` method returns the substring from the ``from`` index up to (but not including) the ``to`` index. The method ``str.indexOf(substring)`` returns the index of where it finds substring in str or -1 if it is not there.   
 
-.. activecode:: lcsm1
+.. activecode:: code2_7_1
    :language: java
    :autograde: unittest
 
@@ -130,7 +130,7 @@ Run the code below to see the output from the String methods ``length``, ``subst
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: qsb_3
+.. mchoice:: q2_7_1
    :practice: T
    :answer_a: 2
    :answer_b: 1
@@ -149,7 +149,7 @@ Run the code below to see the output from the String methods ``length``, ``subst
      String s1 = "abccba";
      int pos = s1.indexOf("b");
 
-.. mchoice:: qsb_3b
+.. mchoice:: q2_7_2
    :practice: T
    :answer_a: 2
    :answer_b: 3
@@ -168,7 +168,7 @@ Run the code below to see the output from the String methods ``length``, ``subst
      String s1 = "baby";
      int len = s1.length();
 
-.. mchoice:: qsb_3c
+.. mchoice:: q2_7_3
    :practice: T
    :answer_a: baby
    :answer_b: b
@@ -187,7 +187,7 @@ Run the code below to see the output from the String methods ``length``, ``subst
      String s1 = "baby";
      String s2 = s1.substring(0,3);
 
-.. .. mchoice:: qsb_4
+.. mchoice:: q2_7_4
    :practice: T
    :answer_a: 7
    :answer_b: 8
@@ -204,7 +204,7 @@ Run the code below to see the output from the String methods ``length``, ``subst
      String s1 = "Miss you!";
      int len = s1.length();
 
-.. mchoice:: qsb_4b
+.. mchoice:: q2_7_5
    :practice: T
    :answer_a: by
    :answer_b: aby
@@ -246,7 +246,7 @@ The equals method compares the two strings character by character and returns tr
 
 Run the example below to see the output from ``compareTo`` and ``equals``. Since "Hello!" would be alphabetically ordered after "And", compareTo returns a positive number. Since "Hello!" would be alphabetically ordered before "Zoo", compareTo returns a negative number.  Notice that equals is case-sensitive.
 
-.. activecode:: lcsm2
+.. activecode:: code2_7_2
    :language: java
    :autograde: unittest
 
@@ -297,7 +297,7 @@ Run the example below to see the output from ``compareTo`` and ``equals``. Since
 
 |Exercise| **Check your understanding**
 
-.. dragndrop:: ch4_str1
+.. dragndrop:: q2_7_6
     :feedback: Review the vocabulary.
     :match_1: the position of a character in a string|||index 
     :match_2: a new string that is a part of another string with 0 to all characters copied from the original string|||substring
@@ -306,7 +306,7 @@ Run the example below to see the output from ``compareTo`` and ``equals``. Since
     
     Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct
     
-.. dragndrop:: ch4_str2
+.. dragndrop:: q2_7_7
     :feedback: Review the vocabulary.
     :match_1: Returns true if the characters in two strings are the same|||equals
     :match_2: Returns the position of one string in another or -1|||indexOf
@@ -315,7 +315,7 @@ Run the example below to see the output from ``compareTo`` and ``equals``. Since
     
     Drag the definition from the left and drop it on the correct method on the right.  Click the "Check Me" button to see if you are correct.
 
-.. mchoice:: qsb_5
+.. mchoice:: q2_7_8
    :practice: T
    :answer_a: hi th
    :answer_b: hi the
@@ -335,7 +335,7 @@ Run the example below to see the output from ``compareTo`` and ``equals``. Since
      int pos = s1.indexOf("e");
      String s2 = s1.substring(0,pos);
 
-.. mchoice:: qsb_6-old1
+.. mchoice:: q2_7_9
    :practice: T
    :answer_a: Hi
    :answer_b: hi
@@ -355,7 +355,7 @@ Run the example below to see the output from ``compareTo`` and ``equals``. Since
      String s2 = s1.substring(0,1);
      String s3 = s2.toLowerCase();
 
-.. mchoice:: qsb_7-old24
+.. mchoice:: q2_7_10
    :practice: T
    :answer_a: Hi
    :answer_b: hi
@@ -375,7 +375,7 @@ Run the example below to see the output from ``compareTo`` and ``equals``. Since
      String s2 = s1.substring(0,1);
      String s3 = s2.toLowerCase();
 
-.. mchoice:: qsb_8-new
+.. mchoice:: q2_7_11
    :practice: T
    :answer_a: positive (> 0)
    :answer_b: 0
@@ -402,7 +402,7 @@ Common Mistakes with Strings
 
 The following code shows some common mistakes with strings.
 
-.. activecode:: stringMistakes
+.. activecode:: code2_7_3
    :language: java
    :practice: T
    :autograde: unittest
@@ -446,17 +446,17 @@ The following code shows some common mistakes with strings.
 
 Here is a list of common mistakes made with Strings.
  
-  
-  -  Thinking that substrings include the character at the last index when they don't. 
-  
-  -  Thinking that strings can change when they can't.  They are immutable.  
-  
-  - Trying to access part of a string that is not between index 0 and length - 1. This will throw an IndexOutOfBoundsException.
-  
-  -  Trying to call a method like ``indexOf`` on a string reference that is null.  You will get a null pointer exception.
-  
-  -  Using ``==`` to test if two strings are equal.  This is actually a test to see if they refer to the same object.  Usually you only want to know if they have the same characters in the same order.  In that case you should use ``equals`` or ``compareTo`` instead.    
-  -  Treating upper and lower case characters the same in Java.  If ``s1 = "Hi"`` and ``s2 = "hi"`` then ``s1.equals(s2)`` is false. 
+
+-  Thinking that substrings include the character at the last index when they don't. 
+
+-  Thinking that strings can change when they can't.  They are immutable.  
+
+- Trying to access part of a string that is not between index 0 and length - 1. This will throw an IndexOutOfBoundsException.
+
+-  Trying to call a method like ``indexOf`` on a string reference that is null.  You will get a null pointer exception.
+
+-  Using ``==`` to test if two strings are equal.  This is actually a test to see if they refer to the same object.  Usually you only want to know if they have the same characters in the same order.  In that case you should use ``equals`` or ``compareTo`` instead.    
+-  Treating upper and lower case characters the same in Java.  If ``s1 = "Hi"`` and ``s2 = "hi"`` then ``s1.equals(s2)`` is false. 
 
 
 Summary
@@ -486,7 +486,7 @@ Summary
   
   - **int compareTo(String other)** : returns a value < 0 if this is less than other; returns zero if this is equal to other; returns a value > 0 if this is greater than other.
 
-- ``str.substring(index, index + 1)`` returns a single character at index in string str. 
+  - **str.substring(index, index + 1)** returns a single character at index in string str. 
 
 
 

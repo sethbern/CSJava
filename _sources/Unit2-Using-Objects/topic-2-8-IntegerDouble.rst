@@ -48,7 +48,7 @@ anymore, and you should instead just set it equal to a value.
 These wrapper classes (defined in the java.lang package) are also useful because they have some special values (like the minimum and maximum values for the type) and methods that you can use. Try the following code to see the minimum and maximum values possible for the type int.
  
 
-.. activecode:: lcmm1
+.. activecode:: code2_8_1
    :language: java
    :autograde: unittest
    
@@ -107,7 +107,7 @@ When would you ever use Integer.MIN_VALUE or Integer.MAX_VALUE?  They are handy 
 
 |Exercise| **Check your understanding**
 
-.. dragndrop:: WrapperClasses
+.. dragndrop:: q2_8_1
     :feedback: Review the vocabulary.
     :match_1: automatic conversion from the primitive type to the wrapper object|||autoboxing
     :match_2: automatic conversion from the wrapper object to the primitive type|||unboxing
@@ -120,7 +120,7 @@ When would you ever use Integer.MIN_VALUE or Integer.MAX_VALUE?  They are handy 
 
 Here are some more useful methods in the Integer and  Double classes:
 
-.. activecode:: integerMethods
+.. activecode:: code2_8_2
    :language: java
    :autograde: unittest
  
@@ -164,7 +164,7 @@ Here are some more useful methods in the Integer and  Double classes:
 
 Can you find and fix all the bugs in the following code to use the correct Integer and Double methods and variables?
 
-.. activecode:: challenge2-8-wrapperDebug
+.. activecode:: code2_8_3
    :language: java
    :autograde: unittest
    

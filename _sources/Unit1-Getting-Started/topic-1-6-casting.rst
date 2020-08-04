@@ -252,6 +252,7 @@ in your formulas. Follow the pseudocode below.
 
    <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>
    
+   
 
 .. activecode:: code1_6_5
    :language: java

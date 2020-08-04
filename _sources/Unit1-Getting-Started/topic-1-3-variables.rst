@@ -374,7 +374,7 @@ putting quotes around the variables in the print statements above and see what h
 
 
 
-**Mixed up Code Problems**
+|Exercise| **Check Your Understanding - Mixed up Code Problems**
    
 .. parsonsprob:: q1_3_11
    :numbered: left
@@ -628,6 +628,7 @@ You want to make your code easy to understand, not harder.
 	
 The convention in Java and many programming languages is to always start a variable name with a lower case letter and then uppercase the first letter of each additional word. Variable names can not include spaces so uppercasing the first letter of each additional word makes it easier to read the name.  Uppercasing the first letter of each additional word is called **camel case**. Another option is to use underscore ``_`` to separate words, but you cannot have spaces in a variable name. 
 
+|CodingEx| **Coding Exercise:**
 
   
 .. activecode:: code1_3_5
@@ -692,9 +693,6 @@ The convention in Java and many programming languages is to always start a varia
 
 |Groupwork| Debugging Challenge : Weather Report
 ------------------------------------------------
-
-
-
 
 .. activecode:: code1_3_6
    :language: java

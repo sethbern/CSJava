@@ -103,7 +103,7 @@ since there are two versions available, each with a different parameter list.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: overload_const_1
+.. mchoice:: q2_2_1
    :practice: T
    :answer_a: When a constructor takes one parameter.
    :answer_b: When a constructor takes more than one parameter.
@@ -117,7 +117,7 @@ since there are two versions available, each with a different parameter list.
 
    Which of these is overloading?
 
-.. mchoice:: const_def_1
+.. mchoice:: q2_2_2
    :practice: T
    :answer_a: World w = null;
    :answer_b: World w = new World;
@@ -131,7 +131,7 @@ since there are two versions available, each with a different parameter list.
 
    Which of these is valid syntax for creating and initializing a World object?
 
-.. mchoice:: const_def_2
+.. mchoice:: q2_2_3
    :practice: T
    :answer_a: World w = (300,400);
    :answer_b: World w = new World(300,400);
@@ -203,7 +203,7 @@ The second constructor places the turtle at a certain (x,y) location in the worl
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: const_turtle1
+.. mchoice:: q2_2_4
    :practice: T
    :answer_a: Turtle t = Turtle(world);
    :answer_b: Turtle t = new Turtle();
@@ -218,7 +218,7 @@ The second constructor places the turtle at a certain (x,y) location in the worl
    Which of these is valid syntax for creating and initializing a Turtle object in the center of the world?
 
 
-.. mchoice:: const_turtle2
+.. mchoice:: q2_2_5
    :practice: T
    :answer_a: Turtle t = new Turtle();
    :answer_b: Turtle t = new Turtle(50,75);
@@ -239,9 +239,10 @@ The second constructor places the turtle at a certain (x,y) location in the worl
 
 |CodingEx| **Coding Exercise:**
 
-.. activecode:: TurtleConstructorTest
+.. activecode:: code2_2_1
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
     Try changing the code below to create a ``World`` object with 300x400 pixels. 
@@ -302,9 +303,10 @@ You assign an object variable by calling a constructor on the right hand side of
 
 |CodingEx| **Coding Exercise:**
 
-.. activecode:: TurtleTest3Objects
+.. activecode:: code2_2_2
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
     Run the code below, which creates two instances of the Turtle class.  
@@ -374,9 +376,9 @@ and the constructors and know how to use them.
 
     Figure 4: A Date class showing attributes and constructors
 
+|Exercise| **Check your understanding**
 
-
-.. mchoice:: DateClass1
+.. mchoice:: q2_2_6
    :practice: T
    :answer_a: Date d = new Date();
    :answer_b: Date d = new Date(9,20);
@@ -415,9 +417,7 @@ completely different date, for example January 9th (1/9) instead of Sept. 1st (9
 
 |Exercise| **Check your understanding**
 
-
-
-.. mchoice:: 2_2_formal_parms
+.. mchoice:: q2_2_7
    :practice: T
    :answer_a: objects
    :answer_b: classes
@@ -431,7 +431,7 @@ completely different date, for example January 9th (1/9) instead of Sept. 1st (9
 
    Given the constructor signature ``public World(int width, int height)``, what are ``width`` and ``height``?
 
-.. mchoice:: 2_2_actual_parms
+.. mchoice:: q2_2_8
    :practice: T
    :answer_a: objects
    :answer_b: classes

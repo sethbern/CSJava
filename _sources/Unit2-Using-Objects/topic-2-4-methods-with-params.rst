@@ -82,7 +82,7 @@ value 25  will get copied into the formal parameter variable pixels.
 
 |Exercise| **Check your understanding**
 
-.. dragndrop:: Params
+.. dragndrop:: q2_4_1
     :feedback: Review the vocabulary above.
     :match_1: an object's behaviors or functions that can be used or called to do its job|||methods
     :match_2: the values or data passed to an object's method|||arguments or actual parameters
@@ -128,16 +128,17 @@ If the code below does not work in your browser, you can also use the Turtle cod
 at this |repl link| (refresh page after forking and if it gets stuck) or download 
 the files |github| to use in your own IDE.
 
-.. activecode:: TurtleTestMethods1
+.. activecode:: code2_4_1
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
     1. Can you make yertle draw a square and change the pen color for each side of the square? Try something like: yertle.setColor(Color.red); This uses the |Color| class in Java which has some colors predefined like red, yellow, blue, magenta, cyan. You can also use more specific methods like setPenColor, setBodyColor, and setShellColor.
     2. Can you draw a triangle? The turnRight() method always does 90 degree turns, but you'll need 60 degree angles for a equilateral triangle. Use the turn method which has a parameter for the angle of the turn in degrees. For example, turn(90) is the same as turnRight(). Try drawing a triangle with different colors. 
     ~~~~
 
-    public class TurtleTestMethods1
+    public class TurtleTestMethods
     {
       public static void main(String[] args)
       {
@@ -159,13 +160,13 @@ the files |github| to use in your own IDE.
     public class RunestoneTests extends CodeTestHelper
     {
         public RunestoneTests() {
-            super("TurtleTestMethods1");
+            super("TurtleTestMethods");
         }
 
         @Test
         public void test1()
         {
-            String orig = "public class TurtleTestMethods1\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n\n      yertle.forward(100);\n      yertle.turnLeft();\n      yertle.forward(75);\n\n      world.show(true);\n  }\n}\n";
+            String orig = "public class TurtleTestMethods\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n      Turtle yertle = new Turtle(world);\n\n      yertle.forward(100);\n      yertle.turnLeft();\n      yertle.forward(75);\n\n      world.show(true);\n  }\n}\n";
             boolean passed = codeChanged(orig);
             assertTrue(passed);
         }
@@ -217,7 +218,7 @@ the files |github| to use in your own IDE.
 
 
 
-|CodingEx| **Coding Exercise**
+|Exercise| **Test your understanding - mixed up code**
 
 Try the following mixed up code to draw a simple house made of a square and a triangle roof.
 
@@ -227,7 +228,7 @@ Try the following mixed up code to draw a simple house made of a square and a tr
     :alt: simple house
     
     
-.. parsonsprob:: DrawAHouse
+.. parsonsprob:: q2_4_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -299,12 +300,13 @@ Remember that the angles you turn depend on which direction you are facing,
 and the turtle begins facing up.
 
 
-.. activecode:: challenge2-4-TurtleHouse
+.. activecode:: code2_4_2
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
-    public class TurtleHouse
+    public class TurtleHouseChallenge
     {
       public static void main(String[] args)
       {
@@ -323,13 +325,13 @@ and the turtle begins facing up.
     public class RunestoneTests extends CodeTestHelper
     {
         public RunestoneTests() {
-            super("TurtleHouse");
+            super("TurtleHouseChallenge");
         }
 
         @Test
         public void test1()
         {
-            String orig = "public class TurtleHouse\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n\n\n\n      world.show(true);\n  }\n}\n";
+            String orig = "public class TurtleHouseChallenge\n{\n  public static void main(String[] args)\n  {\n      World world = new World(300,300);\n\n\n\n      world.show(true);\n  }\n}\n";
             boolean passed = codeChanged(orig);
             assertTrue(passed);
         }

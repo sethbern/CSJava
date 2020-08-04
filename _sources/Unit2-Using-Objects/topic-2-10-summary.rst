@@ -89,7 +89,7 @@ Java Keyword Summary
 Vocabulary Practice
 -----------------------
 
-.. dragndrop:: unit2_vocab
+.. dragndrop:: q2_10_1
     :feedback: Review the summaries above.
     :match_1: a specific instance of a class with defined attributes|||object
     :match_2: defines a new data type with instance variables and methods|||class

@@ -43,7 +43,7 @@ You can declare a variable to be of type ``String``.
    Class names in Java, like ``String``, begin with a capital letter.  All primitive types: ``int``, ``double``, and ``boolean``, begin with a lowercase letter.  This is one easy way to tell the difference between primitive types and class types. 
 
 
-.. activecode:: lcsb1
+.. activecode:: code2_6_1
    :language: java
    :autograde: unittest
    
@@ -110,7 +110,7 @@ In both cases an object of the ``String`` class will be created in memory and th
 |CodingEx| **Coding Exercise:**
 
 
-.. activecode:: lcsbnew
+.. activecode:: code2_6_2
    :language: java
    :autograde: unittest
 
@@ -144,7 +144,7 @@ In both cases an object of the ``String`` class will be created in memory and th
 
 
 
-.. activecode:: lcsb2
+.. activecode:: code2_6_3
    :language: java
    :autograde: unittest
    
@@ -208,7 +208,7 @@ String Operators - Concatenation
 	
 Strings can be **appended** to each other to create a new string using the ``+`` or ``+=`` operator . This is also called **concatenation**. 
 
-.. activecode:: lcso1
+.. activecode:: code2_6_4
    :language: java
    :autograde: unittest
    :practice: T
@@ -248,7 +248,7 @@ Strings can be **appended** to each other to create a new string using the ``+``
 
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: qse_1
+.. mchoice:: q2_6_1
    :practice: T
    :answer_a: xyz
    :answer_b: xyxyz
@@ -280,7 +280,7 @@ You can even add other items to a string using the ``+`` operator.  The other it
 |CodingEx| **Coding Exercise:**
 
 
-.. activecode:: lcso2
+.. activecode:: code2_6_5
    :language: java
    :autograde: unittest
    
@@ -318,7 +318,7 @@ Since the same operators are processed from left to right this will print ``1243
 
 What if you wanted to print out a double quote " character? Since the double quote " is a special character with meaning in Java, we put in a backslash in front of the quote to signal that we want just the character. This is called a **backslash escape sequence**. And if you wanted to print out a backslash, you would have to backslash it too in order to escape its special meaning. Another useful backslashed character is backslash \\n which will put in a newline. 
 
-.. activecode:: bhescape
+.. activecode:: code2_6_7
    :language: java
    :autograde: unittest
    
@@ -370,7 +370,7 @@ Then, come up with another story that uses at least 5 new String variables.
 When you're done, try another team's mad libs code. 
 If you create this program in a Java IDE,  you can use input to read in the words (see input examples using the |Scanner|).
 
-.. activecode:: challenge2-6-MadLibs
+.. activecode:: code2_6_8
    :language: java
    :autograde: unittest
    :practice: T

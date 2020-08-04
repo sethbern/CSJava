@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 2-14-
+   :prefix: 2-13-
    :start: 1
 
 Multiple Choice Exercises
@@ -13,7 +13,7 @@ These questions are mostly about Strings, but more questions on using other obje
 Easier Multiple Choice Questions
 ---------------------------------
 
-.. mchoice:: AP2-1-5
+.. mchoice:: q2_13_1
    :practice: T
    :answer_a: An attribute of breed is String.
    :answer_b: color, breed, and age are instances of the Cat class.
@@ -36,7 +36,7 @@ Easier Multiple Choice Questions
     The object myCat will be declared as type Cat.
     Which of the following descriptions is accurate?
 
-.. mchoice:: AP2-1-6
+.. mchoice:: q2_13_2
    :practice: T
    :answer_a: An attribute of the scaryMovie class is title.
    :answer_b: scaryMovie is an instance of the Movie class.
@@ -59,7 +59,7 @@ Easier Multiple Choice Questions
     Which of the following descriptions is accurate?
 
 
-.. mchoice:: qse_2
+.. mchoice:: q2_13_3
    :practice: T
    :answer_a: 8
    :answer_b: 10
@@ -76,7 +76,7 @@ Easier Multiple Choice Questions
      String s1 = "Hey, buddy!";
      int len = s1.length();
 
-.. mchoice:: qse_3
+.. mchoice:: q2_13_4
    :practice: T
    :answer_a: 3
    :answer_b: 4
@@ -95,7 +95,7 @@ Easier Multiple Choice Questions
      String s1 = "ac ded ca";
      int pos = s1.indexOf("d");
 
-.. mchoice:: qse_4
+.. mchoice:: q2_13_5
    :practice: T
    :answer_a: Hey
    :answer_b: he
@@ -124,7 +124,7 @@ Medium Multiple Choice Questions
 
 
 
-.. mchoice:: qve_new6
+.. mchoice:: q2_13_6
    :practice: T
    :answer_a: a random number from 0 to 4
    :answer_b: a random number from 1 to 5
@@ -145,7 +145,7 @@ Medium Multiple Choice Questions
       
 
       
-.. mchoice:: qve_new8
+.. mchoice:: q2_13_7
    :practice: T
    :answer_a: a random number from 0 to 10
    :answer_b: a random number from 0 to 9
@@ -165,7 +165,7 @@ Medium Multiple Choice Questions
       int num = (int) (value * 11) - 5;
       
       
-.. mchoice:: qsm_1
+.. mchoice:: q2_13_8
    :practice: T
    :answer_a: I, II, III
    :answer_b: I only
@@ -191,7 +191,7 @@ Medium Multiple Choice Questions
      II.  s1 == s2
      III. s1 == s3
 
-.. mchoice:: qsm_2
+.. mchoice:: q2_13_9
    :practice: T
    :answer_a: org
    :answer_b: eor
@@ -215,7 +215,7 @@ Medium Multiple Choice Questions
      String s3 = s2.substring(0,3);
      System.out.println(s3);
 
-.. mchoice:: qsm_3
+.. mchoice:: q2_13_10
    :practice: T
    :answer_a: null
    :answer_b: hi there
@@ -241,7 +241,7 @@ Medium Multiple Choice Questions
      s3 = s3.toUpperCase();
      s4 = null;
 
-.. mchoice:: qsm_4
+.. mchoice:: q2_13_11
    :practice: T
    :answer_a: Data Set 2 contains one string which should return true and one that should return false.
    :answer_b: All strings in Data Set 2 have the same number of characters.
@@ -264,7 +264,7 @@ Medium Multiple Choice Questions
       abba	        bcd
       aBa
 
-.. mchoice:: qsm_5
+.. mchoice:: q2_13_12
    :practice: T
    :answer_a: Use one class, Car, which has three attributes: int numDoors, double mpg, and boolean hasAir.
    :answer_b: Use four unrelated classes: Car, Doors, MilesPerGallon, and AirConditioning
@@ -286,7 +286,7 @@ Hard Multiple Choice Questions
 ----------------------------------
 
 
-.. mchoice:: qsh_1
+.. mchoice:: q2_13_13
    :practice: T
    :answer_a: II and IV
    :answer_b: II, III, and IV
@@ -313,7 +313,7 @@ Hard Multiple Choice Questions
      III. (s1 == s3)
      IV.  (s2.equals(s3))
 
-.. mchoice:: qsh_2
+.. mchoice:: q2_13_14
    :practice: T
    :answer_a: 21
    :answer_b: 1353

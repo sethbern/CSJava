@@ -39,7 +39,7 @@ that you might want to use in your programs like ``Math.abs`` (absolute value). 
 
 The ``Math.random()`` method returns a number greater than or equal to 0.0, and less than 1.0. 
 
-.. activecode:: random1
+.. activecode:: code2_9_1
    :language: java
    :autograde: unittest
 
@@ -79,7 +79,7 @@ You can use ``Math.random`` and a cast to integer to return a random integer bet
 |CodingEx| **Coding Exercise**
 
    
-.. activecode:: randomRange
+.. activecode:: code2_9_2
    :language: java
    :autograde: unittest
 
@@ -139,7 +139,7 @@ Here are some examples that move a random number into a specific range.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: qrand_1
+.. mchoice:: q2_9_1
    :practice: T
    :answer_a: Math.random() < 0.4
    :answer_b: Math.random() > 0.4
@@ -151,7 +151,7 @@ Here are some examples that move a random number into a specific range.
 
    Which of the following would be true about 40% of the time?
    
-.. mchoice:: qrand_2
+.. mchoice:: q2_9_2
    :practice: T
    :answer_a: ((int) (Math.random() * 5))
    :answer_b: ((int) (Math.random() * 6))
@@ -163,7 +163,7 @@ Here are some examples that move a random number into a specific range.
 
    Which of the following would return a random number from 1 to 5 inclusive?
    
-.. mchoice:: qrand_3
+.. mchoice:: q2_9_3
    :practice: T
    :answer_a: ((int) (Math.random() * 10))
    :answer_b: ((int) (Math.random() * 11))
@@ -175,7 +175,7 @@ Here are some examples that move a random number into a specific range.
 
    Which of the following would return a random number from 0 to 10 inclusive?
    
-.. mchoice:: qrand_4
+.. mchoice:: q2_9_4
    :practice: T
    :answer_a: Math.random() < 0.25
    :answer_b: Math.random() > 0.25
@@ -189,7 +189,7 @@ Here are some examples that move a random number into a specific range.
 
 |Exercise| **Sample Problem**
 
-.. mchoice:: apcsa_sample3
+.. mchoice:: q2_9_5
    :practice: T
    :answer_a: int rn = (int) (Math.random() * 25) + 36;
    :answer_b: int rn = (int) (Math.random() * 25) + 60;
@@ -246,7 +246,7 @@ You may have a combination lock on your locker at school where you have to spin 
 Now what about the combination lock for this challenge? It has 3 dials with 0-40 (not including 40) numbers possible on each dial. In general, the formula to use is NumbersPerDial\ :sup:`numberOfDials`. Write this using the **Math.pow()** method in your code and save it into a variable and print out.
 
  
-.. activecode:: challenge2-9-random-math
+.. activecode:: code2_9_3
    :language: java
    :autograde: unittest
    
@@ -355,7 +355,7 @@ Now what about the combination lock for this challenge? It has 3 dials with 0-40
 
 Here's another challenge that is a lot of fun! Can you use random numbers to make dancing turtles? This idea was suggested by Zac Martin's class.
 
-.. activecode:: challenge-2-9b-dancing-turtles
+.. activecode:: code2_9_4
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
