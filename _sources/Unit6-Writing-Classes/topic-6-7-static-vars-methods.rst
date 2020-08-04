@@ -25,13 +25,17 @@ Static Variables and Methods
 
 In Unit 2, we explored the Math class and its many static methods like Math.random(), and we've always used a main method which is static. In this lesson, you will learn to write your own static variables and methods.
 
-- **Static** variables and methods belong to a class and are called with the Class Name rather than using object variables, like ClassName.methodName(); 
+- **Static** variables and methods belong to a class and are called with the Class Name rather than using object variables, like ClassName.methodName();  
+
+- If you are calling a static method from within the same class, you can leave off the Classname and dot notation as we saw in Unit 5.
 
 - There is only one copy of a static variable or method for the whole class. For example, the main method is static because there should only be 1 main method. 
 
 - Static methods can be public or private.
 
 - The static keyword is placed right after the public/private modifier and right before the type of variables and methods in their declarations. 
+
+- A static method does not have a **this** variable, since it is not called with an object.
 
 .. code-block:: java
      
@@ -52,11 +56,12 @@ In Unit 2, we explored the Math class and its many static methods like Math.rand
 
    <a href="http://www.pythontutor.com/visualize.html#code=%20public%20class%20Person%20%0A%20%20%7B%0A%20%20%20%20%20//%20instance%20variables%20%0A%20%20%20%20%20private%20String%20name%3B%0A%20%20%20%20%20private%20String%20email%3B%0A%20%20%20%20%20private%20String%20phoneNumber%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Static%20counter%20variable%0A%20%20%20%20%20public%20static%20int%20personCounter%20%3D%200%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20static%20method%20to%20print%20out%20counter%0A%20%20%20%20%20public%20static%20void%20printPersonCounter%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20System.out.println%28%22Person%20counter%3A%20%22%20%2B%20personCounter%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20construct%20a%20Person%20copying%20in%20the%20data%20into%20the%20instance%20variables%0A%20%20%20%20%20public%20Person%28String%20initName,%20String%20initEmail,%20String%20initPhone%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20name%20%3D%20initName%3B%0A%20%20%20%20%20%20%20%20email%20%3D%20initEmail%3B%0A%20%20%20%20%20%20%20%20phoneNumber%20%3D%20initPhone%3B%0A%20%20%20%20%20%20%20%20personCounter%2B%2B%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20toString%28%29%20method%0A%20%20%20%20%20public%20String%20toString%28%29%20%0A%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20return%20%20name%20%2B%20%22%3A%20%22%20%2B%20email%20%2B%20%22%20%22%20%2B%20phoneNumber%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20//%20call%20the%20constructor%20to%20create%20a%20new%20person%0A%20%20%20%20%20%20%20%20Person%20p1%20%3D%20new%20Person%28%22Sana%22,%20%22sana%40gmail.com%22,%20%22123-456-7890%22%29%3B%0A%20%20%20%20%20%20%20%20Person%20p2%20%3D%20new%20Person%28%22Jean%22,%20%22jean%40gmail.com%22,%20%22404%20899-9955%22%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20Person.printPersonCounter%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D%0A%20%20&cumulative=false&curInstr=1&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="text-decoration:underline">Java visualizer</a>
 
-Static methods only have access to other static variables and static methods. Static methods cannot access or change the values of instance variables or the this reference (since there is no calling object for them), and static methods cannot call non-static methods. However, non-static methods have access to all variables (instance or static) and methods (static or non-static) in the class.
+Static methods only have access to other static variables and static methods (unless the static method creates an object through which to access instance variables and methods). 
+Static methods cannot access or change the values of instance variables or use the "this" reference (since there is no calling object for them), and static methods cannot call non-static methods. However, non-static methods have access to all variables (instance or static) and methods (static or non-static) in the class.
 
 Since there is only 1 copy of a static variable or method, static variables are often used to count how many objects are generated. In the following class Person, there is a static variable called personCounter that is incremented each time the Person constructor is called to initialize a new Person object. The static method printCounter() prints out its value.  You can also watch how it works in the |Java visualizer| by clicking the CodeLens button below.
 
-.. activecode:: PersonClassStaticCounter
+.. activecode:: code6_7_1
   :language: java
   :autograde: unittest
 
@@ -124,7 +129,7 @@ Another common use for static variables is the keep track of a minimum or maximu
 
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: staticTrace
+.. mchoice:: q6_7_1
    :practice: T
    
    Consider the class Temperature below which has a static variable. What is the output of the main method below?
@@ -181,7 +186,7 @@ You can see this code in action in the |visualizer2|.
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: TemperatureBugs
+.. activecode:: code6_7_2
   :language: java
   :autograde: unittest
   :practice: T
@@ -249,32 +254,53 @@ You can see this code in action in the |visualizer2|.
 |Groupwork| Programming Challenge : Static Song and counter
 ------------------------------------------------------------
 
-.. |The Ants Go Marching| raw:: html
+In Unit 5-2, we wrote a class with a static method to print out the verses in the Old MacDonald song. 
+Notice that this is a class where 
+there are no instance variables and we don't really need to generate multiple objects. 
+With students or pets, it makes sense to have multiple objects. 
+With the Song, we were able to make the verse method static and have just 1 copy. 
 
-   <a href="https://www.lingokids.com/english-for-kids/songs/the-ants-go-marching-song" target="_blank">The Ants Go Marching</a>
 
-In the last lesson, we wrote a class with methods to print out the song |The Ants Go Marching|. Notice that this is a class where there are no instance variables and we don't really need to generate multiple objects. With students or pets, it makes sense to have multiple objects. With the Song, we can just make the methods static and have just 1 copy of them. 
-
-1. Copy in your class from the last lesson into this active code window. Change the method(s) that print out the verses of the Song to be static. In the main method, change how you call the static methods by using just the classname instead of creating an object.
-
-2. Add a static variable to the class that keeps track of the number of verses. Increment this variable each time the method to print a verse is called and print it out. 
-
-.. activecode:: challenge-5-7-static-song
+.. activecode:: code6_7_3
   :language: java
+
+  Add a static variable to the Song class that keeps track of the number of verses. 
+  Increment this variable each time the method to print a verse is called and print it out. 
+  Update the main method to add a few more verses (pig says oink, chicken says cluck) and rerun the program.
+
+  ~~~~
 
   public class Song 
   { 
-    // Add a static verse counter variable
-    
-    
-    // Change the method(s) to be static
-    
-    
-    
-    public static void main(String args[]) 
+
+    //add a static variable to count how many times the verse method is called
+  
+
+    //update the method to increment the counter
+    public static void verse(String animal, String noise) 
     {
-      // Call the static method(s) to print out the Song 
-    
+      System.out.println( "Old MacDonald had a farm" );
+      System.out.println( "E-I-E-I-O" );
+      System.out.println( "And on that farm he had a " + animal );
+      System.out.println( "E-I-E-I-O" );
+      System.out.println( "With a " + noise + "-" + noise + " here") ;
+      System.out.println( "And a " + noise + "-" + noise + " there" );
+      System.out.println( "Here a " + noise + ", there a " + noise );
+      System.out.println( "Everywhere a " + noise + "-" + noise );
+      System.out.println( "Old MacDonald had a farm" );
+      System.out.println( "E-I-E-I-O" );
+    }
+
+    public static void main(String[] args) 
+    {
+      verse( "cow" , "moo" );
+      verse( "duck" , "quack" );
+      //add a few more verses
+      
+
+      //print the counter value
+
+
     }
   }
 

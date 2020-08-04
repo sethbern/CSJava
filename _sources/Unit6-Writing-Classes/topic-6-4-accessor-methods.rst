@@ -100,7 +100,7 @@ Try the following code. Note that this active code window has 2 classes! The mai
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: StudentObjExample
+.. activecode:: code6_4_1
   :language: java
   :autograde: unittest
   :practice: T
@@ -197,7 +197,7 @@ This method is called automatically to try to convert an object to a String when
 
 Here is the Student class again, but this time with a toString() method. Note that when we call System.out.println(s1); it will automatically call the toString() method to cast the object into a String. The toString() method will return a String that is then printed out. Watch how the control moves to the toString() method and then comes back to main in the |Java visualizer| or by using the Code Lens button.
 
-.. activecode:: StudentToString
+.. activecode:: code6_4_2
   :language: java
   :autograde: unittest
 
@@ -252,12 +252,6 @@ Here is the Student class again, but this time with a toString() method. Note th
   
 |Groupwork| Programming Challenge : Class Pet
 --------------------------------------------------
-
-.. image:: Figures/animalclinic.png
-
-    :width: 150
-    :align: left
-    :alt: Animal Clinic
     
 You've been hired to create a software system for the Awesome Animal Clinic! They would like to keep track of their animal patients. Here are some attributes of the pets that they would like to track:
 
@@ -280,7 +274,7 @@ You've been hired to create a software system for the Awesome Animal Clinic! The
 6. Make sure you use good commenting!
 
 
-.. activecode:: challenge-5-4-Pet-Class
+.. activecode:: code6_4_3
   :language: java
 
   Create a Pet class that keeps track of the name, age, weight, type of animal, and breed for records at an animal clinic.
@@ -318,7 +312,7 @@ You've been hired to create a software system for the Awesome Animal Clinic! The
 Practice
 ------------
 
-.. mchoice:: AP5-4-1
+.. mchoice:: q6_4_1
    :practice: T
    :answer_a: The getNumOfPeople method should be declared as public.
    :answer_b: The return type of the getNumOfPeople method should be void.
@@ -352,7 +346,7 @@ Practice
         }
 
 
-.. mchoice:: AP5-4-2
+.. mchoice:: q6_4_2
     :practice: T
 
     Consider the following class definition. The class does not compile.

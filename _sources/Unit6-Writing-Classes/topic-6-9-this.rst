@@ -33,7 +33,7 @@ For example, in the following Class Person, when we create an object p1 and call
 Run the code below and also check it out in the |Java visualizer| which shows how this refers to different objects when the code is run.
 
  
-.. activecode:: PersonClassThis
+.. activecode:: code6_9_1
   :language: java
 
   Observe the use of the keyword this in the code below.
@@ -110,7 +110,7 @@ The **this** variable can be used anywhere you would use an object variable.  Yo
     :align: center
 
 
-.. activecode:: PayClassThis
+.. activecode:: code6_9_2
    :language: java
    
    What does this code print out? Trace through the code. Notice how the this Pay object is passed to the Overtime constructor.
@@ -161,7 +161,7 @@ The **this** variable can be used anywhere you would use an object variable.  Yo
 
 |Exercise| Check Your Understanding
 
-.. mchoice:: AP5-9-1
+.. mchoice:: q6_9_1
     :practice: T
 
     Consider the following class definitions.
@@ -255,7 +255,7 @@ The **this** variable can be used anywhere you would use an object variable.  Yo
 
 - Test your class below with a main method that creates a Bank Account object and calls its deposit and withdraw methods and prints out the object to test its toString() method. 
 
-.. activecode:: challenge-5-9-BankAccount
+.. activecode:: code6_9_3
   :language: java
 
   Create a class called BankAccount that keeps track of the account holder's name, the account number, and the balance in the account. Create 2 constructors, a toString() method, and withdraw(amount) and deposit(amount) methods. Test your class in a main method.
@@ -272,7 +272,7 @@ The **this** variable can be used anywhere you would use an object variable.  Yo
 Practice
 ------------
 
-.. mchoice:: AP5-9-2
+.. mchoice:: q6_9_2
     :practice: T
 
     Consider the following class definitions.

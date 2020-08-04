@@ -77,7 +77,7 @@ Notice the difference between set (mutator) and get (accessor) methods in the fo
 
 Try the Student class below which this time has set methods added. You will need to fix one error. The main method is in a separate Tester class and does not have access to the private instance variables in the other Student class. Change the main method so that it uses a public mutator method (set method) to access the value instead.
 
-.. activecode:: StudentObjExample2
+.. activecode:: code6_5_1
   :language: java
 
   Fix the main method to include a call to the appropriate set method.
@@ -144,7 +144,7 @@ Try the Student class below which this time has set methods added. You will need
 
 
 
-.. mchoice:: setSignature
+.. mchoice:: q6_5_1
     :practice: T
 
     Consider the class Party which keeps track of the number of people at the party.
@@ -184,7 +184,7 @@ Try the Student class below which this time has set methods added. You will need
    
       - The parameter of this set method should be called people in order to match the code in the method body.
    
-.. dragndrop:: AccessorMutator
+.. dragndrop:: q6_5_2
     :feedback: Review the vocabulary.
     :match_1: gets and returns the value of an instance variable|||accessor method
     :match_2: sets the instance variable to a value in its parameter|||mutator method
@@ -212,7 +212,7 @@ variable or a static variable in the class.
 3. Test each of the set methods in the main method.
 
 
-.. activecode:: challenge-5-5-Pet-Class
+.. activecode:: code6_5_2
   :language: java
   
   Create a Pet class that keeps track of the name, age, weight, type of animal, and breed for records at an animal clinic with 2 constructors, accessor (get) methods, a toString method, and mutator (set) methods for each instance variable.
@@ -243,7 +243,7 @@ variable or a static variable in the class.
 Practice
 ------------
 
-.. mchoice:: AP5-5-1
+.. mchoice:: q6_5_3
     :practice: T
 
     Consider the following class definition.
@@ -288,7 +288,7 @@ Practice
       - Instance variables should be private variables.
 
 
-.. mchoice:: AP5-5-2
+.. mchoice:: q6_5_4
     :practice: T
     :answer_a: Replace line 12 with numOfPeople = additionalPeople;
     :answer_b: Replace line 12 with return additionalPeople;

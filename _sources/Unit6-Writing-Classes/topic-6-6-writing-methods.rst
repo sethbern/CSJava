@@ -79,7 +79,7 @@ Since the method may set and get instance variables, you must call the method on
 Practice
 -----------
 
-.. mchoice:: AP5-6-1
+.. mchoice:: q6_6_1
     :practice: T
 
     Consider the following class, which uses the instance variable dollars to represent the money in a wallet in dollars.
@@ -135,7 +135,7 @@ Practice
         
 
 
-.. mchoice:: AP5-6-2
+.. mchoice:: q6_6_2
     :practice: T
 
     Consider the Liquid class below.

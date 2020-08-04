@@ -6,7 +6,7 @@ Exercises
 =========
 
 
-.. mchoice:: AP5-1-3
+.. mchoice:: q6_12_1
     :practice: T
 
     The Liquid class will contain two double attributes for a liquid’s boiling point temperature and freezing point temperature. The class will also contain a constructor.
@@ -65,7 +65,7 @@ Exercises
 
       - The instance variables should be private.
 
-.. mchoice:: AP5-1-4
+.. mchoice:: q6_12_2
     :practice: T
     :random:
 
@@ -140,7 +140,7 @@ Exercises
 
       - Instance variables should be private, and the constructor should be public.
       
-.. mchoice:: AP5-2-4
+.. mchoice:: q6_12_3
     :practice: T
     :random:
 
@@ -183,7 +183,7 @@ Exercises
 
       - Strings cannot perform addition.
 
-.. mchoice:: AP5-2-5
+.. mchoice:: q6_12_4
    :practice: T
    :random:
    :answer_a: I only
@@ -227,7 +227,7 @@ Exercises
     II.  Party b = new Party("Charlie", 0, 70+8);
     III. Party b = new Party("Charlie", 0, 78);
 
-.. mchoice:: AP5-2-6
+.. mchoice:: q6_12_5
     :practice: T
     :random:
 
@@ -291,7 +291,7 @@ Exercises
 
       - The constructor should be changing the instance variables, not the local variables.
       
-.. mchoice:: AP5-3-3
+.. mchoice:: q6_12_6
     :practice: T
     :random:
 
@@ -332,7 +332,7 @@ Exercises
       
       - Incorrect. This would again result in freezing point being > boiling point which is impossible.
 
-.. mchoice:: AP5-4-4
+.. mchoice:: q6_12_7
    :practice: T
    :random:
    :answer_a: The getAge method should be declared as private.
@@ -367,7 +367,7 @@ Exercises
         }
 
 
-.. mchoice:: AP5-4-3
+.. mchoice:: q6_12_8
    :practice: T
    :random:
    
@@ -411,7 +411,7 @@ Exercises
      - The getCurrentTemperature method does not have access to the ct variable which is the parameter for the constructor.
      
 
-.. mchoice:: AP5-5-3
+.. mchoice:: q6_12_9
     :practice: T
     :random:
 
@@ -469,7 +469,7 @@ Exercises
       - currentTemp is initialized to a value by the constructor but it is private and cannot be accessed outside the class.
 
 
-.. mchoice:: AP5-5-4
+.. mchoice:: q6_12_10
     :practice: T
     :random:
 
@@ -515,7 +515,7 @@ Exercises
       - This mutator method should have a void return value and just change the value of currentTemp without returning a value.
       
 
-.. mchoice:: AP5-6-3
+.. mchoice:: q6_12_11
    :practice: T
    :random:
    :answer_a: return (numOfBoxes + priceOfOnePizzaBox) / numOfPeople;
@@ -553,7 +553,7 @@ Exercises
 
 
 
-.. mchoice:: AP5-6-4
+.. mchoice:: q6_12_12
    :practice: T
    :random:
    :answer_a: I only
@@ -620,7 +620,7 @@ Exercises
                 return false;
              }           
 
-.. mchoice:: AP5-8-3
+.. mchoice:: q6_12_13
     :practice: T
 
     Consider the following class definition.
@@ -673,7 +673,7 @@ Exercises
       + Correct! newTemp is defined in a different method. The instance variable currentTemp should be used instead.
       
 
-.. mchoice:: AP5-8-4
+.. mchoice:: q6_12_14
    :practice: T
    :answer_a: The private variables boxesOfFood and numOfPeople are not properly initialized.
    :answer_b: The private variables boxesOfFood and numOfPeople should have been declared public.
@@ -728,7 +728,7 @@ Exercises
        }
 
         
-.. mchoice:: AP5-9-3
+.. mchoice:: q6_12_15
     :practice: T
 
     Consider the following class definitions. 

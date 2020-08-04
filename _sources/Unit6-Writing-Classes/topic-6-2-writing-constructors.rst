@@ -89,7 +89,7 @@ If there are no constructors written for a class, Java provides a no-argument **
 |Exercise| **Check Your Understanding** 
 
      
-.. clickablearea:: name_constructor
+.. clickablearea:: q6_2_1
     :question: Click on all the lines of code that are part of constructors in the following class.
     :iscode:
     :feedback: Constructors are public and have the same name as the class.  
@@ -114,7 +114,7 @@ If there are no constructors written for a class, Java provides a no-argument **
          
     :click-incorrect:}:endclick:  
     
-.. mchoice:: qsse_5
+.. mchoice:: q6_2_2
    :practice: T
    :answer_a: Determines the amount of space needed for an object and creates the object
    :answer_b: Names the new object
@@ -133,7 +133,7 @@ If there are no constructors written for a class, Java provides a no-argument **
 Practice
 ------------
 
-.. mchoice:: AP2-2-1
+.. mchoice:: q6_2_3
    :practice: T
    :answer_a: I only
    :answer_b: I and II
@@ -178,7 +178,7 @@ Practice
              boolean hungry = false;
              Cat c = new Cat(color, "Tabby", hungry);
 
-.. mchoice:: AP2-2-2
+.. mchoice:: q6_2_4
    :practice: T
    :answer_a: Movie m = new Movie(8.0, "Lion King");
    :answer_b: Movie m = Movie("Lion King", 8.0);
@@ -231,7 +231,7 @@ Practice
 
    <a href="http://www.pythontutor.com/visualize.html#code=%20%20public%20class%20Fraction%0A%20%20%7B%0A%20%20%20%20%20//%20%20instance%20variables%0A%20%20%20%20%20private%20int%20numerator%3B%0A%20%20%20%20%20private%20int%20denominator%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20set%20instance%20variables%20to%20default%20values%0A%20%20%20%20%20public%20Fraction%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20numerator%20%3D%201%3B%0A%20%20%20%20%20%20%20%20denominator%20%3D%201%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20set%20instance%20variables%20to%20init%20parameters%0A%20%20%20%20%20public%20Fraction%28int%20initNumerator,%20int%20initDenominator%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20numerator%20%3D%20initNumerator%3B%0A%20%20%20%20%20%20%20%20denominator%20%3D%20initDenominator%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Print%20fraction%0A%20%20%20%20%20public%20void%20print%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20System.out.println%28numerator%20%2B%20%22/%22%20%2B%20denominator%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20Fraction%20f1%20%3D%20new%20Fraction%28%29%3B%0A%20%20%20%20%20%20%20%20Fraction%20f2%20%3D%20new%20Fraction%281,2%29%3B%0A%20%20%20%20%20%20%20%20//%20What%20will%20these%20print%20out%3F%0A%20%20%20%20%20%20%20%20f1.print%28%29%3B%0A%20%20%20%20%20%20%20%20f2.print%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D&cumulative=false&curInstr=28&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a>
 
-.. activecode:: class-Fraction
+.. activecode:: code6_2_1
   :language: java
   :autograde: unittest
 
@@ -300,7 +300,7 @@ Practice
   
 |CodingEx| **Coding Exercise**
 
-.. activecode:: class-Car
+.. activecode:: code6_2_2
   :language: java
   :autograde: unittest
   :practice: T
@@ -404,7 +404,7 @@ This challenge requires you to create a Student class with constructors.
 
 4. Add a main method that constructs at least 3 Student objects using the 3 different constructors and then calls their print() methods. 
 
-.. activecode:: challenge-5-2-Student-class
+.. activecode:: code6_2_3
   :language: java
   :autograde: unittest
 
@@ -547,7 +547,7 @@ Practice
 
 
 
-.. mchoice:: AP5-2-1
+.. mchoice:: q6_2_5
     :practice: T
 
     Consider the definition of the Cat class below. The class uses the instance variable isSenior to indicate whether a cat is old enough to be considered a senior cat or not.
@@ -599,7 +599,7 @@ Practice
 
 
 
-.. mchoice:: AP5-2-2
+.. mchoice:: q6_2_6
    :practice: T
    :answer_a: I only
    :answer_b: II only
@@ -642,7 +642,7 @@ Practice
     II.  Cat c = new Cat("Lucy", 0, 5);
     III. Cat c = new Cat("Luna", 5);
     
-.. mchoice:: AP5-2-3
+.. mchoice:: q6_2_7
     :practice: T
 
     Consider the following class definition.

@@ -45,7 +45,7 @@ The image below shows these 3 levels of scope.
     
 |Exercise| Check Your Understanding
 
-.. clickablearea:: name_class_scope
+.. clickablearea:: q6_8_1
     :question: Click on all the variable declarations that are at Class Level Scope.
     :iscode:
     :feedback: Remember that the instance variables declared at the top of the class have Class Scope.
@@ -62,7 +62,7 @@ The image below shows these 3 levels of scope.
          :click-incorrect:}:endclick:
     :click-incorrect:}:endclick:    
     
-.. clickablearea:: name_method_scope
+.. clickablearea:: q6_8_2
     :question: Click on all the variable declarations that are at Method Level Scope.
     :iscode:
     :feedback: Remember that the parameter variables and the local variables declared inside a method have Method Level Scope.
@@ -90,7 +90,7 @@ Another way to look at scope is that a variable's scope is where it lives and ex
 
 
 
-.. activecode:: PersonScope
+.. activecode:: code6_8_1
   :language: java
 
   Try the following code to see that you cannot access the variables outside of their scope levels in the toString() method. Explain to someone sitting next to you why you can't access these. Try to fix the errors by either using variables that are in scope or moving the variable declarations so that the variables have larger scope. 
@@ -130,7 +130,7 @@ Another way to look at scope is that a variable's scope is where it lives and ex
 
 If there is a local variable with the same name as an instance variable, the variable name will refer to the local variable instead of the instance variable, as seen below. We'll see in the next lesson, that we can distinguish between the local variable and the instance variable using the keyword this to refer to this object's instance variables.
 
-.. activecode:: PersonLocalVar
+.. activecode:: code6_8_2
   :language: java
 
   public class Person 
@@ -166,7 +166,7 @@ If there is a local variable with the same name as an instance variable, the var
 
 
 
-.. activecode:: challenge-5-8-Debug
+.. activecode:: code6_8_3
   :language: java
 
   Debug the following program that has scope violations. Then, add comments that label the variable declarations as class, method, or block scope.
@@ -219,7 +219,7 @@ If there is a local variable with the same name as an instance variable, the var
 Practice
 ------------
 
-.. mchoice:: AP5-8-1
+.. mchoice:: q6_8_3
    :practice: T
    :answer_a: The class is missing an accessor method.
    :answer_b: The instance variables boxesOfFood and numOfPeople should be designated public instead of private.
@@ -260,7 +260,7 @@ Practice
             }
         }
         
-.. mchoice:: AP5-8-2
+.. mchoice:: q6_8_4
     :practice: T
 
     Consider the following class definition.

@@ -67,7 +67,7 @@ Run the code below to see how it constructs 2 Person objects and fills in their 
    <a href="http://www.pythontutor.com/visualize.html#code=public%20class%20Person%20%0A%7B%0A%20%20%20%20%20//%20instance%20variables%20%0A%20%20%20%20%20private%20String%20name%3B%0A%20%20%20%20%20private%20String%20email%3B%0A%20%20%20%20%20private%20String%20phoneNumber%3B%0A%20%20%20%20%20%0A%20%20%20%20%20//%20constructor%3A%20construct%20a%20Person%20copying%20in%20the%20data%20into%20the%20instance%20variables%0A%20%20%20%20%20public%20Person%28String%20initName,%20String%20initEmail,%20String%20initPhone%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20name%20%3D%20initName%3B%0A%20%20%20%20%20%20%20%20email%20%3D%20initEmail%3B%0A%20%20%20%20%20%20%20%20phoneNumber%20%3D%20initPhone%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20Print%20all%20the%20data%20for%20a%20person%0A%20%20%20%20%20public%20void%20print%28%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20System.out.println%28%22Name%3A%20%22%20%2B%20name%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22Email%3A%20%22%20%2B%20email%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22Phone%20Number%3A%20%22%20%2B%20phoneNumber%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20%20//%20main%20method%20for%20testing%0A%20%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20//%20call%20the%20constructor%20to%20create%20a%20new%20person%0A%20%20%20%20%20%20%20%20Person%20p1%20%3D%20new%20Person%28%22Sana%22,%20%22sana%40gmail.com%22,%20%22123-456-7890%22%29%3B%0A%20%20%20%20%20%20%20%20//%20call%20p1%27s%20print%20method%0A%20%20%20%20%20%20%20%20p1.print%28%29%3B%0A%20%20%20%20%20%20%20%20Person%20p2%20%3D%20new%20Person%28%22Jean%22,%20%22jean%40gmail.com%22,%20%22404%20899-9955%22%29%3B%0A%20%20%20%20%20%20%20%20p2.print%28%29%3B%0A%20%20%20%20%20%7D%0A%20%20%7D&cumulative=false&curInstr=34&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false&curInstr=0" target="_blank"  style="text-decoration:underline">Java visualizer</a>
 
 
-.. activecode:: PersonClass
+.. activecode:: code6_1_1
   :language: java
   :autograde: unittest
   
@@ -166,7 +166,7 @@ When designing a class, programmers make decisions about what data to make acces
 
 |Exercise| **Check Your Understanding**
 
-.. clickablearea:: name_instance_variables
+.. clickablearea:: q6_1_1
     :question: Click on all the instance  variable declarations in the following class
     :iscode:
     :feedback: Remember, instance  variables are private and are declared after the class declaration.
@@ -233,7 +233,7 @@ To call a method to do its job, we create an object of the class and then use th
         
 |Exercise| Check Your Understanding
 
-.. clickablearea:: name_methods
+.. clickablearea:: q6_1_2
     :question: Click on all the lines of code that are part of a method in the following class.
     :iscode:
     :feedback: Methods follow the constructor.  They include a return type in case they returns something from the method.
@@ -285,7 +285,7 @@ When you are given a problem specification, look for the **nouns** to identify w
 
 |Exercise| **Check Your Understanding**
 
-.. shortanswer:: OOD1
+.. shortanswer:: q6_1_3
 
     You've been hired by your school to create a program that keeps track of "students at your school and the courses they are taking". Name 2 classes that you would create in your program. Name 2 attributes (data kept in instance variables) for each class. 
     
@@ -298,7 +298,7 @@ The two nouns in the problem description above, **Student** and **Course** would
 
 |Exercise| **Check Your Understanding**
 
-.. shortanswer:: OOD2
+.. shortanswer:: q6_1_4
 
     Say you wanted to make a computer game from a board game that you are playing. Think about what objects are in the game. For example, here is the description for Monopoly (trademark Hasbro games): "Buy, sell, dream and scheme your way to riches. Players buy, sell and trade to win. Build houses and hotels on your properties and bankrupt your opponents to win it all. Chance and Community Chest cards can change everything." What classes would you need to create a computer version of this game? (Remember to look for the nouns). Take one of the classes you listed, and try to come up with 2 pieces of data in that class that will be the instance variables.
     
@@ -324,7 +324,7 @@ In this project, you will create a class that can tell riddles like the followin
 
 
 
-.. activecode:: challenge-5-1-Riddle-Class
+.. activecode:: code6_1_2
   :language: java
   :autograde: unittest
 
@@ -476,7 +476,7 @@ Practice
 ------------
 
 
-.. mchoice:: AP5-1-1
+.. mchoice:: q6_1_5
         :practice: T
         :random:
 
@@ -537,7 +537,7 @@ Practice
 
           - Constructor should be public.          
 
-.. mchoice:: AP5-1-2
+.. mchoice:: q6_1_6
     :practice: T
 
     Consider the Party class below which will contain three int attributes for numOfPeople, volumeOfMusic, and numOfBoxesOfPizza, a constructor, and a startParty method. The startParty method is intended to be accessed outside the class.

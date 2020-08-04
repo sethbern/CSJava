@@ -115,7 +115,7 @@ Try to break the preconditions of the Turtle constructor below. Does the Turtle 
    
 (If the code below does not work for you, you can copy the code into  this |repl link| (refresh page after forking and if it gets stuck) or download the files |github| to use in your own IDE.)
 
-.. activecode:: turtle-preconditions
+.. activecode:: code6_3_1
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -158,7 +158,7 @@ The Turtle constructor's precondition is that x and y should be between 0 and th
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: AP5-3-1
+.. mchoice:: q6_3_1
     :practice: T
     :answer_a: /* Precondition: s <= 0 */
     :answer_b: /* Precondition: score >= 0 */
@@ -221,7 +221,7 @@ After drawing a Use-Case Diagram, designers write down the preconditions and the
 
 |Exercise| **Check your understanding**
 
-.. shortanswer:: payconditions
+.. shortanswer:: q6_3_2
 
    What are the preconditions and postconditions of the use-case "Pay for food"? Remember that these are often related to the other use-case conditions "order food" and "eat food". 
 
@@ -268,14 +268,14 @@ Try the |pogil game| in groups to practice the iterative and incremental agile d
 
 Come up with 4 steps that a user must do to purchase a product, for example a book on Java, in an online store, and list the preconditions and postconditions for each step. You could pretend to buy something online to come up with the steps. (You could use an online drawing tool like |Creately.com| (choose Use-Case Diagrams) to draw a Use-Case diagram for the Online Store System, but it is not required). Don't forget to list  the preconditions and postconditions for each step.  You can type in your answer below.
 
-.. shortanswer:: challenge-5-3-use-case-preconditions
+.. shortanswer:: q6_3_3
 
      Write down 4 steps that a user must do to purchase a product, for example a book on Java, in an online store, and list the preconditions and postconditions for each step.
     
     
 Here is a simple class called User that could be used in an online store. Add good commenting to this code before the class, the instance variables, and the methods.
 
-.. activecode:: challenge-5-3-comments
+.. activecode:: code6_3_2
     :language: java
     :autograde: unittest
 
