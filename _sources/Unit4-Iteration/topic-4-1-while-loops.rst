@@ -90,7 +90,7 @@ The loop condition usually involves a **loop control variable** that controls wh
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: whileloop
+.. activecode:: code4_1_1
    :language: java
    :autograde: unittest
    :practice: T
@@ -135,7 +135,7 @@ Java doesn't require your code to be correctly indented (code moved to the right
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: while1
+.. mchoice:: q4_1_1
    :practice: T
    :answer_a: while (count == 10)
    :answer_b: while (count < 10)
@@ -194,7 +194,7 @@ Watch the following |video| for a tracing demo. When you are tracing through cod
     
 |Exercise| **Check your understanding**
 
-.. mchoice:: while2
+.. mchoice:: q4_1_2
    :practice: T
    :answer_a: 0
    :answer_b: 1
@@ -219,7 +219,7 @@ Watch the following |video| for a tracing demo. When you are tracing through cod
 
 Step through the code above with the |visualizer|.
 
-.. mchoice:: qlb_2_1
+.. mchoice:: q4_1_3
    :practice: T
    :answer_a: 5 4 3 2 1
    :answer_b: -5 -4 -3 -2 -1
@@ -267,7 +267,7 @@ Another common error with loops is an **off-by-one error** where the loop runs o
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: whileloopbugs
+.. activecode:: code4_1_2
    :language: java
    :autograde: unittest
    
@@ -305,20 +305,31 @@ Another common error with loops is an **off-by-one error** where the loop runs o
             assertTrue(passed);
         }
     }
+
+
    
 Input-Controlled Loops
 ----------------------
 
-.. |Magpie chatbot lab on repl.it| raw:: html
+.. |simple chatbot| raw:: html
 
-   <a href="https://repl.it/@BerylHoffman/Magpie-ChatBot-Lab-v2" target="_blank">Magpie chatbot lab on repl.it</a>
+   <a href="https://repl.it/@LindaMM/basicchat" target="_blank">simple chatbot on repl.it</a>
    
-You can use a ``while`` loop to repeat the body of the loop a certain number of times as shown above.  However, a ``while`` loop is typically used when you don't know how many times the loop will execute. It is often used for a **input-controlled loop** where the user's input indicates when to stop. For example, in the |Magpie chatbot lab on repl.it| below, the while loop stops when you type in "Bye". The stopping value is often called the **sentinel value** for the loop. Notice that if you type in "Bye" right away, the loop will never run. If the loop condition evaluates to false initially, the loop body is not executed at all. Another way to stop the loop prematurely is to put in a return statement that makes it immediately return from the method.
+You can use a ``while`` loop to repeat the body of the loop a certain number of times as shown above.  
+However, a ``while`` loop is typically used when you don't know how many times the loop will execute. 
+It is often used for a **input-controlled loop** where the user's input indicates when to stop. 
+
+|CodingEx| **Coding Exercise**
+
+The code below shows a |simple chatbot|. The while loop stops when you type in "Bye". 
+The stopping value is often called the **sentinel value** for the loop. 
+Notice that if you type in "Bye" right away, the loop will never run. 
+If the loop condition evaluates to false initially, the loop body is not executed at all. 
+Another way to stop the loop prematurely is to put in a return statement that makes it immediately return from the method.
 
 .. raw:: html
 
-    <iframe height="700px" width="100%" style="max-width:90%; margin-left:5%" src="https://repl.it/@BerylHoffman/Magpie-ChatBot-Lab-v2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>
-
+    <iframe  height="700px" width="100%" style="max-width:90%; margin-left:5%" src="https://repl.it/@LindaMM/basicchat?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 |CodingEx| **Coding Exercise**
 
@@ -333,7 +344,10 @@ Here's another example with |numbers on repl.it|. This code calculates the avera
     <iframe height="700px" width="100%" style="max-width:90%; margin-left:5%" src="https://repl.it/@BerylHoffman/Average?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 
-There are standard algorithms that use loops to compute the sum or average like above, or determine the minimum or maximum value entered, or the frequency of a certain condition. You can also use loops to identify if some integers are evenly divisible by other integers or identify the individual digits in an integer. We will see a lot more of these algorithms in Unit 6 with loops and arrays.
+There are standard algorithms that use loops to compute the sum or average like above, or determine the minimum or maximum 
+value entered, or the frequency of a certain condition. You can also use loops to identify if some integers are 
+evenly divisible by other integers or identify the individual digits in an integer. We will see a lot more of these 
+algorithms in Unit 7 with loops and arrays.
 
 |Groupwork| Programming Challenge : Guessing Game
 -------------------------------------------------
@@ -378,7 +392,7 @@ For this project, you will need to use the |Scanner class| for input and |repl.i
     <iframe height="600px" width="100%" style="max-width:90%; margin-left:5%" src="https://repl.it/@BerylHoffman/Guessing-Game?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 
-.. activecode:: challenge4-1-loop-GuessingGame-autograde
+.. activecode:: code4_1_3
   :language: java
   :autograde: unittest  
 
@@ -508,7 +522,7 @@ Summary
 
 .. Here is an example ``while`` loop that just prints the numbers until 0 is reached. Can you modify it to print 0 too?
     
-.. .. activecode:: while_loop_ex1
+.. .. activecode:: code4_1_4
    :language: java
    
    public class Test
@@ -526,7 +540,7 @@ Summary
    
 .. Here is an example ``for`` loop that just prints the numbers until 0 is reached. Can you modify it to print 0 too?
    
-.. .. activecode:: for_loop_ex1
+.. .. activecode:: code4_1_5
    :language: java
    
    public class Test

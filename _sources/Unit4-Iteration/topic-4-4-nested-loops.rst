@@ -46,7 +46,7 @@ A **nested loop** has one loop inside of another.  These are typically used for 
 
 What does the following code print out? Watch the code run in the  |Java visualizer| by clicking the CodeLens button and then forward. Notice how the inner loop is started over for each row. Can you predict how many rows and columns of stars there will be?
 
-.. activecode:: lcfcnl1
+.. activecode:: code4_4_1
    :language: java
    :autograde: unittest 
    :practice: T
@@ -99,7 +99,7 @@ What does the following code print out? Watch the code run in the  |Java visuali
     
 |Exercise| **Check your understanding**
 
-.. mchoice:: nested1
+.. mchoice:: q4_4_1
    :practice: T
    :answer_a: A rectangle of 7 rows with 5 stars per row.
    :answer_b: A rectangle of 7 rows with 4 stars per row.
@@ -124,7 +124,7 @@ What does the following code print out? Watch the code run in the  |Java visuali
          System.out.println();
      }
      
-.. mchoice:: nested2
+.. mchoice:: q4_4_2
    :practice: T
    :answer_a: A rectangle of 4 rows with 3 star per row.
    :answer_b: A rectangle of 5 rows with 3 stars per row.
@@ -149,7 +149,7 @@ What does the following code print out? Watch the code run in the  |Java visuali
          System.out.println();
      }
 
-.. parsonsprob:: ch6ex6muc
+.. parsonsprob:: q4_4_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -193,7 +193,7 @@ What does the following code print out? Watch the code run in the  |Java visuali
    
 Try a nested loop with turtles! If the code below does not work in your browser, you can copy the code into  this |repl link| (refresh page after forking and if it gets stuck) or download the files |github| to use in your own IDE.
 
-.. activecode:: TurtleNestedLoop
+.. activecode:: code4_4_2
     :language: java
     :datafile: turtleClasses.jar
     :autograde: unittest
@@ -281,7 +281,8 @@ Try a nested loop with turtles! If the code below does not work in your browser,
 
    <a href= "https://docs.oracle.com/javase/7/docs/api/java/awt/Color.html" target="_blank">Color</a>
    
-In the last exercise, you used nested for-loops to have the turtle draw a square repeatedly to make a snowflake. Use the Active Code window below or this |repl link| to have yertle draw the following shapes using nested loops. We encourage you to work in pairs on this.
+In the last exercise, you used nested for-loops to have the turtle draw a square repeatedly to make a snowflake. Use the Active Code window below or this |repl link| to have yertle draw the following shapes using nested loops. 
+
 
 1. Complete the code in the active code window below to draw a snowflake of triangles. How many times did you need to run the outer loop to go all the way around?
 
@@ -294,7 +295,7 @@ In the last exercise, you used nested for-loops to have the turtle draw a square
 5. Be creative and design a unique snowflake! 
 
 
-.. activecode:: challenge4-4-Turtle-Nested-Loop-Snowflakes
+.. activecode:: code4_4_3
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar

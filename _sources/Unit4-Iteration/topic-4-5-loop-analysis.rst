@@ -45,7 +45,7 @@ Let's practice tracing through loops with many variables. Remember to make a tra
 
 Here is a complex loop.  See if you can trace the code on paper by making a tracing table to predict what the code will do when you run it. Click on the this |Java visualizer| link or the Code Lens button to help you step through the code. 
 
-.. activecode:: example_trace_loop
+.. activecode:: code4_5_1
    :language: java
    :autograde: unittest
    
@@ -100,7 +100,7 @@ Did your trace table look like the following?
 |Exercise| **Check your understanding**
 
 
-.. mchoice:: qlb_2_2
+.. mchoice:: q4_5_1
    :practice: T
    :answer_a: var1 = 1, var2 = 1
    :answer_b: var1 = 2, var2 = 0
@@ -127,7 +127,7 @@ Did your trace table look like the following?
         var2 = var2 -1;
      }
      
-.. mchoice:: qlb_2_3
+.. mchoice:: q4_5_2
    :practice: T
    :answer_a: x = 5, y = 2
    :answer_b: x = 2, y = 5
@@ -163,7 +163,7 @@ Loops can be also analyzed to determine how many times they run.  This is called
 
 
 
-.. activecode::  countstars1
+.. activecode::  code4_5_2
    :language: java
    :autograde: unittest
    
@@ -211,7 +211,7 @@ In the code above the largest value that allows the loop to run is 6 (which is t
 
 
 
-.. activecode::  countstars
+.. activecode::  code4_5_3
    :language: java
    :autograde: unittest
    
@@ -275,7 +275,7 @@ We encourage you to do this activity as a |POGIL| (Process Oriented Guided Inqui
 Do the following exercises in your group. Make sure you draw the trace tables keeping track of all the variables in the loops. Use the formulas to determine how many times the loops run. If your group finishes early, do some of the multiple-choice problems in the 4.6 Practice and Summary section of this unit.
 
 
-.. mchoice:: qln_6_1
+.. mchoice:: q4_5_3
    :practice: T
    :answer_a: 40
    :answer_b: 20
@@ -300,7 +300,7 @@ Do the following exercises in your group. Make sure you draw the trace tables ke
           System.out.println();
       }
      
-.. mchoice:: qln_6_2
+.. mchoice:: q4_5_4
    :practice: T
    :answer_a: A rectangle of 8 rows with 5 stars per row.
    :answer_b: A rectangle of 8 rows with 4 stars per row.
@@ -325,7 +325,7 @@ Do the following exercises in your group. Make sure you draw the trace tables ke
          System.out.println();
      }
      
-.. mchoice:: qln_6_3
+.. mchoice:: q4_5_5
    :practice: T
    :answer_a: A rectangle of 9 rows and 5 stars per row.
    :answer_b: A rectangle of 6 rows and 6 stars per row.
@@ -351,7 +351,7 @@ Do the following exercises in your group. Make sure you draw the trace tables ke
      }
      
 
-.. mchoice:: qln4
+.. mchoice:: q4_5_6
    :practice: T
    :answer_a: 15
    :answer_b: 12

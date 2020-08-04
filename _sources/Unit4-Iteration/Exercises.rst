@@ -10,7 +10,7 @@ Easier Multiple Choice Questions
 ----------------------------------
 
 
-.. mchoice:: qle_1
+.. mchoice:: q4_9_1
    :practice: T
    :answer_a: 5 6 7 8 9
    :answer_b: 4 5 6 7 8 9 10 11 12 
@@ -32,7 +32,7 @@ Easier Multiple Choice Questions
      }
 
 
-.. mchoice:: qle_2
+.. mchoice:: q4_9_2
    :practice: T
    :answer_a: 9
    :answer_b: 7
@@ -54,7 +54,7 @@ Easier Multiple Choice Questions
      }
 
 
-.. mchoice:: qle_3
+.. mchoice:: q4_9_3
    :practice: T
    :answer_a: 5 4 3 2 1
    :answer_b: -5 -4 -3 -2 -1
@@ -76,7 +76,7 @@ Easier Multiple Choice Questions
      }
 
  
-.. mchoice:: qle_4
+.. mchoice:: q4_9_4
    :practice: T
    :answer_a: 7
    :answer_b: 8
@@ -98,7 +98,7 @@ Easier Multiple Choice Questions
      }
 
     
-.. mchoice:: qle_5
+.. mchoice:: q4_9_5
    :practice: T
    :answer_a: 4
    :answer_b: 5
@@ -118,7 +118,7 @@ Easier Multiple Choice Questions
      }
 
 
-.. mchoice:: qle_6
+.. mchoice:: q4_9_6
    :practice: T
    :answer_a: 7
    :answer_b: 8
@@ -138,7 +138,7 @@ Easier Multiple Choice Questions
      }
 
 
-.. mchoice:: qle_7
+.. mchoice:: q4_9_7
    :practice: T
    :answer_a: 4
    :answer_b: 5
@@ -158,7 +158,7 @@ Easier Multiple Choice Questions
      }
 
 
-.. mchoice:: qle_8
+.. mchoice:: q4_9_8
    :practice: T
    :answer_a: 6
    :answer_b: 7
@@ -178,7 +178,7 @@ Easier Multiple Choice Questions
      }
 
 
-.. mchoice:: qle_9
+.. mchoice:: q4_9_9
    :practice: T
    :answer_a: 1 2 3 4 
    :answer_b: 1 2 3 4 5
@@ -202,7 +202,7 @@ Easier Multiple Choice Questions
      }
 
 
-.. mchoice:: qle_10
+.. mchoice:: q4_9_10
    :practice: T
    :answer_a: 3 4 5 6 7 8 
    :answer_b: 3 4 5 6 7 8 9
@@ -230,7 +230,7 @@ Easier Multiple Choice Questions
 Medium Multiple Choice Questions
 ----------------------------------
 
-.. mchoice:: qlm_1
+.. mchoice:: q4_9_11
    :practice: T
    :answer_a: 10
    :answer_b: 5
@@ -254,7 +254,7 @@ Medium Multiple Choice Questions
      }
 
 
-.. mchoice:: qlm_2
+.. mchoice:: q4_9_12
    :practice: T
    :answer_a: I
    :answer_b: II
@@ -314,7 +314,7 @@ Medium Multiple Choice Questions
           }
 
 
-.. mchoice:: qlm_3
+.. mchoice:: q4_9_13
    :practice: T
    :answer_a: 0 2 4 6 8 10 12 14 16 18
    :answer_b: 4 16
@@ -338,7 +338,7 @@ Medium Multiple Choice Questions
      }
 
 
-.. mchoice:: qlm_4
+.. mchoice:: q4_9_14
    :practice: T
    :answer_a: I
    :answer_b: II
@@ -398,7 +398,7 @@ Medium Multiple Choice Questions
           }
 
 
-.. mchoice:: qlm_5n
+.. mchoice:: q4_9_15
    :practice: T
    :answer_a: var1 = 0, var2 = 2
    :answer_b: var1 = 1, var2 = 1

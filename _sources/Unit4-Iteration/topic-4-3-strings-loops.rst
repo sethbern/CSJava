@@ -92,7 +92,7 @@ The example in the mixed up code below finds and removes all the letter a's in a
 |Exercise| **Check Your Understanding**
   
 
-.. parsonsprob:: removeA
+.. parsonsprob:: q4_3_1
    :numbered: left
    :practice: T
    :adaptive:
@@ -132,7 +132,7 @@ Google has been scanning old books and then using software to read the scanned t
 
 The following code loops through a string replacing all 1's with l's.  Trace through the code below with a partner and explain how it works on the given message.  You can run it line by line in the |Java visualizer|. Note that indexOf here can work repeatedly to find the next occurrence of a 1 because they are replaced as soon as they are found. 
 
-.. activecode:: lclw1
+.. activecode:: code4_3_1
    :language: java
    :autograde: unittest
    
@@ -219,7 +219,7 @@ For loops with strings usually start at 0 and use the string's length() for the 
 |Exercise| **Check Your Understanding**
   
 
-.. parsonsprob:: countEs
+.. parsonsprob:: q4_3_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -258,7 +258,7 @@ Here is a for-loop that creates a new string that reverses the string s.  We sta
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: reverseString
+.. activecode:: code4_3_2
    :language: java
    :autograde: unittest
    
@@ -317,7 +317,7 @@ Are you a cat person or a dog person? The code below prints a nice message about
 
    - **int indexOf(String target, int fromIndex)** searches left-to-right for the target substring, but starts the search at the given fromIndex. 
 
-.. activecode:: challenge4-3-string-replace
+.. activecode:: code4_3_3
    :language: java
    :autograde: unittest
    :practice: T

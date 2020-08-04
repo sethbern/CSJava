@@ -67,7 +67,7 @@ You can compare a ``while`` loop to a ``for`` loop to understand that a ``for`` 
 |CodingEx| **Coding Exercise**
 
 
-.. activecode:: forloop
+.. activecode:: code4_2_1
    :language: java
    :autograde: unittest
    :practice: T
@@ -106,7 +106,7 @@ You can compare a ``while`` loop to a ``for`` loop to understand that a ``for`` 
 
 
 
-.. activecode:: forloopfromwhile
+.. activecode:: code4_2_2
    :language: java
    :autograde: unittest
    :practice: T
@@ -190,7 +190,7 @@ You can compare a ``while`` loop to a ``for`` loop to understand that a ``for`` 
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: qlb_3_1
+.. mchoice:: q4_2_1
    :practice: T
    :answer_a: 3 4 5 6 7 8
    :answer_b: 0 1 2 3 4 5 6 7 8 
@@ -211,7 +211,7 @@ You can compare a ``while`` loop to a ``for`` loop to understand that a ``for`` 
         System.out.print(i + " ");
      }
      
-.. mchoice:: qlb_3_2
+.. mchoice:: q4_2_2
    :practice: T
    :answer_a: 3 4 5 6 7 8
    :answer_b: 0 1 2 3 4 5 6 7 8 9 
@@ -232,7 +232,7 @@ You can compare a ``while`` loop to a ``for`` loop to understand that a ``for`` 
         System.out.print(i + " ");
      }
      
-.. mchoice:: qlb_3_3
+.. mchoice:: q4_2_3
    :practice: T
    :answer_a: 10
    :answer_b: 6
@@ -255,7 +255,7 @@ You can compare a ``while`` loop to a ``for`` loop to understand that a ``for`` 
      
      
 
-.. parsonsprob:: print_evens
+.. parsonsprob:: q4_2_4
    :numbered: left
    :practice: T
    :adaptive:
@@ -285,7 +285,7 @@ You can also count backwards in a loop starting from the last number and decreme
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: lcfcp1
+.. activecode:: code4_2_3
    :language: java
    :autograde: unittest
    
@@ -364,7 +364,7 @@ The method **printPopSong** prints the words to a song.  It initializes the valu
 
 
 
-.. activecode:: forloop-backwards
+.. activecode:: code4_2_4
    :language: java
    :autograde: unittest
    :practice: T
@@ -412,7 +412,7 @@ Do you remember when we used the turtle objects to draw shapes? To create a squa
 
 (If the code below does not work for you, you can copy the code into  this |repl link| (refresh page after forking and if it gets stuck) or download the files |github| to use in your own IDE.)
 
-.. activecode:: TurtleSquare
+.. activecode:: code4_2_5
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar
@@ -498,7 +498,7 @@ Do you remember when we used the turtle objects to draw shapes? To create a squa
 
    <a href="https://repl.it/@BerylHoffman/Java-Swing-Turtle" target="_blank">repl.it link</a>
 
-In the last exercise, you used a for-loop to have the turtle draw a square. Use the Active Code window below or this |repl link| to have yertle draw the following shapes using loops. We encourage you to work in pairs.
+In the last exercise, you used a for-loop to have the turtle draw a square. Use the Active Code window below or this |repl link| to have yertle draw the following shapes using loops.
 
 1. Have yertle draw an equilateral triangle using a loop. How many times should the loop run? Remember that it ran 4 times for a square, so how many for a triangle? What angle should you use for the turns? One way to figure this out is to notice that to complete a shape, all the exterior angles should add up to 360 degrees. So, for a square 4x90 = 360. 
 
@@ -506,7 +506,7 @@ In the last exercise, you used a for-loop to have the turtle draw a square. Use 
 
 3. Create a variable n that holds the number of sides for any polygon, and use n in your loop. Can you have the loop draw a variety of shapes by just changing the value of the variable n? The power of abstraction! Can you draw a 9 sided nonagon? (Note that if the turtle runs into walls, it stays there and will mess up the shape, so you may have to move the turtle or go forward smaller amounts).
 
-.. activecode:: challenge4-2-TurtleLoopShapes
+.. activecode:: code4_2_6
     :language: java
     :autograde: unittest
     :datafile: turtleClasses.jar

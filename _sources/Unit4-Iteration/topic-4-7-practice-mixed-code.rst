@@ -7,7 +7,7 @@ Mixed Up Code Practice
 
 Try to solve each of the following. Click the *Check* button to check each solution.  You will be told if your solution is too short, has a block in the wrong order, or you are using the wrong block.  Some of the problems have an extra block or two that aren't needed in the correct solution.  Try to solve these on your phone or other mobile device!
                 
-.. parsonsprob:: ch6ex1muc
+.. parsonsprob:: q4_7_1
    :numbered: left
    :practice: T
    :adaptive:
@@ -27,7 +27,7 @@ Try to solve each of the following. Click the *Check* button to check each solut
    }
                    
       
-.. parsonsprob:: ch6ex2muc
+.. parsonsprob:: q4_7_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -53,7 +53,7 @@ Try to solve each of the following. Click the *Check* button to check each solut
    }
 
    
-.. parsonsprob:: ch6ex3muc
+.. parsonsprob:: q4_7_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -84,7 +84,7 @@ Try to solve each of the following. Click the *Check* button to check each solut
    }
            
   
-.. parsonsprob:: ch6ex4muc
+.. parsonsprob:: q4_7_4
    :numbered: left
    :practice: T
    :adaptive:
@@ -110,7 +110,7 @@ Try to solve each of the following. Click the *Check* button to check each solut
    }
         
    
-.. parsonsprob:: ch6ex5muc
+.. parsonsprob:: q4_7_5
    :numbered: left
    :practice: T
    :adaptive:
@@ -138,7 +138,7 @@ Try to solve each of the following. Click the *Check* button to check each solut
                
 
            
-.. parsonsprob:: ch6ex7muc
+.. parsonsprob:: q4_7_6
    :numbered: left
    :practice: T
    :adaptive:
@@ -172,7 +172,7 @@ Try to solve each of the following. Click the *Check* button to check each solut
    }
 
        
-.. parsonsprob:: ch6ex8muc
+.. parsonsprob:: q4_7_7
    :numbered: left
    :practice: T
    :adaptive:
@@ -202,7 +202,7 @@ Try to solve each of the following. Click the *Check* button to check each solut
        }
    }
           
-.. parsonsprob:: ch6ex9muc
+.. parsonsprob:: q4_7_8
    :numbered: left
    :practice: T
    :adaptive:
@@ -237,7 +237,7 @@ Try to solve each of the following. Click the *Check* button to check each solut
   
 
           
-.. parsonsprob:: ch6ex10muc
+.. parsonsprob:: q4_7_9
    :numbered: left
    :practice: T
    :adaptive:

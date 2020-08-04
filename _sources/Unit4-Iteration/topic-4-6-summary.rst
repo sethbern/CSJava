@@ -41,7 +41,7 @@ Java Keyword Summary
 Vocabulary Practice
 -------------------
 
-.. dragndrop:: ch6_loops1
+.. dragndrop:: q4_6_1
     :feedback: Review the summaries above.
     :match_1: a loop that repeats while a Boolean condition is true|||while loop
     :match_2: a loop that has three parts: initialization, condition, and change|||for loop
@@ -49,7 +49,7 @@ Vocabulary Practice
     
     Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct
     
-.. dragndrop:: ch6_loops2
+.. dragndrop:: q4_6_2
     :feedback: Review the summaries above.
     :match_1: the statement or block of statements following a loop header that is repeated|||body of a loop
     :match_2: a loop that never ends|||infinite loop
@@ -68,16 +68,16 @@ For more practice, see this |Quizlet|.
 Common Mistakes
 -----------------
 
-  -  Forgetting to change the thing you are testing in a ``while`` loop and ending up with an infinite loop.  
-  
-  -  Getting the start and end conditions wrong on the ``for`` loop. This will often result in you getting an **out of bounds error**.  An **out of bounds** error occurs when you try to access past the end of a string.  
-  
-  -  Jumping out of a loop too early by using one or more return statements inside of the loop.    
- 
+-  Forgetting to change the thing you are testing in a ``while`` loop and ending up with an infinite loop.  
+
+-  Getting the start and end conditions wrong on the ``for`` loop. This will often result in you getting an **out of bounds error**.  An **out of bounds** error occurs when you try to access past the end of a string.  
+
+-  Jumping out of a loop too early by using one or more return statements inside of the loop.    
+
  
 Here is an example of a while loop that doesn't ever change the value in the loop so it never ends.  If you run it refresh the page to stop it.  Fix it.
  
- .. activecode:: while_loop_mistake1
+ .. activecode:: code4_6_1
    :language: java
    
    public class Test
@@ -94,7 +94,7 @@ Here is an example of a while loop that doesn't ever change the value in the loo
    
 Here is an example of going past the bounds of a string.  This code should double all but the first and last letter in message.  Fix the code so that it doesn't cause an out of bounds an error.
 
- .. activecode:: while_loop_oob
+ .. activecode:: code4_6_2
    :language: java
    
    public class Test
@@ -115,7 +115,7 @@ Here is an example of going past the bounds of a string.  This code should doubl
    
 Here is an example of jumping out of a loop too early.  The code below is intended to test if all of the letters in a string are in ascending order from left to right. But, it doesn't work correctly.  Can you fix it?
 
- .. activecode:: while_loop_early_leave
+ .. activecode:: code4_6_3
    :language: java
    
    public class Test
