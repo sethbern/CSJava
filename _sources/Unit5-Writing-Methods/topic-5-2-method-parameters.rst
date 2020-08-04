@@ -71,7 +71,7 @@ into the formal parameter variables.
   
   Figure 1: Method Call Passes Actual Argument Values Into Formal Parameter Variables
 
-.. activecode:: SongFarm
+.. activecode:: code5_2_1
   :language: java
   :autograde: unittest
   :practice: T
@@ -197,7 +197,7 @@ will need to be provided as shown.
 
   Figure 2: The calculatePay method
 
-.. activecode:: CalculatePayMethod
+.. activecode:: code5_2_2
   :language: java
   :autograde: unittest
   :practice: T
@@ -272,7 +272,7 @@ definition to match the name, number and type of arguments, and return type.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: mparam1
+.. mchoice:: q5_2_1
    :practice: T
    :answer_a: mystery("9");
    :answer_b: mystery(9);
@@ -289,7 +289,7 @@ definition to match the name, number and type of arguments, and return type.
      public static void mystery(int i)
 
 
-.. mchoice:: mparam2
+.. mchoice:: q5_2_2
    :practice: T
    :answer_a: mystery("abc", 9);
    :answer_b: mystery("xyz", "9");
@@ -305,7 +305,7 @@ definition to match the name, number and type of arguments, and return type.
 
      public static void mystery(String s, int i)
 
-.. mchoice:: mparam3
+.. mchoice:: q5_2_3
    :practice: T
    :answer_a: mystery("true", "hello");
    :answer_b: mystery("hello", false);
@@ -335,7 +335,7 @@ You may recall from the constructor lesson that this is called **overloading**.
     
     Figure 3: Method Overloading
 
-.. parsonsprob:: methodargsparson
+.. parsonsprob:: q5_2_4
    :adaptive:
    :noindent:
    
@@ -374,7 +374,7 @@ and continues until the last line of code in the method or block.    The local v
 the method is executing.  When the method completes, the memory location is released. If you called 
 the method again, the old value would not be available.  
 
-.. activecode:: scopeexample
+.. activecode:: code5_2_3
   :language: java
     
   Use the CodeLens button to step through the two method calls in the main.  Notice the ``inches`` and ``centimeters`` variables are
@@ -417,7 +417,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: mscope1
+.. mchoice:: q5_2_5
    :practice: T
    :answer_a: print1;
    :answer_b: main;
@@ -445,7 +445,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 
 
 
-.. mchoice:: mscope2
+.. mchoice:: q5_2_6
    :practice: T
    :answer_a: print1;
    :answer_b: print2;
@@ -486,7 +486,7 @@ the code into the |visualizer|.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: AP2-4-1
+.. mchoice:: q5_2_7
     :practice: T
 
     Consider the following methods:
@@ -534,7 +534,7 @@ the code into the |visualizer|.
 
 
 
-.. mchoice:: AP2-4-2
+.. mchoice:: q5_2_8
     :practice: T
     
     Consider the following methods.
@@ -579,7 +579,7 @@ the code into the |visualizer|.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: traceMethods5
+.. mchoice:: q5_2_9
    :practice: T
    :answer_a: 25 and 2
    :answer_b: 25 and .5
@@ -628,7 +628,7 @@ value of a parameter inside a method, however it is possible as the example belo
 
 |CodingEx| **Check your understanding**
 
-.. activecode:: testcallbyvalue
+.. activecode:: code5_2_4
   :language: java
     
   Use the CodeLens button or copy the code into the |visualizer| to watch how the square method
@@ -724,7 +724,7 @@ each tests the weight and assigns the cost in the same way.
 The redundant code will be eliminated by adding a new method to 
 compute and print the cost based on item weight.  
 
-.. activecode:: challenge-5-6-costCalculator
+.. activecode:: code5_2_5
   :language: java
   :autograde: unittest  
 

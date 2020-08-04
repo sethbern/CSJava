@@ -120,7 +120,7 @@ Let's consider the substring method in Java. This method has a strong preconditi
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: substring-preconditions
+.. activecode:: code5_4_1
     :language: java
     :autograde: unittest
 
@@ -162,7 +162,7 @@ Let's consider the substring method in Java. This method has a strong preconditi
     
 |Exercise| **Check your understanding**
 
-.. mchoice:: AP5-3-2
+.. mchoice:: q5_4_1
    :practice: T
    :answer_a: /* Precondition: i >= 0 */
    :answer_b: /* Precondition: i <= str.length() */

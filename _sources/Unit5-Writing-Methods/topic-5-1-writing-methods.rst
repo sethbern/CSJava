@@ -50,7 +50,7 @@ Let's look at an example with repetition of code and then we will
 create a method to reduce the repetition. 
 
 
-.. clickablearea:: repeatedcode_methods
+.. clickablearea:: q5_1_1
     :question: Click on all the lines that are repeated.
     :iscode:
     :feedback: Look for lines that are completely identical.  
@@ -134,7 +134,7 @@ The main method can call the chorus method multiple times to repeat the two line
    
 |CodingEx| **Coding Exercise**
 
-.. activecode:: fourleafcloversong
+.. activecode:: code5_1_1
   :language: java   
   :autograde: unittest    
   :practice: T
@@ -196,7 +196,7 @@ The main method can call the chorus method multiple times to repeat the two line
   
 |Exercise| **Check Your Understanding**
    
-.. clickablearea:: greet_method_signature
+.. clickablearea:: q5_1_2
     :question: A method definition consists of a method header and a method body. Click on the method header for the method named "greet" in the following code.
     :iscode:
     :feedback: There is one method header for the greet method.  
@@ -219,7 +219,7 @@ The main method can call the chorus method multiple times to repeat the two line
 
 
    
-.. clickablearea:: greet_method_body
+.. clickablearea:: q5_1_3
     :question: Click on all statements contained within the greet method body.
     :iscode:
     :feedback: The greet method body consists of the 2 print statements nested between the curly braces that follow the method header  
@@ -242,7 +242,7 @@ The main method can call the chorus method multiple times to repeat the two line
 
 
    
-.. clickablearea:: greet_method_call
+.. clickablearea:: q5_1_4
     :question: Click on the greet method call.
     :iscode:
     :feedback: The greet() method call occurs in the main method.  
@@ -264,7 +264,7 @@ The main method can call the chorus method multiple times to repeat the two line
     :click-incorrect:}:endclick:
 
 
-.. fillintheblank:: println_called
+.. fillintheblank:: q5_1_5
 
    Given the Test2 class from the previous exercise, how many times is the **System.out.println** called when the main method runs?
 
@@ -285,7 +285,7 @@ When the method is done, the program returns back to the main method.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: likeFoodMethods
+.. mchoice:: q5_1_6
    :practice: T
    :answer_a: apples and bananas! eat I like to.
    :answer_b: I like to consume consume consume fruit.
@@ -326,7 +326,7 @@ When the method is done, the program returns back to the main method.
   
 |CodingEx| **Coding Exercise**
 
-.. activecode:: FarmerVerse
+.. activecode:: code5_1_2
   :language: java   
   :autograde: unittest    
   :practice: T
