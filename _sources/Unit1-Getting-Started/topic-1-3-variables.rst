@@ -41,18 +41,13 @@ What is a Variable?
 	single: variable
 
 A **variable** is a name associated with a memory location in the computer.  
-Computer memory can store a value and that value can change or vary. 
-When you play a game, it will often have a score.  
-Scores often start at 0 and increase.  A score can be stored in a variable.  
-
+Computer memory can store a value and that value can change or vary.  
 
 The following `video <https://youtu.be/pHgYlVjagmA>`_ explains what a variable is and gives a couple of real word examples of variables.
 
 .. youtube:: pHgYlVjagmA
     :width: 600
     :align: center
-
-
 
 Data Types
 ----------
@@ -77,16 +72,15 @@ to an object of a class.  A reference is a way to find the object
 (like a UPS tracking number helps you find your package).  
 The primitive types presented in this chapter are: 
 
-    -  **int** - which store integers (numbers like 3, -76, 20393) 
+-  **int** - which store integers (numbers like 3, -76, 20393) 
 
-    -  **double** - which store floating point numbers (decimal numbers like 6.3 -0.9, and 60293.93032)
+-  **double** - which store floating point numbers (decimal numbers like 6.3 -0.9, and 60293.93032)
     
-    -  **boolean** - which store Boolean values (either true or false). 
+-  **boolean** - which store Boolean values (either true or false). 
 
 **String** is an object type and is the name of a class in Java.  
 A string object has a sequence of characters enclosed in a pair of double quotes - like "Hello".  
 You will learn more about ``String`` and other object types in Unit 2. 
-
 
 .. note:: 
 
@@ -98,7 +92,7 @@ For example, you can do mathematical addition with ints and doubles but not with
 |Exercise| **Check your understanding**
    
    
-.. mchoice:: q3_1_1
+.. mchoice:: q1_3_1
    :practice: T
    :answer_a: int
    :answer_b: double
@@ -112,7 +106,7 @@ For example, you can do mathematical addition with ints and doubles but not with
 
    What type should you use to represent the average grade for a course?
    
-.. mchoice:: q3_1_2
+.. mchoice:: q1_3_2
    :practice: T
    :answer_a: int
    :answer_b: double
@@ -126,7 +120,7 @@ For example, you can do mathematical addition with ints and doubles but not with
 
    What type should you use to represent the number of people in a household?
    
-.. mchoice:: q3_1_3
+.. mchoice:: q1_3_3
    :practice: T
    :answer_a: int
    :answer_b: double
@@ -140,7 +134,7 @@ For example, you can do mathematical addition with ints and doubles but not with
 
    What type should you use to hold the first name of a person?
    
-.. mchoice:: q3_1_4
+.. mchoice:: q1_3_4
    :practice: T
    :answer_a: int
    :answer_b: double
@@ -154,7 +148,7 @@ For example, you can do mathematical addition with ints and doubles but not with
 
    What type should you use to record if it is raining or not?
    
-.. mchoice:: q3_1_5
+.. mchoice:: q1_3_5
    :practice: T
    :answer_a: int
    :answer_b: double
@@ -169,6 +163,21 @@ For example, you can do mathematical addition with ints and doubles but not with
    What type should you use to represent the amount of money you have?
    
 
+.. fillintheblank:: q1_3_6
+
+   What type should you use for a shoe size like 8.5?  
+
+   -    :^\s*double$: Correct.  Any variable that needs to values after the decimal point should be declared as a double.
+        :.*: What type allows for a decimal value  
+            
+.. fillintheblank:: q1_3_7
+
+   What type should you use for the number of tickets purchased? 
+
+   -    :^\s*int$: Correct. You can't buy half a ticket so this will be an integer.
+        :.*: Use a type that represents whole numbers like 1, 2, 3, etc.
+ 
+
 Declaring Variables in Java
 ---------------------------
 
@@ -178,7 +187,7 @@ Declaring Variables in Java
 	single: declare
 	pair: variable; declare
   
-
+A variable allows you to store a value in a named memory location.
 To create a variable, you must tell Java its data type and its name.  
 Creating a variable is also called **declaring a variable**.  
 The type is a keyword like int, double, or boolean, but you get to make up the 
@@ -186,32 +195,13 @@ name for the variable.  When you create a **primitive variable** Java will set a
 enough bits in memory for that primitive type and associate that memory location 
 with the variable name that you used.   
 
-Computers store all values using **bits** (binary digits).  A **bit** can represent two values 
-and we usually say that the value of a bit is either 0 or 1. When you declare a variable, 
-you have to tell Java the type of the variable because Java needs to know how many 
-bits to use and how to represent the value.  The 3 different primitive types
-all require different number of bits.  An integer gets 32 bits of space, a double 
-gets 64 bits of space and a boolean could be represented by just one bit. 
-
-.. figure:: Figures/typesAndSpace.png
-    :width: 500px
-    :figclass: align-center
-    
-    Figure 1: Examples of variables with names and values.  Notice that the different types get a different amount of space.
 
 To **declare** (create) a variable, you  specify the type, leave at least one space, 
 then the name for the variable and end the line with a semicolon (``;``). 
 Java uses the keyword **int** for integer, **double** for a floating point 
 number (a double precision number), and **boolean** for a Boolean value (true or false). 
- 
 
-.. .. figure:: Figures/typeName.png
-    :width: 100px
-    :figclass: align-center
-    
-    Figure 2: How to Declare a Variable
-    
-Here is an example **declaration** of a variable called *score*.
+Here is an example **declaration** of a variable called *score*  that has type *int*.
 
 .. code-block:: java
 
@@ -234,7 +224,6 @@ Here is an example that shows **declaring** a variable and **initializing** it a
   int score = 4;  
 
 
-
 The equal sign here ``=`` doesn't mean the same as it does in a mathematical equation 
 where it implies that the two sides are equal.  
 Here it means set the value in the memory 
@@ -243,16 +232,21 @@ value on the right.
 The line above sets the value in 
 the memory location called score to 4.
 
+.. figure:: Figures/memory.png
+    :width: 150px
+    :figclass: align-center
+    
+    Figure 1: Storing variables in memory
+
+
 .. note::
     
     The equal sign ``=`` operator performs variable assignment.  ``score=4`` results in the value 4 being copied into the memory location for variable score.
     
- 
- 
+
 |CodingEx| **Coding Exercise:** 
  
- 
-.. activecode:: lcdv2a
+.. activecode:: code1_3_1
    :language: java
    :autograde: unittest      
    
@@ -260,15 +254,15 @@ the memory location called score to 4.
    Then, change the values and run it again. 
 
    Click the ``Show CodeLens`` button and then use the ``Next`` button to step through the 
-   program one line at a time.  Stepping through a program lets you see how memory is allocated for each variable.
+   program one line at a time.  Stepping through a program lets you see how memory is assigned for each variable.
 
    ~~~~
-   public class Test1
+   public class VariableAssignment
    {
       public static void main(String[] args)
       {
         int score; 
-        score = 0;
+        score = 4;
         System.out.println(score);
         
         double price = 23.25;
@@ -296,7 +290,7 @@ the memory location called score to 4.
         public void testMain() throws IOException
         {
             String output = getMethodOutput("main");
-            String expect = "0\n23.25\nfalse\ntrue\nJose";
+            String expect = "4\n23.25\nfalse\ntrue\nJose";
             boolean passed = getResults(expect, output, "Expected output from main", true);
             assertTrue(passed);
         }
@@ -315,7 +309,149 @@ putting quotes around the variables in the print statements above and see what h
     Avoid putting a variable inside quotes ("") in a print statement since that 
     would print the variable name instead of its value.
  
+    
+|Exercise| **Check Your Understanding**
+   
+.. clickablearea:: q1_3_8
+    :question: Click on all of the variable declarations in the following code.
+    :iscode:
+    :feedback: Variable declarations start with a type and then a name.  
+    
+    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:{:endclick:
+        :click-incorrect:public static void main(String[] args):endclick:
+        :click-incorrect:{:endclick:
+            :click-correct:int numLives;:endclick:
+            :click-incorrect:numLives = 0;:endclick:
+            :click-incorrect:System.out.println(numLives);:endclick:
+            :click-correct:double health;:endclick:
+            :click-incorrect:health = 8.5;:endclick:
+            :click-incorrect:System.out.println(health);:endclick:
+            :click-correct:boolean powerUp;:endclick:
+            :click-incorrect:powerUp = true;:endclick:
+            :click-incorrect:System.out.println(powerUp);:endclick:
+        :click-incorrect:}:endclick:
+    :click-incorrect:}:endclick:
+    
+.. clickablearea:: q1_3_9
+    :question: Click on all of the variable initializations (first time the variable is set to a value) in the following code.
+    :iscode:
+    :feedback: Variables are initialized using name = value;  
+    
+    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:{:endclick:
+        :click-incorrect:public static void main(String[] args):endclick:
+        :click-incorrect:{:endclick:
+            :click-incorrect:int numLives;:endclick:
+            :click-correct:numLives = 0;:endclick:
+            :click-incorrect:System.out.println(numLives);:endclick:
+            :click-correct:double health = 8.5;:endclick:
+            :click-incorrect:System.out.println(health);:endclick:
+            :click-correct:boolean powerUp = true;:endclick:
+            :click-incorrect:System.out.println(powerUp);:endclick:
+        :click-incorrect:}:endclick:
+    :click-incorrect:}:endclick:
 
+
+.. clickablearea:: q1_3_10
+    :question: Click on all of the statements that both declare and initialize a variable in one statement.
+    :iscode:
+    :feedback: Variables are initialized using name = value;  
+    
+    :click-incorrect:public class Test2:endclick:
+    :click-incorrect:{:endclick:
+        :click-incorrect:public static void main(String[] args):endclick:
+        :click-incorrect:{:endclick:
+            :click-incorrect:int numLives;:endclick:
+            :click-incorrect:numLives = 0;:endclick:
+            :click-incorrect:System.out.println(numLives);:endclick:
+            :click-correct:double health = 8.5;:endclick:
+            :click-incorrect:System.out.println(health);:endclick:
+            :click-correct:boolean powerUp = true;:endclick:
+            :click-incorrect:System.out.println(powerUp);:endclick:
+        :click-incorrect:}:endclick:
+    :click-incorrect:}:endclick:
+
+
+
+**Mixed up Code Problems**
+   
+.. parsonsprob:: q1_3_11
+   :numbered: left
+   :adaptive:
+   :noindent:
+
+   The following code declares and initializes variables for storing a number of 
+   visits, a person's temperature, and if the person has insurance or not.  
+   It also includes extra blocks that are not needed in a correct solution.  
+   Drag the needed blocks from the left area into the correct order 
+   (declaring numVisits, temp, and hasInsurance in that order) in the right area.  
+   Check your solution.
+   -----
+   int numVisits = 5;
+   =====
+   Int numVisits = 5; #paired
+   =====
+   double temp = 101.2;
+   =====
+   Double temp = 101.2;  #paired
+   =====
+   boolean hasInsurance = false;
+   =====
+   Boolean hasInsurance = false; #paired
+ 
+   
+|Exercise| **Check Your Understanding**
+
+.. fillintheblank:: q1_3_12
+
+   Fill in the following: [blank] age = [blank]; to declare age to be an integer and set its value to 5.
+
+   -    :int: Correct.  You typically use whole numbers for ages after age 1.  
+        :.*: Remember that Java uses just the first 3 letters of integer
+   -    :5: Correct.  You can initialize to a value.  
+        :.*: Use 5 in the second blank 
+
+
+
+.. fillintheblank:: q1_3_13
+
+   Fill in the following: Declare a double variable named gpa.
+
+   -    :double gpa;: Correct.    
+        :.*: double gpa;
+
+
+.. fillintheblank:: q1_3_14
+
+   Fill in the following: Declare in int named studentCount and initialize it to 46.
+
+   -    :int studentCount = 46;: Correct.    
+        :.*: int studentCount = 46;
+
+.. fillintheblank:: q1_3_15
+
+   Fill in the following: Declare in boolean variable isRaining and initialize it to true.
+
+   -    :boolean isRaining = true;: Correct.    
+        :.*: boolean isRaining = true;
+
+
+Types in Memory
+---------------------------
+
+Computers store all values using **bits** (binary digits).  A **bit** can represent two values 
+and we usually say that the value of a bit is either 0 or 1. When you declare a variable, 
+you have to tell Java the type of the variable because Java needs to know how many 
+bits to use and how to represent the value.  The 3 different primitive types
+all require different number of bits.  An integer gets 32 bits of space, a double 
+gets 64 bits of space and a boolean could be represented by just one bit. 
+
+.. figure:: Figures/typesAndSpace.png
+    :width: 500px
+    :figclass: align-center
+    
+    Figure 2: Examples of variables with names and values.  Notice that the different types get a different amount of space.
 
 String Concatenation
 ---------------------------
@@ -328,13 +464,13 @@ then the code ``"Hi " + name`` will create a new String object with value ``"Hi 
 |CodingEx| **Coding Exercise:** 
  
  
-.. activecode:: lcdv2
+.. activecode:: code1_3_2
    :language: java
    :autograde: unittest      
    
    Run the following code to see what is printed. 
    ~~~~
-   public class Test2
+   public class StringConcatenation
    {
       public static void main(String[] args)
       {
@@ -383,13 +519,13 @@ called **assignment dyslexia**.
    
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: lcdv3
+.. activecode:: code1_3_3
    :language: java
    :autograde: unittest   
    
    This is an example of *assignment dyslexia*, when the coder has put the value on the left and the declaration on the right side.  Try to fix the following code to compile and run.
    ~~~~
-   public class Test3
+   public class Dyslexia
    {
       public static void main(String[] args)
       {
@@ -417,135 +553,7 @@ called **assignment dyslexia**.
         }
    }
    
-    
-|Exercise| **Check Your Understanding**
-   
-.. clickablearea:: var_declare
-    :question: Click on all of the variable declarations in the following code.
-    :iscode:
-    :feedback: Variable declarations start with a type and then a name.  
-    
-    :click-incorrect:public class Test2:endclick:
-    :click-incorrect:{:endclick:
-        :click-incorrect:public static void main(String[] args):endclick:
-        :click-incorrect:{:endclick:
-            :click-correct:int numLives;:endclick:
-            :click-incorrect:numLives = 0;:endclick:
-            :click-incorrect:System.out.println(numLives);:endclick:
-            :click-correct:double health;:endclick:
-            :click-incorrect:health = 8.5;:endclick:
-            :click-incorrect:System.out.println(health);:endclick:
-            :click-correct:boolean powerUp;:endclick:
-            :click-incorrect:powerUp = true;:endclick:
-            :click-incorrect:System.out.println(powerUp);:endclick:
-        :click-incorrect:}:endclick:
-    :click-incorrect:}:endclick:
-    
-.. clickablearea:: var_init
-    :question: Click on all of the variable initializations (first time the variable is set to a value) in the following code.
-    :iscode:
-    :feedback: Variables are initialized using name = value;  
-    
-    :click-incorrect:public class Test2:endclick:
-    :click-incorrect:{:endclick:
-        :click-incorrect:public static void main(String[] args):endclick:
-        :click-incorrect:{:endclick:
-            :click-incorrect:int numLives;:endclick:
-            :click-correct:numLives = 0;:endclick:
-            :click-incorrect:System.out.println(numLives);:endclick:
-            :click-correct:double health = 8.5;:endclick:
-            :click-incorrect:System.out.println(health);:endclick:
-            :click-correct:boolean powerUp = true;:endclick:
-            :click-incorrect:System.out.println(powerUp);:endclick:
-        :click-incorrect:}:endclick:
-    :click-incorrect:}:endclick:
-
-
-.. .. figure:: Figures/typeNameValue.png
-    :width: 150px
-    :figclass: align-center
-    
-    Figure 3: How to Declare and Initialize the Value of a Variable
-    
-
   
-
-
-.. .. |Exercise| **Check Your Understanding**
-
-.. .. clickablearea:: var_declar_and_init
-    :question: Click on all of the statements that both declare and initialize a variable in one statement.
-    :iscode:
-    :feedback: Variables are initialized using name = value;  
-    
-    :click-incorrect:public class Test2:endclick:
-    :click-incorrect:{:endclick:
-        :click-incorrect:public static void main(String[] args):endclick:
-        :click-incorrect:{:endclick:
-            :click-correct:int numLives = 0;:endclick:
-            :click-incorrect:System.out.println(numLives);:endclick:
-            :click-correct:double health = 8.5;:endclick:
-            :click-incorrect:System.out.println(health);:endclick:
-            :click-correct:boolean powerUp = true;:endclick:
-            :click-incorrect:System.out.println(powerUp);:endclick:
-        :click-incorrect:}:endclick:
-    :click-incorrect:}:endclick:
-
-
-
-   
-|Exercise| **Check Your Understanding**
-
-.. fillintheblank:: fillDecVar1
-
-   Fill in the following: [blank] age = [blank]; to declare age to be an integer and set its value to 5.
-
-   -    :int: Correct.  You typically use whole numbers for ages after age 1.  
-        :.*: Remember that Java uses just the first 3 letters of integer
-   -    :5: Correct.  You can initialize to a value.  
-        :.*: Use 5 in the second blank 
-            
-.. fillintheblank:: fillDecVar2
-
-   What type should you use for a shoe size like 8.5?  
-
-   -    :^\s*double$: Correct.  Any variable that needs to values after the decimal point should be declared as a double.
-        :.*: What type allows for a decimal value  
-            
-.. fillintheblank:: fillDecVar3
-
-   What type should you use for a number of tickets? 
-
-   -    :^\s*int$: Correct. You can't buy half a ticket so this will be an integer.
-        :.*: Use a type that represents whole numbers like 1, 2, 3, etc.
-            
-   
-**Mixed up Code Problems**
-   
-.. parsonsprob:: declareVars1
-   :numbered: left
-   :adaptive:
-   :noindent:
-
-   The following code declares and initializes variables for storing a number of 
-   visits, a person's temperature, and if the person has insurance or not.  
-   It also includes extra blocks that are not needed in a correct solution.  
-   Drag the needed blocks from the left area into the correct order 
-   (declaring numVisits, temp, and hasInsurance in that order) in the right area.  
-   Check your solution.
-   -----
-   int numVisits = 5;
-   =====
-   Int numVisits = 5; #paired
-   =====
-   double temp = 101.2;
-   =====
-   Double temp = 101.2;  #paired
-   =====
-   boolean hasInsurance = false;
-   =====
-   Boolean hasInsurance = false; #paired
-   
 
    
 The keyword **final** can be used in front of a variable declaration to make it a constant that cannot be changed. Constants are traditionally capitalized.
@@ -556,13 +564,13 @@ The keyword **final** can be used in front of a variable declaration to make it 
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: Testfn
+.. activecode:: code1_3_4
    :language: java
    :autograde: unittest 
    
    Try the following code and notice the syntax error when we try to change the constant PI. Put the comment symbols // in front of that line to remove the error and run it again.
    ~~~~
-   public class TestFinal
+   public class FinalVariable
    {
       public static void main(String[] args)
       {
@@ -622,13 +630,13 @@ The convention in Java and many programming languages is to always start a varia
 
 
   
-.. activecode:: lcnv1
+.. activecode:: code1_3_5
    :language: java
    :autograde: unittest   
 
    Java is case sensitive so ``playerScore`` and ``playerscore`` are not the same.  Run the code below to see the difference.
    ~~~~
-   public class CaseSensitiveClass
+   public class CaseSensitive
    {
       public static void main(String[] args)
       {
@@ -658,7 +666,7 @@ The convention in Java and many programming languages is to always start a varia
    
 |Exercise| **Check Your Understanding**
             
-.. fillintheblank:: fillName1
+.. fillintheblank:: q1_3_16
 
    What is the camel case variable name for a variable that represents a shoe size?
 
@@ -667,14 +675,14 @@ The convention in Java and many programming languages is to always start a varia
 
             
             
-.. fillintheblank:: fillName2
+.. fillintheblank:: q1_3_17
 
    What is the camel case variable name for a variable that represents the top score?
 
    -    :^\s*topScore$: Correct.
         :.*: In camel case just put the words after each other but uppercase the first letter of each word after the 1st word. 
             
-.. .. fillintheblank:: fillName3
+.. .. fillintheblank:: q1_3_18
 
    What is the camel case variable name for a variable that represents the last score?
 
@@ -688,14 +696,14 @@ The convention in Java and many programming languages is to always start a varia
 
 
 
-.. activecode:: challenge1-3
+.. activecode:: code1_3_6
    :language: java
    :autograde: unittest   
    :practice: T
 
    Debug the following code. Can you find the all the bugs and get the code to run? 
    ~~~~
-   public class Challenge1_3
+   public class WeatherChannel
    {
       public static void main(String[] args)
       {

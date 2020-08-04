@@ -9,7 +9,7 @@ Unit 1 Mixed Up Code Practice
 
 Try to solve each of the following. Click the *Check Me* button to check each solution.  You will be told if your solution is too short, has a block in the wrong order, or you are using the wrong block.  Some of the problems may have an extra block that isn't needed in the correct solution.  Try to solve these on your phone or other mobile device!
 
-.. parsonsprob:: ch4ex1muc
+.. parsonsprob:: q1_9_1
    :numbered: left
    :practice: T
    :adaptive:
@@ -27,7 +27,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    System.out.printlln(firstname); #distractor
 
 
-.. parsonsprob:: ch4ex2muc
+.. parsonsprob:: q1_9_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -44,7 +44,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    System.out.println("And so are you");
 
 
-.. parsonsprob:: ch4ex3muc
+.. parsonsprob:: q1_9_3
    :numbered: left
    :practice: T
    :adaptive:
@@ -73,7 +73,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
            System.out.println(Name); #distractor
            
 
-.. parsonsprob:: ch3ex1muc
+.. parsonsprob:: q1_9_4
    :numbered: left
    :practice: T
    :adaptive:
@@ -90,7 +90,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    System.out.println(pricePerShirt);
            
       
-.. parsonsprob:: ch3ex2muc
+.. parsonsprob:: q1_9_5
    :numbered: left
    :practice: T
    :adaptive:
@@ -113,7 +113,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    
 
   
-.. parsonsprob:: ch3ex4muc
+.. parsonsprob:: q1_9_6
    :numbered: left
    :practice: T
    :adaptive:
@@ -144,7 +144,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    public Class Test1
    { #distractor
    
-.. parsonsprob:: ch3ex5muc
+.. parsonsprob:: q1_9_7
    :numbered: left
    :practice: T
    :adaptive:
@@ -174,7 +174,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
        { #distractor
        
 
-.. parsonsprob:: ch4ex5muc
+.. parsonsprob:: q1_9_8
    :numbered: left
    :practice: T
    :adaptive:
@@ -202,7 +202,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
            System.out.println("Your age is " age); #distractor
 
 
-.. parsonsprob:: ch4ex6muc
+.. parsonsprob:: q1_9_9
    :numbered: left
    :practice: T
    :adaptive:
@@ -231,7 +231,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
            System.println("Your name is " + name); #distractor
        
 
-.. parsonsprob:: ch3ex6muc
+.. parsonsprob:: q1_9_10
    :numbered: left
    :practice: T
    :adaptive:
@@ -262,7 +262,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    =====
            System.println(totalCost); #distractor
            
-.. parsonsprob:: ch3ex7muc
+.. parsonsprob:: q1_9_11
    :numbered: left
    :practice: T
    :adaptive:
@@ -292,7 +292,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
    =====
        public static main(String[] args) #distractor
        
-.. parsonsprob:: ch3ex8muc
+.. parsonsprob:: q1_9_12
    :numbered: left
    :practice: T
    :adaptive:
@@ -321,7 +321,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
           int cost = 0.6;
           int money = 3.5; #distractor
           
-.. parsonsprob:: ch3ex9muc
+.. parsonsprob:: q1_9_13
    :numbered: left
    :practice: T
    :adaptive:
@@ -352,7 +352,7 @@ Try to solve each of the following. Click the *Check Me* button to check each so
           int price = 52.99; 
           int discount = 0.6; #distractor
           
-.. parsonsprob:: ch3ex10muc
+.. parsonsprob:: q1_9_14
    :numbered: left
    :practice: T
    :adaptive:

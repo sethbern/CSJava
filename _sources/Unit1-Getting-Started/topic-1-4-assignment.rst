@@ -70,14 +70,14 @@ As we saw in the video,
 we can set one variable to a copy of the value of another variable like y = x;. 
 This won’t change the value of the variable that you are copying from.
 
-.. activecode:: assignment_test2
+.. activecode:: code1_4_1
    :language: java
    :autograde: unittest   
    
    Click on the ``Show CodeLens`` button to step through the code and see how the values of the variables change. 
    ~~~~
  
-    public class Test2
+    public class VariableAssignment
     {
       public static void main(String[] args)
       {
@@ -98,35 +98,52 @@ This won’t change the value of the variable that you are copying from.
    
 |Exercise| **Check your understanding**
    
-.. mchoice:: q2_1
-   :practice: T
-   :answer_a: x = 0, y = 1, z = 2
-   :answer_b: x = 1, y = 2, z = 3
-   :answer_c: x = 2, y = 2, z = 3
-   :answer_d: x = 0, y = 0, z = 3
-   :correct: b
-   :feedback_a: These are the initial values in the variable, but the values are changed.
-   :feedback_b: x changes to y's initial value, y's value is doubled, and z is set to 3
-   :feedback_c: Remember that the equal sign doesn't mean that the two sides are equal.  It sets the value for the variable on the left to the value from evaluating the right side.
-   :feedback_d: Remember that the equal sign doesn't mean that the two sides are equal.  It sets the value for the variable on the left to the value from evaluating the right side.
 
-   What are the values of x, y, and z after the following code executes?  
+.. |codeq| image:: Figures/assignmentq.png
+    :align: middle
+    
 
-   .. code-block:: java 
+.. fillintheblank:: q1_4_1
 
-       int x = 0;
-       int y = 1;
-       int z = 2;
-       x = y;
-       y = y * 2;
-       z = 3;
+   |codeq|
+   The code above shows the variable state in memory after line 9 is executed. What is printed when line 10 is executed?
 
-      
-|Exercise| **Mixed up programs**
+   -    :12: Correct.
+        :.*: num3 - num1 = 19 - 7 = 12 
+  
+
+The code below makes an attempt to swap the values stored in the two variables x and y (so x ends up with y's initial 
+value  of 5 and y ends up with x's initial value of 3).  Unfortunately this code does not work.
+You will see in the next exercise that swapping two variables requires a third variable.
+
+.. activecode:: code1_4_2
+   :language: java
+   :autograde: unittest   
+   
+   Can you predict what is printed?  Use the CodeLens to step through the code.  
+   Can you explain why the code does not swap the values stored in x and y?
+   ~~~~
+ 
+    public class ErrorSwap
+    {
+      public static void main(String[] args)
+      {
+        int x = 3;
+        int y = 5;
+        System.out.println(x);
+        System.out.println(y);
+        x = y;
+        y = x;
+        System.out.println(x);
+        System.out.println(y);
+      }
+    }
+    ====
+
 
 In the mixed up programs below, drag the blocks to the right to put them in the right order.
 
-.. parsonsprob:: 2_swap
+.. parsonsprob:: q1_4_2
    :numbered: left
    :practice: T
    :adaptive:
@@ -169,13 +186,13 @@ because the variable on the left is set to the value of the arithmetic
 expression on the right. So, the score variable is set to the 
 previous value of score + 1.
 
-.. activecode:: lccv1
+.. activecode:: code1_4_3
    :language: java
    :autograde: unittest   
    
-   Try the code below to see how score is incremented by 1.
+   Click on the ``Show CodeLens`` button to step through the code and see how the score value changes.
    ~~~~
-   public class Test1
+   public class UpdateScore
    {
       public static void main(String[] args)
       {
@@ -208,8 +225,57 @@ previous value of score + 1.
         }
     }
 
-
    
+.. mchoice:: q1_4_3
+   :practice: T
+   :answer_a: b = 5
+   :answer_b: b = 2
+   :answer_c: b = 7
+   :answer_d: b = 10
+   :correct: d
+   :feedback_a: It sets the value for the variable on the left to the value from evaluating the right side.  What is 5 * 2?
+   :feedback_b: It sets the value for the variable on the left to the value from evaluating the right side.  What is 5 * 2?
+   :feedback_c: It sets the value for the variable on the left to the value from evaluating the right side.  What is 5 * 2?
+   :feedback_d: Correct. 5 * 2 is 10. 
+
+   What is the value of b after the following code executes?  
+
+   .. code-block:: java 
+
+       int b = 5;
+       b = b * 2;
+
+
+
+.. mchoice:: q1_4_4
+   :practice: T
+   :answer_a: x = 0, y = 1, z = 2
+   :answer_b: x = 1, y = 2, z = 3
+   :answer_c: x = 2, y = 2, z = 3
+   :answer_d: x = 1, y = 0, z = 3
+   :correct: b
+   :feedback_a: These are the initial values in the variable, but the values are changed.
+   :feedback_b: x changes to y's initial value, y's value is doubled, and z is set to 3
+   :feedback_c: Remember that the equal sign doesn't mean that the two sides are equal.  It sets the value for the variable on the left to the value from evaluating the right side.
+   :feedback_d: Remember that the equal sign doesn't mean that the two sides are equal.  It sets the value for the variable on the left to the value from evaluating the right side.
+
+   What are the values of x, y, and z after the following code executes?  
+
+   .. code-block:: java 
+
+       int x = 0;
+       int y = 1;
+       int z = 2;
+       x = y;
+       y = y * 2;
+       z = 3;
+
+
+
+
+
+
+
 Storing User Input in Variables
 ---------------------------------
 
@@ -232,7 +298,7 @@ gets a string value you typed into the window and then stores the value in a var
 Run the program a few times, typing in a different name. The code works for any name: 
 behold, the power of variables!
 
-.. activecode:: readinputstream
+.. activecode:: code1_4_4
    :language: java
    :stdin: Fred Smith  
    
@@ -282,7 +348,7 @@ The Scanner class has several useful methods for reading user input:
   =========================  ================================================
 
 
-.. activecode:: readage
+.. activecode:: code1_4_5
    :language: java
    :stdin: 20  
    
@@ -311,7 +377,7 @@ The Scanner class has several useful methods for reading user input:
 The program below reads two integer values from the input stream and attempts to print the sum.  Unfortunately there is a problem
 with the last line of code that prints the sum.  
 
-.. activecode:: addtwonums
+.. activecode:: code1_4_6
    :language: java
    :autograde: unittest   
    :stdin: 5 7
@@ -386,13 +452,13 @@ Java uses the operator ``==`` to test if the value on the left is equal to the v
 
 
 
-.. activecode:: lcop1
+.. activecode:: code1_4_7
    :language: java
    :autograde: unittest      
    
    Run the code below to see all the operators in action. Do all of those operators do what you expected?  What about ``2 / 3``? Isn't surprising that it prints ``0``?  See the note below.
    ~~~~
-   public class Test1
+   public class OperatorExample
    {
       public static void main(String[] args)
       {
@@ -439,7 +505,7 @@ Operators can be used to create compound expressions with more than one operator
 
 
 
-.. activecode:: compound1
+.. activecode:: code1_4_8
    :language: java
    :autograde: unittest      
    
@@ -478,7 +544,7 @@ Operators can be used to create compound expressions with more than one operator
    
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: apcsa_sample1
+.. mchoice:: q1_4_5
    :practice: T
    :answer_a: 0.666666666666667
    :answer_b: 9.0
@@ -522,13 +588,13 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: lcop2
+.. activecode:: code1_4_9
    :language: java
    :autograde: unittest      
    
    In the example below, try to guess what it will print out and then run it to see if you are right.
    ~~~~
-   public class Test1
+   public class ModExample
    {
       public static void main(String[] args)
       {
@@ -570,7 +636,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 	
 |Exercise| **Check Your Understanding**
 	
-.. mchoice:: q3_4_1
+.. mchoice:: q1_4_6
    :practice: T
    :answer_a: 15
    :answer_b: 16
@@ -582,7 +648,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 
    What is the result of 158 % 10?
    
-.. mchoice:: q3_4_2
+.. mchoice:: q1_4_7
    :practice: T
    :answer_a: 3
    :answer_b: 2
@@ -619,7 +685,7 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
 
    <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>
 
-.. activecode:: challenge1-4
+.. activecode:: code1_4_10
    :language: java
    :autograde: unittest
    :practice: T
@@ -629,7 +695,7 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
    If you want an extra challenge, try reading the values using a Scanner.  
    ~~~~
    import java.util.Scanner;
-   public class Challenge1_4
+   public class DogAgeChallenge
    {
       public static void main(String[] args)
       {

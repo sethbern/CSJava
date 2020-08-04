@@ -77,14 +77,14 @@ Be sure to keep the starting ``"`` and ending ``"``.
 Run the modified code to test your changes. If you revisit this page later and login, 
 click on ``Load History`` button and move the bar above it to see your previous code changes.
  
-.. activecode:: lcfc1
+.. activecode:: code1_2_1
    :language: java
    :autograde: unittest    
 
    Run this code to see the output below it. 
    Then change the code to print your name, for example "Hi Pat!", and run again. 
    ~~~~    
-   public class MyClass
+   public class HelloExample
    {
       public static void main(String[] args)
       {
@@ -135,7 +135,7 @@ Java has two different print commands to print output to the screen:
 
 ``System.out.println("Hi there!");`` prints out the characters between the first ``"`` and the second ``"`` followed by a new line.  The ``"Hi there!"`` is called a **string literal**, and it can have zero to many characters enclosed in starting and ending double quotes. 
 
-.. activecode:: printCommands
+.. activecode:: code1_2_2
    :language: java
    :autograde: unittest 
 
@@ -143,7 +143,7 @@ Java has two different print commands to print output to the screen:
    How would you change it to print the ! on the same line as Hi there 
    keeping all 3 print statements?
    ~~~~    
-   public class MyClass
+   public class HelloExample2
    {
       public static void main(String[] args)
       {
@@ -239,7 +239,7 @@ Let's practice debugging some code!
 |Exercise| **Check Your Understanding: Mixed up programs**
 
 
-.. parsonsprob:: thirdClass
+.. parsonsprob:: q1_2_1
    :numbered: left
    :adaptive:
    :noindent:
@@ -256,7 +256,7 @@ Let's practice debugging some code!
    After three incorrect attempts you will be able to use 
    the "Help me" button to make the problem easier.
    -----
-   public class ThirdClass
+   public class HelloExample3
    {
    =====
       public static void main(String[] args)
@@ -268,7 +268,7 @@ Let's practice debugging some code!
       =====
    }
    
-.. parsonsprob:: fourthClass
+.. parsonsprob:: q1_2_2
    :numbered: left
    :adaptive:
    :noindent:
@@ -277,10 +277,10 @@ Let's practice debugging some code!
    but the code is mixed up and contains some extra blocks with errors.  
    Drag the needed blocks from left to right and put them in the correct order, then check your solution.
    -----
-   public class FourthClass
+   public class HelloExample4
    {
    =====
-   public Class FourthClass
+   public Class HelloExample4
    {                         #paired
    =====
       public static void main(String[] args)
@@ -304,14 +304,14 @@ Run the following code.  Look for an error message after the code.  This is call
 
 What is wrong?  Can you fix it?  The error message will tell you the line number that it thinks is causing the error (``FirstClass.java:5: error: unclosed string literal``).  Check line 5 to make sure that everything looks correct.  One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well. Try putting in the missing symbol and run again. This is called **debugging**.
 
-.. activecode:: sc2error1
+.. activecode:: code1_2_3
    :language: java
    :autograde: unittest 
    :practice: T
 
    Fix the code below.
    ~~~~
-   public class FirstClass
+   public class Error1
    {
       public static void main(String[] args)
       {
@@ -345,14 +345,14 @@ Try and run the following code.
 Look for an error message after the code. What is wrong this time?  Can you fix it?  
 One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well.
 
-.. activecode:: sc2error2
+.. activecode:: code1_2_4
    :language: java
    :autograde: unittest 
    :practice: T
 
    Fix the code below.
    ~~~~
-   public class SecondClass
+   public class Error2
    {
       public static void main(String[] args)
       {
@@ -387,14 +387,14 @@ What is wrong this time?  Can you fix it?  After you fix the first error, you ma
 encounter a 2nd error! Fix that one too! Hints: How do you end a command in Java? 
 Also, check for capitalization. 
 
-.. activecode:: sc2error3
+.. activecode:: code1_2_5
    :language: java
    :autograde: unittest 
    :practice: T
 
    Fix the code below.
    ~~~~    
-   public class ThirdClass
+   public class Error3
    {
       public static void main(String[] args)
       {
@@ -451,7 +451,7 @@ For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the c
 
 
 
-.. activecode:: challenge1-2
+.. activecode:: code1_2_6
    :language: java
    :autograde: unittest 
    :practice: T
@@ -490,7 +490,7 @@ For multi-line comments, use ``/*`` to start the comment and ``*/`` to end the c
 Practice
 ------------
 
-.. mchoice:: AP1-2-1
+.. mchoice:: q1_2_3
     :practice: T
     
     Consider the following code segment.
@@ -534,7 +534,7 @@ Practice
       + Correct! Pay attention to which lines are print or println.
       
  
-.. mchoice:: AP1-2-2
+.. mchoice:: q1_2_4
     :practice: T
     
     Consider the following code segment.

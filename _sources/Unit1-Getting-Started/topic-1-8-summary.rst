@@ -63,7 +63,7 @@ Java Keyword Summary
 Vocabulary Practice
 -----------------------
 
-.. dragndrop:: ch3_var1
+.. dragndrop:: q1_8_1
     :feedback: Review the summaries above.
     :match_1: Specifying the type and name for a variable|||declaring a variable 
     :match_2: A whole number|||integer
@@ -72,7 +72,7 @@ Vocabulary Practice
     
     Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct
     
-.. dragndrop:: ch3_var2
+.. dragndrop:: q1_8_2
     :feedback: Review the summaries above.
     :match_1: Setting the value of a variable the first time|||initialize
     :match_2: An operator that returns the remainder|||mod

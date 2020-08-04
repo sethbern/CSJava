@@ -54,7 +54,7 @@ It's a good idea to use the documentation comment in front of classes, methods, 
 
 |Exercise| **Check your understanding**
 
-.. dragndrop:: comments
+.. dragndrop:: q1_7_1
     :feedback: Review the section above.
     :match_1: single-line comment|||//
     :match_2: multi-line comment|||/* */

@@ -53,7 +53,6 @@
 
 Compound Assignment Operators 
 =============================
-|cup| 
 
 Compound assignment operators are shortcuts that do a math operation and assignment in one step. For example, ``x += 1`` adds 1 to x and assigns the sum to x. It is the same as ``x = x + 1``. This pattern is possible with any operator put in front of the = sign, as seen below.
 
@@ -71,7 +70,7 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
 
 |CodingEx| **Coding Exercise**
 
-.. activecode:: lcpp
+.. activecode:: code1_5_1
    :language: java
    :autograde: unittest    
   
@@ -117,7 +116,7 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
 |Exercise| **Check Your Understanding**
 
 
-.. mchoice:: q3_4_3
+.. mchoice:: q1_5_1
    :practice: T
    :answer_a: x = -1, y = 1, z = 4
    :answer_b: x = -1, y = 2, z = 3
@@ -142,7 +141,7 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
      y++;
      z+=y;
      
-.. mchoice:: q3_4_4
+.. mchoice:: q1_5_2
    :practice: T
    :answer_a: x = 6, y = 2.5, z = 2
    :answer_b: x = 4, y = 2.5, z = 2
@@ -223,7 +222,7 @@ values of the variables at the end.   Be careful, ``%`` is the remainder operato
 
 
 
-.. fillintheblank:: variable_trace
+.. fillintheblank:: q1_5_3
    
    .. code-block:: java 
 
@@ -265,7 +264,7 @@ values of the variables at the end.   Be careful, ``%`` is the remainder operato
 Prefix versus Postfix Operator
 ------------------------------
 
-.. activecode:: postfix_assignment
+.. activecode:: code1_5_2
    :language: java
    
    What do you think is printed when the following code is executed?    
@@ -307,14 +306,14 @@ When it is placed after, it is called **postfix** increment.
 +----------------------------+---------------------------------------------------------+-------+
 
 
-.. dragndrop:: prepost_matching
+.. dragndrop:: q1_5_4
    :feedback: Try again.
    :match_1: System.out.println(score++);|||Print the value 5, then assign score the value 6.
    :match_2: System.out.println(score--);|||Print the value 5, then assign score the value 4.
    :match_3: System.out.println(++score);|||Assign score the value 6, then print the value 6.
    :match_4: System.out.println(--score);|||Assign score the value 4, then print the value 4.
 
-   Assume score=5.  Match each line of code to the correct result.
+   Assume score=5 and each line of code is executed independent of the others.  Match each line of code to the correct result.  
 
 
 
@@ -337,7 +336,7 @@ When it is placed after, it is called **postfix** increment.
         z--;
 
 
-.. dragndrop:: prepost_equivalent
+.. dragndrop:: q1_5_5
    :feedback: Try again.
    :match_1: System.out.println(score++);|||System.out.println(score);   score++;
    :match_2: System.out.println(score--);|||System.out.println(score);   score--;
