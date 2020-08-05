@@ -349,8 +349,8 @@ value entered, or the frequency of a certain condition. You can also use loops t
 evenly divisible by other integers or identify the individual digits in an integer. We will see a lot more of these 
 algorithms in Unit 7 with loops and arrays.
 
-|Groupwork| Programming Challenge : Guessing Game
--------------------------------------------------
+|Groupwork| Programming Challenge  :  Guessing Game
+----------------------------------------------------
 
 .. image:: Figures/questionmark.jpg
     :width: 100
