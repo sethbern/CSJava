@@ -199,7 +199,7 @@ The main method can call the chorus method multiple times to repeat the two line
 .. clickablearea:: q5_1_2
     :question: A method definition consists of a method header and a method body. Click on the method header for the method named "greet" in the following code.
     :iscode:
-    :feedback: There is one method header for the greet method.  
+    :feedback: There is one header for the greet method: public static void greet()
     
     :click-incorrect:public class GreetingExample:endclick:
     :click-incorrect:{:endclick:
@@ -222,7 +222,7 @@ The main method can call the chorus method multiple times to repeat the two line
 .. clickablearea:: q5_1_3
     :question: Click on all statements contained within the greet method body.
     :iscode:
-    :feedback: The greet method body consists of the 2 print statements nested between the curly braces that follow the method header  
+    :feedback: The greet method body consists of the 2 print statements nested between the curly braces that follow the method header.  
     
     :click-incorrect:public class GreetingExample:endclick:
     :click-incorrect:{:endclick:
@@ -245,7 +245,7 @@ The main method can call the chorus method multiple times to repeat the two line
 .. clickablearea:: q5_1_4
     :question: Click on the greet method call.
     :iscode:
-    :feedback: The greet() method call occurs in the main method.  
+    :feedback: The greet method call occurs in the main method.  
     
     :click-incorrect:public class GreetingExample:endclick:
     :click-incorrect:{:endclick:
@@ -266,7 +266,7 @@ The main method can call the chorus method multiple times to repeat the two line
 
 .. fillintheblank:: q5_1_5
 
-   Given the GreetingExample class in the previous problem, how many times is the **System.out.println** called in total when the main method executes?
+   Given the GreetingExample class in the previous problem, how many times is  **System.out.println** called in total when the program runs?
 
    -    :4: Correct.  
         :.*: Incorrect. The main method calls System.out.println directly 2 times, and the call to greet() results in 2 additional calls to System.out.println.
@@ -283,12 +283,14 @@ A method call causes the program execution to jump to the first line of the call
 Each statement in the called method is then executed in order.
 When the called method is done, the program returns back to the main method.
 
-How does the program keep track of all of this?  We can use a **stack diagram**, which that shows a box 
-called a **frame** for each method that is executing. 
-A frame contains the method’s parameters and local variables, along with the number of the current line that is about to be executed. 
-Each time a method is called, a new frame is added to the stack.
-The CodeLens Visualizer shows each new frame added to the bottom of the stack diagram.
-You can tell which method is currently executing by looking at the bottom of the stack.
+How does the program keep track of all of this?  
+The Java runtime environment keeps track of the method calls using a **call stack**.
+The call stack is made up of stack **frames**.  Each time a method is called, a new frame is created
+and added to the stack. A frame contains the method’s parameters and local variables, along with the number of the current line that is about to be executed. 
+
+The CodeLens Visualizer represents the call stack using a **stack diagram**, with each 
+method frame drawn as a box.  When a method is called, a new frame is added to the bottom of the stack diagram.
+You can tell which method is currently executing by looking at the bottom of the stack. 
 
 |Exercise| **Check your understanding**
 
@@ -311,7 +313,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
       where it says "Frames".  There is a single frame for the main method  ``main:11``, 
       indicating line 11 is the current line in the method.
 
-      Click on the next tab to see what happens when line 11 executes.
+      Click on the next tab to see what happens after line 11 executes.
 
       .. figure:: Figures/greet0.png
  
@@ -328,13 +330,12 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
 
     .. tab:: Tab 3
 
-      When line 12 is executed control is transferred into the greet() method.
-      The red arrow shows line 5 is next to execute.
-
+      Control is transferred into the greet() method.
+      
       The stack diagram shows a new frame was created for the greet() method ``greet:5``, indicating 
       line 5 is the current line in the method.   
 
-      Note that each a frame is added to the bottom of the stack (in the CodeLens visualizer).
+      Note that the CodeLens tool adds the new method frame to the bottom of the stack diagram.
 
 
       .. figure:: Figures/greet2.png
@@ -349,7 +350,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
 
       The output is updated after line 6 is executed.  The ``greet:7`` frame indicates line 7 is next to execute, which is the last line of code in the method.
 
-      After line 7 is executed, the greet() method will return to the previous frame in the stack, which is the main method. 
+      When line 7 executes, the greet() method will return to the previous frame in the stack, which is the main method. 
       But how does the program know which line in the main to return to?
       The method frame ``main:12`` indicates that control should return to line 12.
 
@@ -359,7 +360,8 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
 
       The greet() method completed and its frame was removed from the stack.  
       Control returned to the main method and since there was nothing else to do on line 12, the
-      program moves forward to line 13 as depicted in the method frame ``main:13``.
+      program moves forward to line 13 as depicted in the method frame ``main:13``.  The program
+      will execute the remaining lines of code in the main method and then terminate.
 
       .. figure:: Figures/greet4.png
 
@@ -382,7 +384,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
    :feedback_c: Try tracing through the main method and see what happens when it calls the other methods.
    :feedback_d: Yes, the print method calls the consume method 3 times and then the fruit method to print this.
   
-   What does the following code print out?
+   What does the following code print? 
 
    .. code-block:: java
 
@@ -423,7 +425,8 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
   
    Given the stack diagram shown in the figure, which line is next to execute?
 
-      .. figure:: Figures/stackframeq1.png
+    .. figure:: Figures/stackframeq1.png
+
 
 
 
@@ -441,7 +444,8 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
   
    After line 12 executes and the greet() method completes, control will return to which line in the main method?
 
-      .. figure:: Figures/stackframeq2.png
+    .. figure:: Figures/stackframeq2.png
+
 
 .. mchoice:: q5_1_10
    :practice: T
@@ -458,7 +462,27 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
    trace.  After line 12 executes and the n() method completes, 
    control will return to which line in which method?
 
-      .. figure:: Figures/stackframeq3.png
+    .. figure:: Figures/stackframeq3.png
+
+
+.. mchoice:: q5_1_11
+   :practice: T
+   :answer_a: Called n
+   :answer_b: Called o
+   :answer_c: Called m
+   :answer_d: After n
+   :correct: d
+   :feedback_a: Incorrect. The last method call in the main is to method o().  Look at the last line in method o().
+   :feedback_b: Incorrect. The last method call in the main is to method o().  Look at the last line in method o().
+   :feedback_c: Incorrect. The last method call in the main is to method o().  Look at the last line in method o().
+   :feedback_d: Correct. 
+   
+   What is the last thing printed when the program runs?
+
+     .. figure:: Figures/stackframeq4.png
+
+.. mchoice:: q5_1_11
+  
 
   
 |CodingEx| **Coding Exercise**
