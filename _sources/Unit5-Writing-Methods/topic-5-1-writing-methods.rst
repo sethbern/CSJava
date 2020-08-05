@@ -271,8 +271,8 @@ The main method can call the chorus method multiple times to repeat the two line
    -    :4: Correct.  
         :.*: Incorrect. The main method calls System.out.println directly 2 times, and the call to greet() results in 2 additional calls to System.out.println.
 
-Flow of Execution
------------------
+Flow of Execution - Stack Diagrams
+------------------------------------
 
 A class can contain several methods.  It can be tempting to think the methods are executed in the order they
 appear in the class, but this is not the case.
@@ -283,9 +283,94 @@ A method call causes the program execution to jump to the first line of the call
 Each statement in the called method is then executed in order.
 When the called method is done, the program returns back to the main method.
 
+How does the program keep track of all of this?  We can use a **stack diagram**, which that shows a box 
+called a **frame** for each method that is executing. 
+A frame contains the method’s parameters and local variables, along with the number of the current line that is about to be executed. 
+Each time a method is called, a new frame is added to the stack.
+The CodeLens Visualizer shows each new frame added to the bottom of the stack diagram.
+You can tell which method is currently executing by looking at the bottom of the stack.
+
 |Exercise| **Check your understanding**
 
-.. mchoice:: q5_1_6
+.. |visualizeTrace| raw:: html
+
+   <a href="http://pythontutor.com/visualize.html#code=public%20class%20GreetingExample%0A%7B%0A%20%20%20%20public%20static%20void%20greet%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hello!%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22How%20are%20you%3F%22%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Before%20greeting%22%29%3B%0A%20%20%20%20%20%20%20%20greet%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22After%20greeting%22%29%3B%0A%20%20%20%20%7D%0A%7D&cumulative=true&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">GreetingExample Visualizer</a>    
+ 
+
+
+Click on each tab to observe the flow of control for the ``GreetingExample`` class. 
+
+.. tabbed:: q5_1_6
+
+    .. tab:: Tab 1
+
+      The program starts at the first line of the main method.
+      The red arrow shows that line 11 is next to execute.
+      
+      The stack diagram is in the right portion of the screen print, below the print output section 
+      where it says "Frames".  There is a single frame for the main method  ``main:11``, 
+      indicating line 11 is the current line in the method.
+
+      Click on the next tab to see what happens when line 11 executes.
+
+      .. figure:: Figures/greet0.png
+ 
+    .. tab:: Tab 2
+
+      The red arrow shows that line 12 is next to execute.  
+      The main method frame ``main:12`` is updated to indicate the current line.
+     
+      Click on the next tab to see what happens when line 12 executes and the greet() method is called.
+
+      .. figure:: Figures/greet1.png
+         
+
+
+    .. tab:: Tab 3
+
+      When line 12 is executed control is transferred into the greet() method.
+      The red arrow shows line 5 is next to execute.
+
+      The stack diagram shows a new frame was created for the greet() method ``greet:5``, indicating 
+      line 5 is the current line in the method.   
+
+      Note that each a frame is added to the bottom of the stack (in the CodeLens visualizer).
+
+
+      .. figure:: Figures/greet2.png
+
+    .. tab:: Tab 4
+
+      The output is updated after line 5 is executed.  The ``greet:6`` frame indicates line 6 is next to execute.
+
+      .. figure:: Figures/greet2b.png
+
+    .. tab:: Tab 5
+
+      The output is updated after line 6 is executed.  The ``greet:7`` frame indicates line 7 is next to execute, which is the last line of code in the method.
+
+      After line 7 is executed, the greet() method will return to the previous frame in the stack, which is the main method. 
+      But how does the program know which line in the main to return to?
+      The method frame ``main:12`` indicates that control should return to line 12.
+
+      .. figure:: Figures/greet3.png
+
+    .. tab:: Tab 6
+
+      The greet() method completed and its frame was removed from the stack.  
+      Control returned to the main method and since there was nothing else to do on line 12, the
+      program moves forward to line 13 as depicted in the method frame ``main:13``.
+
+      .. figure:: Figures/greet4.png
+
+    .. tab:: Tab 7
+
+      You can step through the program using the |visualizeTrace|.
+
+
+|Exercise| **Check your understanding**
+
+.. mchoice:: q5_1_7
    :practice: T
    :answer_a: apples and bananas! eat I like to.
    :answer_b: I like to consume consume consume fruit.
@@ -323,6 +408,58 @@ When the called method is done, the program returns back to the main method.
             fruit();
         }
     }
+
+.. mchoice:: q5_1_8
+   :practice: T
+   :answer_a: 9
+   :answer_b: 11
+   :answer_c: 19
+   :answer_d: 20
+   :correct: b
+   :feedback_a: Look at the frame on the bottom of the stack diagram to determine the current method.
+   :feedback_b: Correct. The bottom stack frame shows the current method is greet() and line 11 is next to execute.
+   :feedback_c: Look at the frame on the bottom of the stack diagram to determine the current method.
+   :feedback_d: Look at the frame on the bottom of the stack diagram to determine the current method.
+  
+   Given the stack diagram shown in the figure, which line is next to execute?
+
+      .. figure:: Figures/stackframeq1.png
+
+
+
+.. mchoice:: q5_1_9
+   :practice: T
+   :answer_a: 16
+   :answer_b: 17
+   :answer_c: 18
+   :answer_d: 19
+   :correct: d
+   :feedback_a: Look at the main method frame in the stack diagram.
+   :feedback_b: Look at the main method frame in the stack diagram.
+   :feedback_c: Look at the main method frame in the stack diagram.
+   :feedback_d: Correct. The main method frame shows the greet method was called at line 19.
+  
+   After line 12 executes and the greet() method completes, control will return to which line in the main method?
+
+      .. figure:: Figures/stackframeq2.png
+
+.. mchoice:: q5_1_10
+   :practice: T
+   :answer_a: line 21 in method main.
+   :answer_b: line 6 in method o.
+   :answer_c: line 16 in method m.
+   :correct: c
+   :feedback_a: Incorrect. The stack diagram shows method n was called by method m.
+   :feedback_b: Incorrect. The stack diagram shows method n was called by method m.
+   :feedback_c: Correct. The stack diagram shows method n was called by method m.
+   
+   Notice the n() method is called both in method o() and method m().  
+   The stack diagram shows the current execution
+   trace.  After line 12 executes and the n() method completes, 
+   control will return to which line in which method?
+
+      .. figure:: Figures/stackframeq3.png
+
   
 |CodingEx| **Coding Exercise**
 

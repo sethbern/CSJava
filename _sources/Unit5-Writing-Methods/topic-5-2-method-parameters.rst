@@ -475,8 +475,43 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 Method Tracing
 ------------------
 
+.. |visualizeTrace| raw:: html
+
+   <a href="http://pythontutor.com/visualize.html#code=public%20class%20TraceMethods%20%7B%0A%20%20public%20static%20void%20inchesToCentimeters%28double%20i%29%0A%20%20%7B%0A%20%20%20%20%20%20double%20c%20%3D%20i%20*%202.54%3B%0A%20%20%20%20%20%20printInCentimeters%28i,%20c%29%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20static%20void%20printInCentimeters%28double%20inches,%20double%20centimeters%29%0A%20%20%7B%0A%20%20%20%20%20%20System.out.println%28inches%20%2B%20%22--%3E%22%20%2B%20centimeters%29%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%7B%0A%20%20%20%20%20%20inchesToCentimeters%2810%29%3B%0A%20%20%7D%0A%7D&cumulative=true&curInstr=6&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">visualizer</a>    
+ 
 A method can call other methods to help it do its job.  
-See if you can trace through the code in the following examples to predict the output.  
+Use the CodeLens button below or trace through the code in a separate window using the |visualizeTrace|. 
+
+.. activecode:: code5_2_4trace
+  :language: java
+    
+  Use the CodeLens button to trace through the method calls.
+  ~~~~
+  public class TraceMethods {
+    public static void inchesToCentimeters(double i)
+    {
+        double c = i * 2.54;
+        printInCentimeters(i, c);
+    }
+    
+    public static void printInCentimeters(double inches, double centimeters)
+    {
+        System.out.println(inches + "-->" + centimeters);
+    }
+    
+    public static void main(String[] args)
+    {
+        inchesToCentimeters(10);
+    }
+  }
+
+
+
+
+
+
+
+
 
 |Exercise| **Check your understanding**
 
