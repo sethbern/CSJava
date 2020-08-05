@@ -44,31 +44,62 @@ false then the next statement or block of statements is skipped.
     Figure 1: The order that statements execute in a conditional
     
 
-A conditional uses the keyword ``if`` followed by Boolean expression inside of  an 
+A conditional uses the keyword ``if`` followed by **Boolean expression** inside of  an 
 open parenthesis ``(`` and a close parenthesis ``)`` and then followed by a single statement or block of statements.  
 The single statement or block of statements are only executed if the condition is true.  
 The open curly brace ``{`` and a close curly brace ``}`` are used to group a block of statements together.  
 It is recommended to always put in the curly braces even if you have just one statement under the if statement. 
 
 
-.. code-block:: java
+.. raw:: html
 
-    // A single if statement
-    if (boolean expression)
-        Do statement;
-    // Or a single if with {}
-    if (boolean expression) 
-    {
-       Do statement;
-    }
-    // A block if statement: { } required    
-    if (boolean expression)
-    {
-       Do Statement1;
-       Do Statement2;
-       ...
-       Do StatementN;
-    }
+  <table >
+  <tr >
+  <th style="padding-right: 6em;">1 statement </th>
+  <th style="padding-right: 6em;">1 statement </th>
+  <th style="padding-right: 6em;">2+ statements </th>
+  </tr>
+
+  <tr style="margin-bottom:2em; border-bottom: 1px dashed black">
+  <th >{} optional </th>
+  <th >{} optional </th>
+  <th >{} required </th>
+  </tr>
+
+  <tr>
+  </tr>
+  <tr >
+  <td>if (x<10)</td>
+  <td>if (x<10)</td>
+  <td>if (x<10)</td>
+  </tr>
+
+  <tr>
+  <td>&nbsp;&nbsp;&nbsp;count++;</td>
+  <td>{</td>
+  <td>{</td>
+  </tr>
+
+  <tr>
+  <td> </td>
+  <td>&nbsp;&nbsp;&nbsp;count++;</td>
+  <td>&nbsp;&nbsp;&nbsp;count++;</td>
+  </tr>
+
+  <tr>
+  <td> </td>
+  <td>}</td>
+  <td>&nbsp;&nbsp;&nbsp;System.out.println(count);</td>
+  </tr>
+
+  <tr>
+  <td> </td>
+  <td> </td>
+  <td>}</td>
+  </tr>
+
+
+  </table>
 
 .. note::
 
@@ -116,7 +147,7 @@ Imagine that your cell phone wanted to remind you to take an umbrella if it was 
 
 |Exercise| **Check your understanding**
 
-.. fillintheblank:: q3_2_1
+.. fillintheblank:: q3_2_0
 
    Try changing the code above to ``boolean isRaining = false;``.  What will it print?
 
@@ -171,6 +202,31 @@ true and false in the next lesson.  However, the code below shows how to print d
         }
     }
   
+|Exercise| **Check your understanding**
+
+
+.. mchoice:: q3_2_1
+   :practice: T
+   :answer_a: Because x < 2 is always true
+   :answer_b: Because there is a semicolon ; at the end of the condition "if (x < 2) ;"
+   :answer_c: Because Java makes a random decision
+   :correct: b
+   :feedback_a: Incorrect, 3 < 2 is always false so the print statement should never execute 
+   :feedback_b: Correct.  Get rid of the ; at the end of the condition "if (x < 2) " 
+   :feedback_c: Incorrect, 3 < 2 is always false so the print statement should never execute
+   
+   Consider the following code segment. Why does it always print "ERROR"?
+   
+   .. code-block:: java
+
+     int x = 3;
+     if (x < 2) ;
+     {
+         System.out.println("ERROR");
+     }
+     
+  
+
 
 Relational Operators in If Statements
 ---------------------------------------
@@ -343,36 +399,50 @@ Here are some rules to follow with if statements to avoid some common errors:
 .. activecode:: code3_2_4
    :language: java
    :autograde: unittest
-   :practice: T
+   :stdin: true
 
-   The code below doesn't work as expected.  Fix it to only print "Wear a coat" and "Wear gloves" when isCold is true.
+   The code below doesn't work as expected. It has 2 errors. 
+   Run the program with input true, then change the input to false and run again.
+   Even when the input is false, the program still prints both messages.
+   Fix it to only print both "Wear a coat" and "Wear gloves" when isCold is true.
+   Nothing should print when isCold is false.
+   
    ~~~~
+   import java.util.Scanner; 
    public class TestCold
    {
       public static void main(String[] args)
       {
-        boolean isCold = false;
-        if (isCold = true); 
+        Scanner scan = new Scanner(System.in);
+      
+        System.out.println("Is it cold?");
+        boolean isCold = scan.nextBoolean();
+
+        if (isCold); 
             System.out.println("Wear a coat");
             System.out.println("Wear gloves");
         
       }
    }
    ====
-   import static org.junit.Assert.*;
+    import static org.junit.Assert.*;
     import org.junit.*;;
     import java.io.*;
 
     public class RunestoneTests extends CodeTestHelper
     {
+       
         @Test
-        public void testMain() throws IOException
+        public void testsemicolon()
         {
-            String output = getMethodOutput("main");
-            String expect = "";
-            boolean passed = getResults(expect, output, "Expected output from main if isCold is false");
+            String code = getCode();
+            int num = countOccurences(code, "isCold);");
+            boolean passed = num == 0;
+
+            getResults("0", "" + num, "if (isCold);  get rid of semicolon", passed);
             assertTrue(passed);
         }
+
         @Test
         public void testCountCurlies()
         {
@@ -385,6 +455,7 @@ Here are some rules to follow with if statements to avoid some common errors:
         }
     }
    
+
 |Groupwork| Programming Challenge : Magic 8 Ball
 ------------------------------------------------
 
@@ -411,7 +482,8 @@ statements to test the number and print out the associated random response from 
 
 If you need help with random numbers, see lesson 2.9.
 
-For an extra challenge, have the program create a Scanner and read the question from standard input before generating a response. 
+For an extra challenge, have the program create a Scanner and read the question from standard 
+input before generating a response.   Repeat the user's question as part of the response.
  
 
 .. activecode:: code3_2_5

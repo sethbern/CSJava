@@ -196,6 +196,7 @@ Try a nested loop with turtles! If the code below does not work in your browser,
 .. activecode:: code4_4_2
     :language: java
     :datafile: turtleClasses.jar
+    :nocodelens:
     :autograde: unittest
 
     The turtle below is trying to draw a square many times to create a snowflake pattern. Can you change the outer loop so that the pattern completes all the way around? Try different ending values for the counter i to find the smallest number that works between 5 and 15. 
@@ -298,6 +299,7 @@ In the last exercise, you used nested for-loops to have the turtle draw a square
 .. activecode:: code4_4_3
     :language: java
     :autograde: unittest
+    :nocodelens:
     :datafile: turtleClasses.jar
 
     Use nested for-loops to have the turtle draw a snowflake of polygons. Use the variable turnAmount to turn after each shape and the variable n for the sides of the polygon.

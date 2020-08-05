@@ -415,6 +415,7 @@ Do you remember when we used the turtle objects to draw shapes? To create a squa
 .. activecode:: code4_2_5
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
     Can you change the code below to remove the repeated lines of code and use a loop to draw 4 sides of the square?
@@ -509,6 +510,7 @@ In the last exercise, you used a for-loop to have the turtle draw a square. Use 
 .. activecode:: code4_2_6
     :language: java
     :autograde: unittest
+    :nocodelens: 
     :datafile: turtleClasses.jar
 
     Use a for-loop to draw a triangle. Then, change it to a pentagon. Then change it to draw any polygon using a variable n that holds the number of sides. Note that the angles in the turns have to add up to 360.

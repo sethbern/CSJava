@@ -70,14 +70,19 @@ The following flowchart demonstrates that if the condition (the boolean expressi
 .. activecode:: code3_3_1
    :language: java
    :autograde: unittest
+   :stdin: true
+
    
    Try the following code. If ``isHeads`` is true it will print ``Let's go to the game`` and then ``after conditional``.  
    ~~~~
-   public class Test2
+   import java.util.Scanner; 
+   public class HeadsOrTails
    {
       public static void main(String[] args)
       {
-        boolean isHeads = true;
+        Scanner scan = new Scanner(System.in);
+    
+        boolean isHeads = scan.nextBoolean();
         if (isHeads) 
         {
             System.out.println("Let's go to the game");
@@ -99,11 +104,9 @@ The following flowchart demonstrates that if the condition (the boolean expressi
         @Test
        public void testMain() throws IOException
        {
-           String output = getMethodOutput("main");
-           String expect = "Let's go to the game\nafter conditional";
-
-           boolean passed = getResults(expect, output, "Expected output from main", true);
+           boolean passed = getResults("true", "true", "main()");
            assertTrue(passed);
+
        }
 
     }
@@ -114,7 +117,7 @@ The following flowchart demonstrates that if the condition (the boolean expressi
 
 .. fillintheblank:: q3_3_1
 
-   Try changing the code above to ``boolean isHeads = false;``.  What line will be printed before the ``after conditional``?
+   Try changing the standard input value to false in the HeadsOrTails program.  What line will be printed before the ``after conditional``?
 
    -    :^Let's watch a movie$: Correct.  If the boolean value is false, the statement following the else will execute
         :.*: Try it and see
@@ -131,16 +134,24 @@ If/else statements can also be used with relational operators and numbers like b
    :language: java
    :autograde: unittest
    :practice: T
+   :stdin: 16
    
-   Run the following code to see what it prints out when the variable age is set to the value 16. Change the variable age's value to 15 and then run it again to see the result of the print statement in the else part. 
-   Can you change the if-statement to indicate that you can get a license at age 15 instead of 16? Use 2 test cases for the value of age to test your code to see the results of both print statements. 
+   Run the following code to see what it prints out when the variable age is set to the value 18. 
+   Change the input value to 18 and then run it again to see the result of the print 
+   statement in the else part. 
+   Can you change the if-statement to indicate that you can get a license at age 16 instead of 18? 
+   Use 2 test cases for the value of age to test your code to see the results of both print statements. 
    ~~~~
-   public class DriversLicenseTest
+
+   import java.util.Scanner; 
+   public class DriversTest
    {
       public static void main(String[] args)
       {
-        int age = 16;
-        if (age >= 16) 
+        Scanner scan = new Scanner(System.in);
+     {
+        int age = scan.nextInt();
+        if (age >= 18) 
         {
             System.out.println("You can get a driver's license in most states!");
         }
@@ -160,8 +171,8 @@ If/else statements can also be used with relational operators and numbers like b
          @Test
        public void testCodeContains() throws IOException
        {
-           String target = "age >= 15";
-           boolean passed = checkCodeContains("check age >= 15", target);
+           String target = "age >= 16";
+           boolean passed = checkCodeContains("check age >= 16", target);
            assertTrue(passed);
        }
     }
@@ -259,9 +270,9 @@ If statements can be nested inside other if statements. Sometimes with nested if
     // Nested if with dangling else
     if (boolean expression)
        if (boolean expression)
-          Do statement;
+           statement1;
        else  // belongs to closest if
-          Do other statement;
+           statement2;
         
         
 |CodingEx| **Coding Exercise**
@@ -314,10 +325,10 @@ You can use curly brackets { } to enclose a nested if and have the else clause b
     if (boolean expression) 
     {
        if (boolean expression)
-          do this;
+           statement1;
     }
     else  // belongs to first if
-      do that statement;
+       statement2;
 
 
 
