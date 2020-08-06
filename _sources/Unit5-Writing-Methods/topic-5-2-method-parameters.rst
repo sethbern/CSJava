@@ -53,7 +53,7 @@ The method body will use the formal parameter variables to customize the
 print statements. When you call the method, you provide values between the parentheses, called **actual arguments** or **actual parameters**, that are 
 copied into the formal parameter variables. 
 
-Figure 1 shows the new **verse** method with two formal parameters for **animal** and **noise**. The print statements
+Figure 1 below shows the new **verse** method with two formal parameters for **animal** and **noise**. The print statements
 in the method body use the parameters to customize the output.  The figure
 depicts how actual argument values in the method call ``verse("cow","moo");`` are copied 
 into the formal parameter variables.
@@ -65,6 +65,18 @@ into the formal parameter variables.
   :figclass: align-center
   
   Figure 1: Method Call Passes Actual Argument Values Into Formal Parameter Variables
+
+
+The main method will call the verse method twice, once for the cow and once for the duck.  
+Figure 2 shows the call stack diagram corresponding to the ``verse( "cow" , "moo" );``  method call.  
+If you look at the call stack diagram, the ``verse`` method frame
+contains not only the current line but also the formal parameter variables and their values.  The print statements
+in the method will use the formal parameter variables to customize the output.
+
+.. figure:: Figures/stackframesong.png
+
+  Figure 2: Formal Parameter Variables Stored in Call Stack Frame
+
 
 .. activecode:: code5_2_1
   :language: java
@@ -124,9 +136,22 @@ into the formal parameter variables.
     }
   }
 
-A method performs a task that can be generalised by having formal parameter variables.  
+
+ 
+
+
+Refactoring - Removing Duplicate Code
+---------------------------------------
+
+Sometimes a program has blocks of code that are similar, but not exactly the same.
+The code might perform a similar function but with different values. 
+
+We can introduce a method to perform a task that can be generalised by having formal parameter variables.  
 The method can adapt to a variety of  situations
-depending on the values passed into the method.
+depending on the values passed into the method.  
+
+The ``PayrollCalculator`` class listed below calculates and prints the weekly pay for two employees.  
+Do you notice any redundancy?
   
  .. code-block:: java
  
@@ -156,11 +181,11 @@ depending on the values passed into the method.
 
   }
 
-The ``PayrollCalculator`` class listed above calculates and prints the weekly pay for two employees.  Do you notice any redundancy?
+
 The table below displays the code for each employee side by side.  The first three lines of code 
 are the same except for
 the value in the right hand side of each assignment, while the last two lines of code are identical.  
-We can eliminate redundancy by adding a new method named ``calculatePay``.  The method
+We can eliminate the redundant calculation and printing by adding a new method named ``calculatePay``.  The method
 will compute the weekly pay for an employee based on their hourlyRate and hoursWorked.
 We need 3 formal parameters to allow different
 values to be passed into the method: employee, hourlyRate, and hoursWorked.  
@@ -261,13 +286,49 @@ will need to be provided as shown.
   }
 
 
+
+|Exercise| **Check your understanding**
+
+
+.. mchoice:: q5_2_1
+   :practice: T
+   :answer_a: Chen 20.00 15.00
+   :answer_b: Chen:300.0
+   :answer_c: employee:weeklyPay
+   :correct: b
+   :feedback_a: Incorrect. The weeklyPay is computed as 20.00 * 15.00.  This result is used in the print statement.
+   :feedback_b: Correct.
+   :feedback_c: Incorrect. The actual values of the employee and weeklyPay variables will be printed.  
+   
+   What is printed by the method call:  calculatePay ( "Chen", 20.00, 15.00 ) ;
+
+
+.. note:: 
+
+  A call stack method frame stores formal parameter variables as well as local variables.
+
+.. mchoice:: q5_2_2
+   :practice: T
+   :answer_a: Chris:125.0
+   :answer_b: employee:weeklyPay
+   :answer_c: "Chris":125.0
+   :correct: a
+   :feedback_a: Correct.
+   :feedback_b: Incorrect. The actual values of the employee and weeklyPay variables will be printed.
+   :feedback_c: Incorrect. The CodeLens tool just shows quotes to let you know the value is a String.  
+   
+   The figure shows the call stack after line 8 executed.  Notice the weeklyPay local variable is stored in the
+   calculatePay method frame on the call stack.    What is printed when line 9 executes?
+
+   .. figure:: Figures/stackframecalculatepay.png
+  
+
 When a method is called, the right method definition is found by 
 checking the **method header** at the top of the method 
 definition to match the name, number and type of arguments, and return type. 
 
-|Exercise| **Check your understanding**
 
-.. mchoice:: q5_2_1
+.. mchoice:: q5_2_3
    :practice: T
    :answer_a: mystery("9");
    :answer_b: mystery(9);
@@ -284,7 +345,7 @@ definition to match the name, number and type of arguments, and return type.
      public static void mystery(int i)
 
 
-.. mchoice:: q5_2_2
+.. mchoice:: q5_2_4
    :practice: T
    :answer_a: mystery("abc", 9);
    :answer_b: mystery("xyz", "9");
@@ -300,7 +361,7 @@ definition to match the name, number and type of arguments, and return type.
 
      public static void mystery(String s, int i)
 
-.. mchoice:: q5_2_3
+.. mchoice:: q5_2_5
    :practice: T
    :answer_a: mystery("true", "hello");
    :answer_b: mystery("hello", false);
@@ -330,7 +391,7 @@ You may recall from the constructor lesson that this is called **overloading**.
     
     Figure 3: Method Overloading
 
-.. parsonsprob:: q5_2_4
+.. parsonsprob:: q5_2_6
    :adaptive:
    :noindent:
    
@@ -412,7 +473,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: q5_2_5
+.. mchoice:: q5_2_7
    :practice: T
    :answer_a: print1;
    :answer_b: main;
@@ -440,7 +501,7 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 
 
 
-.. mchoice:: q5_2_6
+.. mchoice:: q5_2_8
    :practice: T
    :answer_a: print1;
    :answer_b: print2;
@@ -480,42 +541,11 @@ Method Tracing
    <a href="http://pythontutor.com/visualize.html#code=public%20class%20TraceMethods%20%7B%0A%20%20public%20static%20void%20inchesToCentimeters%28double%20i%29%0A%20%20%7B%0A%20%20%20%20%20%20double%20c%20%3D%20i%20*%202.54%3B%0A%20%20%20%20%20%20printInCentimeters%28i,%20c%29%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20static%20void%20printInCentimeters%28double%20inches,%20double%20centimeters%29%0A%20%20%7B%0A%20%20%20%20%20%20System.out.println%28inches%20%2B%20%22--%3E%22%20%2B%20centimeters%29%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%0A%20%20%7B%0A%20%20%20%20%20%20inchesToCentimeters%2810%29%3B%0A%20%20%7D%0A%7D&cumulative=true&curInstr=6&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">visualizer</a>    
  
 A method can call other methods to help it do its job.  
-Use the CodeLens button below or trace through the code in a separate window using the |visualizeTrace|. 
-
-.. activecode:: code5_2_4trace
-  :language: java
-    
-  Use the CodeLens button to trace through the method calls.
-  ~~~~
-  public class TraceMethods {
-    public static void inchesToCentimeters(double i)
-    {
-        double c = i * 2.54;
-        printInCentimeters(i, c);
-    }
-    
-    public static void printInCentimeters(double inches, double centimeters)
-    {
-        System.out.println(inches + "-->" + centimeters);
-    }
-    
-    public static void main(String[] args)
-    {
-        inchesToCentimeters(10);
-    }
-  }
-
-
-
-
-
-
-
 
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: q5_2_7
+.. mchoice:: q5_2_9
     :practice: T
 
     Consider the following methods:
@@ -538,7 +568,7 @@ Use the CodeLens button below or trace through the code in a separate window usi
             inchesToCentimeters(10);
         }
 
-    What is printed when the main method is run?
+    What is printed when the main method is run?    It might help to draw out a stack diagram on paper, or use the CodeLens visualizer to step through the code.
     
     - inches --> centimeters
     
@@ -563,7 +593,7 @@ Use the CodeLens button below or trace through the code in a separate window usi
 
 
 
-.. mchoice:: q5_2_8
+.. mchoice:: q5_2_10
     :practice: T
     
     Consider the following methods.
@@ -608,7 +638,7 @@ Use the CodeLens button below or trace through the code in a separate window usi
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: q5_2_9
+.. mchoice:: q5_2_11
    :practice: T
    :answer_a: 25 and 2
    :answer_b: 25 and .5
@@ -622,7 +652,7 @@ Use the CodeLens button below or trace through the code in a separate window usi
    :feedback_d: The main method prints out " and " in between the method calls.
    :feedback_e: Try the code in the CodeLens visualizer.
    
-   What does the following code print out?
+   What does the following code print?
    
    .. code-block:: java
    
