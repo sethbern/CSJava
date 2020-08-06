@@ -108,6 +108,46 @@ A **void** return type means the method does not return a value.
 If a method has a **non-void** return type, then it must contain a **return statement** that specifies the value to return.
 The return type must match with the value in the return statement.
 
+Click on each tab to observe the data flowing into the method through the formal parameters and out of the method through the return statement.
+
+.. tabbed:: q5_3_1
+
+    .. tab:: Tab 1
+
+      The program starts at the first line of the main method.
+      The red arrow shows that line 12 is next to execute, which will call the volumeCylinder function.
+      
+      .. figure:: Figures/frame1.png
+ 
+    .. tab:: Tab 2
+
+      The stack diagram shows a new frame was created for the volumeCylinder(4,10) method call. The new
+      stack frame contains the formal parameter variables initialized to the actual argument values.   
+
+      .. figure:: Figures/frame2.png
+
+    .. tab:: Tab 3
+
+      After line 6 is executed, the stack frame shows the computed value 502.6 will be returned 
+      out of the method.  Where does the returned value go?  The call stack diagram indicates the value 
+      is returned to line 12 of the main method, since that is the line of code that called the volumeCylinder method.
+
+      .. figure:: Figures/frame3.png
+
+    .. tab:: Tab 4
+
+      The value was returned to the main method and line 12 assigns the value to the "vol" local variable.
+      Line 13 is the next line to execute.
+
+      .. figure:: Figures/frame4.png
+
+    .. tab:: Tab 5
+
+      Line 13 prints the value stored in the vol local variable.  The output window shows what was printed.
+
+      .. figure:: Figures/frame5.png
+
+
 
 |CodingEx| **Coding Exercise**
 
@@ -182,7 +222,7 @@ The return type must match with the value in the return statement.
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: q5_3_1
+.. mchoice:: q5_3_2
    :practice: T
    :answer_a: return "hello";
    :answer_b: return true;
@@ -201,7 +241,7 @@ The return type must match with the value in the return statement.
      public static int mystery()
 
 
-.. mchoice:: q5_3_2
+.. mchoice:: q5_3_3
    :practice: T
    :answer_a: return "hello";
    :answer_b: return true;
@@ -220,7 +260,7 @@ The return type must match with the value in the return statement.
      public static boolean mystery2()
 
 
-.. mchoice:: q5_3_3
+.. mchoice:: q5_3_4
    :practice: T
    :answer_a: String result = mystery3();
    :answer_b: int result = mystery3();
@@ -237,7 +277,7 @@ The return type must match with the value in the return statement.
      public static int mystery3()
 
 
-.. mchoice:: q5_3_4
+.. mchoice:: q5_3_5
    :practice: T
    :answer_a: String result = mystery4();
    :answer_b: int result = mystery4();
@@ -256,7 +296,7 @@ The return type must match with the value in the return statement.
      public static void mystery4()
 
 
-.. mchoice:: q5_3_5
+.. mchoice:: q5_3_6
    :practice: T
    :answer_a: return 10;
    :answer_b: return 12 * 4;
