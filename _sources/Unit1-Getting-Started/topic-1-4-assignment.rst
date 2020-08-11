@@ -116,16 +116,15 @@ This won’t change the value of the variable that you are copying from.
 
 |CodingEx| **Coding Exercise:** 
 
-The code below makes an attempt to swap the values stored in the two variables x and y (so x ends up with y's initial 
-value  of 5 and y ends up with x's initial value of 3).  Unfortunately this code does not work.
-You will see in the next exercise that swapping two variables requires a third variable.
 
 .. activecode:: code1_4_2
    :language: java
    :autograde: unittest   
    
-   Can you predict what is printed?  Use the CodeLens to step through the code.  
-   Can you explain why the code does not swap the values stored in x and y?
+   The code below makes an attempt to swap the values stored in the two variables x and y (so x ends up with y's initial 
+   value  of 5 and y ends up with x's initial value of 3).  Unfortunately this code has an error and does not work.
+   Use the CodeLens to step through the code to understand why it fails to swap the values in x and y.  
+   
    ~~~~
  
     public class ErrorSwap
@@ -134,30 +133,39 @@ You will see in the next exercise that swapping two variables requires a third v
       {
         int x = 3;
         int y = 5;
-        System.out.println(x);
-        System.out.println(y);
+        System.out.println(x);  //3
+        System.out.println(y);  //5
         x = y;
         y = x;
-        System.out.println(x);
-        System.out.println(y);
+        System.out.println(x);  //should be 5
+        System.out.println(y);  //should be 3
       }
     }
     ====
 
+
+.. shortanswer:: q1_4_2
+
+   Explain in your own words why the ``ErrorSwap`` program code does not swap the values stored in x and y.
+
+
+
 |Exercise| **Check your understanding**
 
-
+Swapping two variables requires a third variable to store the value of x before assigning 
+x to the value of y.  The variable y then gets assigned to the temporary variable value.
 In the mixed up programs below, drag the blocks to the right to put them in the right order.
 
-.. parsonsprob:: q1_4_2
+.. parsonsprob:: q1_4_3
    :numbered: left
    :practice: T
    :adaptive:
    :noindent:
 
-   The following has the correct code to 'swap' the values in x and y 
-   (so that x ends up with y's initial value  of 5 and y ends up with x's initial value of 3), 
-   but the code is mixed up and contains <b>one extra block</b> which is not needed 
+   The following has the correct code that uses a third variable named "temp" to swap the 
+   values in x and y. 
+
+   The code is mixed up and contains <b>one extra block</b> which is not needed 
    in a correct solution.  Drag the needed blocks from the left into the correct 
    order on the right, then check your solution.  
    You will be told if any of the blocks are in the wrong order or if you need to remove 
@@ -179,6 +187,96 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
 
 
 
+.. activecode:: code1_4_3
+   :language: java
+   :autograde: unittest   
+   
+   Fix the code below to perform a correct swap of x and y.  
+   You need to add a new variable named ``temp`` to use for the swap.
+   ~~~~
+ 
+    public class CorrectSwap
+    {
+      public static void main(String[] args)
+      {
+        int x = 3;
+        int y = 5;
+        System.out.println(x);
+        System.out.println(y);
+        x = y;
+        y = x;
+        System.out.println(x);
+        System.out.println(y);
+      }
+    }
+    ====
+    import static org.junit.Assert.*;
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+        @Test
+        public void test1()
+        {
+            String output = getMethodOutput("main");
+            String expect = "3\n5\n5\n3\n";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+
+
+        @Test
+        public void test2()
+        {
+            String code = getCode();
+            String expect = "int temp";
+
+            int count = countOccurences(code, expect);
+
+            boolean passed = count >= 1;
+
+            passed = getResults("1 temp declaration", "" + count  + " temp declaration", "Declare variable temp", passed);
+            assertTrue(passed);
+        }
+
+        @Test
+        public void test3()
+        {
+            String code = getCode();
+            String expect = "temp = x";
+
+            int count = countOccurences(code, expect);
+
+            boolean passed = count >= 1;
+
+            passed = getResults("1 temp assignment to x", "" + count  + " temp assignment to x", "Assign variable temp to x", passed);
+            assertTrue(passed);
+        }
+
+        @Test
+        public void test4()
+        {
+            String code = getCode();
+            String expect = "y = temp";
+
+            int count = countOccurences(code, expect);
+
+            boolean passed = count >= 1;
+
+            passed = getResults("1 y assignment to temp", "" + count  + " y assignment to temp", "Assign variable y to temp", passed);
+            assertTrue(passed);
+        }
+
+
+    }
+
+
+
+
 
 Incrementing the value of a variable
 ------------------------------------
@@ -195,7 +293,7 @@ previous value of score + 1.
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_3
+.. activecode:: code1_4_4
    :language: java
    :autograde: unittest   
    
@@ -237,7 +335,7 @@ previous value of score + 1.
    
 |Exercise| **Check your understanding**
 
-.. mchoice:: q1_4_3
+.. mchoice:: q1_4_4
    :practice: T
    :answer_a: b = 5
    :answer_b: b = 2
@@ -258,7 +356,7 @@ previous value of score + 1.
 
 
 
-.. mchoice:: q1_4_4
+.. mchoice:: q1_4_5
    :practice: T
    :answer_a: x = 0, y = 1, z = 2
    :answer_b: x = 1, y = 2, z = 3
@@ -300,23 +398,34 @@ Storing User Input in Variables
 Variables are a powerful abstraction in programming because the same algorithm can be 
 used with different input values saved in variables.  
 
-A Java program can ask the user to type in one or more values.   The Java class ``Scanner`` is used to read from
-an input stream, which is referenced by ``System.in``.  The code below shows an example of prompting the user to enter a name and 
-then printing a greeting.    
+.. figure:: Figures/iostream.png
+    :figclass: align-center
+    :alt: Program input and output
+    
+    Figure 2: Program input and output
+
+
+A Java program can ask the user to type in one or more values.   
+The Java class ``Scanner`` is used to read from
+the keyboard input stream, which is referenced by ``System.in``. Normally the keyboard input is typed into a console window, but since this is running
+in a browser you will type in a small textbox window displayed below the code.   The code below shows an example of prompting the user to enter a name and 
+then printing a greeting. 
 The code ``String name = scan.nextLine()`` 
-gets a string value you typed into the window and then stores the value in a variable.  
+gets the string value you enter as program input and then stores the value in a variable.  
 
 Run the program a few times, typing in a different name. The code works for any name: 
 behold, the power of variables!
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_4
+.. activecode:: code1_4_5
    :language: java
    :stdin: Fred Smith  
    
    Run this program to read in a name from the input stream. 
    You can type a different name in the input window shown below the code.
+
+   Try stepping through the code with the CodeLens tool to see how the name variable is assigned to the value read by the scanner.
    ~~~~
 
     import java.util.Scanner;
@@ -363,7 +472,7 @@ The Scanner class has several useful methods for reading user input:
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_5
+.. activecode:: code1_4_6
    :language: java
    :stdin: 20  
    
@@ -392,7 +501,7 @@ The Scanner class has several useful methods for reading user input:
 The program below reads two integer values from the input stream and attempts to print the sum.  Unfortunately there is a problem
 with the last line of code that prints the sum.  
 
-.. activecode:: code1_4_6
+.. activecode:: code1_4_7
    :language: java
    :autograde: unittest   
    :stdin: 5 7
@@ -465,7 +574,7 @@ Java uses the operator ``==`` to test if the value on the left is equal to the v
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_7
+.. activecode:: code1_4_8
    :language: java
    :autograde: unittest      
    
@@ -516,7 +625,7 @@ Operators can be used to create compound expressions with more than one operator
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_8
+.. activecode:: code1_4_9
    :language: java
    :autograde: unittest      
    
@@ -555,7 +664,7 @@ Operators can be used to create compound expressions with more than one operator
    
 |Exercise| **Check Your Understanding**
 
-.. mchoice:: q1_4_5
+.. mchoice:: q1_4_6
    :practice: T
    :answer_a: 0.666666666666667
    :answer_b: 9.0
@@ -599,7 +708,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_9
+.. activecode:: code1_4_10
    :language: java
    :autograde: unittest      
    
@@ -647,7 +756,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 	
 |Exercise| **Check Your Understanding**
 	
-.. mchoice:: q1_4_6
+.. mchoice:: q1_4_7
    :practice: T
    :answer_a: 15
    :answer_b: 16
@@ -659,7 +768,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 
    What is the result of 158 % 10?
    
-.. mchoice:: q1_4_7
+.. mchoice:: q1_4_8
    :practice: T
    :answer_a: 3
    :answer_b: 2
@@ -696,7 +805,7 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
 
    <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>
 
-.. activecode:: code1_4_10
+.. activecode:: code1_4_11
    :language: java
    :autograde: unittest
    :practice: T

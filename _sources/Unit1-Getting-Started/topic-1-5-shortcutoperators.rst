@@ -169,8 +169,8 @@ The most common shortcut operator ``++``, the plus-plus or **increment** operato
 |Groupwork| Code Tracing Challenge and Operators Maze
 -----------------------------------------------------
 
-**Code Tracing** is a technique used to simulate a dry run through the code or pseudocode 
-line by line by hand as if you are the computer executing the code. Tracing can be used for 
+**Code Tracing** is a technique used to simulate by hand a dry run through the code or pseudocode 
+as if you are the computer executing the code. Tracing can be used for 
 debugging or proving that your program runs correctly or for figuring out what the code 
 actually does. 
 
@@ -314,7 +314,7 @@ When it is placed after, it is called **postfix** increment.
    :match_3: System.out.println(++score);|||Assign score the value 6, then print the value 6.
    :match_4: System.out.println(--score);|||Assign score the value 4, then print the value 4.
 
-   Assume score=5 and each line of code is executed independent of the others.  Match each line of code to the correct result.  
+   Assume score=5 and each line of code is executed independent of the others.  Match each line of code to the correct result (drag the code block to the matching result).  
 
 
 

@@ -66,7 +66,11 @@ Here is the template for a simple Java program with a main method:
 .. note::
 
    In Java every open curly brace ``{`` must have a matched close curly brace ``}``.  
-   These are used to start and end class definitions and method definitions.       
+   These are used to start and end class definitions and method definitions.  
+
+   The special characters ``//`` are used to mark the rest of the line as a comment.
+   Comments can be helpful in describing what the code is doing.
+
 
 |CodingEx| **Coding Exercise**: 
 
@@ -239,7 +243,7 @@ Java has two different print commands to print output to the screen:
 .. mchoice:: q1_2_2
     :practice: T
     
-    Consider the following code segment.
+    Consider the following code segment.  Keep in mind ``//`` indicates a comment and the rest of the line is ignored.
 
     .. code-block:: java
     
@@ -272,7 +276,7 @@ Java has two different print commands to print output to the screen:
     
     - Putting the semicolon after the ) on each line.
     
-      + Correct! The semicolon should go after each command but not in the comment.
+      + Correct! The semicolon should go after each command but not in the comment.  Move the semicolon before the //.
 
 
 
@@ -296,7 +300,7 @@ Computers don't actually speak Java so we have to **compile**
 (translate) Java source files that we write into class files which is 
 code that a computer can understand and run. In this e-book, the Java 
 code is actually being sent to a Java server to compile and run, and the 
-output is sent back to your browser show on the same page. 
+output is sent back to your browser to show on the same page. 
 
 .. |Grace Hopper| raw:: html
 
@@ -341,7 +345,7 @@ Let's practice debugging some code!
 
    The following has all the correct code to print out "Hi my friend!" when the code is run, 
    but the code is mixed up.  Drag the blocks from left to right and put them in the 
-   correct order.  You can scroll up and look at the previous example program if you
+   correct order.  You can go back and look at the previous program HelloExample if you
    are having trouble understanding how to order the blocks.
    
    Click on the "Check" button to check your solution. 
@@ -583,6 +587,27 @@ to make notes to yourself and other programmers working with you. Here are some 
     
 
 
+
+TESTING AUDIO TOUR
+
+.. activecode:: testaudio
+   :language: java
+   :tour_1: "Overall Tour"; 1: test_1a; 2: test_1b; 
+
+   Testing audio tour
+   ~~~~
+   public class TestAudio
+   {
+      public static void main(String[] args)
+      {
+         System.out.println("Hello");
+         System.out.println("Welcome");
+      }
+   }
+           
+   ====
+
+ 
 
 
 Summary

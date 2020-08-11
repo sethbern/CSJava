@@ -293,8 +293,16 @@ in your formulas. Follow the pseudocode below.
 
     public class RunestoneTests extends CodeTestHelper
     {
-        @Test
+
+       @Test
        public void testAsgn1() throws IOException
+       {
+           String target = "sum = grade1 + grade2 + grade3;";
+           boolean passed = checkCodeContains("formula for summing grades", target);
+           assertTrue(passed);
+       }
+        @Test
+       public void testAsgn2() throws IOException
        {
            String target = "average = (double) sum/3;";
            boolean passed = checkCodeContains("formula for average of 3 grades using sum and type casting to double", target);

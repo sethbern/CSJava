@@ -300,7 +300,7 @@ the memory location called score to 4.
 When you are printing the value of a variable, never put quotes "" around the variable 
 because that will print out the variable 
 name letter by letter. For example, ``System.out.println("score");`` will print out the string "score",
-rather than the value "0" stored in the variable.  Normally you do not want to print out the variable name, 
+rather than the value 4 stored in the variable.  Normally you do not want to print out the variable name, 
 but the value of the variable in memory. If you're not sure what this means, try 
 putting quotes around the variables in the print statements above and see what happens.   
    
@@ -336,7 +336,7 @@ putting quotes around the variables in the print statements above and see what h
 .. clickablearea:: q1_3_9
     :question: Click on all of the variable initializations (first time the variable is set to a value) in the following code.
     :iscode:
-    :feedback: Variables are initialized using name = value;  
+    :feedback: Variables are initialized using assignment name = value;  Initialization occurs once per variable.
     
     :click-incorrect:public class Test2:endclick:
     :click-incorrect:{:endclick:
@@ -349,6 +349,11 @@ putting quotes around the variables in the print statements above and see what h
             :click-incorrect:System.out.println(health);:endclick:
             :click-correct:boolean powerUp = true;:endclick:
             :click-incorrect:System.out.println(powerUp);:endclick:
+            :click-incorrect:numLives = 5;:endclick:
+            :click-incorrect:System.out.println(numLives);:endclick:
+            :click-incorrect:powerUp = false;:endclick:
+            :click-incorrect:System.out.println(powerUp);:endclick:
+
         :click-incorrect:}:endclick:
     :click-incorrect:}:endclick:
 
@@ -405,7 +410,7 @@ putting quotes around the variables in the print statements above and see what h
 
 .. fillintheblank:: q1_3_12
 
-   Fill in the following: [blank] age = [blank]; to declare age to be an integer and set its value to 5.
+   Fill in the following: [blank] age = [blank]; to declare age to be an int and set its value to 5.
 
    -    :int: Correct.  You typically use whole numbers for ages after age 1.  
         :.*: Remember that Java uses just the first 3 letters of integer
@@ -424,7 +429,7 @@ putting quotes around the variables in the print statements above and see what h
 
 .. fillintheblank:: q1_3_14
 
-   Fill in the following: Declare in int named studentCount and initialize it to 46.
+   Fill in the following: Declare in int named studentCount and initialize it to 46.  Follow the textbook style of using one space before and after the equal sign.
 
    -    :int studentCount = 46;: Correct.    
         :.*: int studentCount = 46;
@@ -609,10 +614,13 @@ You can't use any of the keywords or reserved words as variable names in Java (`
 
 The name of the variable should describe the data it holds.  
 A name like ``score`` helps make your code easier to read. 
-A name like ``x`` is not a good variable name in programming, 
+A name like ``x`` is usually not a good variable name in programming, 
 because it gives no clues as to what kind of data it holds.  Do not name
 your variables crazy things like ``thisIsAReallyLongName``. 
 You want to make your code easy to understand, not harder.  
+
+
+The convention in Java and many programming languages is to always start a variable name with a lower case letter and then uppercase the first letter of each additional word. Variable names can not include spaces so uppercasing the first letter of each additional word makes it easier to read the name.  Uppercasing the first letter of each additional word is called **camel case**. Another option is to use underscore ``_`` to separate words, but you cannot have spaces in a variable name. 
 
 .. note::
 
@@ -620,13 +628,12 @@ You want to make your code easy to understand, not harder.
     - Use meaningful variable names! 
     - Start variable names with a lower case letter and use camelCase. 
     - Variable names are case-sensitive and spelling sensitive! Each use of the variable in the code must match the variable name in the declaration exactly. 
-    - Never put variables inside quotes (" ").
+    - Never put variables inside quotes (" "), unless you actually want to print the name of the variable rather than its value.
 
 ..	index::
     single: camel case
 	pair: variable; naming convention
 	
-The convention in Java and many programming languages is to always start a variable name with a lower case letter and then uppercase the first letter of each additional word. Variable names can not include spaces so uppercasing the first letter of each additional word makes it easier to read the name.  Uppercasing the first letter of each additional word is called **camel case**. Another option is to use underscore ``_`` to separate words, but you cannot have spaces in a variable name. 
 
 |CodingEx| **Coding Exercise:**
 
@@ -741,13 +748,10 @@ Summary
 
 - A **variable** is a name for a memory location where you can store a value that can change or vary.
 
-- A variable can be declared and initialized with the following code:
+- A **variable declaration** indicates the type and name of the variable.
 
-.. code-block:: java
+- Use the assignment operator ``=`` to assign a value to the variable.  You must initialize a variable before using it as an expression.
 
-  int score; 
-  double gpa = 3.5;
-  
   
 - **Data types** can be categorized as either primitive type (like int) or reference type (like String).
 - The three primitive data types used in this course are **int** (integer numbers), **double** (decimal numbers), and **boolean** (true or false).
