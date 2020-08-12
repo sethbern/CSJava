@@ -73,9 +73,10 @@ Values of type double can be rounded to the nearest integer by adding or subtrac
 
 .. code-block:: java 
 
-    int nearestInt = (int)(number + 0.5); 
-    int nearestNegInt = (int)(negNumber – 0.5);
-    
+   int nearestInt = (int)(number + 0.5); 
+   int nearestNegInt = (int)(negNumber – 0.5);
+
+
 For example, if you divide 5/3 using integer division, Java will truncate 1.67 to 1 to give an int result. However, we usually round up any answer .5 and above. Using the formula above, if we add 1.67 + 0.50, we get 2.17 and then casting it to an int throws away what's after the decimal point, just leaving 2.  
 
 .. activecode:: code1_6_2

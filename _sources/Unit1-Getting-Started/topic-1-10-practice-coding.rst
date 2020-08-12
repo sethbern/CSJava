@@ -5,7 +5,6 @@
 Unit 1 Coding Practice
 =======================
 
-
 .. tabbed:: ch4Ex2
 
         .. tab:: Question

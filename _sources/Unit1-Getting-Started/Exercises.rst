@@ -1,13 +1,12 @@
+.. qnum::
+   :prefix: 1-11-
+   :start: 1
+   
 Multiple Choice Exercises
 =================================
 
-.. qnum::
-   :prefix: 1-12-
-   :start: 1
-   
 
-
-.. mchoice:: q1_12_1
+.. mchoice:: q1_11_1
    :practice: T
    :answer_a: 2
    :answer_b: 0
@@ -25,7 +24,7 @@ Multiple Choice Exercises
 
      System.out.println(2 % 3);
      
-.. mchoice:: q1_12_2
+.. mchoice:: q1_11_2
    :practice: T
    :answer_a: 3
    :answer_b: 0
@@ -43,7 +42,7 @@ Multiple Choice Exercises
 
      System.out.println(19 % 5);
      
-.. mchoice:: q1_12_3
+.. mchoice:: q1_11_3
    :practice: T
    :answer_a: 0.3333333333333333
    :answer_b: 0
@@ -63,7 +62,7 @@ Multiple Choice Exercises
 
      System.out.println(1 / 3);
      
-.. mchoice:: q1_12_4
+.. mchoice:: q1_11_4
    :practice: T
    :answer_a: 24
    :answer_b: 14
@@ -81,7 +80,7 @@ Multiple Choice Exercises
 
     System.out.println(2 + 3 * 5 - 1);
      
-.. mchoice:: q1_12_5
+.. mchoice:: q1_11_5
    :practice: T
    :answer_a: 9.6982
    :answer_b: 12 
@@ -101,7 +100,7 @@ Multiple Choice Exercises
       int b = 12;
       b = (int) a;
       
-.. mchoice:: q1_12_6
+.. mchoice:: q1_11_6
    :practice: T
    :answer_a: It will print 0
    :answer_b: It will give a run-time error
@@ -120,7 +119,7 @@ Multiple Choice Exercises
       System.out.println(5 / 0);
       
 
-.. mchoice:: q1_12_7
+.. mchoice:: q1_11_7
    :practice: T
    :answer_a: 0
    :answer_b: .3 
@@ -138,7 +137,7 @@ Multiple Choice Exercises
 
       System.out.println(1.0 / 3);
       
-.. mchoice:: q1_12_8
+.. mchoice:: q1_11_8
    :practice: T
    :answer_a: x = 3, y = 3, z = 9
    :answer_b: x = 4, y = 3, z = 9

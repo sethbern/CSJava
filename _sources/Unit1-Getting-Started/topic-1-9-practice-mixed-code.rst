@@ -1,8 +1,6 @@
 .. qnum::
    :prefix: 1-9-
-   :start: 1   
-
-
+   :start: 1
 
 Unit 1 Mixed Up Code Practice
 ==============================

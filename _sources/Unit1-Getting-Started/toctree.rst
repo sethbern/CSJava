@@ -12,15 +12,13 @@ Getting Started and Primitive Types
    topic-1-4-assignment.rst
    topic-1-5-shortcutoperators.rst
    topic-1-6-casting.rst
-   topic-1-7-comments.rst
+   topic-1-7-java-IDEs.rst
    topic-1-8-summary.rst
    topic-1-9-practice-mixed-code.rst
    topic-1-10-practice-coding.rst
-   topic-1-11-java-IDEs.rst
    Exercises.rst
 
-   
-   
+
 .. raw:: html
     
     <script src="../_static/custom-csawesome.js"></script>

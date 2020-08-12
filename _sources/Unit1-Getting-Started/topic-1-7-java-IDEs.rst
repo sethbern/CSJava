@@ -1,10 +1,9 @@
 .. qnum::
-   :prefix: 1-11-
+   :prefix: 1-7-
    :start: 1
-   
 
-Java Development Environments
-====================================
+Java Development Environments (optional)
+========================================
     
 ..	index::
 	single: IDE

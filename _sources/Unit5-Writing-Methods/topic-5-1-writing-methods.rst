@@ -481,8 +481,6 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
 
      .. figure:: Figures/stackframeq4.png
 
-.. mchoice:: q5_1_11
-  
 
   
 |CodingEx| **Coding Exercise**
