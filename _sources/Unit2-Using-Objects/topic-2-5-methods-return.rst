@@ -106,10 +106,12 @@ from each getter method is either stored in a variable or used in a print statem
       {
           World world = new World(300,300);
           Turtle yertle = new Turtle(world);           
-          System.out.println("Yertle's width is: " + yertle.getWidth()); 
+          System.out.println("Yertle's original width is: " + yertle.getWidth()); 
+          System.out.println("Yertle's original height is: " + yertle.getHeight()); 
           yertle.setWidth(200);
           yertle.setHeight(200);
-          System.out.println("Yertle's width is: " + yertle.getWidth());
+          System.out.println("Yertle's new width is: " + yertle.getWidth());
+          System.out.println("Yertle's new height is: " + yertle.getHeight()); 
           yertle.turnRight();
           world.show(true); 
       }
@@ -258,28 +260,35 @@ Another common method that returns a value is the **toString()** method. This me
         }
     }
 
+
 Methods with Arguments and Return Values
 -----------------------------------------
 
-Methods that take arguments and return values are like mathematical functions. Given some input, they return a value. For example, a square(x) method would take an argument x and return its square by multiplying it by itself.
+Methods that have argument values and return values are like mathematical functions. 
+Given some input value, the functions computes and returns another value as a result. 
 
 .. figure:: Figures/function.png
-    :width: 400px
-    :align: center
-    :alt: function
-    :figclass: align-center
+   :align: center
+   :alt: function
+   :figclass: align-center
 
-    Figure 1: Method that takes arguments and returns a value
+   Figure 1: Method that takes arguments (actual parameters) and returns a value
 
+For example, the Turtle class has a function method ``public double getDistance(int x, int y)``.  The  function computes the 
+distance between the turtle's current location and  the location passed to the x and y formal parameters.
 You will not write your own methods until Unit 5, but you should be able to trace through 
-method calls that return a value such as the Turtle accessor/getter methods.
+method calls that return a value such as the Turtle getter and function methods.
      
 |Groupwork| Programming Challenge : Turtle Distances
 ----------------------------------------------------
 
-1. The Turtle class has a method called getDistance(x,y) which will return the turtle's distance from a point (x,y). Can you find yertle's distance from the point (0,0)? 
+1. The Turtle class has a method called getDistance(x,y) which will return the turtle's distance from a point (x,y). 
+Can you find yertle's distance from the point (0,0)?   Keep in mind the signature for the function  ``public double getDistance(int x, int y)``.  
+The function returns a double, so you need a variable to store the result.
 
-2. Add another turtle and make both turtles move. Then find the distance between them. You must use the getXPos() and getYPos() methods as well as the getDistance() method.
+2. Add another turtle named mertle and make both turtles move. Then find the distance between them. 
+You must use the getXPos() and getYPos() methods as well as the getDistance() method.  Ask mertle for their x and y values, then 
+call the getDistance on yertle passing in mertle's x and y values.  Keep in mind getXPos() and getYPos() both return an int.
 
 .. activecode:: code2_5_4
     :language: java

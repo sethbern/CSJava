@@ -114,7 +114,9 @@ In both cases an object of the ``String`` class will be created in memory and th
    :language: java
    :autograde: unittest
 
-   Here is an active code sample that creates two greeting strings: one using a string literal and the other using new and the String constructor. Change the code to add 2 new strings called firstname and lastname, one using a string literal and the other using new, and print them out with the greetings.
+   Here is an active code sample that creates two greeting strings: one using a string literal and the other using new 
+   and the String constructor. Change the code to add 2 new strings called firstName and lastName, 
+   one using a string literal and the other using new, and print them out with the greetings.
    ~~~~
    public class StringTest
    {
@@ -213,7 +215,8 @@ Strings can be **appended** to each other to create a new string using the ``+``
    :autograde: unittest
    :practice: T
    
-   Try the following code. Add another variable for a lastname that is "Hernandez". Use += or + to add the lastname variable after name to the result. Use += or + to add 2 more exclamation points (!) to the end of the happy birthday greeting in result. 
+   Try the following code. Add another variable lastName that is "Hernandez". Use += or + to add the lastname variable after name 
+   to the result, with a space between first and last name. Add 2 more exclamation points (!) to the end of the happy birthday greeting in result. 
    ~~~~
    public class Test1
    {

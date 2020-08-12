@@ -73,7 +73,7 @@ You must always include the parentheses after the method name.
    line to the left to make a 7. Remember that the turtle is facing the top of the 
    page when it is first created. 
    -----
-   public class DrawL
+   public class Draw7
    {
    =====
        public static void main(String[] args)
@@ -190,7 +190,7 @@ Here are some simple turtle methods that you can use:
     {
       public static void main(String[] args)
       {
-          World world = new World(300,300);
+          World world = new World(400,400);
 
 
 

@@ -101,7 +101,6 @@ the class model should give you some ideas about new ways to move your turtle ob
 You can see all the methods that are inherited in Turtle in this |javadoc (documentation) file|. 
 
 .. figure:: Figures/turtleUMLClassDiagram.png
-    :width: 300px
     :align: center
     :alt: Turtle class diagram
     :figclass: align-center
@@ -121,6 +120,12 @@ are multiple methods with the same name but a different number or type of parame
 For example, the Turtle class diagram lists two different forward methods, one with no parameters 
 and one that has a formal parameter of type int that tells the turtle how much to move forward. 
 
+.. note::
+
+  A class diagram may list the parameter type after the variable name, such as ``pixels : int``. 
+  However, when you write Java code you always list the type before the variable ``int pixels``.
+
+
 |CodingEx| **Coding Exercise**
 
 Experiment with using some turtle methods that take parameters. 
@@ -134,9 +139,15 @@ the files |github| to use in your own IDE.
     :nocodelens: 
     :datafile: turtleClasses.jar
 
-    1. Can you make yertle draw a square and change the pen color for each side of the square? Try something like: yertle.setColor(Color.red); This uses the |Color| class in Java which has some colors predefined like red, yellow, blue, magenta, cyan. You can also use more specific methods like setPenColor, setBodyColor, and setShellColor.
+    1. Can you make yertle draw a square and change the pen color for each side of the square? 
+    Try something like: yertle.setColor(Color.red); 
+    This uses the |Color| class in Java which has some colors predefined like 
+    red, yellow, blue, magenta, cyan. 
+    You can also use more specific methods like setPenColor, setBodyColor, and setShellColor.
     2. Can you draw a triangle? The turnRight() method always does 90 degree turns, but you'll need 60 degree angles for a equilateral triangle. Use the turn method which has a parameter for the angle of the turn in degrees. For example, turn(90) is the same as turnRight(). Try drawing a triangle with different colors. 
     ~~~~
+
+    import java.awt.Color;   //import Color class
 
     public class TurtleTestMethods
     {
@@ -238,6 +249,8 @@ Try the following mixed up code to draw a simple house made of a square and a tr
    Note that the turtle variable name is "builder" 
    rather than "yertle" or "myrtle". Drag the code blocks to the right and put them in the correct order to first draw a square for the house and then a red triangle for the roof.  Click on the "Check Me" button to check your solution.  You can copy and paste this code in the Active Code window above to see it in action.
    -----
+
+   import java.awt.Color;   //import Color class
    public class TurtleDrawHouse
    {
    =====
@@ -306,6 +319,7 @@ and the turtle begins facing up.
     :nocodelens: 
     :datafile: turtleClasses.jar
 
+    import java.awt.Color;   //import Color class
     public class TurtleHouseChallenge
     {
       public static void main(String[] args)
@@ -342,8 +356,8 @@ and the turtle begins facing up.
             String code = getCode();
             int num = countOccurences(code, "moveTo(");
 
-            boolean passed = num >= 1;
-            passed = getResults("1 or more", ""+num, "Calls moveTo(...)", passed);
+            boolean passed = num >= 3;
+            passed = getResults("3 or more", ""+num, "Calls moveTo(...)", passed);
             assertTrue(passed);
         }
 
@@ -353,8 +367,8 @@ and the turtle begins facing up.
             String code = getCode();
             int num = countOccurences(code, ".penUp()");
 
-            boolean passed = num >= 1;
-            passed = getResults("4 or more", ""+num, "Calls penUp()", passed);
+            boolean passed = num >= 3;
+            passed = getResults("3 or more", ""+num, "Calls penUp()", passed);
             assertTrue(passed);
         }
 
@@ -364,8 +378,8 @@ and the turtle begins facing up.
             String code = getCode();
             int num = countOccurences(code, ".penDown(");
 
-            boolean passed = num >= 1;
-            passed = getResults("1 or more", ""+num, "Calls penDown()", passed);
+            boolean passed = num >= 3;
+            passed = getResults("3 or more", ""+num, "Calls penDown()", passed);
             assertTrue(passed);
         }
         @Test
@@ -374,8 +388,8 @@ and the turtle begins facing up.
             String code = getCode();
             int numTurns = countOccurences(code, ".turn");
 
-            boolean passed = numTurns >= 6;
-            passed = getResults("6 or more", ""+numTurns, "turns", passed);
+            boolean passed = numTurns >= 12;
+            passed = getResults("12 or more", ""+numTurns, "turns", passed);
             assertTrue(passed);
         }
 
@@ -385,8 +399,8 @@ and the turtle begins facing up.
             String code = getCode();
             int numForward = countOccurences(code, ".forward(");
 
-            boolean passed = numForward >= 6;
-            passed = getResults("6 or more", ""+numForward, "Calls to forward()", passed);
+            boolean passed = numForward >= 12;
+            passed = getResults("12 or more", ""+numForward, "Calls to forward()", passed);
             assertTrue(passed);
         }
     }

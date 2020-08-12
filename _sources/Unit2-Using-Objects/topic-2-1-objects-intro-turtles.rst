@@ -124,7 +124,12 @@ has a pen that traces its path as it moves. Notice that a world was first
 created and then a turtle.  Turtles need to be created in a world, 
 which is the graphical window that they can draw on.
 ``World`` and ``Turtle`` are two Java classes are not part of the core Java language.  
-The program relies on a separate library of Java code that defines both classes.  
+The program relies on a separate library of Java code that defines both classes. 
+
+.. note::
+
+   The last line of code ``world.show(true);`` is important.  
+   If you forget this line of code, the program won't display the graphical window.
 
 |Exercise| **Check your understanding**
 
@@ -312,7 +317,7 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
    :answer_b: Heading
    :answer_c: Pen Color
    :answer_d: Visible
-   :correct: b
+   :correct: a
    :feedback_a: Correct. 
    :feedback_b: Incorrect. Heading (direction) is not altered when the turtle moves forward.
    :feedback_c: Incorrect. Pen color is not altered when the turtle moves forward.
@@ -429,7 +434,8 @@ For example, have it draw a small square and then a large square by calling the 
 - ``penUp();``
 - ``penDown();``
 
-After writing your code below, if you'd like your own copy, you can open this |repl link|, copy in your code, and save it in your own repl.it account.
+After writing your code below, if you'd like your own copy, you can open this |repl link|, 
+copy in your code, and save it in your own repl.it account.  Keep in mind Repl.it prefers the class to be named "Main".
 
 .. activecode:: code2_1_3
     :language: java
@@ -514,16 +520,6 @@ After writing your code below, if you'd like your own copy, you can open this |r
             assertTrue(passed);
         }
 
-        @Test
-        public void test4() {
-            String[] code = getCode().split("\n");
-            int expect = 38;
-
-            boolean passed = code.length >= expect;
-
-            passed = getResults(expect + "+ line(s)", "" + code.length  + " lines(s)", "More than " + expect + " lines of code", passed);
-            assertTrue(passed);
-        }
     }
 
 

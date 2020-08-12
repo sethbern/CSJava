@@ -35,7 +35,8 @@ that you might want to use in your programs like ``Math.abs`` (absolute value). 
 
 .. note::
 
-   **Static methods** (also called class methods) are called using the class name and the dot operator (.) followed by the method name, for example Math.random(). You do not need to create an object of the class to use them. 
+   **Static methods** (also called class methods) are called using the class name and the dot operator ``.`` followed by the method name, 
+   for example ``Math.random()``. You do not need to create an object of the class to use them. 
 
 The ``Math.random()`` method returns a number greater than or equal to 0.0, and less than 1.0. 
 
@@ -83,7 +84,8 @@ You can use ``Math.random`` and a cast to integer to return a random integer bet
    :language: java
    :autograde: unittest
 
-   Run the code below several times to see how the value changes each time. How could you change the code to return a random integer from 1 to 10?  Modify the code and see if your answer is correct. Try removing the parentheses from around (Math.random() * 10) and run the code several times. What happens? The parentheses are necessary because (int) will cast the closest expression, and (int)Math.random() will always be 0 since anything after the decimal point is dropped.
+   Run the code below several times to see how the value changes each time. The program returns a random integer between 0 and 9, inclusive. 
+   How could you change the code to return a random integer from 1 to 10, inclusive?  Modify the code and see if your answer is correct. 
    ~~~~
    public class Test4
    {
@@ -353,7 +355,8 @@ Now what about the combination lock for this challenge? It has 3 dials with 0-40
     }
 
 
-Here's another challenge that is a lot of fun! Can you use random numbers to make dancing turtles? This idea was suggested by Zac Martin's class.
+Here's another challenge that is a lot of fun! Can you use random numbers to make dancing turtles? 
+This idea was suggested by Zac Martin's class.
 
 .. activecode:: code2_9_4
     :language: java
@@ -384,6 +387,7 @@ Here's another challenge that is a lot of fun! Can you use random numbers to mak
            // Can you choose a randomY between 0-400? 
            // Can you adjust for the 20 pixel height of the turtle,
            // so it doesn't get cut off at the edges?
+           // Move the range from 20 to 380.
            int randomY = 
           
            yertle.moveTo(randomX, randomY);

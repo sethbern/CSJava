@@ -311,7 +311,7 @@ Run the example below to see the output from ``compareTo`` and ``equals``. Since
     :match_1: Returns true if the characters in two strings are the same|||equals
     :match_2: Returns the position of one string in another or -1|||indexOf
     :match_3: Returns a number to indicate if one string is less than, equal to, or greater than another|||compareTo
-    :match_4: Returns a string representing the object that is passed to this method|||toString
+    :match_4: Returns a string representing the object called with this method|||toString
     
     Drag the definition from the left and drop it on the correct method on the right.  Click the "Check Me" button to see if you are correct.
 

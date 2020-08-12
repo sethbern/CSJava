@@ -183,7 +183,7 @@ A no-arguments constructor will have an empty parameter list.
     Figure 3: Turtle Class Constructor Signatures and Parameters
 
 
-The ``Turtle`` class has multiple constructors, although it always requires a World as an parameter 
+The ``Turtle`` class has multiple constructors, although it always requires a World as a parameter 
 in order to have a place to draw.  The first constructor places the turtle in a default location in the middle of the world.
 The second constructor places the turtle at a certain (x,y) location in the world.
 
@@ -283,10 +283,32 @@ The second constructor places the turtle at a certain (x,y) location in the worl
         @Test
         public void test1()
         {
-            String orig = "public class TurtleConstructorTest\n{\n  public static void main(String[] args)\n  {\n      // Change the World constructor to 300x400\n      World world = new World(300,300);\n\n      // Change the Turtle constructor to put the turtle in the top right corner\n      Turtle t1 = new Turtle(world);\n\n      t1.turnLeft();\n      world.show(true);\n  }\n}\n";
-            boolean passed = codeChanged(orig);
+            String code = getCode();
+            String expect = "new World(300,400)";
+
+            int count = countOccurences(code, expect);
+
+            boolean passed = count >= 1;
+
+            passed = getResults("1 new World(300,400)", "" + count  + " new World(300,400)", "Create 300x400 World", passed);
             assertTrue(passed);
         }
+
+
+        @Test
+        public void test2()
+        {
+            String code = getCode();
+            String expect = ",world)";
+
+            int count = countOccurences(code, expect);
+
+            boolean passed = count >= 1;
+
+            passed = getResults("1 new Turtle(x, y, world)", "" + count  + " new Turtle(x, y, world)", "Create Turtle at some x,y position", passed);
+            assertTrue(passed);
+        }
+
 
     }
 
