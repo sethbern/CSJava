@@ -65,6 +65,15 @@ The following flowchart demonstrates that if the condition (the boolean expressi
    The else will only execute if the condition is false.   
 
 
+Assume you are flipping a coin to decide whether to go to a game or watch a movie.  If the coin is heads then you will go to a game, if tails then watch a movie.
+The flowchart in Figure 2 shows the conditional control flow with 2 branches based on a boolean variable ``isHeads``.
+
+.. figure:: Figures/flow_4.png
+    :width: 400px
+    :align: center
+    :figclass: align-center
+
+    Figure 2: If-Else Decision
 
 
 .. activecode:: code3_3_1
@@ -73,7 +82,8 @@ The following flowchart demonstrates that if the condition (the boolean expressi
    :stdin: true
 
    
-   Try the following code. If ``isHeads`` is true it will print ``Let's go to the game`` and then ``after conditional``.  
+   Run the following code twice for each boolean value for isHeads (true and false).    Notice the program always prints "after conditional" since that statement is not nested inside the if or else blocks.
+
    ~~~~
    import java.util.Scanner; 
    public class HeadsOrTails
@@ -149,7 +159,6 @@ If/else statements can also be used with relational operators and numbers like b
       public static void main(String[] args)
       {
         Scanner scan = new Scanner(System.in);
-     {
         int age = scan.nextInt();
         if (age >= 18) 
         {
@@ -168,7 +177,7 @@ If/else statements can also be used with relational operators and numbers like b
     
     public class RunestoneTests extends CodeTestHelper
     {
-         @Test
+       @Test
        public void testCodeContains() throws IOException
        {
            String target = "age >= 16";
@@ -176,6 +185,58 @@ If/else statements can also be used with relational operators and numbers like b
            assertTrue(passed);
        }
     }
+
+
+Recall the program from the previous lesson that outputs a message based on whether you passed the midterm.  The program uses two separate ``if`` statements to decide what to print.
+Notice the second condition is simply the negation of the first condition.  
+
+
+.. activecode:: code3_3_3
+   :language: java
+   :autograde: unittest
+   :stdin: true
+   
+   Rewrite this code to use a single if-else rather than two separate if statements.
+   
+   ~~~~
+   import java.util.Scanner; 
+   public class TestMidterm
+   {
+      public static void main(String[] args)
+      {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Did you pass the midterm exam?");
+
+        boolean passedExam = scan.nextBoolean();
+        if (passedExam) 
+        {
+           System.out.println("Good job studying!"); 
+        }
+        if (!passedExam) 
+        {
+           System.out.println("Study harder next time."); 
+        }
+      }
+   }
+   ====
+   import static org.junit.Assert.*;
+    import org.junit.*;;
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+       @Test
+       public void testCodeContains() throws IOException
+       {
+           String target = "else";
+           boolean passed = checkCodeContains("check else", target);
+           assertTrue(passed);
+       }
+    }
+
+
+
 
 .. parsonsprob:: q3_3_2
    :numbered: left
@@ -214,7 +275,7 @@ If/else statements can also be used with relational operators and numbers like b
 
 
 
-.. activecode:: q3_3_3
+.. activecode:: code3_3_4
    :language: java
    :autograde: unittest
    :practice: T
@@ -279,7 +340,7 @@ If statements can be nested inside other if statements. Sometimes with nested if
 
 
 
-.. activecode:: q3_3_4
+.. activecode:: code3_3_5
    :language: java
    :autograde: unittest
    :practice: T
@@ -391,7 +452,7 @@ The |Animal Guessing program| below uses the following decision tree:
 
 After you complete your code on repl.it, paste in your code below to run it through the auto-grader. Also include a link to your code on repl.it in comments.
 
-.. activecode:: code3_3_5
+.. activecode:: code3_3_6
   :language: java
   :autograde: unittest  
 

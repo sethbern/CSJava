@@ -41,10 +41,10 @@ Compound Boolean Expressions
 And (&&), Or (||), and Not (!)
 --------------------------------
 
-What if you want two things to be true before the body of the conditional is executed?  Use ``&&`` as a logical **and** to join two Boolean expressions and the body of the condition will only be executed only if both are true.  
+What if you want two things to be true before the body of the conditional is executed?  Use ``&&`` as a logical **and** to join 
+two Boolean expressions and the body of the condition will only be executed  if both are true.  
 
 |CodingEx| **Coding Exercise**
-
 
 
 .. activecode:: code3_5_1
@@ -152,8 +152,6 @@ With numerical values, the or-operator is often used to check for error conditio
 
 |CodingEx| **Coding Exercise**
 
-
-
 .. activecode:: code3_5_3
    :language: java
    :autograde: unittest 
@@ -176,25 +174,14 @@ With numerical values, the or-operator is often used to check for error conditio
  
       }
    }
-   ====
-   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
-    
-    public class RunestoneTests extends CodeTestHelper
-    {
-         @Test
-        public void testChangedCode() {
-            String origCode = "public class TestNum{public static void main(String[] args){int score = 10; // Try -10 and 110 if (score < 0 || score > 100){ System.out.println(\"Score has an illegal value.\");}if (score >= 0 && score <= 100){ System.out.println(\"Score is in the range 0-100\");}}}";
-
-            boolean changed = codeChanged(origCode);
-            assertTrue(changed);
-        }
-    }   
 
 
 
-The **not** (!) operator can be used to negate a boolean value. We've seen ! before in != (not equal).  In Java, ! has precedence (is executed before) &&, and && has precedence over ||. Parentheses can be used to force the order of execution in a different way. If you mix ! with && and ||, be careful because the results are often the opposite of what you think it will be at first. We'll see examples of this in the next lesson.  
+
+The **not** (!) operator can be used to negate a boolean value. We've seen ! before in != (not equal).  
+In Java, ! has precedence (is executed before) &&, and && has precedence over ||. Parentheses can be used to 
+force the order of execution in a different way. If you mix ! with && and ||, be careful because the results are 
+often the opposite of what you think. We'll see examples of this in the next lesson.  
 
 |CodingEx| **Coding Exercise**
 
@@ -414,8 +401,31 @@ Both ``&&`` and ``||`` use **short circuit evaluation**.  That means that the se
      {
         System.out.println("second case");
      }
+
+.. mchoice:: q3_5_8
+   :practice: T
+   :answer_a: first case
+   :answer_b: second case
+   :answer_c: You will get a error because you can't divide by zero.  
+   :correct: c
+   :feedback_a: Since (y / x) == 3 is the first expression it is executed, and x is 0 causing a divide by zero error. 
+   :feedback_b: Since (y / x) == 3 is the first expression it is executed, and x is 0 causing a divide by zero error. 
+   :feedback_c: Correct. Since (y / x) == 3 is the first expression it is executed, and x is 0 causing a divide by zero error.  
+
+   What is printed when the following code executes and x has been set to zero and y is set to 3?  
+   
+   .. code-block:: java 
+
+     if ((y / x) == 3 || x == 0 )
+     {
+        System.out.println("first case");
+     }
+     else
+     {
+        System.out.println("second case");
+     }
      
-.. .. mchoice:: q3_5_8
+.. .. mchoice:: q3_5_9
    :practice: T
    :answer_a: first case
    :answer_b: second case
@@ -433,7 +443,7 @@ Both ``&&`` and ``||`` use **short circuit evaluation**.  That means that the se
      if (x >= 0 && message.substring(x).equals("help")) System.out.println("first case");
      else System.out.println("second case");
      
-.. .. mchoice:: q3_5_9
+.. .. mchoice:: q3_5_10
    :practice: T
    :answer_a: first case
    :answer_b: second case

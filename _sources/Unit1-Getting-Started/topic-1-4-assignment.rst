@@ -384,176 +384,6 @@ previous value of score + 1.
 
 
 
-
-Storing User Input in Variables
----------------------------------
-
-.. |repl JavaIOExample| raw:: html
-
-   <a href="https://repl.it/@BerylHoffman/JavaIOExample" target="_blank">repl JavaIOExample</a>
-
-
-
-
-Variables are a powerful abstraction in programming because the same algorithm can be 
-used with different input values saved in variables.  
-
-.. figure:: Figures/iostream.png
-    :figclass: align-center
-    :alt: Program input and output
-    
-    Figure 2: Program input and output
-
-
-A Java program can ask the user to type in one or more values.   
-The Java class ``Scanner`` is used to read from
-the keyboard input stream, which is referenced by ``System.in``. Normally the keyboard input is typed into a console window, but since this is running
-in a browser you will type in a small textbox window displayed below the code.   The code below shows an example of prompting the user to enter a name and 
-then printing a greeting. 
-The code ``String name = scan.nextLine()`` 
-gets the string value you enter as program input and then stores the value in a variable.  
-
-Run the program a few times, typing in a different name. The code works for any name: 
-behold, the power of variables!
-
-|CodingEx| **Coding Exercise:** 
-
-.. activecode:: code1_4_5
-   :language: java
-   :stdin: Fred Smith  
-   
-   Run this program to read in a name from the input stream. 
-   You can type a different name in the input window shown below the code.
-
-   Try stepping through the code with the CodeLens tool to see how the name variable is assigned to the value read by the scanner.
-   ~~~~
-
-    import java.util.Scanner;
-    public class NameReader {
-
-        public static void main(String[] args) {
-
-            Scanner scan = new Scanner(System.in);  
-
-            System.out.println("Please Enter your name: ");
-            String name = scan.nextLine();
-            System.out.println("Hello " + name);
-
-        }
-
-    }
-
- 
-
-
-
-.. .. raw:: html
-
-..    <iframe height="500px" width="100%" style="max-width:90%; margin-left:5%"  src="https://repl.it/@BerylHoffman/JavaIOExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-    
-
-
-The Scanner class has several useful methods for reading user input:
-
-.. table:: 
-  :align: left
-  :widths: auto
-
-  =========================  ================================================
-  Method                           Description             
-  =========================  ================================================
-  nextLine()                 Scans all input up to the line break as a String     
-  next()                     Scans the next token of the input as a String    
-  nextInt()                  Scans the next token of the input as an int                    
-  nextDouble()               Scans the next token of the input as a double                      
-  nextBoolean()              Scans the next token of the input as a boolean                     
-  =========================  ================================================
-
-
-|CodingEx| **Coding Exercise:** 
-
-.. activecode:: code1_4_6
-   :language: java
-   :stdin: 20  
-   
-   Run this program to read in an integer from the input stream. 
-   You can type a different integer value in the input window shown below the code.
-   ~~~~
-
-    import java.util.Scanner;
-    public class AgeReader {
-        public static void main(String[] args) {
-            int age;
-            Scanner scan = new Scanner(System.in);
-            
-            System.out.println("How old are you?");
-            age = scan.nextInt();
-            System.out.println(age + " is a great age!");
-            
-        }
-    }
-
-
-
-
-|CodingEx| **Coding Exercise:** 
-
-The program below reads two integer values from the input stream and attempts to print the sum.  Unfortunately there is a problem
-with the last line of code that prints the sum.  
-
-.. activecode:: code1_4_7
-   :language: java
-   :autograde: unittest   
-   :stdin: 5 7
-   
-   Run the program and look at the result. When the input is ``5`` and ``7``, the output is ``Sum is 57``. 
-   Both of the ``+`` operators in the print statement are performing string concatenation.  
-   While the first ``+`` operator 
-   should perform string concatenation, the second ``+`` operator should perform addition.   
-   You can force the second ``+`` operator to perform addition by putting the arithmetic expression in parentheses ``( num1 + num2 )``.  
-   ~~~~
-
-    import java.util.Scanner;
-    public class SumInput {
-        public static void main(String[] args) {
-            int num1, num2;
-            Scanner scan = new Scanner(System.in);
-            
-            System.out.println("Enter first number");
-            num1= scan.nextInt();
-            System.out.println("Enter second number");
-            num2= scan.nextInt();
-            System.out.println("Sum is " + num1 + num2);
-
-        }
-    }
-   ====
-   import static org.junit.Assert.*;
-   import org.junit.*;;
-   import java.io.*;
-
-   public class RunestoneTests extends CodeTestHelper
-   {
-    
-    public RunestoneTests() {
-      super("SumInput");
-    }
-
-    @Test
-    public void test1()
-    {
-      String code = getCode();
-      int sum = countOccurences(code, "(num1 + num2)");
-      boolean passed = sum == 1;
-      
-      passed = getResults("1 sum", sum + " sum", "Update the last print statement to force addition (num1 + num2)", passed);
-      assertTrue(passed);
-    }
-   }
-
-
-More information on using the Scanner class can be found here https://www.w3schools.com/java/java_user_input.asp 
-
 Operators
 ---------
 
@@ -574,7 +404,7 @@ Java uses the operator ``==`` to test if the value on the left is equal to the v
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_8
+.. activecode:: code1_4_5
    :language: java
    :autograde: unittest      
    
@@ -625,7 +455,7 @@ Operators can be used to create compound expressions with more than one operator
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_9
+.. activecode:: code1_4_6
    :language: java
    :autograde: unittest      
    
@@ -660,8 +490,7 @@ Operators can be used to create compound expressions with more than one operator
         }
     }
 
-   
-   
+ 
 |Exercise| **Check Your Understanding**
 
 .. mchoice:: q1_4_6
@@ -689,6 +518,8 @@ Operators can be used to create compound expressions with more than one operator
    
    What is printed when the code segment is executed?
    
+
+
    
 The Modulo Operator
 --------------------
@@ -700,7 +531,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
     :align: center
     :figclass: align-center
     
-    Figure 1: Long division showing the whole number result and the remainder
+    Figure 2: Long division showing the whole number result and the remainder
     
 .. youtube:: jp-T9lFISlI
     :width: 700
@@ -708,7 +539,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_10
+.. activecode:: code1_4_7
    :language: java
    :autograde: unittest      
    
@@ -779,6 +610,370 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
    :feedback_c: What is the remainder after you divide 3 by 8?  
 
    What is the result of 3 % 8?
+
+
+
+FlowCharting
+--------------
+
+
+Assume you have 16 pieces of pizza and 5 people.  If everyone gets the same number of slices, how many slices does each person get?  Are there any leftover pieces?  
+
+In industry, a **flowchart** is used to describe a process through symbols and text. 
+A flowchart usually does not show variable declarations, just it can show assignment statements (drawn as rectangle) and output statements (drawn as rhomboid).  
+Figure 3 contains a flowchart of a process that relies on integer division to compute the number of pizza slices per person based on the total number of slices and the total number of people.
+The flowchart also computes the number of leftover slices if the total number of slices is not evenly divided among the number of people.
+
+.. figure:: Figures/flow_1.png
+    :figclass: align-center
+    :width: 300px
+    :alt: Flow Chart
+    
+    Figure 3: Example Flow Chart
+
+
+|CodingEx| **Coding Exercise:** 
+
+.. activecode:: code1_4_8
+   :language: java 
+   :autograde: unittest      
+ 
+   
+   Complete the program based on the process shown in the Figure 3 flowchart.  Note the first line of code declares all 4 variables as type int.
+   Add assignment statements and print statements to compute and print the slices per person and leftover slices.    Use System.out.println for output.
+   ~~~~
+
+    public class PizzaCalculator {
+
+        public static void main(String[] args) {
+            int pizzaSlices, numPeople, slicesPerPerson, leftoverSlices;
+            //add your code
+
+        }
+
+    }
+
+   ====
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+    
+
+    @Test
+    public void test1()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "slicesPerPerson = pizzaSlices / numPeople;");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 assignment slicesPerPerson", count+ " assignment slicesPerPerson", "compute slicesPerPerson", passed);
+   }
+    @Test
+    public void test2()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "leftoverSlices = pizzaSlices % numPeople;");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 assignment leftoverSlices", count+ " assignment leftoverSlices", "compute leftoverSlices", passed);
+   }
+   @Test
+    public void test3()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "println(slicesPerPerson)");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 print slicesPerPerson", count+ " print slicesPerPerson", "output slicesPerPerson", passed);
+   }
+   @Test
+    public void test4()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "println(leftoverSlices)");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 print leftoverSlices", count+ " print leftoverSlices", "output leftoverSlices", passed);
+   }
+   }
+
+
+
+
+Storing User Input in Variables
+---------------------------------
+
+.. |repl JavaIOExample| raw:: html
+
+   <a href="https://repl.it/@BerylHoffman/JavaIOExample" target="_blank">repl JavaIOExample</a>
+
+
+Variables are a powerful abstraction in programming because the same algorithm can be 
+used with different input values saved in variables.  
+
+.. figure:: Figures/iostream.png
+    :figclass: align-center
+    :alt: Program input and output
+    
+    Figure 4: Program input and output
+
+
+A Java program can ask the user to type in one or more values.   
+The Java class ``Scanner`` is used to read from
+the keyboard input stream, which is referenced by ``System.in``. Normally the keyboard input is typed into a console window, but since this is running
+in a browser you will type in a small textbox window displayed below the code.   The code below shows an example of prompting the user to enter a name and 
+then printing a greeting. 
+The code ``String name = scan.nextLine()`` 
+gets the string value you enter as program input and then stores the value in a variable.  
+
+Run the program a few times, typing in a different name. The code works for any name: 
+behold, the power of variables!
+
+|CodingEx| **Coding Exercise:** 
+
+.. activecode:: code1_4_9
+   :language: java
+   :stdin: Fred Smith  
+   
+   Run this program to read in a name from the input stream. 
+   You can type a different name in the input window shown below the code.
+
+   Try stepping through the code with the CodeLens tool to see how the name variable is assigned to the value read by the scanner.
+   ~~~~
+
+    import java.util.Scanner;
+    public class NameReader {
+
+        public static void main(String[] args) {
+
+            Scanner scan = new Scanner(System.in);  
+
+            System.out.println("Please Enter your name: ");
+            String name = scan.nextLine();
+            System.out.println("Hello " + name);
+
+        }
+
+    }
+
+ 
+
+
+
+.. .. raw:: html
+
+..    <iframe height="500px" width="100%" style="max-width:90%; margin-left:5%"  src="https://repl.it/@BerylHoffman/JavaIOExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+    
+
+
+The Scanner class has several useful methods for reading user input:
+
+.. table:: 
+  :align: left
+  :widths: auto
+
+  =========================  ================================================
+  Method                           Description             
+  =========================  ================================================
+  nextLine()                 Scans all input up to the line break as a String     
+  next()                     Scans the next token of the input as a String    
+  nextInt()                  Scans the next token of the input as an int                    
+  nextDouble()               Scans the next token of the input as a double                      
+  nextBoolean()              Scans the next token of the input as a boolean                     
+  =========================  ================================================
+
+
+|CodingEx| **Coding Exercise:** 
+
+.. activecode:: code1_4_10
+   :language: java
+   :stdin: 20  
+   
+   Run this program to read in an integer from the input stream. 
+   You can type a different integer value in the input window shown below the code.
+   ~~~~
+
+    import java.util.Scanner;
+    public class AgeReader {
+        public static void main(String[] args) {
+            int age;
+            Scanner scan = new Scanner(System.in);
+            
+            System.out.println("How old are you?");
+            age = scan.nextInt();
+            System.out.println(age + " is a great age!");
+            
+        }
+    }
+
+
+
+.. figure:: Figures/flow_2.png
+    :figclass: align-center
+    :width: 300px
+    :alt: Flow Chart
+    
+    Figure 5: Flow Chart Reading User Input
+
+In a flowchart the rhomboid (slanted rectangle) is used to depict data flowing into and out of a program.  
+We saw in the previous flowchart a rhomboid was used to indicate program output.  The symbol is
+also used for reading from the input stream.  Figure 5 contains an updated version of the pizza calculator process.  
+The first two steps have been altered to initialize the pizzaSlices and numPeople variables by reading two values from the input stream.
+
+
+.. activecode:: code1_4_11
+   :language: java 
+   :autograde: unittest      
+   :stdin: 16 5  
+
+   
+   Complete the program based on the process shown in the Figure 5 flowchart.  
+   The program should get the initial values of pizzaSlices and numPeople by reading from the input stream.  Run the program a few times to experiment with different values.
+   What happens if you enter 0 for the number of people?  We will see how to deal with the problem of division by 0 in a later lesson.
+   ~~~~
+    import java.util.Scanner;
+    public class PizzaCalculatorInput {
+
+        public static void main(String[] args) {
+            int pizzaSlices, numPeople, slicesPerPerson, leftoverSlices;
+            Scanner scan = new Scanner(System.in);
+            //add code to initialize pizzaSlices and numPeople with input values read using the scanner object. 
+            
+            //compute and print slicesPerPerson and leftoverSlices
+
+        }
+
+    }
+
+   ====
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+    
+   @Test
+    public void test1a()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "pizzaSlices = scan.nextInt()");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 read pizzaSlices using scan.nextInt()", count+ " read pizzaSlices using scan.nextInt()", "pizzaSlices = scan.nextInt()", passed);
+    }
+   @Test
+    public void test1b()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "numPeople= scan.nextInt()");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 read numPeopleusing scan.nextInt()", count+ " read numPeopleusing scan.nextInt()", "numPeople= scan.nextInt()", passed);
+    }
+    @Test
+    public void test1()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "slicesPerPerson = pizzaSlices / numPeople;");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 assignment slicesPerPerson", count+ " assignment slicesPerPerson", "compute slicesPerPerson", passed);
+    }
+    @Test
+    public void test2()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "leftoverSlices = pizzaSlices % numPeople;");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 assignment leftoverSlices", count+ " assignment leftoverSlices", "compute leftoverSlices", passed);
+    }
+   @Test
+    public void test3()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "println(slicesPerPerson)");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 print slicesPerPerson", count+ " print slicesPerPerson", "output slicesPerPerson", passed);
+    }
+   @Test
+    public void test4()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "println(leftoverSlices)");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 print leftoverSlices", count+ " print leftoverSlices", "output leftoverSlices", passed);
+    }
+   }
+
+
+
+|CodingEx| **Coding Exercise:** 
+
+The program below reads two integer values from the input stream and attempts to print the sum.  Unfortunately there is a problem
+with the last line of code that prints the sum.  
+
+.. activecode:: code1_4_12
+   :language: java
+   :autograde: unittest   
+   :stdin: 5 7
+   
+   Run the program and look at the result. When the input is ``5`` and ``7``, the output is ``Sum is 57``. 
+   Both of the ``+`` operators in the print statement are performing string concatenation.  
+   While the first ``+`` operator 
+   should perform string concatenation, the second ``+`` operator should perform addition.   
+   You can force the second ``+`` operator to perform addition by putting the arithmetic expression in parentheses ``( num1 + num2 )``.  
+   ~~~~
+
+    import java.util.Scanner;
+    public class SumInput {
+        public static void main(String[] args) {
+            int num1, num2;
+            Scanner scan = new Scanner(System.in);
+            
+            System.out.println("Enter first number");
+            num1= scan.nextInt();
+            System.out.println("Enter second number");
+            num2= scan.nextInt();
+            System.out.println("Sum is " + num1 + num2);
+
+        }
+    }
+   ====
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+    
+    public RunestoneTests() {
+      super("SumInput");
+    }
+
+    @Test
+    public void test1()
+    {
+      String code = getCode();
+      int sum = countOccurences(code, "(num1 + num2)");
+      boolean passed = sum == 1;
+      
+      passed = getResults("1 sum", sum + " sum", "Update the last print statement to force addition (num1 + num2)", passed);
+      assertTrue(passed);
+    }
+   }
+
+
+More information on using the Scanner class can be found here https://www.w3schools.com/java/java_user_input.asp 
+
+
+
 	
 
 |Groupwork| Programming Challenge : Dog Years
@@ -805,7 +1000,7 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
 
    <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>
 
-.. activecode:: code1_4_11
+.. activecode:: code1_4_13
    :language: java
    :autograde: unittest
    :practice: T

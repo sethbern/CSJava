@@ -36,13 +36,14 @@ through the program so that some code is only run when something is true.  In an
 condition is true then the next statement or a block of statements will execute.  If the condition is 
 false then the next statement or block of statements is skipped.
 
+
 .. figure:: Figures/Condition.png
     :width: 200px
     :align: center
     :figclass: align-center
 
     Figure 1: The order that statements execute in a conditional
-    
+
 
 A conditional uses the keyword ``if`` followed by **Boolean expression** inside of  an 
 open parenthesis ``(`` and a close parenthesis ``)`` and then followed by a single statement or block of statements.  
@@ -381,6 +382,106 @@ Most if statements have a boolean condition that uses relational operators like 
     Note always use == not = in an if statement! Test not assign.
 
         
+Conditional Control Flow
+-------------------------------------
+
+Recall the program to compute the number of pizza slices per person from Unit 1.  
+
+.. activecode:: code3_2_4
+   :language: java 
+   :stdin: 16 0  
+
+   
+   Run the program to confirm that it fails when a value of 0 is entered for numPeople (second input value). 
+   ~~~~
+    import java.util.Scanner;
+    public class PizzaCalculatorInput {
+
+        public static void main(String[] args) {
+            int pizzaSlices, numPeople, slicesPerPerson, leftoverSlices;
+            Scanner scan = new Scanner(System.in);
+            pizzaSlices = scan.nextInt();
+            numPeople = scan.nextInt();
+            slicesPerPerson = pizzaSlices / numPeople;
+            leftoverSlices = pizzaSlices % numPeople;
+            System.out.println(slicesPerPerson);
+            System.out.println(leftoverSlices);
+        }
+
+    }
+
+
+
+
+To avoid division by 0, the calculation for ``slicesPerPerson`` and ``leftoverSlices`` should be skipped when the number of people is 0.  
+In fact, the calculation is nonsense if the number of people is a negative number so the program should check if a positive value is read from input.   
+The program should actually ensure positive values are input for both the number of people and number of pizza slices, but for now you will only test the number of people.
+You will see how to test compound boolean expressions in a later lesson. 
+
+.. figure:: Figures/flow_3.png
+    :width: 350px
+    :align: center
+    :figclass: align-center
+
+    Figure 2: Conditional Control Flow
+
+The flowchart in Figure 2 demonstrates the desired control flow based on an ``if`` statement, represented with a diamond symbol.
+If the condition ``numPeople > 0`` is true, the process follows the path labelled **true**, which contains the 4 steps to calculate and 
+print ``slicesPerPerson`` and ``leftoverSlices``.  
+The 4 statements along the ``true`` branch must be nested within curly braces in a Java program otherwise only the first step would be considered part of the true branch.   
+If the condition ``numPeople > 0`` is false, the **false** branch is followed and the 4 statements for calculating and printing are skipped.
+
+
+.. activecode:: code3_2_5
+   :language: java 
+   :stdin: 16 0  
+   :autograde: unittest
+   
+   Update the program based on the conditional control flow shown in Figure 2.  Add an if statement to test the value stored in numPeople.
+   Don't forget curly braces around the 4 lines for computing and printing slicesPerPerson and leftoverSlices.
+
+   Run the program multiple times with negative, 0, and positive values for number of people.  The program should no longer result in a divide by zero exception.  
+   ~~~~
+    import java.util.Scanner;
+    public class PizzaCalculatorInput {
+
+        public static void main(String[] args) {
+            int pizzaSlices, numPeople, slicesPerPerson, leftoverSlices;
+            Scanner scan = new Scanner(System.in);
+            pizzaSlices = scan.nextInt();
+            numPeople = scan.nextInt();
+            
+            slicesPerPerson = pizzaSlices / numPeople;
+            leftoverSlices = pizzaSlices % numPeople;
+            System.out.println(slicesPerPerson);
+            System.out.println(leftoverSlices);
+
+        }
+
+    }
+   ====
+    import static org.junit.Assert.*;
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+
+    @Test
+    public void test1a()
+    {
+      String code = getCode();
+      int count= countOccurences(code, "if (numPeople > 0)");
+      boolean passed = (count== 1);
+      
+      passed = getResults("1 numPeople > 0", count+ " numPeople > 0", "Missing test: if (numPeople > 0)", passed);
+    }
+    }
+
+
 Common Errors with If Statements
 ---------------------------------
 
@@ -396,7 +497,7 @@ Here are some rules to follow with if statements to avoid some common errors:
 |CodingEx| **Coding Exercise**
 
    
-.. activecode:: code3_2_4
+.. activecode:: code3_2_6
    :language: java
    :autograde: unittest
    :stdin: true
@@ -486,7 +587,7 @@ For an extra challenge, have the program create a Scanner and read the question 
 input before generating a response.   Repeat the user's question as part of the response.
  
 
-.. activecode:: code3_2_5
+.. activecode:: code3_2_7
    :language: java
    :autograde: unittest
    :stdin: Should I order a pizza for dinner?

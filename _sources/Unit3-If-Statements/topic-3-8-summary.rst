@@ -43,7 +43,7 @@ Vocabulary Practice
 
 .. dragndrop:: q3_8_1
     :feedback: Review the summaries above.
-    :match_1: joints two conditions and it will only be true if both of the conditions are true|||logical and
+    :match_1: joins two conditions and it will only be true if both of the conditions are true|||logical and
     :match_2: used to execute code only when a Boolean condition is true|||conditional
     :match_3: an expression that is either true or false|||Boolean expression
     :match_4: a conditional with two or more conditions joined together with logical ands or ors|||complex conditional

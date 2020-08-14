@@ -36,14 +36,15 @@ Testing Equality (==)
 ----------------------
 
 Primitive values like ints and reference values like Strings can be compared 
-using the operators == and != (not equal) to return boolean values.   The code ``x == 4`` evaluates to
+using the operators == and != (not equal) to return boolean values.   
+The expression ``x == 4`` evaluates to
 ``true`` if the memory location for variable x currently stores the value 4, otherwise the expression is ``false``.
 Note that ``x == 4`` does not assign a value to variable x, rather it simply compares the value of x to 4.
 
 
 .. note::
 
-    One = sign changes the value of a variable. Two == equal signs are used to test if a variable holds a certain value, without changing its value!
+    The operator `=` changes the value of a variable. The operator `==` tests if a variable holds a certain value, without changing its value!
 
 |CodingEx| **Coding Exercise**
 
@@ -53,7 +54,10 @@ Note that ``x == 4`` does not assign a value to variable x, rather it simply com
    :language: java
    :autograde: unittest
 
-   What will the code below print out? Try to guess before you run it! Note that 1 equal sign (=) is used for assigning a value and 2 equal signs (==) for testing values.
+   What will the code below print out? 
+   Try to guess before you run it! 
+   Note that 1 equal sign (=) is used for assigning a value 
+   and 2 equal signs (==) for testing equality between values.  The != operator tests for inequality.
    ~~~~
    public class BoolTest1
    {
@@ -340,8 +344,8 @@ the value of a Boolean expression.  When you see ``!``, think of the word "not".
    :answer_a: true
    :answer_b: false
    :correct: a
-   :feedback_a: Correct.  !false = true 
-   :feedback_b: Incorrect.  !false = true   
+   :feedback_a: Correct.  !false == true 
+   :feedback_b: Incorrect.  !false == true   
 
    What is printed?
 
