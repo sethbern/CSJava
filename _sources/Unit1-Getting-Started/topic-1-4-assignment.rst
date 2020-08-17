@@ -620,7 +620,7 @@ FlowCharting
 Assume you have 16 pieces of pizza and 5 people.  If everyone gets the same number of slices, how many slices does each person get?  Are there any leftover pieces?  
 
 In industry, a **flowchart** is used to describe a process through symbols and text. 
-A flowchart usually does not show variable declarations, just it can show assignment statements (drawn as rectangle) and output statements (drawn as rhomboid).  
+A flowchart usually does not show variable declarations, but it can show assignment statements (drawn as rectangle) and output statements (drawn as rhomboid).  
 Figure 3 contains a flowchart of a process that relies on integer division to compute the number of pizza slices per person based on the total number of slices and the total number of people.
 The flowchart also computes the number of leftover slices if the total number of slices is not evenly divided among the number of people.
 
