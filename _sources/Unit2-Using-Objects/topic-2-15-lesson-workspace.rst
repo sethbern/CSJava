@@ -2835,8 +2835,6 @@ Lesson Workspace
 
       } // end of World class
 
-      </pre>
-
 
 .. raw:: html
     
