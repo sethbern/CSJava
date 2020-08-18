@@ -183,14 +183,14 @@ Here are some simple turtle methods that you can use:
     :autograde: unittest
     :datafile: turtleClasses.jar
 
-    
+    You can make the world larger if you need more space to draw.
     ~~~~
     
     public class Turtle2Letters
     {
       public static void main(String[] args)
       {
-          World world = new World(400,400);
+          World world = new World(500,500);
 
 
 

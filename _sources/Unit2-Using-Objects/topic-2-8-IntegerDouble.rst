@@ -169,6 +169,7 @@ Can you find and fix all the bugs in the following code to use the correct Integ
    :autograde: unittest
    
    Find and fix the bugs below to use the correct Integer and Double methods and variables.
+   Integer i should be assigned the value 2, while d should be assigned the value 5.0.
    ~~~~
    public class Debug
    {

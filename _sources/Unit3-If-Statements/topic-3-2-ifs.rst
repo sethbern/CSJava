@@ -538,24 +538,18 @@ Here are some rules to follow with if statements to avoid some common errors:
         {
             String code = getCode();
             int num = countOccurences(code, "isCold);");
-            boolean passed = num == 0;
+            boolean passed1 = num == 0;
 
-            getResults("0", "" + num, "if (isCold);  get rid of semicolon", passed);
-            assertTrue(passed);
-        }
+            getResults("0", "" + num, "if (isCold);  get rid of semicolon", passed1);
+        
+            int num2 = countOccurences(code, "{");
+            boolean passed2 = num2 >= 3;
 
-        @Test
-        public void testCountCurlies()
-        {
-            String code = getCode();
-            int num = countOccurences(code, "{");
-            boolean passed = num >= 3;
-
-            getResults("3", "" + num, "Number of {", passed);
-            assertTrue(passed);
+            getResults("3", "" + num2, "Number of {", passed2);
+            assertTrue(passed1 && passed2);
         }
     }
-   
+
 
 |Groupwork| Programming Challenge : Magic 8 Ball
 ------------------------------------------------

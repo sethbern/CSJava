@@ -619,10 +619,13 @@ FlowCharting
 
 Assume you have 16 pieces of pizza and 5 people.  If everyone gets the same number of slices, how many slices does each person get?  Are there any leftover pieces?  
 
-In industry, a **flowchart** is used to describe a process through symbols and text. 
-A flowchart usually does not show variable declarations, but it can show assignment statements (drawn as rectangle) and output statements (drawn as rhomboid).  
-Figure 3 contains a flowchart of a process that relies on integer division to compute the number of pizza slices per person based on the total number of slices and the total number of people.
-The flowchart also computes the number of leftover slices if the total number of slices is not evenly divided among the number of people.
+In industry, a **flowchart** is used to describe a process through symbols and text.  
+A flowchart usually does not show variable declarations, but it can show assignment statements (drawn as rectangle) and output statements (drawn as rhomboid). 
+
+The flowchart in figure 3 shows a process to compute the fair distribution of pizza slices among a number of people. 
+The process relies on integer division to determine slices per person, and the mod operator to determine remaining slices.
+
+
 
 .. figure:: Figures/flow_1.png
     :figclass: align-center
@@ -630,6 +633,10 @@ The flowchart also computes the number of leftover slices if the total number of
     :alt: Flow Chart
     
     Figure 3: Example Flow Chart
+
+.. note::  
+
+  A flowchart shows pseudo-code, which is like Java but not exactly the same.  Syntactic details like semi-colons are ommitted, and input and output is described in abstract terms. 
 
 
 |CodingEx| **Coding Exercise:** 
@@ -742,6 +749,7 @@ behold, the power of variables!
    You can type a different name in the input window shown below the code.
 
    Try stepping through the code with the CodeLens tool to see how the name variable is assigned to the value read by the scanner.
+   You will have to click "Hide CodeLens"  and then "Show in CodeLens" to enter a different name for input.
    ~~~~
 
     import java.util.Scanner;
@@ -769,7 +777,7 @@ behold, the power of variables!
     
 
 
-The Scanner class has several useful methods for reading user input:
+The Scanner class has several useful methods for reading user input.  A token is a sequence of characters separated by white space.
 
 .. table:: 
   :align: left
@@ -811,6 +819,11 @@ The Scanner class has several useful methods for reading user input:
 
 
 
+
+A rhomboid (slanted rectangle) is used in a flowchart to depict data flowing into and out of a program.  
+The previous flowchart in Figure 3 used a rhomboid to indicate program output.  A rhomboid is
+also used to denote reading a value from the input stream.  
+
 .. figure:: Figures/flow_2.png
     :figclass: align-center
     :width: 300px
@@ -818,21 +831,18 @@ The Scanner class has several useful methods for reading user input:
     
     Figure 5: Flow Chart Reading User Input
 
-In a flowchart the rhomboid (slanted rectangle) is used to depict data flowing into and out of a program.  
-We saw in the previous flowchart a rhomboid was used to indicate program output.  The symbol is
-also used for reading from the input stream.  Figure 5 contains an updated version of the pizza calculator process.  
+Figure 5 contains an updated version of the pizza calculator process.  
 The first two steps have been altered to initialize the pizzaSlices and numPeople variables by reading two values from the input stream.
+In Java this will be done using a Scanner object and reading from System.in.
 
 
 .. activecode:: code1_4_11
    :language: java 
-   :autograde: unittest      
    :stdin: 16 5  
-
    
    Complete the program based on the process shown in the Figure 5 flowchart.  
-   The program should get the initial values of pizzaSlices and numPeople by reading from the input stream.  Run the program a few times to experiment with different values.
-   What happens if you enter 0 for the number of people?  We will see how to deal with the problem of division by 0 in a later lesson.
+   The program should scan two integer values to initialize pizzaSlices and numPeople.  Run the program a few times to experiment with different values for input.
+   What happens if you enter 0 for the number of people?  The program will bomb due to division by zero! We will see how to prevent this in a later lesson.  
    ~~~~
     import java.util.Scanner;
     public class PizzaCalculatorInput {
@@ -840,77 +850,43 @@ The first two steps have been altered to initialize the pizzaSlices and numPeopl
         public static void main(String[] args) {
             int pizzaSlices, numPeople, slicesPerPerson, leftoverSlices;
             Scanner scan = new Scanner(System.in);
-            //add code to initialize pizzaSlices and numPeople with input values read using the scanner object. 
+            //add code to initialize pizzaSlices and numPeople from user input 
+            pizzaSlices = scan.nextInt();
+            numPeople = scan.nextInt();
             
-            //compute and print slicesPerPerson and leftoverSlices
+            //add code to compute and print slicesPerPerson and leftoverSlices
+            slicesPerPerson = pizzaSlices / numPeople;
+            leftoverSlices = pizzaSlices % numPeople;
+            System.out.println(slicesPerPerson);
+            System.out.println(leftoverSlices);
 
         }
 
     }
 
-   ====
-   import static org.junit.Assert.*;
-   import org.junit.*;;
-   import java.io.*;
+    ====
+    import static org.junit.Assert.*;
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
 
-   public class RunestoneTests extends CodeTestHelper
-   {
-    
-   @Test
-    public void test1a()
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
     {
-      String code = getCode();
-      int count= countOccurences(code, "pizzaSlices = scan.nextInt()");
-      boolean passed = (count== 1);
-      
-      passed = getResults("1 read pizzaSlices using scan.nextInt()", count+ " read pizzaSlices using scan.nextInt()", "pizzaSlices = scan.nextInt()", passed);
+
+       @Test
+       public void test1() throws IOException
+       {
+           String target1 = "pizzaSlices = scan.nextInt()";
+           boolean passed1 = checkCodeContains("pizzaSlices = scan.nextInt()", target1);
+           String target2 = "numPeople = scan.nextInt()";
+           boolean passed2 = checkCodeContains("numPeople = scan.nextInt()", target2);
+           assertTrue(passed1 && passed2);
+       }
+
+
     }
-   @Test
-    public void test1b()
-    {
-      String code = getCode();
-      int count= countOccurences(code, "numPeople= scan.nextInt()");
-      boolean passed = (count== 1);
-      
-      passed = getResults("1 read numPeopleusing scan.nextInt()", count+ " read numPeopleusing scan.nextInt()", "numPeople= scan.nextInt()", passed);
-    }
-    @Test
-    public void test1()
-    {
-      String code = getCode();
-      int count= countOccurences(code, "slicesPerPerson = pizzaSlices / numPeople;");
-      boolean passed = (count== 1);
-      
-      passed = getResults("1 assignment slicesPerPerson", count+ " assignment slicesPerPerson", "compute slicesPerPerson", passed);
-    }
-    @Test
-    public void test2()
-    {
-      String code = getCode();
-      int count= countOccurences(code, "leftoverSlices = pizzaSlices % numPeople;");
-      boolean passed = (count== 1);
-      
-      passed = getResults("1 assignment leftoverSlices", count+ " assignment leftoverSlices", "compute leftoverSlices", passed);
-    }
-   @Test
-    public void test3()
-    {
-      String code = getCode();
-      int count= countOccurences(code, "println(slicesPerPerson)");
-      boolean passed = (count== 1);
-      
-      passed = getResults("1 print slicesPerPerson", count+ " print slicesPerPerson", "output slicesPerPerson", passed);
-    }
-   @Test
-    public void test4()
-    {
-      String code = getCode();
-      int count= countOccurences(code, "println(leftoverSlices)");
-      boolean passed = (count== 1);
-      
-      passed = getResults("1 print leftoverSlices", count+ " print leftoverSlices", "output leftoverSlices", passed);
-    }
-   }
 
 
 
@@ -1064,6 +1040,14 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
        checkCodeContainsNoRegex("formula for dogYearsAge using dogAge", target1) || checkCodeContainsNoRegex("formula for dogYearsAge using dogAge in another order", target2);
             assertTrue(passed);
        }
+       @Test
+       public void testPrint() throws IOException
+       {
+           String target = "System.out.println";
+           boolean passed = checkCodeContains("print using System.out.println", target);
+           assertTrue(passed);
+       }
+ 
     }
 
 

@@ -210,10 +210,11 @@ Alternatively, we can show a compressed trace by listing the sequence of values
 assigned to each variable as the program executes.  You might want to cross off the previous value
 when you assign a new value to a variable.  The last value listed is the variable's final value.
 
-.. figure:: Figures/compressedtrace.png
+.. figure:: Figures/compressedtrace2.png
     :width: 400px
     :figclass: align-center
     :alt: Compressed Trace
+
 
 Use paper and pencil to trace through the following program to determine the 
 values of the variables at the end.   Be careful, ``%`` is the remainder operator, not division.
