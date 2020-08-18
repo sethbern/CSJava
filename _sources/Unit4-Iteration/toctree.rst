@@ -18,8 +18,6 @@ block of statements.
    topic-4-7-practice-mixed-code.rst
    topic-4-8-practice-coding.rst
    Exercises.rst
-..   FRQcalendar.rst
-..   FRQselfDivisorA.rst
-..   FRQstringScrambleA.rst
-..   ConsumerReviewLab.rst
-
+   topic-4-10-lesson-workspace.rst
+   
+  

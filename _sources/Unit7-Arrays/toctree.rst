@@ -12,3 +12,4 @@ Arrays
    ArrayParsonsPractice.rst
    ArrayPractice.rst
    Exercises.rst
+   topic-7-8-lesson-workspace.rst

@@ -1,6 +1,7 @@
 .. qnum::
    :prefix: 1-4-
    :start: 1
+
    
 .. |CodingEx| image:: ../../_static/codingExercise.png
     :width: 30px
@@ -954,13 +955,8 @@ More information on using the Scanner class can be found here https://www.w3scho
 
 |Groupwork| Programming Challenge : Dog Years
 ------------------------------------------------
-
-.. |dog| image:: Figures/dog-free.png
-    :width: 50
-    :align: middle
-    :alt: dog
     
-|dog| In this programming challenge, you will calculate your age, and your pet's age 
+In this programming challenge, you will calculate your age, and your pet's age 
 from your birthdates, and your pet's age in dog years.   In the code below, type 
 in the current year, the year you were born, the year your dog or cat was born 
 (if you don't have one, make one up!) in the variables below. Then write formulas in 

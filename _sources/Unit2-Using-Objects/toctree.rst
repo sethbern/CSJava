@@ -23,13 +23,5 @@ create 2D drawings and animations.  This unit also introduces String and Math me
    topic-2-12-practice-coding.rst
    Exercises.rst
    JavaSwingGUIs.rst
+   topic-2-15-lesson-workspace.rst
    
-.. Old TOC
-    whatIsJava.rst
-   introClassObject.rst
-   firstClass.rst
-   compileTimeErrors.rst
-   firstOOClass.rst
-   runClass.rst
-   partsOfAClass.rst
-   JavaBasicsSummary.rst

@@ -12,5 +12,6 @@
    Array2dParsonsPractice.rst
    Array2dCodePractice.rst
    Exercises.rst
-   
+   topic-9-7-lesson-workspace.rst
+
    

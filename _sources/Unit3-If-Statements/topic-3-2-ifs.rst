@@ -142,8 +142,6 @@ Imagine that your cell phone wanted to remind you to take an umbrella if it was 
             assertTrue(passed);
         }
     }
-  
-
 
 
 |Exercise| **Check your understanding**

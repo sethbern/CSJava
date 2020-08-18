@@ -19,16 +19,5 @@ Writing Classes
    topic-6-10-social-impacts.rst
    topic-6-11-summary.rst
    Exercises.rst
-..   FRQstepTracker.rst
-..   timeFRQ.rst
-..   APLine.rst
-..   CBLabs.rst
-   
-   
-.. Incorporate things from:  firstOOClass.rst
-   runClass.rst
-   JavaBasicsSummary.rst
-   objectObasics.rst
-   objects&Classes.rst
-  
+
    
