@@ -358,8 +358,5 @@ Summary
 - The increment operator (++) and decrement operator (--) are used to add 1 or subtract 1 from the stored value of a variable. The new value is assigned to the variable.
 
 
-.. raw:: html
-    
-    <script src="../_static/custom-csawesome.js"></script>
 
 

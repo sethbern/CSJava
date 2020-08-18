@@ -663,6 +663,3 @@ Summary
 - A **compiler** translates Java code into a class file that can be run on your computer. **Compiler or syntax errors** are reported to you by the compiler if the Java code is not correctly written. Some things to check for are ; at end of command lines, matching { }, (), and "". 
 
 
-.. raw:: html
-    
-    <script src="../_static/custom-csawesome.js"></script>

@@ -1146,7 +1146,3 @@ Unit 1 Coding Practice
             .. disqus::
                 :shortname: cslearn4u
                 :identifier: javareview_ch3ex10d
-
-.. raw:: html
-    
-    <script src="../_static/custom-csawesome.js"></script>

@@ -87,7 +87,3 @@ Netbeans
 
 Netbeans (https://netbeans.org/) is one of the original Java IDEs.  
 Here is a tutorial on how to set it up: https://netbeans.org/kb/docs/java/quickstart.html.
-
-.. raw:: html
-    
-    <script src="../_static/custom-csawesome.js"></script>

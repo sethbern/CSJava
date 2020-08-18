@@ -1070,6 +1070,4 @@ Summary
 
 - The value of an expression has a type based on the evaluation of the expression.
 
-.. raw:: html
-    
-    <script src="../_static/custom-csawesome.js"></script>
+

@@ -175,7 +175,3 @@ Lesson Workspace
 
 
  
-
-.. raw:: html
-    
-    <script src="../_static/custom-csawesome.js"></script>
