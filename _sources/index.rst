@@ -6,6 +6,14 @@ Introduction to Programming with Java
 **Introduction to Programming with Java** is an interactive textbook 
 designed to introduce fundamental concepts
 in software application development using the Java programming language. 
+The curriculum is suitable for an introductory college-level course.
+
+**Introduction to Programming with Java**  is authored by Linda Seiter and Dan Palmer of 
+John Carroll University. This ebook is an adaptation of  **CSAwesome**  written 
+by Beryl Hoffman of Elms College, available at https://runestone.academy/runestone/books/published/csawesome/index.html. 
+CSAwesome is based on  the Java Review ebook written by Barbara Ericson of University of 
+Michigan, https://runestone.academy/runestone/books/published/apcsareview/index.html.
+
 
 To make sure the site saves your answers on questions, 
 please click on the person icon at the top to register or login to your course. 
