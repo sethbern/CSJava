@@ -16,5 +16,7 @@ Inheritance
    ooParsonsPractice.rst
    ooCodePractice.rst
    Exercises.rst
+   topic-10-12-lesson-workspace.rst
+
    
 

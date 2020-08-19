@@ -16,5 +16,6 @@ ArraysLists
    ListParsonsPractice.rst
    listPractice.rst
    Exercises.rst
+   topic-8-12-lesson-workspace.rst
 
 

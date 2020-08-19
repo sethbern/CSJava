@@ -19,5 +19,7 @@ Writing Classes
    topic-6-10-social-impacts.rst
    topic-6-11-summary.rst
    Exercises.rst
+   topic-6-13-lesson-workspace.rst
+
 
    

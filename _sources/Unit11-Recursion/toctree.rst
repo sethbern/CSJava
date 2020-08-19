@@ -13,4 +13,6 @@ Recursion
    rMixedUpCodePractice.rst
    recursionCodePractice.rst
    Exercises.rst
+   topic-11-7-lesson-workspace.rst
+   
 
