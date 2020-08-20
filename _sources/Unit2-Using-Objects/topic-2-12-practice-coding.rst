@@ -72,19 +72,10 @@ The coding problems below are mostly about Strings, but more problems on other t
                       System.out.println(((int) (Math.random() * 100)) + 1);
                   }
               }
-              
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex9d
-                
 
-.. tabbed:: ch4Ex1
 
-        .. tab:: Question
-
-           .. activecode::  ch4Ex1q
+.. activecode::  ch4Ex1q
               :language: java
               :autograde: unittest
               :practice: T
@@ -130,7 +121,7 @@ The coding problems below are mostly about Strings, but more problems on other t
                 }
 
 
-        .. tab:: Answer
+..       .. tab:: Answer
 
           Line 5 has an ending ``'`` instead of ``"``.  Line 7 is missing a ``=``.  Line 8 has ``firstname``, but it should be ``firstName``.  Remember that you should uppercase the first letter of each new word, after the first word, to make the variable name easier to read (use camel case).  Line 9 has ``subString``, but the method name is ``substring``.  Line 11 is missing a ``)``.
 
@@ -154,18 +145,9 @@ The coding problems below are mostly about Strings, but more problems on other t
                   }
               }
 
-        .. tab:: Discussion
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex1d
 
 
-.. tabbed:: ch4Ex4
-
-        .. tab:: Question
-
-           .. activecode::  ch4Ex4q
+.. activecode::  ch4Ex4q
               :language: java
               :autograde: unittest
               :practice: T
@@ -207,7 +189,7 @@ The coding problems below are mostly about Strings, but more problems on other t
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
 
           Line 5 ends with ``:`` when it should be ``;``.  Line 6 should be ``substring(0,3)``.  Line 7 should be ``part`` not ``message``.  Line 8 should be ``System.out.println``.
 
@@ -228,20 +210,10 @@ The coding problems below are mostly about Strings, but more problems on other t
                   }
               }
 
-        .. tab:: Discussion
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex4d
 
 
 
-
-.. tabbed:: ch4Ex10
-
-        .. tab:: Question
-
-           .. activecode::  ch4Ex10q
+.. activecode::  ch4Ex10q
               :language: java
               :autograde: unittest
               :practice: T
@@ -284,7 +256,7 @@ The coding problems below are mostly about Strings, but more problems on other t
                     }
                 }
 
-        .. tab:: Answer
+..        .. tab:: Answer
 
            Create a string that is all lowercase.  Create a new string from a substring of the original string (first letter) and  a substring of the rest of the string that is all lowercase (all except the first letter).  Print that string.
 
@@ -306,17 +278,8 @@ The coding problems below are mostly about Strings, but more problems on other t
                   }
               }
 
-        .. tab:: Discussion
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex10d
-
-.. tabbed:: ch4Ex11
-
-        .. tab:: Question
-
-           .. activecode::  ch4Ex11q
+.. activecode::  ch4Ex11q
               :language: java
               :autograde: unittest
               :practice: T
@@ -364,7 +327,7 @@ The coding problems below are mostly about Strings, but more problems on other t
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
 
            Use ``indexOf`` to find the position and then create a new message up to the pos and again after the target string.
 
@@ -387,17 +350,8 @@ The coding problems below are mostly about Strings, but more problems on other t
                   }
               }
 
-        .. tab:: Discussion
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex11d
-
-.. tabbed:: ch4Ex12
-
-        .. tab:: Question
-
-           .. activecode::  ch4Ex12q
+.. activecode::  ch4Ex12q
               :language: java
               :autograde: unittest
               :practice: T
@@ -445,7 +399,7 @@ The coding problems below are mostly about Strings, but more problems on other t
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
 
            Use ``indexOf`` to find the position of the "lol" then create a new string from up to that position and append the "laugh out loud" and the substring after it.
 
@@ -467,16 +421,7 @@ The coding problems below are mostly about Strings, but more problems on other t
                                           message.substring(pos + target.length());
                       System.out.println(newMessage);
                   }
-              }
-
-        .. tab:: Discussion
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex12d
-
-                
-                
+              }               
 
 
 For more practice with Strings see problems at http://codingbat.com/java/String-1.  

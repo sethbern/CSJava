@@ -92,13 +92,10 @@ Code Practice with Object Oriented Concepts
                 :shortname: cslearn4u
                 :identifier: javareview_ooex2d 
                 
-.. tabbed:: ooEx3
 
-        .. tab:: Question
-
-           Edit this code so the class Beagle is a subclass of the Dog class.  When you run the code it should print "woof!" and then "arf arf"
+Edit this code so the class Beagle is a subclass of the Dog class.  When you run the code it should print "woof!" and then "arf arf"
                 
-           .. activecode:: ooEx3q
+.. activecode:: ooEx3q
               :language: java
    
               public class Dog 
@@ -126,7 +123,7 @@ Code Practice with Object Oriented Concepts
               }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            In order to specify the parent class, use the extends keyword in the class header of the child class.
         
@@ -157,19 +154,10 @@ Code Practice with Object Oriented Concepts
                   }   
               }
     			
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex3d
-
-.. tabbed:: ooEx4
-
-        .. tab:: Question
-
-           Add an equals method to this class that returns true if the current Dog and passed Dog have the same name.  The code should print false twice then true twice.
+Add an equals method to this class that returns true if the current Dog and passed Dog have the same name.  The code should print false twice then true twice.
                         
-           .. activecode::  ooEx4q
+.. activecode::  ooEx4q
               :language: java
    
               public class Dog 
@@ -199,7 +187,7 @@ Code Practice with Object Oriented Concepts
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            In order to override the equals method, 
            the method header has to have the same return type and parameters as the equals method for the Object class.  The code should print false twice then true twice.
@@ -236,20 +224,10 @@ Code Practice with Object Oriented Concepts
               }
 				
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex4d
-				
-              
-.. tabbed:: ooEx5
+Override the taste method from the Candy class in the Chocolate class to return "tastes chocolately".  It should print "tastes sweet!" and then "tastes chocolately".
 
-        .. tab:: Question
-
-           Override the taste method from the Candy class in the Chocolate class to return "tastes chocolately".  It should print "tastes sweet!" and then "tastes chocolately".
-
-           .. activecode::  ooEx5q
+.. activecode::  ooEx5q
               :language: java
    
               public class Candy 
@@ -273,7 +251,7 @@ Code Practice with Object Oriented Concepts
                   // ADD CODE HERE              
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            To override a method in a child class, you must have the same return types and parameters as the parent class's method
         
@@ -305,20 +283,10 @@ Code Practice with Object Oriented Concepts
               }
 
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex5d
-
-             
-.. tabbed:: ooEx6
-
-        .. tab:: Question
-
-           Overload the greet method to just print "Hello" if not given any parameters.  It should print "Hello" and then "Hello Sansa".
+Overload the greet method to just print "Hello" if not given any parameters.  It should print "Hello" and then "Hello Sansa".
            
-           .. activecode::  ooEx6q
+.. activecode::  ooEx6q
               :language: java
    
               public class Student 
@@ -335,7 +303,7 @@ Code Practice with Object Oriented Concepts
                   }
               }
               
-        .. tab:: Answer
+..        .. tab:: Answer
         
            To overload a method, you use the same name as the method but change the parameters or return type.
         
@@ -362,19 +330,10 @@ Code Practice with Object Oriented Concepts
                   }
               }
  
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex6d
-
-.. tabbed:: ooEx7
-
-        .. tab:: Question
-
-           Add a call to Pet's brag method before printing anything in Dog's brag method (hint: use super to call an overridden method).  It should print "I have the best pet!" and then "I have the best dog".
+Add a call to Pet's brag method before printing anything in Dog's brag method (hint: use super to call an overridden method).  It should print "I have the best pet!" and then "I have the best dog".
            
-           .. activecode::  ooEx7q
+.. activecode::  ooEx7q
               :language: java
    
               public class Pet 
@@ -402,7 +361,7 @@ Code Practice with Object Oriented Concepts
                   }
               }
               
-        .. tab:: Answer
+..        .. tab:: Answer
         
            In order to use a method that has been overwritten in a subclass, you can use super.methodName().
            
@@ -434,20 +393,10 @@ Code Practice with Object Oriented Concepts
               }
 				
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex7d	
-   
+Finish the Teacher constructor.  Use super to use the Person construtor to set the fields inherited from Person.  It should print "Destini 20" followed by "Erica 55 Masters in Teaching".
 
-.. tabbed:: ooEx8
-
-        .. tab:: Question
-
-          Finish the Teacher constructor.  Use super to use the Person construtor to set the fields inherited from Person.  It should print "Destini 20" followed by "Erica 55 Masters in Teaching".
-
-           .. activecode::  ooEx8q
+.. activecode::  ooEx8q
               :language: java
    
               public class Person 
@@ -496,7 +445,7 @@ Code Practice with Object Oriented Concepts
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Use super(parm1,parm2) to call the parent's constructor.  This is especially useful to initialize inherited fields.
            
@@ -550,19 +499,10 @@ Code Practice with Object Oriented Concepts
                   }
               }
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex8d	             
+Add public getter and setter methods to the Store class so its variables can be accessed by other classes.  It should print the store's name and address and then change both and print the new values.
 
-.. tabbed:: ooEx9
-
-        .. tab:: Question
-
-          Add public getter and setter methods to the Store class so its variables can be accessed by other classes.  It should print the store's name and address and then change both and print the new values.
-
-           .. activecode::  ooEx9q
+.. activecode::  ooEx9q
               :language: java
    
               public class Store 
@@ -593,7 +533,7 @@ Code Practice with Object Oriented Concepts
               
               
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            A getter method is one that returns the value of a private variable and a setter method allows one to change the value of a private variable without having direct access to it.
            
@@ -630,19 +570,10 @@ Code Practice with Object Oriented Concepts
               }
 				
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex9d	
-                
-.. tabbed:: ooEx10
-
-        .. tab:: Question
-
-          Correctly finish the Dog subclass for the following Animal class.  Override the methods speak() to print "woof" and eat() to print "num num".
+Correctly finish the Dog subclass for the following Animal class.  Override the methods speak() to print "woof" and eat() to print "num num".
           
-           .. activecode::  ooEx10q
+.. activecode::  ooEx10q
               :language: java
    
               class Animal 
@@ -672,7 +603,7 @@ Code Practice with Object Oriented Concepts
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            .. activecode::  ooEx10a
               :language: java
@@ -706,19 +637,10 @@ Code Practice with Object Oriented Concepts
               }
 				
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex10d						
-
-.. tabbed:: ooEx11
-
-        .. tab:: Question
-
-          Override the compareTo method so that it returns a postive number if the current Person is older than the passed other and a negative number if they are younger. If their age is the same then return the compareTo result on the names.
+Override the compareTo method so that it returns a postive number if the current Person is older than the passed other and a negative number if they are younger. If their age is the same then return the compareTo result on the names.
           
-           .. activecode::  ooEx11q
+.. activecode::  ooEx11q
               :language: java
    
               public class Person implements Comparable<Person>
@@ -752,7 +674,7 @@ Code Practice with Object Oriented Concepts
                    }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            By overriding the compareTo method you are able to compare objects based on specified factors.
            
@@ -800,19 +722,11 @@ Code Practice with Object Oriented Concepts
                    }
               }
 				
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex11d
-                
-.. tabbed:: ooEx12
-
-        .. tab:: Question
+ 
        
-       	   Override the Person class's speak function inside the Student class. Make the function print "I'm a student". 
+Override the Person class's speak function inside the Student class. Make the function print "I'm a student". 
        	   
-           .. activecode::  ooEx12q
+.. activecode::  ooEx12q
               :language: java
               
               public class Person
@@ -834,7 +748,7 @@ Code Practice with Object Oriented Concepts
                   // ADD CODE HERE
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            In the Student class we add a public void method called speak() and print "I'm a student" inside. It is important to remember that in order to override a function you must have the same method header and parameters!
            
@@ -863,9 +777,3 @@ Code Practice with Object Oriented Concepts
                   }
               }
                  
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ooex12d
-                

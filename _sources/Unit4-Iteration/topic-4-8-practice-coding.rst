@@ -74,17 +74,8 @@ Coding Practice with Loops
               }
 
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex1d
-                
-.. tabbed:: ch6ex2
-
-        .. tab:: Question
-           
-           .. activecode::  ch6ex2q
+            
+.. activecode::  ch6ex2q
               :language: java
               :autograde: unittest
               :practice: T
@@ -128,7 +119,7 @@ Coding Practice with Loops
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: You need to specify the declarations and initializations of the loop variables(s) before the Boolean condition.  You need to do the change(s) at the end of the body of the loop.  
            
@@ -149,17 +140,8 @@ Coding Practice with Loops
                   }  
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex2d
-                
-.. tabbed:: ch6ex3
-
-        .. tab:: Question  
-           
-           .. activecode::  ch6ex3q
+          
+.. activecode::  ch6ex3q
               :language: java
               :autograde: unittest
               :practice: T
@@ -204,7 +186,7 @@ Coding Practice with Loops
                     }
                 }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: In a ``for`` loop you declare and initialize the variable(s), specify the condition, and specify how the loop variable(s) change in the header of the ``for`` loop as shown below.
            
@@ -223,17 +205,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex3d
-                
-.. tabbed:: ch6ex4
-
-        .. tab:: Question
-           
-           .. activecode::  ch6ex4q
+      
+.. activecode::  ch6ex4q
               :language: java
               :autograde: unittest
               :practice: T
@@ -275,7 +248,7 @@ Coding Practice with Loops
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: You need to specify the declarations and initializations of the loop variables(s) before the Boolean condition.  You need to do the change(s) at the end of the body of the loop.  		
            
@@ -296,18 +269,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex4d
-                
-                
-.. tabbed:: ch6ex5
-
-        .. tab:: Question
            
-           .. activecode::  ch6ex5q
+.. activecode::  ch6ex5q
               :language: java
               :autograde: unittest
               :practice: T
@@ -354,7 +317,7 @@ Coding Practice with Loops
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: On line 6 it should be ``while (x <= 10)``.  Add line 9 at the end of the loop body to increment ``x`` so that the loop ends (isn't an infinite loop).    
         
@@ -374,18 +337,9 @@ Coding Practice with Loops
                       } 
                   }    
               }
-              
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex5d
-                
-.. tabbed:: ch6ex6
 
-        .. tab:: Question
-           
-           .. activecode::  ch6ex6q
+.. activecode::  ch6ex6q
               :language: java
               :autograde: unittest
               :practice: T
@@ -424,7 +378,7 @@ Coding Practice with Loops
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Remove the ``x--;`` at the end of the body of the loop.  The change area in the for loop decrements ``x`` by 1, so this line isn't needed. 
         
@@ -444,17 +398,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex6d
-                
-.. tabbed:: ch6ex7n
-
-        .. tab:: Question
-           
-           .. activecode::  ch6ex7nq
+        
+.. activecode::  ch6ex7nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -493,7 +438,7 @@ Coding Practice with Loops
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Move the ``x--;`` to the end of the loop body (after the ``System.out.println``.  Change the ``while`` to ``x > 0``.
            
@@ -514,17 +459,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex7nd
-                
-.. tabbed:: ch6ex8n
-
-        .. tab:: Question
            
-           .. activecode::  ch6ex8nq
+.. activecode::  ch6ex8nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -566,7 +502,7 @@ Coding Practice with Loops
                     }
                 }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: You can use a ``for`` loop as shown below. Start ``x`` at 100, loop while it is greater or equal to 0, and subtract 10 each time after the body of the loop executes.
            
@@ -582,20 +518,8 @@ Coding Practice with Loops
                           System.out.println(x);
                   }
               }
-              
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex8nd
-                
-
-                
-.. tabbed:: ch6ex10n
-
-        .. tab:: Question  
-           
-           .. activecode::  ch6ex10nq
+         
+.. activecode::  ch6ex10nq
               :language: java
               :autograde: unittest
               :practice: T   
@@ -639,7 +563,7 @@ Coding Practice with Loops
               
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Use a ``for`` loop to loop from 10 to 1.  Use a conditional to test if x is even (x % 2 == 0).  
            
@@ -661,17 +585,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex10nd
-                
-.. tabbed:: ch6ex11n
-
-        .. tab:: Question  
-           
-           .. activecode::  ch6ex11nq
+      
+.. activecode::  ch6ex11nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -715,7 +630,7 @@ Coding Practice with Loops
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
            
            .. activecode::  ch6ex11na
               :language: java
@@ -734,17 +649,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex11nd
-
-.. tabbed:: ch6ex9n
-
-        .. tab:: Question
            
-           .. activecode::  ch6ex9nq
+.. activecode::  ch6ex9nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -786,7 +692,7 @@ Coding Practice with Loops
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Add a ``while`` loop and loop while there is still at least one character in the string. At the end of the body of the loop reset the message to all characters except the last one.   
           
@@ -808,18 +714,8 @@ Coding Practice with Loops
               }
 
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex9nd
-                
-                
-.. tabbed:: ch6ex12n
-
-        .. tab:: Question  
            
-           .. activecode::  ch6ex12nq
+.. activecode::  ch6ex12nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -863,7 +759,7 @@ Coding Practice with Loops
                     }
                 }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Use a ``while`` loop.  Loop while ``x`` has been found in the message (using ``indexOf``).  Remove the ``x`` (using substring). Use indexOf again to get the position of the next ``x`` or -1 if there are none left in the message. 
            
@@ -887,18 +783,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex12nd
-                
-
-.. tabbed:: ch6ex16n
-
-        .. tab:: Question
-           
-           .. activecode::  ch6ex16nq
+          
+.. activecode::  ch6ex16nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -939,7 +825,7 @@ Coding Practice with Loops
                     }
                 }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Use indexOf to find the next ``x``.  Loop while pos is greater than or equal to 0.  Use substring to reset message beyond the next ``x``.   
            
@@ -965,19 +851,7 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-        
-           .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex16nd
-                
-
-
-.. tabbed:: ch6ex14n
-
-        .. tab:: Question 
-           
-           .. activecode::  ch6ex14nq
+.. activecode::  ch6ex14nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -1020,7 +894,7 @@ Coding Practice with Loops
                     }
                 }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Use nested ``for`` loops.  Use the outer loop to control the number of rows and the inner loop to control the number of stars per row. 
            
@@ -1043,18 +917,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex14nd
-                
-                
-.. tabbed:: ch6ex15n
-
-        .. tab:: Question
            
-           .. activecode::  ch6ex15nq
+.. activecode::  ch6ex15nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -1099,7 +963,7 @@ Coding Practice with Loops
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Use nested ``for`` loops.  Use the outer loop to control the number of rows and the inner loop to control the number of stars per row. 
            
@@ -1122,18 +986,8 @@ Coding Practice with Loops
                   }
               }
               
-        .. tab:: Discussion 
-        
-           .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex15nd
-                
 
-.. tabbed:: ch6ex13n
-
-        .. tab:: Question 
-           
-           .. activecode::  ch6ex13nq
+.. activecode::  ch6ex13nq
               :language: java
               :autograde: unittest
               :practice: T
@@ -1177,7 +1031,7 @@ Coding Practice with Loops
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Answer: Use nested ``for`` loops. The outer loop controls what is printed on each row and the number of rows.  The inner loop controls the number of values printer per row. 
            
@@ -1199,9 +1053,4 @@ Coding Practice with Loops
                       }
                   }
               }
-              
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch6ex13nd

@@ -64,20 +64,11 @@ Code Practice with 2D Arrays
               }
 
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex1d
-                
-.. tabbed:: arr2DEx2
-
-        .. tab:: Question
-
+ 
            
-          Replace the "ADD CODE HERE" below with the code to declare and initialize a two-dimensional String array called ``students`` with the names "Brice, Marvin, Anna" in the first row and "Kamal, Maria, Elissa" in the second. The finished code will print all the names in the array starting with all in the first row followed by all in the second row. 
+Replace the "ADD CODE HERE" below with the code to declare and initialize a two-dimensional String array called ``students`` with the names "Brice, Marvin, Anna" in the first row and "Kamal, Maria, Elissa" in the second. The finished code will print all the names in the array starting with all in the first row followed by all in the second row. 
            
-           .. activecode::  arr2DEx2q
+.. activecode::  arr2DEx2q
               :language: java
    
               public class Test1
@@ -100,7 +91,7 @@ Code Practice with 2D Arrays
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            You can declare, create, and initialize a 3 by 3 two-dimensional String array on one line as shown below.  Declare the array with ``type[][] name``.  Create and initialize an array with two rows and three columns
            using ``={ {item1, item2, item3}, {item4, item5, item6} };``.  Be sure to separate the items with commas.  Also separate the rows with a comma.
@@ -127,19 +118,10 @@ Code Practice with 2D Arrays
               }
 
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex2d                
-
-.. tabbed:: arr2DEx3
-
-        .. tab:: Question
-
-           Print the values 47, 51, and 20 by accessing them in the  the given two-dimensional array.
+Print the values 47, 51, and 20 by accessing them in the  the given two-dimensional array.
            
-           .. activecode::  arr2DEx3q
+.. activecode::  arr2DEx3q
               :language: java
    
               public class Test1
@@ -155,7 +137,7 @@ Code Practice with 2D Arrays
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
            
            Use ``arr[row][col]`` to get the value at a particular row and column.
            Remember that the index for the first row is 0 and the index for the first column is also 0. 
@@ -176,19 +158,11 @@ Code Practice with 2D Arrays
                   }
               }
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex3d  
 
-.. tabbed:: arr2DEx4
-
-        .. tab:: Question
-
-           Print the values 8, 3, 87, and 34 by accessing them from the given two-dimensional array.
+Print the values 8, 3, 87, and 34 by accessing them from the given two-dimensional array.
            
-           .. activecode::  arr2DEx4q
+.. activecode::  arr2DEx4q
               :language: java
    
               public class Test1
@@ -204,7 +178,7 @@ Code Practice with 2D Arrays
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
            
            Use ``arr[row][col]`` to get the value at a particular row and column.
            Remember that the index for the first row is 0 and the index for the first column is also 0.
@@ -227,25 +201,15 @@ Code Practice with 2D Arrays
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex4d  
-
-.. tabbed:: arr2DEx5
-
-        .. tab:: Question
-
-           Print the number of rows in the given two-dimensional array, or the length of the outer array. Then print the number of columns, or the length of each inner array. 
+Print the number of rows in the given two-dimensional array, or the length of the outer array. Then print the number of columns, or the length of each inner array. 
            
-           **Ex.** The array { {"hello","there","world"},{"how","are","you"} } should print:
+**Ex.** The array { {"hello","there","world"},{"how","are","you"} } should print:
            
-           Rows: 2
+Rows: 2
            
-           Columns: 3
+Columns: 3
            
-           .. activecode::  arr2DEx5q
+.. activecode::  arr2DEx5q
               :language: java
    
               public class Test1 {
@@ -264,7 +228,7 @@ Code Practice with 2D Arrays
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
            
           To get the number of rows, or the length of the outer array, use ``arrayName.length`` . 
           To get the number of columns, or the length of an inner array, use ``arrayName[0].length``. 
@@ -284,19 +248,9 @@ Code Practice with 2D Arrays
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex5d  
-
-.. tabbed:: arr2DEx6
-
-        .. tab:: Question
-
-           Loop through the given two-dimensional array, printing out the values in the first row followed by those in the second row and so on.
+Loop through the given two-dimensional array, printing out the values in the first row followed by those in the second row and so on.
            
-           .. activecode::  arr2DEx6q
+.. activecode::  arr2DEx6q
               :language: java
    
               public class Test1
@@ -311,7 +265,7 @@ Code Practice with 2D Arrays
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
            
            Create a loop that iterates through all of the outer arrays, or the rows using ``arrayName.length``.
            Then iterate through the inner arrays, or columns, using ``arrayName[0].length``.
@@ -336,19 +290,10 @@ Code Practice with 2D Arrays
                   }
               }
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex6d
-
-.. tabbed:: arr2DEx7
-
-        .. tab:: Question
-
-           Declare and create a two-dimensional array of strings named ``colors``.  Put the colors ("red", "yellow", "blue") in the first row, and the colors ("orange", "green", "purple") in the second row. Then print every value in the array.
+Declare and create a two-dimensional array of strings named ``colors``.  Put the colors ("red", "yellow", "blue") in the first row, and the colors ("orange", "green", "purple") in the second row. Then print every value in the array.
            
-           .. activecode::  arr2DEx7q
+.. activecode::  arr2DEx7q
               :language: java
    
               public class Test1
@@ -359,7 +304,7 @@ Code Practice with 2D Arrays
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
            
            Declare and initialize the array in one statement as shown below.  Loop through the rows and columns and print each value.
  
@@ -383,19 +328,10 @@ Code Practice with 2D Arrays
                   }
               }
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex7d
-
-.. tabbed:: arr2DEx8
-
-        .. tab:: Question
-
-           Replace the "ADD CODE HERE" below with the code to count and print the number of 7's that are in the 2d array. It should print 2.
+Replace the "ADD CODE HERE" below with the code to count and print the number of 7's that are in the 2d array. It should print 2.
            
-           .. activecode::  arr2DEx8q
+.. activecode::  arr2DEx8q
               :language: java
    
               public class Test1
@@ -411,7 +347,7 @@ Code Practice with 2D Arrays
               }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Use a nested for loop to loop through all the elements in a 2d array.  Initialize a count variable to zero before the loop, and every time there is a 7 at the current row and column, increment the count variable by 1.
         
@@ -442,19 +378,9 @@ Code Practice with 2D Arrays
               }
 
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex8d
-
-.. tabbed:: arr2DEx9
-
-        .. tab:: Question
-
-           Replace the "ADD CODE HERE" below with the code to print out the sum of the numbers in the second row of the "table" array.  It should print 18.
+Replace the "ADD CODE HERE" below with the code to print out the sum of the numbers in the second row of the "table" array.  It should print 18.
            
-           .. activecode::  arr2DEx9q
+.. activecode::  arr2DEx9q
               :language: java
    
               public class Test1
@@ -470,7 +396,7 @@ Code Practice with 2D Arrays
               }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Use a loop to find the sum of all of the values in the second row. Since we are only looping through one row, we do not need a nested for loop. Initialize the sum to 0 and then loop through each element in the second row and add it to the sum.
         
@@ -495,19 +421,10 @@ Code Practice with 2D Arrays
               }
 
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex9d
-				
-.. tabbed:: arr2DEx10
-
-        .. tab:: Question
-
-           Replace the "ADD CODE HERE" below with the code to find the sum of the values on the diagonal from [0][0] to [num rows - 1][num rows - 1] Print the sum.  It should print 5.
+Replace the "ADD CODE HERE" below with the code to find the sum of the values on the diagonal from [0][0] to [num rows - 1][num rows - 1] Print the sum.  It should print 5.
            
-           .. activecode::  arr2DEx10q
+.. activecode::  arr2DEx10q
               :language: java
    
               public class Test1
@@ -523,7 +440,7 @@ Code Practice with 2D Arrays
               }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Create a variable to hold the total and loop through the rows in the array.  Each time through the loop add the value at [row][row] to the total.  Print the total.
 		   
@@ -550,19 +467,10 @@ Code Practice with 2D Arrays
               }
 
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex10d
-                
-.. tabbed:: arr2DEx11
+Replace the “ADD CODE HERE” below with the code to declare and create a two-dimensional array of integers ``numbers`` with the numbers (1,2,3) in the first row, and the numbers (4,5,6) in the second row. Then loop through the two-dimensional array, printing out the values in the first row followed by those in the second row.
 
-        .. tab:: Question
-
-           Replace the “ADD CODE HERE” below with the code to declare and create a two-dimensional array of integers ``numbers`` with the numbers (1,2,3) in the first row, and the numbers (4,5,6) in the second row. Then loop through the two-dimensional array, printing out the values in the first row followed by those in the second row.
-
-           .. activecode::  arr2DEx11q
+.. activecode::  arr2DEx11q
               :language: java
 
               public class Test1
@@ -573,7 +481,7 @@ Code Practice with 2D Arrays
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
 
            Declare and initialize the array in one statement as shown below. Loop through the rows and columns and print each value.
 
@@ -597,19 +505,10 @@ Code Practice with 2D Arrays
               }
 
 
-        .. tab:: Discussion
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex11d
+Replace the “ADD CODE HERE” below with the code to declare and create a two-dimensional array of integers ``numbers`` with the numbers (1,2,3) in the first row, the numbers (4,5,6) in the second row, and the numbers (7,8,9) in the third row. Then loop through the two-dimensional array, printing out the values in the first row followed by those in the second row and so on.
 
-.. tabbed:: arr2DEx12
-
-        .. tab:: Question
-
-           Replace the “ADD CODE HERE” below with the code to declare and create a two-dimensional array of integers ``numbers`` with the numbers (1,2,3) in the first row, the numbers (4,5,6) in the second row, and the numbers (7,8,9) in the third row. Then loop through the two-dimensional array, printing out the values in the first row followed by those in the second row and so on.
-
-           .. activecode::  arr2DEx12q
+.. activecode::  arr2DEx12q
               :language: java
 
               public class Test1
@@ -620,7 +519,7 @@ Code Practice with 2D Arrays
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
 
            Declare and initialize the array in one statement as shown below. Loop through the rows and columns and print each value.
 
@@ -643,20 +542,10 @@ Code Practice with 2D Arrays
               }
 
 
-        .. tab:: Discussion
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex12d
+Given the following array, replace the “ADD CODE HERE” below with the code to replace the word "purple" with "yellow".
 
-
-.. tabbed:: arr2DEx13
-
-        .. tab:: Question
-
-           Given the following array, replace the “ADD CODE HERE” below with the code to replace the word "purple" with "yellow".
-
-           .. activecode::  arr2DEx13q
+.. activecode::  arr2DEx13q
               :language: java
 
               public class Test1
@@ -677,7 +566,7 @@ Code Practice with 2D Arrays
                   }
               }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Use arr[row][col] = value; to set the value at a particular row and column.  Remember the index of the first row is 0 and the index of the first column is also 0.
 
@@ -703,9 +592,3 @@ Code Practice with 2D Arrays
                   }
               }
 
-
-        .. tab:: Discussion
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_arr2Dex13d

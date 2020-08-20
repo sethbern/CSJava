@@ -14,7 +14,8 @@ Coding Practice
               :autograde: unittest
               :practice: T   
               
-              The following code should print ``x is greater than 0``.  However, the code has errors.  Fix the code so that it compiles and runs correctly. 
+              The following code should print ``x is greater than 0``.  However, the code has errors.  Fix the code so that it compiles and runs correctly.
+              Run the program several times with different values of x to test both if and else branches. 
               ~~~~
               public class Test1
               {
@@ -34,14 +35,13 @@ Coding Practice
                 
                 public class RunestoneTests extends CodeTestHelper
                 {
-                    @Test
-                    public void testMain() throws IOException
-                    {
-                        String output = getMethodOutput("main");
-                        String expect = "x is greater than 0\n";
-                        boolean passed = getResults(expect, output, "Expected output from main");
-                        assertTrue(passed);
-                    }
+                  @Test
+                  public void testIf() throws IOException
+                  {
+                    String target = "if (x > 0)";
+                    boolean passed = checkCodeContains("if boolean expression nested within pair of parentheses", target);
+                    assertTrue(passed);
+                  }  
                 }
 
 
@@ -67,17 +67,44 @@ Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex1d
+.. activecode::  ch5Ex2qb
+              :language: java
+              :autograde: unittest
+              :practice: T   
+   
+              The following code should generate a random number and print if it is evenly divisible by 2.  However, the code has an error and always prints "Your number is even", even if the random number is odd.
+              Fix the code so that it only prints the message when the number is even.
+              ~~~~
+              public class Test1
+              {
+                  public static void main(String[] args)
+                  {
+                      int num = (int) (Math.random() * 10);
+                      System.out.println(num);
+                      if (num % 2 == 0) ;
+                      {
+                          System.out.println("Your number is even");
+                      }
+                  }
+              }
+              ====
+              import static org.junit.Assert.*;
+                import org.junit.*;;
+                import java.io.*;
                 
-.. tabbed:: ch5Ex2
+                public class RunestoneTests extends CodeTestHelper
+                {
+                  @Test
+                  public void testIf() throws IOException
+                  {
+                    String target = "if (num % 2 == 0) ;";
+                    boolean passed = checkCodeNotContains("remove semicolon after boolean condition in if statement", target);
+                    assertTrue(passed);
+                  }  
+                }            
 
-        .. tab:: Question  
-           
-           .. activecode::  ch5Ex2q
+.. activecode::  ch5Ex2q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -116,7 +143,7 @@ Coding Practice
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Line 7 is missing the starting ``(``.  Line 8 is missing the closing ``"``.  Line 9 should be ``==`` rather than ``=`` to test for equality.  Line 12 should be ``System.out.println``.
            
@@ -140,18 +167,9 @@ Coding Practice
                           System.out.println("Your guess is too high");
                   }
               }
-              
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex2d
-                
-.. tabbed:: ch5Ex3
 
-        .. tab:: Question
-           
-           .. activecode::  ch5Ex3q
+.. activecode::  ch5Ex3q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -188,7 +206,7 @@ Coding Practice
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Line 5 should be ``true`` not ``True``.  Lines 10 and 8 should be swapped.
            
@@ -211,17 +229,8 @@ Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex3d
-                
-.. tabbed:: ch5Ex4
-
-        .. tab:: Question
            
-           .. activecode::  ch5Ex4q
+.. activecode::  ch5Ex4q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -232,7 +241,7 @@ Coding Practice
               {
                   public static void main(String[] args)
                   {
-                      int x = 3
+                      int x = 0
                       if (x > 0 && x <= 10)
                           System.out.println("x is between 0 and 10 inclusive");
                       otherwise 
@@ -257,7 +266,7 @@ Coding Practice
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Line 5 is missing an end  ``;``.  Line 6 should be ``x >= 0``.  Line 8 should be ``else`` instead of ``otherwise``.		
            
@@ -279,18 +288,9 @@ Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex4d
-                
-                
-.. tabbed:: ch5Ex5
-
-        .. tab:: Question 
+ 
            
-           .. activecode::  ch5Ex5q
+.. activecode::  ch5Ex5q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -343,7 +343,7 @@ Coding Practice
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            One way to solve this is to add an ``else if`` and then print out if x is equal to 0 and an ``else`` to print that x is greater than 0 as shown below.
         
@@ -369,17 +369,8 @@ Coding Practice
                       
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex5d
                 
-.. tabbed:: ch5Ex6
-
-        .. tab:: Question
-           
-           .. activecode::  ch5Ex6q
+.. activecode::  ch5Ex6q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -435,7 +426,7 @@ Coding Practice
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Add an ``if`` statement and use a logical or (``||``) to join the conditions and print the one message.  Also add an ``else`` statement and print the other message.
         
@@ -458,17 +449,8 @@ Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex6d
-                
-.. tabbed:: ch5Ex7
-
-        .. tab:: Question  
            
-           .. activecode::  ch5Ex7q
+.. activecode::  ch5Ex7q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -521,7 +503,7 @@ Coding Practice
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Add a conditional with a negation ``!`` for haveHomework and a logical and to create a complex conditional.   
            
@@ -545,17 +527,8 @@ Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex7d
-                
-.. tabbed:: ch5Ex8
-
-        .. tab:: Question
-           
-           .. activecode::  ch5Ex8q
+          
+.. activecode::  ch5Ex8q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -606,7 +579,7 @@ Coding Practice
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Add a conditional and print the first message if the temp is above 100 and otherwise print the other message.
           
@@ -629,17 +602,8 @@ Coding Practice
               }
 
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex8d
-                
-.. tabbed:: ch5Ex9
-
-        .. tab:: Question
-           
-           .. activecode::  ch5Ex9q
+          
+.. activecode::  ch5Ex9q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -710,7 +674,7 @@ Coding Practice
                     }
                 }
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Add a conditional with two ``else if`` statements and a final ``else``.
            
@@ -736,17 +700,7 @@ Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex9d
-                
-.. tabbed:: ch5Ex10
-
-        .. tab:: Question 
-           
-           .. activecode::  ch5Ex10q
+.. activecode::  ch5Ex10q
               :language: java
               :autograde: unittest
               :practice: T   
@@ -842,7 +796,7 @@ Coding Practice
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Add a conditional with three ``else if`` statements and a final ``else``.  
            
@@ -871,15 +825,7 @@ Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch5Ex10d
-                
-
-                
-                
+               
 
      
 For more practice with conditionals, and especially complex conditionals, go to http://codingbat.com/java/Logic-1 and http://codingbat.com/java/Logic-2 
