@@ -41,6 +41,25 @@ Unit 1 Coding Practice
                         boolean passed = getResults(expect, output, "Expected output from main");
                         assertTrue(passed);
                     }
+                    @Test
+                    public void testPrintStringsA() throws IOException
+                    {
+                      String target1 = "println(name +";
+                      boolean passed1 = checkCodeContains("System.out.println with name variable", target1);
+                      
+                      assertTrue(passed1);
+                    }
+                    @Test
+                    public void testPrintStringsB() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ color") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with color variable", passed);
+                     assertTrue(passed);
+                    }
                 }
 
         .. tab:: Answer
@@ -64,17 +83,10 @@ Unit 1 Coding Practice
                   }
               }
 
-        .. tab:: Discussion
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex2d
 
-.. tabbed:: ch4Ex3
 
-        .. tab:: Question
-
-           .. activecode::  ch4Ex3q
+.. activecode::  ch4Ex3q
               :language: java
               :autograde: unittest
               :practice: T
@@ -107,10 +119,29 @@ Unit 1 Coding Practice
                         boolean passed = getResults(expect, output, "Expected output from main");
                         assertTrue(passed);
                     }
+                    @Test
+                    public void testPrintStringsA() throws IOException
+                    {
+                      String target1 = "println(name +";
+                      boolean passed1 = checkCodeContains("System.out.println with name variable", target1);
+                      
+                      assertTrue(passed1);
+                    }
+                    @Test
+                    public void testPrintStringsB() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ sport") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with sport variable", passed);
+                     assertTrue(passed);
+                    }
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
 
            Line 5 is missing a ``=``.  Line 6 is missing the closing ``"``.  Line 7 has ``Name`` when it should be ``name``.  Remember that a variable name starts with a lowercase letter.  Line 8 is missing an ending ``+``.
 
@@ -130,17 +161,9 @@ Unit 1 Coding Practice
                   }
               }
 
-        .. tab:: Discussion
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex3d
 
-.. tabbed:: ch4Ex5
-
-        .. tab:: Question
-
-           .. activecode::  ch4Ex5q
+.. activecode::  ch4Ex5q
               :language: java
               :autograde: unittest
               :practice: T
@@ -172,10 +195,32 @@ Unit 1 Coding Practice
                         boolean passed = getResults(expect, output, "Expected output from main");
                         assertTrue(passed);
                     }
+                    @Test
+                    public void testPrintStringsA() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ name") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with name variable", passed);
+                     assertTrue(passed);
+                    }
+                    @Test
+                    public void testPrintStringsB() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ color") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with color variable", passed);
+                     assertTrue(passed);
+                    }
                 }
 
 
-        .. tab:: Answer
+.. .. tab:: Answer
 
            Add the required strings using the ``+`` operator and be sure to include spaces as needed.
 
@@ -198,24 +243,16 @@ Unit 1 Coding Practice
                    }
               }
 
-        .. tab:: Discussion
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex5d
-
-.. tabbed:: ch4Ex6
-
-        .. tab:: Question
 
 
-           Finish the code below so that it prints "Your name is Justin and your age is 16" using the variables provided.
 
-           .. activecode::  ch4Ex6q
+.. activecode::  ch4Ex6q
               :language: java
               :autograde: unittest
               :practice: T
 
+              Finish the code below so that it prints "Your name is Justin and your age is 16" using the variables provided.
+              ~~~~
               public class Test1
               {
                   public static void main(String[] args)
@@ -241,10 +278,32 @@ Unit 1 Coding Practice
                         boolean passed = getResults(expect, output, "Expected output from main");
                         assertTrue(passed);
                     }
+                    @Test
+                    public void testPrintStringsA() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ name") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with name variable", passed);
+                     assertTrue(passed);
+                    }
+                    @Test
+                    public void testPrintStringsB() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ age") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with age variable", passed);
+                     assertTrue(passed);
+                    }
                 }
 
 
-        .. tab:: Answer
+.. .. tab:: Answer
 
            Use the ``+`` operator to append the strings.  Be sure to include spaces as needed.
 
@@ -266,17 +325,10 @@ Unit 1 Coding Practice
                   }
               }
 
-        .. tab:: Discussion
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex6d
 
-.. tabbed:: ch4Ex7
 
-        .. tab:: Question
-
-           .. activecode::  ch4Ex7q
+.. activecode::  ch4Ex7q
               :language: java
               :autograde: unittest
               :practice: T
@@ -304,14 +356,36 @@ Unit 1 Coding Practice
                     public void testMain() throws IOException
                     {
                         String output = getMethodOutput("main");
-                        String expect = "Julian’s favorite color is green. His favorite food is pizza.";
+                        String expect = "Julian's favorite color is green. His favorite food is pizza.";
                         boolean passed = getResults(expect, output, "Expected output from main");
                         assertTrue(passed);
+                    }
+                    @Test
+                    public void testPrintStringsA() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ color") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with color variable", passed);
+                     assertTrue(passed);
+                    }
+                    @Test
+                    public void testPrintStringsB() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ food") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with food variable", passed);
+                     assertTrue(passed);
                     }
                 }
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
 
            Add the strings together using ``+``.  Don't forget to include spaces and periods at the end of the sentences.
 
@@ -333,102 +407,14 @@ Unit 1 Coding Practice
                   }
               }
 
-        .. tab:: Discussion
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex7d
-
-.. tabbed:: ch4Ex8
-
-        .. tab:: Question
-
-           .. activecode::  ch4Ex8q
+.. activecode::  ch4Ex9q
               :language: java
               :autograde: unittest
               :practice: T
 
-              Finish the code below to print your favorite animal and food.
+              Finish the code below to print your favorite movie and book.
               ~~~~
-              public class Test1
-              {
-                  public static void main(String[] args)
-                  {
-                      String animal =
-                      String food =
-                      System.out.println();
-
-                  }
-              }
-              ====
-              import static org.junit.Assert.*;
-                import org.junit.*;;
-                import java.io.*;
-              
-                public class RunestoneTests extends CodeTestHelper
-                {
-                   @Test
-                    public void testPrintStringsA() throws IOException
-                    {
-                      String target1 = "+ animal +";
-                      boolean passed1 = checkCodeContains("print animal string variation 1", target1);
-                      String target2 = "+ \nanimal";
-                      boolean passed2 = checkCodeContains("print animal string variation 2", target2);
-                      assertTrue(passed1 || passed2);
-                    }
-
-                     @Test
-                    public void testPrintStringsB() throws IOException
-                    {
-                        String target1 = "+ food +";
-                        boolean passed1 = checkCodeContains("print food string variation 1", target1);
-                        String target2 = "+ \nfood";
-                        boolean passed2 = checkCodeContains("print food string variation 2", target2);
-                        assertTrue(passed1 || passed2);
-                    }
-                }
-
-
-        .. tab:: Answer
-
-           Use ``+`` to add strings together.  Add spaces as needed and periods.
-
-           .. activecode::  ch4Ex8a
-              :language: java
-              :optional:
-              
-              This is the answer to the previous question.
-              ~~~~              
-              public class Test1
-              {
-                  public static void main(String[] args)
-                  {
-                      String animal = "horse";
-                      String food = "chicken";
-                      System.out.println("My favorite animal is a " +
-                                         animal + ".  " +
-                                         "My favorite food is " +
-                                         food + ".");
-                  }
-              }
-
-        .. tab:: Discussion
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex8d
-
-.. tabbed:: ch4Ex9
-
-        .. tab:: Question
-
-           Finish the code below to print your favorite movie and book.
-
-           .. activecode::  ch4Ex9q
-              :language: java
-              :autograde: unittest
-              :practice: T
-
               public class Test1
               {
                   public static void main(String[] args)
@@ -449,26 +435,33 @@ Unit 1 Coding Practice
                    @Test
                     public void testPrintStringsA() throws IOException
                     {
-                      String target1 = "+ movie +";
-                      boolean passed1 = checkCodeContains("print movie string variation 1", target1);
-                      String target2 = "+ \nmovie";
-                      boolean passed2 = checkCodeContains("print movie string variation 2", target2);
-                      assertTrue(passed1 || passed2);
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ movie") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with movie variable", passed);
+                     assertTrue(passed);
                     }
 
-                     @Test
+                    @Test
                     public void testPrintStringsB() throws IOException
                     {
-                        String target1 = "+ book +";
-                        boolean passed1 = checkCodeContains("print book string variation 1", target1);
-                        String target2 = "+ \nbook";
-                        boolean passed2 = checkCodeContains("print book string variation 2", target2);
-                        assertTrue(passed1 || passed2);
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ book") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "System.out.println uses string concatenation with book variable", passed);
+                     assertTrue(passed);
                     }
+
+
                 }
 
 
-        .. tab:: Answer
+
+..        .. tab:: Answer
 
            Add the strings together using ``+``.  Don't forget to include spaces and periods at the end of the sentences.
 
@@ -488,17 +481,7 @@ Unit 1 Coding Practice
                   }
               }
 
-        .. tab:: Discussion
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch4Ex9d
-
-.. tabbed:: ch3Ex1
-
-        .. tab:: Question  
-           
-           .. activecode::  ch3Ex1q
+.. activecode::  ch3Ex1q
               :language: java
               :autograde: unittest
               :practice: T
@@ -532,11 +515,22 @@ Unit 1 Coding Practice
                         boolean passed = getResults(expect, output, "Expected output from main");
                         assertTrue(passed);
                     }
+                    @Test
+                    public void testPrintStringsB() throws IOException
+                    {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "double price") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "Declare the variable using type double, not Double", passed);
+                     assertTrue(passed);
+                    }
                 }
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Line 5 is missing a semicolon.  Line 6 has ``Double`` instead of ``double``.  Remember that the primitive types all start with a lowercase letter.  Line 8 has ``tripmiles`` instead of ``tripMiles``.  Remember that you should uppercase the first letter of each new word to make the variable name easier to read (use camel case).
         
@@ -559,88 +553,8 @@ Unit 1 Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex1d
-                
-.. tabbed:: ch3Ex2
-
-        .. tab:: Question  
-           
-           .. activecode::  ch3Ex2q
-              :language: java
-              :autograde: unittest
-              :practice: T
-   
-              The following code should calculate the body mass index (BMI) for someone who is 5 feet tall and weighs 110 pounds.  However, the code has syntax errors, like missing semicolons, wrong case on names, or unmatched ``"`` or ``(``. Fix the code so that it compiles and runs correctly.
-              ~~~~  
-              public class Test1
-              {
-                  public static void main(String[] args)
-                  {
-                      double Height = 60;    // in inches (60 inches is 5 feet)
-                      double weight  110;    // in pounds
-                      double heightSquared = height  height;
-                      double bodyMassIndex = weight / heightSquared
-                      double bodyMassIndexMetric = bodyMassIndex * 703;
-                      System.out.println(bodyMassIndexMetric);
-                  }
-              }
-              ====
-              import static org.junit.Assert.*;
-                import org.junit.*;
-                import java.io.*;
-              
-                public class RunestoneTests extends CodeTestHelper
-                {
-                    @Test
-                    public void testMain() throws IOException
-                    {
-                        String output = getMethodOutput("main");
-                        String expect = "21.480555555555554\n";
-                        boolean passed = getResults(expect, output, "Expected output from main");
-                        assertTrue(passed);
-                    }
-                }
-
-
-
-        .. tab:: Answer
-        
-           Line 5 has ``Height`` instead of ``height``.  Remember that variable names should start with a lowercase letter.  Line 6 is missing an equal sign.  Line 7 is missing a ``*`` to square the height.  Line 8 is missing a semicolon at the end of the statement.
-        
-           .. activecode::  ch3Ex2a
-              :language: java
-              :optional:
- 
-              This is the answer for the previous question.
-              ~~~~
-              public class Test1
-              {
-                  public static void main(String[] args)
-                  {
-                      double height = 60;    // in inches (60 inches is 5 feet)
-                      double weight = 110;    // in pounds
-                      double heightSquared = height * height;
-                      double bodyMassIndex = weight / heightSquared;
-                      double bodyMassIndexMetric = bodyMassIndex * 703;
-                      System.out.println(bodyMassIndexMetric);
-                  }
-              }
-              
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex2d
-                
-.. tabbed:: ch3Ex3
-
-        .. tab:: Question  
-           
-           .. activecode::  ch3Ex3q
+.. activecode::  ch3Ex3q
               :language: java
               :autograde: unittest
               :practice: T
@@ -673,11 +587,19 @@ Unit 1 Coding Practice
                         boolean passed = getResults(expect, output, "Expected output from main");
                         assertTrue(passed);
                     }
+                    @Test
+                    public void testPrintStringsB() throws IOException
+                    {
+                     String target = "numGallons = totalFunds / gallonPrice";
+                     boolean passed = checkCodeContains("formula for numGallons", target);
+                     assertTrue(passed);
+                    }
+                    
                 }
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Line 5 is missing the type ``double``.  Line 6 is backwards.  It should be ``double milesPerGallon = 40;``.  Line 8 is missing a ``/``.  Line 10 is missing a ``)``.
         
@@ -695,22 +617,13 @@ Unit 1 Coding Practice
                       double milesPerGallon = 40;
                       double totalFunds = 8.0;
                       double numGallons = totalFunds / gallonPrice; 
-                      double distance = numGallons * milesPerGallon;
-                      System.out.println(distance);
+                      double numMiles = numGallons * milesPerGallon;
+                      System.out.println(numMiles);
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex3d
-                
-.. tabbed:: ch3Ex4
-
-        .. tab:: Question  
-           
-           .. activecode::  ch3Ex4q
+     
+.. activecode::  ch3Ex4q
               :language: java
               :autograde: unittest
               :practice: T
@@ -745,7 +658,7 @@ Unit 1 Coding Practice
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Lines 5, 6, and 7 should all be ``double`` versus ``int`` so that the decimal portion of the calculation isn't thrown away.
         
@@ -766,18 +679,8 @@ Unit 1 Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex4d
-                
-                
-.. tabbed:: ch3Ex5
-
-        .. tab:: Question 
-           
-           .. activecode::  ch3Ex5q
+          
+.. activecode::  ch3Ex5q
               :language: java
               :autograde: unittest
               :practice: T
@@ -812,7 +715,7 @@ Unit 1 Coding Practice
 
 
 
-        .. tab:: Answer
+..       .. tab:: Answer
         
            Lines 6 and 7 are both missing a ``/``.  Line 8 is missing a ``(``.  Line 9 is missing a ``}`` to close the ``main`` method.
         
@@ -832,23 +735,13 @@ Unit 1 Coding Practice
                       System.out.println(numDays);
                    }   
               }
-              
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex5d
-                
-.. tabbed:: ch3Ex6
-
-        .. tab:: Question
-           
-           .. activecode::  ch3Ex6q
+.. activecode::  ch3Ex6q
               :language: java
               :autograde: unittest
               :practice: T
    
-              Complete the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.
+              Complete the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.  Assume there are exactly 4 weeks in a month.
               ~~~~
               public class Test1
               {
@@ -889,7 +782,7 @@ Unit 1 Coding Practice
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            Calculate how many weeks it would take to make $200.  Next divide the number of weeks by 4 (roughly the number of weeks in a month).  
         
@@ -911,17 +804,8 @@ Unit 1 Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex6d
-                
-.. tabbed:: ch3Ex7
-
-        .. tab:: Question 
-           
-           .. activecode::  ch3Ex7q
+            
+.. activecode::  ch3Ex7q
               :language: java 
               :autograde: unittest
               :practice: T  
@@ -966,7 +850,7 @@ Unit 1 Coding Practice
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            First calculate the number of gallons you have left and then multiply that by the miles per gallon to get the number of miles you can still drive. 
         
@@ -987,18 +871,9 @@ Unit 1 Coding Practice
                       
                   }
               }
-              
-        .. tab:: Discussion 
 
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex7d
-                
-.. tabbed:: ch3Ex8
 
-        .. tab:: Question
-           
-           .. activecode::  ch3Ex8q
+.. activecode::  ch3Ex8q
               :language: java
               :autograde: unittest
               :practice: T
@@ -1042,7 +917,7 @@ Unit 1 Coding Practice
                 } 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
            First compute the number of seconds in 1 day and then multiple that by 3 days.
            
@@ -1064,24 +939,19 @@ Unit 1 Coding Practice
                       System.out.println(secondsInThreeDays);
                   }
               }
-              
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex8d
-                
-
-.. tabbed:: ch3Ex10
-
-        .. tab:: Question 
            
-           .. activecode::  ch3Ex10q
+
+
+
+
+.. activecode::  ch3Ex10q
               :language: java
               :autograde: unittest
               :practice: T
    
-              Write the code to print the number of chicken wings you can buy if you have $4.50 and they cost $0.75 each.  Remember that you can't buy part of a wing.
+              Write the code to print the number of chicken wings you can buy if you have $4.50 and they cost $0.75 each.  
+              Remember that you can't buy part of a wing.  Divide the amount of money you have by the cost of each wing and then use casting to set the 
+              result to an int since you can't buy a part of a wing.
               ~~~~
               public class Test1
               {
@@ -1120,9 +990,10 @@ Unit 1 Coding Practice
 
 
 
-        .. tab:: Answer
+..        .. tab:: Answer
         
-           Divide the amount of money you have by the cost of each wing and set the result to an integer since you can't buy a part of a wing.
+           Divide the amount of money you have by the cost of each wing and set the 
+           result to an integer since you can't buy a part of a wing.
            
            .. activecode::  ch3Ex10a
               :language: java
@@ -1141,8 +1012,3 @@ Unit 1 Coding Practice
                   }
               }
               
-        .. tab:: Discussion 
-
-            .. disqus::
-                :shortname: cslearn4u
-                :identifier: javareview_ch3ex10d
