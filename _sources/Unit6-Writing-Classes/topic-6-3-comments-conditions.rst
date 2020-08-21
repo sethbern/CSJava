@@ -252,12 +252,6 @@ One very popular type of agile development is called **Scrum**. The following sh
 
 |Groupwork| Group Exercise
 
-.. |pogil game| raw:: html
-
-   <a href="https://www.agilesparks.com/blog/wake-up-in-the-morning-game/" target="_blank">Wake Up In the Morning Game</a>
-
-Try the |pogil game| in groups to practice the iterative and incremental agile development process.
-
 
 |Groupwork| Programming Challenge : Comments and Conditions
 -----------------------------------------------------------

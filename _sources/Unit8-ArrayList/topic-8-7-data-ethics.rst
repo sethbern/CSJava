@@ -66,10 +66,10 @@ Here are some interesting video resources about data collection and data privacy
 
 
 
-|Groupwork| POGIL Groupwork: Data Privacy
+|Groupwork| Groupwork: Data Privacy
 ----------------------------------------------
 
-In POGIL groups, explore a popular app or web site and its data collecting practices. Explain the risks to privacy
+Explore a popular app or web site and its data collecting practices. Explain the risks to privacy
 from collecting and storing personal data on computer
 systems.  Discuss the ethical and legal problems that may arise and how programmers can try to avoid them. Design a poster describing the data privacy issues for your chosen app or web site  for your class.
 

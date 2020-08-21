@@ -375,26 +375,17 @@ the value of a Boolean expression.  When you see ``!``, think of the word "not".
 
 
 
-|Groupwork| Programming Challenge : Prime Numbers POGIL
+|Groupwork| Programming Challenge : Prime Numbers 
 -------------------------------------------------------
-
-.. |pogil| raw:: html
-
-   <a href="https://pogil.org/about-pogil/what-is-pogil" target="_blank">POGIL</a>
-   
-.. |pogil role| raw:: html
-
-   <a href="https://docs.google.com/document/d/1_NfNLWJxaG4qZ2Jd2x8UctDS05twn1h6p-o3XaAcRv0/edit?usp=sharing" target="_blank">POGIL role</a>
-   
+  
 .. |Numberphile video| raw:: html
 
    <a href="https://www.youtube.com/watch?v=M7kEpw1tn50" target="_blank">Numberphile video</a>
    
-   
-   
-We encourage you to do this activity as a |POGIL| (Process Oriented Guided Inquiry Learning) group activity or using Think-Pair-Share collaboration. POGIL groups are self-managed teams of 4 students where everyone has a |pogil role| and works together to solve the problems, making sure that everyone in the team participates and learns.
 
-In this activity, you will use boolean expressions to explore prime numbers. A prime number is an integer number that is only divisible by 1 and itself. For example, 3 is a prime number because it's only divisible by 1 and 3 and no other numbers, but 4 is not a prime number because it's divisible by 2 as well as 1 and 4. 
+In this activity, you will use boolean expressions to explore prime numbers. 
+A prime number is an integer number that is only divisible by 1 and itself. 
+For example, 3 is a prime number because it's only divisible by 1 and 3 and no other numbers, but 4 is not a prime number because it's divisible by 2 as well as 1 and 4. 
 
 Prime numbers are very useful in encryption algorithms because they can be used as keys for encoding and decoding. If you have the key, you can use it to divide a large number that represents something encrypted to decode it, but if you don't have the key, it's very hard to guess the factors of a large number to decode it. If you're curious about this, watch this |Numberphile video|.
 

@@ -190,24 +190,15 @@ Often, you can simplify boolean expressions to create equivalent expressions. Fo
      }
 
      
-|Groupwork| Programming Challenge : Truth Tables POGIL
+|Groupwork| Programming Challenge : Truth Tables
 ------------------------------------------------------
-
-.. |pogil| raw:: html
-
-   <a href="https://pogil.org/about-pogil/what-is-pogil" target="_blank" style="text-decoration:underline">POGIL</a>
-   
-.. |pogil role| raw:: html
-
-   <a href="https://docs.google.com/document/d/1_NfNLWJxaG4qZ2Jd2x8UctDS05twn1h6p-o3XaAcRv0/edit?usp=sharing" target="_blank" style="text-decoration:underline">POGIL role</a>
 
 .. |this worksheet| raw:: html
 
    <a href="https://docs.google.com/document/d/1Oa_hlzjunYMoRRiMX0A0nFjk7JiTh7EGfIVM9bQ_BIo/edit?usp=sharing" target="_blank" style="text-decoration:underline">this worksheet</a>
    
-We encourage you to do this activity as a |POGIL| (Process Oriented Guided Inquiry Learning) group activity. POGIL groups are self-managed teams of up to 4 students where everyone has a |pogil role| and works together to solve the problems, making sure that everyone in the team participates and learns. 
 
-Explore the following problems with your group. You may use |this worksheet| to complete your truth tables. Assume that x is an integer value, for example -1, 0, or 1. 
+Explore the following problems. You may use |this worksheet| to complete your truth tables. Assume that x is an integer value, for example -1, 0, or 1. 
 
 1. Complete a truth table for the boolean expression: !(x == 0 || x >= 1). Is this the set of positive or negative numbers?  Is the expression true when x is positive? Or is it true when x is negative? You can try out the values when x is 1 or -1 or 0. Note that 0 is not positive or negative. You can try running the code below to check your answer.
 
@@ -220,7 +211,7 @@ Explore the following problems with your group. You may use |this worksheet| to 
 
 5. Test your answers using the active code window below.
 
-6. Complete the following exercises 3-6-3 through 3-6-7 in your POGIL groups.
+6. Complete the following exercises 3-6-3 through 3-6-7.
 
 .. activecode:: code3_6_2
    :language: java

@@ -258,21 +258,10 @@ For the example above, the outer loop executes 4-0+1= 5 times and the inner 9-0+
 
 
 
-|Groupwork| Programming Challenge : POGIL Analyzing Loops
+|Groupwork| Programming Challenge : Analyzing Loops
 ----------------------------------------------------------
-
-.. |pogil| raw:: html
-
-   <a href="https://pogil.org/about-pogil/what-is-pogil" target="_blank">POGIL</a>
-   
-.. |pogil role| raw:: html
-
-   <a href="https://docs.google.com/document/d/1_NfNLWJxaG4qZ2Jd2x8UctDS05twn1h6p-o3XaAcRv0/edit?usp=sharing" target="_blank">POGIL role</a>
-   
-   
-We encourage you to do this activity as a |POGIL| (Process Oriented Guided Inquiry Learning) group activity. POGIL groups are self-managed teams of up to 4 students where everyone has a |pogil role| and works together to solve the problems, making sure that everyone in the team participates and learns.
-
-Do the following exercises in your group. Make sure you draw the trace tables keeping track of all the variables in the loops. Use the formulas to determine how many times the loops run. If your group finishes early, do some of the multiple-choice problems in the 4.6 Practice and Summary section of this unit.
+  
+Do the following exercises. Make sure you draw the trace tables keeping track of all the variables in the loops. Use the formulas to determine how many times the loops run. If your group finishes early, do some of the multiple-choice problems in the 4.6 Practice and Summary section of this unit.
 
 
 .. mchoice:: q4_5_3

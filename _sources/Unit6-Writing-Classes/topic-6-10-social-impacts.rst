@@ -65,10 +65,10 @@ Here are some other interesting videos to watch about bias in algorithms:
     <li><a href="https://www.youtube.com/watch?v=7lpCWxlRFAw" target="_blank">A report on police crime prediction software and bias</a></li>
     </ul>
 
-|Groupwork| POGIL Groupwork: Impacts of CS
+|Groupwork| Impacts of CS
 ----------------------------------------------
 
-In POGIL groups, choose a software application that has social and ethical implications. Discuss the beneficial and harmful effects of this software application. Discuss the ethical problems that may arise and how programmers can try to avoid them. Prepare a presentation for your class.
+hoose a software application that has social and ethical implications. Discuss the beneficial and harmful effects of this software application. Discuss the ethical problems that may arise and how programmers can try to avoid them. Prepare a presentation for your class.
 
 
 Summary
