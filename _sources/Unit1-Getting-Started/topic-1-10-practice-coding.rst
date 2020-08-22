@@ -9,12 +9,15 @@ Unit 1 Coding Practice
 
         .. tab:: Question
 
-           .. activecode::  ch4Ex2q
+           .. activecode::  code1_10_1
               :language: java
               :autograde: unittest
               :practice: T
 
-              The following code should print "Mary's favorite color is blue".  However, the code has errors.  Fix the code so that it compiles and runs correctly.
+              The following code should print "Mary's favorite color is blue".  
+              However, the code has errors.  Fix the code so that it compiles and runs correctly.
+              It is not an error for System.out.println to perform string concatenation across 
+              several lines of code, but there is a problem with one of the variables in the print statement.
               ~~~~
               public class Test1
               {
@@ -86,7 +89,7 @@ Unit 1 Coding Practice
 
 
 
-.. activecode::  ch4Ex3q
+.. activecode::  code1_10_2
               :language: java
               :autograde: unittest
               :practice: T
@@ -163,7 +166,7 @@ Unit 1 Coding Practice
 
 
 
-.. activecode::  ch4Ex5q
+.. activecode::  code1_10_3
               :language: java
               :autograde: unittest
               :practice: T
@@ -246,7 +249,7 @@ Unit 1 Coding Practice
 
 
 
-.. activecode::  ch4Ex6q
+.. activecode::  code1_10_4
               :language: java
               :autograde: unittest
               :practice: T
@@ -328,12 +331,14 @@ Unit 1 Coding Practice
 
 
 
-.. activecode::  ch4Ex7q
+.. activecode::  code1_10_5
               :language: java
               :autograde: unittest
               :practice: T
 
-              Write the code to print "Julian's favorite color is green.  His favorite food is pizza." using the variables provided.
+              Write the code to print "Julian's favorite color is green.  
+              His favorite food is pizza." using the variables provided.
+              Watch out for spaces and the period at the end of each sentence.
               ~~~~
               public class Test1
               {
@@ -408,7 +413,7 @@ Unit 1 Coding Practice
               }
 
 
-.. activecode::  ch4Ex9q
+.. activecode::  code1_10_6
               :language: java
               :autograde: unittest
               :practice: T
@@ -481,7 +486,7 @@ Unit 1 Coding Practice
                   }
               }
 
-.. activecode::  ch3Ex1q
+.. activecode::  code1_10_7
               :language: java
               :autograde: unittest
               :practice: T
@@ -554,7 +559,7 @@ Unit 1 Coding Practice
               }
               
 
-.. activecode::  ch3Ex3q
+.. activecode::  code1_10_8
               :language: java
               :autograde: unittest
               :practice: T
@@ -623,7 +628,7 @@ Unit 1 Coding Practice
               }
               
      
-.. activecode::  ch3Ex4q
+.. activecode::  code1_10_9
               :language: java
               :autograde: unittest
               :practice: T
@@ -680,7 +685,7 @@ Unit 1 Coding Practice
               }
               
           
-.. activecode::  ch3Ex5q
+.. activecode::  code1_10_10
               :language: java
               :autograde: unittest
               :practice: T
@@ -736,12 +741,14 @@ Unit 1 Coding Practice
                    }   
               }
 
-.. activecode::  ch3Ex6q
+.. activecode::  code1_10_11
               :language: java
               :autograde: unittest
               :practice: T
    
-              Complete the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.  Assume there are exactly 4 weeks in a month.
+              Complete the code below to calculate and print how many months it will take to save $200 
+              if you earn $20 a week.  First calculate how many weeks it would take to make $200, then
+              calculate how many months it will take assuming there are 4 weeks per month. 
               ~~~~
               public class Test1
               {
@@ -774,7 +781,7 @@ Unit 1 Coding Practice
                   @Test
                   public void testFormulaNumMonths() throws IOException
                   {
-                    String target = "double numMonths = numWeeks / 4;";
+                    String target = "numMonths =  numWeeks / 4;";
                     boolean passed = checkCodeContains("formula for numMonths", target);
                     assertTrue(passed);
                     }
@@ -805,7 +812,7 @@ Unit 1 Coding Practice
               }
               
             
-.. activecode::  ch3Ex7q
+.. activecode::  code1_10_12
               :language: java 
               :autograde: unittest
               :practice: T  
@@ -840,11 +847,15 @@ Unit 1 Coding Practice
                 @Test
                   public void testFormulaMiles() throws IOException
                   {
-                    String target1 = "double miles = numGallons * milesPerGallon;";
-                    String target2 = "double miles = milesPerGallon * numGallons;";
-                    boolean passed1 = checkCodeContainsNoRegex("formula variant for miles using milesPerGallon and numGallons", target1);
-                    boolean passed2 = checkCodeContains("formula variant for miles using milesPerGallon and numGallons", target2);
-                    assertTrue(passed1 || passed2);
+
+                     String code = getCode();
+                     int count1 = countOccurences(code, "double miles = numGallons * milesPerGallon") ;
+                     int count2 = countOccurences(code, "double miles = milesPerGallon * numGallons") ;
+                     
+                    boolean passed = count1+count2 >= 1;
+
+                    passed = getResults("1 count", "" + (count1 +count2)  + " count", "calculation for miles using numGallons and milesPerGallon", passed);
+                    assertTrue(passed);
                   }  
                 }
 
@@ -873,7 +884,7 @@ Unit 1 Coding Practice
               }
 
 
-.. activecode::  ch3Ex8q
+.. activecode::  code1_10_13
               :language: java
               :autograde: unittest
               :practice: T
@@ -908,11 +919,16 @@ Unit 1 Coding Practice
                 @Test
                   public void testFormulaMiles() throws IOException
                   {
-                    String target1 = "int secondsInThreeDays = secondsInDay * 3;";
-                    String target2 = "int secondsInThreeDays = 3 * secondsInDay;";
-                    boolean passed1 = checkCodeContainsNoRegex("formula variant for secondsInThreeDays using secondsInDay", target1);
-                    boolean passed2 = checkCodeContainsNoRegex("formula variant for secondsInThreeDays using secondsInDay", target2);
-                    assertTrue(passed1 || passed2);
+                    
+                     String code = getCode();
+                     int count1 = countOccurences(code, "int secondsInThreeDays = secondsInDay * 3") ;
+                     int count2 = countOccurences(code, "int secondsInThreeDays = 3 * secondsInDay") ;
+                     
+                    boolean passed = count1+count2 >= 1;
+
+                    passed = getResults("1 count", "" + (count1 +count2)  + " count", "formula for secondsInThreeDays using secondsInDay", passed);
+                    assertTrue(passed);
+
                   } 
                 } 
 
@@ -944,7 +960,7 @@ Unit 1 Coding Practice
 
 
 
-.. activecode::  ch3Ex10q
+.. activecode::  code1_10_14
               :language: java
               :autograde: unittest
               :practice: T

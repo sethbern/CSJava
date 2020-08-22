@@ -244,6 +244,18 @@ Strings can be **appended** to each other to create a new string using the ``+``
             boolean passed = getResults(expect, output, "Expected output from main");
             assertTrue(passed);
         }
+
+        @Test
+        public void testPrintStringsB() throws IOException
+        {
+
+                     String code = getCode();
+                     int count = countOccurences(code, "+ lastName") ;
+                     boolean passed = count >= 1;
+
+                     passed = getResults("1 count", "" + count  + " count", "string concatenation with lastName variable", passed);
+                     assertTrue(passed);
+        }
     }
   
 .. note::

@@ -7,11 +7,11 @@ Coding Practice
 
 The coding problems below are mostly about Strings, but more problems on other topics in this unit will be added in the future.
 
-.. tabbed:: ch3Ex9
+.. tabbed:: code2_12_1
 
         .. tab:: Question 
            
-           .. activecode::  ch3Ex9q
+           .. activecode::  code2_12_1
               :language: java
               :autograde: unittest
               :practice: T
@@ -75,7 +75,7 @@ The coding problems below are mostly about Strings, but more problems on other t
 
 
 
-.. activecode::  ch4Ex1q
+.. activecode::  code2_12_2
               :language: java
               :autograde: unittest
               :practice: T
@@ -147,7 +147,7 @@ The coding problems below are mostly about Strings, but more problems on other t
 
 
 
-.. activecode::  ch4Ex4q
+.. activecode::  code2_12_3
               :language: java
               :autograde: unittest
               :practice: T
@@ -213,22 +213,23 @@ The coding problems below are mostly about Strings, but more problems on other t
 
 
 
-.. activecode::  ch4Ex10q
+.. activecode::  code2_12_4
               :language: java
               :autograde: unittest
               :practice: T
               
-              The following code starts with ``String firstNameCaps = ALEX;`` and should print ``Alex``.  Use the ``toLowerCase`` and ``substring`` methods to do accomplish this task.
+              The following code starts with ``String name1 = ALEX;`` and should print ``Alex``.  
+              Use the ``toLowerCase`` and ``substring`` methods to assign the variable finalName to the value Alex.
               ~~~~
               public class Test1
               {
                   public static void main(String[] args)
                   {
                       String name1 = "ALEX";
+                      String finalName;
                    
                    
-                   
-                      System.out.println(firstNameCaps);
+                      System.out.println(finalName);
                   }
               }
               ====
@@ -247,11 +248,18 @@ The coding problems below are mostly about Strings, but more problems on other t
                         assertTrue(passed);
                     }
 
-                     @Test
+                    @Test
                     public void testCodeContains() 
                     {
                         String target = ".substring(";
                         boolean passed = checkCodeContains("substring method", target);
+                        assertTrue(passed);
+                    }
+                    @Test
+                    public void testCodeContains2() 
+                    {
+                        String target = ".toLowerCase(";
+                        boolean passed = checkCodeContains("toLowerCase method", target);
                         assertTrue(passed);
                     }
                 }
@@ -279,7 +287,7 @@ The coding problems below are mostly about Strings, but more problems on other t
               }
 
 
-.. activecode::  ch4Ex11q
+.. activecode::  code2_12_5
               :language: java
               :autograde: unittest
               :practice: T
@@ -351,7 +359,7 @@ The coding problems below are mostly about Strings, but more problems on other t
               }
 
 
-.. activecode::  ch4Ex12q
+.. activecode::  code2_12_6
               :language: java
               :autograde: unittest
               :practice: T

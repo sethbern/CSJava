@@ -119,11 +119,10 @@ The program above creates a ``World`` object, which is a
 graphical window of size 300x300 pixels.  The program then creates a ``Turtle`` object 
 named ``yertle`` and places the turtle in the center of the world.  The code
 asks ``yertle`` to go forward, turn left, and then go forward again.  
-The code does not indicate how much to go forward, so the turtle goes forward 100 pixels by default. A turtle
+The code does not indicate how much to go forward, so the turtle moves 100 pixels by default. A turtle
 has a pen that traces its path as it moves. Notice that a world was first
-created and then a turtle.  Turtles need to be created in a world, 
-which is the graphical window that they can draw on.
-``World`` and ``Turtle`` are two Java classes are not part of the core Java language.  
+created and then a turtle.  Turtles are created to draw in a specific graphical window.
+``World`` and ``Turtle`` are two Java classes that are not part of the core Java language.  
 The program relies on a separate library of Java code that defines both classes. 
 
 .. note::

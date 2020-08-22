@@ -211,8 +211,6 @@ Explore the following problems. You may use |this worksheet| to complete your tr
 
 5. Test your answers using the active code window below.
 
-6. Complete the following exercises 3-6-3 through 3-6-7.
-
 .. activecode:: code3_6_2
    :language: java
    :autograde: unittest
@@ -238,16 +236,15 @@ Explore the following problems. You may use |this worksheet| to complete your tr
     
     public class RunestoneTests extends CodeTestHelper
     {
-       @Test
-        public void testChangedCode() {
-            String origCode = "public class EquivalentExpressions { public static void main(String[] args) { int x = -1; // try with x = -1, x = 0, and x = 1 \n System.out.println(!(x == 0 || x >= 1)); // add print statements for expressions in #2 and #3 // to see if they are equivalent when x = -1, 0, and 1.  } }";
-
-            boolean changed = codeChanged(origCode);
-            assertTrue(changed);
-        }
 
       @Test
-      public void testAddedCode(){
+      public void testAddedCode0(){
+        boolean output2 = checkCodeContains("!(x == 0 || x >= 1)");
+        assertTrue(output2);
+      }
+
+      @Test
+      public void testAddedCode1(){
         boolean output2 = checkCodeContains("(x != 0) && (x < 1)");
         assertTrue(output2);
       }
@@ -258,6 +255,7 @@ Explore the following problems. You may use |this worksheet| to complete your tr
         assertTrue(output3);
       }
     }
+
 
 .. mchoice:: q3_6_3
    :practice: T

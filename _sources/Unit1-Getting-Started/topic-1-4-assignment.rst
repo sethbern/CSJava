@@ -637,7 +637,7 @@ The process relies on integer division to determine slices per person, and the m
 
 .. note::  
 
-  A flowchart shows pseudo-code, which is like Java but not exactly the same.  Syntactic details like semi-colons are ommitted, and input and output is described in abstract terms. 
+  A flowchart shows pseudo-code, which is like Java but not exactly the same.  Syntactic details like semi-colons are omitted, and input and output is described in abstract terms. 
 
 
 |CodingEx| **Coding Exercise:** 
@@ -852,14 +852,10 @@ In Java this will be done using a Scanner object and reading from System.in.
             int pizzaSlices, numPeople, slicesPerPerson, leftoverSlices;
             Scanner scan = new Scanner(System.in);
             //add code to initialize pizzaSlices and numPeople from user input 
-            pizzaSlices = scan.nextInt();
-            numPeople = scan.nextInt();
+            
             
             //add code to compute and print slicesPerPerson and leftoverSlices
-            slicesPerPerson = pizzaSlices / numPeople;
-            leftoverSlices = pizzaSlices % numPeople;
-            System.out.println(slicesPerPerson);
-            System.out.println(leftoverSlices);
+           
 
         }
 

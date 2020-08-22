@@ -78,7 +78,6 @@ The flowchart in Figure 2 shows the conditional control flow with 2 branches bas
 
 .. activecode:: code3_3_1
    :language: java
-   :autograde: unittest
    :stdin: true
 
    
@@ -104,22 +103,7 @@ The flowchart in Figure 2 shows the conditional control flow with 2 branches bas
         System.out.println("after conditional");
       }
    } 
-   ====
-   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
-    
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-       public void testMain() throws IOException
-       {
-           boolean passed = getResults("true", "true", "main()");
-           assertTrue(passed);
 
-       }
-
-    }
    
 
 
@@ -146,7 +130,7 @@ If/else statements can also be used with relational operators and numbers like b
    :practice: T
    :stdin: 16
    
-   Run the following code to see what it prints out when the variable age is set to the value 18. 
+   Run the following code to see what it prints  when the variable age is set to the value 18. 
    Change the input value to 18 and then run it again to see the result of the print 
    statement in the else part. 
    Can you change the if-statement to indicate that you can get a license at age 16 instead of 18? 
@@ -443,8 +427,6 @@ The |Animal Guessing program| below uses the following decision tree:
 3. Did you notice that when it asked "Is it a pet?" and you said "y", it immediately guessed "dog"? What if you were thinking of a cat? Try to come up with a question that distinguishes dogs from cats and put in code in the correct place (in place of I guess a dog) to ask the question, get the answer, and use an if/else to guess cat or dog. Run your code and test both possibilities!
 
 4. How many animals can your game now guess? How many test-cases are needed to test all branches of your code?
-
-5. If your class has time, your teacher may ask you to expand this game or to create a similar game to guess something else like singers or athletes. Spend some time planning your questions on paper and drawing out the decision tree before coding it. 
 
 .. raw:: html
 

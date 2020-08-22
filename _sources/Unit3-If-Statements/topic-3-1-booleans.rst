@@ -52,7 +52,6 @@ Note that ``x == 4`` does not assign a value to variable x, rather it simply com
 
 .. activecode:: code3_1_1
    :language: java
-   :autograde: unittest
 
    What will the code below print out? 
    Try to guess before you run it! 
@@ -74,23 +73,7 @@ Note that ``x == 4`` does not assign a value to variable x, rather it simply com
         System.out.println( age != year );
       }
    }
-   ====
-   // should pass if/when they run code
-    import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
 
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void testMain() throws IOException
-        {
-            String output = getMethodOutput("main");
-            String expect = "false\ntrue\nfalse\n";
-            boolean passed = getResults(expect, output, "Expected output from main", true);
-            assertTrue(passed);
-        }
-    }
 
 
 We can also use == or != to test if two reference values, like Turtle and String objects,  refer to the same object. In the figure below, we are creating two separate Turtle objects called juan and mia. They do not refer to same object or turtle. Then, we create a reference variable called friend that is set to mia. The turtle mia will have two ways (**references** or **aliases**) to name her -- she's both mia and friend, and these variables refer to the same object (same Turtle) in memory. If two reference  variables refer to the same object like the turtle on the right in the image below, the test with == will return true which you can see in the code below. 
@@ -108,7 +91,6 @@ We can also use == or != to test if two reference values, like Turtle and String
 .. activecode:: code3_1_2
    :language: java
    :datafile: turtleClasses.jar   
-   :autograde: unittest
    
    What will the code below print out? Try to guess before you run it! 
    ~~~~     
@@ -129,24 +111,7 @@ We can also use == or != to test if two reference values, like Turtle and String
           System.out.println(friend == mia);
       }
     }
-    ====
-    import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
 
-    public class RunestoneTests extends CodeTestHelper
-    {
-        public RunestoneTests() {
-            super("BoolTestRef");
-        }
-
-        @Test
-        public void test1()
-        {
-           boolean passed = getResults("true", "true", "main()");
-            assertTrue(passed);
-        }
-    }
 
 
    
@@ -169,7 +134,6 @@ With <= and >=, remember to write the two symbols in the order that you would sa
 
 .. activecode:: code3_1_3
    :language: java 
-   :autograde: unittest  
    
    Try to guess what the code below will print out before you run it.  
    ~~~~
@@ -186,22 +150,6 @@ With <= and >=, remember to write the two symbols in the order that you would sa
         System.out.println( age-1 >= year );
       }
    }
-   ====
-   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
- 
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void testMain() throws IOException
-        {
-            String output = getMethodOutput("main");
-            String expect = "false\ntrue\ntrue\ntrue\n";
-            boolean passed = getResults(expect, output, "Expected output from main", true);
-            assertTrue(passed);
-        }
-    }
 
 
 
@@ -245,7 +193,6 @@ Here are some boolean expressions that are very useful in coding:
 
 .. activecode:: code3_1_4
    :language: java 
-   :autograde: unittest
    
    Try the expressions containing the % operator below to see how they can be used to check for even or odd numbers. All even numbers are divisible (with no remainder) by 2.
    ~~~~
@@ -262,22 +209,7 @@ Here are some boolean expressions that are very useful in coding:
         System.out.println("Is " + age2 + " even? " + (age2 % 2 == 0) );
       }
    }  
-   ====
-   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
 
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void testMain() throws IOException
-        {
-            String output = getMethodOutput("main");
-            String expect = "Remainder of 15/2 is 1\nRemainder of 16/2 is 0\nIs 15 even? false \nIs 16 even? true\n";
-            boolean passed = getResults(expect, output, "Expected output from main", true);
-            assertTrue(passed);
-        }
-    }
    
 The **modulo** operator has been used quite a bit on the AP CS A exam, so you should be familiar with it.
     
@@ -299,7 +231,6 @@ the value of a Boolean expression.  When you see ``!``, think of the word "not".
 
 .. activecode:: code3_1_5
    :language: java 
-   :autograde: unittest  
    
    Try to guess what the code below will print out before you run it.  
    ~~~~
@@ -320,20 +251,6 @@ the value of a Boolean expression.  When you see ``!``, think of the word "not".
         
       }
    }
-   ====
-   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
- 
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void testMain() throws IOException
-        {
-            boolean passed = getResults("true", "true", "main()");
-            assertTrue(passed);
-        }
-    }
 
 
 

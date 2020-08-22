@@ -21,7 +21,7 @@
     :alt: groupwork
     
 
-if Statements and Control Flow
+If Statements and Control Flow
 ===============================
 
 ..	index::
@@ -30,11 +30,9 @@ if Statements and Control Flow
 	pair: conditional; if
 
 
-The statements in a Java main method normally run or execute one at a time in the order they are found from top to 
-bottom.   **If statements** (also called **conditionals** or **selection**) change the flow of control 
-through the program so that some code is only run when something is true.  In an if statement, if the 
-condition is true then the next statement or a block of statements will execute.  If the condition is 
-false then the next statement or block of statements is skipped.
+The statements in a Java main method normally run or execute one at a time in the order they are found.   
+**If statements** (also called **conditionals** or **selection**) change the flow of control so that certain lines of code only run when something is true.  
+An **if statement** checks a boolean condition that is either true or false.  A block of statements will execute if the condition is true and will be skipped if the condition is false. 
 
 
 .. figure:: Figures/Condition.png
@@ -110,9 +108,9 @@ Imagine that your cell phone wanted to remind you to take an umbrella if it was 
 
 .. activecode:: code3_2_1
    :language: java
-   :autograde: unittest
   
-   The variable ``isRaining`` is a boolean variable that is either true or false. If it is true then the message ``Take an umbrella!`` will be printed and then execution will continue with the next statement which will print ``Drive carefully``. Run the code below to see this.
+   The variable ``isRaining`` is a boolean variable that is either true or false. 
+   Use the CodeLens to step through the code.  
    ~~~~
    public class TestRaining
    {
@@ -126,29 +124,14 @@ Imagine that your cell phone wanted to remind you to take an umbrella if it was 
         System.out.println("Drive carefully");
       }
    }
-   ====
-   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
 
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void testMain() throws IOException
-        {
-            String output = getMethodOutput("main");
-            String expect = "Take an umbrella! \nDrive carefully";
-            boolean passed = getResults(expect, output, "Expected output from main");
-            assertTrue(passed);
-        }
-    }
 
 
 |Exercise| **Check your understanding**
 
 .. fillintheblank:: q3_2_0
 
-   Try changing the code above to ``boolean isRaining = false;``.  What will it print?
+   Change the code above to ``boolean isRaining = false;``. Use the CodeLens to step through the code. What does it print?
 
    -    :^Drive carefully$: Correct.  If the boolean is false, it will skip executing the print statement after the if.
         :.*: Try it and see
@@ -159,7 +142,6 @@ true and false in the next lesson.  However, the code below shows how to print d
 
 .. activecode:: code3_2_2
    :language: java
-   :autograde: unittest
    :stdin: true
    
    This program reads in a boolean value from standard input and tests whether the value is true ``if (passedExam)`` or false ``if (!passedExam)``.  
@@ -186,21 +168,12 @@ true and false in the next lesson.  However, the code below shows how to print d
         }
       }
    }
-   ====
-   import static org.junit.Assert.*;
-    import org.junit.*;;
-    import java.io.*;
 
-    public class RunestoneTests extends CodeTestHelper
-    {
-        @Test
-        public void testMain() throws IOException
-        {
-            boolean passed = getResults("true", "true", "main()");
-            assertTrue(passed);
-        }
-    }
-  
+.. note::
+
+    In an ``if statement``, it is good style to indent the lines of code nested between the curly braces.
+ 
+
 |Exercise| **Check your understanding**
 
 
@@ -480,10 +453,11 @@ If the condition ``numPeople > 0`` is false, the **false** branch is followed an
     }
 
 
+
 Common Errors with If Statements
 ---------------------------------
 
-Here are some rules to follow with if statements to avoid some common errors:
+Here are some rules to follow to avoid common errors:
 
 - Always use curly brackets ``{`` and ``}`` to enclose the block of statements under the if condition. Java doesn't care if you indent the code -- it goes by the { }. 
 
