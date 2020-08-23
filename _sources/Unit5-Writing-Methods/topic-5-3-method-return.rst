@@ -33,84 +33,47 @@ A method bundles together lines of code that perform a specific task.
 - You can pass a value out of a method using a **return statement**.  
 
 You saw examples of  methods that return values in Unit 2 with the ``Turtle`` methods (getWidth, getXpos, etc).
-If you recall the getter methods were usually on the right hand side of an assignment or they were contained in a print statement.
-When a method returns a value, your code should do something with the value such as store it in a 
-variable or print it out.
+The method calls were usually on the right hand side of an assignment, or they were contained in a print statement.
+When a method returns a value, the code should do something with the value such as store it in a 
+variable or print it.
 
 You will learn how to  create methods that access object attributes in a later lesson. 
 This lesson shows 
 you how to create static methods that are functions. 
 A function takes one or more values passed as formal parameters and computes a new value to return.
 
-An example method that returns a value (i.e. a function) is shown in the code below.
 
-.. activecode:: code5_3_1
-  :language: java
-  :autograde: unittest
-  :practice: T
-    
-  The method ``volumeCylinder`` takes parameters representing the radius and height of a cylinder, 
-  and returns the corresponding volume.  The method returns a value that has type ``double``.
-  Use the CodeLens to step through the code.
-  Experiment with passing different values to the method.
+A method can return at most one value.  The method signature specifies the **return type**, which can be a primitive (int, double, boolean), 
+a class (String, Turtle, etc), or void.
 
-  ~~~~
-  public class VolumeExample 
-  {
-    public static double volumeCylinder(double radius, double height) 
-    {
-      return Math.PI * radius * radius * height;
-    }   
+.. mchoice:: q5_3_1
+   :answer_a: public
+   :answer_b: static
+   :answer_c: double
+   :answer_d: volumeCylinder
+   :correct: c
+   :feedback_a: This is the access modifier.
+   :feedback_b: This is the non-access modifier.
+   :feedback_c: Correct. This is the return type.
+   :feedback_d: This is the method name.
+  
+   This method computes the volume of a cylinder.  The method has formal parameters for radius and height, and returns a value representing the corresponding volume. 
+   Given the method signature, what is the return type?
 
-    public static void main(String args[])
-    {
-      // Calculate the volume of a cylinder  radius=4 and height=10
-      double vol = volumeCylinder(4, 10);
-      System.out.println(vol);
-    }
-  }
-  ====
-  import static org.junit.Assert.*;
-  import org.junit.*;;
-  import java.io.*;
-
-  public class RunestoneTests extends CodeTestHelper
-  {
-    
-    public RunestoneTests() {
-      super("VolumeExample");
-    }
-
-    @Test
-      public void test1()
-      {
-        boolean passed = getResults("true", "true", "main()");
-        assertTrue(passed);
-      }
-  }
-
+    .. figure:: Figures/volumeCylinder.png
 
 
 Method Return Type
 ------------------
 
-.. figure:: Figures/volumeCylinder.png
-  :align: center
-  :alt: Method signature for volumeCylinder
-  :figclass: align-center
-  
-  Figure 1: Method Return Type
-
-
-A method can return at most one value.  The method signature specifies the **return type**, which can be a primitive (int, double, boolean), 
-a class (String, Turtle, etc), or void.
 A **void** return type means the method does not return a value.
 If a method has a **non-void** return type, then it must contain a **return statement** that specifies the value to return.
 The return type must match with the value in the return statement.
 
+
 Click on each tab to observe the data flowing into the method through the formal parameters and out of the method through the return statement.
 
-.. tabbed:: q5_3_1
+.. tabbed:: q5_3_2
 
     .. tab:: Tab 1
 
@@ -148,6 +111,27 @@ Click on each tab to observe the data flowing into the method through the formal
       .. figure:: Figures/frame5.png
 
 
+
+.. activecode:: code5_3_1
+  :language: java
+    
+  Use the CodeLens to step through the code.  Experiment with passing different values to the volumeCylinder method.
+
+  ~~~~
+  public class VolumeExample 
+  {
+    public static double volumeCylinder(double radius, double height) 
+    {
+      return Math.PI * radius * radius * height;
+    }   
+
+    public static void main(String args[])
+    {
+      // Calculate the volume of a cylinder  radius=4 and height=10
+      double vol = volumeCylinder(4, 10);
+      System.out.println(vol);
+    }
+  }
 
 |CodingEx| **Coding Exercise**
 
@@ -195,7 +179,7 @@ Click on each tab to observe the data flowing into the method through the formal
       String code = getCode();
       int num = countOccurences(code, "public static double inchesToCentimeters(double inches)");
       boolean passed = num ==1;
-      passed = getResults("1 signature", num + " signature", "Change the return type of inchesToCentimeters", passed);
+      passed = getResults("1 signature", num + " signature", "Return type of inchesToCentimeters method", passed);
       assertTrue(passed);
     }
 
@@ -204,7 +188,7 @@ Click on each tab to observe the data flowing into the method through the formal
       String code = getCode();
       int num = countOccurences(code, "return");
       boolean passed = num ==1;
-      passed = getResults("1 return", num + " return" , "The method inchesToCentiments is missing a return statement", passed);
+      passed = getResults("1 return", num + " return" , "Return statement in inchesToCentiments method", passed);
       assertTrue(passed);
     }
 
@@ -222,7 +206,7 @@ Click on each tab to observe the data flowing into the method through the formal
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: q5_3_2
+.. mchoice:: q5_3_3
    :practice: T
    :answer_a: return "hello";
    :answer_b: return true;
@@ -241,7 +225,7 @@ Click on each tab to observe the data flowing into the method through the formal
      public static int mystery()
 
 
-.. mchoice:: q5_3_3
+.. mchoice:: q5_3_4
    :practice: T
    :answer_a: return "hello";
    :answer_b: return true;
@@ -260,7 +244,7 @@ Click on each tab to observe the data flowing into the method through the formal
      public static boolean mystery2()
 
 
-.. mchoice:: q5_3_4
+.. mchoice:: q5_3_5
    :practice: T
    :answer_a: String result = mystery3();
    :answer_b: int result = mystery3();
@@ -277,7 +261,7 @@ Click on each tab to observe the data flowing into the method through the formal
      public static int mystery3()
 
 
-.. mchoice:: q5_3_5
+.. mchoice:: q5_3_6
    :practice: T
    :answer_a: String result = mystery4();
    :answer_b: int result = mystery4();
@@ -296,7 +280,7 @@ Click on each tab to observe the data flowing into the method through the formal
      public static void mystery4()
 
 
-.. mchoice:: q5_3_6
+.. mchoice:: q5_3_7
    :practice: T
    :answer_a: return 10;
    :answer_b: return 12 * 4;
@@ -349,12 +333,10 @@ Click on each tab to observe the data flowing into the method through the formal
   public class RunestoneTests extends CodeTestHelper
   {
     
-    public RunestoneTests() {
-      super("InchesToCentimeters");
-    }
-
+    
      @Test
-    public void checkCodeContainsSig(){
+    public void checkCodeContainsSig()
+    {
       String code = getCode();
       int num = countOccurences(code, "public static double convertToMiles(int");
       boolean passed = num ==1;
@@ -363,7 +345,8 @@ Click on each tab to observe the data flowing into the method through the formal
     }
 
     @Test
-    public void checkCodeContainsReturn(){
+    public void checkCodeContainsReturn()
+    {
       String code = getCode();
       int num = countOccurences(code, "return");
       boolean passed = num ==1;
@@ -381,7 +364,7 @@ Click on each tab to observe the data flowing into the method through the formal
           getResults(expect, output, "Expected output from main");
           assertTrue(passed);
     }
-
+  }
 
 
 |CodingEx| **Coding Exercise**

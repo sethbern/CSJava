@@ -149,7 +149,6 @@ Easier Multiple Choice Questions
       list1.remove(1);
       System.out.println(list1);
 
-You can step through the code above by clicking on the following `Ex-8-11-9 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++List%3CInteger%3E+list1+%3D+new+ArrayList%3CInteger%3E()%3B%0A++++++list1.add(new+Integer(1))%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(new+Integer(2))%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(new+Integer(3))%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.remove(1)%3B%0A++++++System.out.println(list1)%3B%0A++++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 .. mchoice:: qale_10
    :practice: T
@@ -175,7 +174,6 @@ You can step through the code above by clicking on the following `Ex-8-11-9 <htt
       list1.add(0, "Sarah");
       System.out.println(list1);
 
-You can step through the code above by clicking on the following `Ex-8-11-10 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++List%3CString%3E+list1+%3D+new+ArrayList%3CString%3E()%3B%0A++++++list1.add(%22Anaya%22)%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(%22Layla%22)%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(%22Sharrie%22)%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.set(0,+%22Destini%22)%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(0,+%22Sarah%22)%3B%0A++++++System.out.println(list1)%3B%0A++++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 
 Easier Search/Sort Multiple Choice Questions
@@ -212,7 +210,6 @@ Easier Search/Sort Multiple Choice Questions
        return -1;
      }
 
-You can step through the code above by clicking on the following `Ex-12-7-1 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.Arrays%3B%0A%0Apublic+class+Test+%7B%0A+++%0A+++public+static+int+mystery(int%5B%5D+elements,+int+target)%0A+++%7B%0A++++++for+(int+j+%3D+0%3B+j+%3C+elements.length%3B+j%2B%2B)%0A++++++%7B%0A+++++++++if+(elements%5Bj%5D+%3D%3D+target)%0A+++++++++%7B%0A++++++++++++return+j%3B%0A+++++++++%7D%0A++++++%7D%0A++++++return+-1%3B%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+nums+%3D+%7B90,+-30,+50%7D%3B%0A++++++int+found+%3D+mystery(nums,+50)%3B%0A++++++System.out.println(found)%3B%0A++++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 .. mchoice:: qsearchse_2
    :practice: T
@@ -244,7 +241,6 @@ You can step through the code above by clicking on the following `Ex-12-7-1 <htt
        return -1;
      }
 
-You can step through the code above by clicking on the following `Ex-12-7-2 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.Arrays%3B%0A%0Apublic+class+Test+%7B%0A+++%0A+++public+static+int+mystery(int%5B%5D+elements,+int+target)%0A+++%7B%0A++++++for+(int+j+%3D+0%3B+j+%3C+elements.length%3B+j%2B%2B)%0A++++++%7B%0A+++++++++if+(elements%5Bj%5D+%3D%3D+target)%0A+++++++++%7B%0A++++++++++++return+j%3B%0A+++++++++%7D%0A++++++%7D%0A++++++return+-1%3B%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++int%5B%5D+nums+%3D+%7B90,+-30,+50%7D%3B%0A++++++int+found+%3D+mystery(nums,+-20)%3B%0A++++++System.out.println(found)%3B%0A++++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 .. mchoice:: qsearchse_3
    :practice: T
@@ -281,7 +277,6 @@ You can step through the code above by clicking on the following `Ex-12-7-2 <htt
           return -1;
       }
 
-You can step through the code above by clicking on the following `Ex-12-7-3 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+SearchTest%0A%7B%0A+++public+static+int+binarySearch(int%5B%5D+elements,+int+target)+%7B%0A++++++int+left+%3D+0%3B%0A++++++int+right+%3D+elements.length+-+1%3B%0A++++++int+count+%3D+0%3B%0A++++++while+(left+%3C%3D+right)%0A++++++%7B%0A+++++++++count%2B%2B%3B%0A+++++++++System.out.println(%22count%3A+%22+%2B+count)%3B%0A+++++++++%0A+++++++++int+middle+%3D+(left+%2B+right)+/+2%3B%0A+++++++++if+(target+%3C+elements%5Bmiddle%5D)%0A+++++++++%7B%0A++++++++++++right+%3D+middle+-+1%3B%0A+++++++++%7D%0A+++++++++else+if+(target+%3E+elements%5Bmiddle%5D)%0A+++++++++%7B%0A++++++++++++left+%3D+middle+%2B+1%3B%0A+++++++++%7D%0A+++++++++else+%7B%0A++++++++++++return+middle%3B%0A+++++++++%7D%0A+++++++%7D%0A+++++++return+-1%3B%0A+++%7D%0A%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++int%5B%5D+arr+%3D+%7B2,+10,+23,+31,+55,+86%7D%3B%0A%0A++++++//+test+when+the+target+is+in+the+middle%0A++++++int+index+%3D+binarySearch(arr,2)%3B%0A++++++System.out.println(index)%3B%0A+++%7D%0A%7D%0A%0A&mode=display&curInstr=0>`_.
 
 .. mchoice:: qsearchse_4
    :practice: T
@@ -339,7 +334,6 @@ Medium Multiple Choice Questions
       list1.add(new Integer(6));
       System.out.println(list1);
       
-You can step through the code above by clicking on this link `Example-8-12-1 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++List%3CInteger%3E+list1+%3D+new+ArrayList%3CInteger%3E()%3B%0A++++++list1.add(new+Integer(1))%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(new+Integer(2))%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(new+Integer(3))%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.set(2,+new+Integer(4))%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(2,+new+Integer(5))%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.add(new+Integer(6))%3B%0A++++++System.out.println(list1)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
    
 .. mchoice:: qalm_2
@@ -377,7 +371,6 @@ You can step through the code above by clicking on this link `Example-8-12-1 <ht
         }
       }
       
-You can step through the code above by clicking on this link `Example-8-12-2 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+ListWorker+%7B%0A+++%0A+++private+List%3CInteger%3E+nums%3B%0A+++%0A+++public+ListWorker(List%3CInteger%3E+theNums)%0A+++%7B%0A++++++nums+%3D+theNums%3B%0A+++%7D%0A%0A+++//+precondition%3A+nums.size()+%3E+0%3B%0A+++//+nums+contains+Integer+objects%0A+++public+void+numQuest()%0A+++%7B%0A+++++++int+k+%3D+0%3B%0A+++++++Integer+zero+%3D+new+Integer(0)%3B%0A+++++++while+(k+%3C+nums.size())%0A+++++++%7B%0A+++++++++System.out.println(%22List%3A+%22+%2B+nums+%2B+%22+and+k+is+%22+%2B+k)%3B%0A+++++++++if+(nums.get(k).equals(zero))%0A+++++++++++nums.remove(k)%3B%0A+++++++++else%0A+++++++++++k%2B%2B%3B%0A+++++++%7D%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++List%3CInteger%3E+myList+%3D+new+ArrayList%3CInteger%3E()%3B%0A++++++myList.add(0)%3B%0A++++++myList.add(0)%3B%0A++++++myList.add(4)%3B%0A++++++myList.add(2)%3B%0A++++++myList.add(5)%3B%0A++++++myList.add(0)%3B%0A++++++myList.add(3)%3B%0A++++++ListWorker+lWorker+%3D+new+ListWorker(myList)%3B%0A++++++lWorker.numQuest()%3B%0A++++++System.out.println(myList)%3B+%0A++++++%0A+++%7D%0A+++%0A%7D&mode=display&curInstr=0>`_.
 
 .. mchoice:: qalm_3
    :practice: T
@@ -413,7 +406,6 @@ You can step through the code above by clicking on this link `Example-8-12-2 <ht
          return someList;
       }
       
-You can step through the code above by clicking on the link `Example-8-12-3 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++%0A++++++public+static+List%3CInteger%3E+process1(int+n)%0A++++++%7B%0A+++++++++List%3CInteger%3E+someList+%3D+new+ArrayList%3CInteger%3E()%3B%0A+++++++++for+(int+k+%3D+0%3B+k+%3C+n%3B+k%2B%2B)%0A+++++++++%7B%0A++++++++++++someList.add(k)%3B%0A++++++++++++System.out.println(someList)%3B%0A+++++++++%7D%0A+++++++++return+someList%3B%0A++++++%7D%0A++++++%0A++++++public+static+List%3CInteger%3E+process2(int+n)%0A++++++%7B%0A+++++++++List%3CInteger%3E+someList+%3D+new+ArrayList%3CInteger%3E()%3B%0A+++++++++for+(int+k+%3D+0%3B+k+%3C+n%3B+k%2B%2B)%0A+++++++++%7B%0A++++++++++++someList.add(k,+k)%3B%0A++++++++++++System.out.println(someList)%3B%0A+++++++++%7D%0A+++++++++return+someList%3B%0A++++++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++List%3CInteger%3E+myList+%3D+process1(5)%3B%0A++++++List%3CInteger%3E+myList2+%3D+process2(5)%3B%0A+++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
       
 .. mchoice:: qalm_4
    :practice: T
@@ -442,7 +434,6 @@ You can step through the code above by clicking on the link `Example-8-12-3 <htt
      aList.add(new Integer(3));
      System.out.println(aList); 
      
-You can step through the code above by clicking on the link `Example-8-12-4 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A+++++List%3CInteger%3E+aList+%3D+new+ArrayList%3CInteger%3E()%3B%0A+++++aList.add(new+Integer(1))%3B+%0A+++++System.out.println(aList)%3B%0A+++++aList.add(new+Integer(2))%3B+%0A+++++System.out.println(aList)%3B%0A+++++aList.add(1,+new+Integer(5))%3B+%0A+++++System.out.println(aList)%3B%0A+++++aList.set(1,+new+Integer(4))%3B%0A+++++System.out.println(aList)%3B%0A+++++aList.add(new+Integer(6))%3B+%0A+++++System.out.println(aList)%3B%0A+++++aList.add(new+Integer(3))%3B%0A+++++System.out.println(aList)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
      
 .. mchoice:: qalm_5
    :practice: T
@@ -471,7 +462,6 @@ You can step through the code above by clicking on the link `Example-8-12-4 <htt
      aList.add(new Integer(5)); 
      System.out.println(list); 
      
-You can step through the code above by clicking on the link `Example-8-12-5 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A+++++List%3CInteger%3E+aList+%3D+new+ArrayList%3CInteger%3E()%3B%0A+++++aList.add(new+Integer(1))%3B+%0A+++++System.out.println(aList)%3B+%0A+++++aList.add(new+Integer(2))%3B+%0A+++++System.out.println(aList)%3B+%0A+++++aList.remove(1)%3B%0A+++++System.out.println(aList)%3B+%0A+++++aList.add(1,+new+Integer(3))%3B+%0A+++++System.out.println(aList)%3B+%0A+++++aList.set(1,+new+Integer(4))%3B%0A+++++System.out.println(aList)%3B+%0A+++++aList.add(new+Integer(5))%3B+%0A+++++System.out.println(aList)%3B+%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 .. mchoice:: qalm_6
    :practice: T
@@ -502,7 +492,6 @@ You can step through the code above by clicking on the link `Example-8-12-5 <htt
 
      What is printed as a result of executing the following code segment?
      
-You can step through the code above by clicking on the link `Example-8-12-6 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A+++++List%3CString%3E+list1+%3D+new+ArrayList%3CString%3E()%3B%0A+++++list1.add(%22a%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.add(%22b%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.add(0,%22c%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.add(1,+%22d%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.set(2,+%22e%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.add(%22f%22)%3B%0A+++++System.out.println(list1)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 .. mchoice:: qalm_7
    :practice: T
@@ -518,7 +507,6 @@ You can step through the code above by clicking on the link `Example-8-12-6 <htt
 
    Given the list ``nums = [4, 2, 3, 4, 5]`` what is the result after executing ``nums.remove(4)``?
    
-You can step through the code above by clicking on the following `Example-8-12-7 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++List%3CInteger%3E+list1+%3D+new+ArrayList%3CInteger%3E()%3B%0A++++++list1.add(4)%3B%0A++++++list1.add(2)%3B%0A++++++list1.add(3)%3B%0A++++++list1.add(4)%3B%0A++++++list1.add(5)%3B%0A++++++System.out.println(list1)%3B%0A++++++list1.remove(4)%3B%0A++++++System.out.println(list1)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
    
 .. mchoice:: qalm_8
    :practice: T
@@ -547,7 +535,6 @@ You can step through the code above by clicking on the following `Example-8-12-7
 
      What is printed as a result of executing the following code segment?
      
-You can step through the code above by clicking on the following `Example-8-12-8 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A+++++List%3CString%3E+list1+%3D+new+ArrayList%3CString%3E()%3B%0A+++++list1.add(%22a%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.add(%22b%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.add(0,%22c%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.set(1,+%22d%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.set(0,+%22e%22)%3B%0A+++++System.out.println(list1)%3B%0A+++++list1.add(%22b%22)%3B%0A+++++System.out.println(list1)%3B%0A+++%7D%0A%7D&mode=display&curInstr=15>`_.
 
 .. mchoice:: qalm_9
    :practice: T
@@ -577,7 +564,6 @@ You can step through the code above by clicking on the following `Example-8-12-8
          }
      }
      
-You can step through the code above by clicking on the following `Example-8-12-9 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0A+++%0Apublic+class+ListTester%0A%7B%0A+++%0A++++private+List%3CInteger%3E+numList+%3D+null%3B%0A+++%0A++++public+ListTester(List%3CInteger%3E+myList)%0A++++%7B%0A+++++++numList+%3D+myList%3B%0A++++%7D%0A+++%0A++++public+void+mystery(int+n)%0A++++%7B%0A++++++++for+(int+i+%3D+0%3B+i+%3C+n%3B+i%2B%2B)%0A++++++++%7B%0A++++++++++++Integer+obj+%3D+numList.remove(0)%3B%0A++++++++++++numList.add(obj)%3B%0A++++++++%7D%0A++++%7D%0A++++++%0A++++public+static+void+main(String%5B%5D+args)+%0A++++%7B%0A+++++++List%3CInteger%3E+aList+%3D+new+ArrayList%3CInteger%3E()%3B%0A+++++++aList.add(0)%3B%0A+++++++aList.add(1)%3B%0A+++++++aList.add(2)%3B%0A+++++++aList.add(3)%3B%0A+++++++aList.add(4)%3B%0A+++++++ListTester+tester+%3D+new+ListTester(aList)%3B%0A+++++++System.out.println(tester.numList)%3B%0A+++++++tester.mystery(5)%3B%0A+++++++System.out.println(tester.numList)%3B%0A+++%0A++++%7D%0A%7D&mode=display&curInstr=0>`_.
 	 
 .. mchoice:: qalm_10
    :practice: T
@@ -610,7 +596,6 @@ You can step through the code above by clicking on the following `Example-8-12-9
 
      
      
-You can step through the code above by clicking on the following `Example-8-12-10 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0A+++%0Apublic+class+ListTester%0A%7B%0A+++%0A++++private+List%3CInteger%3E+numList+%3D+null%3B%0A+++%0A++++public+ListTester(List%3CInteger%3E+myList)%0A++++%7B%0A+++++++numList+%3D+myList%3B%0A++++%7D%0A+++%0A++++public+void+mystery(int+value)%0A++++%7B%0A++++++++int+i+%3D+0%3B%0A++++++++while+(i+%3C+numList.size()+%26%26+numList.get(i)+%3C+value)%0A++++++++%7B+%0A++++++++++++i%2B%2B%3B%0A++++++++%7D%0A++++++++numList.add(i,+value)%3B%0A++++%7D%0A++++++%0A++++public+static+void+main(String%5B%5D+args)+%0A++++%7B%0A+++++++List%3CInteger%3E+aList+%3D+new+ArrayList%3CInteger%3E()%3B%0A+++++++aList.add(5)%3B%0A+++++++aList.add(7)%3B%0A+++++++aList.add(8)%3B%0A+++++++aList.add(12)%3B%0A+++++++ListTester+tester+%3D+new+ListTester(aList)%3B%0A+++++++System.out.println(tester.numList)%3B%0A+++++++tester.mystery(11)%3B%0A+++++++System.out.println(tester.numList)%3B%0A+++%0A++++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 Medium Search/Sort Multiple Choice Questions
 --------------------------------------------
@@ -632,7 +617,6 @@ Medium Search/Sort Multiple Choice Questions
 
    Which of the following correctly shows the iterations of an ascending (from left to right) insertion sort on an array with the following elements: {7,3,8,5,2}?
 
-You can step through an insertion sort with this data by clicking on the following `Ex-12-8-1 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.Arrays%3B%0A%0Apublic+class+SortTest%0A%7B%0A+++public+static+void+insertionSort(int%5B%5D+elements)%0A+++%7B%0A++++++for+(int+j+%3D+1%3B+j+%3C+elements.length%3B+j%2B%2B)%0A++++++%7B%0A+++++++++int+temp+%3D+elements%5Bj%5D%3B%0A+++++++++int+possibleIndex+%3D+j%3B%0A+++++++++while+(possibleIndex+%3E+0+%26%26+temp+%3C+elements%5BpossibleIndex+-+1%5D)%0A+++++++++%7B%0A++++++++++++elements%5BpossibleIndex%5D+%3D+elements%5BpossibleIndex+-+1%5D%3B%0A++++++++++++possibleIndex--%3B%0A+++++++++%7D%0A+++++++++elements%5BpossibleIndex%5D+%3D+temp%3B%0A+++++++++System.out.println(Arrays.toString(elements))%3B%0A++++++%7D%0A++%7D%0A%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++int%5B%5D+arr1+%3D+%7B7,3,8,5,2%7D%3B%0A++++++insertionSort(arr1)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
 
 .. mchoice:: qsearchsm_2
    :practice: T
@@ -676,7 +660,6 @@ You can step through an insertion sort with this data by clicking on the followi
           }
       }
 
-You can step through the code above by clicking on the following `Ex-12-8-2 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.Arrays%3B%0Apublic+class+Searcher%0A%7B%0A+++private+int%5B%5D+arr+%3D+%7B1,3,5,8,9%7D%3B%0A++%0A+++public+int+mystery(int+low,+int+high,+int+num)+%7B+++%0A++++++int+mid+%3D+(low+%2B+high)+/+2%3B+++%0A++++++if+(low+%3E+high)+%7B+++++%0A+++++++++return+-1%3B+++%7D+++%0A++++++else+if+(arr%5Bmid%5D+%3C+num)+%7B+++++%0A+++++++++return+mystery(mid+%2B+1,+high,+num)%3B+++%7D+++%0A++++++else+if+(arr%5Bmid%5D+%3E+num)+%7B+++++%0A+++++++++return+mystery(low,+mid+-+1,+num)%3B+++%7D+++%0A++++++else++++++%0A+++++++++return+mid%3B%0A+++%7D%0A%0A++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++Searcher+s+%3D+new+Searcher()%3B%0A++++++System.out.println(s.mystery(0,4,3))%3B%0A+++%7D+%0A%7D&mode=display&curInstr=0>`_.
 
 .. mchoice:: qsearchsm_3
    :practice: T
@@ -692,7 +675,6 @@ You can step through the code above by clicking on the following `Ex-12-8-2 <htt
 
    Which of the following correctly shows the iterations of an ascending (from left to right) selection sort on an array with the following elements: {10, 6, 3, 2, 8}?
 
-You can step through the code above by clicking on the folloiwng `Ex-12-8-3 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.Arrays%3B%0A%0Apublic+class+SortTest%0A%7B%0A+++public+static+void+selectionSort(int%5B%5D+elements)%0A+++%7B%0A++++++for+(int+j+%3D+0%3B+j+%3C+elements.length+-+1%3B+j%2B%2B)%0A++++++%7B%0A+++++++++int+minIndex+%3D+j%3B%0A+++++++++for+(int+k+%3D+j+%2B+1%3B+k+%3C+elements.length%3B+k%2B%2B)%0A+++++++++%7B%0A++++++++++++if+(elements%5Bk%5D+%3C+elements%5BminIndex%5D)%0A++++++++++++%7B%0A+++++++++++++++minIndex+%3D+k%3B%0A++++++++++++%7D%0A+++++++++%7D%0A+++++++++int+temp+%3D+elements%5Bj%5D%3B%0A+++++++++elements%5Bj%5D+%3D+elements%5BminIndex%5D%3B%0A+++++++++elements%5BminIndex%5D+%3D+temp%3B%0A+++++++++System.out.println(Arrays.toString(elements))%3B%0A+++++++%7D%0A+++%7D%0A%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++int%5B%5D+arr1+%3D+%7B10,+6,+3,+2,+8%7D%3B%0A++++++selectionSort(arr1)%3B%0A+++%7D%0A%7D%0A&mode=display&curInstr=0>`_.
 
 .. mchoice:: qsearchsm_4
    :practice: T
@@ -741,7 +723,6 @@ You can step through the code above by clicking on the folloiwng `Ex-12-8-3 <htt
           }
       }
 
-You can step through the code above (with answer a in place of the missing code) by clicking on the following `Ex-12-8-4 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.Arrays%3B%0A%0Apublic+class+Searcher%0A%7B%0A++%0A+++public+static+void+sort(int%5B%5D+elem)%0A+++%7B%0A++++++for+(int+j+%3D+0%3B+j+%3C+elem.length+-+1%3B+j%2B%2B)%0A++++++%7B%0A+++++++++int+minIndex+%3D+j%3B%0A%0A+++++++++for+(int+k+%3D+j+-+1%3B+k+%3E%3D+0%3B+k--)%0A+++++++++%7B%0A++++++++++++if+(elem+%5Bk%5D+%3C+elem+%5BminIndex%5D)%0A++++++++++++%7B%0A+++++++++++++++minIndex+%3D+k%3B%0A++++++++++++%7D%0A+++++++++%7D%0A+++++++++int+temp+%3D+elem%5Bj%5D%3B%0A+++++++++elem%5Bj%5D+%3D+elem%5BminIndex%5D%3B%0A+++++++++elem%5BminIndex%5D+%3D+temp%3B%0A+++++++++System.out.println(Arrays.toString(elem))%3B%0A++++++%7D%0A+++%7D%0A++++++++++++++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++int%5B%5D+nums+%3D+%7B28,+-3,+2,+14,+30%7D%3B%0A++++++Searcher.sort(nums)%3B%0A+++%7D+%0A%7D++%0A&mode=display&curInstr=0>`_.
 
 .. mchoice:: qsearchsm_5
    :practice: T
@@ -771,7 +752,6 @@ You can step through the code above (with answer a in place of the missing code)
           }
       }
 
-You can see this code at the following `Ex-12-8-5 <https://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+ClassNameHere+%7B%0A+++%0A+++public+static+int+test(int%5B%5D+a,+int+v)%0A%7B%0A++++for+(int+i+%3D+0%3B+i+%3C+a.length%3B+i%2B%2B)%0A++++%7B%0A++++++++if+(a%5Bi%5D+%3D%3D+v)%0A++++++++++++return+i%3B%0A++++++++//+this+jumps+out+of+the+loop+too+early+so+comment+it+out%0A++++++++//else+return+-1%3B%0A++++%7D%0A++++//+Move+the+return+out+of+the+loop+to+get+it+to+compile%0A++++return+-1%3B%0A%7D%0A%0A+++%0A+++%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++%0A++++++int%5B%5D+nums+%3D+%7B1,2,3,4%7D%3B%0A++++++System.out.println(test(nums,3))%3B%0A++++++%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
  
 
 Hard Multiple Choice Questions
@@ -800,7 +780,6 @@ Hard Multiple Choice Questions
       nums.add(0,4);
       nums.remove(1);
       
-You can step through the code above by clicking on the following `Example-8-13-1 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+Test+%7B%0A+++public+static+void+main(String%5B%5D+args)+%7B%0A++++++List%3CInteger%3E+nums+%3D+new+ArrayList%3CInteger%3E()%3B%0A++++++nums.add(5)%3B%0A++++++System.out.println(nums)%3B%0A++++++nums.add(3)%3B%0A++++++System.out.println(nums)%3B%0A++++++nums.add(1)%3B%0A++++++System.out.println(nums)%3B%0A++++++nums.add(6)%3B%0A++++++System.out.println(nums)%3B%0A++++++nums.add(0,4)%3B%0A++++++System.out.println(nums)%3B%0A++++++nums.remove(1)%3B%0A++++++System.out.println(nums)%3B%0A+++%7D%0A%7D&mode=display&curInstr=0>`_.
       
 .. mchoice:: qalh_2
    :practice: T
@@ -834,7 +813,6 @@ You can step through the code above by clicking on the following `Example-8-13-1
         }
      }
      
-You can step through the code above by clicking on the following `Example-8-13-2 <http://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.util.*%3B%0Apublic+class+ListWorker+%7B%0A+++%0A+++private+List%3CInteger%3E+nums%3B%0A+++%0A+++public+ListWorker(List%3CInteger%3E+theNums)%0A+++%7B%0A++++++nums+%3D+theNums%3B%0A+++%7D%0A%0A+++//+precondition%3A+nums.size()+%3E+0%3B%0A+++//+nums+contains+Integer+objects%0A+++public+void+numQuest()%0A+++%7B%0A+++++++int+k+%3D+0%3B%0A+++++++Integer+zero+%3D+new+Integer(0)%3B%0A+++++++while+(k+%3C+nums.size())%0A+++++++%7B%0A+++++++++System.out.println(%22List%3A+%22+%2B+nums+%2B+%22+and+k+is+%22+%2B+k)%3B%0A+++++++++if+(nums.get(k).equals(zero))%0A+++++++++++nums.remove(k)%3B%0A+++++++++k%2B%2B%3B%0A+++++++%7D%0A+++%7D%0A+++%0A+++public+static+void+main(String%5B%5D+args)%0A+++%7B%0A++++++List%3CInteger%3E+myList+%3D+new+ArrayList%3CInteger%3E()%3B%0A++++++myList.add(0)%3B%0A++++++myList.add(0)%3B%0A++++++myList.add(4)%3B%0A++++++myList.add(2)%3B%0A++++++myList.add(5)%3B%0A++++++myList.add(0)%3B%0A++++++myList.add(3)%3B%0A++++++ListWorker+lWorker+%3D+new+ListWorker(myList)%3B%0A++++++lWorker.numQuest()%3B%0A++++++System.out.println(myList)%3B+%0A++++++%0A+++%7D%0A+++%0A%7D&mode=display&curInstr=0>`_.
 
 
 Hard Search/Sort Multiple Choice Questions
@@ -889,7 +867,6 @@ Hard Search/Sort Multiple Choice Questions
           }
       }
 
-You can step through the code above by clicking on the following link `Ex-12-8-1 <https://goo.gl/zqWPtU>`_.
 
 .. mchoice:: qssm_2
    :practice: T

@@ -29,20 +29,20 @@ Consider two verses in the "Old MacDonald" song:
   :align: left
   :widths: auto
 
-  ===================================  ==================================  
+  ===================================  ===================================  
              Verse 1                             Verse 2                
-  ===================================  ==================================
+  ===================================  ===================================
    Old MacDonald had a farm            Old MacDonald had a farm          
    E-I-E-I-O                           E-I-E-I-O                        
-   And on that farm he had a cow       And on that farm he had a duck   
+   And on that farm he had a **cow**   And on that farm he had a **duck**   
    E-I-E-I-O                           E-I-E-I-O                        
-   With a moo-moo here                 With a quack-quack here          
-   And a moo-moo there                 And a quack-quack there          
-   Here a moo, there a moo             Here a quack, there a quack      
-   Everywhere a moo-moo                Everywhere a quack-quack         
+   With a **moo-moo** here             With a **quack-quack** here          
+   And a **moo-moo** there             And a **quack-quack** there          
+   Here a **moo**, there a **moo**     Here a **quack**, there a **quack**      
+   Everywhere a **moo-moo**            Everywhere a **quack-quack**         
    Old MacDonald had a farm            Old MacDonald had a farm         
    E-I-E-I-O                           E-I-E-I-O                        
-  ===================================  ==================================
+  ===================================  ===================================
 
     
 Each verse is identical, except for the animal (cow vs duck) and the noise (moo vs quack).
@@ -50,43 +50,48 @@ We can create a method named **verse** to abstract the repetitive lines,
 but the method will need two **formal parameters**, which are placeholders that allow 
 different values to be substituted for the animal and noise when the method is called. 
 The method body will use the formal parameter variables to customize the 
-print statements. When you call the method, you provide values between the parentheses, called **actual arguments** or **actual parameters**, that are 
+print statements. 
+
+.. code-block:: java
+
+     public static void verse( String animal, String noise ) 
+     {
+       System.out.println( "Old MacDonald had a farm" );
+       System.out.println( "E-I-E-I-O" );
+       System.out.println( "And on that farm he had a " + animal );
+       System.out.println( "E-I-E-I-O" );
+       System.out.println( "With a " + noise + "-" + noise + " here") ;
+       System.out.println( "And a " + noise + "-" + noise + " there" );
+       System.out.println( "Here a " + noise + ", there a " + noise );
+       System.out.println( "Everywhere a " + noise + "-" + noise );
+       System.out.println( "Old MacDonald had a farm" );
+       System.out.println( "E-I-E-I-O" );
+     }
+
+
+When you call the method, you provide values between the parentheses, called **actual arguments** or **actual parameters**, that are 
 copied into the formal parameter variables. 
 
-Figure 1 below shows the new **verse** method with two formal parameters for **animal** and **noise**. The print statements
-in the method body use the parameters to customize the output.  The figure
-depicts how actual argument values in the method call ``verse("cow","moo");`` are copied 
-into the formal parameter variables.
+.. code-block:: java
 
-.. figure:: Figures/argumentpassingcow.png
-  :width: 500px
-  :align: center
-  :alt: Actual Argument Values Passed Into Formal Parameters
-  :figclass: align-center
-  
-  Figure 1: Method Call Passes Actual Argument Values Into Formal Parameter Variables
-
+      verse( "cow", "moo" );
+      verse( "duck", "quack" );
 
 The main method will call the verse method twice, once for the cow and once for the duck.  
-Figure 2 shows the call stack diagram corresponding to the ``verse( "cow" , "moo" );``  method call.  
-If you look at the call stack diagram, the ``verse`` method frame
-contains not only the current line but also the formal parameter variables and their values.  The print statements
-in the method will use the formal parameter variables to customize the output.
+The call stack diagram shown below corresponding to the ``verse( "cow" , "moo" );``  method call.  
+If you look at the frame on the call stack for the ``verse`` method, it
+contains not only the current line but also the formal parameter variables and values.  The print statements will use the formal parameter variables to customize the output.
+
 
 .. figure:: Figures/stackframesong.png
-
-  Figure 2: Formal Parameter Variables Stored in Call Stack Frame
 
 
 .. activecode:: code5_2_1
   :language: java
   :autograde: unittest
   :practice: T
-    
-  Use the CodeLens button to watch how the main method
-  passes actual argument values into each call to the verse method.
-  Update the main method to add a third verse to the song with another animal and noise.
-  Rerun the program to confirm the third verse is correct.
+  
+  Update the main method to add a third verse to the song with another animal and noise. Use the CodeLens button to step through the code.
   ~~~~
   public class Song 
   { 
@@ -185,12 +190,7 @@ Do you notice any redundancy?
 The table below displays the code for each employee side by side.  The first three lines of code 
 are the same except for
 the value in the right hand side of each assignment, while the last two lines of code are identical.  
-We can eliminate the redundant calculation and printing by adding a new method named ``calculatePay``.  The method
-will compute the weekly pay for an employee based on their hourlyRate and hoursWorked.
-We need 3 formal parameters to allow different
-values to be passed into the method: employee, hourlyRate, and hoursWorked.  
-The method body will use the formal parameters to compute and print the weekly pay.  We can then
-call the method once per employee, passing in the appropriate actual parameter values.
+
 
 .. table:: 
   :align: left
@@ -206,23 +206,33 @@ call the method once per employee, passing in the appropriate actual parameter v
   System.out.println(employee  + ":" + weeklyPay);   System.out.println(employee  + ":" + weeklyPay);
   ================================================   =================================================
  
-The figure below shows the signature and body for the new method ``calculatePay``.  The method signature
-contains  three formal parameters for employee, hourlyRate, and hoursWorked.  When the method is called, actual values
-will need to be provided as shown.
+The redundant calculation and printing can be eliminated by adding a new method named ``calculatePay``.  
+Three formal parameters are needed to allow different
+values to be passed into the method: ``employee``, ``hourlyRate``, and ``hoursWorked``.  
+The ``weeklyPay`` variable is declared in the method body, since its value is computed using the formal parameter variables.
+A variable declared in a method is called a **local variable**. 
 
-.. figure:: Figures/calculatePay.png
-  :align: center
-  :alt: Parameter passing for the calculatePay method 
-  :figclass: align-center
+.. code-block:: java
+ 
+  public static void calculatePay ( String employee, double hourlyRate, double hoursWorked)
+  {
+     double weeklyPay = hourlyRate * hoursWorked;
+     System.out.println(employee  + ":" + weeklyPay);
+  }
+ 
+When the **calculatePay** method is called, actual values must be provided for each parameter:
 
-  Figure 2: The calculatePay method
+.. code-block:: java
+
+  calculatePay ( "Fred", 12.50, 20.0 );
+  calculatePay ( "Amir", 15.00, 35.0 );
 
 .. activecode:: code5_2_2
   :language: java
   :autograde: unittest
   :practice: T
     
-  Update the code below to add the ``calculatePay`` method shown in Figure 2.  Update the ``main`` method to 
+  Update the code below to add the ``calculatePay`` method.  Update the ``main`` method to 
   call the ``calculatePay`` method twice to compute the pay for each employee.  
   Use the CodeLens button to confirm that your main method makes the two calls to calculatePay, with the correct values passed into the method.
 
@@ -234,7 +244,8 @@ will need to be provided as shown.
   
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
       
         //call calculatePay for employee Fred, hourly rate 12.50 and hours worked 20.0
 
@@ -378,40 +389,44 @@ definition to match the name, number and type of arguments, and return type.
      public static void mystery(boolean b, String s)
 
 
-|Exercise| **Check your understanding**
+.. mchoice:: q5_2_6
+   :practice: T
+   :answer_a: mystery("5");
+   :answer_b: mystery(5);
+   :answer_c: mystery(5, "5");
+   :correct: b
+   :feedback_a: Incorrect.  This will call the first method, which expects a String value.
+   :feedback_b: Correct.  The second method expects an integer value.
+   :feedback_c: Incorrect.  This will call the third method, which expects two values to be passed as arguments.
    
+   A class can have several methods with the same name as long as the type or number of formal parameters is different. 
+   You may recall from the constructor lesson that this is called "overloading".  
+   Select the method call that causes the program to print ``second method 5``.
 
-Figure 3 shows a class with 3 methods named ``mystery``. While the 3 methods have the same name,
-notice that either the type of the formal parameter or the number of formal parameters is different.
-You may recall from the constructor lesson that this is called **overloading**. 
+   .. code-block:: java
 
-  .. figure:: Figures/mysteryoutput.png
-    :align: center
-    :figclass: align-center
-    
-    Figure 3: Method Overloading
-
-.. parsonsprob:: q5_2_6
-   :adaptive:
-   :noindent:
-   
-   The print output shown in the upper right section of 
-   Figure 3 was produced by adding 3 method calls in the main method, which have been erased.
-   Drag the needed blocks from the left area below into the correct order  in the right area
-   to produce the print output shown in Figure 2: 
-   -----
-   mystery( 5 );
-   =====
-   mystery( "5" ); #paired
-   =====
-   mystery( "hello");
-   =====
-   mystery( hello);  #paired
-   =====
-   mystery( 9, "bye");
-   =====
-   mystery( "bye", 9); #paired
-
+    public class TestArgumentPassing {
+      public static void mystery ( String str )
+      {
+        System.out.println("first method " + str);
+      }
+      
+      public static void mystery ( int num )
+      {
+        System.out.println("second method " + num);
+      }
+      
+      public static void mystery ( int num , String str)
+      {
+        System.out.println("third method " + num + "," + str);
+      }
+      
+      public static void main (String[] args)
+      {
+          
+      }
+	
+    }
 
 
 
@@ -424,11 +439,11 @@ and can be used in the code.
 
 A variable declared inside a method is called a **local variable**.  
 The scope of a local variable is the method body
-in which it is declared, which means it is visible and can be used within the method but not outside of the method. 
-You can't use a variable before it is declared, so in fact the scope begins when you declare the variable
-and continues until the last line of code in the method or block.    The local variable's memory location is also only available while 
+in which it is declared. 
+You can't use a variable before it is declared, so in fact the scope begins on the line that declares the variable
+and continues until the last line of code in the method or block.    The local variable's memory location is  only available while 
 the method is executing.  When the method completes, the memory location is released. If you called 
-the method again, the old value would not be available.  
+the method again, the old value is not available.  
 
 .. activecode:: code5_2_3
   :language: java
@@ -475,9 +490,9 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 
 .. mchoice:: q5_2_7
    :practice: T
-   :answer_a: print1;
-   :answer_b: main;
-   :answer_c: print1 and main;
+   :answer_a: print1
+   :answer_b: main
+   :answer_c: print1 and main
    :correct: b
    :feedback_a: Method print1 accesses num, which is a formal parameter with method level scope.
    :feedback_b: Method main can accesses the local variable age, since it is declared in the main method.
@@ -503,9 +518,9 @@ in a calculation.  The compiler will warn you if you try to use a local variable
 
 .. mchoice:: q5_2_8
    :practice: T
-   :answer_a: print1;
-   :answer_b: print2;
-   :answer_c: main;
+   :answer_a: print1
+   :answer_b: print2
+   :answer_c: main
    :correct: b
    :feedback_a: Method print1 accesses num, which is a formal parameter with method level scope.
    :feedback_b: Method print2 accesses age, which is not accessible since it is declared in the main method.

@@ -51,7 +51,7 @@ create a method to reduce the redundant code.
 
 
 .. clickablearea:: q5_1_1
-    :question: Click on all the lines that are repeated.
+    :question: Click on each line that occurs more than once in the song.
     :iscode:
     :feedback: Look for lines that are completely identical.  
 
@@ -67,9 +67,8 @@ create a method to reduce the redundant code.
         :click-correct:System.out.println("That I overlooked before");:endclick:
     :click-incorrect:}:endclick:
             
-Did you find some repetition in the song? 
 The two-line chorus is 
-repeated at the beginning and ending of the song: "I'm looking over a four-leaf clover That I overlooked before". 
+repeated at the beginning and ending of the song. 
 
 When you see duplicate lines of code, that is a signal for you to make a new method!
 A method is a **named** set of statements.  When we want to execute the statements, 
@@ -94,18 +93,26 @@ There are two steps to writing and using a static method:
 
 You define a method by writing the method's **header** and **body**.  
 The header is also called 
-a method **signature**.  The parts of the main method header are shown in Figure 1, 
+a method **signature**.  The parts of the main method header are shown in the figure below, 
 which include an access modifier,
 static modifier, return type, name, and formal parameters.   The method body 
 consists of a set of statements enclosed in curly braces { }.  
 
-.. figure:: Figures/methodheader.png
-    :width: 500px
-    :align: center
-    :figclass: align-center
-
-    Figure 1: Method Header(Signature) and Method Body
+.. mchoice:: q5_1_2
+   :answer_a: public
+   :answer_b: static
+   :answer_c: void
+   :answer_d: main
+   :correct: d
+   :feedback_a: This is the access modifier.
+   :feedback_b: This is the non-access modifier.
+   :feedback_c: This is the return type.
+   :feedback_d: Correct.
   
+   Given the method signature, what is the method name?
+
+    .. figure:: Figures/methodsig.png
+
 
 The code below contains a chorus() method definition 
 that we could write to encapsulate the two lines that get repeated in the song.  
@@ -196,7 +203,7 @@ The main method can call the chorus method multiple times to repeat the two line
   
 |Exercise| **Check Your Understanding**
    
-.. clickablearea:: q5_1_2
+.. clickablearea:: q5_1_3
     :question: A method definition consists of a method header and a method body. Click on the method header for the method named "greet" in the following code.
     :iscode:
     :feedback: There is one header for the greet method: public static void greet()
@@ -219,7 +226,7 @@ The main method can call the chorus method multiple times to repeat the two line
 
 
    
-.. clickablearea:: q5_1_3
+.. clickablearea:: q5_1_4
     :question: Click on all statements contained within the greet method body.
     :iscode:
     :feedback: The greet method body consists of the 2 print statements nested between the curly braces that follow the method header.  
@@ -242,7 +249,7 @@ The main method can call the chorus method multiple times to repeat the two line
 
 
    
-.. clickablearea:: q5_1_4
+.. clickablearea:: q5_1_5
     :question: Click on the greet method call.
     :iscode:
     :feedback: The greet method call occurs in the main method.  
@@ -264,7 +271,7 @@ The main method can call the chorus method multiple times to repeat the two line
     :click-incorrect:}:endclick:
 
 
-.. fillintheblank:: q5_1_5
+.. fillintheblank:: q5_1_6
 
    Given the GreetingExample class in the previous problem, how many times is  **System.out.println** called in total when the program runs?
 
@@ -302,7 +309,7 @@ You can tell which method is currently executing by looking at the bottom of the
 
 Click on each tab to observe the flow of control for the ``GreetingExample`` class. 
 
-.. tabbed:: q5_1_6
+.. tabbed:: q5_1_7
 
     .. tab:: Tab 1
 
@@ -372,7 +379,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
 
 |Exercise| **Check your understanding**
 
-.. mchoice:: q5_1_7
+.. mchoice:: q5_1_8
    :practice: T
    :answer_a: apples and bananas! eat I like to.
    :answer_b: I like to consume consume consume fruit.
@@ -411,7 +418,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
         }
     }
 
-.. mchoice:: q5_1_8
+.. mchoice:: q5_1_9
    :practice: T
    :answer_a: 9
    :answer_b: 11
@@ -430,7 +437,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
 
 
 
-.. mchoice:: q5_1_9
+.. mchoice:: q5_1_10
    :practice: T
    :answer_a: 16
    :answer_b: 17
@@ -447,7 +454,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
     .. figure:: Figures/stackframeq2.png
 
 
-.. mchoice:: q5_1_10
+.. mchoice:: q5_1_11
    :practice: T
    :answer_a: line 21 in method main.
    :answer_b: line 6 in method o.
@@ -465,7 +472,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
     .. figure:: Figures/stackframeq3.png
 
 
-.. mchoice:: q5_1_11
+.. mchoice:: q5_1_12
    :practice: T
    :answer_a: Called n
    :answer_b: Called o
@@ -492,7 +499,8 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
 
   A refrain is similar to a chorus, although usually shorter in length such as a single line that gets repeated.
   In the song below, the refrain is "The farmer in the dell".  
-  Add a method named "refrain" and update the main method to call the new method 3 times.  Run your program to ensure the output is correct.
+  Add a method named "refrain" and update the main method to call the new method 3 times in place of the duplicate print statements.  
+  Run your program to ensure the output is correct.
   ~~~~
   public class FarmerSong 
   { 
@@ -521,7 +529,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
         public void testSignature(){
           int count = countOccurences(getCode(),"public static void refrain()");
           boolean passed = count == 1;
-          passed = getResults("1 refrain signature",  count  + " refrain signature", "Is your refrain method signature correct?", passed);
+          passed = getResults("1 refrain signature",  count  + " refrain signature", "Refrain method signature", passed);
           assertTrue(passed);
         }
 
@@ -529,7 +537,7 @@ Click on each tab to observe the flow of control for the ``GreetingExample`` cla
         public void testcodeContains(){
           int count = countOccurences(getCode(),"refrain();");
           boolean passed = count == 3;
-          passed = getResults("3 refrain calls",  count  + " refrain calls", "Added enough calls to refrain?", passed);
+          passed = getResults("3 refrain calls",  count  + " refrain calls", "Call refrain() from the main method", passed);
           assertTrue(passed);
         }
 

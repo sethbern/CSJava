@@ -237,7 +237,6 @@ the memory location called score to 4.
     
     Figure 1: Storing variables in memory
 
-
 .. note::
     
     The equal sign ``=`` operator performs variable assignment.  ``score=4`` results in the value 4 being copied into the memory location for variable score.
