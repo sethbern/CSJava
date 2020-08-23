@@ -95,7 +95,9 @@ The loop condition usually involves a **loop control variable** that controls wh
    :autograde: unittest
    :practice: T
    
-   Here is a while loop that counts from 1 to 5 that demonstrates the 3 steps of writing a loop. Can you change it to count from 2 to 10? 
+   Here is a while loop that counts from 1 to 5 that demonstrates the 3 steps of writing a loop. 
+   Use the CodeLens to step through the execution.
+   Can you change it to count from 2 to 10? 
    ~~~~
    public class LoopTest1
    {

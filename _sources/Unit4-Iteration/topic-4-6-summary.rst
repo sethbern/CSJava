@@ -17,6 +17,25 @@ In this chapter you learned about **loops**.  **Loops** are used to repeat a sta
     single: out of bounds error
 
 
+Vocabulary Practice
+-------------------
+
+.. dragndrop:: q4_6_1
+    :feedback: Review the summaries above.
+    :match_1: a loop that repeats while a Boolean condition is true|||while loop
+    :match_2: a loop that has three parts: initialization, condition, and change|||for loop
+    :match_3: one loop inside of another|||nested loop
+    
+    Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct
+    
+.. dragndrop:: q4_6_2
+    :feedback: Review the summaries above.
+    :match_1: the statement or block of statements following a loop header that is repeated|||body of a loop
+    :match_2: a loop that never ends|||infinite loop
+    :match_3: writing down the values of variables for each execution of the loop body|||trace code
+    
+    Drag the definition from the left and drop it on the correct method on the right.  Click the "Check Me" button to see if you are correct.
+    
 
 Concept Summary
 ---------------
@@ -38,25 +57,7 @@ Java Keyword Summary
 - **for** - used to start a for loop or a for each loop
 - **System.out.println(variable)** - used to print the value of the variable.  This is useful in tracing the execution of code and when debugging.
 
-Vocabulary Practice
--------------------
 
-.. dragndrop:: q4_6_1
-    :feedback: Review the summaries above.
-    :match_1: a loop that repeats while a Boolean condition is true|||while loop
-    :match_2: a loop that has three parts: initialization, condition, and change|||for loop
-    :match_3: one loop inside of another|||nested loop
-    
-    Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct
-    
-.. dragndrop:: q4_6_2
-    :feedback: Review the summaries above.
-    :match_1: the statement or block of statements following a loop header that is repeated|||body of a loop
-    :match_2: a loop that never ends|||infinite loop
-    :match_3: writing down the values of variables for each execution of the loop body|||trace code
-    
-    Drag the definition from the left and drop it on the correct method on the right.  Click the "Check Me" button to see if you are correct.
-    
 
 .. |Quizlet| raw:: html
 
@@ -75,7 +76,7 @@ Common Mistakes
 -  Jumping out of a loop too early by using one or more return statements inside of the loop.    
 
  
-Here is an example of a while loop that doesn't ever change the value in the loop so it never ends.  If you run it refresh the page to stop it.  Fix it.
+Here is an example of a while loop that doesn't ever change the value in the loop so it never ends.  The code should count down from 3 to 1. If you run it refresh the page to stop it.  Fix it.
  
  .. activecode:: code4_6_1
    :language: java
@@ -112,35 +113,7 @@ Here is an example of going past the bounds of a string.  This code should doubl
           System.out.println(result);
       }
    }
-   
-Here is an example of jumping out of a loop too early.  The code below is intended to test if all of the letters in a string are in ascending order from left to right. But, it doesn't work correctly.  Can you fix it?
 
- .. activecode:: code4_6_3
-   :language: java
-   
-   public class Test
-   {
-   
-      public static boolean isInOrder(String check)
-      {
-          int pos = 0;
-          while (pos < check.length() - 1)
-          {
-             if (check.substring(pos, pos+1).compareTo(check.substring(pos+1, pos+2)) < 0)
-                return true;
-             pos++;
-          }
-          return false;
-      }
-      
-      public static void main(String[] args)
-      {
-         System.out.println(isInOrder("abca"));
-         System.out.println(isInOrder("abc"));
-          
-      }
-   }
-   
 
    
 

@@ -5,18 +5,18 @@
 Coding Practice with Loops
 ------------------------------------
 
-.. tabbed:: ch6ex1
+.. tabbed:: tab4_8_1
 
         .. tab:: Question
            
-           .. activecode::  ch6ex1q
+           .. activecode::  code4_8_1
               :language: java
               :autograde: unittest
               :practice: T
    
               Rewrite the following code so that it uses a ``for`` loop instead of a ``while`` loop to print out all the integers from 5 to 1 (inclusive).  
               ~~~~
-              public class Test
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -64,7 +64,7 @@ Coding Practice with Loops
    
               Answer: In a ``for`` loop you declare and initialize the variable(s), specify the condition, and specify how the loop variable(s) change in the header of the ``for`` loop as shown below.
               ~~~~
-              public class Test
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -74,15 +74,15 @@ Coding Practice with Loops
               }
 
               
-            
-.. activecode::  ch6ex2q
+ 
+.. activecode::  code4_8_2
               :language: java
               :autograde: unittest
               :practice: T
    
               Rewrite the following code to use a ``while`` loop instead of a ``for`` loop to print out the numbers from 1 to 10 (inclusive).
               ~~~~
-              public class Test
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -127,7 +127,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -141,14 +141,14 @@ Coding Practice with Loops
               }
               
           
-.. activecode::  ch6ex3q
+.. activecode::  code4_8_3
               :language: java
               :autograde: unittest
               :practice: T
                          
               Rewrite the following code so that it uses a ``for`` loop instead of a ``while`` loop to print out all the integers from 5 to 15 (inclusive).  
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -194,7 +194,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -206,14 +206,14 @@ Coding Practice with Loops
               }
               
       
-.. activecode::  ch6ex4q
+.. activecode::  code4_8_4
               :language: java
               :autograde: unittest
               :practice: T
                          
               Rewrite the following code to use a ``while`` loop instead of a ``for`` loop to print out the numbers from 10 to 100 by 10's (inclusive).
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -256,7 +256,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-               public class Test1
+               public class TestLoop
                {
                   public static void main(String[] args)
                   {
@@ -270,14 +270,14 @@ Coding Practice with Loops
               }
               
            
-.. activecode::  ch6ex5q
+.. activecode::  code4_8_5
               :language: java
               :autograde: unittest
               :practice: T
               
               The following code should print the values from 1 to 10 (inclusive) but has errors.  Fix the errors so that the code works as intended. If the code is in an infinite loop you can refresh the page in the browser to stop the loop and then click on Load History and move the bar above it to see your last changes.
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -308,11 +308,12 @@ Coding Practice with Loops
                   @Test
                     public void testWhileLoop() throws IOException
                     {
-                        String target1 = "x = x + 1;";
-                        String target2 = "x++;";
-                        boolean passed1 = checkCodeContains("changing the loop variable variation 1", target1);
-                        boolean passed2 = checkCodeContains("changing the loop variable variation 2", target2);
-                        assertTrue(passed1 || passed2);
+                        String code = getCode();
+                        int num = countOccurences(code, "x = x + 1") + countOccurences(code, "x++");
+                        boolean passed = num >= 1;
+
+                        getResults("1", "" + num, "Increment loop variable", passed);
+                        assertTrue(passed);
                     }
                 }
 
@@ -325,7 +326,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -339,14 +340,14 @@ Coding Practice with Loops
               }
 
 
-.. activecode::  ch6ex6q
+.. activecode::  code4_8_6
               :language: java
               :autograde: unittest
               :practice: T
    
               The following code should print the values from 10 to 5, but it has errors.  Fix the errors so that the code works as intended.
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -386,7 +387,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -399,14 +400,14 @@ Coding Practice with Loops
               }
               
         
-.. activecode::  ch6ex7nq
+.. activecode::  code4_8_7
               :language: java
               :autograde: unittest
               :practice: T
    
               The following code should print the values from 10 to 1, but it has errors.  Fix the errors so that the code works as intended.
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -446,7 +447,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -460,14 +461,14 @@ Coding Practice with Loops
               }
               
            
-.. activecode::  ch6ex8nq
+.. activecode::  code4_8_8
               :language: java
               :autograde: unittest
               :practice: T
    
               Finish the code below to print a countdown from 100 to 0 by 10's using a for or while loop.
               ~~~~           
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -510,7 +511,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -519,14 +520,14 @@ Coding Practice with Loops
                   }
               }
          
-.. activecode::  ch6ex10nq
+.. activecode::  code4_8_9
               :language: java
               :autograde: unittest
               :practice: T   
   
               Finish the code to print the value of ``x`` and ``" is even"`` if ``x`` is even and ``" is odd"`` if it is odd for all values from 10 to 1. 
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -571,7 +572,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -586,14 +587,14 @@ Coding Practice with Loops
               }
               
       
-.. activecode::  ch6ex11nq
+.. activecode::  code4_8_10
               :language: java
               :autograde: unittest
               :practice: T
      
               Finish the code below to print the values for ``10 * x`` where ``x`` changes from 0 to 10 using a loop.
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -638,7 +639,7 @@ Coding Practice with Loops
    
               Answer: Use a ``for`` loop with ``x`` changing from 0 to 10 and print the value of ``x`` and ``10 * x``. 
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -650,14 +651,17 @@ Coding Practice with Loops
               }
               
            
-.. activecode::  ch6ex9nq
+.. activecode::  code4_8_11
               :language: java
               :autograde: unittest
               :practice: T
   
-              Finish the following code so that it prints a string message minus the last character each time through the loop until there are no more characters in message.     
+              Finish the following code so that it prints a string message minus the last character 
+              each time through the loop until there are no more characters in message.   
+              The loop condition should test the length of the message.
+              The loop body should print the message and then use substring to create a new message without the last character.  
               ~~~~       
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -700,7 +704,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -715,14 +719,14 @@ Coding Practice with Loops
 
               
            
-.. activecode::  ch6ex12nq
+.. activecode::  code4_8_12
               :language: java
               :autograde: unittest
               :practice: T
    
               Finish the code to loop printing the message each time through the loop and remove an ``x`` from the message until all the ``x``'s are gone. 
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -767,7 +771,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -784,14 +788,14 @@ Coding Practice with Loops
               }
               
           
-.. activecode::  ch6ex16nq
+.. activecode::  code4_8_13
               :language: java
               :autograde: unittest
               :practice: T
   
               Write a loop below to print the number of ``x``'s in the string message.  Use the ``indexOf`` and ``substring`` methods.
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -833,7 +837,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -851,14 +855,14 @@ Coding Practice with Loops
                   }
               }
               
-.. activecode::  ch6ex14nq
+.. activecode::  code4_8_14
               :language: java
               :autograde: unittest
               :practice: T
    
               Write the code below to print a rectangle of stars (``*``) with 5 rows of stars and 3 stars per row. Hint: use nested for loops.
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -902,7 +906,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -918,14 +922,14 @@ Coding Practice with Loops
               }
               
            
-.. activecode::  ch6ex15nq
+.. activecode::  code4_8_15
               :language: java
               :autograde: unittest
               :practice: T
    
               Write the code below to print a rectangle of stars (``*``) with 3 rows of stars and 5 stars per row. 
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -971,7 +975,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -987,14 +991,14 @@ Coding Practice with Loops
               }
               
 
-.. activecode::  ch6ex13nq
+.. activecode::  code4_8_16
               :language: java
               :autograde: unittest
               :practice: T
    
               Write the code below to print 55555, 4444, 333, 22, 1 with each on a different line. 
               ~~~~
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {
@@ -1039,7 +1043,7 @@ Coding Practice with Loops
               :language: java
               :optional:
    
-              public class Test1
+              public class TestLoop
               {
                   public static void main(String[] args)
                   {

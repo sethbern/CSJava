@@ -369,7 +369,8 @@ The method **printPopSong** prints the words to a song.  It initializes the valu
    :autograde: unittest
    :practice: T
    
-   Can you make the loop count by 2s backwards? It should print out 5 3 1? Remember to change all 3 parts of the for loop. 
+   Can you make the loop count by 2s backwards? It should print out 5 3 1? 
+   Remember to change all 3 parts of the for loop.   Use the CodeLens if you need to debug your code.
    ~~~~
    public class ForLoop
    {
