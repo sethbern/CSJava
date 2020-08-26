@@ -106,6 +106,7 @@ click on ``Load History`` button and move the bar above it to see your previous 
 
    Run this code to see the output below it. 
    Then change the code to print your name, for example "Hi Pat!", and run again. 
+   If you mess up the code, hit the "Load History" button and use the slider to go back to a previous version.
    ~~~~    
    public class HelloExample
    {
@@ -374,6 +375,50 @@ expressions that have a numeric value.
    }
 
 
+.. activecode:: code1_2_6
+   :language: java
+   :autograde: unittest 
+
+   Assume you have some bills to pay.  The individual bill amounts are 89.50, 14.75, 45.12, and 92.50.  
+   Update the program to add up and print the total bill amount on a separate line.
+   
+   ~~~~    
+   public class CalculateBillTotal
+   {
+      public static void main(String[] args)
+      {
+         System.out.println("Bill total:");
+         
+      }
+   }
+   ====
+   // should pass if/when they run code
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "Bill total:\n241.87\n";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+
+       @Test
+       public void test2() throws IOException
+       {
+           String target1 = "89.50 + 14.75 + 45.12 + 92.50";
+           boolean passed1 = checkCodeContains("bill calculation 89.50 + 14.75 + 45.12 + 92.50", target1);
+          
+           assertTrue(passed1);
+       }
+        
+   }
+
 Most command keywords in Java must be in lowercase, 
 but class names such as System and String are capitalized. 
 Commands in Java must end with a semicolon ``;``. Think of the semicolon ``;``
@@ -437,7 +482,7 @@ Let's practice debugging some code!
 
    The following has all the correct code to print out "Hi my friend!" when the code is run, 
    but the code is mixed up.  Drag the blocks from left to right and put them in the 
-   correct order.  You can go back and look at the previous program HelloExample if you
+   correct order.  You can go back and look at the previous programs if you
    are having trouble understanding how to order the blocks.
    
    Click on the "Check" button to check your solution. 
@@ -493,7 +538,8 @@ Let's practice debugging some code!
 
 Run the following code.  Look for an error message after the code.  This is called a **compile time error** because it is an error detected by the compiler.  
 
-What is wrong?  Can you fix it?  The error message will tell you the line number that it thinks is causing the error (``FirstClass.java:5: error: unclosed string literal``).  Check line 5 to make sure that everything looks correct.  One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well. Try putting in the missing symbol and run again. This is called **debugging**.
+What is wrong?  Can you fix it?  The error message will tell you the line number that it thinks is 
+causing the error (``Error1.java:5: error: unclosed string literal``).  Check line 5 to make sure that everything looks correct.  One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well. Try putting in the missing symbol and run again. This is called **debugging**.
 
 .. activecode:: code1_2_6
    :language: java
@@ -628,7 +674,7 @@ Did you remember that System is capitalized in System.out.println? Did you find 
    Debug the following code. 
    Can you find all the bugs and get the code to run? 
    ~~~~
-   public class Challenge1_2
+   public class Challenge1
    {
       public static void main(String[] args)
       {
@@ -680,7 +726,7 @@ Java has a cool tool called |javadoc| that will pull out all of these
 comments to make documentation of a class as a web page.  
 
 The compiler will skip over comments. However, it is a good idea to use comments 
-to make notes to yourself and other programmers working with you. Here are some examples of commenting:
+to make notes to yourself and other programmers working with you. Here is an example of commenting:
 
 .. code-block:: java 
 
