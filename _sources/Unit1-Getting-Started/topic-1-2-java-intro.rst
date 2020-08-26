@@ -89,7 +89,12 @@ Here is the template for a simple Java program with a main method:
 |CodingEx| **Coding Exercise**: 
 
 Click on the ``Save & Run`` button below to have the 
-computer execute the ``main`` method in the following class. Then, 
+computer execute the ``main`` method in the following class. 
+``System.out.println("Hi there!");`` prints out the characters between the first ``"`` and the 
+second ``"`` followed by a new line.  
+The ``"Hi there!"`` is called a **string literal**, and it can have zero to many characters 
+enclosed in starting and ending double quotes. 
+Then, 
 change the code  to print your name.  
 Be sure to keep the starting ``"`` and ending ``"``.  
 Run the modified code to test your changes. If you revisit this page later and login, 
@@ -132,10 +137,45 @@ click on ``Load History`` button and move the bar above it to see your previous 
 
 You can copy the Java source code shown in this book into a file and save 
 it if you want to run it in an integrated development environment (IDE) 
-on your local computer (see section 1.10. for different IDEs).  
+on your local computer (see section 1.7 for different IDEs).  
 You must name the file the same name as the class name with ".java" as the extension.  
 All code (programs) in Java must be defined inside a class in a source file, 
 and the name of the class must match the file name. 
+
+
+.. activecode:: code1_2_2
+   :language: java
+   :autograde: unittest    
+
+   Run this code to see the output below it. 
+   Then change the code to add two more lines to the poem: "Java is interesting," followed by "And so are you!".
+   ~~~~    
+   public class PoemExample
+   {
+      public static void main(String[] args)
+      {
+         System.out.println("Roses are red,");
+         System.out.println("Violets are blue,");
+      }
+   }
+     
+   ====
+   // should pass if/when they run code
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "Roses are red,\nViolets are blue,\nJava is interesting,\nAnd so are you!";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+   }
 
    
 Print Commands
@@ -151,11 +191,10 @@ Java has two different print commands to print output to the screen:
 - **System.out.print(value)** : prints the value without advancing to the next line
 
 
-``System.out.println("Hi there!");`` prints out the characters between the first ``"`` and the second ``"`` followed by a new line.  The ``"Hi there!"`` is called a **string literal**, and it can have zero to many characters enclosed in starting and ending double quotes. 
 
 |CodingEx| **Coding Exercise:**
 
-.. activecode:: code1_2_2
+.. activecode:: code1_2_3
    :language: java
    :autograde: unittest 
 
@@ -252,49 +291,89 @@ Java has two different print commands to print output to the screen:
          and cool!  </pre>
       
       + Correct! Pay attention to which lines are print or println.
-      
- 
-.. mchoice:: q1_2_2
-    :practice: T
-    
-    Consider the following code segment.  Keep in mind ``//`` indicates a comment and the rest of the line is ignored.
-
-    .. code-block:: java
-    
-       System.out.println("Roses are red, ")      // Line 1;
-       System.out.println("Violets are blue, ")  // Line 2;
-       System.out.print("Unexpected '}' ")        // Line 3;
-       System.out.print("on line 32. ")           // Line 4;
-
-    The code segment is intended to produce the following output but may not work as intended.
-
-    .. raw:: html
-      
-       <pre>Roses are red,
-       Violets are blue,
-       Unexpected '}' on line 32.</pre>
-
-    Which change, if any, can be made so that the code segment produces the intended output?
-    
-    - Replacing print with println on lines 3 and 4.
-    
-      - These should print on the same line without a newline in between.
-      
-    - Replacing println with print on lines 1 and 2.
-    
-      - These should print out with a newline in between.
-      
-    - Removing the single quotes in line 3.
-    
-      - The single quotes are fine in this line.
-    
-    - Putting the semicolon after the ) on each line.
-    
-      + Correct! The semicolon should go after each command but not in the comment.  Move the semicolon before the //.
-
 
 
    
+
+A print statement can also contain numeric values and arithmetic expressions.  Don't use double quotes for 
+expressions that have a numeric value. 
+
+
+.. activecode:: code1_2_4
+   :language: java
+   :autograde: unittest 
+
+   Run this code to see the output below it. 
+   Notice the calculations in the print statements are not contained in double quotes. 
+   Can you change the last print statement to print the sum of the values from 1 to 10?
+   ~~~~    
+   public class CalculationExample
+   {
+      public static void main(String[] args)
+      {
+         System.out.println(570 * 23);
+         System.out.println(12.34 / 5);
+         System.out.println(1 + 2 + 3 + 4 + 5 );
+      }
+   }
+          
+   ====
+   // should pass if/when they run code
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "13110\n2.468\n55\n";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+        
+   }
+
+
+.. activecode:: code1_2_5
+   :language: java
+   :autograde: unittest 
+
+   Run this code to see the output below it.  The output is not correct.  
+   The second System.out.println statement should print the value resulting from the computation, not a literal string for the computation. 
+   Get rid of the double quotes in the second println statement and run the program.
+   
+   ~~~~    
+   public class CalculationErrorPrint
+   {
+      public static void main(String[] args)
+      {
+         System.out.println("570 * 23 = ");
+         System.out.println("570 * 23");
+      }
+   }
+   ====
+   // should pass if/when they run code
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "570 * 23 = \n13110\n";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+        
+   }
+
+
 Most command keywords in Java must be in lowercase, 
 but class names such as System and String are capitalized. 
 Commands in Java must end with a semicolon ``;``. Think of the semicolon ``;``
@@ -302,7 +381,6 @@ in Java like a period in English. You use a semicolon ``;`` to show the
 end of a Java **statement**, just the way you use a period to show the end 
 of an English sentence.   Your programs won't run if you forget the semicolon at the 
 end of each statement.
-
 
 
 
@@ -352,7 +430,7 @@ Let's practice debugging some code!
 |Exercise| **Check Your Understanding: Mixed up programs**
 
 
-.. parsonsprob:: q1_2_3
+.. parsonsprob:: q1_2_2
    :numbered: left
    :adaptive:
    :noindent:
@@ -381,7 +459,7 @@ Let's practice debugging some code!
       =====
    }
    
-.. parsonsprob:: q1_2_4
+.. parsonsprob:: q1_2_3
    :numbered: left
    :adaptive:
    :noindent:
@@ -417,7 +495,7 @@ Run the following code.  Look for an error message after the code.  This is call
 
 What is wrong?  Can you fix it?  The error message will tell you the line number that it thinks is causing the error (``FirstClass.java:5: error: unclosed string literal``).  Check line 5 to make sure that everything looks correct.  One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well. Try putting in the missing symbol and run again. This is called **debugging**.
 
-.. activecode:: code1_2_3
+.. activecode:: code1_2_6
    :language: java
    :autograde: unittest 
    :practice: T
@@ -458,7 +536,7 @@ Try and run the following code.
 Look for an error message after the code. What is wrong this time?  Can you fix it?  
 One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well.
 
-.. activecode:: code1_2_4
+.. activecode:: code1_2_7
    :language: java
    :autograde: unittest 
    :practice: T
@@ -500,7 +578,7 @@ What is wrong this time?  Can you fix it?  After you fix the first error, you ma
 encounter a 2nd error! Fix that one too! Hints: How do you end a command in Java? 
 Also, check for capitalization. 
 
-.. activecode:: code1_2_5
+.. activecode:: code1_2_8
    :language: java
    :autograde: unittest 
    :practice: T
@@ -542,7 +620,7 @@ Did you remember that System is capitalized in System.out.println? Did you find 
 |Groupwork| Debugging Challenge
 -----------------------------------
 
-.. activecode:: code1_2_6
+.. activecode:: code1_2_9
    :language: java
    :autograde: unittest 
    :practice: T
@@ -616,7 +694,7 @@ to make notes to yourself and other programmers working with you. Here are some 
 
 |Exercise| **Check your understanding**
 
-.. dragndrop:: q1_2_5
+.. dragndrop:: q1_2_4
     :feedback: Review the section above.
     :match_1: single-line comment|||//
     :match_2: multi-line comment|||/* */
@@ -626,10 +704,6 @@ to make notes to yourself and other programmers working with you. Here are some 
     
 The compiler will skip over comments, and they don't affect how your program runs. 
 They are for you and other programmers working with you.  
-
-
-
-
 
 
 Summary
