@@ -178,7 +178,16 @@ and the name of the class must match the file name.
         }
    }
 
-   
+
+Most command keywords in Java must be in lowercase, 
+but class names such as System and String are capitalized. 
+Commands in Java must end with a semicolon ``;``. Think of the semicolon ``;``
+in Java like a period in English. You use a semicolon ``;`` to show the 
+end of a Java **statement**, just the way you use a period to show the end 
+of an English sentence.   Your programs won't run if you forget the semicolon at the 
+end of each statement.
+
+
 Print Commands
 -------------------
 
@@ -297,7 +306,7 @@ Java has two different print commands to print output to the screen:
    
 
 A print statement can also contain numeric values and arithmetic expressions.  Don't use double quotes for 
-expressions that have a numeric value. 
+expressions that have a numeric value.
 
 
 .. activecode:: code1_2_4
@@ -305,7 +314,6 @@ expressions that have a numeric value.
    :autograde: unittest 
 
    Run this code to see the output below it. 
-   Notice the calculations in the print statements are not contained in double quotes. 
    Can you change the last print statement to print the sum of the values from 1 to 10?
    ~~~~    
    public class CalculationExample
@@ -380,7 +388,8 @@ expressions that have a numeric value.
    :autograde: unittest 
 
    Assume you have some bills to pay.  The individual bill amounts are 89.50, 14.75, 45.12, and 92.50.  
-   Update the program to add up and print the total bill amount on a separate line.
+   Add another print statement to sum and print the total bill amount on a separate line.  Don't just add the numbers in
+   your head and print the result. You must write the code to add up the numbers and print the result.
    
    ~~~~    
    public class CalculateBillTotal
@@ -411,22 +420,62 @@ expressions that have a numeric value.
        @Test
        public void test2() throws IOException
        {
-           String target1 = "89.50 + 14.75 + 45.12 + 92.50";
-           boolean passed1 = checkCodeContains("bill calculation 89.50 + 14.75 + 45.12 + 92.50", target1);
+           String target1 = "System.out.println( 89.50 + 14.75 + 45.12 + 92.50";
+           boolean passed1 = checkCodeContains("bill calculation", target1);
           
            assertTrue(passed1);
        }
         
    }
 
-Most command keywords in Java must be in lowercase, 
-but class names such as System and String are capitalized. 
-Commands in Java must end with a semicolon ``;``. Think of the semicolon ``;``
-in Java like a period in English. You use a semicolon ``;`` to show the 
-end of a Java **statement**, just the way you use a period to show the end 
-of an English sentence.   Your programs won't run if you forget the semicolon at the 
-end of each statement.
 
+
+.. activecode:: code1_2_7
+   :language: java
+   :autograde: unittest 
+
+   A bus starts out with no passengers.  Three people get on at the first stop.  
+   Five people get on at the second stop.
+   One person gets off and eight people get on at the third stop. 
+   Three people get off at the fourth stop. How many people are left on the bus?
+   Add another print statement to calculate and print the passengers remaining on the bus.
+
+   ~~~~    
+   public class PassengersOnBus
+   {
+      public static void main(String[] args)
+      {
+         System.out.print("Passengers remaining : ");
+        
+      }
+   }
+   ====
+   // should pass if/when they run code
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "Passengers remaining : 12\n";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+
+       @Test
+       public void test2() throws IOException
+       {
+           String target1 = " 3 + 5 - 1 + 8 -3";
+           boolean passed1 = checkCodeContains("passenger calculation", target1);
+          
+           assertTrue(passed1);
+       }
+        
+   }
 
 
 
@@ -541,7 +590,7 @@ Run the following code.  Look for an error message after the code.  This is call
 What is wrong?  Can you fix it?  The error message will tell you the line number that it thinks is 
 causing the error (``Error1.java:5: error: unclosed string literal``).  Check line 5 to make sure that everything looks correct.  One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well. Try putting in the missing symbol and run again. This is called **debugging**.
 
-.. activecode:: code1_2_6
+.. activecode:: code1_2_8
    :language: java
    :autograde: unittest 
    :practice: T
@@ -582,7 +631,7 @@ Try and run the following code.
 Look for an error message after the code. What is wrong this time?  Can you fix it?  
 One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` have a matching ``)`` and all starting ``"`` have a ending ``"`` as well.
 
-.. activecode:: code1_2_7
+.. activecode:: code1_2_9
    :language: java
    :autograde: unittest 
    :practice: T
@@ -621,10 +670,9 @@ One good thing to check is that all ``{`` have a matching ``}`` and all ``(`` ha
 
 Try and run the following code.  
 What is wrong this time?  Can you fix it?  After you fix the first error, you may 
-encounter a 2nd error! Fix that one too! Hints: How do you end a command in Java? 
-Also, check for capitalization. 
+encounter a 2nd error! Fix that one too! 
 
-.. activecode:: code1_2_8
+.. activecode:: code1_2_10
    :language: java
    :autograde: unittest 
    :practice: T
@@ -666,7 +714,7 @@ Did you remember that System is capitalized in System.out.println? Did you find 
 |Groupwork| Debugging Challenge
 -----------------------------------
 
-.. activecode:: code1_2_9
+.. activecode:: code1_2_11
    :language: java
    :autograde: unittest 
    :practice: T

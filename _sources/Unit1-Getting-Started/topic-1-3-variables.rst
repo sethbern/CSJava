@@ -295,7 +295,7 @@ the memory location called score to 4.
    }
 
 
-When you are printing the value of a variable, never put quotes "" around the variable 
+When you are printing the value of a variable, never put double quotes ``" "`` around the variable 
 because that will print out the variable 
 name letter by letter. For example, ``System.out.println("score");`` will print out the string "score",
 rather than the value 4 stored in the variable.  Normally you do not want to print out the variable name, 
@@ -304,7 +304,7 @@ putting quotes around the variables in the print statements above and see what h
    
 .. note::
     
-    Avoid putting a variable inside quotes ("") in a print statement since that 
+    Avoid putting a variable inside quotes ``" "`` in a print statement since that 
     would print the variable name instead of its value.
  
     
@@ -516,13 +516,73 @@ If you want spaces between words and variables when printing, you must put the
 space within the quoted string.  For example, notice the space in the string "Hi " in the last print statement. If you forget to add spaces, you will get smushed output 
 like "HiJose" instead of "Hi Jose".  
 
+.. mchoice:: q1_3_16
+   :practice: T
+   :answer_a: System.out.println("Price is + price");
+   :answer_b: System.out.println("Price is "  price);
+   :answer_c: System.out.println("Price is " + price);
+   :answer_d: System.out.println(Price is + price);
+   :answer_e: System.out.println("Price is " + "price");
+   :correct: c
+   :feedback_a: This will print:  Price is + price
+   :feedback_b: This results in a compile time error.  Missing + for string concatenation
+   :feedback_c: Correct!
+   :feedback_d: This results in a compile time error.  Missing quotes "Price is "
+   :feedback_e: This will print:  Price is price
+
+   Assume variable declaration ``double price = 9.50;``.  Which print statement will result in the output: ``Price is 9.50``
+
+
+.. activecode:: code1_3_3
+   :language: java
+   :autograde: unittest      
+   
+   Add a print statement to concatenate the string literal "Favorite color is " with the value stored in the ``color`` variable.
+   ~~~~
+   public class StringConcatenation2
+   {
+      public static void main(String[] args)
+      {
+        String color = "red"; 
+        
+      }
+   }
+        
+   ====
+   // should pass if/when they run code
+   import static org.junit.Assert.*;
+   import org.junit.*;;
+   import java.io.*;
+
+   public class RunestoneTests extends CodeTestHelper
+   {
+        @Test
+        public void testMain() throws IOException
+        {
+            String output = getMethodOutput("main");
+            String expect = "Favorite color is red\n";
+            boolean passed = getResults(expect, output, "Expected output from main", true);
+            assertTrue(passed);
+        }
+        @Test
+        public void test2() throws IOException
+        {
+           String target1 = " + color);";
+           boolean passed1 = checkCodeContains("string concatenation for color variable", target1);
+          
+           assertTrue(passed1);
+        }
+   }
+
+
+
 Also note that the variable has to be on the 
 left side of the ``=`` and the value on the right.  Switching the two is 
 called **assignment dyslexia**.  
    
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_3_3
+.. activecode:: code1_3_4
    :language: java
    :autograde: unittest   
    
@@ -567,7 +627,7 @@ The keyword **final** can be used in front of a variable declaration to make it 
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_3_4
+.. activecode:: code1_3_5
    :language: java
    :autograde: unittest 
    
@@ -636,7 +696,7 @@ The convention in Java and many programming languages is to always start a varia
 |CodingEx| **Coding Exercise:**
 
   
-.. activecode:: code1_3_5
+.. activecode:: code1_3_6
    :language: java
    :autograde: unittest   
 
@@ -672,7 +732,7 @@ The convention in Java and many programming languages is to always start a varia
    
 |Exercise| **Check Your Understanding**
             
-.. fillintheblank:: q1_3_16
+.. fillintheblank:: q1_3_17
 
    What is the camel case variable name for a variable that represents a shoe size?
 
@@ -681,14 +741,14 @@ The convention in Java and many programming languages is to always start a varia
 
             
             
-.. fillintheblank:: q1_3_17
+.. fillintheblank:: q1_3_18
 
    What is the camel case variable name for a variable that represents the top score?
 
    -    :^\s*topScore$: Correct.
         :.*: In camel case just put the words after each other but uppercase the first letter of each word after the 1st word. 
             
-.. .. fillintheblank:: q1_3_18
+.. .. fillintheblank:: q1_3_19
 
    What is the camel case variable name for a variable that represents the last score?
 
@@ -699,7 +759,7 @@ The convention in Java and many programming languages is to always start a varia
 |Groupwork| Debugging Challenge : Weather Report
 ------------------------------------------------
 
-.. activecode:: code1_3_6
+.. activecode:: code1_3_7
    :language: java
    :autograde: unittest   
    :practice: T
