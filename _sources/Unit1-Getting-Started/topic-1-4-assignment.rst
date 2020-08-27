@@ -98,7 +98,135 @@ This won’t change the value of the variable that you are copying from.
     }
     ====
 
+.. activecode:: code1_4_2
+   :language: java
+   :autograde: unittest   
    
+   The program is supposed to figure out the total money value given the number of dimes, quarters and nickels.
+   There is an error in the calculation of the total.  Fix the error to compute the correct amount.
+   ~~~~
+ 
+    public class CalculateMoney
+    {
+      public static void main(String[] args)
+      {
+        int numDimes = 7;
+        int numQuarters = 3;
+        int numNickels = 8;
+        
+        int total = numDimes * 10 + numQuarters + 25;
+
+        System.out.println("Total = " + total);
+      }
+    }
+    ====
+    import static org.junit.Assert.*;
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+        @Test
+        public void test1()
+        {
+            String output = getMethodOutput("main");
+            String expect = "Total = 185\n";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+
+
+        @Test
+        public void test2() throws IOException
+        {
+           String target1 = "numQuarters * 25";
+           boolean passed1 = checkCodeContains("numQuarters * 25", target1);
+          
+           assertTrue(passed1);
+        }
+
+        @Test
+        public void test3() throws IOException
+        {
+           String target1 = "numNickels * 5";
+           boolean passed1 = checkCodeContains("numNickels * 5", target1);
+          
+           assertTrue(passed1);
+        }
+
+
+    }
+
+.. activecode:: code1_4_3
+   :language: java
+   :autograde: unittest   
+   
+   Calculate and print the total pay given the weekly salary and the number of weeks worked.  
+   Use
+   string concatenation with the totalPay variable to produce the output ``Total Pay = $3000``.
+   Don't hardcode the number 3000 in your print statement.
+   ~~~~
+ 
+    public class SalaryExample
+    {
+      public static void main(String[] args)
+      {
+        int weeklySalary = 500;
+        int numWeeks = 6;
+        int totalPay;
+
+      }
+    }
+    ====
+    import static org.junit.Assert.*;
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.*;
+
+    public class RunestoneTests extends CodeTestHelper
+    {
+        @Test
+        public void test1()
+        {
+            String output = getMethodOutput("main");
+            String expect = "Total Pay = $3000\n";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+        }
+
+        @Test
+        public void testPrintStringsB() throws IOException
+        {
+
+            String code = getCode();
+            int count = countOccurences(code, "totalPay = weeklySalary * numWeeks")  +
+                        countOccurences(code, "totalPay = numWeeks * weeklySalary") ;
+            boolean passed = count >= 1;
+
+            passed = getResults("1", "" + count , "correct totalPay calculation", passed);
+            assertTrue(passed);
+        }
+
+
+       @Test
+       public void testStrConcat() throws IOException
+       {
+           String target1 = "+ totalPay);";
+           boolean passed1 = checkCodeContains("print statement concatenation of totalPay variable", target1);
+          assertTrue(passed1);
+       }
+
+    }
+
+
+
+
+
 |Exercise| **Check your understanding**
    
 
@@ -118,7 +246,7 @@ This won’t change the value of the variable that you are copying from.
 |CodingEx| **Coding Exercise:** 
 
 
-.. activecode:: code1_4_2
+.. activecode:: code1_4_4
    :language: java
    :autograde: unittest   
    
@@ -188,7 +316,7 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
 
 
 
-.. activecode:: code1_4_3
+.. activecode:: code1_4_5
    :language: java
    :autograde: unittest   
    
@@ -276,9 +404,6 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
     }
 
 
-
-
-
 Incrementing the value of a variable
 ------------------------------------
 
@@ -294,7 +419,7 @@ previous value of score + 1.
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_4
+.. activecode:: code1_4_6
    :language: java
    :autograde: unittest   
    
@@ -405,7 +530,7 @@ Java uses the operator ``==`` to test if the value on the left is equal to the v
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_5
+.. activecode:: code1_4_7
    :language: java
    :autograde: unittest      
    
@@ -456,7 +581,7 @@ Operators can be used to create compound expressions with more than one operator
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_6
+.. activecode:: code1_4_8
    :language: java
    :autograde: unittest      
    
@@ -520,6 +645,67 @@ Operators can be used to create compound expressions with more than one operator
    What is printed when the code segment is executed?
    
 
+.. mchoice:: q1_4_7
+   :practice: T
+   :answer_a: 5.5
+   :answer_b: 5
+   :answer_c: 6
+   :answer_d: 5.0
+   :correct: b
+   :feedback_a: Dividing an integer by an integer results in an integer
+   :feedback_b: Correct. Dividing an integer by an integer results in an integer
+   :feedback_c: The value 5.5 will be rounded down to 5  
+   :feedback_d: Dividing an integer by an integer results in an integer
+    
+   Consider the following code segment. 
+
+   .. code-block:: java 
+   
+        (7 + 5 + 6 + 4) / 4 
+   
+   What is the value of the expression?
+
+
+.. mchoice:: q1_4_8
+   :practice: T
+   :answer_a: 5.5
+   :answer_b: 5
+   :answer_c: 6
+   :answer_d: 5.0
+   :correct: a
+   :feedback_a: Correct. Dividing a double by an integer results in a double
+   :feedback_b: Dividing a double by an integer results in a double
+   :feedback_c: Dividing a double by an integer results in a double
+   :feedback_d: Dividing a double by an integer results in a double
+    
+   Consider the following code segment. 
+   
+   .. code-block:: java 
+   
+        (7 + 5.0 + 6 + 4) / 4 
+   
+   What is the value of the expression?
+
+.. mchoice:: q1_4_9
+   :practice: T
+   :answer_a: 5.5
+   :answer_b: 5
+   :answer_c: 6
+   :answer_d: 5.0
+   :correct: a
+   :feedback_a: Correct. Dividing an integer by an double results in a double
+   :feedback_b: Dividing an integer by an double results in a double
+   :feedback_c: Dividing an integer by an double results in a double
+   :feedback_d: Dividing an integer by an double results in a double
+    
+   Consider the following code segment. 
+   
+   .. code-block:: java 
+   
+        (7 + 5 + 6 + 4) / 4.0
+   
+   What is the value of the expression?
+
 
    
 The Modulo Operator
@@ -540,7 +726,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_7
+.. activecode:: code1_4_9
    :language: java
    :autograde: unittest      
    
@@ -588,7 +774,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 	
 |Exercise| **Check Your Understanding**
 	
-.. mchoice:: q1_4_7
+.. mchoice:: q1_4_10
    :practice: T
    :answer_a: 15
    :answer_b: 16
@@ -600,7 +786,7 @@ The percent sign operator (``%``) is the **mod (modulo)** or **remainder** opera
 
    What is the result of 158 % 10?
    
-.. mchoice:: q1_4_8
+.. mchoice:: q1_4_11
    :practice: T
    :answer_a: 3
    :answer_b: 2
@@ -642,7 +828,7 @@ The process relies on integer division to determine slices per person, and the m
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_8
+.. activecode:: code1_4_10
    :language: java 
    :autograde: unittest      
  
@@ -742,7 +928,7 @@ behold, the power of variables!
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_9
+.. activecode:: code1_4_11
    :language: java
    :stdin: Fred Smith  
    
@@ -797,7 +983,7 @@ The Scanner class has several useful methods for reading user input.  A token is
 
 |CodingEx| **Coding Exercise:** 
 
-.. activecode:: code1_4_10
+.. activecode:: code1_4_12
    :language: java
    :stdin: 20  
    
@@ -837,7 +1023,7 @@ The first two steps have been altered to initialize the pizzaSlices and numPeopl
 In Java this will be done using a Scanner object and reading from System.in.
 
 
-.. activecode:: code1_4_11
+.. activecode:: code1_4_13
    :language: java 
    :stdin: 16 5  
    
@@ -892,7 +1078,7 @@ In Java this will be done using a Scanner object and reading from System.in.
 The program below reads two integer values from the input stream and attempts to print the sum.  Unfortunately there is a problem
 with the last line of code that prints the sum.  
 
-.. activecode:: code1_4_12
+.. activecode:: code1_4_14
    :language: java
    :autograde: unittest   
    :stdin: 5 7
@@ -968,7 +1154,7 @@ how old they are in dog years which is 7 times a human year.  Finally, print it 
 
    <a href="https://www.w3schools.com/java/java_user_input.asp" target="_blank">Scanner class</a>
 
-.. activecode:: code1_4_13
+.. activecode:: code1_4_15
    :language: java
    :autograde: unittest
    :practice: T
