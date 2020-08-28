@@ -440,22 +440,6 @@ putting quotes around the variables in the print statements above and see what h
         :.*: boolean isRaining = true;
 
 
-Types in Memory
----------------------------
-
-Computers store all values using **bits** (binary digits).  A **bit** can represent two values 
-and we usually say that the value of a bit is either 0 or 1. When you declare a variable, 
-you have to tell Java the type of the variable because Java needs to know how many 
-bits to use and how to represent the value.  The 3 different primitive types
-all require different number of bits.  An integer gets 32 bits of space, a double 
-gets 64 bits of space and a boolean could be represented by just one bit. 
-
-.. figure:: Figures/typesAndSpace.png
-    :width: 500px
-    :figclass: align-center
-    
-    Figure 2: Examples of variables with names and values.  Notice that the different types get a different amount of space.
-
 String Concatenation
 ---------------------------
 
@@ -618,48 +602,6 @@ called **assignment dyslexia**.
    
   
 
-   
-The keyword **final** can be used in front of a variable declaration to make it a constant that cannot be changed. Constants are traditionally capitalized.
-
-.. code-block:: java
-
-  final double PI = 3.14
-
-|CodingEx| **Coding Exercise:** 
-
-.. activecode:: code1_3_5
-   :language: java
-   :autograde: unittest 
-   
-   Try the following code and notice the syntax error when we try to change the constant PI. Put the comment symbols // in front of that line to remove the error and run it again.
-   ~~~~
-   public class FinalVariable
-   {
-      public static void main(String[] args)
-      {
-        final double PI = 3.14;
-        System.out.println(PI);
-        PI = 4.2; // This will cause a syntax error
-      }
-   }
-   ====
-   // should pass if/when they run code
-   import static org.junit.Assert.*;
-   import org.junit.*;;
-   import java.io.*;
-
-   public class RunestoneTests extends CodeTestHelper
-   {
-        @Test
-        public void testMain() throws IOException
-        {
-            String output = getMethodOutput("main");
-            String expect = "3.14";
-            boolean passed = getResults(expect, output, "Expected output from main", true);
-            assertTrue(passed);
-        }
-   }   
-
 Naming Variables
 --------------------
 
@@ -696,7 +638,7 @@ The convention in Java and many programming languages is to always start a varia
 |CodingEx| **Coding Exercise:**
 
   
-.. activecode:: code1_3_6
+.. activecode:: code1_3_5
    :language: java
    :autograde: unittest   
 
@@ -759,7 +701,7 @@ The convention in Java and many programming languages is to always start a varia
 |Groupwork| Debugging Challenge : Weather Report
 ------------------------------------------------
 
-.. activecode:: code1_3_7
+.. activecode:: code1_3_6
    :language: java
    :autograde: unittest   
    :practice: T

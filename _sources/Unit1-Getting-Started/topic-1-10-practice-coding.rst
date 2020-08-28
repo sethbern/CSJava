@@ -5,6 +5,98 @@
 Unit 1 Coding Practice
 =======================
 
+.. activecode::  code1_10_0a
+              :language: java
+              :autograde: unittest
+              :practice: T
+
+              Update the main method to calculate and print the perimeter of a rectangle having width 7 and height 9.
+              Add another statement to calculate and print the area of the rectangle on a separate line.
+              ~~~~
+              public class RectangleTest
+              {
+                  public static void main(String[] args)
+                  {
+                      
+                  }
+              }
+              ====
+              import static org.junit.Assert.*;
+                import org.junit.*;;
+                import java.io.*;
+
+                public class RunestoneTests extends CodeTestHelper
+                {
+                    @Test
+                    public void testMain() throws IOException
+                    {
+                        String output = getMethodOutput("main");
+                        String expect = "32\n63";
+                        boolean passed = getResults(expect, output, "Expected output from main");
+                        assertTrue(passed);
+                    }
+                    @Test
+                    public void testPrintStringsA() throws IOException
+                    {
+                      String target1 = "+";
+                      boolean passed1 = checkCodeContains("addition", target1);
+                      String target2 = "*";
+                      boolean passed2 = checkCodeContains("multiplication", target2);
+                      
+                      assertTrue(passed1 && passed2);
+                    }
+                
+                }
+
+
+
+
+.. activecode::  code1_10_0b
+              :language: java
+              :autograde: unittest
+              :practice: T
+
+              Update the main method to calculate and print the area of a triangle with base 7 and height 9.
+              Recall the formula is 1/2bh.  Your solution must contain at least one multiplication and one division.
+              Watch out for integer division!  int/int results in an int, while  int/double results in a double.
+              ~~~~
+              public class TriangleTest
+              {
+                  public static void main(String[] args)
+                  {
+                      
+                  }
+              }
+              ====
+              import static org.junit.Assert.*;
+                import org.junit.*;;
+                import java.io.*;
+
+                public class RunestoneTests extends CodeTestHelper
+                {
+                    @Test
+                    public void testMain() throws IOException
+                    {
+                        String output = getMethodOutput("main");
+                        String expect = "31.5";
+                        boolean passed = getResults(expect, output, "Expected output from main");
+                        assertTrue(passed);
+                    }
+                    @Test
+                    public void testPrintStringsA() throws IOException
+                    {
+                      String target1 = "/";
+                      boolean passed1 = checkCodeContains("division", target1);
+                      String target2 = "*";
+                      boolean passed2 = checkCodeContains("multiplication", target2);
+                      
+                      assertTrue(passed1 && passed2);
+                    }
+                
+                }
+
+
+
 .. tabbed:: ch4Ex2
 
         .. tab:: Question

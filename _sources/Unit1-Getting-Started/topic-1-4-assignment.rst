@@ -248,11 +248,13 @@ This won’t change the value of the variable that you are copying from.
 
 .. activecode:: code1_4_4
    :language: java
-   :autograde: unittest   
-   
-   The code below makes an attempt to swap the values stored in the two variables x and y (so x ends up with y's initial 
-   value  of 5 and y ends up with x's initial value of 3).  Unfortunately this code has an error and does not work.
-   Use the CodeLens to step through the code to understand why it fails to swap the values in x and y.  
+   :autograde: unittest  
+
+   Assume you have a package with a given height 3 inches and width 5 inches.  If the package is rotated 90 degrees, you should swap the
+   values for the height and width.
+   The code below makes an attempt to swap the values stored in two variables h and w, which represent  height and width.  Variable h should end up with w's initial 
+   value  of 5 and w should get h's initial value of 3.  Unfortunately this code has an error and does not work.
+   Use the CodeLens to step through the code to understand why it fails to swap the values in h and w.  
    
    ~~~~
  
@@ -260,14 +262,14 @@ This won’t change the value of the variable that you are copying from.
     {
       public static void main(String[] args)
       {
-        int x = 3;
-        int y = 5;
-        System.out.println(x);  //3
-        System.out.println(y);  //5
-        x = y;
-        y = x;
-        System.out.println(x);  //should be 5
-        System.out.println(y);  //should be 3
+        int h = 3;
+        int w = 5;
+        System.out.println(h);  //3
+        System.out.println(w);  //5
+        h = w;
+        w = h;
+        System.out.println(h);  //expected 5
+        System.out.println(w);  //expected 3
       }
     }
     ====
@@ -275,14 +277,13 @@ This won’t change the value of the variable that you are copying from.
 
 .. shortanswer:: q1_4_2
 
-   Explain in your own words why the ``ErrorSwap`` program code does not swap the values stored in x and y.
+   Explain in your own words why the ``ErrorSwap`` program code does not swap the values stored in h and w.
 
 
 
 |Exercise| **Check your understanding**
 
-Swapping two variables requires a third variable to store the value of x before assigning 
-x to the value of y.  The variable y then gets assigned to the temporary variable value.
+Swapping two variables requires a third variable.  Before assigning ``h = w``, you need to store the original value of ``h`` in the temporary variable.
 In the mixed up programs below, drag the blocks to the right to put them in the right order.
 
 .. parsonsprob:: q1_4_3
@@ -292,7 +293,7 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
    :noindent:
 
    The following has the correct code that uses a third variable named "temp" to swap the 
-   values in x and y. 
+   values in h and w. 
 
    The code is mixed up and contains <b>one extra block</b> which is not needed 
    in a correct solution.  Drag the needed blocks from the left into the correct 
@@ -302,17 +303,17 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
    
    After three incorrect attempts you will be able to use the <i>Help Me</i> button to make the problem easier.  
    -----
-   int x = 3;
-   int y = 5;
+   int h = 3;
+   int w = 5;
    int temp = 0;
    =====
-   temp = x;
+   temp = h;
    =====
-   x = y;
+   h = w;
    =====
-   y = temp;
+   w = temp;
    =====
-   y = x; #distractor
+   w = h; #distractor
 
 
 
@@ -320,7 +321,7 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
    :language: java
    :autograde: unittest   
    
-   Fix the code below to perform a correct swap of x and y.  
+   Fix the code below to perform a correct swap of h and w.  
    You need to add a new variable named ``temp`` to use for the swap.
    ~~~~
  
@@ -328,14 +329,14 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
     {
       public static void main(String[] args)
       {
-        int x = 3;
-        int y = 5;
-        System.out.println(x);
-        System.out.println(y);
-        x = y;
-        y = x;
-        System.out.println(x);
-        System.out.println(y);
+        int h = 3;
+        int w = 5;
+        System.out.println(h);
+        System.out.println(w);
+        h = w;
+        w = h;
+        System.out.println(h);    
+        System.out.println(w);
       }
     }
     ====
@@ -376,13 +377,13 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
         public void test3()
         {
             String code = getCode();
-            String expect = "temp = x";
+            String expect = "temp = h";
 
             int count = countOccurences(code, expect);
 
             boolean passed = count >= 1;
 
-            passed = getResults("1 temp assignment to x", "" + count  + " temp assignment to x", "Assign variable temp to x", passed);
+            passed = getResults("1 temp assignment to h", "" + count  + " temp assignment to h", "Assign variable temp to h", passed);
             assertTrue(passed);
         }
 
@@ -390,13 +391,13 @@ In the mixed up programs below, drag the blocks to the right to put them in the 
         public void test4()
         {
             String code = getCode();
-            String expect = "y = temp";
+            String expect = "w = temp";
 
             int count = countOccurences(code, expect);
 
             boolean passed = count >= 1;
 
-            passed = getResults("1 y assignment to temp", "" + count  + " y assignment to temp", "Assign variable y to temp", passed);
+            passed = getResults("1 w assignment to temp", "" + count  + " w assignment to temp", "Assign variable w to temp", passed);
             assertTrue(passed);
         }
 
