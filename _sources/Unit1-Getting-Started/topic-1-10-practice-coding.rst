@@ -149,54 +149,6 @@ Unit 1 Coding Practice
                 }
 
 
-.. activecode::  code1_10_0d
-              :language: java
-              :autograde: unittest
-              :practice: T
-
-              Assume a vehicle gets 28.5 miles per gallon and a gallon of gas costs $2.20. Write a program to compute and print the gas cost for 20 miles, 75 miles, and 500 miles.
-              Output each value on a separate line.
-              
-              ~~~~
-              public class GasEstimator
-              {
-                  public static void main(String[] args)
-                  {
-                      
-                  }
-              }
-              ====
-              import static org.junit.Assert.*;
-                import org.junit.*;;
-                import java.io.*;
-
-                public class RunestoneTests extends CodeTestHelper
-                {
-                    @Test
-                    public void testMain() throws IOException
-                    {
-                        String output = getMethodOutput("main");
-                        String expect = "1.5438596491228072\n5.789473684210527\n38.59649122807018";
-                        boolean passed = getResults(expect, output, "Expected output from main");
-                        assertTrue(passed);
-                    }
-                    @Test
-                    public void testPrintStringsA() throws IOException
-                    {
-                      String target1 = "2.20";
-                      boolean passed1 = checkCodeContains("2.20", target1);
-                      String target2 = "*";
-                      boolean passed2 = checkCodeContains("*", target2);
-                      String target3 = "/";
-                      boolean passed3 = checkCodeContains("/", target3);
-                      
-                      assertTrue(passed1 && passed2 && passed3);
-                    }
-                
-                }
-
-
-
 .. tabbed:: ch4Ex2
 
         .. tab:: Question
