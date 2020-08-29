@@ -31,9 +31,9 @@ Vocabulary Practice
 .. dragndrop:: q1_8_1
     :feedback: Review the summaries above.
     :match_1: Specifying the type and name for a variable|||declaring a variable 
-    :match_2: A whole number|||integer
+    :match_2: A type used to represent a whole number|||int
     :match_3: A name associated with a memory location.|||variable
-    :match_4: An expression that is either true or false|||Boolean
+    :match_4: A type used to represent either true or false|||boolean
     
     Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct
     
@@ -41,8 +41,8 @@ Vocabulary Practice
     :feedback: Review the summaries above.
     :match_1: Setting the value of a variable the first time|||initialize
     :match_2: An operator that returns the remainder|||mod
-    :match_3: a type used to represent decimal values|||double
-    :match_4: changing the type of a variable|||casting
+    :match_3: A type used to represent decimal values|||double
+    :match_4: Changing the type of a variable|||casting
     
     Drag the definition from the left and drop it on the correct concept on the right.  Click the "Check Me" button to see if you are correct.
 

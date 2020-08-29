@@ -424,14 +424,14 @@ instead of 100. You would do this using the code ``yertle.forward(50);``.
 --------------------------------------------------
 
 Create a ``Turtle`` object below and have it draw a shape.  
-For example, have it draw a small square and then a large square by calling the forward method multiple times. In the next lessons, we will draw more complicated shapes. Here are some simple turtle methods that you could use:
+For example, have it draw a square. In the next lessons, we will 
+draw more complicated shapes. Here are some simple turtle methods that you could use:
 
 - ``forward();``
 - ``turnLeft();``
 - ``turnRight();``
 - ``backward();``
-- ``penUp();``
-- ``penDown();``
+
 
 After writing your code below, if you'd like your own copy, you can open this |repl link|, 
 copy in your code, and save it in your own repl.it account.  Keep in mind Repl.it prefers the class to be named "Main".
@@ -449,11 +449,9 @@ copy in your code, and save it in your own repl.it account.  Keep in mind Repl.i
           World world = new World(500,500);
           // 1. Create a Turtle object in the world
 
-          // 2. Have the turtle draw a small square
+          // 2. Have the turtle draw a square
 
-          // 3. Have the turtle draw a large square
-
-          // 4. Play around!
+          // 3. Play around!
 
 
 
@@ -496,9 +494,9 @@ copy in your code, and save it in your own repl.it account.  Keep in mind Repl.i
             int countL = countOccurences(code, left);
             int count = countR + countL;
 
-            boolean passed = countR >= 8 || countL >= 8 || (countL >= 4 && countR >= 4);
+            boolean passed = countR >= 3 || countL >= 3;
 
-            passed = getResults("8+ turns", "" + count  + " turns(s)", "two squares (8 right or left turns total)", passed);
+            passed = getResults("3+ turns", "" + count  + " turns(s)", " square (3 right or left turns)", passed);
             assertTrue(passed);
         }
 
@@ -513,13 +511,14 @@ copy in your code, and save it in your own repl.it account.  Keep in mind Repl.i
             int backward = countOccurences(code, backwards);
             int moves = forward + backward;
 
-            boolean passed = forward >= 8 || backward >= 8 || (backward >= 4 && forward >= 4);
+            boolean passed = forward >= 4 || backward >= 4 ;
 
-            passed = getResults("8+ moves", "" + moves  + " move(s)", "two squares (8 moves total)", passed);
+            passed = getResults("4+ moves", "" + moves  + " move(s)", " square (4 moves total)", passed);
             assertTrue(passed);
         }
 
     }
+
 
 
 Summary
