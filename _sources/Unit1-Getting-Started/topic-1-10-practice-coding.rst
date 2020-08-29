@@ -96,6 +96,57 @@ Unit 1 Coding Practice
                 }
 
 
+.. activecode::  code1_10_0c
+              :language: java
+              :autograde: unittest
+              :practice: T
+
+              R0 (pronounced R-naught) is a measure for predicting and controlling the transmission of disease.  If R0 is 3, then each person that
+              has a disease will spread it on average to 3 other people.  The program below shows 4 iterations in the spread of SmallPox, 
+              which has an R0 of 3.    The first person spreads to 3 people, each of whom spread to 3 people, etc.
+              Update the program with additional print statements to show the spread after 4 iterations of 
+              HIV (R0 of 4) and Measles (R0 of 16). 
+              Thankfully all of these diseases have vaccines available!  
+              
+              In Unit 4 we will see how to compute this efficiently using loops.
+              
+              ~~~~
+              public class R0Spread
+              {
+                  public static void main(String[] args)
+                  {
+                      System.out.println(1*3*3*3*3);
+                      
+                  }
+              }
+              ====
+              import static org.junit.Assert.*;
+                import org.junit.*;;
+                import java.io.*;
+
+                public class RunestoneTests extends CodeTestHelper
+                {
+                    @Test
+                    public void testMain() throws IOException
+                    {
+                        String output = getMethodOutput("main");
+                        String expect = "81\n256\n65536";
+                        boolean passed = getResults(expect, output, "Expected output from main");
+                        assertTrue(passed);
+                    }
+                    @Test
+                    public void testPrintStringsA() throws IOException
+                    {
+                      String target1 = "*4";
+                      boolean passed1 = checkCodeContains("*4", target1);
+                      String target2 = "*16";
+                      boolean passed2 = checkCodeContains("*16", target2);
+                      
+                      assertTrue(passed1 && passed2);
+                    }
+                
+                }
+
 
 .. tabbed:: ch4Ex2
 
