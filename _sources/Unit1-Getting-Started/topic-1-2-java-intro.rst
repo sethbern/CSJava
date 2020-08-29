@@ -469,7 +469,7 @@ expressions that have a numeric value.
        @Test
        public void test2() throws IOException
        {
-           String target1 = " 3 + 5 - 1 + 8 -3";
+           String target1 = "3 + 5 - 1 + 8 -3";
            boolean passed1 = checkCodeContains("passenger calculation", target1);
           
            assertTrue(passed1);

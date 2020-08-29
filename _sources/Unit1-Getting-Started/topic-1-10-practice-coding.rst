@@ -106,9 +106,8 @@ Unit 1 Coding Practice
               which has an R0 of 3.    The first person spreads to 3 people, each of whom spread to 3 people, etc.
               Update the program with additional print statements to show the spread after 4 iterations of 
               HIV (R0 of 4) and Measles (R0 of 16). 
-              Thankfully all of these diseases have vaccines available!  
               
-              In Unit 4 we will see how to compute this efficiently using loops.
+              In Unit 4 you will learn a better way to solve this problem using loops.
               
               ~~~~
               public class R0Spread
@@ -628,6 +627,11 @@ Unit 1 Coding Practice
 
                   }
               }
+
+
+
+
+              
 
 .. activecode::  code1_10_7
               :language: java
