@@ -1,5 +1,5 @@
 # CSJava
-**Introduction to Programming with Java** is an interactive textbook 
+[**Introduction to Programming with Java**](https://runestone.academy/ns/books/published/csjava/index.html) is an interactive textbook 
 designed to introduce fundamental concepts
 in software application development using the Java programming language. The curriculum is suitable for an introductory college-level course.
 
