@@ -15,7 +15,7 @@ to check your solution.
 See the video below for an example.
 
 .. youtube:: 0x4yWQ9ZJAg
-    :divid: iwgex1-parsons1-mooc_nested
+    :divid: parsons-java-example
     :optional:
     :width: 650
     :height: 415
@@ -83,7 +83,7 @@ than three blocks left.
 See the video below for an example.
 
 .. youtube:: jkKp9V_Z22E
-    :divid: iwgex1-parsons2-mooc_nested
+    :divid: parsons-help-me-java
     :optional:
     :width: 650
     :height: 415
@@ -100,7 +100,7 @@ the code area for compiler errors and/or unit test results.
 See the video below for an example.
 
 .. youtube:: tQZrw8yUiSs
-    :divid: mooc_nested-write-code-video-ex
+    :divid: write-code-java
     :optional:
     :width: 650
     :height: 415
@@ -145,7 +145,7 @@ The mixed-up puzzle will have blocks of code that you can drag and drop to creat
 
 .. youtube:: MsGDozb0jsk
     :optional:
-    :divid: write-code-toggle-mooc_nested
+    :divid: write-code-toggle-java
     :width: 780
     :height: 498
     :align: center
@@ -162,16 +162,11 @@ What to do next
 
 .. raw:: html
 
-    <p>Click on the following link to take the pre survey and the skill assessment: <b><a id="pre_survey"> <font size="+1">Pre-survey</font></a></b></p>
-
-.. raw:: html
-
-    <script type="text/javascript" >
-
-      window.onload = function() {
-
-        a = document.getElementById("pre_survey")
-        a.href = "mc_pre_survey.html"
-      };
-
-    </script>
+    <p>
+      Click on the following link to take the pre survey and the skill assessment:
+      <b>
+        <a href="topic-3-13-experiment-pretest.html">
+          <font size="+1">Pre-survey</font>
+        </a>
+      </b>
+    </p>
