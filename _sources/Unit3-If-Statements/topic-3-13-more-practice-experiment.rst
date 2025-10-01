@@ -20,9 +20,13 @@ The three parts are:
 Based on your teacher's plan, you might do all three parts in one class, or do part 1 at the end of one class and part 2 & 3 at the beginning of the next class.
 
 
-.. toctree::
-   :maxdepth: 3
+.. raw:: html
 
-   topic-3-13-experiment-pretest.rst
-   topic-3-13-experiment-practice.rst
-   topic-3-13-experiment-posttest.rst
+    <p>
+      Click on the following link for an introduction to the problem types:
+      <b>
+        <a href="mc_intro.html">
+          <font size="+1">Introduction</font>
+        </a>
+      </b>
+    </p>

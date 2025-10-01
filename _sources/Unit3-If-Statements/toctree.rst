@@ -20,6 +20,7 @@ execute a block of code depending on whether a Boolean expression is true or fal
    topic-3-10-practice-coding.rst
    Exercises.rst
    topic-3-12-lesson-workspace.rst
-   
+   topic-3-13-more-practice-experiment.rst
+
   
 

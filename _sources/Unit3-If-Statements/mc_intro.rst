@@ -165,8 +165,8 @@ What to do next
     <p>
       Click on the following link to take the pre survey and the skill assessment:
       <b>
-        <a href="topic-3-13-experiment-pretest.html">
-          <font size="+1">Pre-survey</font>
+        <a href="topic-3-13-experiment-practice.html">
+          <font size="+1">Practice</font>
         </a>
       </b>
     </p>
