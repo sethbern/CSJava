@@ -214,7 +214,7 @@ Practice Problems (Write Code)
 
 .. raw:: html
 
-    <p>click on the following link to proceed to the posttest: <b><a id="next-link"><font size="+2">posttest</font></a></b></p>
+    <p>Click on the following link to proceed to the posttest: <b><a id="next-link"><font size="+2">posttest</font></a></b></p>
 
 .. raw:: html
 

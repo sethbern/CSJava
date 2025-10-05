@@ -5,11 +5,13 @@ Thank you for taking part in this study! We are researchers who are trying to im
 
 *If your teacher is asking you to do this experiment, please wait until your teacher instructs you to complete a section. Do not start it on your own.*
 
-This study has three parts. It will take approximately 45 minutes in total to complete the study. 
+This study has four parts. It will take approximately 45 minutes in total to complete the study. 
 Please do the parts in order following your teacher's instruction, and answer questions to the best of your ability without any outside help, and please do not discuss with others. You can stop working on a problem after you worked on it for about five minutes without solving it.
 If you have questions about this study please email Dr. Barbara Ericson at barbarer@umich.edu.
 
-The three parts are:
+The four parts are:
+
+* 0. Introduction to the problem types you will see in this study.
 
 * 1.  Pre Test - Questions that measure your knowledge prior to doing the practice problems.
 
@@ -17,7 +19,7 @@ The three parts are:
 
 * 3.  Post Test - Post test problems that measure your knowledge after doing the practice problems.
 
-Based on your teacher's plan, you might do all three parts in one class, or do part 1 at the end of one class and part 2 & 3 at the beginning of the next class.
+We suggest you do all four parts in one class.
 
 
 .. raw:: html
@@ -25,8 +27,8 @@ Based on your teacher's plan, you might do all three parts in one class, or do p
     <p>
       Click on the following link for an introduction to the problem types:
       <b>
-        <a href="mc_intro.html">
-          <font size="+1">Introduction</font>
+        <a href="topic-3-13-experiment-intro.html">
+          <font size="+1">Introduction to Problem Types</font>
         </a>
       </b>
     </p>

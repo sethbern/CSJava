@@ -151,13 +151,14 @@ Pretest
            assertTrue(getResults(2, c.shouldClean(18, 3), "Hidden test"));
        }
    }
+
 .. raw:: html
 
     <p>
       Click on the following link to to do the practice problems:
       <b>
-        <a href="topic-3-13-experiment-pretest.html">
-          <font size="+1">Pre-survey</font>
+        <a href="topic-3-13-experiment-practice.html">
+          <font size="+1">Practice</font>
         </a>
       </b>
     </p>
