@@ -62,7 +62,7 @@ Practice Problems
       };
     </script>
 
-    .. raw:: html
+.. raw:: html
 
     <p>
       Click on the following link to take the post test:

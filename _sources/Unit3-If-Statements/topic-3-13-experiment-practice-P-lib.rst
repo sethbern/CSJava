@@ -180,7 +180,7 @@ Practice Problems (Mixed Code)
     :width: 0
     :align: left
 
-.. parsonsprob:: intro-sample-puzzle-java
+.. parsonsprob:: intro-sample-puzzle-csjava
     :numbered: left
     :adaptive:
     :practice: T
