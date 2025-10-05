@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 #
-# Problem Solving with Algorithms and Data Structures documentation build configuration file, created by
-# sphinx-quickstart on Thu Oct 27 08:17:45 2011.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
@@ -11,8 +9,10 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os
-
+import json
+import sys
+import os
+from sphinx.errors import ExtensionError
 
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -25,6 +25,15 @@ from runestone import runestone_static_dirs, runestone_extensions, setup
 #from runestone import runestone_static_dirs, runestone_extensions
 #from runestone import runestone_static_dirs, runestone_extensions, setup
 import pkg_resources
+
+# Trying for faster load times
+# breaks search page
+#html_defer_js = True
+
+# new for title page
+course_description = "This is the old version of CSAwesome meeting the 2019-2025 College Board requirements for AP CSA in Java. Look below for the newer version, CSAwesome2, for the 2025+ AP CSA requirements."
+key_words = "AP CSA Java"
+shelf_section = "AP Computer Science"
 
 # -- General configuration -----------------------------------------------------
 
@@ -54,14 +63,14 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'csjava'
-copyright = '2015 Barb Ericson, 2019 revised by Beryl Hoffman Mobile CSP, 2020 revised by Linda Seiter and Dan Palmer'
+copyright = '2015 Barb Ericson, 2019 65 revised by Beryl Hoffman Mobile CSP, 2020 revised by Linda Seiter and Dan Palmer'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '2020'
+version = '2025'
 # The full version, including alpha/beta/rc tags.
 release = 'beta'
 
@@ -178,7 +187,7 @@ html_short_title ='CS Java'
 # of the sidebar.
 
 # logo is included in layout file
-#html_logo = "../source/_static/logo_small.png"
+html_logo = "../source/_static/logo_small.png"
 
 
 # The name of an image file (within the static path) to use as favicon of the
@@ -191,8 +200,8 @@ html_short_title ='CS Java'
 # so a file named "default.css" will overwrite the builtin "default.css".
 
 # Including my static images and css files
-html_static_path = ['_static']  + runestone_static_dirs()
-# 
+html_static_path =  runestone_static_dirs() + ['_static']
+#
 #html_static_path = runestone_static_dirs()
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,

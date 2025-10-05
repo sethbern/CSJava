@@ -62,13 +62,3 @@ Practice Problems
       };
     </script>
 
-    .. raw:: html
-
-    <p>
-      Click on the following link to take the post test:
-      <b>
-        <a href="topic-3-13-experiment-posttest.html">
-          <font size="+1">Post test</font>
-        </a>
-      </b>
-    </p>

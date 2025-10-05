@@ -19,9 +19,7 @@ Practice Problems (Mixed Code Help)
 
 .. raw:: html
 
-    <p>Click on the following link to proceed to the posttest: <b><a id="next-link"><font size="+2">posttest</font></a></b></p>
-
-.. raw:: html
+    <p>Click on the following link to proceed to the posttest: <b><a id="next-link"><font size="+2">Posttest</font></a></b></p>
 
     <script type="text/javascript" >
 
