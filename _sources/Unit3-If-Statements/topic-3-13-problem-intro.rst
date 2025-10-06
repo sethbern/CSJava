@@ -15,7 +15,7 @@ to check your solution.
 See the video below for an example.
 
 .. youtube:: 0x4yWQ9ZJAg
-    :divid: iwgex1-parsons1-mooc_nested
+    :divid: iwgex1-parsons1-java
     :optional:
     :width: 650
     :height: 415
@@ -23,7 +23,7 @@ See the video below for an example.
 
 Try to solve the following mixed-up code problem.  This problem doesn't require any indentation.
 
-.. parsonsprob:: intro-simple-parsons-no-indent-mooc_nested
+.. parsonsprob:: intro-simple-parsons-no-indent-java
    :numbered: left
    :adaptive:
    :practice: T
@@ -40,7 +40,7 @@ Try to solve the following mixed-up code problem.  This problem doesn't require 
 
 Try to solve the following mixed-up code problem. This problem requires indentation.
 
-.. parsonsprob:: intro-simple-parsons-indent-mooc_nested
+.. parsonsprob:: intro-simple-parsons-indent-java
    :numbered: left
    :adaptive:
    :practice: T
@@ -57,7 +57,7 @@ Try to solve the following mixed-up code problem. This problem requires indentat
 
 Try to solve the following mixed-up code problem. This problem requires indentation and has extra blocks that are not needed in a correct solution.
 
-.. parsonsprob:: intro-simple-parsons-indent-with-dist-mooc_nested
+.. parsonsprob:: intro-simple-parsons-indent-with-dist-java
    :numbered: left
    :adaptive:
    :practice: T
@@ -83,7 +83,7 @@ than three blocks left.
 See the video below for an example.
 
 .. youtube:: jkKp9V_Z22E
-    :divid: iwgex1-parsons2-mooc_nested
+    :divid: iwgex1-parsons2-java
     :optional:
     :width: 650
     :height: 415
@@ -100,7 +100,7 @@ the code area for compiler errors and/or unit test results.
 See the video below for an example.
 
 .. youtube:: tQZrw8yUiSs
-    :divid: mooc_nested-write-code-video-ex
+    :divid: java-write-code-video-ex
     :optional:
     :width: 650
     :height: 415
@@ -108,32 +108,49 @@ See the video below for an example.
 
 Finish writing the code for the following problem.
 
-.. activecode:: intro-sample-write-code-double-mooc_nested
+.. activecode:: intro-sample-write-code-double-csjava
+    :practice: T
     :autograde: unittest
-    :nocodelens:
+    :language:java
 
-    Write a function called ``double(num)`` that takes a number ``num`` and
-    returns the number times 2. For example, ``double(3)`` should return 6 and ``double(-4)`` should return -8.
+    Write a function that takes a number ``num`` and returns the number times 2. For example, ``double(2)`` should return 4 and
+    ``double(-1)`` should return -2.  Look below the code to check for any compiler errors or the results from the test cases.  Be sure to ``return`` the result.
     ~~~~
-    def double(num):
-        # Your code here
-        pass
+    public class Main {
 
-    print(double(2))
-    print(double(-1))
+        // Function to double a number
+        public static int doubleNum(int num) {
+            // ADD CODE HERE //
 
+        }
+
+        public static void main(String[] args)
+        {
+            System.out.println(tripleNum(3));
+            System.out.println(tripleNum(-4));
+            System.out.println(tripleNum(0));
+        }
+    }
     ====
-    from unittest.gui import TestCaseGui
-    class myTests(TestCaseGui):
+    import static org.junit.Assert.*;
+    import org.junit.Test;
+    import java.io.IOException;
+    import java.util.Arrays;
 
-        def testOne(self):
-            self.assertEqual(double(2),4,"double(2)")
-            self.assertEqual(double(3),6,"double(3)")
-            self.assertEqual(double(-1),-2,"double(-1)")
-            self.assertEqual(double(0),0,"double(0)")
-            self.assertEqual(double(11),22,"double(11)")
+    public class RunestoneTests extends CodeTestHelper {
+        public RunestoneTests() {
+            super();
+        }
 
-    myTests().main()
+        @Test
+        public void testBoundarySum() throws IOException {
+                String output = getMethodOutput("main");
+                String expect = "6, -8, 0";
+            boolean passed = getResults(expect, output, "Expected output from main");
+            assertTrue(passed);
+
+        }
+    }
 
 
 
@@ -145,14 +162,14 @@ The mixed-up puzzle will have blocks of code that you can drag and drop to creat
 
 .. youtube:: MsGDozb0jsk
     :optional:
-    :divid: write-code-toggle-mooc_nested
+    :divid: write-code-toggle-java
     :width: 780
     :height: 498
     :align: center
 
 
-.. selectquestion:: intro-sample-toggle-mooc_nested
-    :fromid: intro-sample-write-code-triple-mooc_nested, intro-sample-puzzle-mooc_nested
+.. selectquestion:: intro-sample-toggle-java
+    :fromid: intro-sample-write-code-triple-csjava, intro-sample-puzzle-csjava
     :toggle: lock
 
 
@@ -163,10 +180,10 @@ What to do next
 .. raw:: html
 
     <p>
-      Click on the following link to take the pre survey and the skill assessment:
+      Click on the following link to take the pre test before the practice:
       <b>
-        <a href="topic-3-13-experiment-practice.html">
-          <font size="+1">Practice</font>
+        <a href="topic-3-13-experiment-pretest.html">
+          <font size="+1">Pre Test</font>
         </a>
       </b>
     </p>
