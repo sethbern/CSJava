@@ -27,7 +27,7 @@ We suggest you do all four parts in one class.
     <p>
       Click on the following link for an introduction to the problem types:
       <b>
-        <a href="topic-3-13-experiment-intro.html">
+        <a href="topic-3-13-problem-intro.html">
           <font size="+1">Introduction to Problem Types</font>
         </a>
       </b>
