@@ -106,9 +106,12 @@ See the video below for an example.
     :height: 415
     :align: center
 
+.. chapter:: Unit3-If-Statements
+.. subchapter:: topic-3-13-problem-intro
+
 Finish writing the code for the following problem.
 
-.. activecode:: intro-sample-write-code-double-csjava
+.. activecode:: intro-sample-write-code-double-csjava-intro
     :practice: T
     :autograde: unittest
     :language:java
@@ -169,7 +172,7 @@ The mixed-up puzzle will have blocks of code that you can drag and drop to creat
 
 
 .. selectquestion:: intro-sample-toggle-java
-    :fromid: intro-sample-write-code-triple-csjava, intro-sample-puzzle-csjava
+    :fromid: intro-sample-write-code-double-csjava, intro-sample-puzzle-csjava
     :toggle: lock
 
 
