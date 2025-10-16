@@ -172,7 +172,7 @@ The mixed-up puzzle will have blocks of code that you can drag and drop to creat
 
 
 .. selectquestion:: intro-sample-toggle-java
-    :fromid: intro-sample-write-code-double-csjava, intro-sample-puzzle-csjava
+    :fromid: intro-sample-write-code-triple-csjava, intro-sample-puzzle-triple-csjava
     :toggle: lock
 
 
