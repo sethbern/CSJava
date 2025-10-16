@@ -180,7 +180,7 @@ Practice Problems (Mixed Code)
     :width: 0
     :align: left
 
-.. parsonsprob:: intro-sample-puzzle-csjava
+.. parsonsprob:: intro-sample-puzzle-triple-csjava
     :numbered: left
     :adaptive:
     :practice: T
@@ -199,10 +199,10 @@ Practice Problems (Mixed Code)
 
 
 .. activecode:: intro-sample-write-code-triple-csjava
+    :language: java
     :practice: T
     :autograde: unittest
-    :language:java
-
+    
     Write a function that takes a number ``num`` and returns the number times 3. For example, ``triple(2)`` should return 6 and
     ``triple(-1)`` should return -3.  Look below the code to check for any compiler errors or the results from the test cases.  Be sure to ``return`` the result.
     ~~~~
