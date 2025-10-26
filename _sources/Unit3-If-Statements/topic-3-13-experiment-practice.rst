@@ -12,12 +12,12 @@ Practice Problems
 
     <script type="text/javascript">
 
-      /*
+      
       function getCookie(cname) {
          let name = cname + "=";
          let decodedCookie = decodeURIComponent(document.cookie);
          let ca = decodedCookie.split(';');
-         for(let i = 0; i <ca.length; i++) {
+         for(let i = 0; i < ca.length; i++) {
             let c = ca[i];
             while (c.charAt(0) == ' ') {
                c = c.substring(1);
@@ -29,19 +29,31 @@ Practice Problems
          return "";
       }
 
-      function setCookie(cname, cvalue) {
-         document.cookie = cname + "=" + cvalue + ";";
+      /*function setCookie(cname, cvalue) {
+         document.cookie = cname + "=" + cvalue + ";path=/;SameSite=Lax";
       }*/
+         function setCookieBothPaths(cname, cvalue) {
+         document.cookie = cname + "=" + cvalue + ";path=/;SameSite=Lax";
+         var here = location.pathname.substring(0, location.pathname.lastIndexOf('/') + 1);
+         document.cookie = cname + "=" + cvalue + ";path=" + here + ";SameSite=Lax";
+      }
+
+      function deleteCookieBothPaths(cname) {
+         var past = "Thu, 01 Jan 1970 00:00:00 GMT";
+         document.cookie = cname + "=; expires=" + past + ";path=/";
+         var here = location.pathname.substring(0, location.pathname.lastIndexOf('/') + 1);
+         document.cookie = cname + "=; expires=" + past + ";path=" + here;
+      }
 
       window.onload = function() {
 
          //a = document.getElementById("hparsons_lg_sql_practice")
          var href = '';
          // get prev set cookie
-         //var EXP_COOKIE = 'hparsons_lg_sql_221115'
-         //var cond = getCookie(EXP_COOKIE);
+         var EXP_COOKIE = 'hparsons_lg_sql_221115'
+         var cond = getCookie(EXP_COOKIE);
          // not using cookie here; random assignment
-         var cond = '';
+         //var cond = '';
          // if no prev set cookie: generate random condition and set cookie
          if (cond != 'wr' && cond != 'hp') {
             var v = Math.floor(Math.random() * 2);
@@ -50,7 +62,7 @@ Practice Problems
             } else {
                 cond = 'hp';
             }
-            //setCookie(EXP_COOKIE, cond);
+            setCookieBothPaths(EXP_COOKIE, cond);
          }
 
          if (cond == 'wr') {
@@ -58,7 +70,7 @@ Practice Problems
          } else if (cond == 'hp') {
             href = "topic-3-13-experiment-practice-P.html"
          }
-         window.location.href = href;
+         window.location.replace(href);
       };
     </script>
 
